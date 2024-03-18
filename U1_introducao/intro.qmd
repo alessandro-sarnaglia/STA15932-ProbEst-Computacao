@@ -16,9 +16,12 @@ format:
     number-depth: 2
     menu:
       useTextContentForMissingTitles: false
+    logo: figs/go-back.png
+    footer-logo-link: "../index.html"
 editor: visual
 filters:
   - parse-latex
+  - reveal-header
 ---
 
 # Programa e avaliações
@@ -26,8 +29,6 @@ filters:
 ##  {.unnumbered .unlisted}
 
 ### Programa
-
-[Voltar](../index.html)
 
 ::: incremental
 1.  Introdução e estatística descritiva;
