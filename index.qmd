@@ -1,0 +1,17 @@
+---
+title: "Probabilidade e Estatística"
+author: "Prof. Dr. Alessandro JQ Sarnaglia"
+lang: "pt"
+format:
+  revealjs:
+    fig-width: 5.5
+    fig-height: 5.5
+    theme: [custom.scss]
+    menu:
+      useTextContentForMissingTitles: false
+editor: visual
+---
+
+## Tópicos
+
+1.  [Introdução e Estatística Descritiva](U1_introducao/intro.html)
