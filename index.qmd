@@ -3,10 +3,9 @@ title: "Probabilidade e Estatística"
 author: "Prof. Dr. Alessandro JQ Sarnaglia"
 lang: "pt"
 format:
-  revealjs:
-    fig-width: 5.5
-    fig-height: 5.5
-    theme: [custom.scss]
+  html:
+    theme: ["custom.scss"]
+    css: fonts.css
     menu:
       useTextContentForMissingTitles: false
 editor: visual
