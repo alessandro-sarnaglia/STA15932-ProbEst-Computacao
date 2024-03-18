@@ -1,0 +1,464 @@
+---
+title: "Probabilidade e Estatística"
+subtitle: "Introdução e Estatística Descritiva"
+author: "Prof. Dr. Alessandro JQ Sarnaglia"
+lang: "pt"
+format:
+  revealjs:
+    fig-width: 5.5
+    fig-height: 5.5
+    theme: [custom.scss]
+    toc: true
+    toc-depth: 2
+    toc-expand: 2
+    number-sections: true
+    number-depth: 2
+    menu:
+      useTextContentForMissingTitles: false
+editor: visual
+filters:
+  - parse-latex
+---
+
+# Programa e avaliações
+
+##  {.unnumbered .unlisted}
+
+### Programa
+
+::: incremental
+1.  Introdução e estatística descritiva;
+2.  Probabilidade de eventos;
+3.  Variáveis aleatórias;
+4.  Inferência estatística.
+:::
+
+::: fragment
+### Bibliografia
+
+-   DEVORE, Jay L. Probabilidade e estatística: para engenharia e ciências. São Paulo: Cengage Learning, 2012;
+-   MORETTIN, Pedro Alberto; BUSSAB, Wilton de Oliveira. Estatística básica. 8ª ed. São Paulo: Saraiva, 2013.
+:::
+
+##  {.unnumbered .unlisted}
+
+### Avaliações
+
+::: incremental
+1.  Avaliação 1 ⟹ Unidades 1 e 2;
+2.  Avaliação 2 ⟹ Unidade 3;
+3.  Avaliação 3 ⟹ Unidade 4.
+:::
+
+::: fragment
+[**Importante:** datas serão definidas em conjunto com a turma.]{style="color:red;"}
+:::
+
+::: fragment
+**Contatos e sala:**
+
+-   📧 alessandro.sarnaglia\@ufes.br;
+-   ☎️ (27) 4009-2822;
+-   🖥️ Sala 305 - Bloco B do IC1.
+:::
+
+# Introdução
+
+## Contextualização
+
+**O que é Estatística?** Campo da ciência que se dedica a coleta e análise de dados.
+
+**Importância:** A Estatística é particularmente interessante nas seguintes situações:
+
+::: incremental
+-   Descrição de características importantes de qualquer tipo de variável;
+-   Extração de informações/padrões em grande quantidade de dados;
+-   Tomada de decisões em situações que apresentem variação/incerteza;
+:::
+
+##  {.unnumbered .unlisted}
+
+### Exemplo
+
+Uma tarefa é executada várias vezes em um mesmo computador e os tempos de execução são registrados. Nesse caso, a Estatística pode ajudar a:
+
+::: incremental
+-   Avaliar um tempo típico que a tarefa leva para ser executada e mensurar a variabilidade das observações com respeito a esse valor;
+-   Identificar possíveis padrões sugeridos pela amostra;
+-   Fazer afirmações gerais sobre o fenômeno que dá origem aos dados, a partir de uma amostra;
+-   Realizar previsões com base em dados históricos.
+:::
+
+##  {.unnumbered .unlisted}
+
+### Exemplo - II
+
+Veja abaixo 15 réplicas do tempo necessário para ordenar $n$ observações, com: (esquerda) $n=100000$ fixo; (direita) $n=100000r$ para a réplica $r$.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+#| label: fig-ex1
+#| fig-width: 4.5
+#| fig-asp: .8
+#| fig-align: center
+#| fig-cap: "Tempo de ordenação de uma amostra"
+#| fig-subcap: 
+#|   - "$n$ fixo"
+#|   - "$n$ crescente"
+#| layout-ncol: 2
+R <- 15; tpause <- 0
+n1 <- rep(100000, R)
+n2 <- 100000*(1:R)
+t1 <- t2 <- NULL
+for(i in 1:R){
+  am1 <- runif(n1[i]); am2 <- runif(n2[i])
+  Sys.sleep(tpause)
+  t0_1 <- proc.time()[3]
+  aux <- sort(am1)
+  tf_1 <- proc.time()[3]
+  Sys.sleep(tpause)
+  t0_2 <- proc.time()[3]
+  aux <- sort(am2)
+  tf_2 <- proc.time()[3]
+  t1[i] <- tf_1 - t0_1
+  t2[i] <- tf_2 - t0_2
+}
+par(mar = c(3, 3, .5, .5))
+plot(t1, pch=19, xlab='', ylab='', ylim=range(t1, t2))
+mtext(text = 'Réplica', side = 1, line = 2); mtext(text = 'Tempo', side = 2, line = 2)
+plot(t2, pch=19, xlab='', ylab='', ylim=range(t1, t2))
+mtext(text = 'Réplica', side = 1, line = 2); mtext(text = 'Tempo', side = 2, line = 2)
+```
+
+##  {.unnumbered .unlisted}
+
+### Exemplo - III
+
+::: fragment
+A [Fig @fig-ex1-1] nos mostra que:
+
+::: incremental
+-   o tempo de execução tende a apresentar valores em torno de uma quantidade fixa;
+-   além do valor de "tendência central", pode ser de interesse quantificar a variabilidade em torno desse valor.
+:::
+:::
+
+::: fragment
+Já a [Fig @fig-ex1-2] sugere que:
+
+::: incremental
+-   não há "estacionariedade", não fazendo sentido falar em um único valor de tendência central!
+-   aparentemente há comportamento linear, o que permitiria a previsão de valores não observados.
+:::
+:::
+
+## Processo estatístico
+
+![Ilustração do processo estatístico](figs/etapas_est_estat.png){#fig-campos fig-align="center"}
+
+# Estatística Descritiva
+
+## Conceitos básicos
+
+**População:** é o conjunto de todos indivíduos (Unidades Experimentais - *UE*) que se tem interesse de investigar.
+
+**Censo:** processo de observação de toda a população;
+
+Fatores que podem impedir a realização de um censo:
+
+::: incremental
+-   Alto custo;
+-   Demanda muito tempo;
+-   Observação pode danificar os indivíduos;
+-   População de tamanho infinito ou desconhecido.
+:::
+
+## Conceitos básicos - II {.unnumbered .unlisted}
+
+Devido aos obstáculos de se realizar um censo, uma alternativa consiste de observar uma parcela da população.
+
+. . .
+
+**Amostra:** qualquer parcela de indivíduos da população.
+
+. . .
+
+[*Importante!*]{style="color:red;"} Para podermos extrapolar os resultados da amostra para a população, necessitamos que a amostra seja [representativa]{.underline}, isto é, que represente bem a população.
+
+. . .
+
+**Amostragem:** campo de estudo de técnicas de coleta de amostras representativas.
+
+## Conceitos básicos - III {.unnumbered .unlisted}
+
+**Amostragem probabilística:** qualquer técnica de seleção amostral que garanta que as probabilidades de inclusão de cada elemento são maiores que zero e conhecidas.
+
+. . .
+
+Conceitualmente, a **Amostragem Aleatória Simples** (AAS) é o plano de amostragem probabilística mais básico.
+
+. . .
+
+A AAS consiste da seleção aleatória de $n$ (tamanho amostral) elementos uma lista de todos elementos da população (*marco amostral*).
+
+. . .
+
+**Dificuldade:** em muitos casos, a obtenção do marco amostral é inviável.
+
+## Conceitos básicos - IV {.unnumbered .unlisted}
+
+Em geral, não há interesse nos indivíduos em si, mas em características, numéricas ou não dos mesmos.
+
+::: fragment
+**Variável:** característica numérica ou não compartilhada por todos indivíduos da população.
+:::
+
+```{r fig}
+```
+
+::: columns
+::: {.column width="40%"}
+::: fragment
+![](figs/variaveis.png){fig-align="center"}
+:::
+:::
+
+::: {.column width="60%"}
+::: fragment
+As variáveis são classificadas pelos valores que podem apresentar.
+
+**Exemplo:** "Profissão" e "Renda" apresentam valores de essência completamente diferentes.
+:::
+:::
+:::
+
+## Tipos de variáveis
+
+A classificação de variáveis é muito importante, pois auxilia na escolha dos métodos de Estatística Descritiva apropriados.
+
+. . .
+
+Por exemplo, não faz sentido falar em soma e produto de variáveis não numéricas. Assim, medidas como a média não podem ser calculadas para esse tipo de variáveis.
+
+. . .
+
+Vejamos as definições dos diferentes tipos de variáveis.
+
+## Tipos de variáveis - II {.unnumbered .unlisted}
+
+### Variáveis qualitativas (ou categóricas)
+
+Apresentam valores [não numéricos]{.underline} (também chamadas de categorias). Se dividem em:
+
+::: incremental
+-   Ordinais ⟹ quando os possíveis categorias admitem algum tipo de ordenação;
+-   Nominais ⟹ quando não há uma estrutura de ordenação natural das categorias.
+:::
+
+## Tipos de variáveis - III {.unnumbered .unlisted}
+
+### Variáveis quantitativas (ou numéricas)
+
+Apresentam valores [numéricos]{.underline}. Se dividem em:
+
+::: incremental
+-   Discretas ⟹ quando os possíveis valores formam um conjunto [enumerável]{.underline};
+-   Contínuas ⟹ quando os possíveis valores formam um conjunto [não enumerável]{.underline};
+:::
+
+##  {.unnumbered .unlisted .smaller}
+
+**Exemplo:** Uma comparação de algoritmos para ordenação de um conjunto de dados produziu o seguinte banco de dados:
+
+```{=latex}
+\begin{table}\centering
+\begin{tabular}{cccc}
+Algoritmo & Tamanho Amostral & Núcleos & Tempo \\ \hline
+ A         & Pequeno $(n = 10^2)$ & 4       & $<\text{0,01}$ \\
+ B         & Pequeno $(n = 10^2)$ & 4       & $\text{0,01}$  \\
+ A         & Interm. $(n = 10^3)$ & 4       & $<\text{0,01}$ \\
+ B         & Interm. $(n = 10^3)$ & 4       & $\text{0,79}$  \\
+ A         & Grande $(n = 10^4)$  & 4       & $<\text{0,01}$ \\
+ B         & Grande $(n = 10^4)$  & 4       & $\text{51,00}$ \\
+ A         & Pequeno $(n = 10^2)$ & 8       & $<\text{0,01}$ \\
+ B         & Pequeno $(n = 10^2)$ & 8       & $<\text{0,01}$ \\
+\end{tabular}
+\end{table}
+```
+::: fragment
+Tipos das variáveis: Algoritmo (nominal); Tamanho amostral (ordinal ou discreta); Núcleos (discreta); e Tempo (contínua).
+:::
+
+## Distribuições de frequências
+
+Muitas vezes, a quantidade de dados faz com que seja difícil enxergar comportamentos/padrões dos mesmos.
+
+. . .
+
+Uma ferramenta muito útil é a distribuição de frequências.
+
+. . .
+
+A distribuição de frequências:
+
+::: incremental
+-   associa os valores da variável com a frequência com que foram observados na amostra;
+-   permite evidenciar quais valores ocorrem com maior (ou menor) frequência;
+-   evidencia características da variável como: simetria; multimodalidade; etc.
+:::
+
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequência absoluta
+
+::: panel-tabset
+## Definição
+
+Seja $x_1\ldots, x_n$ uma amostra de tamanho $n$ de uma variável $X$. Sejam $x_1^*, \ldots, x_k^*$ os $k$ valores distintos da amostra, onde, normalmente $k\leq n$.
+
+**Frequência (absoluta):** é o número de repetições $n_i$ apresentado pelo valor $x_i^*$ na amostra, com $i = 1, \ldots, k$.
+
+::: columns
+::: {.column width="65%"}
+A distribuição de frequências absoluta de $X$ é definida pela tabela ao lado.
+
+::: fragment
+Quando possível, os valores distintos devem ser apresentados em ordem crescente, isto é, $x_1^* \leq \ldots \leq x_k^*$.
+:::
+:::
+
+::: {.column width="35%"}
+::: table-with-total-row
+```{=latex}
+\begin{table}\centering
+\begin{tabular}{cc}
+Variável       & Frequência   \\ \hline
+$x_1^*$        &$n_1$         \\
+$\vdots$       &$\vdots$      \\
+$x_k^*$        &$n_k$         \\
+\textbf{Total} & $\sum_in_i$  \\
+\end{tabular}
+\end{table}
+```
+:::
+:::
+:::
+
+## Exemplo - Dados
+
+```{r}
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(DT)
+dia_util <- c(rep("Sim", 50), rep("Não", 20))
+media <- 5*as.numeric(dia_util=='Sim') + 1*as.numeric(dia_util=='Não')
+atendimentos <- rpois(n = length(media), lambda = media)
+df <- data.frame("Dia Útil" = dia_util, "Atendimentos" = atendimentos)
+df %>%
+  datatable(colnames = c("Dia Útil", "Atendimentos"), rownames = FALSE, class = 'nowrap',
+            options = list(lengthChange=FALSE, pageLength=5,
+                           language=list(url='//cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json')))
+```
+
+## Exemplo - Distribuição
+
+```{r}
+kable(data.frame(names(table(df[,1])), as.numeric(table(df[,1]))),
+      row.names = F, col.names=c('Dia Útil', 'Frequência'))
+```
+
+::: fragment
+
+<p></p>
+
+```{r, render=TRUE}
+library(xtable)
+library(gt)
+library(gtsummary)
+df0 <- data.frame(Frequencia = 'Frequência', Atendimentos = df$Atendimentos)
+tbl <- tbl_summary(data = df0, by = Atendimentos, missing = "no",
+                   label = list(Atendimentos ~ "Atendimentos"),
+                   statistic = all_categorical() ~ "{n}",
+                   type = list(Atendimentos ~ "categorical"))
+tbl <- modify_header(x = tbl, label ~ "**Atendimentos**", all_stat_cols() ~ "**{level}**")
+tbl <- modify_table_styling(tbl, columns = everything(), text_format = "indent",
+                            undo_text_format = TRUE)
+tbl <- modify_table_styling(tbl, columns = everything(), align = "center")
+tbl <- modify_footnote(tbl, all_stat_cols() ~ NA)
+# tbl <- modify_spanning_header(tbl, all_stat_cols() ~ "**Atendimentos**")
+tbl <- remove_row_type(tbl, Frequencia, type = "header")
+# # show_header_names(tbl)
+tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
+  tab_options(table.font.size = "100%", table.border.top.color="#000000",
+              table.border.bottom.color = "#000000",
+              table.border.top.width = "1px",
+              table.border.bottom.width = "1px",
+              column_labels.border.top.color="#000000",
+              column_labels.border.bottom.color="#000000",
+              column_labels.border.top.width = "1px",
+              column_labels.border.bottom.width = "1px",
+              row_group.border.top.color = "#000000",
+              row_group.border.bottom.color = "#000000",
+              row_group.border.top.width = "1px",
+              row_group.border.bottom.width = "1px",
+              table_body.border.top.color = "#000000",
+              table_body.border.bottom.color = "#000000",
+              table_body.border.top.width = "1px",
+              table_body.border.bottom.width = "1px",
+              summary_row.border.color = "#000000",
+              summary_row.border.width = "1px",
+              table_body.hlines.color = "#000000",
+              table_body.hlines.width = "1px") %>%
+  cols_width(label ~ px(180), all_stat_cols() ~ px(50))
+```
+
+:::
+
+::: fragment
+
+<p></p>
+
+```{r, render=TRUE}
+library(xtable)
+library(gt)
+library(gtsummary)
+tbl <- tbl_summary(data = df, by = Atendimentos, missing = "no",
+                   label = list(Dia.Útil ~ "", Atendimentos ~ "Atendimentos"),
+                   statistic = all_categorical() ~ "{n}",
+                   type = list(Dia.Útil ~ "categorical", Atendimentos ~ "categorical"))
+tbl <- modify_header(x = tbl, label = "**Dia Útil**", all_stat_cols() ~ "**{level}**")
+tbl <- modify_table_styling(tbl, columns = everything(), text_format = "indent",
+                            undo_text_format = TRUE)
+tbl <- modify_table_styling(tbl, columns = everything(), align = "center")
+tbl <- modify_footnote(tbl, all_stat_cols() ~ NA)
+tbl <- modify_spanning_header(tbl, all_stat_cols() ~ "**Atendimentos**")
+tbl <- remove_row_type(tbl, Dia.Útil, type = "header")
+# show_header_names(tbl)
+tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
+  tab_options(table.font.size = "100%", table.border.top.color="#000000",
+              table.border.bottom.color = "#000000",
+              table.border.top.width = "1px",
+              table.border.bottom.width = "1px",
+              column_labels.border.top.color="#000000",
+              column_labels.border.bottom.color="#000000",
+              column_labels.border.top.width = "1px",
+              column_labels.border.bottom.width = "1px",
+              row_group.border.top.color = "#000000",
+              row_group.border.bottom.color = "#000000",
+              row_group.border.top.width = "1px",
+              row_group.border.bottom.width = "1px",
+              table_body.border.top.color = "#000000",
+              table_body.border.bottom.color = "#000000",
+              table_body.border.top.width = "1px",
+              table_body.border.bottom.width = "1px",
+              summary_row.border.color = "#000000",
+              summary_row.border.width = "1px",
+              table_body.hlines.color = "#000000",
+              table_body.hlines.width = "1px") %>%
+  cols_width(label ~ px(130), all_stat_cols() ~ px(50))
+```
+:::
+
+:::
+
+## Média e Variância
