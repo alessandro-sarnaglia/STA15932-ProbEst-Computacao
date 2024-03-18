@@ -27,6 +27,8 @@ filters:
 
 ### Programa
 
+[Voltar](../index.html)
+
 ::: incremental
 1.  Introdução e estatística descritiva;
 2.  Probabilidade de eventos;
@@ -473,7 +475,7 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
 Na última tabela, vimos que o número de ocorrências nos subgrupos `Dia Útil = Não` e `Dia Útil = Sim` são diferentes.
 
 ::: fragment
-[ **Importante:** ]{style="color: red;"} Se a diferença for muito grande, a comparação nos subgrupos fica comprometida.
+[**Importante:**]{style="color: red;"} Se a diferença for muito grande, a comparação nos subgrupos fica comprometida.
 :::
 
 ::: fragment
@@ -483,7 +485,7 @@ $$ em que $n_i$ é a frequência (absoluta) do $i$-ésimo valor e $n$ é o taman
 :::
 
 ::: fragment
-[ **Observação:** ]{style="color: blue;"} As frequências relativas podem ser apresentadas em percentual.
+[**Observação:**]{style="color: blue;"} As frequências relativas podem ser apresentadas em percentual.
 :::
 :::
 
@@ -583,8 +585,8 @@ Algumas observações importantes:
 
 ::: incremental
 -   Note que os totais da distribuição de frequências relativas correspondem a 100%;
--   Isso significa [ distribuição dos atendimentos por dia útil]{style="color:red;"};
--   Caso necessário, poderíamos calcular os percentuais por coluna. Nesse caso, teríamos a [ distribuição do dia útil por atendimentos]{style="color:red;"}.
+-   Isso significa [distribuição dos atendimentos por dia útil]{style="color:red;"};
+-   Caso necessário, poderíamos calcular os percentuais por coluna. Nesse caso, teríamos a [distribuição do dia útil por atendimentos]{style="color:red;"}.
 :::
 :::
 :::
