@@ -14,14 +14,12 @@ format:
     toc-expand: 2
     number-sections: true
     number-depth: 2
+    footer: "[Voltar 🔙](../index.html)"
     menu:
       useTextContentForMissingTitles: false
-    logo: figs/go-back.png
-    footer-logo-link: "../index.html"
 editor: visual
 filters:
   - parse-latex
-  - reveal-header
 ---
 
 # Programa e avaliações

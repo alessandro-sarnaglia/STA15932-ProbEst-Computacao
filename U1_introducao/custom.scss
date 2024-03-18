@@ -4,19 +4,6 @@ $presentation-heading-font: 'TTchocolates-reg', serif;
 $mainFont: 'TTchocolates-reg', serif;
 $font-family-monospace: 'TTchocolates-reg';
 
-/*-- scss:rules --*/
-
-.reveal .slide-logo {
-    display: block;
-    position: fixed;
-    bottom: 12px !important;
-    right: 12px;
-    max-height: 2.2rem;
-    height: 100%;
-    width: auto;
-    z-index: 2;
-}
-
 #title-slide .subtitle {
   text-align: center;
   font-family: TTchocolates-reg;
