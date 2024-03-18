@@ -8,6 +8,7 @@ format:
     fig-width: 5.5
     fig-height: 5.5
     theme: [custom.scss]
+    css: fonts.css
     toc: true
     toc-depth: 2
     toc-expand: 2
@@ -461,50 +462,36 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
 :::
 :::
 
-## {.unnumbered .unlisted}
+##  {.unnumbered .unlisted}
 
-### Distribuição de frequência relativa 
+### Distribuição de frequência relativa
 
 ::: panel-tabset
-
-## <span style="font-size:80%">Definição</span>
+## [Definição]{style="font-size:80%"}
 
 ::: {style="font-size:80%"}
-
 Na última tabela, vimos que o número de ocorrências nos subgrupos `Dia Útil = Não` e `Dia Útil = Sim` são diferentes.
 
 ::: fragment
-
-<span style="color: red;"> **Importante:** </span> Se a diferença for muito grande, a comparação nos subgrupos fica comprometida.
-
+[ **Importante:** ]{style="color: red;"} Se a diferença for muito grande, a comparação nos subgrupos fica comprometida.
 :::
 
 ::: fragment
-
-Nesse caso, devemos usar as frequências relativas:
-$$
+Nesse caso, devemos usar as frequências relativas: $$
 f_i = \frac{n_i}{n},
-$$
-em que $n_i$ é a frequência (absoluta) do $i$-ésimo valor e $n$ é o tamanho da amostra.
-
+$$ em que $n_i$ é a frequência (absoluta) do $i$-ésimo valor e $n$ é o tamanho da amostra.
 :::
 
 ::: fragment
-
-<span style="color: blue;"> **Observação:** </span> As frequências relativas podem ser apresentadas em percentual.
-
+[ **Observação:** ]{style="color: blue;"} As frequências relativas podem ser apresentadas em percentual.
+:::
 :::
 
-:::
-
-## <span style="font-size:80%">Exemplo anterior</span>
+## [Exemplo anterior]{style="font-size:80%"}
 
 ::: {style="font-size:70%"}
-
 ::: columns
-
 ::: {.column width="45%"}
-
 ```{r, render=TRUE}
 #| tbl-cap: Frequências absolutas
 library(xtable)
@@ -545,11 +532,9 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
               table_body.hlines.color = "#000000",
               table_body.hlines.width = "1px")
 ```
-
 :::
 
 ::: {.column width="55%"}
-
 ```{r, render=TRUE}
 #| tbl-cap: Frequências relativas (%)
 library(xtable)
@@ -591,21 +576,17 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
               table_body.hlines.color = "#000000",
               table_body.hlines.width = "1px")
 ```
-
 :::
-
 :::
 
 Algumas observações importantes:
 
 ::: incremental
 -   Note que os totais da distribuição de frequências relativas correspondem a 100%;
--   Isso significa <span style="color:red;"> distribuição dos atendimentos por dia útil</span>;
--   Caso necessário, poderíamos calcular os percentuais por coluna. Nesse caso, teríamos a <span style="color:red;"> distribuição do dia útil por atendimentos</span>.
+-   Isso significa [ distribuição dos atendimentos por dia útil]{style="color:red;"};
+-   Caso necessário, poderíamos calcular os percentuais por coluna. Nesse caso, teríamos a [ distribuição do dia útil por atendimentos]{style="color:red;"}.
 :::
-
 :::
-
 :::
 
 ## Média e Variância

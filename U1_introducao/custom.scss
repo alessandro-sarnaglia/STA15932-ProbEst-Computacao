@@ -1,27 +1,24 @@
 /*-- scss:defaults --*/
-
-@font-face {
-    font-family: 'TTchocolates';
-    src: url("/fonts/tt_chocolates/TT Chocolates Trial Regular.otf");
-}
-
-$font-family-monospace: 'TTchocolates';
+/*-- fonts --*/
+$presentation-heading-font: 'TTchocolates-reg', serif;
+$mainFont: 'TTchocolates-reg', serif;
+$font-family-monospace: 'TTchocolates-reg';
 
 /*-- scss:rules --*/
 
 #title-slide .subtitle {
   text-align: center;
-  font-family: TTchocolates;
+  font-family: TTchocolates-reg;
 }
 
 #title-slide .title{
   text-align: center;
-  font-family: TTchocolates;
+  font-family: TTchocolates-reg;
 }
 
 .reveal .slide *{
   text-align: justify;
-  font-family: TTchocolates;
+  font-family: TTchocolates-reg;
 }
 
 .quarto-figure {
