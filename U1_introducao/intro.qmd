@@ -91,7 +91,7 @@ Uma tarefa é executada várias vezes em um mesmo computador e os tempos de exec
 -   Realizar previsões com base em dados históricos.
 :::
 
-##  {.unnumbered .unlisted}
+##  {.unnumbered .unlisted .smaller}
 
 ### Exemplo - II
 
@@ -555,7 +555,7 @@ tbl <- modify_spanning_header(tbl, all_stat_cols() ~ "**Atendimentos**")
 tbl <- remove_row_type(tbl, Dia.Útil, type = "header")
 # show_header_names(tbl)
 tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
-  # cols_width(label ~ px(130), all_stat_cols() ~ px(50)) %>%
+  # cols_width(vars(label) ~ px(500), starts_with("stat") ~ px(100)) %>%
   tab_options(table.font.size = "100%", table.border.top.color="#000000",
               table.border.bottom.color = "#000000",
               table.border.top.width = "1px",
