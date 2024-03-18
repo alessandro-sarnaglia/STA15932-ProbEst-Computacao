@@ -368,8 +368,9 @@ kable(data.frame(names(table(df[,1])), as.numeric(table(df[,1]))),
 ```
 
 ::: fragment
+<p>
 
-<p></p>
+</p>
 
 ```{r, render=TRUE}
 library(xtable)
@@ -389,6 +390,7 @@ tbl <- modify_footnote(tbl, all_stat_cols() ~ NA)
 tbl <- remove_row_type(tbl, Frequencia, type = "header")
 # # show_header_names(tbl)
 tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
+  # cols_width(label ~ "180px", all_stat_cols() ~ "50px") %>%
   tab_options(table.font.size = "100%", table.border.top.color="#000000",
               table.border.bottom.color = "#000000",
               table.border.top.width = "1px",
@@ -408,15 +410,14 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
               summary_row.border.color = "#000000",
               summary_row.border.width = "1px",
               table_body.hlines.color = "#000000",
-              table_body.hlines.width = "1px") %>%
-  cols_width(label ~ px(180), all_stat_cols() ~ px(50))
+              table_body.hlines.width = "1px")
 ```
-
 :::
 
 ::: fragment
+<p>
 
-<p></p>
+</p>
 
 ```{r, render=TRUE}
 library(xtable)
@@ -435,6 +436,7 @@ tbl <- modify_spanning_header(tbl, all_stat_cols() ~ "**Atendimentos**")
 tbl <- remove_row_type(tbl, Dia.Útil, type = "header")
 # show_header_names(tbl)
 tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
+  # cols_width(label ~ px(130), all_stat_cols() ~ px(50)) %>%
   tab_options(table.font.size = "100%", table.border.top.color="#000000",
               table.border.bottom.color = "#000000",
               table.border.top.width = "1px",
@@ -454,9 +456,154 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
               summary_row.border.color = "#000000",
               summary_row.border.width = "1px",
               table_body.hlines.color = "#000000",
-              table_body.hlines.width = "1px") %>%
-  cols_width(label ~ px(130), all_stat_cols() ~ px(50))
+              table_body.hlines.width = "1px")
 ```
+:::
+:::
+
+## {.unnumbered .unlisted}
+
+### Distribuição de frequência relativa 
+
+::: panel-tabset
+
+## <span style="font-size:80%">Definição</span>
+
+::: {style="font-size:80%"}
+
+Na última tabela, vimos que o número de ocorrências nos subgrupos `Dia Útil = Não` e `Dia Útil = Sim` são diferentes.
+
+::: fragment
+
+<span style="color: red;"> **Importante:** </span> Se a diferença for muito grande, a comparação nos subgrupos fica comprometida.
+
+:::
+
+::: fragment
+
+Nesse caso, devemos usar as frequências relativas:
+$$
+f_i = \frac{n_i}{n},
+$$
+em que $n_i$ é a frequência (absoluta) do $i$-ésimo valor e $n$ é o tamanho da amostra.
+
+:::
+
+::: fragment
+
+<span style="color: blue;"> **Observação:** </span> As frequências relativas podem ser apresentadas em percentual.
+
+:::
+
+:::
+
+## <span style="font-size:80%">Exemplo anterior</span>
+
+::: {style="font-size:70%"}
+
+::: columns
+
+::: {.column width="45%"}
+
+```{r, render=TRUE}
+#| tbl-cap: Frequências absolutas
+library(xtable)
+library(gt)
+library(gtsummary)
+tbl <- tbl_summary(data = df, by = Atendimentos, missing = "no",
+                   label = list(Dia.Útil ~ "", Atendimentos ~ "Atendimentos"),
+                   statistic = all_categorical() ~ "{n}",
+                   type = list(Dia.Útil ~ "categorical", Atendimentos ~ "categorical"))
+tbl <- modify_header(x = tbl, label = "**Dia Útil**", all_stat_cols() ~ "**{level}**")
+tbl <- modify_table_styling(tbl, columns = everything(), text_format = "indent",
+                            undo_text_format = TRUE)
+tbl <- modify_table_styling(tbl, columns = everything(), align = "center")
+tbl <- modify_footnote(tbl, all_stat_cols() ~ NA)
+tbl <- modify_spanning_header(tbl, all_stat_cols() ~ "**Atendimentos**")
+tbl <- remove_row_type(tbl, Dia.Útil, type = "header")
+# show_header_names(tbl)
+tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
+  # cols_width(label ~ px(130), all_stat_cols() ~ px(50)) %>%
+  tab_options(table.font.size = "100%", table.border.top.color="#000000",
+              table.border.bottom.color = "#000000",
+              table.border.top.width = "1px",
+              table.border.bottom.width = "1px",
+              column_labels.border.top.color="#000000",
+              column_labels.border.bottom.color="#000000",
+              column_labels.border.top.width = "1px",
+              column_labels.border.bottom.width = "1px",
+              row_group.border.top.color = "#000000",
+              row_group.border.bottom.color = "#000000",
+              row_group.border.top.width = "1px",
+              row_group.border.bottom.width = "1px",
+              table_body.border.top.color = "#000000",
+              table_body.border.bottom.color = "#000000",
+              table_body.border.top.width = "1px",
+              table_body.border.bottom.width = "1px",
+              summary_row.border.color = "#000000",
+              summary_row.border.width = "1px",
+              table_body.hlines.color = "#000000",
+              table_body.hlines.width = "1px")
+```
+
+:::
+
+::: {.column width="55%"}
+
+```{r, render=TRUE}
+#| tbl-cap: Frequências relativas (%)
+library(xtable)
+library(gt)
+library(gtsummary)
+tbl <- tbl_summary(data = df, by = Atendimentos, missing = "no",
+                   label = list(Dia.Útil ~ "", Atendimentos ~ "Atendimentos"),
+                   statistic = all_categorical() ~ "{p}", percent = "row",
+                   digits = all_categorical() ~ 0,
+                   type = list(Dia.Útil ~ "categorical", Atendimentos ~ "categorical"))
+tbl <- modify_header(x = tbl, label = "**Dia Útil**", all_stat_cols() ~ "**{level}**")
+tbl <- modify_table_styling(tbl, columns = everything(), text_format = "indent",
+                            undo_text_format = TRUE)
+tbl <- modify_table_styling(tbl, columns = everything(), align = "center")
+tbl <- modify_footnote(tbl, all_stat_cols() ~ NA)
+tbl <- modify_spanning_header(tbl, all_stat_cols() ~ "**Atendimentos**")
+tbl <- remove_row_type(tbl, Dia.Útil, type = "header")
+# show_header_names(tbl)
+tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
+  # cols_width(label ~ px(130), all_stat_cols() ~ px(50)) %>%
+  tab_options(table.font.size = "100%", table.border.top.color="#000000",
+              table.border.bottom.color = "#000000",
+              table.border.top.width = "1px",
+              table.border.bottom.width = "1px",
+              column_labels.border.top.color="#000000",
+              column_labels.border.bottom.color="#000000",
+              column_labels.border.top.width = "1px",
+              column_labels.border.bottom.width = "1px",
+              row_group.border.top.color = "#000000",
+              row_group.border.bottom.color = "#000000",
+              row_group.border.top.width = "1px",
+              row_group.border.bottom.width = "1px",
+              table_body.border.top.color = "#000000",
+              table_body.border.bottom.color = "#000000",
+              table_body.border.top.width = "1px",
+              table_body.border.bottom.width = "1px",
+              summary_row.border.color = "#000000",
+              summary_row.border.width = "1px",
+              table_body.hlines.color = "#000000",
+              table_body.hlines.width = "1px")
+```
+
+:::
+
+:::
+
+Algumas observações importantes:
+
+::: incremental
+-   Note que os totais da distribuição de frequências relativas correspondem a 100%;
+-   Isso significa <span style="color:red;"> distribuição dos atendimentos por dia útil</span>;
+-   Caso necessário, poderíamos calcular os percentuais por coluna. Nesse caso, teríamos a <span style="color:red;"> distribuição do dia útil por atendimentos</span>.
+:::
+
 :::
 
 :::
