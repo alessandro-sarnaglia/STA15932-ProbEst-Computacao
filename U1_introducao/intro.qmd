@@ -22,6 +22,35 @@ filters:
   - parse-latex
 ---
 
+```{r}
+library(xtable)
+library(gt)
+library(gtsummary)
+tab_op <- function(tbl){
+  tab_options(data = tbl,
+              table.font.size = "100%", table.border.top.color="#000000",
+              table.border.bottom.color = "#000000",
+              table.border.top.width = "1px",
+              table.border.bottom.width = "1px",
+              column_labels.border.top.color="#000000",
+              column_labels.border.bottom.color="#000000",
+              column_labels.border.top.width = "1px",
+              column_labels.border.bottom.width = "1px",
+              row_group.border.top.color = "#000000",
+              row_group.border.bottom.color = "#000000",
+              row_group.border.top.width = "1px",
+              row_group.border.bottom.width = "1px",
+              table_body.border.top.color = "#000000",
+              table_body.border.bottom.color = "#000000",
+              table_body.border.top.width = "1px",
+              table_body.border.bottom.width = "1px",
+              summary_row.border.color = "#000000",
+              summary_row.border.width = "1px",
+              table_body.hlines.color = "#000000",
+              table_body.hlines.width = "1px")
+}
+```
+
 # Programa e avaliações
 
 ##  {.unnumbered .unlisted}
@@ -310,7 +339,7 @@ A distribuição de frequências:
 
 ##  {.unnumbered .unlisted .smaller}
 
-### Distribuição de frequência absoluta
+### Distribuição de frequências absolutas
 
 ::: panel-tabset
 ## Definição
@@ -362,7 +391,7 @@ df %>%
                            language=list(url='//cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json')))
 ```
 
-## Exemplo - Distribuição
+## Exemplo - Distribuições
 
 ```{r}
 kable(data.frame(names(table(df[,1])), as.numeric(table(df[,1]))),
@@ -375,9 +404,6 @@ kable(data.frame(names(table(df[,1])), as.numeric(table(df[,1]))),
 </p>
 
 ```{r, render=TRUE}
-library(xtable)
-library(gt)
-library(gtsummary)
 df0 <- data.frame(Frequencia = 'Frequência', Atendimentos = df$Atendimentos)
 tbl <- tbl_summary(data = df0, by = Atendimentos, missing = "no",
                    label = list(Atendimentos ~ "Atendimentos"),
@@ -393,26 +419,7 @@ tbl <- remove_row_type(tbl, Frequencia, type = "header")
 # # show_header_names(tbl)
 tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
   # cols_width(label ~ "180px", all_stat_cols() ~ "50px") %>%
-  tab_options(table.font.size = "100%", table.border.top.color="#000000",
-              table.border.bottom.color = "#000000",
-              table.border.top.width = "1px",
-              table.border.bottom.width = "1px",
-              column_labels.border.top.color="#000000",
-              column_labels.border.bottom.color="#000000",
-              column_labels.border.top.width = "1px",
-              column_labels.border.bottom.width = "1px",
-              row_group.border.top.color = "#000000",
-              row_group.border.bottom.color = "#000000",
-              row_group.border.top.width = "1px",
-              row_group.border.bottom.width = "1px",
-              table_body.border.top.color = "#000000",
-              table_body.border.bottom.color = "#000000",
-              table_body.border.top.width = "1px",
-              table_body.border.bottom.width = "1px",
-              summary_row.border.color = "#000000",
-              summary_row.border.width = "1px",
-              table_body.hlines.color = "#000000",
-              table_body.hlines.width = "1px")
+  tab_op()
 ```
 :::
 
@@ -422,9 +429,6 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
 </p>
 
 ```{r, render=TRUE}
-library(xtable)
-library(gt)
-library(gtsummary)
 tbl <- tbl_summary(data = df, by = Atendimentos, missing = "no",
                    label = list(Dia.Útil ~ "", Atendimentos ~ "Atendimentos"),
                    statistic = all_categorical() ~ "{n}",
@@ -439,33 +443,14 @@ tbl <- remove_row_type(tbl, Dia.Útil, type = "header")
 # show_header_names(tbl)
 tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
   # cols_width(label ~ px(130), all_stat_cols() ~ px(50)) %>%
-  tab_options(table.font.size = "100%", table.border.top.color="#000000",
-              table.border.bottom.color = "#000000",
-              table.border.top.width = "1px",
-              table.border.bottom.width = "1px",
-              column_labels.border.top.color="#000000",
-              column_labels.border.bottom.color="#000000",
-              column_labels.border.top.width = "1px",
-              column_labels.border.bottom.width = "1px",
-              row_group.border.top.color = "#000000",
-              row_group.border.bottom.color = "#000000",
-              row_group.border.top.width = "1px",
-              row_group.border.bottom.width = "1px",
-              table_body.border.top.color = "#000000",
-              table_body.border.bottom.color = "#000000",
-              table_body.border.top.width = "1px",
-              table_body.border.bottom.width = "1px",
-              summary_row.border.color = "#000000",
-              summary_row.border.width = "1px",
-              table_body.hlines.color = "#000000",
-              table_body.hlines.width = "1px")
+  tab_op()
 ```
 :::
 :::
 
 ##  {.unnumbered .unlisted}
 
-### Distribuição de frequência relativa
+### Distribuição de frequências relativas
 
 ::: panel-tabset
 ## [Definição]{style="font-size:80%"}
@@ -495,9 +480,6 @@ $$ em que $n_i$ é a frequência (absoluta) do $i$-ésimo valor e $n$ é o taman
 ::: {.column width="45%"}
 ```{r, render=TRUE}
 #| tbl-cap: Frequências absolutas
-library(xtable)
-library(gt)
-library(gtsummary)
 tbl <- tbl_summary(data = df, by = Atendimentos, missing = "no",
                    label = list(Dia.Útil ~ "", Atendimentos ~ "Atendimentos"),
                    statistic = all_categorical() ~ "{n}",
@@ -512,35 +494,13 @@ tbl <- remove_row_type(tbl, Dia.Útil, type = "header")
 # show_header_names(tbl)
 tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
   # cols_width(label ~ px(130), all_stat_cols() ~ px(50)) %>%
-  tab_options(table.font.size = "100%", table.border.top.color="#000000",
-              table.border.bottom.color = "#000000",
-              table.border.top.width = "1px",
-              table.border.bottom.width = "1px",
-              column_labels.border.top.color="#000000",
-              column_labels.border.bottom.color="#000000",
-              column_labels.border.top.width = "1px",
-              column_labels.border.bottom.width = "1px",
-              row_group.border.top.color = "#000000",
-              row_group.border.bottom.color = "#000000",
-              row_group.border.top.width = "1px",
-              row_group.border.bottom.width = "1px",
-              table_body.border.top.color = "#000000",
-              table_body.border.bottom.color = "#000000",
-              table_body.border.top.width = "1px",
-              table_body.border.bottom.width = "1px",
-              summary_row.border.color = "#000000",
-              summary_row.border.width = "1px",
-              table_body.hlines.color = "#000000",
-              table_body.hlines.width = "1px")
+  tab_op()
 ```
 :::
 
 ::: {.column width="55%"}
 ```{r, render=TRUE}
 #| tbl-cap: Frequências relativas (%)
-library(xtable)
-library(gt)
-library(gtsummary)
 tbl <- tbl_summary(data = df, by = Atendimentos, missing = "no",
                    label = list(Dia.Útil ~ "", Atendimentos ~ "Atendimentos"),
                    statistic = all_categorical() ~ "{p}", percent = "row",
@@ -556,26 +516,7 @@ tbl <- remove_row_type(tbl, Dia.Útil, type = "header")
 # show_header_names(tbl)
 tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
   # cols_width(vars(label) ~ px(500), starts_with("stat") ~ px(100)) %>%
-  tab_options(table.font.size = "100%", table.border.top.color="#000000",
-              table.border.bottom.color = "#000000",
-              table.border.top.width = "1px",
-              table.border.bottom.width = "1px",
-              column_labels.border.top.color="#000000",
-              column_labels.border.bottom.color="#000000",
-              column_labels.border.top.width = "1px",
-              column_labels.border.bottom.width = "1px",
-              row_group.border.top.color = "#000000",
-              row_group.border.bottom.color = "#000000",
-              row_group.border.top.width = "1px",
-              row_group.border.bottom.width = "1px",
-              table_body.border.top.color = "#000000",
-              table_body.border.bottom.color = "#000000",
-              table_body.border.top.width = "1px",
-              table_body.border.bottom.width = "1px",
-              summary_row.border.color = "#000000",
-              summary_row.border.width = "1px",
-              table_body.hlines.color = "#000000",
-              table_body.hlines.width = "1px")
+  tab_op()
 ```
 :::
 :::
@@ -589,5 +530,48 @@ Algumas observações importantes:
 :::
 :::
 :::
+
+##  {.unnumbered .unlisted}
+
+### Distribuição de frequências intervalares
+
+Nos casos em que temos pouca (ou nenhuma) repetição de valores, a distribuição de frequências não traz informação relevante.
+
+::: fragment
+Normalmente, esse fenômeno ocorre em variáveis quantitativas contínuas, mas também pode ocorrer nas discretas.
+:::
+
+::: fragment
+[**Alternativa:**]{style="color: blue;"} Considerar a frequência de **faixas** de valores, em vez dos valores propriamente ditos.
+:::
+
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequências intervalares - II
+
+[**O que são?**]{style="color: blue;"} As faixas são subintervalos, cuja união compreende todos valores observados da variável em questão e cuja as interseções 2 a 2 são vazias.
+
+::: fragment
+**Observações:**
+
+1.  A definição acima garante que todos valores observados pertençam **a uma e apenas uma** faixa;
+2.  As faixas também podem ser denominadas de **classes**.
+:::
+
+::: fragment
+[**Construção:**]{style="color: blue;"} Dada uma amostra $x_1, \ldots, x_n$ de tamanho $n$, para a construção de $k$ faixas $I_1, \ldots, I_k$, devemos:
+
+::: incremental
+1.  escolher $a_0 < a_k$, tais que $a_0 \leq x_1, \ldots, x_n \leq a_k$ [(intervalo abrangendo todos os dados)]{style="color: red;"};
+2.  determinar $a_1 < \ldots < a_{k-1} \in (a_0, a_k)$ [(limites das faixas)]{style="color: red;"};
+3.  tomar $$
+    I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.
+    $$
+:::
+:::
+
+##  {.unnumbered .unlisted}
+
+### Distribuição de frequências intervalares - III
 
 ## Média e Variância
