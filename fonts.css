@@ -4,6 +4,6 @@
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url("fonts/tt_chocolates/TT Chocolates Trial Regular.otf") format("opentype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url("./fonts/tt_chocolates/TT Chocolates Trial Regular.otf") format("opentype"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 

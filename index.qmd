@@ -4,7 +4,7 @@ author: "Prof. Dr. Alessandro JQ Sarnaglia"
 lang: "pt"
 format:
   html:
-    theme: ["custom.scss"]
+    theme: [custom.scss]
     css: fonts.css
     menu:
       useTextContentForMissingTitles: false

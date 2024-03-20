@@ -65,10 +65,13 @@ tab_op <- function(tbl){
 :::
 
 ::: fragment
-### Bibliografia
+::: {.callout-note icon="false"}
+## Bibliografia
 
--   DEVORE, Jay L. Probabilidade e estatística: para engenharia e ciências. São Paulo: Cengage Learning, 2012;
--   MORETTIN, Pedro Alberto; BUSSAB, Wilton de Oliveira. Estatística básica. 8ª ed. São Paulo: Saraiva, 2013.
+📚 DEVORE, Jay L. Probabilidade e estatística: para engenharia e ciências. São Paulo: Cengage Learning, 2012;
+
+📚 MORETTIN, Pedro Alberto; BUSSAB, Wilton de Oliveira. Estatística básica. 8ª ed. São Paulo: Saraiva, 2013.
+:::
 :::
 
 ##  {.unnumbered .unlisted}
@@ -545,7 +548,7 @@ Normalmente, esse fenômeno ocorre em variáveis quantitativas contínuas, mas t
 [**Alternativa:**]{style="color: blue;"} Considerar a frequência de **faixas** de valores, em vez dos valores propriamente ditos.
 :::
 
-##  {.unnumbered .unlisted .smaller}
+##  {.unnumbered .unlisted}
 
 ### Distribuição de frequências intervalares - II
 
@@ -558,20 +561,120 @@ Normalmente, esse fenômeno ocorre em variáveis quantitativas contínuas, mas t
 2.  As faixas também podem ser denominadas de **classes**.
 :::
 
-::: fragment
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequências intervalares - III
+
 [**Construção:**]{style="color: blue;"} Dada uma amostra $x_1, \ldots, x_n$ de tamanho $n$, para a construção de $k$ faixas $I_1, \ldots, I_k$, devemos:
 
 ::: incremental
 1.  escolher $a_0 < a_k$, tais que $a_0 \leq x_1, \ldots, x_n \leq a_k$ [(intervalo abrangendo todos os dados)]{style="color: red;"};
 2.  determinar $a_1 < \ldots < a_{k-1} \in (a_0, a_k)$ [(limites das faixas)]{style="color: red;"};
-3.  tomar $$
-    I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.
-    $$
-:::
+3.  tomar $$I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.$$
 :::
 
-##  {.unnumbered .unlisted}
+![](figs/construcao_classes_f6.png){fig-align="center"}
+
+##  {.unnumbered .unlisted .smaller}
 
 ### Distribuição de frequências intervalares - III
+
+[**Construção:**]{style="color: blue;"} Dada uma amostra $x_1, \ldots, x_n$ de tamanho $n$, para a construção de $k$ faixas $I_1, \ldots, I_k$, devemos:
+
+1.  escolher $a_0 < a_k$, tais que $a_0 \leq x_1, \ldots, x_n \leq a_k$ [(intervalo abrangendo todos os dados)]{style="color: red;"};
+2.  determinar $a_1 < \ldots < a_{k-1} \in (a_0, a_k)$ [(limites das faixas)]{style="color: red;"};
+3.  tomar $$I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.$$
+
+![](figs/construcao_classes_f5.png){fig-align="center"}
+
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequências intervalares - III
+
+[**Construção:**]{style="color: blue;"} Dada uma amostra $x_1, \ldots, x_n$ de tamanho $n$, para a construção de $k$ faixas $I_1, \ldots, I_k$, devemos:
+
+1.  escolher $a_0 < a_k$, tais que $a_0 \leq x_1, \ldots, x_n \leq a_k$ [(intervalo abrangendo todos os dados)]{style="color: red;"};
+2.  determinar $a_1 < \ldots < a_{k-1} \in (a_0, a_k)$ [(limites das faixas)]{style="color: red;"};
+3.  tomar $$I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.$$
+
+![](figs/construcao_classes_f4.png){fig-align="center"}
+
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequências intervalares - III
+
+[**Construção:**]{style="color: blue;"} Dada uma amostra $x_1, \ldots, x_n$ de tamanho $n$, para a construção de $k$ faixas $I_1, \ldots, I_k$, devemos:
+
+1.  escolher $a_0 < a_k$, tais que $a_0 \leq x_1, \ldots, x_n \leq a_k$ [(intervalo abrangendo todos os dados)]{style="color: red;"};
+2.  determinar $a_1 < \ldots < a_{k-1} \in (a_0, a_k)$ [(limites das faixas)]{style="color: red;"};
+3.  tomar $$I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.$$
+
+![](figs/construcao_classes_f3.png){fig-align="center"}
+
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequências intervalares - III
+
+[**Construção:**]{style="color: blue;"} Dada uma amostra $x_1, \ldots, x_n$ de tamanho $n$, para a construção de $k$ faixas $I_1, \ldots, I_k$, devemos:
+
+1.  escolher $a_0 < a_k$, tais que $a_0 \leq x_1, \ldots, x_n \leq a_k$ [(intervalo abrangendo todos os dados)]{style="color: red;"};
+2.  determinar $a_1 < \ldots < a_{k-1} \in (a_0, a_k)$ [(limites das faixas)]{style="color: red;"};
+3.  tomar $$I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.$$
+
+![](figs/construcao_classes_f2.png){fig-align="center"}
+
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequências intervalares - III
+
+[**Construção:**]{style="color: blue;"} Dada uma amostra $x_1, \ldots, x_n$ de tamanho $n$, para a construção de $k$ faixas $I_1, \ldots, I_k$, devemos:
+
+1.  escolher $a_0 < a_k$, tais que $a_0 \leq x_1, \ldots, x_n \leq a_k$ [(intervalo abrangendo todos os dados)]{style="color: red;"};
+2.  determinar $a_1 < \ldots < a_{k-1} \in (a_0, a_k)$ [(limites das faixas)]{style="color: red;"};
+3.  tomar $$I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.$$
+
+![](figs/construcao_classes_f1.png){fig-align="center"}
+
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequências intervalares - IV
+
+[**Observações:**]{style="color:blue;"}
+
+::: incremental
+1.  Note que $$\bigcup_{j=1}^kI_j = [a_0, a_k] \ \ \ \text{e} \ \ \ I_j\cap I_l = \emptyset, \ \forall i,j = 1,\ldots,k;$$
+2.  Sempre que possível, utilizar amplitudes iguais! Isto é, para $k$ fixo, fazer $h=\frac{a_k-a_0}{k}$ e $$I_1 = [a_0, a_0+h], \ \ I_2 = [a_0+h, a_0+2h], \ \ \ldots, \ \ I_1 = [a_0 + (k-1)h, a_0+kh];$$
+3.  Para o cálculo acima, precisamos do número de faixas $k$, Sturges (1926) sugere tomar $k = 1 + \text{3,322}\log_{10}(n)$, em que $n$ é o tamanho da amostra.
+:::
+
+::: fragment
+::: {.callout-note icon="false"}
+## Bibliografia
+
+📚 Sturges, H. A. (1926). The choice of a class interval. *Journal of the american statistical association*, 21(153), 65-66.
+:::
+:::
+
+##  {.unnumbered .unlisted .smaller}
+
+### Distribuição de frequências intervalares - V
+
+Há casos que o fenômeno impõe a necessidade de escolha de faixas desiguais.
+
+::: fragment
+[**Problema:**]{style="color:red;"} Nesses casos, a amplitude da faixa tem influencia na sua frequência. [Por exemplo, faixas muito grandes podem apresentar frequência muito alta, não pela região ter pontos muito frequentes, mas pelo fato de a região ser maior]{.fragment}
+:::
+
+::: fragment
+[**Alternativa:**]{style="color:blue;"} Utilizar a [densidade]{.underline} de frequência relativa. [A densidade da $j$-ésima faixa é definida por $$d_i = \frac{f_i}{h_i},$$em que $h_i = a_i-a_{i-1}$ é a amplitude da referida faixa.]{.fragment}
+:::
+
+::: fragment
+**Observação:** A densidade pode ser interpretada como a quantidade de frequência relativa por unidade da variável na respectiva faixa.
+:::
+
+##  {.unnumbered .unlisted .smaller}
+
+### Exemplo
 
 ## Média e Variância
