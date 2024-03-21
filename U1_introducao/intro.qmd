@@ -28,7 +28,8 @@ library(gt)
 library(gtsummary)
 tab_op <- function(tbl){
   tab_options(data = tbl,
-              table.font.size = "100%", table.border.top.color="#000000",
+              table.font.size = "100%",
+              table.border.top.color="#000000",
               table.border.bottom.color = "#000000",
               table.border.top.width = "1px",
               table.border.bottom.width = "1px",
@@ -68,9 +69,9 @@ tab_op <- function(tbl){
 ::: {.callout-note icon="false"}
 ## Bibliografia
 
-📚 DEVORE, Jay L. Probabilidade e estatística: para engenharia e ciências. São Paulo: Cengage Learning, 2012;
+📚 Devore, J. L., & Cordeiro, M. T. A. (2012). Probabilidade e estatística: para engenharia e ciências. São Paulo: Cengage Learning;
 
-📚 MORETTIN, Pedro Alberto; BUSSAB, Wilton de Oliveira. Estatística básica. 8ª ed. São Paulo: Saraiva, 2013.
+📚 Morettin, P. A., & Bussab, W. O. (2013). Estatística básica. São Paulo: Saraiva.
 :::
 :::
 
@@ -163,7 +164,7 @@ plot(t2, pch=19, xlab='', ylab='', ylim=range(t1, t2))
 mtext(text = 'Réplica', side = 1, line = 2); mtext(text = 'Tempo', side = 2, line = 2)
 ```
 
-##  {.unnumbered .unlisted}
+##  {.unnumbered .unlisted .smaller}
 
 ### Exemplo - III
 
@@ -398,15 +399,23 @@ df %>%
 
 ## Exemplo - Distribuições
 
+::: columns
+::: {.column width="55%"}
+
+::: fragment
+
 ```{r}
 kable(data.frame(names(table(df[,1])), as.numeric(table(df[,1]))),
       row.names = F, col.names=c('Dia Útil', 'Frequência'))
 ```
 
-::: fragment
+:::
+
 <p>
 
 </p>
+
+::: fragment
 
 ```{r, render=TRUE}
 df0 <- data.frame(Frequencia = 'Frequência', Atendimentos = factor(df$Atendimentos, levels = 0:max(atendimentos)))
@@ -428,10 +437,10 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
 ```
 :::
 
-::: fragment
-<p>
+::: 
 
-</p>
+::: {.column width="45%"}
+::: fragment
 
 ```{r, render=TRUE}
 tbl <- tbl_summary(data = df, by = Atendimentos, missing = "no",
@@ -451,6 +460,8 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
   tab_op()
 ```
 :::
+::: 
+::: 
 :::
 
 ##  {.unnumbered .unlisted}
@@ -464,7 +475,7 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
 Na última tabela, vimos que o número de ocorrências nos subgrupos `Dia Útil = Não` e `Dia Útil = Sim` são diferentes.
 
 ::: fragment
-[**Importante:**]{style="color: red;"} Se a diferença for muito grande, a comparação nos subgrupos fica comprometida.
+[**Importante:**]{style="color: red;"} Nesses casos, a comparação entre subgrupos é comprometida.
 :::
 
 ::: fragment
@@ -681,56 +692,11 @@ Há casos que o fenômeno impõe a necessidade de escolha de faixas desiguais.
 
 Exemplo de uma distribuição de frequências intervalar de dados fictícios:
 
-<p></p>
+<p>
 
-<table class="table-with-total-row">
-  <thead>
-    <tr>
-      <th style="border-right:1pt solid;">Renda</th>
-      <th>[$n_i$]{.fragment fragment-index=1}</th>
-      <th>[$f_i$]{.fragment fragment-index=2}</th>
-      <th>[$h_i$]{.fragment fragment-index=3 style="color:red;"}</th>
-      <th>[$d_i$]{.fragment fragment-index=4 style="color:blue;"}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="border-right:1pt solid;">$[0,1]$</td>
-      <td>[20]{.fragment fragment-index=1}</td>
-      <td>[0,4]{.fragment fragment-index=2}</td>
-      <td>[1]{.fragment fragment-index=3 style="color:red;"}</td>
-      <td>[0,4]{.fragment fragment-index=4 style="color:blue;"}</td>
-    </tr>
-    <tr>
-      <td style="border-right:1pt solid;">$(1,2]$</td>
-      <td>[10]{.fragment fragment-index=1}</td>
-      <td>[0,2]{.fragment fragment-index=2}</td>
-      <td>[1]{.fragment fragment-index=3 style="color:red;"}</td>
-      <td>[0,2]{.fragment fragment-index=4 style="color:blue;"}</td>
-    </tr>
-    <tr>
-      <td style="border-right:1pt solid;">$(2,6]$</td>
-      <td>[10]{.fragment fragment-index=1}</td>
-      <td>[0,2]{.fragment fragment-index=2}</td>
-      <td>[4]{.fragment fragment-index=3 style="color:red;"}</td>
-      <td>[0,05]{.fragment fragment-index=4 style="color:blue;"}</td>
-    </tr>
-    <tr>
-      <td style="border-right:1pt solid;">$(6,14]$</td>
-      <td>[10]{.fragment fragment-index=1}</td>
-      <td>[0,2]{.fragment fragment-index=2}</td>
-      <td>[8]{.fragment fragment-index=3 style="color:red;"}</td>
-      <td>[0,025]{.fragment fragment-index=4 style="color:blue;"}</td>
-    </tr>
-    <tr>
-      <td style="border-right:1pt solid;">Total</td>
-      <td>[50]{.fragment fragment-index=1}</td>
-      <td>[1]{.fragment fragment-index=2}</td>
-      <td>[14]{.fragment fragment-index=3 style="color:red;"}</td>
-      <td>[$---$]{.fragment fragment-index=4 style="color:blue;"}</td>
-    </tr>
-  </tbody>
-</table>
+</p>
+
+{{< include tab_exemplo.html >}}
 
 ::: fragment
 [**Observação:**]{style="color: blue;"} A frequência relativa 0,2:
@@ -747,16 +713,16 @@ Exemplo de uma distribuição de frequências intervalar de dados fictícios:
 ### Gráficos - Variáveis Quantitativas
 
 ::: panel-tabset
-
 ## Gráfico de Barras
+
 No caso de distribuições [não intervalares]{.underline}, utilizamos o gráficos de barras (verticais), também de chamado de colunas.
 
 [**Construção:**]{style="color: blue;"}
 
 ::: incremental
-1.    Desenhamos o plano cartesiano;
-2.    No eixo horizontal são posicionados os valores da variável;
-3.    A distribuição é representada por retângulos com alturas dadas pelas frequências relativas, posicionados sobre os respectivos valores.
+1.  Desenhamos o plano cartesiano;
+2.  No eixo horizontal são posicionados os valores da variável;
+3.  A distribuição é representada por retângulos com alturas dadas pelas frequências relativas, posicionados sobre os respectivos valores.
 :::
 
 ::: fragment
@@ -764,20 +730,21 @@ No caso de distribuições [não intervalares]{.underline}, utilizamos o gráfic
 :::
 
 ::: incremental
-1.    Os retângulos devem ter bases iguais e devem ser separados por distâncias iguais.
-2.    Devemos apresentar Valores intermediários com frequência zero.
-3.    Pode ser utilizado para qualitativas ordinais [(para nominais usamos o gráfico de setores, ou de pizza)]{style="color:red; "}
+1.  Os retângulos devem ter bases iguais e devem ser separados por distâncias iguais.
+2.  Devemos apresentar Valores intermediários com frequência zero.
+3.  Pode ser utilizado para qualitativas ordinais [(para nominais usamos o gráfico de setores, ou de pizza)]{style="color:red; "}
 :::
 
 ## Histograma
+
 No caso de distribuições [intervalares]{.underline}, utilizamos o histograma.
 
 [**Construção:**]{style="color: blue;"}
 
 ::: incremental
-1.    Desenhamos o plano cartesiano;
-2.    No eixo horizontal são posicionadas as faixas de valores da variável;
-3.    A distribuição é representada por retângulos com alturas dadas pelas densidades, posicionados sobre as respectivas faixas.
+1.  Desenhamos o plano cartesiano;
+2.  No eixo horizontal são posicionadas as faixas de valores da variável;
+3.  A distribuição é representada por retângulos com alturas dadas pelas densidades, posicionados sobre as respectivas faixas.
 :::
 
 ::: fragment
@@ -785,10 +752,9 @@ No caso de distribuições [intervalares]{.underline}, utilizamos o histograma.
 :::
 
 ::: incremental
-1.    Parecido com o gráfico de barras, mas os retângulos se tocam [(para ressaltar a continuidade)]{style="color:red;"};
-2.    Área total dos gráficos (soma das áreas dos retângulos é sempre 1).
+1.  Parecido com o gráfico de barras, mas os retângulos se tocam [(para ressaltar a continuidade)]{style="color:red;"};
+2.  Área total dos gráficos (soma das áreas dos retângulos é sempre 1).
 :::
-
 :::
 
 ##  {.unnumbered .unlisted .smaller}
@@ -796,7 +762,6 @@ No caso de distribuições [intervalares]{.underline}, utilizamos o histograma.
 ### Exemplo - Distribuição Não Intervalar
 
 ::: columns
-
 ::: {.column width="50%"}
 ```{r, render=TRUE}
 barplot(prop.table(table(factor(atendimentos, levels = 0:max(atendimentos)))),
@@ -812,7 +777,6 @@ barplot(prop.table(table('Dia Útil' = df[,1],
 legend('top', legend = c("Não", "Sim"), horiz = TRUE, fill = c('blue', 'red'))
 ```
 :::
-
 :::
 
 ##  {.unnumbered .unlisted .smaller}
@@ -820,7 +784,6 @@ legend('top', legend = c("Não", "Sim"), horiz = TRUE, fill = c('blue', 'red'))
 ### Exemplo - Distribuição Intervalar
 
 ::: columns
-
 ::: {.fragment .column width="50%"}
 ```{r, render=TRUE, fig.width=6, fig.height=4}
 
@@ -846,7 +809,6 @@ plot(0, type='n', xlim=range(brs), ylim=c(0,max(frs, dss)), xlab='Renda', ylab='
 rect(xleft = brs[-5], ybottom = 0, xright = brs[-1], ytop = dss, col = 'gray')
 ```
 :::
-
 :::
 
 ##  {.unnumbered .unlisted .smaller}
@@ -877,7 +839,11 @@ dss <- frs/diff(brs)
 plot(0, type='n', xlim=range(brs), ylim=c(0,max(frs, dss)), xlab='Renda', ylab='Densidade',
      frame.plot=F, axes=T)
 rect(xleft = brs[-5], ybottom = 0, xright = brs[-1], ytop = dss, col = 'gray')
-rect(xleft = c(1.5, 2), ybottom = 0, xright = c(2, 3), ytop = dss[2:3], col = 'orange')
+rect(xleft = c(1.5, 2), ybottom = 0, xright = c(2, 3), ytop = dss[2:3], col = 'orange', border = NA)
+lines(x=c(1.5, 1.5), y = c(0, dss[2]), lty='dotted')
+lines(x=c(3, 3), y = c(0, dss[3]), lty='dotted')
+lines(x=c(1.5, 2, 2, 1.5), y = c(dss[2], dss[2], 0, 0))
+lines(x=c(3, 2, 2, 3), y = c(0, 0, dss[3], dss[3]))
 ```
 
 ##  {.unnumbered .unlisted .smaller}
@@ -893,11 +859,14 @@ dss <- frs/diff(brs)
 plot(0, type='n', xlim=range(brs), ylim=c(0,max(frs, dss)), xlab='Renda', ylab='Densidade',
      frame.plot=F, axes=T)
 rect(xleft = brs[-5], ybottom = 0, xright = brs[-1], ytop = dss, col = 'gray')
-rect(xleft = c(1.5, 2), ybottom = 0, xright = c(2, 3), ytop = dss[2:3], col = 'orange')
-arrows(x0 = 6, y0 = .2, x1 = 2, y1 = .025, length = .15)
-text(x = 6, y = .2, labels = "Frequência estimada de (1.5, 3]", pos=4)
+rect(xleft = c(1.5, 2), ybottom = 0, xright = c(2, 3), ytop = dss[2:3], col = 'orange', border = NA)
+lines(x=c(1.5, 1.5), y = c(0, dss[2]), lty='dotted')
+lines(x=c(3, 3), y = c(0, dss[3]), lty='dotted')
+lines(x=c(1.5, 2, 2, 1.5), y = c(dss[2], dss[2], 0, 0))
+lines(x=c(3, 2, 2, 3), y = c(0, 0, dss[3], dss[3]))
+arrows(x0 = 6, y0 = .2, x1 = 2.2, y1 = .025, length = .07)
+text(x = 6, y = .2, labels = "Frequência estimada em (1.5, 3]", pos=4)
 ```
-
 
 ## Média e Variância
 
@@ -914,9 +883,16 @@ As principais características são:
 
 ::: fragment
 As medidas que estudaremos aqui são:
-::: 
+:::
 
 ::: incremental
 -   a média ([medida de tendência central]{style="color:red; "});
 -   e a variância e o desvio-padrão ([medidas de dispersão]{style="color:red; "}).
-::: 
+:::
+
+##  {.unnumbered .unlisted .smaller}
+
+### Média
+
+
+
