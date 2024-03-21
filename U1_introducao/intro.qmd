@@ -894,5 +894,7 @@ As medidas que estudaremos aqui são:
 
 ### Média
 
+A média é uma medida que visa descrever um valor cujas observações de uma variável "tendem" a apresentar.
+
 
 
