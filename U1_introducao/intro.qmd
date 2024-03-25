@@ -861,18 +861,18 @@ text(x = 6, y = .2, labels = "Frequência estimada em (1.5, 3]", pos=4)
 
 Muitas vezes, desejamos evidenciar algumas características dos dados por meio de medidas numéricas.
 
-::: fragment
+::: {.fragment fragment-index="1"}
 Dada uma amostra $x_1, \ldots, x_n$, utilizar uma função $t(x_1, \ldots, x_n)$ para quantificar algum comportamento dos dados.
 :::
 
-::: fragment
+::: {.fragment fragment-index="2"}
 As principais características são:
 :::
 
-::: incremental
--   tendência central da variável [$\Rightarrow$ [Exemplos: média, mediana e moda;]{style="color:red; "}]{.fragment}
--   dispersão da variável [$\Rightarrow$ [Exemplos: variância e desvio-padrão.]{style="color:red; "}]{.fragment}
-:::
+<ul>
+  <li class=fragment fragment-index="3">tendência central da variável $\Rightarrow$ [Exemplos: média, mediana e moda;]{style="color:red; "}</li>
+  <li class=fragment fragment-index="4">dispersão da variável $\Rightarrow$ [Exemplos: variância e desvio-padrão.]{style="color:red; "}</li>
+</ul>
 
 ##  {.unnumbered .unlisted}
 
@@ -880,15 +880,20 @@ As principais características são:
 
 Buscam indicar um valor "típico" ou "representativo" dos dados em questão;
 
-::: fragment
+::: {.fragment fragment-index="1"}
 O que seria valor "típico"?
 :::
 
-::: incremental
--   ponto de equilíbrio dos dados [$\Rightarrow$ [média (aritmética);]{style="color:red; "}]{.fragment}
--   ponto central dos dados [$\Rightarrow$ [mediana;]{style="color:red; "}]{.fragment}
--   ponto de alta frequência [$\Rightarrow$ [moda;]{style="color:red; "}]{.fragment}
+<ul>
+  <li class=fragment fragment-index="2">ponto de equilíbrio dos dados $\Rightarrow$ [média (aritmética);]{style="color:red; "}</li>
+  <li class=fragment fragment-index="3">ponto central dos dados $\Rightarrow$ [mediana;]{style="color:red; "}</li>
+  <li class=fragment fragment-index="4">ponto de alta frequência $\Rightarrow$ [moda;]{style="color:red; "}</li>
+</ul>
+
+::: {.fragment fragment-index="5"}
+Discutiremos apenas a média!
 :::
+
 
 ##  {.unnumbered .unlisted .smaller}
 
@@ -958,7 +963,7 @@ $x_k^*$        & $n_k$         & $f_k$        \\
 
 ### Média (Aritmética)
 
-E se os dados estivessem representados apenas por meio de distribuições intervalares? [[Nesse caso não temos mais acesso as "observações originais"!]{.fragment .highlight-current-red fragment-index="1"}]{.fragment fragment-index="1"}
+E se os dados estivessem representados apenas por meio de distribuições intervalares? [Nesse caso não temos mais acesso as "observações originais"!]{.fragment .highlight-current-red fragment-index="1"}
 
 ::: fragment
 [**Alternativa:**]{style="color:blue; "} Substituir todas observações de uma faixa pelo seu respectivo ponto médio.
@@ -1014,7 +1019,6 @@ O uso de medidas de tendência central para representar a localização dos dado
 
 ![](figs/media_nao_traz_todas_info_f2.png)
 
-
 ##  {.unnumbered .unlisted}
 
 ### Variância
@@ -1041,10 +1045,152 @@ O uso de medidas de tendência central para representar a localização dos dado
 
 ### Variância
 
-[**Ideia:**]{style="color:blue; "} Medir quanto as observações se distanciam "em média" de alguma medida de tendência central de referência[, como a média dos dados]{.fragment}
-
-
+[**Ideia:**]{style="color:blue; "} Medir quanto as observações se desviam "em média" de alguma medida de tendência central de referência [(por exemplo, a média dos dados).]{.fragment style="color:red; "}
 
 ##  {.unnumbered .unlisted}
 
+### Variância
+
+[**Ideia:**]{style="color:blue; "} Medir quanto as observações se desviam "em média" de alguma medida de tendência central de referência (por exemplo, a média dos dados).
+
+![](figs/ilustracao_variancia_f4.png)
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+[**Ideia:**]{style="color:blue; "} Medir quanto as observações se desviam "em média" de alguma medida de tendência central de referência (por exemplo, a média dos dados).
+
+![](figs/ilustracao_variancia_f3.png)
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+[**Ideia:**]{style="color:blue; "} Medir quanto as observações se desviam "em média" de alguma medida de tendência central de referência (por exemplo, a média dos dados).
+
+![](figs/ilustracao_variancia_f2.png)
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+[**Ideia:**]{style="color:blue; "} Medir quanto as observações se desviam "em média" de alguma medida de tendência central de referência (por exemplo, a média dos dados).
+
+![](figs/ilustracao_variancia_f1.png)
+
+##  {.unnumbered .unlisted .smaller}
+
+### Variância
+
+Seja $d_i = x_i - \bar{x}$ o desvio entre a $i$-ésima observação e a média da amostra, $i = 1, \ldots, n$.
+
+::: fragment
+
+Note que $\bar{d} = \frac{1}{n} \sum_{i=1}^d d_i$ sempre resultará em $\bar{d} = 0$. [Os desvios positivos são cancelados pelos negativos.]{.fragment style="color:red; "}
+
+:::
+
+::: fragment
+
+Uma opção é considerar apenas a magnitude, não levando em conta o sentido dos desvios. [Podemos tomar $|d_i|$ ou $d_i^2$, por exemplo.]{.fragment style="color:red; "}
+
+:::
+
+::: fragment
+
+**Definição:** As variâncias populacional e amostral são definidas, respectivamente, por
+$$\sigma^2 = \frac{1}{n} \sum_{i=1}^n d_i^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})^2 \class{fragment}{= \frac{\sum_ix_i^2 - n\bar{x}^2}{n}}$$
+e
+$$s^2 = \frac{1}{n-1} \sum_{i=1}^n d_i^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2 \class{fragment}{= \frac{\sum_ix_i^2 - n\bar{x}^2}{n-1}.}$$
+
+:::
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+![](figs/ilustracao_variancia_f1.png)
+
+
+:::fragment
+
+No exemplo acima, supondo que estamos lidando com amostras, temos que:
+
+::: incremental
+
+-   nos dados azuis: $\sum_i d_i^2 = 3\text{,}5 \Rightarrow s^2 = \frac{3\text{,}5}{6-1} = 0\text{,}7;$
+-   nos dados vermelhos: $\sum_i d_i^2 = 14 \Rightarrow s^2 = \frac{14}{6-1} = 2\text{,}8;$
+:::
+
+:::
+
+##  {.unnumbered .unlisted .smaller}
+
+### Variância
+
+Para dados apresentados em distribuição de frequência não intervalar, as variâncias populacional e amostral são calculadas, respectivamente, como
+$$\sigma^2 = \frac{1}{n} \sum_{i=1}^k n_i(x_i^* - \bar{x})^2 = \frac{\sum_in_ix_i^{*2} - n\bar{x}^2}{n}$$
+e
+$$s^2 = \frac{1}{n-1} \sum_{i=1}^k n_i(x_i^* - \bar{x})^2 = \frac{\sum_in_ix_i^{*2} - n\bar{x}^2}{n-1}.$$
+
+##  {.unnumbered .unlisted .smaller}
+
+### Variância
+
+Se os dados estão apresentados em distribuição intervalar, então fazemos as seguintes aproximações:
+$$\sigma^2 \approx \frac{1}{n} \sum_{i=1}^k n_i(x_i^{(m)} - \bar{x})^2 = \frac{\sum_in_ix_i^{(m)2} - n\bar{x}^2}{n}$$
+e
+$$s^2 \approx \frac{1}{n-1} \sum_{i=1}^k n_i(x_i^{(m)} - \bar{x})^2 = \frac{\sum_in_ix_i^{(m)2} - n\bar{x}^2}{n-1},$$
+em que $x_i^{(m)} = \frac{a_{i-1} + a_i}{2}$ é o ponto médio da $i$-ésima faixa $(a_{i-1}, a_i]$.
+
+
+##  {.unnumbered .unlisted .smaller}
+
 ### Desvio-padrão
+
+[**Problema:**]{style="color:red; "} A variância é expressa na unidade de medida dos dados ao quadrado.
+
+::: fragment
+
+Por exemplo: dados em $m$, variância em $m^2$.
+
+:::
+
+::: fragment
+
+Para contornar esse problema, definimos o desvio-padrão [(raiz quadrada da variância)]{style="color:blue; "}.
+
+:::
+
+::: fragment
+
+**Definição:** Os desvios-padrão populacional e amostral são definidos, respectivamente, por
+$$\sigma = \sqrt{\sigma^2} \ \ \ \ \ \text{e} \ \ \ \ \ s = \sqrt{s^2}.$$
+
+:::
+
+::: fragment
+
+No exemplo anterior, temos $s = \sqrt{0\text{,}7} = 0\text{,}837$ ([azul]{style="color:blue;"}) e $s = \sqrt{2\text{,}8} = 1\text{,}774$ ([vermelho]{style="color:red;"}).
+
+:::
+
+::: fragment
+
+[**Importante:**]{style="color:blue; "} Se $y_i = ax_i$, $i=1, \ldots, n$, então
+
+::: incremental
+
+-   as variâncias satisfazem $\sigma^2_y =  a^2\sigma^2_x$ e $s^2_y =  a^2s^2_x$;
+-   e os desvios-padrão satisfazem $\sigma_y =  a\sigma_x$ e $s_y =  as_x$.
+
+:::
+
+:::
+
+::: {.fragment style="color:red;"}
+Isso foi exatamente o que aconteceu na amostra do exemplo!!
+:::
+
+# FIM {.unnumbered .unlisted}

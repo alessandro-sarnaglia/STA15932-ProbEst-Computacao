@@ -8,7 +8,7 @@
 <link href="intro_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="intro_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="intro_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia">
   <title>Probabilidade e Estatística</title>
@@ -157,7 +157,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -320,16 +321,24 @@
       margin-right: 0; 
     }
   </style>
-  
   <script src="intro_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
   <link href="intro_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-  <script src="intro_files/libs/datatables-binding-0.30/datatables.js"></script>
+
+  <script src="intro_files/libs/datatables-binding-0.32/datatables.js"></script>
+
   <script src="intro_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="intro_files/libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet">
-  <link href="intro_files/libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet">
-  <script src="intro_files/libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
-  <link href="intro_files/libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-  <script src="intro_files/libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+  <link href="intro_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <link href="intro_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+  <script src="intro_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <link href="intro_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+  <script src="intro_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -453,27 +462,39 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <h2></h2>
 <h3 id="exemplo---ii">Exemplo - II</h3>
 <p>Veja abaixo 15 réplicas do tempo necessário para ordenar <span class="math inline">\(n\)</span> observações, com: (esquerda) <span class="math inline">\(n=100000\)</span> fixo; (direita) <span class="math inline">\(n=100000r\)</span> para a réplica <span class="math inline">\(r\)</span>.</p>
-<div id="fig-ex1" class="cell quarto-layout-panel" data-fig.asp="0.8">
-<figure>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-ex1-1" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="intro_files/figure-revealjs/fig-ex1-1.png" data-ref-parent="fig-ex1" width="432"></p>
-<figcaption>(a) <span class="math inline">\(n\)</span> fixo</figcaption>
+<div id="fig-ex1" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-ex1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ex1" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-ex1-1" class="quarto-figure quarto-figure-center quarto-float" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-ex1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="intro_files/figure-revealjs/fig-ex1-1.png" class="quarto-figure quarto-figure-center" data-ref-parent="fig-ex1" width="432">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ex1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) <span class="math inline">\(n\)</span> fixo
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
-<div id="fig-ex1-2" class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="intro_files/figure-revealjs/fig-ex1-2.png" data-ref-parent="fig-ex1" width="432"></p>
-<figcaption>(b) <span class="math inline">\(n\)</span> crescente</figcaption>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ex1" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-ex1-2" class="quarto-figure quarto-figure-center quarto-float" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig">
+<div aria-describedby="fig-ex1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="intro_files/figure-revealjs/fig-ex1-2.png" class="quarto-figure quarto-figure-center" data-ref-parent="fig-ex1" width="432">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ex1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) <span class="math inline">\(n\)</span> crescente
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption>Figura&nbsp;1: Tempo de ordenação de uma amostra</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ex1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Tempo de ordenação de uma amostra
+</figcaption>
 </figure>
 </div>
 </section>
@@ -481,7 +502,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <h2></h2>
 <h3 id="exemplo---iii">Exemplo - III</h3>
 <div class="fragment">
-<p>A <a href="#/section-3">Fig&nbsp;1 (a)</a> nos mostra que:</p>
+<p>A <a href="#/section-3" class="quarto-xref">Fig&nbsp;1 (a)</a> nos mostra que:</p>
 <div>
 <ul>
 <li class="fragment">o tempo de execução tende a apresentar valores em torno de uma quantidade fixa;</li>
@@ -490,7 +511,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </div>
 <div class="fragment">
-<p>Já a <a href="#/section-3">Fig&nbsp;1 (b)</a> sugere que:</p>
+<p>Já a <a href="#/section-3" class="quarto-xref">Fig&nbsp;1 (b)</a> sugere que:</p>
 <div>
 <ul>
 <li class="fragment">não há “estacionariedade”, não fazendo sentido falar em um único valor de tendência central!</li>
@@ -502,7 +523,9 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <section id="processo-estatístico" class="slide level2" data-number="2.2">
 <h2><span class="header-section-number">2.2</span> Processo estatístico</h2>
 
-<img data-src="figs/etapas_est_estat.png" class="r-stretch quarto-figure-center"><p class="caption">Figura&nbsp;2: Ilustração do processo estatístico</p></section></section>
+<img data-src="figs/etapas_est_estat.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">
+Figura&nbsp;2: Ilustração do processo estatístico
+</p></section></section>
 <section>
 <section id="estatística-descritiva" class="title-slide slide level1 center" data-number="3">
 <h1><span class="header-section-number">3</span> Estatística Descritiva</h1>
@@ -559,7 +582,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="figs/variaveis.png"></p>
+<p><img data-src="figs/variaveis.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
@@ -737,9 +760,8 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <div id="tabset-1-2">
 <div class="cell">
 <div class="cell-output-display">
-
 <div class="datatables html-widget html-fill-item" id="htmlwidget-15d57b02475cc800728c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-15d57b02475cc800728c">{"x":{"filter":"none","vertical":false,"data":[["Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não"],["8","7","9","7","7","8","8","8","8","6","9","8","6","7","9","9","9","9","8","10","8","7","9","7","7","8","8","8","8","8","8","8","9","7","9","8","10","8","6","7","8","8","8","10","8","8","8","9","7","8","0","1","1","0","3","1","0","0","1","0","0","0","0","2","1","2","1","1","0","1"]],"container":"<table class=\"nowrap\">\n  <thead>\n    <tr>\n      <th>Dia Útil<\/th>\n      <th>Atendimentos<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthChange":false,"pageLength":5,"language":{"url":"//cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json"},"columnDefs":[],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-15d57b02475cc800728c">{"x":{"filter":"none","vertical":false,"data":[["Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Sim","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não","Não"],["8","7","9","7","7","8","8","8","8","6","9","8","6","7","9","9","9","9","8","10","8","7","9","7","7","8","8","8","8","8","8","8","9","7","9","8","10","8","6","7","8","8","8","10","8","8","8","9","7","8","0","1","1","0","3","1","0","0","1","0","0","0","0","2","1","2","1","1","0","1"]],"container":"<table class=\"nowrap\">\n  <thead>\n    <tr>\n      <th>Dia Útil<\/th>\n      <th>Atendimentos<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"lengthChange":false,"pageLength":5,"language":{"url":"//cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json"},"columnDefs":[{"name":"Dia.Útil","targets":0},{"name":"Atendimentos","targets":1}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -775,7 +797,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-
+<div>
 <div id="vvchiasmdy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#vvchiasmdy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1216,40 +1238,43 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>Atendimentos</strong>"><strong>Atendimentos</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>0</strong>"><strong>0</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>1</strong>"><strong>1</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>2</strong>"><strong>2</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>3</strong>"><strong>3</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>4</strong>"><strong>4</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>5</strong>"><strong>5</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>6</strong>"><strong>6</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>7</strong>"><strong>7</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>8</strong>"><strong>8</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>9</strong>"><strong>9</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>10</strong>"><strong>10</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_center" style="font-weight: bold;">Frequência</td>
-<td headers="stat_1" class="gt_row gt_center">9</td>
-<td headers="stat_2" class="gt_row gt_center">8</td>
-<td headers="stat_3" class="gt_row gt_center">2</td>
-<td headers="stat_4" class="gt_row gt_center">1</td>
-<td headers="stat_5" class="gt_row gt_center">0</td>
-<td headers="stat_6" class="gt_row gt_center">0</td>
-<td headers="stat_7" class="gt_row gt_center">3</td>
-<td headers="stat_8" class="gt_row gt_center">10</td>
-<td headers="stat_9" class="gt_row gt_center">24</td>
-<td headers="stat_10" class="gt_row gt_center">10</td>
-<td headers="stat_11" class="gt_row gt_center">3</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="<strong>Atendimentos</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Atendimentos</strong></th>
+<th id="<strong>0</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong></th>
+<th id="<strong>1</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong></th>
+<th id="<strong>2</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>2</strong></th>
+<th id="<strong>3</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>3</strong></th>
+<th id="<strong>4</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>4</strong></th>
+<th id="<strong>5</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>5</strong></th>
+<th id="<strong>6</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>6</strong></th>
+<th id="<strong>7</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>7</strong></th>
+<th id="<strong>8</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>8</strong></th>
+<th id="<strong>9</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>9</strong></th>
+<th id="<strong>10</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>10</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="label" style="font-weight: bold">Frequência</td>
+<td class="gt_row gt_center" headers="stat_1">9</td>
+<td class="gt_row gt_center" headers="stat_2">8</td>
+<td class="gt_row gt_center" headers="stat_3">2</td>
+<td class="gt_row gt_center" headers="stat_4">1</td>
+<td class="gt_row gt_center" headers="stat_5">0</td>
+<td class="gt_row gt_center" headers="stat_6">0</td>
+<td class="gt_row gt_center" headers="stat_7">3</td>
+<td class="gt_row gt_center" headers="stat_8">10</td>
+<td class="gt_row gt_center" headers="stat_9">24</td>
+<td class="gt_row gt_center" headers="stat_10">10</td>
+<td class="gt_row gt_center" headers="stat_11">3</td>
+</tr>
+</tbody>
 </table>
+
+</div>
 </div>
 </div>
 </div>
@@ -1258,24 +1283,24 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="qgcpbqmqad" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qgcpbqmqad table {
+<div>
+<div id="lgqpfdymje" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lgqpfdymje table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qgcpbqmqad thead, #qgcpbqmqad tbody, #qgcpbqmqad tfoot, #qgcpbqmqad tr, #qgcpbqmqad td, #qgcpbqmqad th {
+#lgqpfdymje thead, #lgqpfdymje tbody, #lgqpfdymje tfoot, #lgqpfdymje tr, #lgqpfdymje td, #lgqpfdymje th {
   border-style: none;
 }
 
-#qgcpbqmqad p {
+#lgqpfdymje p {
   margin: 0;
   padding: 0;
 }
 
-#qgcpbqmqad .gt_table {
+#lgqpfdymje .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1301,12 +1326,12 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-left-color: #D3D3D3;
 }
 
-#qgcpbqmqad .gt_caption {
+#lgqpfdymje .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qgcpbqmqad .gt_title {
+#lgqpfdymje .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1318,7 +1343,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-bottom-width: 0;
 }
 
-#qgcpbqmqad .gt_subtitle {
+#lgqpfdymje .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1330,7 +1355,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-top-width: 0;
 }
 
-#qgcpbqmqad .gt_heading {
+#lgqpfdymje .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1342,13 +1367,13 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-right-color: #D3D3D3;
 }
 
-#qgcpbqmqad .gt_bottom_border {
+#lgqpfdymje .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qgcpbqmqad .gt_col_headings {
+#lgqpfdymje .gt_col_headings {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #000000;
@@ -1363,7 +1388,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-right-color: #D3D3D3;
 }
 
-#qgcpbqmqad .gt_col_heading {
+#lgqpfdymje .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1383,7 +1408,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   overflow-x: hidden;
 }
 
-#qgcpbqmqad .gt_column_spanner_outer {
+#lgqpfdymje .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1395,15 +1420,15 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   padding-right: 4px;
 }
 
-#qgcpbqmqad .gt_column_spanner_outer:first-child {
+#lgqpfdymje .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qgcpbqmqad .gt_column_spanner_outer:last-child {
+#lgqpfdymje .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qgcpbqmqad .gt_column_spanner {
+#lgqpfdymje .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #000000;
@@ -1415,11 +1440,11 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   width: 100%;
 }
 
-#qgcpbqmqad .gt_spanner_row {
+#lgqpfdymje .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qgcpbqmqad .gt_group_heading {
+#lgqpfdymje .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1445,7 +1470,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   text-align: left;
 }
 
-#qgcpbqmqad .gt_empty_group_heading {
+#lgqpfdymje .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1460,15 +1485,15 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   vertical-align: middle;
 }
 
-#qgcpbqmqad .gt_from_md > :first-child {
+#lgqpfdymje .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qgcpbqmqad .gt_from_md > :last-child {
+#lgqpfdymje .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qgcpbqmqad .gt_row {
+#lgqpfdymje .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1487,7 +1512,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   overflow-x: hidden;
 }
 
-#qgcpbqmqad .gt_stub {
+#lgqpfdymje .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1500,7 +1525,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   padding-right: 5px;
 }
 
-#qgcpbqmqad .gt_stub_row_group {
+#lgqpfdymje .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1514,15 +1539,15 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   vertical-align: top;
 }
 
-#qgcpbqmqad .gt_row_group_first td {
+#lgqpfdymje .gt_row_group_first td {
   border-top-width: 1px;
 }
 
-#qgcpbqmqad .gt_row_group_first th {
+#lgqpfdymje .gt_row_group_first th {
   border-top-width: 1px;
 }
 
-#qgcpbqmqad .gt_summary_row {
+#lgqpfdymje .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1532,16 +1557,16 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   padding-right: 5px;
 }
 
-#qgcpbqmqad .gt_first_summary_row {
+#lgqpfdymje .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #000000;
 }
 
-#qgcpbqmqad .gt_first_summary_row.thick {
+#lgqpfdymje .gt_first_summary_row.thick {
   border-top-width: 1px;
 }
 
-#qgcpbqmqad .gt_last_summary_row {
+#lgqpfdymje .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1551,7 +1576,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-bottom-color: #000000;
 }
 
-#qgcpbqmqad .gt_grand_summary_row {
+#lgqpfdymje .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1561,7 +1586,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   padding-right: 5px;
 }
 
-#qgcpbqmqad .gt_first_grand_summary_row {
+#lgqpfdymje .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1571,7 +1596,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-top-color: #D3D3D3;
 }
 
-#qgcpbqmqad .gt_last_grand_summary_row_top {
+#lgqpfdymje .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1581,11 +1606,11 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-bottom-color: #D3D3D3;
 }
 
-#qgcpbqmqad .gt_striped {
+#lgqpfdymje .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qgcpbqmqad .gt_table_body {
+#lgqpfdymje .gt_table_body {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #000000;
@@ -1594,7 +1619,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-bottom-color: #000000;
 }
 
-#qgcpbqmqad .gt_footnotes {
+#lgqpfdymje .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1608,7 +1633,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-right-color: #D3D3D3;
 }
 
-#qgcpbqmqad .gt_footnote {
+#lgqpfdymje .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1617,7 +1642,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   padding-right: 5px;
 }
 
-#qgcpbqmqad .gt_sourcenotes {
+#lgqpfdymje .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1631,7 +1656,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   border-right-color: #D3D3D3;
 }
 
-#qgcpbqmqad .gt_sourcenote {
+#lgqpfdymje .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1639,117 +1664,120 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
   padding-right: 5px;
 }
 
-#qgcpbqmqad .gt_left {
+#lgqpfdymje .gt_left {
   text-align: left;
 }
 
-#qgcpbqmqad .gt_center {
+#lgqpfdymje .gt_center {
   text-align: center;
 }
 
-#qgcpbqmqad .gt_right {
+#lgqpfdymje .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qgcpbqmqad .gt_font_normal {
+#lgqpfdymje .gt_font_normal {
   font-weight: normal;
 }
 
-#qgcpbqmqad .gt_font_bold {
+#lgqpfdymje .gt_font_bold {
   font-weight: bold;
 }
 
-#qgcpbqmqad .gt_font_italic {
+#lgqpfdymje .gt_font_italic {
   font-style: italic;
 }
 
-#qgcpbqmqad .gt_super {
+#lgqpfdymje .gt_super {
   font-size: 65%;
 }
 
-#qgcpbqmqad .gt_footnote_marks {
+#lgqpfdymje .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qgcpbqmqad .gt_asterisk {
+#lgqpfdymje .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qgcpbqmqad .gt_indent_1 {
+#lgqpfdymje .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qgcpbqmqad .gt_indent_2 {
+#lgqpfdymje .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qgcpbqmqad .gt_indent_3 {
+#lgqpfdymje .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qgcpbqmqad .gt_indent_4 {
+#lgqpfdymje .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qgcpbqmqad .gt_indent_5 {
+#lgqpfdymje .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="<strong>Dia Útil</strong>"><strong>Dia Útil</strong></th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="11" scope="colgroup" id="<strong>Atendimentos</strong>">
-        <span class="gt_column_spanner"><strong>Atendimentos</strong></span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>0</strong>"><strong>0</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>1</strong>"><strong>1</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>2</strong>"><strong>2</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>3</strong>"><strong>3</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>4</strong>"><strong>4</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>5</strong>"><strong>5</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>6</strong>"><strong>6</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>7</strong>"><strong>7</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>8</strong>"><strong>8</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>9</strong>"><strong>9</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>10</strong>"><strong>10</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_center" style="font-weight: bold;">Não</td>
-<td headers="stat_1" class="gt_row gt_center">9</td>
-<td headers="stat_2" class="gt_row gt_center">8</td>
-<td headers="stat_3" class="gt_row gt_center">2</td>
-<td headers="stat_4" class="gt_row gt_center">1</td>
-<td headers="stat_5" class="gt_row gt_center">0</td>
-<td headers="stat_6" class="gt_row gt_center">0</td>
-<td headers="stat_7" class="gt_row gt_center">0</td>
-<td headers="stat_8" class="gt_row gt_center">0</td>
-<td headers="stat_9" class="gt_row gt_center">0</td>
-<td headers="stat_10" class="gt_row gt_center">0</td>
-<td headers="stat_11" class="gt_row gt_center">0</td></tr>
-    <tr><td headers="label" class="gt_row gt_center" style="font-weight: bold;">Sim</td>
-<td headers="stat_1" class="gt_row gt_center">0</td>
-<td headers="stat_2" class="gt_row gt_center">0</td>
-<td headers="stat_3" class="gt_row gt_center">0</td>
-<td headers="stat_4" class="gt_row gt_center">0</td>
-<td headers="stat_5" class="gt_row gt_center">0</td>
-<td headers="stat_6" class="gt_row gt_center">0</td>
-<td headers="stat_7" class="gt_row gt_center">3</td>
-<td headers="stat_8" class="gt_row gt_center">10</td>
-<td headers="stat_9" class="gt_row gt_center">24</td>
-<td headers="stat_10" class="gt_row gt_center">10</td>
-<td headers="stat_11" class="gt_row gt_center">3</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings gt_spanner_row">
+<th rowspan="2" id="<strong>Dia Útil</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Dia Útil</strong></th>
+<th colspan="11" id="<strong>Atendimentos</strong>" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner"><strong>Atendimentos</strong></span></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>0</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong></th>
+<th id="<strong>1</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong></th>
+<th id="<strong>2</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>2</strong></th>
+<th id="<strong>3</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>3</strong></th>
+<th id="<strong>4</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>4</strong></th>
+<th id="<strong>5</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>5</strong></th>
+<th id="<strong>6</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>6</strong></th>
+<th id="<strong>7</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>7</strong></th>
+<th id="<strong>8</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>8</strong></th>
+<th id="<strong>9</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>9</strong></th>
+<th id="<strong>10</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>10</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="label" style="font-weight: bold">Não</td>
+<td class="gt_row gt_center" headers="stat_1">9</td>
+<td class="gt_row gt_center" headers="stat_2">8</td>
+<td class="gt_row gt_center" headers="stat_3">2</td>
+<td class="gt_row gt_center" headers="stat_4">1</td>
+<td class="gt_row gt_center" headers="stat_5">0</td>
+<td class="gt_row gt_center" headers="stat_6">0</td>
+<td class="gt_row gt_center" headers="stat_7">0</td>
+<td class="gt_row gt_center" headers="stat_8">0</td>
+<td class="gt_row gt_center" headers="stat_9">0</td>
+<td class="gt_row gt_center" headers="stat_10">0</td>
+<td class="gt_row gt_center" headers="stat_11">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="label" style="font-weight: bold">Sim</td>
+<td class="gt_row gt_center" headers="stat_1">0</td>
+<td class="gt_row gt_center" headers="stat_2">0</td>
+<td class="gt_row gt_center" headers="stat_3">0</td>
+<td class="gt_row gt_center" headers="stat_4">0</td>
+<td class="gt_row gt_center" headers="stat_5">0</td>
+<td class="gt_row gt_center" headers="stat_6">0</td>
+<td class="gt_row gt_center" headers="stat_7">3</td>
+<td class="gt_row gt_center" headers="stat_8">10</td>
+<td class="gt_row gt_center" headers="stat_9">24</td>
+<td class="gt_row gt_center" headers="stat_10">10</td>
+<td class="gt_row gt_center" headers="stat_11">3</td>
+</tr>
+</tbody>
 </table>
+
+</div>
 </div>
 </div>
 </div>
@@ -1788,24 +1816,24 @@ f_i = \frac{n_i}{n},
 <div class="column" style="width:45%;">
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="zzwyhmehwb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zzwyhmehwb table {
+<div>
+<div id="xroclvvpcj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xroclvvpcj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zzwyhmehwb thead, #zzwyhmehwb tbody, #zzwyhmehwb tfoot, #zzwyhmehwb tr, #zzwyhmehwb td, #zzwyhmehwb th {
+#xroclvvpcj thead, #xroclvvpcj tbody, #xroclvvpcj tfoot, #xroclvvpcj tr, #xroclvvpcj td, #xroclvvpcj th {
   border-style: none;
 }
 
-#zzwyhmehwb p {
+#xroclvvpcj p {
   margin: 0;
   padding: 0;
 }
 
-#zzwyhmehwb .gt_table {
+#xroclvvpcj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1831,12 +1859,12 @@ f_i = \frac{n_i}{n},
   border-left-color: #D3D3D3;
 }
 
-#zzwyhmehwb .gt_caption {
+#xroclvvpcj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zzwyhmehwb .gt_title {
+#xroclvvpcj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1848,7 +1876,7 @@ f_i = \frac{n_i}{n},
   border-bottom-width: 0;
 }
 
-#zzwyhmehwb .gt_subtitle {
+#xroclvvpcj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1860,7 +1888,7 @@ f_i = \frac{n_i}{n},
   border-top-width: 0;
 }
 
-#zzwyhmehwb .gt_heading {
+#xroclvvpcj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1872,13 +1900,13 @@ f_i = \frac{n_i}{n},
   border-right-color: #D3D3D3;
 }
 
-#zzwyhmehwb .gt_bottom_border {
+#xroclvvpcj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zzwyhmehwb .gt_col_headings {
+#xroclvvpcj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #000000;
@@ -1893,7 +1921,7 @@ f_i = \frac{n_i}{n},
   border-right-color: #D3D3D3;
 }
 
-#zzwyhmehwb .gt_col_heading {
+#xroclvvpcj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1913,7 +1941,7 @@ f_i = \frac{n_i}{n},
   overflow-x: hidden;
 }
 
-#zzwyhmehwb .gt_column_spanner_outer {
+#xroclvvpcj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1925,15 +1953,15 @@ f_i = \frac{n_i}{n},
   padding-right: 4px;
 }
 
-#zzwyhmehwb .gt_column_spanner_outer:first-child {
+#xroclvvpcj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zzwyhmehwb .gt_column_spanner_outer:last-child {
+#xroclvvpcj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zzwyhmehwb .gt_column_spanner {
+#xroclvvpcj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #000000;
@@ -1945,11 +1973,11 @@ f_i = \frac{n_i}{n},
   width: 100%;
 }
 
-#zzwyhmehwb .gt_spanner_row {
+#xroclvvpcj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zzwyhmehwb .gt_group_heading {
+#xroclvvpcj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1975,7 +2003,7 @@ f_i = \frac{n_i}{n},
   text-align: left;
 }
 
-#zzwyhmehwb .gt_empty_group_heading {
+#xroclvvpcj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1990,15 +2018,15 @@ f_i = \frac{n_i}{n},
   vertical-align: middle;
 }
 
-#zzwyhmehwb .gt_from_md > :first-child {
+#xroclvvpcj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zzwyhmehwb .gt_from_md > :last-child {
+#xroclvvpcj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zzwyhmehwb .gt_row {
+#xroclvvpcj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2017,7 +2045,7 @@ f_i = \frac{n_i}{n},
   overflow-x: hidden;
 }
 
-#zzwyhmehwb .gt_stub {
+#xroclvvpcj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2030,7 +2058,7 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#zzwyhmehwb .gt_stub_row_group {
+#xroclvvpcj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2044,15 +2072,15 @@ f_i = \frac{n_i}{n},
   vertical-align: top;
 }
 
-#zzwyhmehwb .gt_row_group_first td {
+#xroclvvpcj .gt_row_group_first td {
   border-top-width: 1px;
 }
 
-#zzwyhmehwb .gt_row_group_first th {
+#xroclvvpcj .gt_row_group_first th {
   border-top-width: 1px;
 }
 
-#zzwyhmehwb .gt_summary_row {
+#xroclvvpcj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2062,16 +2090,16 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#zzwyhmehwb .gt_first_summary_row {
+#xroclvvpcj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #000000;
 }
 
-#zzwyhmehwb .gt_first_summary_row.thick {
+#xroclvvpcj .gt_first_summary_row.thick {
   border-top-width: 1px;
 }
 
-#zzwyhmehwb .gt_last_summary_row {
+#xroclvvpcj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2081,7 +2109,7 @@ f_i = \frac{n_i}{n},
   border-bottom-color: #000000;
 }
 
-#zzwyhmehwb .gt_grand_summary_row {
+#xroclvvpcj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2091,7 +2119,7 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#zzwyhmehwb .gt_first_grand_summary_row {
+#xroclvvpcj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2101,7 +2129,7 @@ f_i = \frac{n_i}{n},
   border-top-color: #D3D3D3;
 }
 
-#zzwyhmehwb .gt_last_grand_summary_row_top {
+#xroclvvpcj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2111,11 +2139,11 @@ f_i = \frac{n_i}{n},
   border-bottom-color: #D3D3D3;
 }
 
-#zzwyhmehwb .gt_striped {
+#xroclvvpcj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zzwyhmehwb .gt_table_body {
+#xroclvvpcj .gt_table_body {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #000000;
@@ -2124,7 +2152,7 @@ f_i = \frac{n_i}{n},
   border-bottom-color: #000000;
 }
 
-#zzwyhmehwb .gt_footnotes {
+#xroclvvpcj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2138,7 +2166,7 @@ f_i = \frac{n_i}{n},
   border-right-color: #D3D3D3;
 }
 
-#zzwyhmehwb .gt_footnote {
+#xroclvvpcj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2147,7 +2175,7 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#zzwyhmehwb .gt_sourcenotes {
+#xroclvvpcj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2161,7 +2189,7 @@ f_i = \frac{n_i}{n},
   border-right-color: #D3D3D3;
 }
 
-#zzwyhmehwb .gt_sourcenote {
+#xroclvvpcj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2169,141 +2197,145 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#zzwyhmehwb .gt_left {
+#xroclvvpcj .gt_left {
   text-align: left;
 }
 
-#zzwyhmehwb .gt_center {
+#xroclvvpcj .gt_center {
   text-align: center;
 }
 
-#zzwyhmehwb .gt_right {
+#xroclvvpcj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zzwyhmehwb .gt_font_normal {
+#xroclvvpcj .gt_font_normal {
   font-weight: normal;
 }
 
-#zzwyhmehwb .gt_font_bold {
+#xroclvvpcj .gt_font_bold {
   font-weight: bold;
 }
 
-#zzwyhmehwb .gt_font_italic {
+#xroclvvpcj .gt_font_italic {
   font-style: italic;
 }
 
-#zzwyhmehwb .gt_super {
+#xroclvvpcj .gt_super {
   font-size: 65%;
 }
 
-#zzwyhmehwb .gt_footnote_marks {
+#xroclvvpcj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zzwyhmehwb .gt_asterisk {
+#xroclvvpcj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zzwyhmehwb .gt_indent_1 {
+#xroclvvpcj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zzwyhmehwb .gt_indent_2 {
+#xroclvvpcj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zzwyhmehwb .gt_indent_3 {
+#xroclvvpcj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zzwyhmehwb .gt_indent_4 {
+#xroclvvpcj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zzwyhmehwb .gt_indent_5 {
+#xroclvvpcj .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>Frequências absolutas</p></caption>
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="<strong>Dia Útil</strong>"><strong>Dia Útil</strong></th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="11" scope="colgroup" id="<strong>Atendimentos</strong>">
-        <span class="gt_column_spanner"><strong>Atendimentos</strong></span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>0</strong>"><strong>0</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>1</strong>"><strong>1</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>2</strong>"><strong>2</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>3</strong>"><strong>3</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>4</strong>"><strong>4</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>5</strong>"><strong>5</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>6</strong>"><strong>6</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>7</strong>"><strong>7</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>8</strong>"><strong>8</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>9</strong>"><strong>9</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>10</strong>"><strong>10</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_center" style="font-weight: bold;">Não</td>
-<td headers="stat_1" class="gt_row gt_center">9</td>
-<td headers="stat_2" class="gt_row gt_center">8</td>
-<td headers="stat_3" class="gt_row gt_center">2</td>
-<td headers="stat_4" class="gt_row gt_center">1</td>
-<td headers="stat_5" class="gt_row gt_center">0</td>
-<td headers="stat_6" class="gt_row gt_center">0</td>
-<td headers="stat_7" class="gt_row gt_center">0</td>
-<td headers="stat_8" class="gt_row gt_center">0</td>
-<td headers="stat_9" class="gt_row gt_center">0</td>
-<td headers="stat_10" class="gt_row gt_center">0</td>
-<td headers="stat_11" class="gt_row gt_center">0</td></tr>
-    <tr><td headers="label" class="gt_row gt_center" style="font-weight: bold;">Sim</td>
-<td headers="stat_1" class="gt_row gt_center">0</td>
-<td headers="stat_2" class="gt_row gt_center">0</td>
-<td headers="stat_3" class="gt_row gt_center">0</td>
-<td headers="stat_4" class="gt_row gt_center">0</td>
-<td headers="stat_5" class="gt_row gt_center">0</td>
-<td headers="stat_6" class="gt_row gt_center">0</td>
-<td headers="stat_7" class="gt_row gt_center">3</td>
-<td headers="stat_8" class="gt_row gt_center">10</td>
-<td headers="stat_9" class="gt_row gt_center">24</td>
-<td headers="stat_10" class="gt_row gt_center">10</td>
-<td headers="stat_11" class="gt_row gt_center">3</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Frequências absolutas</caption>
+<thead>
+<tr class="header gt_col_headings gt_spanner_row">
+<th rowspan="2" id="<strong>Dia Útil</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Dia Útil</strong></th>
+<th colspan="11" id="<strong>Atendimentos</strong>" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner"><strong>Atendimentos</strong></span></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>0</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong></th>
+<th id="<strong>1</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong></th>
+<th id="<strong>2</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>2</strong></th>
+<th id="<strong>3</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>3</strong></th>
+<th id="<strong>4</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>4</strong></th>
+<th id="<strong>5</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>5</strong></th>
+<th id="<strong>6</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>6</strong></th>
+<th id="<strong>7</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>7</strong></th>
+<th id="<strong>8</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>8</strong></th>
+<th id="<strong>9</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>9</strong></th>
+<th id="<strong>10</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>10</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="label" style="font-weight: bold">Não</td>
+<td class="gt_row gt_center" headers="stat_1">9</td>
+<td class="gt_row gt_center" headers="stat_2">8</td>
+<td class="gt_row gt_center" headers="stat_3">2</td>
+<td class="gt_row gt_center" headers="stat_4">1</td>
+<td class="gt_row gt_center" headers="stat_5">0</td>
+<td class="gt_row gt_center" headers="stat_6">0</td>
+<td class="gt_row gt_center" headers="stat_7">0</td>
+<td class="gt_row gt_center" headers="stat_8">0</td>
+<td class="gt_row gt_center" headers="stat_9">0</td>
+<td class="gt_row gt_center" headers="stat_10">0</td>
+<td class="gt_row gt_center" headers="stat_11">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="label" style="font-weight: bold">Sim</td>
+<td class="gt_row gt_center" headers="stat_1">0</td>
+<td class="gt_row gt_center" headers="stat_2">0</td>
+<td class="gt_row gt_center" headers="stat_3">0</td>
+<td class="gt_row gt_center" headers="stat_4">0</td>
+<td class="gt_row gt_center" headers="stat_5">0</td>
+<td class="gt_row gt_center" headers="stat_6">0</td>
+<td class="gt_row gt_center" headers="stat_7">3</td>
+<td class="gt_row gt_center" headers="stat_8">10</td>
+<td class="gt_row gt_center" headers="stat_9">24</td>
+<td class="gt_row gt_center" headers="stat_10">10</td>
+<td class="gt_row gt_center" headers="stat_11">3</td>
+</tr>
+</tbody>
 </table>
+
+</div>
 </div>
 </div>
 </div>
 </div><div class="column" style="width:55%;">
 <div class="cell">
 <div class="cell-output-display">
-
-<div id="bzcfzjvxez" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bzcfzjvxez table {
+<div>
+<div id="nkdoogbrsk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nkdoogbrsk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bzcfzjvxez thead, #bzcfzjvxez tbody, #bzcfzjvxez tfoot, #bzcfzjvxez tr, #bzcfzjvxez td, #bzcfzjvxez th {
+#nkdoogbrsk thead, #nkdoogbrsk tbody, #nkdoogbrsk tfoot, #nkdoogbrsk tr, #nkdoogbrsk td, #nkdoogbrsk th {
   border-style: none;
 }
 
-#bzcfzjvxez p {
+#nkdoogbrsk p {
   margin: 0;
   padding: 0;
 }
 
-#bzcfzjvxez .gt_table {
+#nkdoogbrsk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2329,12 +2361,12 @@ f_i = \frac{n_i}{n},
   border-left-color: #D3D3D3;
 }
 
-#bzcfzjvxez .gt_caption {
+#nkdoogbrsk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bzcfzjvxez .gt_title {
+#nkdoogbrsk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2346,7 +2378,7 @@ f_i = \frac{n_i}{n},
   border-bottom-width: 0;
 }
 
-#bzcfzjvxez .gt_subtitle {
+#nkdoogbrsk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2358,7 +2390,7 @@ f_i = \frac{n_i}{n},
   border-top-width: 0;
 }
 
-#bzcfzjvxez .gt_heading {
+#nkdoogbrsk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2370,13 +2402,13 @@ f_i = \frac{n_i}{n},
   border-right-color: #D3D3D3;
 }
 
-#bzcfzjvxez .gt_bottom_border {
+#nkdoogbrsk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bzcfzjvxez .gt_col_headings {
+#nkdoogbrsk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #000000;
@@ -2391,7 +2423,7 @@ f_i = \frac{n_i}{n},
   border-right-color: #D3D3D3;
 }
 
-#bzcfzjvxez .gt_col_heading {
+#nkdoogbrsk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2411,7 +2443,7 @@ f_i = \frac{n_i}{n},
   overflow-x: hidden;
 }
 
-#bzcfzjvxez .gt_column_spanner_outer {
+#nkdoogbrsk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2423,15 +2455,15 @@ f_i = \frac{n_i}{n},
   padding-right: 4px;
 }
 
-#bzcfzjvxez .gt_column_spanner_outer:first-child {
+#nkdoogbrsk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bzcfzjvxez .gt_column_spanner_outer:last-child {
+#nkdoogbrsk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bzcfzjvxez .gt_column_spanner {
+#nkdoogbrsk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #000000;
@@ -2443,11 +2475,11 @@ f_i = \frac{n_i}{n},
   width: 100%;
 }
 
-#bzcfzjvxez .gt_spanner_row {
+#nkdoogbrsk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bzcfzjvxez .gt_group_heading {
+#nkdoogbrsk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2473,7 +2505,7 @@ f_i = \frac{n_i}{n},
   text-align: left;
 }
 
-#bzcfzjvxez .gt_empty_group_heading {
+#nkdoogbrsk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2488,15 +2520,15 @@ f_i = \frac{n_i}{n},
   vertical-align: middle;
 }
 
-#bzcfzjvxez .gt_from_md > :first-child {
+#nkdoogbrsk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bzcfzjvxez .gt_from_md > :last-child {
+#nkdoogbrsk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bzcfzjvxez .gt_row {
+#nkdoogbrsk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2515,7 +2547,7 @@ f_i = \frac{n_i}{n},
   overflow-x: hidden;
 }
 
-#bzcfzjvxez .gt_stub {
+#nkdoogbrsk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2528,7 +2560,7 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#bzcfzjvxez .gt_stub_row_group {
+#nkdoogbrsk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2542,15 +2574,15 @@ f_i = \frac{n_i}{n},
   vertical-align: top;
 }
 
-#bzcfzjvxez .gt_row_group_first td {
+#nkdoogbrsk .gt_row_group_first td {
   border-top-width: 1px;
 }
 
-#bzcfzjvxez .gt_row_group_first th {
+#nkdoogbrsk .gt_row_group_first th {
   border-top-width: 1px;
 }
 
-#bzcfzjvxez .gt_summary_row {
+#nkdoogbrsk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2560,16 +2592,16 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#bzcfzjvxez .gt_first_summary_row {
+#nkdoogbrsk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #000000;
 }
 
-#bzcfzjvxez .gt_first_summary_row.thick {
+#nkdoogbrsk .gt_first_summary_row.thick {
   border-top-width: 1px;
 }
 
-#bzcfzjvxez .gt_last_summary_row {
+#nkdoogbrsk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2579,7 +2611,7 @@ f_i = \frac{n_i}{n},
   border-bottom-color: #000000;
 }
 
-#bzcfzjvxez .gt_grand_summary_row {
+#nkdoogbrsk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2589,7 +2621,7 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#bzcfzjvxez .gt_first_grand_summary_row {
+#nkdoogbrsk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2599,7 +2631,7 @@ f_i = \frac{n_i}{n},
   border-top-color: #D3D3D3;
 }
 
-#bzcfzjvxez .gt_last_grand_summary_row_top {
+#nkdoogbrsk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2609,11 +2641,11 @@ f_i = \frac{n_i}{n},
   border-bottom-color: #D3D3D3;
 }
 
-#bzcfzjvxez .gt_striped {
+#nkdoogbrsk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bzcfzjvxez .gt_table_body {
+#nkdoogbrsk .gt_table_body {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #000000;
@@ -2622,7 +2654,7 @@ f_i = \frac{n_i}{n},
   border-bottom-color: #000000;
 }
 
-#bzcfzjvxez .gt_footnotes {
+#nkdoogbrsk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2636,7 +2668,7 @@ f_i = \frac{n_i}{n},
   border-right-color: #D3D3D3;
 }
 
-#bzcfzjvxez .gt_footnote {
+#nkdoogbrsk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2645,7 +2677,7 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#bzcfzjvxez .gt_sourcenotes {
+#nkdoogbrsk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2659,7 +2691,7 @@ f_i = \frac{n_i}{n},
   border-right-color: #D3D3D3;
 }
 
-#bzcfzjvxez .gt_sourcenote {
+#nkdoogbrsk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2667,117 +2699,121 @@ f_i = \frac{n_i}{n},
   padding-right: 5px;
 }
 
-#bzcfzjvxez .gt_left {
+#nkdoogbrsk .gt_left {
   text-align: left;
 }
 
-#bzcfzjvxez .gt_center {
+#nkdoogbrsk .gt_center {
   text-align: center;
 }
 
-#bzcfzjvxez .gt_right {
+#nkdoogbrsk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bzcfzjvxez .gt_font_normal {
+#nkdoogbrsk .gt_font_normal {
   font-weight: normal;
 }
 
-#bzcfzjvxez .gt_font_bold {
+#nkdoogbrsk .gt_font_bold {
   font-weight: bold;
 }
 
-#bzcfzjvxez .gt_font_italic {
+#nkdoogbrsk .gt_font_italic {
   font-style: italic;
 }
 
-#bzcfzjvxez .gt_super {
+#nkdoogbrsk .gt_super {
   font-size: 65%;
 }
 
-#bzcfzjvxez .gt_footnote_marks {
+#nkdoogbrsk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bzcfzjvxez .gt_asterisk {
+#nkdoogbrsk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bzcfzjvxez .gt_indent_1 {
+#nkdoogbrsk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bzcfzjvxez .gt_indent_2 {
+#nkdoogbrsk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bzcfzjvxez .gt_indent_3 {
+#nkdoogbrsk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bzcfzjvxez .gt_indent_4 {
+#nkdoogbrsk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bzcfzjvxez .gt_indent_5 {
+#nkdoogbrsk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption><p>Frequências relativas (%)</p></caption>
-  <thead>
-    <tr class="gt_col_headings gt_spanner_row">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="2" colspan="1" scope="col" id="<strong>Dia Útil</strong>"><strong>Dia Útil</strong></th>
-      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="11" scope="colgroup" id="<strong>Atendimentos</strong>">
-        <span class="gt_column_spanner"><strong>Atendimentos</strong></span>
-      </th>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>0</strong>"><strong>0</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>1</strong>"><strong>1</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>2</strong>"><strong>2</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>3</strong>"><strong>3</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>4</strong>"><strong>4</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>5</strong>"><strong>5</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>6</strong>"><strong>6</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>7</strong>"><strong>7</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>8</strong>"><strong>8</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>9</strong>"><strong>9</strong></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="<strong>10</strong>"><strong>10</strong></th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td headers="label" class="gt_row gt_center" style="font-weight: bold;">Não</td>
-<td headers="stat_1" class="gt_row gt_center">45</td>
-<td headers="stat_2" class="gt_row gt_center">40</td>
-<td headers="stat_3" class="gt_row gt_center">10</td>
-<td headers="stat_4" class="gt_row gt_center">5</td>
-<td headers="stat_5" class="gt_row gt_center">0</td>
-<td headers="stat_6" class="gt_row gt_center">0</td>
-<td headers="stat_7" class="gt_row gt_center">0</td>
-<td headers="stat_8" class="gt_row gt_center">0</td>
-<td headers="stat_9" class="gt_row gt_center">0</td>
-<td headers="stat_10" class="gt_row gt_center">0</td>
-<td headers="stat_11" class="gt_row gt_center">0</td></tr>
-    <tr><td headers="label" class="gt_row gt_center" style="font-weight: bold;">Sim</td>
-<td headers="stat_1" class="gt_row gt_center">0</td>
-<td headers="stat_2" class="gt_row gt_center">0</td>
-<td headers="stat_3" class="gt_row gt_center">0</td>
-<td headers="stat_4" class="gt_row gt_center">0</td>
-<td headers="stat_5" class="gt_row gt_center">0</td>
-<td headers="stat_6" class="gt_row gt_center">0</td>
-<td headers="stat_7" class="gt_row gt_center">6</td>
-<td headers="stat_8" class="gt_row gt_center">20</td>
-<td headers="stat_9" class="gt_row gt_center">48</td>
-<td headers="stat_10" class="gt_row gt_center">20</td>
-<td headers="stat_11" class="gt_row gt_center">6</td></tr>
-  </tbody>
-  
-  
+
+<table class="gt_table" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Frequências relativas (%)</caption>
+<thead>
+<tr class="header gt_col_headings gt_spanner_row">
+<th rowspan="2" id="<strong>Dia Útil</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Dia Útil</strong></th>
+<th colspan="11" id="<strong>Atendimentos</strong>" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><span class="gt_column_spanner"><strong>Atendimentos</strong></span></th>
+</tr>
+<tr class="odd gt_col_headings">
+<th id="<strong>0</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong></th>
+<th id="<strong>1</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong></th>
+<th id="<strong>2</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>2</strong></th>
+<th id="<strong>3</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>3</strong></th>
+<th id="<strong>4</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>4</strong></th>
+<th id="<strong>5</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>5</strong></th>
+<th id="<strong>6</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>6</strong></th>
+<th id="<strong>7</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>7</strong></th>
+<th id="<strong>8</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>8</strong></th>
+<th id="<strong>9</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>9</strong></th>
+<th id="<strong>10</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>10</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="label" style="font-weight: bold">Não</td>
+<td class="gt_row gt_center" headers="stat_1">45</td>
+<td class="gt_row gt_center" headers="stat_2">40</td>
+<td class="gt_row gt_center" headers="stat_3">10</td>
+<td class="gt_row gt_center" headers="stat_4">5</td>
+<td class="gt_row gt_center" headers="stat_5">0</td>
+<td class="gt_row gt_center" headers="stat_6">0</td>
+<td class="gt_row gt_center" headers="stat_7">0</td>
+<td class="gt_row gt_center" headers="stat_8">0</td>
+<td class="gt_row gt_center" headers="stat_9">0</td>
+<td class="gt_row gt_center" headers="stat_10">0</td>
+<td class="gt_row gt_center" headers="stat_11">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="label" style="font-weight: bold">Sim</td>
+<td class="gt_row gt_center" headers="stat_1">0</td>
+<td class="gt_row gt_center" headers="stat_2">0</td>
+<td class="gt_row gt_center" headers="stat_3">0</td>
+<td class="gt_row gt_center" headers="stat_4">0</td>
+<td class="gt_row gt_center" headers="stat_5">0</td>
+<td class="gt_row gt_center" headers="stat_6">0</td>
+<td class="gt_row gt_center" headers="stat_7">6</td>
+<td class="gt_row gt_center" headers="stat_8">20</td>
+<td class="gt_row gt_center" headers="stat_9">48</td>
+<td class="gt_row gt_center" headers="stat_10">20</td>
+<td class="gt_row gt_center" headers="stat_11">6</td>
+</tr>
+</tbody>
 </table>
+
+</div>
 </div>
 </div>
 </div>
@@ -2831,7 +2867,7 @@ f_i = \frac{n_i}{n},
 </ol>
 </div>
 
-<img data-src="figs/construcao_classes_f6.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="figs/construcao_classes_f6.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="section-11" class="slide level2 unnumbered unlisted smaller">
 <h2></h2>
 <h3 id="distribuição-de-frequências-intervalares---iii-1">Distribuição de frequências intervalares - III</h3>
@@ -2842,7 +2878,7 @@ f_i = \frac{n_i}{n},
 <li>tomar <span class="math display">\[I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.\]</span></li>
 </ol>
 
-<img data-src="figs/construcao_classes_f5.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="figs/construcao_classes_f5.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="section-12" class="slide level2 unnumbered unlisted smaller">
 <h2></h2>
 <h3 id="distribuição-de-frequências-intervalares---iii-2">Distribuição de frequências intervalares - III</h3>
@@ -2853,7 +2889,7 @@ f_i = \frac{n_i}{n},
 <li>tomar <span class="math display">\[I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.\]</span></li>
 </ol>
 
-<img data-src="figs/construcao_classes_f4.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="figs/construcao_classes_f4.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="section-13" class="slide level2 unnumbered unlisted smaller">
 <h2></h2>
 <h3 id="distribuição-de-frequências-intervalares---iii-3">Distribuição de frequências intervalares - III</h3>
@@ -2864,7 +2900,7 @@ f_i = \frac{n_i}{n},
 <li>tomar <span class="math display">\[I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.\]</span></li>
 </ol>
 
-<img data-src="figs/construcao_classes_f3.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="figs/construcao_classes_f3.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="section-14" class="slide level2 unnumbered unlisted smaller">
 <h2></h2>
 <h3 id="distribuição-de-frequências-intervalares---iii-4">Distribuição de frequências intervalares - III</h3>
@@ -2875,7 +2911,7 @@ f_i = \frac{n_i}{n},
 <li>tomar <span class="math display">\[I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.\]</span></li>
 </ol>
 
-<img data-src="figs/construcao_classes_f2.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="figs/construcao_classes_f2.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="section-15" class="slide level2 unnumbered unlisted smaller">
 <h2></h2>
 <h3 id="distribuição-de-frequências-intervalares---iii-5">Distribuição de frequências intervalares - III</h3>
@@ -2886,7 +2922,7 @@ f_i = \frac{n_i}{n},
 <li>tomar <span class="math display">\[I_1 = [a_0, a_1] \ \ \text{e} \ \ I_j = (a_{j-1}, a_j], \ \ j = 2, \ldots, k.\]</span></li>
 </ol>
 
-<img data-src="figs/construcao_classes_f1.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="figs/construcao_classes_f1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="section-16" class="slide level2 unnumbered unlisted smaller">
 <h2></h2>
 <h3 id="distribuição-de-frequências-intervalares---iv">Distribuição de frequências intervalares - IV</h3>
@@ -2929,7 +2965,6 @@ f_i = \frac{n_i}{n},
 <h2></h2>
 <h3 id="exemplo-1">Exemplo</h3>
 <p>Exemplo de uma distribuição de frequências intervalar de dados fictícios:</p>
-
 <table class="table-with-total-row" style="margin-top:20px; margin-bottom:20px; ">
 <thead>
 <tr>
@@ -3037,7 +3072,6 @@ Total
 </td>
 </tr>
 </tbody>
-
 </table>
 <div class="fragment">
 <p><span style="color: blue;"><strong>Observação:</strong></span> A mesma frequência relativa 0,2 da faixa <span class="math inline">\((1,2]\)</span>:</p>
@@ -3106,13 +3140,21 @@ Total
 <div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="intro_files/figure-revealjs/unnamed-chunk-9-1.png" width="528"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="intro_files/figure-revealjs/unnamed-chunk-10-1.png" width="528"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -3125,13 +3167,21 @@ Total
 <div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="intro_files/figure-revealjs/unnamed-chunk-11-1.png" width="576"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="fragment column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="intro_files/figure-revealjs/unnamed-chunk-12-1.png" width="576"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -3155,32 +3205,41 @@ Total
 <section id="medidas-descritivas" class="slide level2" data-number="3.4">
 <h2><span class="header-section-number">3.4</span> Medidas Descritivas</h2>
 <p>Muitas vezes, desejamos evidenciar algumas características dos dados por meio de medidas numéricas.</p>
-<div class="fragment">
+<div class="fragment" data-fragment-index="1">
 <p>Dada uma amostra <span class="math inline">\(x_1, \ldots, x_n\)</span>, utilizar uma função <span class="math inline">\(t(x_1, \ldots, x_n)\)</span> para quantificar algum comportamento dos dados.</p>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <p>As principais características são:</p>
 </div>
-<div>
 <ul>
-<li class="fragment">tendência central da variável <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">Exemplos: média, mediana e moda;</span></span></li>
-<li class="fragment">dispersão da variável <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">Exemplos: variância e desvio-padrão.</span></span></li>
+<li class="fragment" fragment-index="3">
+tendência central da variável <span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">Exemplos: média, mediana e moda;</span>
+</li>
+<li class="fragment" fragment-index="4">
+dispersão da variável <span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">Exemplos: variância e desvio-padrão.</span>
+</li>
 </ul>
-</div>
 </section>
 <section id="section-25" class="slide level2 unnumbered unlisted">
 <h2></h2>
 <h3 id="medidas-de-tendência-central">Medidas de Tendência Central</h3>
 <p>Buscam indicar um valor “típico” ou “representativo” dos dados em questão;</p>
-<div class="fragment">
+<div class="fragment" data-fragment-index="1">
 <p>O que seria valor “típico”?</p>
 </div>
-<div>
 <ul>
-<li class="fragment">ponto de equilíbrio dos dados <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">média (aritmética);</span></span></li>
-<li class="fragment">ponto central dos dados <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">mediana;</span></span></li>
-<li class="fragment">ponto de alta frequência <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">moda;</span></span></li>
+<li class="fragment" fragment-index="2">
+ponto de equilíbrio dos dados <span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">média (aritmética);</span>
+</li>
+<li class="fragment" fragment-index="3">
+ponto central dos dados <span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">mediana;</span>
+</li>
+<li class="fragment" fragment-index="4">
+ponto de alta frequência <span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">moda;</span>
+</li>
 </ul>
+<div class="fragment" data-fragment-index="5">
+<p>Discutiremos apenas a média!</p>
 </div>
 </section>
 <section id="section-26" class="slide level2 unnumbered unlisted smaller">
@@ -3260,7 +3319,7 @@ Total
 <section id="section-31" class="slide level2 unnumbered unlisted">
 <h2></h2>
 <h3 id="média-aritmética-5">Média (Aritmética)</h3>
-<p>E se os dados estivessem representados apenas por meio de distribuições intervalares? <span class="fragment" data-fragment-index="1"><span class="fragment highlight-current-red" data-fragment-index="1">Nesse caso não temos mais acesso as “observações originais”!</span></span></p>
+<p>E se os dados estivessem representados apenas por meio de distribuições intervalares? <span class="fragment highlight-current-red" data-fragment-index="1">Nesse caso não temos mais acesso as “observações originais”!</span></p>
 <div class="fragment">
 <p><span style="color:blue; "><strong>Alternativa:</strong></span> Substituir todas observações de uma faixa pelo seu respectivo ponto médio.</p>
 </div>
@@ -3274,7 +3333,6 @@ Total
 <div class="fragment" data-fragment-index="3">
 <p>Pela tabela abaixo vemos que <span class="math inline">\(\sum_ix_i^{(m)} = 165\)</span>. <span class="fragment" data-fragment-index="4">Logo, a média é aproximada por <span class="math inline">\(\bar{x} \approx 165/50 = \text{3,3}\)</span>.</span></p>
 </div>
-
 <table class="table-with-total-row" style="margin-top: 40px;">
 <thead>
 <tr>
@@ -3418,7 +3476,6 @@ Total
 </td>
 </tr>
 </tbody>
-
 </table>
 </section>
 <section id="section-33" class="slide level2 unnumbered unlisted">
@@ -3472,15 +3529,107 @@ Total
 <section id="section-40" class="slide level2 unnumbered unlisted">
 <h2></h2>
 <h3 id="variância-6">Variância</h3>
-<p><span style="color:blue; "><strong>Ideia:</strong></span> Medir quanto as observações se distanciam “em média” de alguma medida de tendência central de referência<span class="fragment">, como a média dos dados</span></p>
+<p><span style="color:blue; "><strong>Ideia:</strong></span> Medir quanto as observações se desviam “em média” de alguma medida de tendência central de referência <span class="fragment" style="color:red; ">(por exemplo, a média dos dados).</span></p>
 </section>
 <section id="section-41" class="slide level2 unnumbered unlisted">
 <h2></h2>
+<h3 id="variância-7">Variância</h3>
+<p><span style="color:blue; "><strong>Ideia:</strong></span> Medir quanto as observações se desviam “em média” de alguma medida de tendência central de referência (por exemplo, a média dos dados).</p>
+
+<img data-src="figs/ilustracao_variancia_f4.png" class="r-stretch"></section>
+<section id="section-42" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-8">Variância</h3>
+<p><span style="color:blue; "><strong>Ideia:</strong></span> Medir quanto as observações se desviam “em média” de alguma medida de tendência central de referência (por exemplo, a média dos dados).</p>
+
+<img data-src="figs/ilustracao_variancia_f3.png" class="r-stretch"></section>
+<section id="section-43" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-9">Variância</h3>
+<p><span style="color:blue; "><strong>Ideia:</strong></span> Medir quanto as observações se desviam “em média” de alguma medida de tendência central de referência (por exemplo, a média dos dados).</p>
+
+<img data-src="figs/ilustracao_variancia_f2.png" class="r-stretch"></section>
+<section id="section-44" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-10">Variância</h3>
+<p><span style="color:blue; "><strong>Ideia:</strong></span> Medir quanto as observações se desviam “em média” de alguma medida de tendência central de referência (por exemplo, a média dos dados).</p>
+
+<img data-src="figs/ilustracao_variancia_f1.png" class="r-stretch"></section>
+<section id="section-45" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 id="variância-11">Variância</h3>
+<p>Seja <span class="math inline">\(d_i = x_i - \bar{x}\)</span> o desvio entre a <span class="math inline">\(i\)</span>-ésima observação e a média da amostra, <span class="math inline">\(i = 1, \ldots, n\)</span>.</p>
+<div class="fragment">
+<p>Note que <span class="math inline">\(\bar{d} = \frac{1}{n} \sum_{i=1}^d d_i\)</span> sempre resultará em <span class="math inline">\(\bar{d} = 0\)</span>. <span class="fragment" style="color:red; ">Os desvios positivos são cancelados pelos negativos.</span></p>
+</div>
+<div class="fragment">
+<p>Uma opção é considerar apenas a magnitude, não levando em conta o sentido dos desvios. <span class="fragment" style="color:red; ">Podemos tomar <span class="math inline">\(|d_i|\)</span> ou <span class="math inline">\(d_i^2\)</span>, por exemplo.</span></p>
+</div>
+<div class="fragment">
+<p><strong>Definição:</strong> As variâncias populacional e amostral são definidas, respectivamente, por <span class="math display">\[\sigma^2 = \frac{1}{n} \sum_{i=1}^n d_i^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})^2 \class{fragment}{= \frac{\sum_ix_i^2 - n\bar{x}^2}{n}}\]</span> e <span class="math display">\[s^2 = \frac{1}{n-1} \sum_{i=1}^n d_i^2 = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2 \class{fragment}{= \frac{\sum_ix_i^2 - n\bar{x}^2}{n-1}.}\]</span></p>
+</div>
+</section>
+<section id="section-46" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-12">Variância</h3>
+
+<img data-src="figs/ilustracao_variancia_f1.png" class="r-stretch"><div class="fragment">
+<p>No exemplo acima, supondo que estamos lidando com amostras, temos que:</p>
+<div>
+<ul>
+<li class="fragment">nos dados azuis: <span class="math inline">\(\sum_i d_i^2 = 3\text{,}5 \Rightarrow s^2 = \frac{3\text{,}5}{6-1} = 0\text{,}7;\)</span></li>
+<li class="fragment">nos dados vermelhos: <span class="math inline">\(\sum_i d_i^2 = 14 \Rightarrow s^2 = \frac{14}{6-1} = 2\text{,}8;\)</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="section-47" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 id="variância-13">Variância</h3>
+<p>Para dados apresentados em distribuição de frequência não intervalar, as variâncias populacional e amostral são calculadas, respectivamente, como <span class="math display">\[\sigma^2 = \frac{1}{n} \sum_{i=1}^k n_i(x_i^* - \bar{x})^2 = \frac{\sum_in_ix_i^{*2} - n\bar{x}^2}{n}\]</span> e <span class="math display">\[s^2 = \frac{1}{n-1} \sum_{i=1}^k n_i(x_i^* - \bar{x})^2 = \frac{\sum_in_ix_i^{*2} - n\bar{x}^2}{n-1}.\]</span></p>
+</section>
+<section id="section-48" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 id="variância-14">Variância</h3>
+<p>Se os dados estão apresentados em distribuição intervalar, então fazemos as seguintes aproximações: <span class="math display">\[\sigma^2 \approx \frac{1}{n} \sum_{i=1}^k n_i(x_i^{(m)} - \bar{x})^2 = \frac{\sum_in_ix_i^{(m)2} - n\bar{x}^2}{n}\]</span> e <span class="math display">\[s^2 \approx \frac{1}{n-1} \sum_{i=1}^k n_i(x_i^{(m)} - \bar{x})^2 = \frac{\sum_in_ix_i^{(m)2} - n\bar{x}^2}{n-1},\]</span> em que <span class="math inline">\(x_i^{(m)} = \frac{a_{i-1} + a_i}{2}\)</span> é o ponto médio da <span class="math inline">\(i\)</span>-ésima faixa <span class="math inline">\((a_{i-1}, a_i]\)</span>.</p>
+</section>
+<section id="section-49" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
 <h3 id="desvio-padrão">Desvio-padrão</h3>
+<p><span style="color:red; "><strong>Problema:</strong></span> A variância é expressa na unidade de medida dos dados ao quadrado.</p>
+<div class="fragment">
+<p>Por exemplo: dados em <span class="math inline">\(m\)</span>, variância em <span class="math inline">\(m^2\)</span>.</p>
+</div>
+<div class="fragment">
+<p>Para contornar esse problema, definimos o desvio-padrão <span style="color:blue; ">(raiz quadrada da variância)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Definição:</strong> Os desvios-padrão populacional e amostral são definidos, respectivamente, por <span class="math display">\[\sigma = \sqrt{\sigma^2} \ \ \ \ \ \text{e} \ \ \ \ \ s = \sqrt{s^2}.\]</span></p>
+</div>
+<div class="fragment">
+<p>No exemplo anterior, temos <span class="math inline">\(s = \sqrt{0\text{,}7} = 0\text{,}837\)</span> (<span style="color:blue;">azul</span>) e <span class="math inline">\(s = \sqrt{2\text{,}8} = 1\text{,}774\)</span> (<span style="color:red;">vermelho</span>).</p>
+</div>
+<div class="fragment">
+<p><span style="color:blue; "><strong>Importante:</strong></span> Se <span class="math inline">\(y_i = ax_i\)</span>, <span class="math inline">\(i=1, \ldots, n\)</span>, então</p>
+<div>
+<ul>
+<li class="fragment">as variâncias satisfazem <span class="math inline">\(\sigma^2_y =  a^2\sigma^2_x\)</span> e <span class="math inline">\(s^2_y =  a^2s^2_x\)</span>;</li>
+<li class="fragment">e os desvios-padrão satisfazem <span class="math inline">\(\sigma_y =  a\sigma_x\)</span> e <span class="math inline">\(s_y =  as_x\)</span>.</li>
+</ul>
+</div>
+</div>
+<div class="fragment" style="color:red;">
+<p>Isso foi exatamente o que aconteceu na amostra do exemplo!!</p>
+</div>
+</section></section>
+<section id="fim" class="title-slide slide level1 unnumbered unlisted center">
+<h1>FIM</h1>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><a href="../index.html">Voltar 🔙</a></p>
 </div>
-</section></section>
+</div>
+</section>
     </div>
   </div>
 
@@ -3507,7 +3656,6 @@ Total
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -3693,42 +3841,80 @@ Total
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -3806,10 +3992,27 @@ Total
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -3819,8 +4022,17 @@ Total
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -3834,7 +4046,11 @@ Total
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
