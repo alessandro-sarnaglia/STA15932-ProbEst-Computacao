@@ -80,9 +80,9 @@ tab_op <- function(tbl){
 ### Avaliações
 
 ::: incremental
-1.  Avaliação 1 ⟹ Unidades 1 e 2;
-2.  Avaliação 2 ⟹ Unidade 3;
-3.  Avaliação 3 ⟹ Unidade 4.
+1.  Avaliação 1 $\Rightarrow$ Unidades 1 e 2;
+2.  Avaliação 2 $\Rightarrow$ Unidade 3;
+3.  Avaliação 3 $\Rightarrow$ Unidade 4.
 :::
 
 ::: fragment
@@ -870,8 +870,8 @@ As principais características são:
 :::
 
 ::: incremental
--   tendência central da variável [⟹ [Exemplos: média, mediana e moda;]{style="color:red; "}]{.fragment}
--   dispersão da variável [⟹ [Exemplos: variância e desvio-padrão.]{style="color:red; "}]{.fragment}
+-   tendência central da variável [$\Rightarrow$ [Exemplos: média, mediana e moda;]{style="color:red; "}]{.fragment}
+-   dispersão da variável [$\Rightarrow$ [Exemplos: variância e desvio-padrão.]{style="color:red; "}]{.fragment}
 :::
 
 ##  {.unnumbered .unlisted}
@@ -885,41 +885,35 @@ O que seria valor "típico"?
 :::
 
 ::: incremental
--   ponto de equilíbrio dos dados [⟹ [média (aritmética);]{style="color:red; "}]{.fragment}
--   ponto central dos dados [⟹ [mediana;]{style="color:red; "}]{.fragment}
--   ponto de alta frequência [⟹ [moda.]{style="color:red; "}]{.fragment}
+-   ponto de equilíbrio dos dados [$\Rightarrow$ [média (aritmética);]{style="color:red; "}]{.fragment}
+-   ponto central dos dados [$\Rightarrow$ [mediana;]{style="color:red; "}]{.fragment}
+-   ponto de alta frequência [$\Rightarrow$ [moda;]{style="color:red; "}]{.fragment}
 :::
 
-## {.unnumbered .unlisted .smaller}
+##  {.unnumbered .unlisted .smaller}
 
 ### Média (Aritmética)
 
-Dadas $n$ observações $x_1, \ldots, x_n$ de uma variável quantitativa, a sua média (aritmética) é definida por
-$$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i.$$
+Dadas $n$ observações $x_1, \ldots, x_n$ de uma variável quantitativa, a sua média (aritmética) é definida por $$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i.$$
 
-:::: {.columns .v-center-container}
-
+::: {.columns .v-center-container}
 ::: {.column width="65%"}
-Se os dados estão na forma de distribuição de frequências não intervalar [[como a do lado]{.fragment .highlight-current-red fragment-index=1}]{.fragment fragment-index=1}[, podemos utilizar uma das seguintes expressões:]{.fragment  fragment-index=2}
+Se os dados estão na forma de distribuição de frequências não intervalar [como a do lado]{.fragment .highlight-current-red fragment-index="1"}[, podemos utilizar uma das seguintes expressões:]{.fragment fragment-index="2"}
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index="2"}
 $$
 \bar{x} = \frac{1}{n}\sum_{i=1}^k x_i^*n_i = \sum_{i=1}^k x_i^*f_i.
 $$
 :::
 
-::: {.fragment fragment-index=3}
+::: {.fragment fragment-index="3"}
 [**Observação:**]{style="color:blue; "} A última expressão é conhecida como média ponderada com pesos $f_i$.
 :::
-
 :::
 
 ::: {.column width="35%"}
-
-::: {.fragment fragment-index=1}
-
-::: {.table-with-total-row .fragment .highlight-current-red fragment-index=1 style="font-size:70%; "}
-
+::: {.fragment fragment-index="1"}
+::: {.table-with-total-row .fragment .highlight-current-red fragment-index="1" style="font-size:70%; "}
 ```{=latex}
 \begin{table}\centering
 \begin{tabular}{ccc}
@@ -931,14 +925,10 @@ $x_k^*$        & $n_k$         & $f_k$        \\
 \end{tabular}
 \end{table}
 ```
-
 :::
-
 :::
-
 :::
-
-::::
+:::
 
 ##  {.unnumbered .unlisted}
 
@@ -968,23 +958,22 @@ $x_k^*$        & $n_k$         & $f_k$        \\
 
 ### Média (Aritmética)
 
-E se os dados estivessem representados apenas por meio de distribuições intervalares? [[Nesse caso não temos mais acesso as "observações originais"!]{.fragment .highlight-current-red  fragment-index=1}]{.fragment fragment-index=1}
+E se os dados estivessem representados apenas por meio de distribuições intervalares? [[Nesse caso não temos mais acesso as "observações originais"!]{.fragment .highlight-current-red fragment-index="1"}]{.fragment fragment-index="1"}
 
 ::: fragment
 [**Alternativa:**]{style="color:blue; "} Substituir todas observações de uma faixa pelo seu respectivo ponto médio.
 :::
 
 ::: fragment
-**Definição:** Dada a $i$-ésima faixa $(a_{i-1}, a_i]$, o seu ponto médio é definido por $x_i^{(m)}$ e média é aproximada por
-$$\bar{x} \approx \frac{1}{n}\sum_{i=1}^kx_i^{(m)}n_i = \sum_{i=1}^kx_i^{(m)}f_i.$$
+**Definição:** Dada a $i$-ésima faixa $(a_{i-1}, a_i]$, o seu ponto médio é definido por $x_i^{(m)} = \frac{a_{i-1} + a_i}{2}$ e média é aproximada por $$\bar{x} \approx \frac{1}{n}\sum_{i=1}^kx_i^{(m)}n_i = \sum_{i=1}^kx_i^{(m)}f_i.$$
 :::
 
 ##  {.unnumbered .unlisted}
 
 ### Média (Aritmética)
 
-::: {.fragment fragment-index=3}
-Pela tabela abaixo vemos que $\sum_ix_i^{(m)} = 165$. [Logo, a média é aproximada por $\bar{x} \approx 165/50 = \text{3,3}$.]{.fragment fragment-index=4}
+::: {.fragment fragment-index="3"}
+Pela tabela abaixo vemos que $\sum_ix_i^{(m)} = 165$. [Logo, a média é aproximada por $\bar{x} \approx 165/50 = \text{3,3}$.]{.fragment fragment-index="4"}
 :::
 
 {{< include tab_exemplo_cont1.html >}}
@@ -1006,6 +995,55 @@ Algumas observações sobre a média:
 ##  {.unnumbered .unlisted}
 
 ### Variância
+
+O uso de medidas de tendência central para representar a localização dos dados pode ocultar informações relevantes.
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+O uso de medidas de tendência central para representar a localização dos dados pode ocultar informações relevantes.
+
+![](figs/media_nao_traz_todas_info_f1.png)
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+O uso de medidas de tendência central para representar a localização dos dados pode ocultar informações relevantes.
+
+![](figs/media_nao_traz_todas_info_f2.png)
+
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+[**Exemplo:**]{style="color:blue; "} A média não nos fala nada sobre a dispersão (variabilidade) dos dados.
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+[**Exemplo:**]{style="color:blue; "} A média não nos fala nada sobre a dispersão (variabilidade) dos dados.
+
+![](figs/media_nao_traz_info_da_dispersao_f1.png)
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+[**Exemplo:**]{style="color:blue; "} A média não nos fala nada sobre a dispersão (variabilidade) dos dados.
+
+![](figs/media_nao_traz_info_da_dispersao_f2.png)
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+[**Ideia:**]{style="color:blue; "} Medir quanto as observações se distanciam "em média" de alguma medida de tendência central de referência[, como a média dos dados]{.fragment}
+
+
 
 ##  {.unnumbered .unlisted}
 

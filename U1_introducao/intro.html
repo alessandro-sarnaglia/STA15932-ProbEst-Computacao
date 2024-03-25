@@ -402,9 +402,9 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <h3 id="avaliações">Avaliações</h3>
 <div>
 <ol type="1">
-<li class="fragment">Avaliação 1 ⟹ Unidades 1 e 2;</li>
-<li class="fragment">Avaliação 2 ⟹ Unidade 3;</li>
-<li class="fragment">Avaliação 3 ⟹ Unidade 4.</li>
+<li class="fragment">Avaliação 1 <span class="math inline">\(\Rightarrow\)</span> Unidades 1 e 2;</li>
+<li class="fragment">Avaliação 2 <span class="math inline">\(\Rightarrow\)</span> Unidade 3;</li>
+<li class="fragment">Avaliação 3 <span class="math inline">\(\Rightarrow\)</span> Unidade 4.</li>
 </ol>
 </div>
 <div class="fragment">
@@ -3163,8 +3163,8 @@ Total
 </div>
 <div>
 <ul>
-<li class="fragment">tendência central da variável <span class="fragment">⟹ <span style="color:red; ">Exemplos: média, mediana e moda;</span></span></li>
-<li class="fragment">dispersão da variável <span class="fragment">⟹ <span style="color:red; ">Exemplos: variância e desvio-padrão.</span></span></li>
+<li class="fragment">tendência central da variável <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">Exemplos: média, mediana e moda;</span></span></li>
+<li class="fragment">dispersão da variável <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">Exemplos: variância e desvio-padrão.</span></span></li>
 </ul>
 </div>
 </section>
@@ -3177,9 +3177,9 @@ Total
 </div>
 <div>
 <ul>
-<li class="fragment">ponto de equilíbrio dos dados <span class="fragment">⟹ <span style="color:red; ">média (aritmética);</span></span></li>
-<li class="fragment">ponto central dos dados <span class="fragment">⟹ <span style="color:red; ">mediana;</span></span></li>
-<li class="fragment">ponto de alta frequência <span class="fragment">⟹ <span style="color:red; ">moda.</span></span></li>
+<li class="fragment">ponto de equilíbrio dos dados <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">média (aritmética);</span></span></li>
+<li class="fragment">ponto central dos dados <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">mediana;</span></span></li>
+<li class="fragment">ponto de alta frequência <span class="fragment"><span class="math inline">\(\Rightarrow\)</span> <span style="color:red; ">moda;</span></span></li>
 </ul>
 </div>
 </section>
@@ -3189,7 +3189,7 @@ Total
 <p>Dadas <span class="math inline">\(n\)</span> observações <span class="math inline">\(x_1, \ldots, x_n\)</span> de uma variável quantitativa, a sua média (aritmética) é definida por <span class="math display">\[\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i.\]</span></p>
 <div class="columns v-center-container">
 <div class="column" style="width:65%;">
-<p>Se os dados estão na forma de distribuição de frequências não intervalar <span class="fragment" data-fragment-index="1"><span class="fragment highlight-current-red" data-fragment-index="1">como a do lado</span></span><span class="fragment" data-fragment-index="2">, podemos utilizar uma das seguintes expressões:</span></p>
+<p>Se os dados estão na forma de distribuição de frequências não intervalar <span class="fragment highlight-current-red" data-fragment-index="1">como a do lado</span><span class="fragment" data-fragment-index="2">, podemos utilizar uma das seguintes expressões:</span></p>
 <div class="fragment" data-fragment-index="2">
 <p><span class="math display">\[
 \bar{x} = \frac{1}{n}\sum_{i=1}^k x_i^*n_i = \sum_{i=1}^k x_i^*f_i.
@@ -3265,7 +3265,7 @@ Total
 <p><span style="color:blue; "><strong>Alternativa:</strong></span> Substituir todas observações de uma faixa pelo seu respectivo ponto médio.</p>
 </div>
 <div class="fragment">
-<p><strong>Definição:</strong> Dada a <span class="math inline">\(i\)</span>-ésima faixa <span class="math inline">\((a_{i-1}, a_i]\)</span>, o seu ponto médio é definido por <span class="math inline">\(x_i^{(m)}\)</span> e média é aproximada por <span class="math display">\[\bar{x} \approx \frac{1}{n}\sum_{i=1}^kx_i^{(m)}n_i = \sum_{i=1}^kx_i^{(m)}f_i.\]</span></p>
+<p><strong>Definição:</strong> Dada a <span class="math inline">\(i\)</span>-ésima faixa <span class="math inline">\((a_{i-1}, a_i]\)</span>, o seu ponto médio é definido por <span class="math inline">\(x_i^{(m)} = \frac{a_{i-1} + a_i}{2}\)</span> e média é aproximada por <span class="math display">\[\bar{x} \approx \frac{1}{n}\sum_{i=1}^kx_i^{(m)}n_i = \sum_{i=1}^kx_i^{(m)}f_i.\]</span></p>
 </div>
 </section>
 <section id="section-32" class="slide level2 unnumbered unlisted">
@@ -3438,8 +3438,43 @@ Total
 <section id="section-34" class="slide level2 unnumbered unlisted">
 <h2></h2>
 <h3 id="variância">Variância</h3>
+<p>O uso de medidas de tendência central para representar a localização dos dados pode ocultar informações relevantes.</p>
 </section>
 <section id="section-35" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-1">Variância</h3>
+<p>O uso de medidas de tendência central para representar a localização dos dados pode ocultar informações relevantes.</p>
+
+<img data-src="figs/media_nao_traz_todas_info_f1.png" class="r-stretch"></section>
+<section id="section-36" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-2">Variância</h3>
+<p>O uso de medidas de tendência central para representar a localização dos dados pode ocultar informações relevantes.</p>
+
+<img data-src="figs/media_nao_traz_todas_info_f2.png" class="r-stretch"></section>
+<section id="section-37" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-3">Variância</h3>
+<p><span style="color:blue; "><strong>Exemplo:</strong></span> A média não nos fala nada sobre a dispersão (variabilidade) dos dados.</p>
+</section>
+<section id="section-38" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-4">Variância</h3>
+<p><span style="color:blue; "><strong>Exemplo:</strong></span> A média não nos fala nada sobre a dispersão (variabilidade) dos dados.</p>
+
+<img data-src="figs/media_nao_traz_info_da_dispersao_f1.png" class="r-stretch"></section>
+<section id="section-39" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-5">Variância</h3>
+<p><span style="color:blue; "><strong>Exemplo:</strong></span> A média não nos fala nada sobre a dispersão (variabilidade) dos dados.</p>
+
+<img data-src="figs/media_nao_traz_info_da_dispersao_f2.png" class="r-stretch"></section>
+<section id="section-40" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 id="variância-6">Variância</h3>
+<p><span style="color:blue; "><strong>Ideia:</strong></span> Medir quanto as observações se distanciam “em média” de alguma medida de tendência central de referência<span class="fragment">, como a média dos dados</span></p>
+</section>
+<section id="section-41" class="slide level2 unnumbered unlisted">
 <h2></h2>
 <h3 id="desvio-padrão">Desvio-padrão</h3>
 <div class="footer footer-default">
