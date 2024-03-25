@@ -401,14 +401,11 @@ df %>%
 
 ::: columns
 ::: {.column width="55%"}
-
 ::: fragment
-
 ```{r}
 kable(data.frame(names(table(df[,1])), as.numeric(table(df[,1]))),
       row.names = F, col.names=c('Dia Útil', 'Frequência'))
 ```
-
 :::
 
 <p>
@@ -416,7 +413,6 @@ kable(data.frame(names(table(df[,1])), as.numeric(table(df[,1]))),
 </p>
 
 ::: fragment
-
 ```{r, render=TRUE}
 df0 <- data.frame(Frequencia = 'Frequência', Atendimentos = factor(df$Atendimentos, levels = 0:max(atendimentos)))
 tbl <- tbl_summary(data = df0, by = Atendimentos, missing = "no",
@@ -436,12 +432,10 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
   tab_op()
 ```
 :::
-
-::: 
+:::
 
 ::: {.column width="45%"}
 ::: fragment
-
 ```{r, render=TRUE}
 tbl <- tbl_summary(data = df, by = Atendimentos, missing = "no",
                    label = list(Dia.Útil ~ "", Atendimentos ~ "Atendimentos"),
@@ -460,8 +454,8 @@ tbl %>% bold_levels() %>% bold_labels() %>% as_gt() %>%
   tab_op()
 ```
 :::
-::: 
-::: 
+:::
+:::
 :::
 
 ##  {.unnumbered .unlisted}
@@ -692,20 +686,15 @@ Há casos que o fenômeno impõe a necessidade de escolha de faixas desiguais.
 
 Exemplo de uma distribuição de frequências intervalar de dados fictícios:
 
-<p>
-
-</p>
-
 {{< include tab_exemplo.html >}}
 
 ::: fragment
-[**Observação:**]{style="color: blue;"} A frequência relativa 0,2:
+[**Observação:**]{style="color: blue;"} A mesma frequência relativa 0,2 da faixa $(1,2]$:
 :::
 
 ::: incremental
--   corresponde a 0,2 por unidade de renda ($d_2 = \text{0,2}$) no intervalo $(1,2]$;
--   corresponde a 0,05 por unidade de renda ($d_3 = \text{0,05}$) no intervalo $(2,6]$, ou seja, [fica mais espalhada nesse intervalo]{style="color: red;"};
--   corresponde a 0,025 por unidade de renda ($d_4 = \text{0,025}$) no intervalo $(6,14]$, ou seja, [fica **ainda** mais espalhada nesse intervalo]{style="color: red;"};
+-   corresponde a 0,05 por unidade de renda ($d_3 = \text{0,05}$) em $(2,6]$, ou seja, [fica menos concentrada nessa faixa]{style="color: red;"};
+-   corresponde a 0,025 por unidade de renda ($d_4 = \text{0,025}$) em $(6,14]$, ou seja, [fica **ainda** menos concentrada nessa faixa]{style="color: red;"};
 :::
 
 ##  {.unnumbered .unlisted .smaller}
@@ -784,7 +773,7 @@ legend('top', legend = c("Não", "Sim"), horiz = TRUE, fill = c('blue', 'red'))
 ### Exemplo - Distribuição Intervalar
 
 ::: columns
-::: {.fragment .column width="50%"}
+::: {.column width="50%"}
 ```{r, render=TRUE, fig.width=6, fig.height=4}
 
 brs <- c(0, 1, 2, 6, 14)
@@ -868,33 +857,156 @@ arrows(x0 = 6, y0 = .2, x1 = 2.2, y1 = .025, length = .07)
 text(x = 6, y = .2, labels = "Frequência estimada em (1.5, 3]", pos=4)
 ```
 
-## Média e Variância
+## Medidas Descritivas
 
 Muitas vezes, desejamos evidenciar algumas características dos dados por meio de medidas numéricas.
+
+::: fragment
+Dada uma amostra $x_1, \ldots, x_n$, utilizar uma função $t(x_1, \ldots, x_n)$ para quantificar algum comportamento dos dados.
+:::
 
 ::: fragment
 As principais características são:
 :::
 
 ::: incremental
--   tendência da variável;
--   dispersão da variável.
+-   tendência central da variável [⟹ [Exemplos: média, mediana e moda;]{style="color:red; "}]{.fragment}
+-   dispersão da variável [⟹ [Exemplos: variância e desvio-padrão.]{style="color:red; "}]{.fragment}
 :::
 
+##  {.unnumbered .unlisted}
+
+### Medidas de Tendência Central
+
+Buscam indicar um valor "típico" ou "representativo" dos dados em questão;
+
 ::: fragment
-As medidas que estudaremos aqui são:
+O que seria valor "típico"?
 :::
 
 ::: incremental
--   a média ([medida de tendência central]{style="color:red; "});
--   e a variância e o desvio-padrão ([medidas de dispersão]{style="color:red; "}).
+-   ponto de equilíbrio dos dados [⟹ [média (aritmética);]{style="color:red; "}]{.fragment}
+-   ponto central dos dados [⟹ [mediana;]{style="color:red; "}]{.fragment}
+-   ponto de alta frequência [⟹ [moda.]{style="color:red; "}]{.fragment}
 :::
 
-##  {.unnumbered .unlisted .smaller}
+## {.unnumbered .unlisted .smaller}
 
-### Média
+### Média (Aritmética)
 
-A média é uma medida que visa descrever um valor cujas observações de uma variável "tendem" a apresentar.
+Dadas $n$ observações $x_1, \ldots, x_n$ de uma variável quantitativa, a sua média (aritmética) é definida por
+$$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i.$$
 
+:::: {.columns .v-center-container}
 
+::: {.column width="65%"}
+Se os dados estão na forma de distribuição de frequências não intervalar [[como a do lado]{.fragment .highlight-current-red fragment-index=1}]{.fragment fragment-index=1}[, podemos utilizar uma das seguintes expressões:]{.fragment  fragment-index=2}
 
+::: {.fragment fragment-index=2}
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^k x_i^*n_i = \sum_{i=1}^k x_i^*f_i.
+$$
+:::
+
+::: {.fragment fragment-index=3}
+[**Observação:**]{style="color:blue; "} A última expressão é conhecida como média ponderada com pesos $f_i$.
+:::
+
+:::
+
+::: {.column width="35%"}
+
+::: {.fragment fragment-index=1}
+
+::: {.table-with-total-row .fragment .highlight-current-red fragment-index=1 style="font-size:70%; "}
+
+```{=latex}
+\begin{table}\centering
+\begin{tabular}{ccc}
+Variável       & $n_i$         & $f_i$        \\ \hline
+$x_1^*$        & $n_1$         & $f_1$        \\
+$\vdots$       & $\vdots$      & $\vdots$     \\
+$x_k^*$        & $n_k$         & $f_k$        \\
+\textbf{Total} & $\sum_in_i=n$ & $\sum_if_i=1$\\
+\end{tabular}
+\end{table}
+```
+
+:::
+
+:::
+
+:::
+
+::::
+
+##  {.unnumbered .unlisted}
+
+### Média (Aritmética)
+
+![](figs/ilustracao_media_pto_equilibrio_f1.png)
+
+##  {.unnumbered .unlisted}
+
+### Média (Aritmética)
+
+![](figs/ilustracao_media_pto_equilibrio_f2.png)
+
+##  {.unnumbered .unlisted}
+
+### Média (Aritmética)
+
+![](figs/ilustracao_media_pto_equilibrio_f3.png)
+
+##  {.unnumbered .unlisted}
+
+### Média (Aritmética)
+
+![](figs/ilustracao_media_pto_equilibrio_f4.png)
+
+##  {.unnumbered .unlisted}
+
+### Média (Aritmética)
+
+E se os dados estivessem representados apenas por meio de distribuições intervalares? [[Nesse caso não temos mais acesso as "observações originais"!]{.fragment .highlight-current-red  fragment-index=1}]{.fragment fragment-index=1}
+
+::: fragment
+[**Alternativa:**]{style="color:blue; "} Substituir todas observações de uma faixa pelo seu respectivo ponto médio.
+:::
+
+::: fragment
+**Definição:** Dada a $i$-ésima faixa $(a_{i-1}, a_i]$, o seu ponto médio é definido por $x_i^{(m)}$ e média é aproximada por
+$$\bar{x} \approx \frac{1}{n}\sum_{i=1}^kx_i^{(m)}n_i = \sum_{i=1}^kx_i^{(m)}f_i.$$
+:::
+
+##  {.unnumbered .unlisted}
+
+### Média (Aritmética)
+
+::: {.fragment fragment-index=3}
+Pela tabela abaixo vemos que $\sum_ix_i^{(m)} = 165$. [Logo, a média é aproximada por $\bar{x} \approx 165/50 = \text{3,3}$.]{.fragment fragment-index=4}
+:::
+
+{{< include tab_exemplo_cont1.html >}}
+
+##  {.unnumbered .unlisted}
+
+### Média (Aritmética)
+
+Algumas observações sobre a média:
+
+::: incremental
+-   tem propriedades "boas";
+-   é influenciada por valores atípicos;
+-   não recomendada em dados assimétricos;
+-   só é calculada em variáveis quantitativas;
+-   no caso intervalar $\downarrow k \Rightarrow$ piora a aproximação da média.
+:::
+
+##  {.unnumbered .unlisted}
+
+### Variância
+
+##  {.unnumbered .unlisted}
+
+### Desvio-padrão

@@ -74,3 +74,9 @@ figure>figcaption {
 .reveal .panel-tabset [role=tab] {
     padding: 0.1em .4em;
 }
+
+.reveal .slide .v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
