@@ -5,6 +5,8 @@ author: "Prof. Dr. Alessandro JQ Sarnaglia"
 lang: "pt"
 format:
   revealjs:
+    width: 1280
+    height: 720
     fig-width: 5.5
     fig-height: 5.5
     theme: [custom.scss]
@@ -285,8 +287,8 @@ Vejamos as definições dos diferentes tipos de variáveis.
 Apresentam valores [não numéricos]{.underline} (também chamadas de categorias). Se dividem em:
 
 ::: incremental
--   Ordinais ⟹ quando os possíveis categorias admitem algum tipo de ordenação;
--   Nominais ⟹ quando não há uma estrutura de ordenação natural das categorias.
+-   Ordinais $\Rightarrow$ quando os possíveis categorias admitem algum tipo de ordenação;
+-   Nominais $\Rightarrow$ quando não há uma estrutura de ordenação natural das categorias.
 :::
 
 ## Tipos de variáveis - III {.unnumbered .unlisted}
@@ -296,8 +298,8 @@ Apresentam valores [não numéricos]{.underline} (também chamadas de categorias
 Apresentam valores [numéricos]{.underline}. Se dividem em:
 
 ::: incremental
--   Discretas ⟹ quando os possíveis valores formam um conjunto [enumerável]{.underline};
--   Contínuas ⟹ quando os possíveis valores formam um conjunto [não enumerável]{.underline};
+-   Discretas $\Rightarrow$ quando os possíveis valores formam um conjunto [enumerável]{.underline};
+-   Contínuas $\Rightarrow$ quando os possíveis valores formam um conjunto [não enumerável]{.underline};
 :::
 
 ##  {.unnumbered .unlisted .smaller}
@@ -890,35 +892,38 @@ O que seria valor "típico"?
   <li class=fragment fragment-index="4">ponto de alta frequência $\Rightarrow$ [moda;]{style="color:red; "}</li>
 </ul>
 
-::: {.fragment fragment-index="5"}
-Discutiremos apenas a média!
-:::
-
 
 ##  {.unnumbered .unlisted .smaller}
 
 ### Média (Aritmética)
 
-Dadas $n$ observações $x_1, \ldots, x_n$ de uma variável quantitativa, a sua média (aritmética) é definida por $$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i.$$
+Para uma [amostra]{.underline} $x_1, \ldots, x_n$ de tamanho $n$, a média (aritmética) amostral é definida por $$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i.$$
+
+::: {.fragment fragment-index="1"}
+
+[**Observação:**]{style="color:blue; "} Se $x_1, \ldots, x_n$ se trata de uma população, em vez de $\bar{x}$, denota-se a média (populacional) por $\mu$.
+
+::: 
 
 ::: {.columns .v-center-container}
-::: {.column width="65%"}
-Se os dados estão na forma de distribuição de frequências não intervalar [como a do lado]{.fragment .highlight-current-red fragment-index="1"}[, podemos utilizar uma das seguintes expressões:]{.fragment fragment-index="2"}
+::: {.column width="68%"}
 
-::: {.fragment fragment-index="2"}
+[Para uma distribuição de frequências não intervalar]{.fragment fragment-index="2"} [[como a do lado]{.fragment fragment-index="3"}]{.fragment .highlight-current-red fragment-index="3"}[, podemos utilizar uma das seguintes expressões:]{.fragment fragment-index="4"}
+
+::: {.fragment fragment-index="4"}
 $$
 \bar{x} = \frac{1}{n}\sum_{i=1}^k x_i^*n_i = \sum_{i=1}^k x_i^*f_i.
 $$
 :::
 
-::: {.fragment fragment-index="3"}
-[**Observação:**]{style="color:blue; "} A última expressão é conhecida como média ponderada com pesos $f_i$.
+::: {.fragment fragment-index="5"}
+[**Observação:**]{style="color:blue; "} O termo intermediário é a média ponderada com pesos $n_i$.
 :::
 :::
 
-::: {.column width="35%"}
-::: {.fragment fragment-index="1"}
-::: {.table-with-total-row .fragment .highlight-current-red fragment-index="1" style="font-size:70%; "}
+::: {.column width="32%"}
+::: {.fragment fragment-index="3"}
+::: {.table-with-total-row .fragment .highlight-current-red fragment-index="3" style="font-size:70%; "}
 ```{=latex}
 \begin{table}\centering
 \begin{tabular}{ccc}
@@ -963,7 +968,7 @@ $x_k^*$        & $n_k$         & $f_k$        \\
 
 ### Média (Aritmética)
 
-E se os dados estivessem representados apenas por meio de distribuições intervalares? [Nesse caso não temos mais acesso as "observações originais"!]{.fragment .highlight-current-red fragment-index="1"}
+E se os dados estivessem representados apenas por meio de distribuições intervalares? [[Nesse caso não temos mais acesso as "observações originais"!]{.fragment fragment-index="1"}]{.fragment .highlight-current-red fragment-index="1"}
 
 ::: fragment
 [**Alternativa:**]{style="color:blue; "} Substituir todas observações de uma faixa pelo seu respectivo ponto médio.
@@ -978,7 +983,7 @@ E se os dados estivessem representados apenas por meio de distribuições interv
 ### Média (Aritmética)
 
 ::: {.fragment fragment-index="3"}
-Pela tabela abaixo vemos que $\sum_ix_i^{(m)} = 165$. [Logo, a média é aproximada por $\bar{x} \approx 165/50 = \text{3,3}$.]{.fragment fragment-index="4"}
+Pela tabela abaixo vemos que $\sum_ix_i^{(m)} = 165$. [Logo, a média é aproximada por $\bar{x} \approx \frac{165}{50} = \text{3,3}$.]{.fragment fragment-index="4"}
 :::
 
 {{< include tab_exemplo_cont1.html >}}
@@ -990,12 +995,105 @@ Pela tabela abaixo vemos que $\sum_ix_i^{(m)} = 165$. [Logo, a média é aproxim
 Algumas observações sobre a média:
 
 ::: incremental
--   tem propriedades "boas";
--   é influenciada por valores atípicos;
--   não recomendada em dados assimétricos;
+-   em certo sentido, $\bar{x}$ (amostral) "tende" a apresentar valores próximos de $\mu$ (populacional) e a "precisão" aumenta com o aumento de $n$;
 -   só é calculada em variáveis quantitativas;
--   no caso intervalar $\downarrow k \Rightarrow$ piora a aproximação da média.
+-   no caso intervalar $\downarrow k \Rightarrow$ piora a aproximação da média;
+-   não recomendada em dados assimétricos;
+-   é muito sensível a valores discrepantes;
 :::
+
+##  {.unnumbered .unlisted .smaller}
+
+### Mediana
+
+[**Importante:**]{style="color:red; "} Observações discrepantes tendem a se posicionar em um dos extremos da amostra, próximos dos valores mínimo e/ou máximo.
+
+::: fragment
+
+[**Ideia:**]{style="color:blue; "} Assim, podemos construir uma medida de tendência central que utilize o(s) valor(es) que ocupa(m) a(s) posição(ões) central(is).
+
+:::
+
+::: fragment
+
+**Definição:** Dada uma amostra $x_1, \ldots, x_n$ de tamanho $n$, a mediana (amostral) é denotada por $\tilde{x}$ e definida por
+$$\tilde{x} = \begin{cases}
+x_{\left(\frac{n+1}{2}\right)}, & \text{se } n \text{ é ímpar;}\\
+\frac{x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)}}{2}, & \text{se } n \text{ é par;}\\
+\end{cases}
+$$
+em que $x_{(1)} \leq \cdots \leq x_{(n)}$ representam as observações ordenadas em ordem crescente.
+
+::: 
+
+::: fragment
+
+[**Observações:**]{style="color:blue; "} 
+
+::: incremental
+-   Se os dados são observações de toda a população, então a mediana é denotada por $\tilde{\mu}$, em vez de $\tilde{x}$;
+-   50% dos valores da amostra são superiores e 50% são inferiores a mediana;
+
+:::
+
+:::
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Exemplo:** Um exame para detectar deficiência de ferro foi realizado em uma amostra de $n=12$ gestantes e forneceu os seguintes dados:
+
+<div style="text-align: center;">15,2&nbsp;&nbsp; 9,3&nbsp;&nbsp; 7,6&nbsp;&nbsp; 11,9&nbsp;&nbsp; 10,4&nbsp;&nbsp; 9,7&nbsp;&nbsp; 20,4&nbsp;&nbsp; 9,4&nbsp;&nbsp; 11,5&nbsp;&nbsp; 16,2&nbsp;&nbsp; 9,4&nbsp;&nbsp; 8,3</div>
+
+Colocando em ordem crescente, obtemos:
+
+<div style="text-align: center;">7,6&nbsp;&nbsp; 8,3&nbsp;&nbsp; 9,3&nbsp;&nbsp; 9,4&nbsp;&nbsp; 9,4&nbsp;&nbsp; 9,7&nbsp;&nbsp; 10,4&nbsp;&nbsp; 11,5&nbsp;&nbsp; 11,9&nbsp;&nbsp; 15,2&nbsp;&nbsp; 16,2&nbsp;&nbsp; 20,4</div>
+
+Como $n=12$, há duas posições centrais: $\frac{n}{2} = 6$ e $\frac{n}{2} + 1 = 7$.
+
+Assim, a mediana é dada por
+$$\tilde{x} = \frac{x_{(6)} + x_{(7)}}{2} = \frac{9\text{,}7 + 10\text{,}4}{2} = 10\text{,}05.$$
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Exemplo:** Abaixo é apresentada uma ilustração de $\bar{x}$ e $\tilde{x}$ para o conjunto de dados:
+
+![](figs/mediana_exemplo_f3.png)
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Exemplo:** Abaixo é apresentada uma ilustração de $\bar{x}$ e $\tilde{x}$ para o conjunto de dados:
+
+![](figs/mediana_exemplo_f2.png)
+
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Exemplo:** Abaixo é apresentada uma ilustração de $\bar{x}$ e $\tilde{x}$ para o conjunto de dados:
+
+![](figs/mediana_exemplo_f1.png)
+
+::: fragment
+
+[**Observação:**]{style="color:blue; "} em comparação com a média, a mediana é muito menos afetada por observações discrepantes (15,2, 16,2 e 20,4).
+
+:::
+
+
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
 
 ##  {.unnumbered .unlisted}
 
