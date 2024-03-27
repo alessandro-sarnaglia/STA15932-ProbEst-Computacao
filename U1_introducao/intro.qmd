@@ -19,7 +19,7 @@ format:
     footer: "[Voltar 🔙](../index.html)"
     menu:
       useTextContentForMissingTitles: false
-editor: visual
+editor: source
 filters:
   - parse-latex
 ---
@@ -1032,7 +1032,7 @@ em que $x_{(1)} \leq \cdots \leq x_{(n)}$ representam as observações ordenadas
 
 ::: incremental
 -   Se os dados são observações de toda a população, então a mediana é denotada por $\tilde{\mu}$, em vez de $\tilde{x}$;
--   50% dos valores da amostra são superiores e 50% são inferiores a mediana;
+-   50% dos valores da amostra são inferiores e 50% são superiores a mediana;
 
 :::
 
@@ -1087,6 +1087,29 @@ $$\tilde{x} = \frac{x_{(6)} + x_{(7)}}{2} = \frac{9\text{,}7 + 10\text{,}4}{2} =
 :::
 
 
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+::: fragment
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::
+
+:::: columns
+
+::: {.column width="60%"}
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
 
 ##  {.unnumbered .unlisted}
 
@@ -1094,6 +1117,310 @@ $$\tilde{x} = \frac{x_{(6)} + x_{(7)}}{2} = \frac{9\text{,}7 + 10\text{,}4}{2} =
 
 **Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
 
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::: columns
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f1.png)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::: columns
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f2.png)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::: columns
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f3.png)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f4.png)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::: columns
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f5.png)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::: columns
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f6.png)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::: columns
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f7.png)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::: columns
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f8.png)
+
+:::
+
+::: {.column width="40%"}
+
+::: {.fragment}
+
+Logo,
+
+:::
+<div style="font-size:85%;">
+```{=latex}
+\begin{align*}
+\class{fragment}{0\text{,}1} &\class{fragment}{= 0\text{,}5 - 0\text{,}4 \approx 0\text{,}2 (\tilde{x} - 1)}\\
+&\class{fragment}{\Rightarrow \tilde{x} \approx 1 + \frac{0\text{,}5 - 0\text{,}4}{0\text{,}2}}\\
+&\class{fragment}{\Rightarrow \tilde{x} \approx 1\text{,}5.}
+\end{align*}
+```
+</div>
+
+:::
+
+::::
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+**Pergunta:** como aproximar $\tilde{x}$ quando os dados estão apresentados na forma de distribuição intervalar?
+
+[**Ideia:**]{style="color: blue; "} Nesse caso, devemos aproximar o valor de $\tilde{x}$ (ou $\tilde{\mu}$) como o valor que separa os 50% valores inferiores dos 50% valores superiores dos dados.
+
+:::: columns
+
+::: {.column width="60%"}
+
+![](figs/aproximacao_mediana_f9.png)
+
+:::
+
+::: {.column width="40%"}
+
+:::
+
+::::
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+De uma maneira geral, a fórmula para a aproximação da mediana pode ser escrita como
+$$\tilde{x} \approx a_{l-1} + \frac{0\text{,}5-F_{l-1}}{d_l},$$
+em que $(a_{l-1},a_l]$ é o intervalo que contém a mediana, $d_l$ é a sua densidade e $F_{l-1} = f_1+\cdots+f_{l-1}$ é a frequência relativa acumulada até o intervalo imediatamente anterior.
+
+::: fragment
+
+[**Observação:**]{style="color:blue;"} Se a mediana ocorre no primeiro intervalo ($l=1$), então definimos $F_{l-1} = F_0 = 0$.
+
+:::
+
+##  {.unnumbered .unlisted}
+
+### Mediana
+
+Algumas observações sobre a mediana:
+
+::: incremental
+-   ao contrário da média, não possui interpretação física;
+-   depende apenas do(s) valor(es) na(s) posição(ões) central(is);
+-   sofre menos influência de dados discrepantes;
+-   pode ser usada em variáveis qualitativas ordinais
+:::
+
+##  {.unnumbered .unlisted}
+
+### Moda
+
+[**Problema:**]{style="color:red; "} No caso em que a distribuição da variável possui mais de um ponto de alta frequência, tanto a média quanto a mediana podem apontar valores que distoam da maioria dos dados.
+
+::: fragment
+
+Nesses casos, podemos utilizar a [moda]{.underline}.
+
+:::
+
+::: fragment
+
+**Definição:** A moda é o valor de mais alta frequência no conjunto de dados. Vamos denotar uma moda amostral por $\breve{x}$ e populacional por $\breve{\mu}$.
+
+:::
+
+::: fragment
+
+[**Observação:**]{style="color:blue; "} Um conjunto de dados pode ser: amodal; unimodal; bimodal; trimodal; $\ldots$
+
+:::
+
+##  {.unnumbered .unlisted}
+
+### Moda
+
+[**Problema:**]{style="color:red; "} Em alguns casos (variáveis contínuas, por exemplo) há pouca ou nenhuma repetição de valores. Assim, ou a distribuição é amodal ou pode não fornecer um valor representativo.
+
+::: fragment
+
+[**Alternativa:**]{style="color:blue; "} Utilizar a faixa de maior densidade, ou [faixa modal]{.underline}.
+
+:::
+
+::: fragment
+
+**Aproximação:** Assim, a moda pode ser aproximada pelo ponto médio da faixa modal
+
+:::
+
+##  {.unnumbered .unlisted}
+
+### Moda
+
+![](figs/aproximacao_moda_f1.png)
+
+##  {.unnumbered .unlisted}
+
+### Moda
+
+![](figs/aproximacao_moda_f2.png)
+
+
+##  {.unnumbered .unlisted}
+
+### Moda
+
+A moda de um conjunto de dados:
+
+::: incremental
+-   em certo sentido, representa o(s) valor(es) mais provável(eis);
+-   é muito indicada em distribuições multimodais;
+-   não é afetada por dados atípicos;
+-   pode ser usada em qualquer tipo de variável.
+:::
 
 ##  {.unnumbered .unlisted}
 
