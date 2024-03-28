@@ -8,9 +8,11 @@ format:
     css: fonts.css
     menu:
       useTextContentForMissingTitles: false
-editor: visual
+editor: source
 ---
 
 ## Tópicos
 
-1.  [Introdução e Estatística Descritiva](U1_introducao/intro.html)
+1.    [Introdução e Estatística Descritiva](U1_introducao/intro.html)
+
+2.    [Probabilidade de Eventos](U2_probabilidade/probabilidade.html)

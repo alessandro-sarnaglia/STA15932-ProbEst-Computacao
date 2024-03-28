@@ -1,0 +1,154 @@
+---
+title: "Probabilidade e Estatística"
+subtitle: "Probabilidade de Eventos"
+author: "Prof. Dr. Alessandro JQ Sarnaglia"
+lang: "pt"
+format:
+  revealjs:
+    width: 1280
+    height: 720
+    fig-width: 5.5
+    fig-height: 5.5
+    theme: [custom.scss]
+    css: fonts.css
+    callout-icon: false
+    toc: true
+    toc-depth: 3
+    toc-expand: 3
+    number-sections: true
+    number-depth: 3
+    footer: "[Voltar 🔙](../index.html)"
+    menu:
+      useTextContentForMissingTitles: false
+editor: source
+filters:
+  - parse-latex
+---
+
+```{r}
+library(xtable)
+library(gt)
+library(gtsummary)
+tab_op <- function(tbl){
+  tab_options(data = tbl,
+              table.font.size = "100%",
+              table.border.top.color="#000000",
+              table.border.bottom.color = "#000000",
+              table.border.top.width = "1px",
+              table.border.bottom.width = "1px",
+              column_labels.border.top.color="#000000",
+              column_labels.border.bottom.color="#000000",
+              column_labels.border.top.width = "1px",
+              column_labels.border.bottom.width = "1px",
+              row_group.border.top.color = "#000000",
+              row_group.border.bottom.color = "#000000",
+              row_group.border.top.width = "1px",
+              row_group.border.bottom.width = "1px",
+              table_body.border.top.color = "#000000",
+              table_body.border.bottom.color = "#000000",
+              table_body.border.top.width = "1px",
+              table_body.border.bottom.width = "1px",
+              summary_row.border.color = "#000000",
+              summary_row.border.width = "1px",
+              table_body.hlines.color = "#000000",
+              table_body.hlines.width = "1px")
+}
+```
+
+# Experimentos Aleatórios
+
+## Experimentos Aleatórios {.unnumbered .unlisted}
+
+Ao medir a corrente em um fio, estamos conduzindo um **experimento**.
+
+::: {.callout-tip .fragment}
+## Fato
+
+Se repetirmos o experimento acima diversas vezes, observaremos que os resultados diferem levemente de uma repetição para outra.
+:::
+
+::: fragment
+
+Isso ocorre, pois vários fatores podem influenciar o resultado. Por exemplo:
+
+:::
+
+::: incremental
+
+-   Variações na temperatura ambiente no momento da realização;
+-   Variações nos equipamentos utilizados para realizar a medição;
+-   Impurezas na composição química do fio;
+-   Impulsos na fonte da corrente.
+
+:::
+
+## Experimentos Aleatórios {.unnumbered .unlisted}
+
+Não importa quanto cuidado teremos no planejamento e na condução do experimento, sempre existem variáveis de peturbação (ou ruído) que não são controladas.
+
+::: fragment
+
+Isso provoca aleatoriedade (ou incerteza) dos resultados obtidos em diferentes realizações do experimento.
+
+:::
+
+::: {.callout-note .fragment}
+## Definição
+
+Dizemos que um experimento é aleatório se, mesmo quando repetido sob "condições idênticas", não é possível predizer com absoluta certeza o seu resultado. Vamos denotar um experimento aleatório por $\mathcal{E}$.
+:::
+
+## Espaço amostral
+
+Devido a sua natureza, não é possível antever com absoluta certeza o resultado de um experimento aleatório
+
+::: fragment
+
+Exemplos:
+
+:::
+
+::: incremental
+
+-   $\mathcal{E}_1$ = "uma peça é fabricada em uma linha de produção e, depois de inspecionada, é classificada como *defeituosa* ($D$) ou *não defeituosa* ($N$)";
+-   $\mathcal{E}_2$ = "o número de ligações que chega em determinado dia a um call center é observado";
+-   $\mathcal{E}_3$ = "o tempo em minutos necessário para realizar uma reação química é observado".
+
+:::
+
+## Espaço amostral {.unnumbered .unlisted}
+
+::: {.callout-tip .fragment}
+## Observação
+
+Embora não saibamos o resultado que um experimento fornecerá, devemos poder listar todos os seus possíveis resultados
+:::
+
+::: {.callout-note .fragment}
+## Definição
+
+O [conjunto de todos]{.underline} possíveis resultados de um experimento aleatório é denominado **espaço amostral** e é denotado por $\Omega$.
+:::
+
+
+## Eventos
+
+# Modelo Probabilístico 
+
+## Álgebra de Eventos
+
+## Medida de Probabilidade
+
+## Propriedades
+
+# Probabilidade Condicional
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+## Independência
+
+## Teorema da Probabilidade Total
+
+## Teorema de Bayes
+
+# FIM {.unnumbered .unlisted}
