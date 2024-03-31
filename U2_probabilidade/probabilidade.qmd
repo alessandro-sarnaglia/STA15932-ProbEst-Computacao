@@ -25,47 +25,21 @@ filters:
   - parse-latex
 ---
 
-```{r}
-library(xtable)
-library(gt)
-library(gtsummary)
-tab_op <- function(tbl){
-  tab_options(data = tbl,
-              table.font.size = "100%",
-              table.border.top.color="#000000",
-              table.border.bottom.color = "#000000",
-              table.border.top.width = "1px",
-              table.border.bottom.width = "1px",
-              column_labels.border.top.color="#000000",
-              column_labels.border.bottom.color="#000000",
-              column_labels.border.top.width = "1px",
-              column_labels.border.bottom.width = "1px",
-              row_group.border.top.color = "#000000",
-              row_group.border.bottom.color = "#000000",
-              row_group.border.top.width = "1px",
-              row_group.border.bottom.width = "1px",
-              table_body.border.top.color = "#000000",
-              table_body.border.bottom.color = "#000000",
-              table_body.border.top.width = "1px",
-              table_body.border.bottom.width = "1px",
-              summary_row.border.color = "#000000",
-              summary_row.border.width = "1px",
-              table_body.hlines.color = "#000000",
-              table_body.hlines.width = "1px")
-}
-```
-
 # Experimentos Aleatórios
 
 ## Experimentos Aleatórios {.unnumbered .unlisted}
 
 Ao medir a corrente em um fio, estamos conduzindo um **experimento**.
 
-::: {.callout-tip .fragment}
+::: fragment
+
+::: {.callout-tip}
 ## Fato
 
 Se repetirmos o experimento acima diversas vezes, observaremos que os resultados diferem levemente de uma repetição para outra.
 :::
+
+::: 
 
 ::: fragment
 
@@ -92,10 +66,14 @@ Isso provoca aleatoriedade (ou incerteza) dos resultados obtidos em diferentes r
 
 :::
 
-::: {.callout-note .fragment}
+::: fragment
+
+::: {.callout-note}
 ## Definição
 
 Dizemos que um experimento é aleatório se, mesmo quando repetido sob "condições idênticas", não é possível predizer com absoluta certeza o seu resultado. Vamos denotar um experimento aleatório por $\mathcal{E}$.
+:::
+
 :::
 
 ## Espaço amostral
@@ -118,18 +96,47 @@ Exemplos:
 
 ## Espaço amostral {.unnumbered .unlisted}
 
-::: {.callout-tip .fragment}
+::: fragment
+
+::: {.callout-tip}
 ## Observação
 
 Embora não saibamos o resultado que um experimento fornecerá, devemos poder listar todos os seus possíveis resultados
 :::
 
-::: {.callout-note .fragment}
+:::
+
+::: fragment
+
+::: {.callout-note}
 ## Definição
 
 O [conjunto de todos]{.underline} possíveis resultados de um experimento aleatório é denominado **espaço amostral** e é denotado por $\Omega$.
 :::
 
+:::
+
+## Espaço Amostral {.unlisted .unnumbered}
+
+Nos exemplos anteriores os espaços amostrais seriam:
+
+::: incremental
+-   $\Omega_{\mathcal{E}_1} = \{D, N\}$;
+-   $\Omega_{\mathcal{E}_2} = \{0, 1, 2, \ldots\}$;
+-   $\Omega_{\mathcal{E}_3} = \{\omega : \omega > 0\} = (0, \infty)$
+:::
+
+::: fragment
+
+Suponha que os exemplos anteriores sejam repetidos 2 vezes. Os espaços amostrais agora passam a ser:
+
+:::
+
+::: incremental
+-   $\Omega_{\mathcal{E}_1}^* = \Omega_{\mathcal{E}_1} \times \Omega_{\mathcal{E}_1} = \{DD, DN, ND, NN\}$;
+-   $\Omega_{\mathcal{E}_2}^* = \Omega_{\mathcal{E}_2} \times \Omega_{\mathcal{E}_2} = \{(0,0), (0,1), (0,2), \ldots (1,0), (1,1), (1,2), \ldots\}$;
+-   $\Omega_{\mathcal{E}_2}^* = \Omega_{\mathcal{E}_2} \times \Omega_{\mathcal{E}_2} = \{\omega=(x,y) : x,y \geq 0\}$.
+:::
 
 ## Eventos
 
