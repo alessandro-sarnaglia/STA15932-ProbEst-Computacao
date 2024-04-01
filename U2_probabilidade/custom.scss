@@ -1,4 +1,3 @@
-/*-- scss:defaults --*/
 /*-- fonts --*/
 $presentation-heading-font: 'TTchocolates-reg', serif;
 $mainFont: 'TTchocolates-reg', serif;
@@ -18,6 +17,8 @@ $font-family-monospace: 'TTchocolates-reg';
   text-align: justify;
   font-family: TTchocolates-reg;
 }
+
+/*-- scss:defaults --*/
 
 .quarto-figure {
     margin-bottom: .1em;
@@ -80,3 +81,4 @@ figure>figcaption {
   justify-content: center;
   align-items: center;
 }
+

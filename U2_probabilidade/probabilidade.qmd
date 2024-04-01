@@ -10,7 +10,7 @@ format:
     fig-width: 5.5
     fig-height: 5.5
     theme: [custom.scss]
-    css: fonts.css
+    css: [fonts.css, style.css]
     callout-icon: false
     toc: true
     toc-depth: 3
@@ -245,7 +245,7 @@ Sejam $A, B \subset \Omega$ dois eventos. Podemos criar novos eventos a partir d
 :::
 
 ::: {.callout-tip}
-## Comentários
+## Observações
 
 -   $A \cap B$ representa a ocorrência **simultânea** dos eventos $A$ e $B$;
 -   $A \cup B$ representa a ocorrência de **ao menos um** dos eventos $A$ ou $B$;
@@ -270,13 +270,118 @@ Sejam $A, B \subset \Omega$ dois eventos. Podemos criar novos eventos a partir d
 
 As operações entre eventos podem ser ilustradas utilizando diagramas de Venn.
 
-# Modelo Probabilístico 
+![Ilustração de $A \cap B$](figs/diagrama_de_venn_intersecao.png){width=80%}
 
-## Álgebra de Eventos
+## 1.2 Eventos {.unnumbered .unlisted}
+
+As operações entre eventos podem ser ilustradas utilizando diagramas de Venn.
+
+![Ilustração de $A \cup B$](figs/diagrama_de_venn_uniao.png){width=80%}
+
+## 1.2 Eventos {.unnumbered .unlisted}
+
+As operações entre eventos podem ser ilustradas utilizando diagramas de Venn.
+
+![Ilustração de $A^c$](figs/diagrama_de_venn_complementar.png){width=80%}
+
+## 1.2 Eventos {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=45%}
+
+::: {.callout-note}
+## Definição
+
+Dois eventos $A, B \subset \Omega$ são **disjuntos** se $A \cap B = \emptyset$.
+:::
+
+:::
+
+::: {.column #vcenter width=5%}
+
+:::
+
+::: {.column #vcenter width=50%}
+
+![](figs/diagrama_de_venn_disjuntos.png)
+
+:::
+
+:::
+
+
+::: {.callout-note}
+## Definição
+
+Uma sequência de eventos $A_1, A_2, \ldots \subset \Omega$ é **mutuamente exclusiva** se os eventos são disjuntos dois a dois, isto é, se $A_i \cap A_j = \emptyset$, $i \neq j$.
+:::
+
+# Modelo Probabilístico 
 
 ## Medida de Probabilidade
 
+::: {.callout-note}
+## Definição - Axiomas de Probabilidade
+
+Uma medida de probabilidade é qualquer função de eventos $P(\cdot)$ que satisfaça as seguintes propriedades:
+
+1.    $P(\Omega) = 1$;
+2.    $P(A) \geq 0$, para todo evento $A \subset \Omega$;
+3.    $P(A \cup B) = P(A) + P(B)$, se $A, B \subset \Omega$ são disjuntos, isto é, se $A \cap B = \emptyset$.
+:::
+
+::: {.callout-tip}
+## Observações
+
+-   Os axiomas de probabilidade não determinam probabilidades, mas servem como base teórica para novas definições e propriedades.
+-   O modelo probabilístico deve ser concebido com base no nosso conhecimento sobre o experimento aleatório, de modo que obedeça os axiomas acima.
+:::
+
 ## Propriedades
+
+::: {.callout-warning}
+## Propriedades
+
+Sejam $\Omega$ espaço amostral, $A, B \subset \Omega$ eventos e $P(\cdot)$ medida de probabilidade. Temos que:
+
+1.    $P(\emptyset) = 0$;
+2.    $P(A^c) = 1 - P(A)$;
+3.    Se $A \subset B$, então $P(A) \leq P(B)$;
+4.    Definindo $B - A = B\cap A^c$, então $P(B - A) = P(B) - P(A \cap B)$;
+5.    Se $A\subset B$, então $P(B - A) = P(B) - P(A)$;
+6.    $P(A \cup B) = P(A) + P(B) - P(A \cap B)$;
+:::
+
+::: {.callout-important}
+## Exercícios
+
+1.    Como o Item 6 se extende para $P(A \cup B \cup C)$?
+2.    Mostre que $P(A \cap B \cap C) \leq P(A) + P(B) + P(C)$.
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Discos de policarbonato plástico são analisados com relação a resistência a arranhões e choque. Os resultados de 100 discos são resumidos a seguir:
+
+::: columns
+
+::: {.column #vcenter width=45%}
+
+![](figs/tabela_discos_policarbonato.png)
+:::
+
+::: {.column #vcenter width=55%}
+Suponha que um disco será selecionado ao acaso. Sejam $A =$ "resist. a arranhões alta" e $B =$ "resist. a choques alta". Qual a probabilidade que você atribuiria para os eventos:
+
+-   $P(A \cap B)$;
+-   $P(A \cup B)$;
+-   $P(B - A)$.
+:::
+
+:::
 
 # Probabilidade Condicional
 
