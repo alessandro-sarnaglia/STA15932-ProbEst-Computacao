@@ -343,14 +343,14 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <ul>
 <li><a href="#/experimentos-aleatórios" id="/toc-experimentos-aleatórios"><span class="header-section-number">1</span> Experimentos Aleatórios</a>
 <ul>
-<li><a href="#/espaço-amostral" id="/toc-espaço-amostral"><span class="header-section-number">1.1</span> Espaço amostral</a></li>
+<li><a href="#/espaço-amostral" id="/toc-espaço-amostral"><span class="header-section-number">1.1</span> Espaço Amostral</a></li>
 <li><a href="#/eventos" id="/toc-eventos"><span class="header-section-number">1.2</span> Eventos</a></li>
 </ul></li>
 <li><a href="#/modelo-probabilístico" id="/toc-modelo-probabilístico"><span class="header-section-number">2</span> Modelo Probabilístico</a>
 <ul>
 <li><a href="#/álgebra-de-eventos" id="/toc-álgebra-de-eventos"><span class="header-section-number">2.1</span> Álgebra de Eventos</a></li>
 <li><a href="#/medida-de-probabilidade" id="/toc-medida-de-probabilidade"><span class="header-section-number">2.2</span> Medida de Probabilidade</a></li>
-<li><a href="#/propriedades" id="/toc-propriedades"><span class="header-section-number">2.3</span> Propriedades</a></li>
+<li><a href="#/propriedades-1" id="/toc-propriedades-1"><span class="header-section-number">2.3</span> Propriedades</a></li>
 </ul></li>
 <li><a href="#/probabilidade-condicional" id="/toc-probabilidade-condicional"><span class="header-section-number">3</span> Probabilidade Condicional</a>
 <ul>
@@ -367,7 +367,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 
 </section>
 <section id="experimentos-aleatórios-1" class="slide level2 unnumbered unlisted">
-<h2>Experimentos Aleatórios</h2>
+<h2>1 Experimentos Aleatórios</h2>
 <p>Ao medir a corrente em um fio, estamos conduzindo um <strong>experimento</strong>.</p>
 <div class="fragment">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
@@ -394,7 +394,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </section>
 <section id="experimentos-aleatórios-2" class="slide level2 unnumbered unlisted">
-<h2>Experimentos Aleatórios</h2>
+<h2>1 Experimentos Aleatórios</h2>
 <p>Não importa quanto cuidado teremos no planejamento e na condução do experimento, sempre existem variáveis de peturbação (ou ruído) que não são controladas.</p>
 <div class="fragment">
 <p>Isso provoca aleatoriedade (ou incerteza) dos resultados obtidos em diferentes realizações do experimento.</p>
@@ -413,7 +413,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </section>
 <section id="espaço-amostral" class="slide level2" data-number="1.1">
-<h2><span class="header-section-number">1.1</span> Espaço amostral</h2>
+<h2><span class="header-section-number">1.1</span> Espaço Amostral</h2>
 <p>Devido a sua natureza, não é possível antever com absoluta certeza o resultado de um experimento aleatório</p>
 <div class="fragment">
 <p>Exemplos:</p>
@@ -427,7 +427,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </section>
 <section id="espaço-amostral-1" class="slide level2 unnumbered unlisted">
-<h2>Espaço amostral</h2>
+<h2>1.1 Espaço Amostral</h2>
 <div class="fragment">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -454,13 +454,13 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </section>
 <section id="espaço-amostral-2" class="slide level2 unlisted unnumbered">
-<h2>Espaço Amostral</h2>
+<h2>1.1 Espaço Amostral</h2>
 <p>Nos exemplos anteriores os espaços amostrais seriam:</p>
 <div>
 <ul>
-<li class="fragment"><span class="math inline">\(\Omega_{\mathcal{E}_1} = \{D, N\}\)</span>;</li>
-<li class="fragment"><span class="math inline">\(\Omega_{\mathcal{E}_2} = \{0, 1, 2, \ldots\}\)</span>;</li>
-<li class="fragment"><span class="math inline">\(\Omega_{\mathcal{E}_3} = \{\omega : \omega &gt; 0\} = (0, \infty)\)</span></li>
+<li class="fragment">Em <span class="math inline">\(\mathcal{E}_1\)</span>, teríamos <span class="math inline">\(\Omega_1 = \{D, N\}\)</span>;</li>
+<li class="fragment">Em <span class="math inline">\(\mathcal{E}_2\)</span>, teríamos <span class="math inline">\(\Omega_2 = \{0, 1, 2, \ldots\}\)</span>;</li>
+<li class="fragment">Em <span class="math inline">\(\mathcal{E}_3\)</span>, teríamos <span class="math inline">\(\Omega_3 = \{\omega : \omega &gt; 0\} = (0, \infty)\)</span></li>
 </ul>
 </div>
 <div class="fragment">
@@ -468,14 +468,180 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 <div>
 <ul>
-<li class="fragment"><span class="math inline">\(\Omega_{\mathcal{E}_1}^* = \Omega_{\mathcal{E}_1} \times \Omega_{\mathcal{E}_1} = \{DD, DN, ND, NN\}\)</span>;</li>
-<li class="fragment"><span class="math inline">\(\Omega_{\mathcal{E}_2}^* = \Omega_{\mathcal{E}_2} \times \Omega_{\mathcal{E}_2} = \{(0,0), (0,1), (0,2), \ldots (1,0), (1,1), (1,2), \ldots\}\)</span>;</li>
-<li class="fragment"><span class="math inline">\(\Omega_{\mathcal{E}_2}^* = \Omega_{\mathcal{E}_2} \times \Omega_{\mathcal{E}_2} = \{\omega=(x,y) : x,y \geq 0\}\)</span>.</li>
+<li class="fragment"><span class="math inline">\(\Omega_1^* = \Omega_1 \times \Omega_1 = \{DD, DN, ND, NN\}\)</span>;</li>
+<li class="fragment"><span class="math inline">\(\Omega_2^* = \Omega_2 \times \Omega_2 = \{(0,0), (0,1), (0,2), \ldots (1,0), (1,1), (1,2), \ldots\}\)</span>;</li>
+<li class="fragment"><span class="math inline">\(\Omega_3^* = \Omega_3 \times \Omega_3 = \{\omega=(x,y) : x,y \geq 0\}\)</span>.</li>
 </ul>
+</div>
+</section>
+<section id="espaço-amostral-3" class="slide level2 unlisted unnumbered">
+<h2>1.1 Espaço Amostral</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/espaco_amostral1.png" style="width:80.0%"></p>
+<figcaption>Ilustração de <span class="math inline">\(\Omega_2^*\)</span></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/espaco_amostral2.png" style="width:80.0%"></p>
+<figcaption>Ilustração de <span class="math inline">\(\Omega_3^*\)</span></figcaption>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="eventos" class="slide level2" data-number="1.2">
 <h2><span class="header-section-number">1.2</span> Eventos</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Sejam <span class="math inline">\(A, B\)</span> dois conjuntos quaisquer, se todos elementos de <span class="math inline">\(A\)</span> pertencem a <span class="math inline">\(B\)</span>, dizemos que <span class="math inline">\(A\)</span> está contido em <span class="math inline">\(B\)</span> (<span class="math inline">\(A\)</span> é subconjunto de <span class="math inline">\(B\)</span>). Neste caso, escrevemos <span class="math inline">\(A \subset B\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Note que <span class="math inline">\(A \subset B\)</span> é equivalente a <span class="math inline">\(\forall \omega \in A,\ \omega \in B\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="eventos-1" class="slide level2 unlisted unnumbered">
+<h2>1.2 Eventos</h2>
+<div style="font-size:80%;">
+<p>Em geral, ao observar um experimento, não estamos interessados apenas em um resultado, mas sim em uma coleção destes. Isto é, em um subconjunto do espaço amostral.</p>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Um <strong>evento</strong> é qualquer subconjunto do espaço amostral de um experimento aleatório. Frequentemente, eventos são denotados por letras iniciais do alfabeto maiúsculas: <span class="math inline">\(A, B, C, \ldots\)</span>.</p>
+</div>
+</div>
+</div>
+<div style="font-size:80%;">
+<p>Exemplos de eventos nos espaços amostrais <span class="math inline">\(\Omega_1^*\)</span>, <span class="math inline">\(\Omega_2^*\)</span> e <span class="math inline">\(\Omega_3^*\)</span>:</p>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(A_1 =\)</span> “Pelo menos uma peça defeituosa” <span class="math inline">\(= \{DD, DN, ND\}\)</span>;</li>
+<li class="fragment"><span class="math inline">\(A_2 =\)</span> “Receber 4 ligações no total” <span class="math inline">\(= \{(0, 4), (1, 3), (2, 2), (3, 1), (4, 0)\}\)</span>;</li>
+<li class="fragment"><span class="math inline">\(A_3 =\)</span> “As duas reações terminarem em 5 minutos ou mais no total” <span class="math inline">\(= \{(x , y) \in \Omega_3^* : x + y \geq 5\}\)</span>.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="eventos-2" class="slide level2 unlisted unnumbered">
+<h2>1.2 Eventos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/espaco_amostral1_evento.png" style="width:80.0%"></p>
+<figcaption>Ilustração de <span class="math inline">\(A_2\)</span> em <span class="math inline">\(\Omega_2^*\)</span></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/espaco_amostral2_evento.png" style="width:80.0%"></p>
+<figcaption>Ilustração de <span class="math inline">\(A_3\)</span> em <span class="math inline">\(\Omega_3^*\)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="eventos-3" class="slide level2 unlisted unnumbered">
+<h2>1.2 Eventos</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>O evento com nenhum elemento é denominado <strong>vazio</strong> e é denotado por <span class="math inline">\(\emptyset\)</span>. Isto é <span class="math inline">\(\emptyset = \{\;\}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Dois eventos <span class="math inline">\(A, B \subset \Omega\)</span> são iguais se <span class="math inline">\(A \subset B\)</span> e <span class="math inline">\(B \subset A\)</span>. Escrevemos <span class="math inline">\(A = B\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="eventos-4" class="slide level2 unlisted unnumbered">
+<h2>1.2 Eventos</h2>
+<p>Sejam <span class="math inline">\(A, B \subset \Omega\)</span> dois eventos. Podemos criar novos eventos a partir de <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> por meio de operações de conjuntos.</p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definições</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Interseção</strong> é denotada por <span class="math inline">\(A \cap B\)</span> e definida por <span class="math inline">\(A \cap B = \{\omega \in \Omega: \omega \in A\)</span> e <span class="math inline">\(\omega \in B\)</span>, simultaneamente<span class="math inline">\(\}\)</span>.</li>
+<li><strong>União</strong> é denotada por <span class="math inline">\(A \cup B\)</span> e definida por <span class="math inline">\(A \cup B = \{\omega \in \Omega: \omega \in A\)</span>, ou <span class="math inline">\(\omega \in B\)</span>, ou <span class="math inline">\(\omega \in A \cap B\}\)</span>.</li>
+<li><strong>Complementar</strong> é denotado por <span class="math inline">\(A^c\)</span> e definido por <span class="math inline">\(A^c = \{\omega \in \Omega: \omega \not\in A\}\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Comentários</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><span class="math inline">\(A \cap B\)</span> representa a ocorrência <strong>simultânea</strong> dos eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>;</li>
+<li><span class="math inline">\(A \cup B\)</span> representa a ocorrência de <strong>ao menos um</strong> dos eventos <span class="math inline">\(A\)</span> ou <span class="math inline">\(B\)</span>;</li>
+<li><span class="math inline">\(A^c\)</span> representa a não ocorrência do evento <span class="math inline">\(A\)</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="eventos-5" class="slide level2 unnumbered unlisted">
+<h2>1.2 Eventos</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedades</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><span class="math inline">\([A^c]^c = A\)</span>;</li>
+<li><span class="math inline">\([A \cap B]^c = A^c \cup B^c\)</span>;</li>
+<li><span class="math inline">\([A \cup B]^c = A^c \cap B^c\)</span>;</li>
+<li><span class="math inline">\(A \cup A^c = \Omega\)</span>;</li>
+<li><span class="math inline">\(A \cap A^c = \emptyset\)</span>;</li>
+<li><span class="math inline">\([\bigcap_{i=1}^n A_i]^c = [A_1 \cap \cdots \cap A_n]^c = [A_1^c \cup \cdots \cup A_n^c] = \bigcup_{i=1}^n A_i^c\)</span>;</li>
+<li><span class="math inline">\([\bigcup_{i=1}^n A_i]^c = [A_1 \cup \cdots \cup A_n]^c = [A_1^c \cap \cdots \cap A_n^c] = \bigcap_{i=1}^n A_i^c\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="eventos-6" class="slide level2 unnumbered unlisted">
+<h2>1.2 Eventos</h2>
+<p>As operações entre eventos podem ser ilustradas utilizando diagramas de Venn.</p>
 </section></section>
 <section>
 <section id="modelo-probabilístico" class="title-slide slide level1 center" data-number="2">
@@ -488,7 +654,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <section id="medida-de-probabilidade" class="slide level2" data-number="2.2">
 <h2><span class="header-section-number">2.2</span> Medida de Probabilidade</h2>
 </section>
-<section id="propriedades" class="slide level2" data-number="2.3">
+<section id="propriedades-1" class="slide level2" data-number="2.3">
 <h2><span class="header-section-number">2.3</span> Propriedades</h2>
 </section></section>
 <section>
