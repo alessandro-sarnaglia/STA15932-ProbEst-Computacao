@@ -7,6 +7,7 @@ format:
   revealjs:
     width: 1280
     height: 720
+    min-scale: 0.1
     fig-width: 5.5
     fig-height: 5.5
     theme: [custom.scss]
