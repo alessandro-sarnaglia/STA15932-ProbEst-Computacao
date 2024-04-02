@@ -33,8 +33,8 @@ Ao medir a corrente em um fio, estamos conduzindo um **experimento**.
 
 ::: fragment
 
-::: {.callout-tip}
-## Fato
+::: {.callout-caution}
+## Observação
 
 Se repetirmos o experimento acima diversas vezes, observaremos que os resultados diferem levemente de uma repetição para outra.
 :::
@@ -96,14 +96,10 @@ Exemplos:
 
 ## 1.1 Espaço Amostral {.unnumbered .unlisted}
 
-::: fragment
-
-::: {.callout-tip}
+::: {.callout-caution}
 ## Observação
 
 Embora não saibamos o resultado que um experimento fornecerá, devemos poder listar todos os seus possíveis resultados
-:::
-
 :::
 
 ::: fragment
@@ -135,7 +131,7 @@ Suponha que os exemplos anteriores sejam repetidos 2 vezes. Os espaços amostrai
 ::: incremental
 -   $\Omega_1^* = \Omega_1 \times \Omega_1 = \{DD, DN, ND, NN\}$;
 -   $\Omega_2^* = \Omega_2 \times \Omega_2 = \{(0,0), (0,1), (0,2), \ldots (1,0), (1,1), (1,2), \ldots\}$;
--   $\Omega_3^* = \Omega_3 \times \Omega_3 = \{\omega=(x,y) : x,y \geq 0\}$.
+-   $\Omega_3^* = \Omega_3 \times \Omega_3 = \{\omega=(x,y) : x,y > 0\}$.
 :::
 
 ## 1.1 Espaço Amostral {.unlisted .unnumbered}
@@ -164,7 +160,7 @@ Suponha que os exemplos anteriores sejam repetidos 2 vezes. Os espaços amostrai
 Sejam $A, B$ dois conjuntos quaisquer, se todos elementos de $A$ pertencem a $B$, dizemos que $A$ está contido em $B$ ($A$ é subconjunto de $B$). Neste caso, escrevemos $A \subset B$.
 :::
 
-::: {.callout-tip}
+::: {.callout-caution}
 ## Observação
 
 Note que $A \subset B$ é equivalente a $\forall \omega \in A,\ \omega \in B$.
@@ -225,7 +221,7 @@ Exemplos de eventos nos espaços amostrais $\Omega_1^*$, $\Omega_2^*$ e $\Omega_
 O evento com nenhum elemento é denominado **vazio** e é denotado por $\emptyset$. Isto é $\emptyset = \{\;\}$.
 :::
 
-::: {.callout-tip}
+::: {.callout-caution}
 ## Observação
 
 Dois eventos $A, B \subset \Omega$ são iguais se $A \subset B$ e $B \subset A$. Escrevemos $A = B$.
@@ -244,7 +240,7 @@ Sejam $A, B \subset \Omega$ dois eventos. Podemos criar novos eventos a partir d
 -   **Complementar** é denotado por $A^c$ e definido por  $A^c = \{\omega \in \Omega: \omega \not\in A\}$.
 :::
 
-::: {.callout-tip}
+::: {.callout-caution}
 ## Observações
 
 -   $A \cap B$ representa a ocorrência **simultânea** dos eventos $A$ e $B$;
@@ -331,14 +327,16 @@ Uma medida de probabilidade é qualquer função de eventos $P(\cdot)$ que satis
 3.    $P(A \cup B) = P(A) + P(B)$, se $A, B \subset \Omega$ são disjuntos, isto é, se $A \cap B = \emptyset$.
 :::
 
-::: {.callout-tip}
+::: {.callout-caution}
 ## Observações
 
 -   Os axiomas de probabilidade não determinam probabilidades, mas servem como base teórica para novas definições e propriedades.
 -   O modelo probabilístico deve ser concebido com base no nosso conhecimento sobre o experimento aleatório, de modo que obedeça os axiomas acima.
 :::
 
-## Propriedades
+## {.unnumbered .unlisted}
+
+### Propriedades {.unnumbered .unlisted}
 
 ::: {.callout-warning}
 ## Propriedades
@@ -353,11 +351,11 @@ Sejam $\Omega$ espaço amostral, $A, B \subset \Omega$ eventos e $P(\cdot)$ medi
 6.    $P(A \cup B) = P(A) + P(B) - P(A \cap B)$;
 :::
 
-::: {.callout-important}
+::: {.callout-tip}
 ## Exercícios
 
 1.    Como o Item 6 se extende para $P(A \cup B \cup C)$?
-2.    Mostre que $P(A \cap B \cap C) \leq P(A) + P(B) + P(C)$.
+2.    Mostre que $P(A \cup B \cup C) \leq P(A) + P(B) + P(C)$.
 :::
 
 ## {.unnumbered .unlisted}
@@ -382,6 +380,175 @@ Suponha que um disco será selecionado ao acaso. Sejam $A =$ "resist. a arranhõ
 :::
 
 :::
+
+## Espaço Amostral Equiprovável
+
+::: {.callout-caution}
+## Observação
+
+Muitos experimentos aleatórios satisfazem as seguintes características:
+
+1.    O espaço amostral $\Omega$ é finito, isto é, $\Omega = \{\omega_1, \dots, \omega_N\}$, $N<\infty$;
+2.    É razoável assumir que todos os pontos de $\Omega$ ocorrem com a mesma probabilidade.
+
+Exemplos:
+
+-   lançamento de uma moeda honesta;
+-   arremesso de um dado não viciado;
+-   qualquer tipo de sorteio de $N$ "elementos" **ao acaso**.
+:::
+
+::: {.callout-note}
+## Definição
+
+Um espaço amostral $\Omega$ satisfazendo as características acima é dito ser **equiprovável**.
+:::
+
+## 2.2 Espaço Amostral Equiprovável {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Em um experimento $\mathcal{E}$ com espaço amostral $\Omega = \{\omega_1, \dots, \omega_N\}$ equiprovável, se $N(A)$ representa o número de elementos em $A$, então
+$$P(A) = \frac{N(A)}{N}$$
+é uma medida de probabilidade em consonância com os axiomas.
+:::
+
+::: {.callout-caution}
+## Observação
+
+A medida **equiprovável** definida acima atribui a mesma probabilidade para todos pontos de $\Omega$, isto é
+$$P(\{\omega_i\}) = \frac{1}{N}, \ \ \ i=1, \ldots, N.$$
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Dois dados [**honestos**]{style="color:red; "} de quatro faces são arremessados e o número de pontos voltados para cima são registrados.
+
+::: columns
+
+::: {.column width=50%}
+
+::: {.fragment fragment-index=1}
+
+Nesse caso, temos:
+```{=latex}
+\begin{align*}
+\Omega &= \{(1,1), (1,2), \ldots, (4,4)\}\\
+       &= \{(x,y) : x,y = 1,\ldots,4\}.
+\end{align*}
+```
+
+:::
+
+:::
+
+::: {.column width=50%}
+
+::: {.fragment fragment-index=1}
+
+![](figs/exemplo_dois_dados_4_faces_espaco_amostral.png){width=75%}
+
+:::
+
+:::
+
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Dois dados [**honestos**]{style="color:red; "} de quatro faces são arremessados e o número de pontos voltados para cima são registrados.
+
+::: columns
+
+::: {.column width=50%}
+
+Nesse caso, temos:
+```{=latex}
+\begin{align*}
+\Omega &= \{(1,1), (1,2), \ldots, (4,4)\}\\
+       &= \{(x,y) : x,y = 1,\ldots,4\}.
+\end{align*}
+```
+
+Se $A_j=$ "$j$ pontos no total", temos
+$$N(A_j) = \begin{cases}
+j-1, & j=2,\ldots,5;\\
+8-j+1, & j=6,\ldots,8;\\
+\end{cases}$$
+
+:::
+
+::: {.column width=50%}
+
+![](figs/exemplo_dois_dados_4_faces_eventos.png){width=75%}
+
+:::
+
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Os eventos $A_2, A_3, \ldots, A_8$ formam o que chamamos de **partição** de $\Omega$.
+:::
+
+::: {.callout-note}
+## Definição
+
+A sequência (possivelmente infinita) de eventos $A_1, A_2, \ldots \subset \Omega$ forma uma **partição** de $\Omega$ se
+$$\bigcup_{i=1}^\infty A_i = \Omega \ \ \ \text{e} \ \ \ A_i \cap A_j = \emptyset, \ i \neq j.$$
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Com base na equiprobabilidade de $\Omega$ (os dados são **honestos**) e nos valores de $N(A_j)$ e $N$, podemos utilizar a medida de probabilidade definida anteriormente para obter
+
+<table>
+  <tr style="border-top:2px solid; border-bottom:1px solid; ">
+    <td style="border-right:2px solid"> **Evento** ($A_j$) </td> <td> $A_2$ </td> <td> $A_3$
+    </td> <td> $A_4$ </td> <td> $A_5$ </td> <td> $A_6$ </td> <td> $A_7$ </td> <td> $A_8$ </td>
+  </tr>
+  <tr style="border-bottom:2px solid; ">
+    <td style="border-right:2px solid"> $P(A_j)$ </td> <td> $\frac{1}{16}$ </td> <td> $\frac{2}{16}$ </td>
+    <td> $\frac{3}{16}$ </td> <td> $\frac{4}{16}$ </td> <td> $\frac{3}{16}$ </td> <td> $\frac{2}{16}$ </td>
+    <td> $\frac{1}{16}$ </td>
+  </tr>
+</table>
+
+::: {.callout-caution}
+## Observação
+
+Pelo fato de $A_2, A_3, \ldots, A_8$ formar uma **partição**, temos que
+$$\textstyle P\left(\bigcup_{i=2}^8 A_i\right) = P(\Omega) = 1 \ \ \ \ \text{ou ainda} \ \ \ \ P\left(\bigcup_{i=2}^8 A_i\right) = \sum_{i=2}^8P(A_i) = \frac{1+2+3+4+3+2+1}{16} = \frac{16}{16} = 1.$$
+:::
+
+## 2.2 Espaço Amostral Equiprovável {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+A conclusão que se chega é que, em [espaços amostrais equiprováveis]{.underline}, a atribuição de probabilidades se reduz a uma mera operação de contagem de elementos que compõem o evento em questão.
+:::
+
+::: {.callout-important}
+## Problema
+
+Nos casos em que o tamanho $N$ do espaço amostral equiprovável é muito grande, essa tarefa pode ser tediosa. Por isso, [técnicas de contagem]{.underline} podem ser bastante úteis nesses casos.
+:::
+
+
+## Técnicas de Contagem
 
 # Probabilidade Condicional
 

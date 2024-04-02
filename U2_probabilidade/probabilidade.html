@@ -8,7 +8,7 @@
 <link href="probabilidade_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="probabilidade_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="probabilidade_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.3.353">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia">
   <title>Probabilidade e Estatística</title>
@@ -158,8 +158,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -351,7 +350,8 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <li><a href="#/modelo-probabilístico" id="/toc-modelo-probabilístico"><span class="header-section-number">2</span> Modelo Probabilístico</a>
 <ul>
 <li><a href="#/medida-de-probabilidade" id="/toc-medida-de-probabilidade"><span class="header-section-number">2.1</span> Medida de Probabilidade</a></li>
-<li><a href="#/propriedades-1" id="/toc-propriedades-1"><span class="header-section-number">2.2</span> Propriedades</a></li>
+<li><a href="#/espaço-amostral-equiprovável" id="/toc-espaço-amostral-equiprovável"><span class="header-section-number">2.2</span> Espaço Amostral Equiprovável</a></li>
+<li><a href="#/técnicas-de-contagem" id="/toc-técnicas-de-contagem"><span class="header-section-number">2.3</span> Técnicas de Contagem</a></li>
 </ul></li>
 <li><a href="#/probabilidade-condicional" id="/toc-probabilidade-condicional"><span class="header-section-number">3</span> Probabilidade Condicional</a>
 <ul>
@@ -371,10 +371,10 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <h2>1 Experimentos Aleatórios</h2>
 <p>Ao medir a corrente em um fio, estamos conduzindo um <strong>experimento</strong>.</p>
 <div class="fragment">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Fato</strong></p>
+<p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
 <p>Se repetirmos o experimento acima diversas vezes, observaremos que os resultados diferem levemente de uma repetição para outra.</p>
@@ -429,15 +429,13 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </section>
 <section id="espaço-amostral-1" class="slide level2 unnumbered unlisted">
 <h2>1.1 Espaço Amostral</h2>
-<div class="fragment">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
 <p>Embora não saibamos o resultado que um experimento fornecerá, devemos poder listar todos os seus possíveis resultados</p>
-</div>
 </div>
 </div>
 </div>
@@ -471,7 +469,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <ul>
 <li class="fragment"><span class="math inline">\(\Omega_1^* = \Omega_1 \times \Omega_1 = \{DD, DN, ND, NN\}\)</span>;</li>
 <li class="fragment"><span class="math inline">\(\Omega_2^* = \Omega_2 \times \Omega_2 = \{(0,0), (0,1), (0,2), \ldots (1,0), (1,1), (1,2), \ldots\}\)</span>;</li>
-<li class="fragment"><span class="math inline">\(\Omega_3^* = \Omega_3 \times \Omega_3 = \{\omega=(x,y) : x,y \geq 0\}\)</span>.</li>
+<li class="fragment"><span class="math inline">\(\Omega_3^* = \Omega_3 \times \Omega_3 = \{\omega=(x,y) : x,y &gt; 0\}\)</span>.</li>
 </ul>
 </div>
 </section>
@@ -507,7 +505,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </div>
 </div>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observação</strong></p>
@@ -576,7 +574,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </div>
 </div>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observação</strong></p>
@@ -604,7 +602,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </div>
 </div>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observações</strong></p>
@@ -708,7 +706,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </div>
 </div>
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observações</strong></p>
@@ -722,8 +720,9 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </div>
 </section>
-<section id="propriedades-1" class="slide level2" data-number="2.2">
-<h2><span class="header-section-number">2.2</span> Propriedades</h2>
+<section id="section" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="propriedades-1">Propriedades</h3>
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -742,7 +741,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 </div>
 </div>
-<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Exercícios</strong></p>
@@ -750,13 +749,13 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <div class="callout-content">
 <ol type="1">
 <li>Como o Item 6 se extende para <span class="math inline">\(P(A \cup B \cup C)\)</span>?</li>
-<li>Mostre que <span class="math inline">\(P(A \cap B \cap C) \leq P(A) + P(B) + P(C)\)</span>.</li>
+<li>Mostre que <span class="math inline">\(P(A \cup B \cup C) \leq P(A) + P(B) + P(C)\)</span>.</li>
 </ol>
 </div>
 </div>
 </div>
 </section>
-<section id="section" class="slide level2 unnumbered unlisted">
+<section id="section-1" class="slide level2 unnumbered unlisted">
 <h2></h2>
 <h3 class="unnumbered unlisted" id="exemplo">Exemplo</h3>
 <p>Discos de policarbonato plástico são analisados com relação a resistência a arranhões e choque. Os resultados de 100 discos são resumidos a seguir:</p>
@@ -772,6 +771,223 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </ul>
 </div>
 </div>
+</section>
+<section id="espaço-amostral-equiprovável" class="slide level2" data-number="2.2">
+<h2><span class="header-section-number">2.2</span> Espaço Amostral Equiprovável</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Muitos experimentos aleatórios satisfazem as seguintes características:</p>
+<ol type="1">
+<li>O espaço amostral <span class="math inline">\(\Omega\)</span> é finito, isto é, <span class="math inline">\(\Omega = \{\omega_1, \dots, \omega_N\}\)</span>, <span class="math inline">\(N&lt;\infty\)</span>;</li>
+<li>É razoável assumir que todos os pontos de <span class="math inline">\(\Omega\)</span> ocorrem com a mesma probabilidade.</li>
+</ol>
+<p>Exemplos:</p>
+<ul>
+<li>lançamento de uma moeda honesta;</li>
+<li>arremesso de um dado não viciado;</li>
+<li>qualquer tipo de sorteio de <span class="math inline">\(N\)</span> “elementos” <strong>ao acaso</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Um espaço amostral <span class="math inline">\(\Omega\)</span> satisfazendo as características acima é dito ser <strong>equiprovável</strong>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="espaço-amostral-equiprovável-1" class="slide level2 unnumbered unlisted">
+<h2>2.2 Espaço Amostral Equiprovável</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Em um experimento <span class="math inline">\(\mathcal{E}\)</span> com espaço amostral <span class="math inline">\(\Omega = \{\omega_1, \dots, \omega_N\}\)</span> equiprovável, se <span class="math inline">\(N(A)\)</span> representa o número de elementos em <span class="math inline">\(A\)</span>, então <span class="math display">\[P(A) = \frac{N(A)}{N}\]</span> é uma medida de probabilidade em consonância com os axiomas.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>A medida <strong>equiprovável</strong> definida acima atribui a mesma probabilidade para todos pontos de <span class="math inline">\(\Omega\)</span>, isto é <span class="math display">\[P(\{\omega_i\}) = \frac{1}{N}, \ \ \ i=1, \ldots, N.\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-1">Exemplo</h3>
+<p>Dois dados <span style="color:red; "><strong>honestos</strong></span> de quatro faces são arremessados e o número de pontos voltados para cima são registrados.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1">
+<p>Nesse caso, temos:</p>
+<p><span class="math display">\[\begin{aligned}
+\Omega &amp;= \{(1,1), (1,2), \ldots, (4,4)\}\\
+       &amp;= \{(x,y) : x,y = 1,\ldots,4\}.
+\end{aligned}\]</span></p>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="1">
+<p><img data-src="figs/exemplo_dois_dados_4_faces_espaco_amostral.png" style="width:75.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-3" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-2">Exemplo</h3>
+<p>Dois dados <span style="color:red; "><strong>honestos</strong></span> de quatro faces são arremessados e o número de pontos voltados para cima são registrados.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Nesse caso, temos:</p>
+<p><span class="math display">\[\begin{aligned}
+\Omega &amp;= \{(1,1), (1,2), \ldots, (4,4)\}\\
+       &amp;= \{(x,y) : x,y = 1,\ldots,4\}.
+\end{aligned}\]</span></p>
+<p>Se <span class="math inline">\(A_j=\)</span> “<span class="math inline">\(j\)</span> pontos no total”, temos <span class="math display">\[N(A_j) = \begin{cases}
+j-1, &amp; j=2,\ldots,5;\\
+8-j+1, &amp; j=6,\ldots,8;\\
+\end{cases}\]</span></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="figs/exemplo_dois_dados_4_faces_eventos.png" style="width:75.0%"></p>
+</div>
+</div>
+</section>
+<section id="section-4" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-3">Exemplo</h3>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Os eventos <span class="math inline">\(A_2, A_3, \ldots, A_8\)</span> formam o que chamamos de <strong>partição</strong> de <span class="math inline">\(\Omega\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>A sequência (possivelmente infinita) de eventos <span class="math inline">\(A_1, A_2, \ldots \subset \Omega\)</span> forma uma <strong>partição</strong> de <span class="math inline">\(\Omega\)</span> se <span class="math display">\[\bigcup_{i=1}^\infty A_i = \Omega \ \ \ \text{e} \ \ \ A_i \cap A_j = \emptyset, \ i \neq j.\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-4">Exemplo</h3>
+<p>Com base na equiprobabilidade de <span class="math inline">\(\Omega\)</span> (os dados são <strong>honestos</strong>) e nos valores de <span class="math inline">\(N(A_j)\)</span> e <span class="math inline">\(N\)</span>, podemos utilizar a medida de probabilidade definida anteriormente para obter</p>
+
+<table>
+<tbody><tr style="border-top:2px solid; border-bottom:1px solid; ">
+<td style="border-right:2px solid">
+<strong>Evento</strong> (<span class="math inline">\(A_j\)</span>)
+</td>
+<td>
+<span class="math inline">\(A_2\)</span>
+</td>
+<td>
+<span class="math inline">\(A_3\)</span>
+</td>
+<td>
+<span class="math inline">\(A_4\)</span>
+</td>
+<td>
+<span class="math inline">\(A_5\)</span>
+</td>
+<td>
+<span class="math inline">\(A_6\)</span>
+</td>
+<td>
+<span class="math inline">\(A_7\)</span>
+</td>
+<td>
+<span class="math inline">\(A_8\)</span>
+</td>
+</tr>
+<tr style="border-bottom:2px solid; ">
+<td style="border-right:2px solid">
+<span class="math inline">\(P(A_j)\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{1}{16}\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{2}{16}\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{3}{16}\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{4}{16}\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{3}{16}\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{2}{16}\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{1}{16}\)</span>
+</td>
+</tr>
+
+</tbody></table>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Pelo fato de <span class="math inline">\(A_2, A_3, \ldots, A_8\)</span> formar uma <strong>partição</strong>, temos que <span class="math display">\[\textstyle P\left(\bigcup_{i=2}^8 A_i\right) = P(\Omega) = 1 \ \ \ \ \text{ou ainda} \ \ \ \ P\left(\bigcup_{i=2}^8 A_i\right) = \sum_{i=2}^8P(A_i) = \frac{1+2+3+4+3+2+1}{16} = \frac{16}{16} = 1.\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="espaço-amostral-equiprovável-2" class="slide level2 unnumbered unlisted">
+<h2>2.2 Espaço Amostral Equiprovável</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>A conclusão que se chega é que, em <u>espaços amostrais equiprováveis</u>, a atribuição de probabilidades se reduz a uma mera operação de contagem de elementos que compõem o evento em questão.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Problema</strong></p>
+</div>
+<div class="callout-content">
+<p>Nos casos em que o tamanho <span class="math inline">\(N\)</span> do espaço amostral equiprovável é muito grande, essa tarefa pode ser tediosa. Por isso, <u>técnicas de contagem</u> podem ser bastante úteis nesses casos.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="técnicas-de-contagem" class="slide level2" data-number="2.3">
+<h2><span class="header-section-number">2.3</span> Técnicas de Contagem</h2>
 </section></section>
 <section>
 <section id="probabilidade-condicional" class="title-slide slide level1 center" data-number="3">
@@ -792,10 +1008,8 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </section></section>
 <section id="fim" class="title-slide slide level1 unnumbered unlisted center">
 <h1>FIM</h1>
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><a href="../index.html">Voltar 🔙</a></p>
-</div>
 </div>
 </section>
     </div>
@@ -824,6 +1038,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1084,27 +1299,10 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1114,17 +1312,8 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1138,11 +1327,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {

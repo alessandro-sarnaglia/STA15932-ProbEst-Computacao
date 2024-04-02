@@ -82,3 +82,11 @@ figure>figcaption {
   align-items: center;
 }
 
+.reveal div.callout-caution.callout-style-default .callout-title {
+    background-color: #fffb8c;
+}
+
+.reveal div.callout-caution {
+    border-left-color: #d3d100 !important;
+}
+
