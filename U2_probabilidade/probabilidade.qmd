@@ -545,11 +545,211 @@ A conclusão que se chega é que, em [espaços amostrais equiprováveis]{.underl
 ::: {.callout-important}
 ## Problema
 
-Nos casos em que o tamanho $N$ do espaço amostral equiprovável é muito grande, essa tarefa pode ser tediosa. Por isso, [técnicas de contagem]{.underline} podem ser bastante úteis nesses casos.
+Nos casos em que o tamanho $N$ do espaço amostral equiprovável é muito grande, essa tarefa pode ser tediosa.
+:::
+
+:::{.callout-caution}
+## Observação
+
+Em alguns casos em que $N$ é grande, [técnicas de contagem]{.underline} podem ser bastante úteis.
 :::
 
 
-## Técnicas de Contagem
+## Técnicas de Contagem {.smaller}
+
+Como dito anteriormente, quando $\Omega$ é **equiprovável**, a probabilidade de um evento $A$ é $P(A) = \frac{N(A)}{N}$. Existem várias técnicas de contagem que podem nos ajudar na determinação de $N(A)$ e $N$.
+
+:::{.callout-note}
+## Definição - Regra do produto para pares ordenados
+
+Suponha que os elementos de $\Omega$ são dados pelos **pares ordenados** $\omega = (z_1, z_2)$. Se existirem:
+
+1.    $N_1$ formas favoráveis a $A$ de escolher $z_1$; e
+2.    $N_2$ formas favoráveis a $A$ de escolher $z_2$ para cada uma das $N_1$ formas de escolher $z_1$,
+
+então
+$$N(A) = N_1 \cdot N_2.$$
+:::
+
+::: {.callout-caution}
+## Observação
+
+A regra acima só é válida se o $N_2$ não depende do valor específico escolhido para $z_1$. Mais detalhes no exemplo a seguir.
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Num conselho há 6 homens ($H$) e 8 mulheres ($M$), totalizando 14 pessoas. As pessoas que ocuparão os cargos de diretor e vice-diretor serão escolhidas [**ao acaso**]{style="color:red;"}. Pergunta-se:
+
+1.    Há quantas maneiras possíveis de escolhermos os cargos?
+2.    Quantas configurações tem um presidente e uma vice-presidente (evento $A$) e qual a probabilidade associada?
+3.    Quantas configurações tem um homem e uma mulher (evento $B$) e qual a probabilidade associada?
+4.    Em quantas configurações todos cargos são ocupados por mulheres (evento $C$) e qual a probabilidade associada?
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo {.unnumbered .unlisted}
+
+Podemos escrever os elementos de $\Omega$ como $\omega = (z_1, z_2)$, em que $z_1$ pessoa escolhida para diretor e $z_2$ é a pessoa escolhida para vice-diretor.
+
+::: incremental
+
+1.    Vamos determinar $N = N(\Omega)$. Note que $z_1$ e $z_2$ têm, respectivamente, $N_1 = 14$ e $N_2 = 13$ possibilidades, pois a mesma pessoa não pode ocupar ambos os cargos. Assim, $N = N(\Omega) = N_1 \cdot N_2 = 14 \cdot 13 = 182$;
+2.    Vamos determinar $N(A)$. Nesse caso, $z_1$ e $z_2$ têm, respectivamente, $N_1 = 6$ e $N_2 = 8$ possibilidades favoráveis a $A$ ($z_1$ homem e $z_2$ mulher). Logo, $N(A) = 6 \cdot 8 = 48$. Daí, $P(A) = \frac{N(A)}{N} = \frac{48}{182} = 0\text{,}2637$;
+3.    Vamos determinar $N(B)$. Os $\omega = (z_1, z_2)$ favoráveis a $B$ podem ser divididos em: $z_1$ e $z_2$ têm $N_1 = 6$ e $N_2 = 8$ possibilidades ($z_1$ homem e $z_2$ mulher); [**ou**]{style="color:red;"} $z_1$ e $z_2$ têm $N_1 = 8$ e $N_2 = 6$ possibilidades ($z_1$ mulher e $z_2$ homem). Logo, $N(B) = 6 \cdot 8 \color{red}{+} 8 \cdot 6 = 2 \cdot 6 \cdot 8 = 96$. Daí, $P(B) = \frac{N(B)}{N} = \frac{96}{182} = 0\text{,}5275$;
+4.    Vamos determinar $N(C)$. Nesse caso, $z_1$ e $z_2$ têm, respectivamente, $N_1 = 8$ e $N_2 = 7$ possibilidades favoráveis a $C$ ($z_1$ mulher e $z_2$ mulher diferente de $z_1$). Logo, $N(C) = 8 \cdot 7 = 56$. Daí, $P(C) = \frac{N(C)}{N} = \frac{56}{182} = 0\text{,}3077$.
+
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+<ul>
+  <li>Nos Itens:
+    <ol>
+      <li class=fragment>Não há restrição para os elementos que compõem o evento, por isso se trata de $\Omega$;</li>
+      <li class=fragment>A restrição imposta por $A$ é que $z_1$ deve ser homem e $z_2$ deve sere mulher, assim, para cada um dos $N_1 = 6$ homens no cargo de diretor, podemos escolher $N_2 = 8$ mulheres para vice-diretora;</li>
+      <li class=fragment>O evento $B$ impõe que: se $z_1$ é homem, então $z_2$ deve ser mulher; ou, se $z_1$ é mulher, então $z_2$ deve ser homem. Se escolhemos $z_1 = H$ ($N_1 = 6$), devemos escolher $z_2 = M$ ($N_2 = 8$). Por outro lado, se escolhemos $z_1 = M$ ($N_1 = 8$), devemos escolher $z_2 = H$ ($N_2 = 6$);</li>
+      <li class=fragment>A restrição imposta por $C$ é que $z_1$ e $z_2$ devem ser mulheres.Assim, $N_1 = 8$. Como $z_1$ não pode se repetir, restam apenas $7$ possibilidades para $z_2$ ($N_2=7$).</li>
+    </ol>
+  </li>
+  <li class=fragment>O cálculo de $N(B)$ no Item 3 equivale a calcular as possibilidades de $(z_1 = H, z_2 = M)$, equivalente a $N(A)$, e então multiplicar pelas permutações entre os (dois) cargos. Além disso, o elemento escolhido para $z_1$ influenciou a quantidade $N_2$. Por isso separamos em dois casos.</li>
+</ul>
+
+:::
+
+
+## 2.3 Técnicas de Contagem {.unnumbered .unlisted}
+
+:::{.callout-note}
+## Definição - Regra do produto para $k$-tuplas
+
+Uma [$m$-tupla]{style="color:red;"} é um conjunto ordenado $(z_1, z_2, \ldots, z_m)$ de $m$ objetos. Suponha que os elementos de $\Omega$ são dados $k$-tuplas $\omega = (z_1, z_2, \ldots, z_m)$. Se:
+
+1.    existirem $N_1$ formas favoráveis a $A$ de escolher $z_1$;
+2.    existirem $N_2$ formas favoráveis a $A$ de escolher $z_2$ para cada uma das $N_1$ formas de escolher $z_1$;
+3.    existirem $N_3$ formas favoráveis a $A$ de escolher $z_3$ para cada uma das $N_1 \cdot N_2$ formas de escolher $(z_1, z_2)$;
+4.    e, em geral, existirem $N_j$ formas favoráveis a $A$ de escolher $z_j$ para cada uma das $N_1 \cdot N_2  \cdot \cdots \cdot N_{j-1}$ formas de escolher $(z_1, z_2, \ldots, z_{j-1})$, $j > 1$,
+
+então
+$$N(A) = N_1 \cdot N_2 \cdot N_3 \cdot \cdots \cdot N_m.$$
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Como ficaria o exemplo anterior se, além dos cargos de diretor ($z_1$) e vice-diretor ($z_2$), tivéssemos o cargos de tesoureiro ($z_3$)?
+
+::: incremental
+
+1.    Agora $N = 14 \cdot 13 \cdot 12 = 2184$;
+2.    Agora $N(A) = 6 \cdot 8 \cdot 12 = 576$ e $P(A) = \frac{576}{2184} = 0\text{,}2637$;
+3.    Agora $N(B) = 6 \cdot 8 \cdot 12 + 8 \cdot 6 \cdot 12 = 1152$ e $P(B) = \frac{1152}{2184} = 0\text{,}5275$;
+4.    Agora $N(C) = 8 \cdot 7 \cdot 6 = 336$ e $P(C) = \frac{336}{2184} = 0\text{,}1539$.
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Novamente, no Item 3, o elemento escolhido para $z_1$ influenciou a quantidade $N_2$.
+:::
+
+:::
+
+## 2.3 Técnicas de Contagem {.unnumbered .unlisted}
+
+:::{.callout-note}
+## Definição - Arranjo Sem Reposição
+
+A quantidade de $m$-tuplas $(z_1, z_2, \ldots, z_m)$ formadas pela seleção **sem reposição** de $m$ elementos de um conjunto de $M \geq m$ objetos é chamada de **arranjo** de $M$ elementos tomados $m$ a $m$ e é dada por
+$$A_{m}^M = M (M-1) \cdots (M-(m-1)) = \frac{M (M-1) \cdots (M-(m-1))\color{red}{(M-m)!}}{\color{red}{(M-m)!}} = \frac{M!}{(M-m)!}.$$
+:::
+
+:::{.callout-note}
+## Definição - Arranjo Com Reposição
+
+Se as $m$-tuplas $(z_1, z_2, \ldots, z_m)$ forem formadas por seleção **sem reposição**, então o arranjo é dado por
+$$A_{m}^M = M M \cdots M = M^m.$$
+:::
+
+## 2.3 Técnicas de Contagem {.unnumbered .unlisted}
+
+:::{.callout-note}
+## Definição - Permutação
+
+A quantidade de $M$-tuplas $(z_1, z_2, \ldots, z_m)$ formadas pela seleção **sem reposição** de todos $M$ elementos é chamada de **permutação** e é dada por
+$$P_M = A_M^M = M!.$$
+:::
+
+::: {.callout-caution}
+## Observações
+
+1.    Em todas formas de arranjo, a ordem em que os itens são selecionados importa;
+2.    A permutação pode ser entendida como a quantidade de maneiras que podemos "**embaralhar**" os $M$ itens do conjunto, em vez de selecionarmos uma parcela dos mesmos.
+:::
+
+## 2.3 Técnicas de Contagem {.unnumbered .unlisted .smaller}
+
+Em um arranjo, a ordem de seleção dos itens importa. Se necessitarmos contar $m$-tuplas $(z_1, z_2, \ldots, z_m)$, em que a ordem de seleção não importa, devemos de descontar as $m$-tuplas formadas por mero "embaralhamento" de uma $m$-tupla original.
+
+::: fragment
+
+Exemplo: Se a ordem não importa, então a $3$-tupla $(1,2,3)$ é equivalente a: $(1,3,2)$; $(2,1,3)$; $(2,3,1)$; $(3,1,2)$; e $(3,2,1)$. As seis $3$-tuplas são resultado do "embaralhamento" de uma delas. No arranjo, todas as $3$-tuplas equivalentes aparecem "embaralhadas" seis vezes.
+
+:::
+
+::: fragment
+
+A **combinação** é usada para descontar essas repetições.
+
+:::
+
+::: fragment
+
+:::{.callout-note}
+## Definição - Combinação
+
+A quantidade de $m$-tuplas $(z_1, z_2, \ldots, z_m)$ formadas pela seleção **sem reposição** de $m$ elementos de um conjunto de $M \geq m$ objetos quando a ordem de seleção não importa é chamada de **combinação** de $M$ elementos tomados $m$ a $m$ e é dada por
+$$C_m^M = {M \choose m} = \frac{A_m^M}{m!} = \frac{M!}{m!(M-m)!}.$$
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo {.unnumbered .unlisted}
+
+Um armazém tem 25 impressoras, das quais 10 são a laser e 15 são a jato de tinta. Se 6 das 25 forem selecionadas aleatoriamente, qual será a probabilidade de exatamente 3 sejam a laser?
+
+::: fragment
+
+Seja $A$ o evento acima. Note que 
+
+:::
+
+::: incremental
+
+-   Há $N = {25 \choose 6}$ formas de escolher as $6$ impressoras das $25$;
+-   Há $N_1 = {10 \choose 3}$ formas de escolher as $3$ impressoras das $10$ a laser; e
+-   Há $N_2 = {15 \choose 3}$ formas de escolher as $3$ impressoras das $15$ a jato de tinta.
+
+:::
+
+::: fragment
+
+Assim, $N(A) = N_1 N_2 = {10 \choose 3}{15 \choose 3}$ e
+$$P(A) = \frac{N(A)}{N} = \frac{{10 \choose 3}{15 \choose 3}}{{25 \choose 6}} = 0\text{,}3083.$$
+
+:::
 
 # Probabilidade Condicional
 

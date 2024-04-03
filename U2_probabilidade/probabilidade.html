@@ -8,7 +8,7 @@
 <link href="probabilidade_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="probabilidade_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="probabilidade_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia">
   <title>Probabilidade e Estatística</title>
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -896,7 +897,6 @@ j-1, &amp; j=2,\ldots,5;\\
 <h2></h2>
 <h3 class="unnumbered unlisted" id="exemplo-4">Exemplo</h3>
 <p>Com base na equiprobabilidade de <span class="math inline">\(\Omega\)</span> (os dados são <strong>honestos</strong>) e nos valores de <span class="math inline">\(N(A_j)\)</span> e <span class="math inline">\(N\)</span>, podemos utilizar a medida de probabilidade definida anteriormente para obter</p>
-
 <table>
 <tbody><tr style="border-top:2px solid; border-bottom:1px solid; ">
 <td style="border-right:2px solid">
@@ -950,7 +950,6 @@ j-1, &amp; j=2,\ldots,5;\\
 <span class="math inline">\(\frac{1}{16}\)</span>
 </td>
 </tr>
-
 </tbody></table>
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
@@ -981,13 +980,242 @@ j-1, &amp; j=2,\ldots,5;\\
 <p><strong>Problema</strong></p>
 </div>
 <div class="callout-content">
-<p>Nos casos em que o tamanho <span class="math inline">\(N\)</span> do espaço amostral equiprovável é muito grande, essa tarefa pode ser tediosa. Por isso, <u>técnicas de contagem</u> podem ser bastante úteis nesses casos.</p>
+<p>Nos casos em que o tamanho <span class="math inline">\(N\)</span> do espaço amostral equiprovável é muito grande, essa tarefa pode ser tediosa.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Em alguns casos em que <span class="math inline">\(N\)</span> é grande, <u>técnicas de contagem</u> podem ser bastante úteis.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="técnicas-de-contagem" class="slide level2" data-number="2.3">
+<section id="técnicas-de-contagem" class="slide level2 smaller" data-number="2.3">
 <h2><span class="header-section-number">2.3</span> Técnicas de Contagem</h2>
+<p>Como dito anteriormente, quando <span class="math inline">\(\Omega\)</span> é <strong>equiprovável</strong>, a probabilidade de um evento <span class="math inline">\(A\)</span> é <span class="math inline">\(P(A) = \frac{N(A)}{N}\)</span>. Existem várias técnicas de contagem que podem nos ajudar na determinação de <span class="math inline">\(N(A)\)</span> e <span class="math inline">\(N\)</span>.</p>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Regra do produto para pares ordenados</strong></p>
+</div>
+<div class="callout-content">
+<p>Suponha que os elementos de <span class="math inline">\(\Omega\)</span> são dados pelos <strong>pares ordenados</strong> <span class="math inline">\(\omega = (z_1, z_2)\)</span>. Se existirem:</p>
+<ol type="1">
+<li><span class="math inline">\(N_1\)</span> formas favoráveis a <span class="math inline">\(A\)</span> de escolher <span class="math inline">\(z_1\)</span>; e</li>
+<li><span class="math inline">\(N_2\)</span> formas favoráveis a <span class="math inline">\(A\)</span> de escolher <span class="math inline">\(z_2\)</span> para cada uma das <span class="math inline">\(N_1\)</span> formas de escolher <span class="math inline">\(z_1\)</span>,</li>
+</ol>
+<p>então <span class="math display">\[N(A) = N_1 \cdot N_2.\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>A regra acima só é válida se o <span class="math inline">\(N_2\)</span> não depende do valor específico escolhido para <span class="math inline">\(z_1\)</span>. Mais detalhes no exemplo a seguir.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-5">Exemplo</h3>
+<p>Num conselho há 6 homens (<span class="math inline">\(H\)</span>) e 8 mulheres (<span class="math inline">\(M\)</span>), totalizando 14 pessoas. As pessoas que ocuparão os cargos de diretor e vice-diretor serão escolhidas <span style="color:red;"><strong>ao acaso</strong></span>. Pergunta-se:</p>
+<ol type="1">
+<li>Há quantas maneiras possíveis de escolhermos os cargos?</li>
+<li>Quantas configurações tem um presidente e uma vice-presidente (evento <span class="math inline">\(A\)</span>) e qual a probabilidade associada?</li>
+<li>Quantas configurações tem um homem e uma mulher (evento <span class="math inline">\(B\)</span>) e qual a probabilidade associada?</li>
+<li>Em quantas configurações todos cargos são ocupados por mulheres (evento <span class="math inline">\(C\)</span>) e qual a probabilidade associada?</li>
+</ol>
+</section>
+<section id="section-7" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-6">Exemplo</h3>
+<p>Podemos escrever os elementos de <span class="math inline">\(\Omega\)</span> como <span class="math inline">\(\omega = (z_1, z_2)\)</span>, em que <span class="math inline">\(z_1\)</span> pessoa escolhida para diretor e <span class="math inline">\(z_2\)</span> é a pessoa escolhida para vice-diretor.</p>
+<div>
+<ol type="1">
+<li class="fragment">Vamos determinar <span class="math inline">\(N = N(\Omega)\)</span>. Note que <span class="math inline">\(z_1\)</span> e <span class="math inline">\(z_2\)</span> têm, respectivamente, <span class="math inline">\(N_1 = 14\)</span> e <span class="math inline">\(N_2 = 13\)</span> possibilidades, pois a mesma pessoa não pode ocupar ambos os cargos. Assim, <span class="math inline">\(N = N(\Omega) = N_1 \cdot N_2 = 14 \cdot 13 = 182\)</span>;</li>
+<li class="fragment">Vamos determinar <span class="math inline">\(N(A)\)</span>. Nesse caso, <span class="math inline">\(z_1\)</span> e <span class="math inline">\(z_2\)</span> têm, respectivamente, <span class="math inline">\(N_1 = 6\)</span> e <span class="math inline">\(N_2 = 8\)</span> possibilidades favoráveis a <span class="math inline">\(A\)</span> (<span class="math inline">\(z_1\)</span> homem e <span class="math inline">\(z_2\)</span> mulher). Logo, <span class="math inline">\(N(A) = 6 \cdot 8 = 48\)</span>. Daí, <span class="math inline">\(P(A) = \frac{N(A)}{N} = \frac{48}{182} = 0\text{,}2637\)</span>;</li>
+<li class="fragment">Vamos determinar <span class="math inline">\(N(B)\)</span>. Os <span class="math inline">\(\omega = (z_1, z_2)\)</span> favoráveis a <span class="math inline">\(B\)</span> podem ser divididos em: <span class="math inline">\(z_1\)</span> e <span class="math inline">\(z_2\)</span> têm <span class="math inline">\(N_1 = 6\)</span> e <span class="math inline">\(N_2 = 8\)</span> possibilidades (<span class="math inline">\(z_1\)</span> homem e <span class="math inline">\(z_2\)</span> mulher); <span style="color:red;"><strong>ou</strong></span> <span class="math inline">\(z_1\)</span> e <span class="math inline">\(z_2\)</span> têm <span class="math inline">\(N_1 = 8\)</span> e <span class="math inline">\(N_2 = 6\)</span> possibilidades (<span class="math inline">\(z_1\)</span> mulher e <span class="math inline">\(z_2\)</span> homem). Logo, <span class="math inline">\(N(B) = 6 \cdot 8 \color{red}{+} 8 \cdot 6 = 2 \cdot 6 \cdot 8 = 96\)</span>. Daí, <span class="math inline">\(P(B) = \frac{N(B)}{N} = \frac{96}{182} = 0\text{,}5275\)</span>;</li>
+<li class="fragment">Vamos determinar <span class="math inline">\(N(C)\)</span>. Nesse caso, <span class="math inline">\(z_1\)</span> e <span class="math inline">\(z_2\)</span> têm, respectivamente, <span class="math inline">\(N_1 = 8\)</span> e <span class="math inline">\(N_2 = 7\)</span> possibilidades favoráveis a <span class="math inline">\(C\)</span> (<span class="math inline">\(z_1\)</span> mulher e <span class="math inline">\(z_2\)</span> mulher diferente de <span class="math inline">\(z_1\)</span>). Logo, <span class="math inline">\(N(C) = 8 \cdot 7 = 56\)</span>. Daí, <span class="math inline">\(P(C) = \frac{N(C)}{N} = \frac{56}{182} = 0\text{,}3077\)</span>.</li>
+</ol>
+</div>
+</section>
+<section id="section-8" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-7">Exemplo</h3>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>
+Nos Itens:
+<ol>
+<li class="fragment">
+Não há restrição para os elementos que compõem o evento, por isso se trata de <span class="math inline">\(\Omega\)</span>;
+</li>
+<li class="fragment">
+A restrição imposta por <span class="math inline">\(A\)</span> é que <span class="math inline">\(z_1\)</span> deve ser homem e <span class="math inline">\(z_2\)</span> deve sere mulher, assim, para cada um dos <span class="math inline">\(N_1 = 6\)</span> homens no cargo de diretor, podemos escolher <span class="math inline">\(N_2 = 8\)</span> mulheres para vice-diretora;
+</li>
+<li class="fragment">
+O evento <span class="math inline">\(B\)</span> impõe que: se <span class="math inline">\(z_1\)</span> é homem, então <span class="math inline">\(z_2\)</span> deve ser mulher; ou, se <span class="math inline">\(z_1\)</span> é mulher, então <span class="math inline">\(z_2\)</span> deve ser homem. Se escolhemos <span class="math inline">\(z_1 = H\)</span> (<span class="math inline">\(N_1 = 6\)</span>), devemos escolher <span class="math inline">\(z_2 = M\)</span> (<span class="math inline">\(N_2 = 8\)</span>). Por outro lado, se escolhemos <span class="math inline">\(z_1 = M\)</span> (<span class="math inline">\(N_1 = 8\)</span>), devemos escolher <span class="math inline">\(z_2 = H\)</span> (<span class="math inline">\(N_2 = 6\)</span>);
+</li>
+<li class="fragment">
+A restrição imposta por <span class="math inline">\(C\)</span> é que <span class="math inline">\(z_1\)</span> e <span class="math inline">\(z_2\)</span> devem ser mulheres.Assim, <span class="math inline">\(N_1 = 8\)</span>. Como <span class="math inline">\(z_1\)</span> não pode se repetir, restam apenas <span class="math inline">\(7\)</span> possibilidades para <span class="math inline">\(z_2\)</span> (<span class="math inline">\(N_2=7\)</span>).
+</li>
+</ol>
+</li>
+<li class="fragment">
+O cálculo de <span class="math inline">\(N(B)\)</span> no Item 3 equivale a calcular as possibilidades de <span class="math inline">\((z_1 = H, z_2 = M)\)</span>, equivalente a <span class="math inline">\(N(A)\)</span>, e então multiplicar pelas permutações entre os (dois) cargos. Além disso, o elemento escolhido para <span class="math inline">\(z_1\)</span> influenciou a quantidade <span class="math inline">\(N_2\)</span>. Por isso separamos em dois casos.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="técnicas-de-contagem-1" class="slide level2 unnumbered unlisted">
+<h2>2.3 Técnicas de Contagem</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Regra do produto para <span class="math inline">\(k\)</span>-tuplas</strong></p>
+</div>
+<div class="callout-content">
+<p>Uma <span style="color:red;"><span class="math inline">\(m\)</span>-tupla</span> é um conjunto ordenado <span class="math inline">\((z_1, z_2, \ldots, z_m)\)</span> de <span class="math inline">\(m\)</span> objetos. Suponha que os elementos de <span class="math inline">\(\Omega\)</span> são dados <span class="math inline">\(k\)</span>-tuplas <span class="math inline">\(\omega = (z_1, z_2, \ldots, z_m)\)</span>. Se:</p>
+<ol type="1">
+<li>existirem <span class="math inline">\(N_1\)</span> formas favoráveis a <span class="math inline">\(A\)</span> de escolher <span class="math inline">\(z_1\)</span>;</li>
+<li>existirem <span class="math inline">\(N_2\)</span> formas favoráveis a <span class="math inline">\(A\)</span> de escolher <span class="math inline">\(z_2\)</span> para cada uma das <span class="math inline">\(N_1\)</span> formas de escolher <span class="math inline">\(z_1\)</span>;</li>
+<li>existirem <span class="math inline">\(N_3\)</span> formas favoráveis a <span class="math inline">\(A\)</span> de escolher <span class="math inline">\(z_3\)</span> para cada uma das <span class="math inline">\(N_1 \cdot N_2\)</span> formas de escolher <span class="math inline">\((z_1, z_2)\)</span>;</li>
+<li>e, em geral, existirem <span class="math inline">\(N_j\)</span> formas favoráveis a <span class="math inline">\(A\)</span> de escolher <span class="math inline">\(z_j\)</span> para cada uma das <span class="math inline">\(N_1 \cdot N_2  \cdot \cdots \cdot N_{j-1}\)</span> formas de escolher <span class="math inline">\((z_1, z_2, \ldots, z_{j-1})\)</span>, <span class="math inline">\(j &gt; 1\)</span>,</li>
+</ol>
+<p>então <span class="math display">\[N(A) = N_1 \cdot N_2 \cdot N_3 \cdot \cdots \cdot N_m.\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-9" class="slide level2 unnumbered unlisted">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-8">Exemplo</h3>
+<p>Como ficaria o exemplo anterior se, além dos cargos de diretor (<span class="math inline">\(z_1\)</span>) e vice-diretor (<span class="math inline">\(z_2\)</span>), tivéssemos o cargos de tesoureiro (<span class="math inline">\(z_3\)</span>)?</p>
+<div>
+<ol type="1">
+<li class="fragment">Agora <span class="math inline">\(N = 14 \cdot 13 \cdot 12 = 2184\)</span>;</li>
+<li class="fragment">Agora <span class="math inline">\(N(A) = 6 \cdot 8 \cdot 12 = 576\)</span> e <span class="math inline">\(P(A) = \frac{576}{2184} = 0\text{,}2637\)</span>;</li>
+<li class="fragment">Agora <span class="math inline">\(N(B) = 6 \cdot 8 \cdot 12 + 8 \cdot 6 \cdot 12 = 1152\)</span> e <span class="math inline">\(P(B) = \frac{1152}{2184} = 0\text{,}5275\)</span>;</li>
+<li class="fragment">Agora <span class="math inline">\(N(C) = 8 \cdot 7 \cdot 6 = 336\)</span> e <span class="math inline">\(P(C) = \frac{336}{2184} = 0\text{,}1539\)</span>.</li>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Novamente, no Item 3, o elemento escolhido para <span class="math inline">\(z_1\)</span> influenciou a quantidade <span class="math inline">\(N_2\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="técnicas-de-contagem-2" class="slide level2 unnumbered unlisted">
+<h2>2.3 Técnicas de Contagem</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Arranjo Sem Reposição</strong></p>
+</div>
+<div class="callout-content">
+<p>A quantidade de <span class="math inline">\(m\)</span>-tuplas <span class="math inline">\((z_1, z_2, \ldots, z_m)\)</span> formadas pela seleção <strong>sem reposição</strong> de <span class="math inline">\(m\)</span> elementos de um conjunto de <span class="math inline">\(M \geq m\)</span> objetos é chamada de <strong>arranjo</strong> de <span class="math inline">\(M\)</span> elementos tomados <span class="math inline">\(m\)</span> a <span class="math inline">\(m\)</span> e é dada por <span class="math display">\[A_{m}^M = M (M-1) \cdots (M-(m-1)) = \frac{M (M-1) \cdots (M-(m-1))\color{red}{(M-m)!}}{\color{red}{(M-m)!}} = \frac{M!}{(M-m)!}.\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Arranjo Com Reposição</strong></p>
+</div>
+<div class="callout-content">
+<p>Se as <span class="math inline">\(m\)</span>-tuplas <span class="math inline">\((z_1, z_2, \ldots, z_m)\)</span> forem formadas por seleção <strong>sem reposição</strong>, então o arranjo é dado por <span class="math display">\[A_{m}^M = M M \cdots M = M^m.\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="técnicas-de-contagem-3" class="slide level2 unnumbered unlisted">
+<h2>2.3 Técnicas de Contagem</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Permutação</strong></p>
+</div>
+<div class="callout-content">
+<p>A quantidade de <span class="math inline">\(M\)</span>-tuplas <span class="math inline">\((z_1, z_2, \ldots, z_m)\)</span> formadas pela seleção <strong>sem reposição</strong> de todos <span class="math inline">\(M\)</span> elementos é chamada de <strong>permutação</strong> e é dada por <span class="math display">\[P_M = A_M^M = M!.\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>Em todas formas de arranjo, a ordem em que os itens são selecionados importa;</li>
+<li>A permutação pode ser entendida como a quantidade de maneiras que podemos “<strong>embaralhar</strong>” os <span class="math inline">\(M\)</span> itens do conjunto, em vez de selecionarmos uma parcela dos mesmos.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="técnicas-de-contagem-4" class="slide level2 unnumbered unlisted smaller">
+<h2>2.3 Técnicas de Contagem</h2>
+<p>Em um arranjo, a ordem de seleção dos itens importa. Se necessitarmos contar <span class="math inline">\(m\)</span>-tuplas <span class="math inline">\((z_1, z_2, \ldots, z_m)\)</span>, em que a ordem de seleção não importa, devemos de descontar as <span class="math inline">\(m\)</span>-tuplas formadas por mero “embaralhamento” de uma <span class="math inline">\(m\)</span>-tupla original.</p>
+<div class="fragment">
+<p>Exemplo: Se a ordem não importa, então a <span class="math inline">\(3\)</span>-tupla <span class="math inline">\((1,2,3)\)</span> é equivalente a: <span class="math inline">\((1,3,2)\)</span>; <span class="math inline">\((2,1,3)\)</span>; <span class="math inline">\((2,3,1)\)</span>; <span class="math inline">\((3,1,2)\)</span>; e <span class="math inline">\((3,2,1)\)</span>. As seis <span class="math inline">\(3\)</span>-tuplas são resultado do “embaralhamento” de uma delas. No arranjo, todas as <span class="math inline">\(3\)</span>-tuplas equivalentes aparecem “embaralhadas” seis vezes.</p>
+</div>
+<div class="fragment">
+<p>A <strong>combinação</strong> é usada para descontar essas repetições.</p>
+</div>
+<div class="fragment">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Combinação</strong></p>
+</div>
+<div class="callout-content">
+<p>A quantidade de <span class="math inline">\(m\)</span>-tuplas <span class="math inline">\((z_1, z_2, \ldots, z_m)\)</span> formadas pela seleção <strong>sem reposição</strong> de <span class="math inline">\(m\)</span> elementos de um conjunto de <span class="math inline">\(M \geq m\)</span> objetos quando a ordem de seleção não importa é chamada de <strong>combinação</strong> de <span class="math inline">\(M\)</span> elementos tomados <span class="math inline">\(m\)</span> a <span class="math inline">\(m\)</span> e é dada por <span class="math display">\[C_m^M = {M \choose m} = \frac{A_m^M}{m!} = \frac{M!}{m!(M-m)!}.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-10" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-9">Exemplo</h3>
+<p>Um armazém tem 25 impressoras, das quais 10 são a laser e 15 são a jato de tinta. Se 6 das 25 forem selecionadas aleatoriamente, qual será a probabilidade de exatamente 3 sejam a laser?</p>
+<div class="fragment">
+<p>Seja <span class="math inline">\(A\)</span> o evento acima. Note que</p>
+</div>
+<div>
+<ul>
+<li class="fragment">Há <span class="math inline">\(N = {25 \choose 6}\)</span> formas de escolher as <span class="math inline">\(6\)</span> impressoras das <span class="math inline">\(25\)</span>;</li>
+<li class="fragment">Há <span class="math inline">\(N_1 = {10 \choose 3}\)</span> formas de escolher as <span class="math inline">\(3\)</span> impressoras das <span class="math inline">\(10\)</span> a laser; e</li>
+<li class="fragment">Há <span class="math inline">\(N_2 = {15 \choose 3}\)</span> formas de escolher as <span class="math inline">\(3\)</span> impressoras das <span class="math inline">\(15\)</span> a jato de tinta.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Assim, <span class="math inline">\(N(A) = N_1 N_2 = {10 \choose 3}{15 \choose 3}\)</span> e <span class="math display">\[P(A) = \frac{N(A)}{N} = \frac{{10 \choose 3}{15 \choose 3}}{{25 \choose 6}} = 0\text{,}3083.\]</span></p>
+</div>
 </section></section>
 <section>
 <section id="probabilidade-condicional" class="title-slide slide level1 center" data-number="3">
@@ -1008,8 +1236,10 @@ j-1, &amp; j=2,\ldots,5;\\
 </section></section>
 <section id="fim" class="title-slide slide level1 unnumbered unlisted center">
 <h1>FIM</h1>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><a href="../index.html">Voltar 🔙</a></p>
+</div>
 </div>
 </section>
     </div>
@@ -1038,7 +1268,6 @@ j-1, &amp; j=2,\ldots,5;\\
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1302,10 +1531,27 @@ j-1, &amp; j=2,\ldots,5;\\
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1315,8 +1561,17 @@ j-1, &amp; j=2,\ldots,5;\\
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1330,7 +1585,11 @@ j-1, &amp; j=2,\ldots,5;\\
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
