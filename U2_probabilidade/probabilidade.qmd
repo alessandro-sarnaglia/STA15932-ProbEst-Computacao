@@ -592,14 +592,14 @@ Num conselho há 6 homens ($H$) e 8 mulheres ($M$), totalizando 14 pessoas. As p
 
 ### Exemplo {.unnumbered .unlisted}
 
-Podemos escrever os elementos de $\Omega$ como $\omega = (z_1, z_2)$, em que $z_1$ pessoa escolhida para diretor e $z_2$ é a pessoa escolhida para vice-diretor.
+Podemos escrever os elementos de $\Omega$ como $\omega = (z_1, z_2)$, em que $z_1$ é pessoa escolhida para diretor e $z_2$ é a pessoa escolhida para vice-diretor.
 
 ::: incremental
 
-1.    Vamos determinar $N = N(\Omega)$. Note que $z_1$ e $z_2$ têm, respectivamente, $N_1 = 14$ e $N_2 = 13$ possibilidades, pois a mesma pessoa não pode ocupar ambos os cargos. Assim, $N = N(\Omega) = N_1 \cdot N_2 = 14 \cdot 13 = 182$;
-2.    Vamos determinar $N(A)$. Nesse caso, $z_1$ e $z_2$ têm, respectivamente, $N_1 = 6$ e $N_2 = 8$ possibilidades favoráveis a $A$ ($z_1$ homem e $z_2$ mulher). Logo, $N(A) = 6 \cdot 8 = 48$. Daí, $P(A) = \frac{N(A)}{N} = \frac{48}{182} = 0\text{,}2637$;
-3.    Vamos determinar $N(B)$. Os $\omega = (z_1, z_2)$ favoráveis a $B$ podem ser divididos em: $z_1$ e $z_2$ têm $N_1 = 6$ e $N_2 = 8$ possibilidades ($z_1$ homem e $z_2$ mulher); [**ou**]{style="color:red;"} $z_1$ e $z_2$ têm $N_1 = 8$ e $N_2 = 6$ possibilidades ($z_1$ mulher e $z_2$ homem). Logo, $N(B) = 6 \cdot 8 \color{red}{+} 8 \cdot 6 = 2 \cdot 6 \cdot 8 = 96$. Daí, $P(B) = \frac{N(B)}{N} = \frac{96}{182} = 0\text{,}5275$;
-4.    Vamos determinar $N(C)$. Nesse caso, $z_1$ e $z_2$ têm, respectivamente, $N_1 = 8$ e $N_2 = 7$ possibilidades favoráveis a $C$ ($z_1$ mulher e $z_2$ mulher diferente de $z_1$). Logo, $N(C) = 8 \cdot 7 = 56$. Daí, $P(C) = \frac{N(C)}{N} = \frac{56}{182} = 0\text{,}3077$.
+1.    Trata-se de determinar $N = N(\Omega)$. Note que $z_1$ e $z_2$ têm, respectivamente, $N_1 = 14$ e $N_2 = 13$ possibilidades, pois a mesma pessoa não pode ocupar ambos os cargos. Assim, $N = N(\Omega) = N_1 \cdot N_2 = 14 \cdot 13 = 182$;
+2.    Trata-se de determinar $N(A)$. Nesse caso, $z_1$ e $z_2$ têm, respectivamente, $N_1 = 6$ e $N_2 = 8$ possibilidades favoráveis a $A$ ($z_1$ homem e $z_2$ mulher). Logo, $N(A) = 6 \cdot 8 = 48$. Daí, $P(A) = \frac{N(A)}{N} = \frac{48}{182} = 0\text{,}2637$;
+3.    Trata-se de determinar $N(B)$. Os $\omega = (z_1, z_2)$ favoráveis a $B$ podem ser divididos em: $z_1$ e $z_2$ têm $N_1 = 6$ e $N_2 = 8$ possibilidades ($z_1$ homem e $z_2$ mulher); [**ou**]{style="color:red;"} $z_1$ e $z_2$ têm $N_1 = 8$ e $N_2 = 6$ possibilidades ($z_1$ mulher e $z_2$ homem). Logo, $N(B) = 6 \cdot 8 \color{red}{+} 8 \cdot 6 = 2 \cdot 6 \cdot 8 = 96$. Daí, $P(B) = \frac{N(B)}{N} = \frac{96}{182} = 0\text{,}5275$;
+4.    Trata-se de determinar $N(C)$. Nesse caso, $z_1$ e $z_2$ têm, respectivamente, $N_1 = 8$ e $N_2 = 7$ possibilidades favoráveis a $C$ ($z_1$ mulher e $z_2$ mulher diferente de $z_1$). Logo, $N(C) = 8 \cdot 7 = 56$. Daí, $P(C) = \frac{N(C)}{N} = \frac{56}{182} = 0\text{,}3077$.
 
 :::
 
