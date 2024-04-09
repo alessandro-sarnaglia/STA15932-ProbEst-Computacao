@@ -363,7 +363,7 @@ Sejam $\Omega$ espaço amostral, $A, B \subset \Omega$ eventos e $P(\cdot)$ medi
 
 ### Exemplo {.unnumbered .unlisted}
 
-Discos de policarbonato plástico são analisados com relação a resistência a arranhões e choque. Os resultados de 100 discos são resumidos a seguir:
+Discos de policarbonato plástico são analisados com relação a suas resistências a arranhões e a choque. Os resultados são resumidos a seguir:
 
 ::: columns
 
@@ -373,7 +373,7 @@ Discos de policarbonato plástico são analisados com relação a resistência a
 :::
 
 ::: {.column #vcenter width=55%}
-Suponha que um disco será selecionado ao acaso. Sejam $A =$ "resist. a arranhões alta" e $B =$ "resist. a choques alta". Qual a probabilidade que você atribuiria para os eventos:
+Um disco será selecionado. Sejam $A =$ "resist. a arranhões alta" e $B =$ "resist. a choques alta". Quais as probabilidades dos eventos:
 
 -   $P(A \cap B)$;
 -   $P(A \cup B)$;
@@ -701,9 +701,9 @@ $$P_M = A_M^M = M!.$$
 
 Em um arranjo, a ordem de seleção dos itens importa. Se necessitarmos contar $m$-tuplas $(z_1, z_2, \ldots, z_m)$, em que a ordem de seleção não importa, devemos de descontar as $m$-tuplas formadas por mero "embaralhamento" de uma $m$-tupla original.
 
-::: fragment
+::: {.fragment style="border-style: solid; border-width: 3px; padding-right: 12px; padding-left: 12px;"}
 
-Exemplo: Se a ordem não importa, então a $3$-tupla $(1,2,3)$ é equivalente a: $(1,3,2)$; $(2,1,3)$; $(2,3,1)$; $(3,1,2)$; e $(3,2,1)$. As seis $3$-tuplas são resultado do "embaralhamento" de uma delas. No arranjo, todas as $3$-tuplas equivalentes aparecem "embaralhadas" seis vezes.
+**Exemplo:** Se a ordem não importa, então a $3$-tupla $(1,2,3)$ é equivalente a: $(1,3,2)$; $(2,1,3)$; $(2,3,1)$; $(3,1,2)$; e $(3,2,1)$. As seis $3$-tuplas são resultado do "embaralhamento" de uma delas. No arranjo, todas as $3$-tuplas equivalentes aparecem "embaralhadas" seis vezes.
 
 :::
 
@@ -751,9 +751,304 @@ $$P(A) = \frac{N(A)}{N} = \frac{ {10 \choose 3} {15 \choose 3} }{{25 \choose 6}}
 
 :::
 
+
 # Probabilidade Condicional
 
 ## Probabilidade Condicional {.unnumbered .unlisted}
+
+<div style="font-size:75%">
+
+A atribuição de probabilidades é realizada com base em informações que se tem e em suposições acerca do experimento.
+
+</div>
+
+::: {.fragment style="font-size:75%"}
+
+Para um evento $A$, após a especificar $P(A)$, informações adicionais relevantes para o experimento podem estar disponíveis. Essas informações são representadas como a ocorrência de um evento $B$.
+
+:::
+
+::: {.fragment style="font-size:75%"}
+
+A informação de que $B$ ocorreu pode fazer com que revisemos $P(A)$.
+
+:::
+
+::: {.fragment style="font-size:75%; border-style: solid; border-width: 3px; padding-right: 12px; padding-left: 12px;"}
+
+**Exemplo:** Seja $A =$ "Indivíduo tem uma doença". Apenas pelos sintomas, um médico pode atribuir um valor $P(A)$. Seja $B =$ "Resultado negativo de um exame". A informação [$B$ ocorreu]{style="color:red;"} deveria reduzir a probabilidade de $A$.
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observações
+
+1.    Usaremos a notação $P(A|B)$ para representar a probabilidade **condicional** de $A$ dada a ocorrência de $B$;
+2.    Nesse contexto, dizemos que $P(A)$ é a probabilidade **incondicional** ou **marginal**.
+:::
+
+:::
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Uma fábrica tem duas linhas de montagem, uma nova ($B$) e uma antiga, que produzem componentes que podem ser defeituosos ($A$) ou não. Em um dia, a fábrica produziu produtos com a seguinte distribuição:
+
+::: columns
+
+::: {.column #vcenter width="30%"}
+
+<table style="margin-left:auto; margin-right:auto;">
+  <tr style="border-top: 2px solid; border-bottom: 2px solid">
+    <td style="text-align: center; vertical-align:middle; border-right: 2px solid" rowspan="2">**Linha de Montagem**</td> <td colspan="2">**Condição**</td>
+  </tr>
+  <tr style="border-top: 2px solid; border-bottom: 2px solid">
+    <td style="text-align: center;"> $A$ </td> <td style="text-align: center;"> $A^c$ </td>
+  </tr>
+  <tr>
+    <td style="border-right: 2px solid; text-align: center;"> $B$ </td> <td style="text-align: center;"> 1 </td> <td style="text-align: center;"> 9 </td>
+  </tr>
+  <tr style="border-bottom: 2px solid">
+    <td style="text-align: center; border-right: 2px solid"> $B^c$ </td> <td style="text-align: center;"> 2 </td> <td style="text-align: center;"> 6 </td>
+  </tr>
+</table>
+
+:::
+
+::: {.column #vcenter width="3%"}
+
+:::
+
+::: {.column #vcenter width="67%"}
+
+<div style="margin-left:0px">
+
+Ao selecionar um dos componentes ao acaso, determine as probabilidades:
+
+</div>
+
+1.    $P(A); \phantom{ = \frac{N(A)}{N} = \frac{3}{18} = 0\text{,}1667}$
+2.    $P(A|B). \phantom{ = \frac{N(A \cap B)}{N(B)} = \frac{1}{10} = 0\text{,}1}$
+
+:::
+
+:::
+
+:::
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Uma fábrica tem duas linhas de montagem, uma nova ($B$) e uma antiga, que produzem componentes que podem ser defeituosos ($A$) ou não. Em um dia, a fábrica produziu produtos com a seguinte distribuição:
+
+::: columns
+
+::: {.column #vcenter width="30%"}
+
+<table style="margin-left:auto; margin-right:auto;">
+  <tr style="border-top: 2px solid; border-bottom: 2px solid">
+    <td style="text-align: center; vertical-align:middle; border-right: 2px solid" rowspan="2">**Linha de Montagem**</td> <td colspan="2">**Condição**</td>
+  </tr>
+  <tr style="border-top: 2px solid; border-bottom: 2px solid">
+    <td style="text-align: center;"> $A$ </td> <td style="text-align: center;"> $A^c$ </td>
+  </tr>
+  <tr>
+    <td style="border-right: 2px solid; text-align: center;"> $B$ </td> <td style="text-align: center;"> 1 </td> <td style="text-align: center;"> 9 </td>
+  </tr>
+  <tr style="border-bottom: 2px solid">
+    <td style="text-align: center; border-right: 2px solid"> $B^c$ </td> <td style="text-align: center;"> 2 </td> <td style="text-align: center;"> 6 </td>
+  </tr>
+</table>
+
+:::
+
+::: {.column #vcenter width="3%"}
+
+:::
+
+::: {.column #vcenter width="67%"}
+
+<div style="margin-left:0px">
+
+Ao selecionar um dos componentes ao acaso, determine as probabilidades:
+
+</div>
+
+1.    $P(A) = \frac{N(A)}{N} = \frac{3}{18} = 0\text{,}1667$
+2.    $P(A|B). \phantom{ = \frac{N(A \cap B)}{N(B)} = \frac{1}{10} = 0\text{,}1}$
+
+:::
+
+:::
+
+:::
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Uma fábrica tem duas linhas de montagem, uma nova ($B$) e uma antiga, que produzem componentes que podem ser defeituosos ($A$) ou não. Em um dia, a fábrica produziu produtos com a seguinte distribuição:
+
+::: columns
+
+::: {.column #vcenter width="30%"}
+
+<table style="margin-left:auto; margin-right:auto;">
+  <tr style="border-top: 2px solid; border-bottom: 2px solid">
+    <td style="text-align: center; vertical-align:middle; border-right: 2px solid" rowspan="2">**Linha de Montagem**</td> <td colspan="2">**Condição**</td>
+  </tr>
+  <tr style="border-top: 2px solid; border-bottom: 2px solid">
+    <td style="text-align: center;"> $A$ </td> <td style="text-align: center;"> $A^c$ </td>
+  </tr>
+  <tr>
+    <td style="border-right: 2px solid; text-align: center;"> $B$ </td> <td style="text-align: center;"> 1 </td> <td style="text-align: center;"> 9 </td>
+  </tr>
+  <tr style="border-bottom: 2px solid">
+    <td style="text-align: center; border-right: 2px solid"> $B^c$ </td> <td style="text-align: center;"> 2 </td> <td style="text-align: center;"> 6 </td>
+  </tr>
+</table>
+
+:::
+
+::: {.column #vcenter width="3%"}
+
+:::
+
+::: {.column #vcenter width="67%"}
+
+<div style="margin-left:0px">
+
+Ao selecionar um dos componentes ao acaso, determine as probabilidades:
+
+</div>
+
+1.    $P(A) = \frac{N(A)}{N} = \frac{3}{18} = 0\text{,}1667$;
+2.    $P(A|B) = \frac{N(A \cap B)}{N(B)} = \frac{1}{10} = 0\text{,}1$.
+
+:::
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+No exemplo acima, no Item 2, notamos que
+$$\textstyle P(A|B) = \frac{N(A \cap B)}{N(B)} = \frac{N(A \cap B)/N}{N(B)/N} = \frac{P(A \cap B)}{P(B)}.$$
+
+:::
+
+:::
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Sejam $A,B\in\Omega$ eventos tais que $P(B) > 0$. Então, a probabilidade condicional de $A$ dada a ocorrência de $B$ é definida por
+$$P(A|B) = \frac{P(A \cap B)}{P(B)}.$$
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Se $P(B) = 0$, alguns autores definem $P(A|B) = 0$, outros definem $P(A|B) = P(A)$. De qualquer maneira, em situações práticas, não é muito útil atualizar a probabilidade de $A$ para a hipótese de $B$ ocorrer, quando $P(B) = 0$.
+:::
+
+:::
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+<figure style="width:60%; margin-left:auto; margin-right:auto;">
+  <img src="figs/diagrama_de_venn_prob_condicional_1.png">
+</figure>
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+<figure style="width:60%; margin-left:auto; margin-right:auto;">
+  <img src="figs/diagrama_de_venn_prob_condicional_2.png">
+</figure>
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade - Regra do Produto
+
+Sejam $A,B\in\Omega$ eventos tais que $P(A\cap B) > 0$. Então
+$$P(A\cap B) = P(A|B)P(B).$$
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Um lote com 5 peças tem apenas uma defeituosa. As peças são selecionadas sem reposição até encontrar a primeira defeituosa. Qual a probabilidade de se ter que selecionar mais de duas peças?
+
+Sejam $A_j =$ "$j$-ésima peça não defeituosa", $j=1,2$. Desejamos encontrar $P(A_2 \cap A_1)$. Da regra do produto, temos:
+$$P(A_2 \cap A_1) = P(A_2|A_1)P(A_1) = \frac{3}{4}\cdot\frac{4}{5} = \frac{3}{5} = 0\text{,}6.$$
+:::
+
+## Probabilidade Condicional {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade - Regra do Produto para $n$ Eventos
+
+Sejam $A_1,A_2,\ldots, A_n\in\Omega$ eventos tais que $P(A_1 \cap \cdots \cap A_n) > 0$. Então
+$$P(A_1 \cap \cdots \cap A_n) = P(A_n|A_1 \cap \cdots \cap A_{n-1}) P(A_{n-1}|A_1 \cap \cdots \cap A_{n-2}) \cdots P(A_2|A_1) P(A_1).$$
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Um lote com 5 peças tem apenas uma defeituosa. As peças são selecionadas sem reposição até encontrar a primeira defeituosa. Qual a probabilidade de se ter que selecionar exatamente três peças?
+
+Sejam $A_j =$ "$j$-ésima peça não defeituosa", $j=1,2,3$. Desejamos encontrar $P(A_3^c \cap A_2 \cap A_1)$. Da regra do produto para 3 eventos, temos:
+$$P(A_3^c \cap A_2 \cap A_1) = P(A_3^c|A_1\cap A_2) P(A_2|A_1) P(A_1) = \frac{1}{3} \cdot \frac{3}{4} \cdot \frac{4}{5} = \frac{1}{5} = 0\text{,}2.$$
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width="35%"}
+
+::: {style="font-size:80%;"}
+
+Experimento:
+
+-   Uma loja vende três marcas de um produto $A_1, A_2, A_3$;
+-   A garantia do produto pode ser utilizada nos primeiros seis meses (evento $B$);
+-   A garantia também pode ser utilizada entre 7 e 12 meses (evento $C$).
+
+::: {.fragment fragment-index=1}
+
+A regra do produto pode ser visualizada por meio de um diagrama de árvore.
+
+:::
+
+:::
+
+:::
+
+::: {.column #vcenter width="65%"}
+
+::: {.fragment fragment-index=1}
+
+![](figs/diagrama_de_arvore.png)
+
+:::
+
+:::
+
+:::
 
 ## Independência
 
