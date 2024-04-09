@@ -754,7 +754,7 @@ $$P(A) = \frac{N(A)}{N} = \frac{ {10 \choose 3} {15 \choose 3} }{{25 \choose 6}}
 
 # Probabilidade Condicional
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 <div style="font-size:75%">
 
@@ -791,7 +791,7 @@ A informação de que $B$ ocorreu pode fazer com que revisemos $P(A)$.
 
 :::
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -839,7 +839,7 @@ Ao selecionar um dos componentes ao acaso, determine as probabilidades:
 
 :::
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -887,7 +887,7 @@ Ao selecionar um dos componentes ao acaso, determine as probabilidades:
 
 :::
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -947,7 +947,7 @@ $$\textstyle P(A|B) = \frac{N(A \cap B)}{N(B)} = \frac{N(A \cap B)/N}{N(B)/N} = 
 
 :::
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 ::: {.callout-note}
 ## Definição
@@ -966,19 +966,19 @@ Se $P(B) = 0$, alguns autores definem $P(A|B) = 0$, outros definem $P(A|B) = P(A
 
 :::
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 <figure style="width:60%; margin-left:auto; margin-right:auto;">
   <img src="figs/diagrama_de_venn_prob_condicional_1.png">
 </figure>
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 <figure style="width:60%; margin-left:auto; margin-right:auto;">
   <img src="figs/diagrama_de_venn_prob_condicional_2.png">
 </figure>
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 ::: {.callout-warning}
 ## Propriedade - Regra do Produto
@@ -995,7 +995,7 @@ Sejam $A_j =$ "$j$-ésima peça não defeituosa", $j=1,2$. Desejamos encontrar $
 $$P(A_2 \cap A_1) = P(A_2|A_1)P(A_1) = \frac{3}{4}\cdot\frac{4}{5} = \frac{3}{5} = 0\text{,}6.$$
 :::
 
-## Probabilidade Condicional {.unnumbered .unlisted}
+## 3 Probabilidade Condicional {.unnumbered .unlisted}
 
 ::: {.callout-warning}
 ## Propriedade - Regra do Produto para $n$ Eventos
@@ -1050,10 +1050,86 @@ A regra do produto pode ser visualizada por meio de um diagrama de árvore.
 
 :::
 
-## Independência
-
 ## Teorema da Probabilidade Total
 
+::: {style="font-size:90%;"}
+
+Em alguns casos, o comportamento probabilístico do fenômeno pode mudar em circunstâncias diferentes, sendo que a probabilidade de um evento é conhecida em cada uma das situações.
+
+Nesses casos, pode ser de interesse obter a probabilidade "global" do evento.
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Uma industria possui 3 linhas de montagem (eventos $B_1$, $B_2$ e $B_3$), correspondendo a 50%, 40% e 10% da produção. Essas linhas geram, respectivamente, 5%, 10% e 20% de produtos defeituosos (evento $A$). Ao sortear aleatoriamente um produto dessa industria, qual a probabilidade dele ser defeituoso?
+
+Nesse caso, temos que:
+
+-   $P(A|B_1) = 0\text{,}05$, $P(A|B_2) = 0\text{,}1$ e $P(A|B_3) = 0\text{,}2$ (probabilidade de $A$ em cada linha de montagem);
+-   $P(B_1) = 0\text{,}5$, $P(B_2) = 0\text{,}4$ e $P(B_3) = 0\text{,}1$ (probabilidade de cada linha de montagem).
+
+É possível combinar $P(A|B_j)$ e $P(B_j)$, $j=1,2,3$, para obter a probabilidade incondicional $P(A)$.
+:::
+
+## 3.1 Teorema da Probabilidade Total {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade - Teorema da Probabilidade Total
+
+Sejam $A\in\Omega$ evento e $B_1, B_2, \ldots, B_n \in \Omega$ partição de $\Omega$, tais que $P(B_j) > 0$, $j = 1, 2, \ldots, n$. Então
+$$P(A) = \sum_{j=1}^n P(A | B_j) P(B_j).$$
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Aplicando o Teorema da Probabilidade Total no exemplo anterior, obtemos
+$$\textstyle P(A) = \sum_{j=1}^3 P(A | B_j) P(B_j) = 0\text{,}05 \cdot 0\text{,}5 + 0\text{,}1 \cdot 0\text{,}4 + 0\text{,}2 \cdot 0\text{,}1 = 0\text{,}085.$$
+
+Isto é, a industria produz globalmente 8,5% de peças defeituosas.
+:::
+
+## 3.1 Teorema da Probabilidade Total {.unnumbered .unlisted}
+
+
+<figure style="width:55%; margin-left:auto; margin-right:auto;">
+  <img src="figs/diagrama_de_venn_teor_prob_total.png">
+  <figcaption>Ilustração para partição com 5 eventos.</figcaption>
+</figure>
+
+
 ## Teorema de Bayes
+
+Em algumas situações, é de interesse inverter a ordem do condicionamento.
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Uma instituição classifica as operações como regular, com fraude moderada e com fraude grave (eventos $B_1$, $B_2$ e $B_3$) e usa um mecanismo que emite um alerta de fraude (evento $A$).
+
+Normalmente, de [**dados históricos**]{style="color:red;"}, conhecemos as probabilidades $P(A|B_j)$, de emitir alerta apara cada tipo de operação, e $P(B_j)$, de cada tipo de operação.
+
+Costuma ser de interesse descobrirmos $P(B_j | A)$, de cada tipo de operação quando um alerta é emitido. 
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+O Teorema de Bayes nos permite realizar a inversão da ordem de condicionamento requisitada pelo problema acima, isto é, de $P(A|B_j)$, obter $P(B_j|A)$.
+:::
+
+:::
+
+## 3.2 Teorema de Bayes {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade - Teorema de Bayes
+
+Sejam $A\in\Omega$ evento e $B_1, B_2, \ldots, B_n \in \Omega$ partição de $\Omega$, tais que $P(A)>0$ e $P(B_i) > 0$, $i = 1, 2, \ldots, n$. Então
+$$P(B_k | A) = \frac{P(B_k \cap A)}{P(A)} = \frac{P(A | B_k)P(B_k)}{\sum_{j=1}^n P(A | B_j)P(B_j)}.$$
+:::
+
+## Independência
 
 # FIM {.unnumbered .unlisted}
