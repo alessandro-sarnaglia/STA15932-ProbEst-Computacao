@@ -1438,7 +1438,7 @@ O cálculo de <span class="math inline">\(N(B)\)</span> no Item 3 equivale a cal
 <p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
-<p>No exemplo acima, no Item 2, notamos que <span class="math display">\[\textstyle P(A|B) = \frac{N(A \cap B)}{N(B)} = \frac{N(A \cap B)/N}{N(B)/N} = \frac{P(A \cap B)}{P(B)}.\]</span></p>
+<p>No exemplo acima, no Item 2, notamos que <span class="math inline">\(P(A|B) = \frac{N(A \cap B)}{N(B)} = \frac{\frac{N(A \cap B)}{N}}{\frac{N(B)}{N}} = \frac{P(A \cap B)}{P(B)}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1609,13 +1609,161 @@ Ilustração para partição com 5 eventos.
 <p><strong>Propriedade - Teorema de Bayes</strong></p>
 </div>
 <div class="callout-content">
-<p>Sejam <span class="math inline">\(A\in\Omega\)</span> evento e <span class="math inline">\(B_1, B_2, \ldots, B_n \in \Omega\)</span> partição de <span class="math inline">\(\Omega\)</span>, tais que <span class="math inline">\(P(A)&gt;0\)</span> e <span class="math inline">\(P(B_i) &gt; 0\)</span>, <span class="math inline">\(i = 1, 2, \ldots, n\)</span>. Então <span class="math display">\[P(B_k | A) = \frac{P(B_k \cap A)}{P(A)} = \frac{P(A | B_k)P(B_k)}{\sum_{j=1}^n P(A | B_j)P(B_j)}.\]</span></p>
+<p>Sejam <span class="math inline">\(A\in\Omega\)</span> evento e <span class="math inline">\(B_1, B_2, \ldots, B_n \in \Omega\)</span> partição de <span class="math inline">\(\Omega\)</span>, com <span class="math inline">\(P(A)&gt;0\)</span> e <span class="math inline">\(P(B_i) &gt; 0\)</span>, <span class="math inline">\(\forall i\)</span>. Então <span class="math display">\[P(B_k | A) = \frac{P(B_k \cap A)}{P(A)} = \frac{P(A | B_k)P(B_k)}{\sum_{j=1}^n P(A | B_j)P(B_j)}.\]</span></p>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo:</strong> Suponha que o mecanismo emite alerta com probabilidades: <span class="math inline">\(0\text{,}3\)</span> em operações regulares; <span class="math inline">\(0\text{,}7\)</span> na presença de fraudes moderadas; <span class="math inline">\(0\text{,}9\)</span> na presença de fraudes graves. De dados históricos sabe-se que <span class="math inline">\(0\text{,}85\)</span>, <span class="math inline">\(0\text{,}1\)</span> e <span class="math inline">\(0\text{,}05\)</span> das operações são, respectivamente, regulares e com fraudes moderadas e graves. Logo, <span class="math display">\[\textstyle P(B_1 | A) = \frac{P(A | B_1)P(B_1)}{\sum_{j=1}^3P(A | B_j)P(B_j)} = \frac{0\text{,}3 \cdot 0\text{,}85}{0\text{,}3 \cdot 0\text{,}85 + 0\text{,}7 \cdot 0\text{,}1 + 0\text{,}9 \cdot 0\text{,}05} \approx 0\text{,}6892.\]</span></p>
+</div>
+</section>
+<section id="teorema-de-bayes-2" class="slide level2 unnumbered unlisted">
+<h2>3.2 Teorema de Bayes</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ol>
+<li>
+Note que:
+</li>
+<ul>
+<li class="fragment">
+o mecanismo emite alerta em 30% das operações regulares, isto é, <span class="math inline">\(P(A|B_1) = 0\text{,}3\)</span>;
+</li>
+<li class="fragment">
+dos alertas emitidos, 68,92% são operações regulares, isto é, <span class="math inline">\(P(B_1|A) = 0\text{,}6892\)</span>,
+</li>
+</ul>
+<span class="fragment">isto é, a mudança da ordem de condicionamento, muda a probabilidade;</span>
+<li class="fragment">
+Normalmente, <span class="math inline">\(P(A|B_1)\)</span> é mais fácil de ser obtida de dados históricos, mas para novas operações, o mais interessante é conhecer <span class="math inline">\(P(B_1|A)\)</span>;
+</li>
+<li class="fragment">
+É ainda importante notar que <span class="math inline">\(P(B_1^c|A) = 1-P(B_1|A) = 1-0\text{,}6892 = 0\text{,}3108\)</span>;
+</li>
+<li class="fragment">
+Em outras palavras, quando o mecanismo emite um alerta, a probabilidade de fraude é de apenas <span class="math inline">\(0\text{,}3108\)</span>.
+</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
 <section id="independência" class="slide level2" data-number="3.3">
 <h2><span class="header-section-number">3.3</span> Independência</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>O valor de <span class="math inline">\(P(A|B)\)</span> representa a atualização da probabilidade de <span class="math inline">\(A\)</span> após assumindo que <span class="math inline">\(B\)</span> ocorreu. Se <span class="math inline">\(P(A|B)\)</span> é diferente de <span class="math inline">\(P(A)\)</span>, então a probabilidade de <span class="math inline">\(A\)</span> <strong>depende</strong> da ocorrência de <span class="math inline">\(B\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo:</strong> Arremessamos dois dados e verificamos as faces voltadas pra cima. Sejam <span class="math inline">\(A =\)</span> “1ª face ímpar”, <span class="math inline">\(B =\)</span> “2ª face ímpar” e <span class="math inline">\(C =\)</span> “Soma das faces <span class="math inline">\(=\)</span> 5”. Note que <span class="math inline">\(P(A) = P(B) = P(C) = \frac{1}{6}\)</span>.</p>
+<p>Agora:</p>
+<div>
+<ul>
+<li class="fragment"><span class="math inline">\(P(A|B) = \frac{1}{6} = P(A)\)</span>; e</li>
+<li class="fragment"><span class="math inline">\(P(A|C) = \frac{2}{4} = \frac{1}{2} \neq P(A)\)</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Assim, <span class="math inline">\(A\)</span> não depende de <span class="math inline">\(B\)</span> (probabilidade inalterada pela ocorrência de <span class="math inline">\(B\)</span>), mas depende de <span class="math inline">\(C\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="independência-1" class="slide level2 unnumbered unlisted">
+<h2>3.3 Independência</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Dizemos que dois eventos <span class="math inline">\(A,B\in \Omega\)</span> são <strong>independentes</strong> se:</p>
+<ol type="1">
+<li><span class="math inline">\(P(A|B) = P(A)\)</span>, se <span class="math inline">\(P(B) &gt; 0\)</span>; ou</li>
+<li><span class="math inline">\(P(B|A) = P(B)\)</span>, se <span class="math inline">\(P(A) &gt; 0\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade</strong></p>
+</div>
+<div class="callout-content">
+<p>Na definição anterior, (1) <span class="math inline">\(\Leftrightarrow\)</span> (2).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Portanto, para verificar independência, basta mostrar apenas uma das duas condições.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="independência-2" class="slide level2 unnumbered unlisted">
+<h2>3.3 Independência</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade</strong></p>
+</div>
+<div class="callout-content">
+<p>Dois eventos <span class="math inline">\(A,B\in \Omega\)</span> são independentes se, e só se, <span class="math inline">\(P(A \cap B) = P(A)P(B)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Assim, de maneira alternativa à definição, a independência entre dois eventos <span class="math inline">\(A,B\in\Omega\)</span> pode ser mostrada verificando que <span class="math inline">\(P(A \cap B) = P(A)P(B)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade</strong></p>
+</div>
+<div class="callout-content">
+<p>Se <span class="math inline">\(A,B\in \Omega\)</span> são independentes, então: <span class="math inline">\(A\)</span> e <span class="math inline">\(B^c\)</span> são independentes; <span class="math inline">\(A^c\)</span> e <span class="math inline">\(B\)</span> são independentes; e <span class="math inline">\(A^c\)</span> e <span class="math inline">\(B^c\)</span> são independentes.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="independência-3" class="slide level2 unnumbered unlisted">
+<h2>3.3 Independência</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>As definições de eventos disjuntos e independentes são completamente distintas.</p>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo:</strong> Sejam <span class="math inline">\(A,B\in\Omega\)</span> eventos disjuntos, tais que <span class="math inline">\(P(A) &gt; 0\)</span> e <span class="math inline">\(P(B) &gt; 0\)</span>. Então</p>
+<p><span class="math display">\[P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{0}{P(B)} = 0 \neq P(A).\]</span> Isto é, a ocorrência de <span class="math inline">\(B\)</span> exclui completamente a possibilidade da ocorrência de <span class="math inline">\(A\)</span>, reduzindo a sua probabilidade a zero, não importando a probabilidade inicial <span class="math inline">\(P(A)\)</span>.</p>
+</div>
 </section></section>
 <section id="fim" class="title-slide slide level1 unnumbered unlisted center">
 <h1>FIM</h1>
