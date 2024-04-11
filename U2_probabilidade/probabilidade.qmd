@@ -1245,4 +1245,77 @@ $$P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{0}{P(B)} = 0 \neq P(A).$$
 Isto é, a ocorrência de $B$ exclui completamente a possibilidade da ocorrência de $A$, reduzindo a sua probabilidade a zero, não importando a probabilidade inicial $P(A)$.
 :::
 
+## 3.3 Independência {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Em alguns casos, a natureza de um experimento permite supor que dois eventos $A$ e $B$ podem ser considerados independentes. [Nesses casos, a **independência** pode ser muito útil na modelagem probabilística do experimento.]{.fragment}
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** Um mesmo algoritmo é executado por computadores diferentes, sem comunicação entre si. É razoável assumir que ambos operam [**independentemente**]{style="color:red;"}. Sejam $P(A_1) = 0\text{,}1$ e $P(A_2) = 0\text{,}2$, em que $A_j =$ "execução durar mais de 1 min no computador $j$", $j=1,2$. [A **independência** fornece as probabilidades:]{class=fragment}
+
+::: incremental
+-   $P(A_1 \cap A_2) = P(A_1) \cap P(A_2) = 0\text{,}1 \cdot 0\text{,}2 = 0\text{,}02$ (tempo maior que 1 min em ambos);
+-   $P(A_1 \cap A_2^c) = P(A_1) \cap P(A_2^c) = 0\text{,}1 \cdot 0\text{,}8 = 0\text{,}08$ (tempo maior que 1 min apenas no computador 1);
+-   $P(A_1^c \cap A_2) = P(A_1^c) \cap P(A_2) = 0\text{,}9 \cdot 0\text{,}2 = 0\text{,}18$ (tempo maior que 1 min apenas no computador 2);
+-   $P(A_1^c \cap A_2^c) = P(A_1^c) \cap P(A_2^c) = 0\text{,}9 \cdot 0\text{,}8 = 0\text{,}72$ (tempo menor ou igual a 1 min em ambos).
+
+:::
+
+:::
+
+## 3.3 Independência {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+A noção de independência entre dois eventos pode ser extendida para coleções de mais de dois eventos.
+
+:::
+
+::: {.callout-note}
+## Definição
+
+Dizemos que os eventos $A_1, A_2, \ldots, A_n \in \Omega$ são **mutuamente independentes** se 
+
+::: incremental
+
+-   $P(A_{i} \cap A_{j}) = P(A_{i})P(A_{j})$, $i \neq j$;
+-   $P(A_{i} \cap A_{j} \cap A_{l}) = P(A_{i})P(A_{j})P(A_{l})$, $i \neq j \neq l$;
+-   $P(A_{i} \cap A_{j} \cap A_{l} \cap A_{m}) = P(A_{i})P(A_{j})P(A_{l})P(A_{m})$, $i \neq j \neq l \neq m$;
+-   $\vdots$
+-   $P(\bigcap_{i = 1}^n A_{i}) = \prod_{i=1}^nP(A_{i})$.
+
+:::
+
+:::
+
+## 3.3 Independência {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Assim, $A_1, A_2, \ldots, A_n$ são mutuamente independentes se a probabilidade da interseção de qualquer sobcoleção deles fatora no produto das probabilidades marginais.
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:65%;"}
+
+**Exemplo:** Um dado é arremessado até que se obtenha face 6. Qual a probabilidade do evento $A_n =$ "serem necessários $n$ arremessos". [Seja $B_j =$ "face 6 no arremesso $j$". Então
+$$A_n = B_1^c \cap B_2^c \cap \cdots \cap B_{n-1}^c \cap B_n.$$]{.fragment}
+[Pela natureza do experimento, parece razoável assumir que os eventos $B_1, B_2, \ldots, B_n$ (e seus complementares) são **mutuamente independentes**.]{.fragment} [Logo
+$$\textstyle P(A_n) = P(B_1^c \cap B_2^c \cap \cdots \cap B_{n-1}^c \cap B_n) = P(B_1^c)P(B_2^c)\cdots P(B_{n-1}^c)P(B_n) = \left(\frac{5}{6}\right)^{n-1}\frac{1}{6}.$$]{.fragment}
+
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Deseja-se criar um sistema com 6 componentes. Definimos $F_j = $ "component $j$ falhar", isoladamente. As configurações possíveis são ilustradas a seguir:
+
 # FIM {.unnumbered .unlisted}
