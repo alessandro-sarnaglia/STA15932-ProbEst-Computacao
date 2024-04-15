@@ -1316,6 +1316,81 @@ $$\textstyle P(A_n) = P(B_1^c \cap B_2^c \cap \cdots \cap B_{n-1}^c \cap B_n) = 
 
 ### Exemplo {.unnumbered .unlisted}
 
-Deseja-se criar um sistema com 6 componentes. Definimos $F_j = $ "component $j$ falhar", isoladamente. As configurações possíveis são ilustradas a seguir:
+::: columns
+
+::: {.column #vcenter width=42%}
+
+Um sistema com seis componentes **independentes** admite as duas configurações possíveis ao lado.
+
+:::
+
+::: {.column #vcenter width=58%}
+<figure style="width:95%; margin-left:auto; margin-right:auto;">
+  <img src="figs/exemplo_independencia.png">
+</figure>
+
+:::
+
+:::
+
+::: fragment
+
+Sendo $F_j =$ "falha em $C_j$", $j=1, \ldots, 6$, o sistema funciona se:
+
+::: incremental
+
+-   $(F_1^c \cap F_2^c) \cup (F_3^c \cap F_4^c) \cup (F_5^c \cap F_6^c)$ na configuração 1;
+-   $((F_1^c \cap F_2^c \cap F_5^c) \cup (F_3^c \cap F_4^c \cap F_5^c)) \cup F_6^c$ na configuração 2.
+
+:::
+
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Agora, sendo $A =$ "Sistema funciona" e supondo $P(F_j) = 1-p$, $j = 1, \ldots, 6$. Pela suposição de independência, temos que:
+
+```{r}
+p <- 0.9
+p_A1 <- 3*p^2 - 3*p^4 + p^6
+```
+
+::: fragment
+
+-   Na configuração 1:
+$$\begin{align*}
+P(A) &= P(F_1^c \cap F_2^c) + P(F_3^c \cap F_4^c) + P(F_5^c \cap F_6^c)\\
+&- P(F_1^c \cap F_2^c \cap F_3^c \cap F_4^c) - P(F_1^c \cap F_2^c \cap F_5^c \cap F_6^c)\\
+&- P(F_3^c \cap F_4^c \cap F_5^c \cap F_6^c) + P(F_1^c \cap F_2^c \cap F_3^c \cap F_4^c \cap F_5^c \cap F_6^c)\\
+&= 3p^2 - 3p^4 + p^6.
+\end{align*}$$
+[Se, por exemplo, a probabilidade de falha individual for $P(F_j) = 0\text{,}1$, então $p=0\text{,}9$ e $P(A) =$ `r gsub('\\.', ',', as.character(round(p_A1, 4)))`.]{.fragment}
+
+:::
+## {.unnumbered .unlisted}
+
+### Exemplo {.unnumbered .unlisted}
+
+Agora, sendo $A =$ "Sistema funciona" e supondo $P(F_j) = 1-p$, $j = 1, \ldots, 6$. Pela suposição de independência, temos que:
+
+```{r}
+p <- 0.9
+p_A2 <- 3*p^3 - p^5 - 2*p^4 + p^6
+```
+
+::: fragment
+
+-   Na configuração 2:
+$$\begin{align*}
+P(A) &= P(F_1^c \cap F_2^c \cap F_5^c) + P(F_3^c \cap F_4^c \cap F_5^c) + P(F_6^c)\\
+&- P(F_1^c \cap F_2^c \cap F_3^c \cap F_4^c \cap F_5^c) - P(F_1^c \cap F_2^c \cap F_5^c \cap F_6^c)\\
+&- P(F_3^c \cap F_4^c \cap F_5^c \cap F_6^c) + P(F_1^c \cap F_2^c \cap F_3^c \cap F_4^c \cap F_5^c \cap F_6^c)\\
+&= 3p^3 - p^5 - 2p^4 + p^6.
+\end{align*}$$
+[Se, por exemplo, a probabilidade de falha individual for $P(F_j) = 0\text{,}1$, então $p=0\text{,}9$ e $P(A) =$ `r gsub('\\.', ',', as.character(round(p_A2, 4)))`.]{.fragment}
+
+:::
 
 # FIM {.unnumbered .unlisted}
