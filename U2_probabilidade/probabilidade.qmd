@@ -1166,20 +1166,20 @@ O valor de $P(A|B)$ representa a atualização da probabilidade de $A$ após ass
 
 ::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo:** Arremessamos dois dados e verificamos as faces voltadas pra cima. Sejam $A =$ "1ª face ímpar", $B =$ "2ª face ímpar" e $C =$ "Soma das faces $=$ 5". Note que $P(A) = P(B) = P(C) = \frac{1}{6}$.
+**Exemplo:** Arremessamos dois dados e verificamos as faces voltadas pra cima. Sejam $A =$ "Soma das faces $=$ 6", $B =$ "1ª face ímpar" e $C =$ "2ª face ímpar". Note que $P(A) = \frac{1}{5}$ e $P(B) = P(C) = \frac{1}{2}$.
 
 Agora:
 
 ::: incremental
 
--   $P(A|B) = \frac{1}{6} = P(A)$; e
--   $P(A|C) = \frac{2}{4} = \frac{1}{2} \neq P(A)$.
+-   $P(A|C) = \frac{P(A \cap C)}{P(C)} = \frac{3/36}{18/36} = \frac{1}{6} \neq P(A) = \frac{5}{36}$; e
+-   $P(B|C) = \frac{P(B \cap C)}{P(C)} = \frac{9/36}{18/36} = \frac{1}{2} = P(B)$.
 
 :::
 
 ::: fragment
 
-Assim, $A$ não depende de $B$ (probabilidade inalterada pela ocorrência de $B$), mas depende de $C$.
+Assim, $A$ depende de $C$ (probabilidade alterada pela ocorrência de $C$), mas $B$ não depende de $C$.
 
 :::
 
@@ -1259,10 +1259,10 @@ Em alguns casos, a natureza de um experimento permite supor que dois eventos $A$
 **Exemplo:** Um mesmo algoritmo é executado por computadores diferentes, sem comunicação entre si. É razoável assumir que ambos operam [**independentemente**]{style="color:red;"}. Sejam $P(A_1) = 0\text{,}1$ e $P(A_2) = 0\text{,}2$, em que $A_j =$ "execução durar mais de 1 min no computador $j$", $j=1,2$. [A **independência** fornece as probabilidades:]{class=fragment}
 
 ::: incremental
--   $P(A_1 \cap A_2) = P(A_1) \cap P(A_2) = 0\text{,}1 \cdot 0\text{,}2 = 0\text{,}02$ (tempo maior que 1 min em ambos);
--   $P(A_1 \cap A_2^c) = P(A_1) \cap P(A_2^c) = 0\text{,}1 \cdot 0\text{,}8 = 0\text{,}08$ (tempo maior que 1 min apenas no computador 1);
--   $P(A_1^c \cap A_2) = P(A_1^c) \cap P(A_2) = 0\text{,}9 \cdot 0\text{,}2 = 0\text{,}18$ (tempo maior que 1 min apenas no computador 2);
--   $P(A_1^c \cap A_2^c) = P(A_1^c) \cap P(A_2^c) = 0\text{,}9 \cdot 0\text{,}8 = 0\text{,}72$ (tempo menor ou igual a 1 min em ambos).
+-   $P(A_1 \cap A_2) = P(A_1) P(A_2) = 0\text{,}1 \cdot 0\text{,}2 = 0\text{,}02$ (tempo maior que 1 min em ambos);
+-   $P(A_1 \cap A_2^c) = P(A_1) P(A_2^c) = 0\text{,}1 \cdot 0\text{,}8 = 0\text{,}08$ (tempo maior que 1 min apenas no computador 1);
+-   $P(A_1^c \cap A_2) = P(A_1^c) P(A_2) = 0\text{,}9 \cdot 0\text{,}2 = 0\text{,}18$ (tempo maior que 1 min apenas no computador 2);
+-   $P(A_1^c \cap A_2^c) = P(A_1^c) P(A_2^c) = 0\text{,}9 \cdot 0\text{,}8 = 0\text{,}72$ (tempo menor ou igual a 1 min em ambos).
 
 :::
 
@@ -1288,7 +1288,7 @@ Dizemos que os eventos $A_1, A_2, \ldots, A_n \in \Omega$ são **mutuamente inde
 -   $P(A_{i} \cap A_{j} \cap A_{l}) = P(A_{i})P(A_{j})P(A_{l})$, $i \neq j \neq l$;
 -   $P(A_{i} \cap A_{j} \cap A_{l} \cap A_{m}) = P(A_{i})P(A_{j})P(A_{l})P(A_{m})$, $i \neq j \neq l \neq m$;
 -   $\vdots$
--   $P(\bigcap_{i = 1}^n A_{i}) = \prod_{i=1}^nP(A_{i})$.
+-   $P(\bigcap_{i = 1}^n A_{i}) = P(A_1\cap A_2 \cap \cdots \cap A_n) = \prod_{i=1}^nP(A_{i}) = P(A_1)P(A_2)\cdots P(A_n)$.
 
 :::
 
@@ -1369,6 +1369,7 @@ P(A) &= P(F_1^c \cap F_2^c) + P(F_3^c \cap F_4^c) + P(F_5^c \cap F_6^c)\\
 [Se, por exemplo, a probabilidade de falha individual for $P(F_j) = 0\text{,}1$, então $p=0\text{,}9$ e $P(A) =$ `r gsub('\\.', ',', as.character(round(p_A1, 4)))`.]{.fragment}
 
 :::
+
 ## {.unnumbered .unlisted}
 
 ### Exemplo {.unnumbered .unlisted}
@@ -1377,7 +1378,7 @@ Agora, sendo $A =$ "Sistema funciona" e supondo $P(F_j) = 1-p$, $j = 1, \ldots, 
 
 ```{r}
 p <- 0.9
-p_A2 <- 3*p^3 - p^5 - 2*p^4 + p^6
+p_A2 <- 2*p^3 + p - p^5 - 2*p^4 + p^6
 ```
 
 ::: fragment
@@ -1387,10 +1388,55 @@ $$\begin{align*}
 P(A) &= P(F_1^c \cap F_2^c \cap F_5^c) + P(F_3^c \cap F_4^c \cap F_5^c) + P(F_6^c)\\
 &- P(F_1^c \cap F_2^c \cap F_3^c \cap F_4^c \cap F_5^c) - P(F_1^c \cap F_2^c \cap F_5^c \cap F_6^c)\\
 &- P(F_3^c \cap F_4^c \cap F_5^c \cap F_6^c) + P(F_1^c \cap F_2^c \cap F_3^c \cap F_4^c \cap F_5^c \cap F_6^c)\\
-&= 3p^3 - p^5 - 2p^4 + p^6.
+&= 2p^3 + p - p^5 - 2p^4 + p^6.
 \end{align*}$$
 [Se, por exemplo, a probabilidade de falha individual for $P(F_j) = 0\text{,}1$, então $p=0\text{,}9$ e $P(A) =$ `r gsub('\\.', ',', as.character(round(p_A2, 4)))`.]{.fragment}
 
+:::
+
+## 3.3 Independência {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+No exercício anterior, utilizamos a propriedade que
+$$
+P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C).
+$$
+:::
+
+::: {.callout-warning}
+## Propriedades
+
+Para união de 4 eventos, $A, B, C, D$, teríamos
+$$
+\begin{align*}
+P(A \cup B \cup C \cup D) &= P(A) + P(B) + P(C) + P(D)\\
+&- P(A \cap B) - P(A \cap C) - P(A \cap D) - P(B \cap C) - P(B \cap D) - P(C \cap D)\\
+&+ P(A \cap B \cap C) + P(A \cap B \cap D) + P(A \cap C \cap D) + P(B \cap C \cap D)\\
+&- P(A \cap B \cap C \cap D).
+\end{align*}
+$$
+:::
+
+## 3.3 Independência {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedades
+
+No geral, para união de $n$ eventos, $A_1, A_2, \ldots, A_n$, teríamos
+$$
+\begin{align*}
+\textstyle P(\bigcup_{i=1}^n A_i) &= \textstyle \sum_{i_1} P(A_{i_1}) &  \text{(soma as marginais)}\\
+&\textstyle - \sum_{i_1}\sum_{i_2} P(A_{i_1} \cap A_{i_2}) &  \text{(subtrai as interseções duplas)}\\
+&\textstyle+ \sum_{i_1}\sum_{i_2}\sum_{i_3} P(A_{i_1} \cap A_{i_2} \cap A_{i_3}) &  \text{(soma as interseções triplas)}\\
+&\textstyle- \sum_{i_1}\sum_{i_2}\sum_{i_3}\sum_{i_4} P(A_{i_1} \cap A_{i_2} \cap A_{i_3} \cap A_{i_4}) &  \text{(subtrai as interseções quadruplas)}\\
+&\vdots & \\
+&\textstyle(-1)^{k+1} \sum_{i_1}\cdots \sum_{i_k} P(A_{i_1} \cap \cdots \cap A_{i_k}) & \vdots \\
+&\vdots & \\
+&\textstyle(-1)^{n+1} P(A_{1} \cap \cdots \cap A_{n}). & \\
+\end{align*}
+$$
 :::
 
 # FIM {.unnumbered .unlisted}
