@@ -7,7 +7,7 @@ format:
   revealjs:
     width: 1280
     height: 720
-    min-scale: 0.1
+    min-scale: 0.05
     fig-width: 5.5
     fig-height: 5.5
     theme: [custom.scss]
@@ -99,7 +99,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=55%}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -113,7 +113,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=45%}
 
 :::
 
@@ -123,7 +123,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=55%}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -137,7 +137,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=45%}
 
 :::
 
@@ -147,7 +147,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=55%}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -161,7 +161,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=45%}
 
 :::
 
@@ -171,7 +171,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=55%}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -185,7 +185,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=45%}
 
 :::
 
@@ -195,7 +195,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=55%}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -209,7 +209,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=45%}
 
 :::
 
@@ -219,7 +219,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=55%}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -233,7 +233,7 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=45%}
 ::: {.callout-caution}
 ## Observação
 
@@ -554,7 +554,7 @@ No caso discreto, os tamanhos dos saltos de $F_X(x)$ nos dá os valores de $P(X=
 ::: {.callout-note}
 ## Definição
 
-Se $X$ é vad, a função $p_X(x) = P(X=x)$, $x \in \text{Im}(X)$, é denominada [**função massa de probabilidade**]{style="color:red;"} (fmp).
+Se $X$ é vad, a função $p_X(x) = P(X=x)$, $x \in \text{Im}(X)$, é chamada [**função massa de probabilidade**]{style="color:red;"} (fmp).
 :::
 
 ::: fragment
@@ -585,6 +585,22 @@ Assim, vemos que, para variáveis aleatórias discretas, a fda $F_X(x)$ nos forn
 
 :::
 
+## 1.1 Função de distribuição acumulada {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+A fmp é um modelo teórico para as **frequências relativas** vistas em estatística descritiva.
+:::
+
+::: fragment
+
+<figure style="width:70%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_frequencia_fmp.png">
+</figure>
+
+:::
+
 ## {.unnumbered .unlisted .smaller}
 
 ### Exemplo 3 (cont.) {.unnumbered .unlisted}
@@ -595,7 +611,7 @@ Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (e
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=65%}
 
 [Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.]{style="visibility:hidden;"}
 
@@ -611,7 +627,7 @@ $$
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=35%}
 
 <figure style="width:60%; margin-left:auto; margin-right:auto;visibility:hidden;">
   <img src="figs/ilustracao_fda_vac0.png">
@@ -631,7 +647,7 @@ Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (e
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=65%}
 
 Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
 
@@ -647,7 +663,7 @@ $$
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=35%}
 
 <figure style="width:60%; margin-left:auto; margin-right:auto">
   <img src="figs/ilustracao_fda_vac0.png">
@@ -669,7 +685,7 @@ Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (e
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=65%}
 
 Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
 
@@ -685,7 +701,7 @@ $$
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=35%}
 
 <figure style="width:60%; margin-left:auto; margin-right:auto">
   <img src="figs/ilustracao_fda_vac1.png">
@@ -706,7 +722,7 @@ Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (e
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=65%}
 
 Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
 
@@ -722,7 +738,7 @@ $$
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=35%}
 
 <figure style="width:60%; margin-left:auto; margin-right:auto">
   <img src="figs/ilustracao_fda_vac2.png">
@@ -742,7 +758,7 @@ Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (e
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=65%}
 
 Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
 
@@ -758,7 +774,7 @@ $$
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=35%}
 
 <figure style="width:60%; margin-left:auto; margin-right:auto">
   <img src="figs/ilustracao_fda_vac3.png">
@@ -778,7 +794,7 @@ Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (e
 
 ::: columns
 
-::: {.column #vcenter width=60%}
+::: {.column #vcenter width=65%}
 
 Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
 
@@ -793,7 +809,7 @@ $$
 
 :::
 
-::: {.column #vcenter width=40%}
+::: {.column #vcenter width=35%}
 
 <figure style="width:60%; margin-left:auto; margin-right:auto">
   <img src="figs/ilustracao_fda_vac3.png">

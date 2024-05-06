@@ -90,3 +90,7 @@ figure>figcaption {
     border-left-color: #d3d100 !important;
 }
 
+.callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.0rem !important;
+    margin-bottom: 0;
+}
