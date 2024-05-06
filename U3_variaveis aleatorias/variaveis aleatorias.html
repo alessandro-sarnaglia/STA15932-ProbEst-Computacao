@@ -392,7 +392,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <p><strong>Exemplo 1 (cont.):</strong> No exemplo anterior, suponha <span class="math inline">\(n=3\)</span>, então <span class="math display">\[
 \Omega = \{(FFF),(SFF),(FSF),(FFS),(SSF),(SFS),(FSS),(SSS)\}.
-\]</span> Pode ser interesse registrar apenas o número de componentes defeituosos e não as falhas individuais, principalmente se <span class="math inline">\(n\)</span> fosse grande. Nesse caso, teríamos <span class="math inline">\(X(\omega) =\)</span> “número de componentes defeituosos em <span class="math inline">\(\omega\)</span>”. Assim, teríamos</p>
+\]</span> Pode ser interesse registrar apenas o número de componentes defeituosos e não as falhas individuais (se <span class="math inline">\(n\)</span> grande por exemplo). Assim, teríamos <span class="math inline">\(X(\omega) =\)</span> “número de componentes defeituosos em <span class="math inline">\(\omega\)</span>” e:</p>
 <div>
 <ul>
 <li class="fragment"><span class="math inline">\(X(FFF) = 0\)</span>;</li>
@@ -423,7 +423,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <p><strong>Definição - Variáveis Aleatórias</strong></p>
 </div>
 <div class="callout-content">
-<p>Seja <span class="math inline">\(\Omega\)</span> espaço amostral de um experimento aleatório. Uma variável aleatória (va) é qualquer regra que associe um valor numérico real a cada resultado de <span class="math inline">\(\Omega\)</span>.</p>
+<p>Seja <span class="math inline">\(\Omega\)</span> espaço amostral de um experimento aleatório. Uma <strong>variável aleatória</strong> (va) é qualquer regra que associe um valor numérico real a cada resultado de <span class="math inline">\(\Omega\)</span>.</p>
 </div>
 </div>
 </div>
@@ -553,14 +553,10 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Observações</strong></p>
+<p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
-<p>Note que:</p>
-<ol type="1">
-<li>A qualquer va <span class="math inline">\(X\)</span>, podemos associar um contradomínio (normalmente o conjunto <span class="math inline">\(\mathbb{R}\)</span>) e uma <strong>imagem</strong>, que denotaremos por <span class="math inline">\(\text{Im}(X)\)</span>;</li>
-<li>No exemplo anterior, temos que <span class="math inline">\(\text{Im}(X) = \{0,1,2,3\}\)</span>.</li>
-</ol>
+<p>A qualquer va <span class="math inline">\(X\)</span>, podemos associar um contradomínio (normalmente o conjunto <span class="math inline">\(\mathbb{R}\)</span>) e uma <span style="color:red;"><strong>imagem</strong></span>, que denotaremos por <span class="math inline">\(\text{Im}(X)\)</span>.</p>
 </div>
 </div>
 </div>
@@ -570,7 +566,17 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <p><strong>Definição</strong></p>
 </div>
 <div class="callout-content">
-<p>O conjunto de todos possíveis valores que uma va <span class="math inline">\(X\)</span> pode assumir é denominado <span style="color:red;"><strong>imagem</strong></span> de <span class="math inline">\(X\)</span> e é denotado por <span class="math inline">\(\text{Im}(X)\)</span>.</p>
+<p>O conjunto de todos possíveis valores que uma va <span class="math inline">\(X\)</span> pode assumir é denominado <strong>imagem</strong> de <span class="math inline">\(X\)</span> e é denotado por <span class="math inline">\(\text{Im}(X)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>No exemplo anterior, temos que <span class="math inline">\(\text{Im}(X) = \{0,1,2,3\}\)</span>.</p>
 </div>
 </div>
 </div>
@@ -733,7 +739,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
-<p>Um evento aleatório muito importante para modelagem probabilística de va’s é <span class="math inline">\([X \leq x]\)</span>, isto é a va <span class="math inline">\(X\)</span> assumir valor menor ou igual a <span class="math inline">\(x\)</span>.</p>
+<p>Um evento aleatório muito importante para modelagem de va’s é <span class="math inline">\([X \leq x]\)</span>. A probabilidade deste evento nos diz o quanto de probabilidade a va <span class="math inline">\(X\)</span> acumula até o valor <span class="math inline">\(x\)</span>.</p>
 </div>
 </div>
 </div>
@@ -832,17 +838,37 @@ P(X=0) + P(X=1) + P(X=2) + P(X=3) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} + \f
 <p><strong>Definição</strong></p>
 </div>
 <div class="callout-content">
-<p>No caso discreto, a função <span class="math inline">\(p_X(x) = P(X=x)\)</span>, <span class="math inline">\(x \in \text{Im}(X)\)</span>, é denominada <span style="color:red;"><strong>função massa de probabilidade</strong></span> (fmp).</p>
+<p>Se <span class="math inline">\(X\)</span> é vad, a função <span class="math inline">\(p_X(x) = P(X=x)\)</span>, <span class="math inline">\(x \in \text{Im}(X)\)</span>, é denominada <span style="color:red;"><strong>função massa de probabilidade</strong></span> (fmp).</p>
 </div>
 </div>
 </div>
+<div class="fragment">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedades</strong></p>
+</div>
+<div class="callout-content">
+<p>A fmp <span class="math inline">\(p_X(x)\)</span> de um uma vad <span class="math inline">\(X\)</span> satisfaz:</p>
+<div>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(p_X(x) \geq 0\)</span>;</li>
+<li class="fragment"><span class="math inline">\(\textstyle \sum_{x} p_X(x) = 1\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
-<p>Como consequência, vemos que, para variáveis aleatórias discretas, a fda <span class="math inline">\(F_X(x)\)</span> nos fornece a fmp <span class="math inline">\(p_X(x)\)</span> e vice-versa.</p>
+<p>Assim, vemos que, para variáveis aleatórias discretas, a fda <span class="math inline">\(F_X(x)\)</span> nos fornece a fmp <span class="math inline">\(p_X(x)\)</span> e vice-versa.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1016,16 +1042,39 @@ P(X=0) + P(X=1) + P(X=2) + P(X=3) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} + \f
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Definição</strong></p>
 </div>
 <div class="callout-content">
-<p>Se <span class="math inline">\(X\)</span> é vac com fda <span class="math inline">\(F_X(x)\)</span>, então a sua <strong>função densidade de probabilidade</strong> (fdp) é definida por <span class="math display">\[\textstyle f_X(x) = \frac{dF_X(x)}{dx}.\]</span></p>
+<p>Se <span class="math inline">\(X\)</span> é vac com fda <span class="math inline">\(F_X(x)\)</span>, a sua <strong>função densidade de probabilidade</strong> (fdp) é definida por <span class="math inline">\(f_X(x) = \frac{dF_X(x)}{dx}\)</span>.</p>
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedades</strong></p>
+</div>
+<div class="callout-content">
+<p>A fdp <span class="math inline">\(f_X(x)\)</span> de uma vac <span class="math inline">\(X\)</span> satisfaz:</p>
+<div>
+<ol type="1">
+<li class="fragment"><span class="math inline">\(f_X(x) \geq 0\)</span>, <span class="math inline">\(x\in \mathbb{R}\)</span>;</li>
+<li class="fragment"><span class="math inline">\(\int_{-\infty}^\infty f_X(x)dx = 1\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="função-de-distribuição-acumulada-3" class="slide level2 unnumbered unlisted">
+<h2>1.1 Função de distribuição acumulada</h2>
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1036,12 +1085,11 @@ P(X=0) + P(X=1) + P(X=2) + P(X=3) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} + \f
 </div>
 </div>
 </div>
-</section>
-<section id="função-de-distribuição-acumulada-3" class="slide level2 unnumbered unlisted">
-<h2>1.1 Função de distribuição acumulada</h2>
+<div class="fragment">
 <figure style="width:70%; margin-left:auto; margin-right:auto">
 <img src="figs/ilustracao_densidade_fdp.png">
 </figure>
+</div>
 </section>
 <section id="função-de-distribuição-acumulada-4" class="slide level2 unnumbered unlisted">
 <h2>1.1 Função de distribuição acumulada</h2>

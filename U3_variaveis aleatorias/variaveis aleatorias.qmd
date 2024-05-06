@@ -54,7 +54,7 @@ Como visto acima, o espaço amostral pode assumir formas bem abstratas. No entan
 $$
 \Omega = \{(FFF),(SFF),(FSF),(FFS),(SSF),(SFS),(FSS),(SSS)\}.
 $$
-Pode ser interesse registrar apenas o número de componentes defeituosos e não as falhas individuais, principalmente se $n$ fosse grande. Nesse caso, teríamos $X(\omega) =$ "número de componentes defeituosos em $\omega$". Assim, teríamos
+Pode ser interesse registrar apenas o número de componentes defeituosos e não as falhas individuais (se $n$ grande por exemplo). Assim, teríamos $X(\omega) =$ "número de componentes defeituosos em $\omega$" e:
 
 ::: incremental
 
@@ -82,7 +82,7 @@ O tipo de situação acima nos leva a definição de [**variáveis aleatórias**
 ::: {.callout-note}
 ## Definição - Variáveis Aleatórias
 
-Seja $\Omega$ espaço amostral de um experimento aleatório. Uma variável aleatória (va) é qualquer regra que associe um valor numérico real a cada resultado de $\Omega$.
+Seja $\Omega$ espaço amostral de um experimento aleatório. Uma **variável aleatória** (va) é qualquer regra que associe um valor numérico real a cada resultado de $\Omega$.
 :::
 
 ::: {.callout-caution}
@@ -254,20 +254,23 @@ Os valores de $\text{Im}(X)$ induzem uma partição de $\Omega$. No exemplo, vim
 ## 1 Definição {.unnumbered .unlisted}
 
 ::: {.callout-caution}
-## Observações
+## Observação
 
-Note que:
-
-1.    A qualquer va $X$, podemos associar um contradomínio (normalmente o conjunto $\mathbb{R}$) e uma **imagem**, que denotaremos por $\text{Im}(X)$;
-2.    No exemplo anterior, temos que $\text{Im}(X) = \{0,1,2,3\}$.
+A qualquer va $X$, podemos associar um contradomínio (normalmente o conjunto $\mathbb{R}$) e uma [**imagem**]{style="color:red;"}, que denotaremos por $\text{Im}(X)$.
 
 :::
 
 ::: {.callout-note}
 ## Definição
 
-O conjunto de todos possíveis valores que uma va $X$ pode assumir é denominado [**imagem**]{style="color:red;"} de $X$ e é denotado por $\text{Im}(X)$.
+O conjunto de todos possíveis valores que uma va $X$ pode assumir é denominado **imagem** de $X$ e é denotado por $\text{Im}(X)$.
 
+:::
+
+::: {.callout-caution}
+## Observação
+
+No exemplo anterior, temos que $\text{Im}(X) = \{0,1,2,3\}$.
 :::
 
 ## 1 Definição {.unnumbered .unlisted}
@@ -457,7 +460,7 @@ Como $\text{Im}(X)$ é conjunto não enumerável, classificamos $X$ como uma **v
 ::: {.callout-caution}
 ## Observação
 
-Um evento aleatório muito importante para modelagem probabilística de va's é $[X \leq x]$, isto é a va $X$ assumir valor menor ou igual a $x$.
+Um evento aleatório muito importante para modelagem de va's é $[X \leq x]$. A probabilidade deste evento nos diz o quanto de probabilidade a va $X$ acumula até o valor $x$.
 
 :::
 
@@ -551,13 +554,35 @@ No caso discreto, os tamanhos dos saltos de $F_X(x)$ nos dá os valores de $P(X=
 ::: {.callout-note}
 ## Definição
 
-No caso discreto, a função $p_X(x) = P(X=x)$, $x \in \text{Im}(X)$, é denominada [**função massa de probabilidade**]{style="color:red;"} (fmp).
+Se $X$ é vad, a função $p_X(x) = P(X=x)$, $x \in \text{Im}(X)$, é denominada [**função massa de probabilidade**]{style="color:red;"} (fmp).
 :::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedades
+
+A fmp $p_X(x)$ de um uma vad $X$ satisfaz:
+
+::: incremental
+
+1.    $p_X(x) \geq 0$;
+2.    $\textstyle \sum_{x} p_X(x) = 1$.
+
+:::
+
+:::
+
+:::
+
+::: fragment
 
 ::: {.callout-caution}
 ## Observação
 
-Como consequência, vemos que, para variáveis aleatórias discretas, a fda $F_X(x)$ nos fornece a fmp $p_X(x)$ e vice-versa.
+Assim, vemos que, para variáveis aleatórias discretas, a fda $F_X(x)$ nos fornece a fmp $p_X(x)$ e vice-versa.
+:::
+
 :::
 
 ## {.unnumbered .unlisted .smaller}
@@ -817,12 +842,35 @@ Observe que não há pontos de descontinuidade para a fda de uma va contínua. P
 Tomando a derivada da fda de uma vac, obtemos a chamada [**função densidade de probabilidade**]{style="color:red;"}.
 :::
 
+::: fragment
+
 ::: {.callout-note}
 ## Definição
 
-Se $X$ é vac com fda $F_X(x)$, então a sua **função densidade de probabilidade** (fdp) é definida por
-$$\textstyle f_X(x) = \frac{dF_X(x)}{dx}.$$
+Se $X$ é vac com fda $F_X(x)$, a sua **função densidade de probabilidade** (fdp) é definida por $f_X(x) = \frac{dF_X(x)}{dx}$.
 :::
+
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedades
+
+A fdp $f_X(x)$ de uma vac $X$ satisfaz:
+
+::: incremental
+
+1.    $f_X(x) \geq 0$, $x\in \mathbb{R}$;
+2.    $\int_{-\infty}^\infty f_X(x)dx = 1$.
+
+:::
+
+:::
+
+:::
+
+## 1.1 Função de distribuição acumulada {.unnumbered .unlisted}
 
 ::: {.callout-caution}
 ## Observação
@@ -830,11 +878,13 @@ $$\textstyle f_X(x) = \frac{dF_X(x)}{dx}.$$
 A fdp é um modelo teórico para as **densidades** de faixas vistas em estatística descritiva.
 :::
 
-## 1.1 Função de distribuição acumulada {.unnumbered .unlisted}
+::: fragment
 
 <figure style="width:70%; margin-left:auto; margin-right:auto">
   <img src="figs/ilustracao_densidade_fdp.png">
 </figure>
+
+:::
 
 ## 1.1 Função de distribuição acumulada {.unnumbered .unlisted}
 
