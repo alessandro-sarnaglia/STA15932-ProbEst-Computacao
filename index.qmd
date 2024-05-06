@@ -16,3 +16,5 @@ editor: source
 1.    [Introdução e Estatística Descritiva](U1_introducao/intro.html)
 
 2.    [Probabilidade de Eventos](U2_probabilidade/probabilidade.html)
+
+3.    [Variáveis Aleatórias](U3_variaveis aleatorias/variaveis aleatorias.html)

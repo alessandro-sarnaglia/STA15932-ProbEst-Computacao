@@ -1,0 +1,949 @@
+---
+title: "Probabilidade e Estatística"
+subtitle: "Variáveis Aleatórias"
+author: "Prof. Dr. Alessandro JQ Sarnaglia"
+lang: "pt"
+format:
+  revealjs:
+    width: 1280
+    height: 720
+    min-scale: 0.1
+    fig-width: 5.5
+    fig-height: 5.5
+    theme: [custom.scss]
+    css: [fonts.css, style.css]
+    callout-icon: false
+    toc: true
+    toc-depth: 3
+    toc-expand: 3
+    number-sections: true
+    number-depth: 3
+    footer: "[Voltar 🔙](../index.html)"
+    menu:
+      useTextContentForMissingTitles: false
+editor: source
+filters:
+  - parse-latex
+---
+
+# Definição
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 1:** Uma amostra de $n$ componentes é submetida a testes para verificar os defeituosos e os não defeituosos. Nesse experimento, podemos definir o espaço amostral
+$$
+\Omega = \{\omega = (z_1, \ldots, z_n) : z_i \in \{S,F\} \},
+$$
+em que $S =$ "componente defeituoso" e $F =$ "componente não defeituoso".
+
+::: 
+
+::: {.callout-caution}
+## Observação
+
+Como visto acima, o espaço amostral pode assumir formas bem abstratas. No entanto, em muitos casos, é de interesse associar um valor numérico a cada resultado de $\Omega$.
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 1 (cont.):** No exemplo anterior, suponha $n=3$, então
+$$
+\Omega = \{(FFF),(SFF),(FSF),(FFS),(SSF),(SFS),(FSS),(SSS)\}.
+$$
+Pode ser interesse registrar apenas o número de componentes defeituosos e não as falhas individuais, principalmente se $n$ fosse grande. Nesse caso, teríamos $X(\omega) =$ "número de componentes defeituosos em $\omega$". Assim, teríamos
+
+::: incremental
+
+-   $X(FFF) = 0$;
+-   $X(SFF) = X(FSF) = X(FFS) = 1$;
+-   $X(SSF) = X(SFS) = X(FSS) = 2$; e
+-   $X(SSS) = 3$.
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+O tipo de situação acima nos leva a definição de [**variáveis aleatórias**]{style="color:red;"}.
+:::
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição - Variáveis Aleatórias
+
+Seja $\Omega$ espaço amostral de um experimento aleatório. Uma variável aleatória (va) é qualquer regra que associe um valor numérico real a cada resultado de $\Omega$.
+:::
+
+::: {.callout-caution}
+## Observações
+
+Da definição de va, podemos fazer os seguintes apontamentos:
+
+1.    Variáveis aleatórias normalmente são denotadas por letras maiúsculas do final do alfabeto, tais como $X$, $Y$, $Z$, entre outras;
+2.    Matematicamente, podemos definir $X$ como va se $X : \Omega \to \mathbb{R}$;
+3.    Podemos também escrever $X(\omega) = x$ para dizer que $x$ é o valor atribuído a $\omega$ pela va $X$.
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 1 (cont.):**
+
+<figure style="width:90%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria0.png">
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=40%}
+
+:::
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 1 (cont.):**
+
+<figure style="width:90%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria1.png">
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=40%}
+
+:::
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 1 (cont.):**
+
+<figure style="width:90%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria2.png">
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=40%}
+
+:::
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 1 (cont.):**
+
+<figure style="width:90%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria3.png">
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=40%}
+
+:::
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 1 (cont.):**
+
+<figure style="width:90%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria4.png">
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=40%}
+
+:::
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 1 (cont.):**
+
+<figure style="width:90%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria5.png">
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=40%}
+::: {.callout-caution}
+## Observação
+
+Os valores de $\text{Im}(X)$ induzem uma partição de $\Omega$. No exemplo, vimos:
+
+-   $[X=0] = \{(FFF)\}$;
+-   $[X=1] = \{(FFS), (FSF), (SFF)\}$;
+-   $[X=2] = \{(FSS), (SFS), (SSF)\}$; e
+-   $[X=3] = \{(SSS)\}$.
+
+:::
+:::
+
+:::
+
+
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+Note que:
+
+1.    A qualquer va $X$, podemos associar um contradomínio (normalmente o conjunto $\mathbb{R}$) e uma **imagem**, que denotaremos por $\text{Im}(X)$;
+2.    No exemplo anterior, temos que $\text{Im}(X) = \{0,1,2,3\}$.
+
+:::
+
+::: {.callout-note}
+## Definição
+
+O conjunto de todos possíveis valores que uma va $X$ pode assumir é denominado [**imagem**]{style="color:red;"} de $X$ e é denotado por $\text{Im}(X)$.
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Similarmente a estatística descritiva, podemos classificar as va's de acordo com o seu conjunto imagem.
+
+:::
+
+::: {.callout-note}
+## Definição
+
+Dada uma va $X$, dizemos que:
+
+-   $X$ é va **discreta** (vad) se $\text{Im}(X)$ for conjunto finito ou infinito enumerável;
+-   $X$ é va **contínua** (vac) se $\text{Im}(X)$ for conjunto não enumerável.
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+Agora, fica claro que a va $X$ do exemplo anterior se trata de uma **vad**.
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 2:** Uma linha de produção é observada até a produção da primeira peça defeituosa. Seja $S =$ "Peça defeituosa" e $F =$ "Peça normal". Então temos que
+$$
+\Omega = \{(S), (FS), (FFS), (FFFS), \ldots\}.
+$$
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+A este experimento, podemos associar a va $X =$ "Número de peças produzidas". Nesse caso, teríamos
+$$
+\text{Im}(X) = \{1, 2, 3, \ldots\}.
+$$
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:90%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria_discreta.png">
+</figure>
+
+:::
+
+:::
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+Embora $\text{Im}(X)$ seja infinito, ele é um conjunto enumerável, de modo que $X$ é **vad**.
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+**Exemplo 3:** Um ponto de uma região circular de raio unitário é sorteado. Nesse caso, podemos definir $\Omega = \{\omega = (z_1,z_2) : z_1^2 + z_2^2 \leq 1\}$.
+
+[Nesse espaço amostral, um evento $A$, é uma [**região**]{style="color:red;"} de pontos, $A\subset\Omega$.]{style="visibility:hidden;"}
+
+[A este experimento, poderíamos associar a variável aleatória $X =$ "Distância de $\omega$ à origem". Isto é $X(\omega) = (z_1^2 - z_2^2)^{1/2}$. Note que, nesse caso $\text{Im}(X) = [0,1]$.]{style="visibility:hidden;"}
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:95%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria_continua0.svg">
+</figure>
+
+:::
+
+:::
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-caution}
+## Observação
+
+Como $\text{Im}(X)$ é conjunto não enumerável, classificamos $X$ como uma **vac**.
+
+:::
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+**Exemplo 3:** Um ponto de uma região circular de raio unitário é sorteado. Nesse caso, podemos definir $\Omega = \{\omega = (z_1,z_2) : z_1^2 + z_2^2 \leq 1\}$.
+
+Nesse espaço amostral, um evento $A$, é uma [**região**]{style="color:red;"} de pontos, $A\subset\Omega$.
+
+[A este experimento, poderíamos associar a variável aleatória $X =$ "Distância de $\omega$ à origem". Isto é $X(\omega) = (z_1^2 - z_2^2)^{1/2}$. Note que, nesse caso $\text{Im}(X) = [0,1]$.]{style="visibility:hidden;"}
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:95%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria_continua1.svg">
+</figure>
+
+:::
+
+:::
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-caution}
+## Observação
+
+Como $\text{Im}(X)$ é conjunto não enumerável, classificamos $X$ como uma **vac**.
+
+:::
+
+:::
+
+## 1 Definição {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+**Exemplo 3:** Um ponto de uma região circular de raio unitário é sorteado. Nesse caso, podemos definir $\Omega = \{\omega = (z_1,z_2) : z_1^2 + z_2^2 \leq 1\}$.
+
+Nesse espaço amostral, um evento $A$, é uma [**região**]{style="color:red;"} de pontos, $A\subset\Omega$.
+
+A este experimento, poderíamos associar a variável aleatória $X =$ "Distância de $\omega$ à origem". Isto é $X(\omega) = (z_1^2 + z_2^2)^{1/2}$. Note que, nesse caso $\text{Im}(X) = [0,1]$.
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:95%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_variavel_aleatoria_continua2.svg">
+</figure>
+
+:::
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Como $\text{Im}(X)$ é conjunto não enumerável, classificamos $X$ como uma **vac**.
+
+:::
+
+:::
+
+## Função de distribuição acumulada
+
+::: {.callout-caution}
+## Observação
+
+Um evento aleatório muito importante para modelagem probabilística de va's é $[X \leq x]$, isto é a va $X$ assumir valor menor ou igual a $x$.
+
+:::
+
+::: {.callout-note}
+## Definição
+
+A **função de distribuição acumulada** (fda) é definida por $F_X(x) = P(X \leq x)$
+:::
+
+::: {.callout-caution}
+## Observação
+
+Ao se partir de uma medida de probabilidade definida em $\Omega$, para o calcular $F_X(x)$, devemos encontrar a probabilidade (em $\Omega$) do evento $A_x = \{\omega \in \Omega: X(\omega) \leq x\}$. Isto é, $F_X(x) = P(X \leq x) = P(A_x)$.
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+Se supomos que $\Omega$ é equiprovável. Teremos que
+
+$$
+F_X(x) = \begin{cases}
+0, & x < 0;\\
+P(X=0) = \frac{1}{8}, & 0 \leq x < 1;\\
+P(X=0) + P(X=1) = \frac{1}{8} + \frac{3}{8} = \frac{4}{8}, & 1 \leq x < 2;\\
+P(X=0) + P(X=1) + P(X=2) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} = \frac{7}{8}, & 2 \leq x < 3;\\
+P(X=0) + P(X=1) + P(X=2) + P(X=3) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} + \frac{1}{8} = 1, & x \geq 3;\\
+\end{cases}
+$$
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:50%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_fda0.png">
+</figure>
+
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:50%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_fda1.png">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:50%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_fda2.png">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:50%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_fda3.png">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:50%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_fda4.png">
+</figure>
+
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:50%; margin-left:auto; margin-right:auto;">
+  <img src="figs/ilustracao_fda5.png">
+</figure>
+
+::: {.callout-caution}
+## Observação
+
+No caso discreto, os tamanhos dos saltos de $F_X(x)$ nos dá os valores de $P(X=x)$.
+:::
+
+## 1.1 Função de distribuição acumulada {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+No caso discreto, a função $p_X(x) = P(X=x)$, $x \in \text{Im}(X)$, é denominada [**função massa de probabilidade**]{style="color:red;"} (fmp).
+:::
+
+::: {.callout-caution}
+## Observação
+
+Como consequência, vemos que, para variáveis aleatórias discretas, a fda $F_X(x)$ nos fornece a fmp $p_X(x)$ e vice-versa.
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+Supondo que nenhum ponto de $\Omega$ é privilegiado, podemos definir a medida de probabilidade de $A$ como
+$$\textstyle P(A) = \frac{\text{Área}(A)}{\text{Área}(\Omega)} = \frac{\text{Área}(A)}{\pi}.$$
+Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (equiprobabilidade).  
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+[Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.]{style="visibility:hidden;"}
+
+[Logo, a fda de $X$ é dada por
+$$
+\textstyle F_X(x) = P(X \leq x) = \begin{cases}
+0, & x < 0;\\
+\frac{\text{Área}(X \leq x)}{\pi} = \frac{\pi x^2}{\pi} = x^2, & 0\leq x < 1;\\
+1, & x \geq 1.
+\end{cases}
+$$
+]{style="visibility:hidden;"}
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:60%; margin-left:auto; margin-right:auto;visibility:hidden;">
+  <img src="figs/ilustracao_fda_vac0.png">
+</figure>
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+Supondo que nenhum ponto de $\Omega$ é privilegiado, podemos definir a medida de probabilidade de $A$ como
+$$\textstyle P(A) = \frac{\text{Área}(A)}{\text{Área}(\Omega)} = \frac{\text{Área}(A)}{\pi}.$$
+Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (equiprobabilidade).  
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
+
+[Logo, a fda de $X$ é dada por
+$$
+\textstyle F_X(x) = P(X \leq x) = \begin{cases}
+0, & x < 0;\\
+\frac{\text{Área}(X \leq x)}{\pi} = \frac{\pi x^2}{\pi} = x^2, & 0\leq x < 1;\\
+1, & x \geq 1.
+\end{cases}
+$$
+]{style="visibility:hidden;"}
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:60%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_fda_vac0.png">
+</figure>
+
+:::
+
+:::
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+Supondo que nenhum ponto de $\Omega$ é privilegiado, podemos definir a medida de probabilidade de $A$ como
+$$\textstyle P(A) = \frac{\text{Área}(A)}{\text{Área}(\Omega)} = \frac{\text{Área}(A)}{\pi}.$$
+Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (equiprobabilidade).  
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
+
+[Logo, a fda de $X$ é dada por
+$$
+\textstyle F_X(x) = P(X \leq x) = \begin{cases}
+0, & x < 0;\\
+\frac{\text{Área}(X \leq x)}{\pi} = \frac{\pi x^2}{\pi} = x^2, & 0\leq x < 1;\\
+1, & x \geq 1.
+\end{cases}
+$$
+]{style="visibility:hidden;"}
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:60%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_fda_vac1.png">
+</figure>
+
+:::
+
+:::
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+Supondo que nenhum ponto de $\Omega$ é privilegiado, podemos definir a medida de probabilidade de $A$ como
+$$\textstyle P(A) = \frac{\text{Área}(A)}{\text{Área}(\Omega)} = \frac{\text{Área}(A)}{\pi}.$$
+Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (equiprobabilidade).  
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
+
+[Logo, a fda de $X$ é dada por
+$$
+\textstyle F_X(x) = P(X \leq x) = \begin{cases}
+0, & x < 0;\\
+\frac{\text{Área}(X \leq x)}{\pi} = \frac{\pi x^2}{\pi} = x^2, & 0\leq x < 1;\\
+1, & x \geq 1.
+\end{cases}
+$$
+]{style="visibility:hidden;"}
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:60%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_fda_vac2.png">
+</figure>
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+Supondo que nenhum ponto de $\Omega$ é privilegiado, podemos definir a medida de probabilidade de $A$ como
+$$\textstyle P(A) = \frac{\text{Área}(A)}{\text{Área}(\Omega)} = \frac{\text{Área}(A)}{\pi}.$$
+Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (equiprobabilidade).  
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
+
+[Logo, a fda de $X$ é dada por
+$$
+\textstyle F_X(x) = P(X \leq x) = \begin{cases}
+0, & x < 0;\\
+\frac{\text{Área}(X \leq x)}{\pi} = \frac{\pi x^2}{\pi} = x^2, & 0\leq x < 1;\\
+1, & x \geq 1.
+\end{cases}
+$$
+]{style="visibility:hidden;"}
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:60%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_fda_vac3.png">
+</figure>
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+Supondo que nenhum ponto de $\Omega$ é privilegiado, podemos definir a medida de probabilidade de $A$ como
+$$\textstyle P(A) = \frac{\text{Área}(A)}{\text{Área}(\Omega)} = \frac{\text{Área}(A)}{\pi}.$$
+Nesse caso, as probabilidades de dois eventos de mesma área serão as mesmas (equiprobabilidade).  
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+Usando essa medida de probabilidade, para calcular a fda de $X$, precisamos encontrar a área da região $[X \leq x]$. Veja na ilustração ao lado.
+
+Logo, a fda de $X$ é dada por
+$$
+\textstyle F_X(x) = P(X \leq x) = \begin{cases}
+0, & x < 0;\\
+\frac{\text{Área}(X \leq x)}{\pi} = \frac{\pi x^2}{\pi} = x^2, & 0\leq x < 1;\\
+1, & x \geq 1.
+\end{cases}
+$$
+
+:::
+
+::: {.column #vcenter width=40%}
+
+<figure style="width:60%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_fda_vac3.png">
+</figure>
+
+:::
+
+:::
+
+## {.unnumbered .unlisted}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:40%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_fda_vac_grafico0.png">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:40%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_fda_vac_grafico1.png">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+<figure style="width:40%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_fda_vac_grafico2.png">
+</figure>
+
+
+::: {.callout-caution}
+## Observação
+
+Observe que não há pontos de descontinuidade para a fda de uma va contínua. Portanto, a fda de uma vac não fornece probabilidades diretamente.
+:::
+
+## 1.1 Função de distribuição acumulada {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Tomando a derivada da fda de uma vac, obtemos a chamada [**função densidade de probabilidade**]{style="color:red;"}.
+:::
+
+::: {.callout-note}
+## Definição
+
+Se $X$ é vac com fda $F_X(x)$, então a sua **função densidade de probabilidade** (fdp) é definida por
+$$\textstyle f_X(x) = \frac{dF_X(x)}{dx}.$$
+:::
+
+::: {.callout-caution}
+## Observação
+
+A fdp é um modelo teórico para as **densidades** de faixas vistas em estatística descritiva.
+:::
+
+## 1.1 Função de distribuição acumulada {.unnumbered .unlisted}
+
+<figure style="width:70%; margin-left:auto; margin-right:auto">
+  <img src="figs/ilustracao_densidade_fdp.png">
+</figure>
+
+## 1.1 Função de distribuição acumulada {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Note que o tratamento probabilístico para obter a fda, bem como o seu comportamento, dependem do tipo de va em questão.
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedades
+
+Seja $F_X(x)$ fda de uma va $X$, então
+
+::: incremental
+
+1.    $\lim_{x\to-\infty} F_X(x) = 0$ e $\lim_{x\to\infty} F_X(x) = 1$;
+2.    $x < x' \Rightarrow F_X(x) \leq F_X(x')$, isto é, $F_X(\cdot)$ é não decrescente; e
+3.    se $X$ é vad, $P(X=x) = F_X(x) - \lim_{x'\uparrow x} F_X(x')$, isto é, a fmp $p_X(x)$ é o tamanho do salto de $F_X(\cdot)$ em $x$.
+4.    se $X$ é vac, $f_X(x) = \frac{dF_X(x)}{dx}$, isto é, a fdp $f_X(x)$ é a derivada de $F_X(\cdot)$ em $x$.
+
+:::
+
+:::
+
+:::
+
+# Variáveis aleatórias discretas
+
+## Esperança e variância de vad's
+
+## Modelos probabilísticos discretos
+
+# Variáveis aleatórias contínuas
+
+## Esperança e variância de vac's
+
+## Modelos probabilísticos contínuos
+
+# Vetores Aleatórios Bidimensionais
+
+## Covariância e Correlação
+
+# Funções de Variáveis Aleatórias
+
+# FIM {.unnumbered .unlisted}
+
+# APAGAR DPS 1 {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+:::
+
+::: {.callout-note}
+## Definição
+
+:::
+
+::: {.callout-warning}
+## Propriedades
+
+:::
+
+::: {.callout-tip}
+## Exercícios
+
+:::
+
+::: {.callout-important}
+## Problema
+
+:::
+
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** 
+
+::: 
+
+# APAGAR DPS 2 {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=45%}
+1
+:::
+
+::: {.column #vcenter width=55%}
+2
+
+3
+
+4
+:::
+
+:::
+
+
+
+```{=latex}
+\begin{align*}
+\Omega &= \{(1,1), (1,2), \ldots, (4,4)\}\\
+       &= \{(x,y) : x,y = 1,\ldots,4\}.
+\end{align*}
+```
+
+
+# FIM {.unnumbered .unlisted}
