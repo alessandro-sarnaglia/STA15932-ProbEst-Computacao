@@ -953,65 +953,299 @@ em que $A_x = \{\omega \in \Omega : X(\omega) = x\}$. Isto é, a fmp de $X$ é *
 
 ## {.unnumbered .unlisted .smaller}
 
-### Exemplo {.unnumbered .unlisted}
+### Exemplo 4 {.unnumbered .unlisted}
 
-Suponha que existem seis lotes de um produto: três com $0$ itens defeituosos; dois com $1$ defeituoso; e um com $2$ defeituosos. Um lote será sorteado entre os seis e será enviado a um cliente. Seja $X=$ "número de itens defeituosos no lote recebido pelo cliente". Nesse caso, podemos especificar
+Suponha que em um estoque existem seis lotes de um produto: três com $0$ itens defeituosos; dois com $1$ defeituoso; e um com $2$ defeituosos. Um lote será sorteado entre os seis e será enviado a um cliente. Seja $X=$ "número de itens defeituosos no lote recebido pelo cliente". [Nesse caso, podemos especificar]{.fragment fragment-index=1}
+
+::: {.fragment fragment-index=1}
 
 ::: columns
 
-::: {.column #vcenter width=35%}
+::: {.column #vcenter width=45%}
 
+<div style="text-align: center;">
 <table>
   <tr style="border-top:solid;">
     <td style="border-right:solid 1pt;">$x$</td>
     <td style="text-align: center;">$0$</td>
     <td style="text-align: center;">$1$</td>
     <td style="text-align: center;">$2$</td>
-    <td style="text-align: center;">Total</td>
+    <td style="text-align: center;border-left:solid 1pt;">Total</td>
   </tr>
   <tr style="border-top:solid 1pt;border-bottom:solid;">
     <td style="border-right:solid 1pt;">$p_X(x)$ </td>
     <td style="text-align: center;">$\frac{3}{6}$</td>
     <td style="text-align: center;">$\frac{2}{6}$</td>
     <td style="text-align: center;">$\frac{1}{6}$</td>
-    <td style="text-align: center;">$1$</td>
+    <td style="text-align: center;border-left:solid 1pt;">$1$</td>
   </tr>
 </table>
+</div>
 
 :::
 
-::: {.column #vcenter width=30%}
+::: {.column #vcenter width=10%}
 
+<p style="text-align:center;">
 ou ainda
+</p>
 
 :::
 
-::: {.column #vcenter width=35%}
+::: {.column #vcenter width=45%}
 
+<div style="text-align: center;">
 <table>
   <tr style="border-top:solid;">
     <td style="border-right:solid 1pt;">$x$</td>
     <td style="text-align: center;">$0$</td>
     <td style="text-align: center;">$1$</td>
     <td style="text-align: center;">$2$</td>
-    <td style="text-align: center;">Total</td>
+    <td style="text-align: center;border-left:solid 1pt;">Total</td>
   </tr>
   <tr style="border-top:solid 1pt;border-bottom:solid;">
     <td style="border-right:solid 1pt;">$p_X(x)$ </td>
     <td style="text-align: center;">$\frac{1}{2}$</td>
     <td style="text-align: center;">$\frac{1}{3}$</td>
     <td style="text-align: center;">$\frac{1}{6}$</td>
-    <td style="text-align: center;">$1$</td>
+    <td style="text-align: center;border-left:solid 1pt;">$1$</td>
   </tr>
 </table>
+</div>
 
 :::
 
 :::
 
+:::
+
+::: {.fragment fragment-index=2}
+
+Se não sabemos a quantidade de lotes em estoque, a especificação acima não é praticável, pois não sabemos o comportamento probabilístico do experimento ($\Omega$ é equiprovável, mas desconhecido).
+
+:::
+
+::: {.fragment fragment-index=3}
+
+Nesse caso, se ainda assumirmos que os lotes tem no máximo 2 itens defeituosos, podemos especificar uma fmp arbitrária para a vad $X$, como, por exemplo
+
+<div style="text-align: center;">
+<table>
+  <tr style="border-top:solid;">
+    <td style="border-right:solid 1pt;">$x$</td>
+    <td style="text-align: center;">$0$</td>
+    <td style="text-align: center;">$1$</td>
+    <td style="text-align: center;">$2$</td>
+    <td style="text-align: center;border-left:solid 1pt;">Total</td>
+  </tr>
+  <tr style="border-top:solid 1pt;border-bottom:solid;">
+    <td style="border-right:solid 1pt;">$p_X(x)$ </td>
+    <td style="text-align: center;">$0.7$</td>
+    <td style="text-align: center;">$0.2$</td>
+    <td style="text-align: center;">$0.1$</td>
+    <td style="text-align: center;border-left:solid 1pt;">$1$</td>
+  </tr>
+</table>
+</div>
+
+:::
+
+::: {.fragment fragment-index=4}
+
+Note que $p_X(0), p_X(1), p_X(2) \geq 0$ e que $\sum_{x=0}^2 p_X(x) = 1$, de modo que $p_X(x)$ é uma fmp válida.
+
+:::
+
+## 2 Variáveis aleatórias discretas {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+No exemplo anterior, especificamos de maneira arbitrária uma fmp $p_X(x)$ para a vad $X$. No entanto, podemos ser mais flexíveis e propor uma [**família**]{style="color:red;"} de fmp's que dependa de [**parâmetros**]{style="color:red;"}.
+
+:::
+
+::: {.fragment fragment-index=1 style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 4 (cont.):** 
+
+Para flexibilizar o nosso modelo probabilístico, podemos especificar a seguinte [**forma**]{style="color:red;"} para a fmp:
+
+::: columns
+
+::: {.column #vcenter width=30%}
+
+<div style="text-align: center;">
+<table>
+  <tr style="border-top:solid;">
+    <td style="border-right:solid 1pt;">$x$</td>
+    <td style="text-align: center;">$0$</td>
+    <td style="text-align: center;">$1$</td>
+    <td style="text-align: center;">$2$</td>
+    <td style="text-align: center;border-left:solid 1pt;">Total</td>
+  </tr>
+  <tr style="border-top:solid 1pt;border-bottom:solid;">
+    <td style="border-right:solid 1pt;">$p_X(x)$ </td>
+    <td style="text-align: center;">$\alpha$</td>
+    <td style="text-align: center;">$\beta$</td>
+    <td style="text-align: center;">$\gamma$</td>
+    <td style="text-align: center;border-left:solid 1pt;">$1$</td>
+  </tr>
+</table>
+</div>
+
+:::
+
+::: {.column #vcenter width=70%}
+
+::: {.fragment fragment-index=2}
+
+Para $p_X(x)$ ser uma fmp, precisamos impor as seguintes restrições:
+
+::: incremental
+- $0 \leq \alpha \leq 1$;
+- $0 \leq \beta \leq 1-\alpha$; e
+- $\gamma = 1-\alpha-\beta$ (isto é, $\gamma$ é fixo).
+:::
+
+:::
+
+:::
+
+:::
+
+::: fragment
+
+Nesse caso, dizemos que $\alpha$ e $\beta$ são **parâmetros** (livres) da família de fmp's $p_X(x)$.
+
+:::
+
+::: 
+
+## 2 Variáveis aleatórias discretas {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Se a forma de $p_X(x)$ depende de um valor (ou vetor de valores) $\theta$, dizemos que $\theta$ é um **parâmetro** (ou vetor paramétrico) da família $p_X(x)$.
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Nesse caso, podemos escrever $p_X(x; \theta)$ para enfatizar que se trata de uma família de fmp's e que sua forma só é completamente conhecida se soubermos o valor do parâmetro $\theta$ que indexa a família.
+
+:::
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 4 (cont.):** Nesse exemplo, podemos agrupar os parâmetros no vetor $\theta = (\alpha, \beta)$. Note que, a fmp induzida pela medida equiprovável em $\Omega$ e a fmp arbitrariamente especificada posteriormente são membros particulares dessa família, em que $\theta = (\frac{1}{2}, \frac{1}{3})$ e $\theta = (0.7, 0.2)$, respectivamente.
+
+:::
+
+## 2 Variáveis aleatórias discretas {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Como já visto anteriormente, a fda pode ser obtida acumulando as probabilidades da fmp.
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+::: columns
+
+::: {.column #vcenter width=50%}
+
+**Exemplo 4 (cont.):** A fda para a família de fmp's neste caso é
+$$
+F_X(x) = F_X(x; \theta) = \begin{cases}
+0, & x < 0;\\
+\alpha, & 0\leq x < 1;\\
+\alpha + \beta, & 1\leq x < 2;\\
+1, & x \geq 2;\\
+\end{cases}
+$$
+
+:::
+
+::: {.column #vcenter width=50%}
+
+<figure style="width:90%; display:block; margin-left: auto; margin-right: auto;">
+  <img src="figs/ilustracao_fda_exemplo4.png">
+</figure>
+
+:::
+
+:::
+
+:::
+
+## 2 Variáveis aleatórias discretas {.unnumbered .unlisted}
+
+::: {.callout-tip}
+## Exercício
+
+Considere a seguinte função de $x$ que depende de um vetor de parâmetros $\theta = (\theta_1, \theta_2, \theta_3, \theta_4)$:
+$$
+p_X(x;\theta) = \begin{cases}
+\theta_1, & x=0;\\
+\theta_2, & x=1;\\
+\theta_3, & x=2;\\
+\theta_4, & x=3.
+\end{cases}
+$$
+
+Pede-se:
+
+1. Quais restrições necessitamos impor sobre $\theta = (\theta_1, \theta_2, \theta_3, \theta_4)$ para garantir que $p_X(x;\theta)$ seja de fato família de fmp's?
+2. Qual a condição adicional sobre $\theta$ para que $p_X(x;\theta)$ seja simétrica? Qual é o ponto de simetria?
+3. Determine e esboce a fda associada a família $p_X(x;\theta)$.
+:::
 
 
 ## Esperança e variância de vad's
+
+::: {.callout-caution}
+## Observação
+
+Vimos que a fmp é um modelo teórico para as frequências relativas vistas em estatística descritiva. Assim, fazendo uso da fmp, é natural calcularmos valores teóricos para a média e a variância de uma vad $X$.
+:::
+
+::: {.callout-note}
+## Definição
+
+Seja $X$ vad com imagem $\text{Im}(X)$ e fmp $p_X(x;\theta)$, sua **média**, também chamada de **esperança** ou **valor esperado**, é definida por 
+$$\mu = \mu_X = E(X) = \sum_{x\in\text{Im}(X)} x\cdot p_X(x;\theta).$$
+:::
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. A fórmula para o cálculo de $\mu$ é muito similar àquela vista em estatística descritiva, no entanto, agora a fmp $p_X(x;\theta)$ toma o lugar da frequência relativa que teria sido efetivamente observada;
+2. De maneira similar a estatística descritiva, $\mu$ é calculada como uma média **ponderada** com pesos dados por $p_X(x;\theta)$;
+3. Naturalmente, para famílias de fmp's, pelo fato de $p_X(x;\theta)$ ser indexada por $\theta$, a sua esperança também será função de $\theta$.
+
+:::
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 4 (cont.):** Utilizando a fórmula de esperança, obtemos
+$$\mu_X = 0p_X(0;\theta) + 1p_X(1;\theta) + 2p_X(2;\theta) = \beta + 2(1-\alpha-\beta) = 2-2\alpha - \beta.$$
+
+Se $\alpha = \frac{1-\beta}{2}$, vemos que a fmp é simétrica em torno de $1$ e $\mu_X = 1$.
+
+:::
 
 ## Modelos probabilísticos discretos
 
