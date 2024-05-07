@@ -932,6 +932,85 @@ Seja $F_X(x)$ fda de uma va $X$, então
 
 # Variáveis aleatórias discretas
 
+## 2 Variáveis aleatórias discretas {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. Vimos que, se o modelo probabilístico é concebido sobre um espaço amostral $\Omega$ abstrato e $X : \Omega \to \mathbb{R}$, então a fmp pode ser obtida por
+$$p_X(x) = P(X = x) = P(A_x),$$
+em que $A_x = \{\omega \in \Omega : X(\omega) = x\}$. Isto é, a fmp de $X$ é **induzida** pela medida de probabilidade em $\Omega$;
+2. Muito frequentemente, a construção de um modelo probabilístico em $\Omega$ é muito complicada, o que dificultaria a determinação da fmp induzida.
+3. Para contornar esse problema, levando em consideração o comportamento da vad em estudo, podemos especificar diretamente uma fmp para a vad, desde que atenda as propriedades já vistas:
+    + $p_X(x) \geq 0$;
+    + $\sum_{x\in\text{Im}(X)} p_X(x) = 1$.
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo {.unnumbered .unlisted}
+
+Suponha que existem seis lotes de um produto: três com $0$ itens defeituosos; dois com $1$ defeituoso; e um com $2$ defeituosos. Um lote será sorteado entre os seis e será enviado a um cliente. Seja $X=$ "número de itens defeituosos no lote recebido pelo cliente". Nesse caso, podemos especificar
+
+::: columns
+
+::: {.column #vcenter width=35%}
+
+<table>
+  <tr style="border-top:solid;">
+    <td style="border-right:solid 1pt;">$x$</td>
+    <td style="text-align: center;">$0$</td>
+    <td style="text-align: center;">$1$</td>
+    <td style="text-align: center;">$2$</td>
+    <td style="text-align: center;">Total</td>
+  </tr>
+  <tr style="border-top:solid 1pt;border-bottom:solid;">
+    <td style="border-right:solid 1pt;">$p_X(x)$ </td>
+    <td style="text-align: center;">$\frac{3}{6}$</td>
+    <td style="text-align: center;">$\frac{2}{6}$</td>
+    <td style="text-align: center;">$\frac{1}{6}$</td>
+    <td style="text-align: center;">$1$</td>
+  </tr>
+</table>
+
+:::
+
+::: {.column #vcenter width=30%}
+
+ou ainda
+
+:::
+
+::: {.column #vcenter width=35%}
+
+<table>
+  <tr style="border-top:solid;">
+    <td style="border-right:solid 1pt;">$x$</td>
+    <td style="text-align: center;">$0$</td>
+    <td style="text-align: center;">$1$</td>
+    <td style="text-align: center;">$2$</td>
+    <td style="text-align: center;">Total</td>
+  </tr>
+  <tr style="border-top:solid 1pt;border-bottom:solid;">
+    <td style="border-right:solid 1pt;">$p_X(x)$ </td>
+    <td style="text-align: center;">$\frac{1}{2}$</td>
+    <td style="text-align: center;">$\frac{1}{3}$</td>
+    <td style="text-align: center;">$\frac{1}{6}$</td>
+    <td style="text-align: center;">$1$</td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+
+
 ## Esperança e variância de vad's
 
 ## Modelos probabilísticos discretos
