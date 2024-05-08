@@ -1514,6 +1514,301 @@ p_X(x;\theta) = \begin{cases}
 <p>Se <span class="math inline">\(\alpha = \frac{1-\beta}{2}\)</span>, vemos que a fmp é simétrica em torno de <span class="math inline">\(1\)</span> e <span class="math inline">\(\mu_X = 1\)</span>.</p>
 </div>
 </section>
+<section id="esperança-e-variância-de-vads-2" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Quando está claro a que va <span class="math inline">\(X\)</span> a esperança se refere, usaremos <span class="math inline">\(\mu\)</span> em vez de <span class="math inline">\(\mu_X\)</span>;</li>
+<li class="fragment">No Exemplo 4, se hipotetizarmos uma população em que a vad <span class="math inline">\(X\)</span> com valores <span class="math inline">\(0, 1\)</span> e <span class="math inline">\(2\)</span> associados as frequências relativas <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(1-\alpha-\beta\)</span>, respectivamente, então <span class="math inline">\(\mu = 2-2\alpha - \beta\)</span> será a média populacional. Por isso podemos nos referir a <span class="math inline">\(\mu\)</span> por média populacional ou teórica;</li>
+<li class="fragment">No Exemplo 4, tomando <span class="math inline">\(\theta = (\frac{1}{2}, \frac{1}{3})\)</span>, obtemos <span class="math inline">\(\mu = 2-2\frac{1}{2} - \frac{1}{3} = \frac{2}{3} \approx 0.67\)</span>, que não é um valor possível de <span class="math inline">\(X\)</span>. A palavra esperado deve ser interpretada com cautela porque uma pessoa não espera ver um valor de <span class="math inline">\(X = 0.67\)</span> quando um único estoque é selecionado.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="esperança-e-variância-de-vads-3" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 5:</strong> Seja <span class="math inline">\(X\)</span> o número de entrevistas que um estudante faz para conseguir um emprego e suponha que a sua seja <span class="math inline">\(p_X(x) = \frac{k}{x^2}\)</span>, <span class="math inline">\(x = 1, 2, 3, \ldots\)</span>, e <span class="math inline">\(p_X(x) = 0\)</span> caso contrário. A constante <span class="math inline">\(k\)</span> deve ser tal que <span class="math inline">\(k^{-1} = \sum_{x=1}^\infty\frac{1}{x^2}\)</span>. É possível mostrar que <span class="math inline">\(\sum_{x=1}^\infty\frac{1}{x^2} &lt; +\infty\)</span>, portanto <span class="math inline">\(p_X(x)\)</span> é de fato uma fmp.</p>
+<div class="fragment" data-fragment-index="1">
+<p>Agora, o seu valor esperado é <span class="math display">\[
+\textstyle \mu = \sum_{x=1}^\infty x \cdot p_X(x) = \sum_{x=1}^\infty x\cdot\frac{k}{x^2} = k\sum_{x=1}^\infty \frac{1}{x}.
+\]</span> O último termo é a soma harmônica, que diverge, isto é, <span class="math inline">\(\mu = +\infty\)</span>.</p>
+</div>
+</div>
+<div class="fragment" data-fragment-index="2">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Dizemos que <span class="math inline">\(p_X(x)\)</span> tem <strong>caudas longas</strong> (as probabilidades da cauda decrescem muito lentamente). Ao selecionar uma amostra dessa variável, a média amostras tenderá a crescer indefinidamente com o tamanho da amostra.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="esperança-e-variância-de-vads-4" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Frequentemente, temos interesse na esperança de <span class="math inline">\(Y = h(X)\)</span>, em vez de <span class="math inline">\(X\)</span>. Pela definição poderíamos obter <span class="math inline">\(\mu_Y = \sum_y y \cdot p_Y(y)\)</span>, necessitando da fmp de <span class="math inline">\(Y\)</span>. No entanto, existe uma maneira mais direta.</p>
+</div>
+</div>
+</div>
+<div class="fragment" data-fragment-index="1" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 6:</strong> Seja <span class="math inline">\(X\)</span> vad e <span class="math inline">\(Y = X^2\)</span>. <span class="fragment" data-fragment-index="2">Por exemplo:</span></p>
+<div class="columns">
+<div id="vcenter" class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="2">
+<div style="text-align: center;">
+Se a fmp de <span class="math inline">\(X\)</span> for:
+<table>
+<tbody><tr style="border-top:solid;">
+<td style="border-right:solid 1pt;">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(-2\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(2\)</span>
+</td>
+<td style="text-align: center;border-left:solid 1pt;">
+Total
+</td>
+</tr>
+<tr style="border-top:solid 1pt;border-bottom:solid;">
+<td style="border-right:solid 1pt;">
+<span class="math inline">\(p_X(x)\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(p_{-2}\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(p_{0}\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(p_{2}\)</span>
+</td>
+<td style="text-align: center;border-left:solid 1pt;">
+<span class="math inline">\(1\)</span>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div id="vcenter" class="column" style="width:50%;">
+<div class="fragment" data-fragment-index="3">
+<div style="text-align: center;">
+A fmp de <span class="math inline">\(Y\)</span> será:
+<table>
+<tbody><tr style="border-top:solid;">
+<td style="border-right:solid 1pt;">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(4\)</span>
+</td>
+<td style="text-align: center;border-left:solid 1pt;">
+Total
+</td>
+</tr>
+<tr style="border-top:solid 1pt;border-bottom:solid;">
+<td style="border-right:solid 1pt;">
+<span class="math inline">\(p_Y(y)\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(p_{0}\)</span>
+</td>
+<td style="text-align: center;">
+<span class="math inline">\(p_{-2}+p_{2}\)</span>
+</td>
+<td style="text-align: center;border-left:solid 1pt;">
+<span class="math inline">\(1\)</span>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+<p><span class="fragment" data-fragment-index="4">Logo, <span class="math display">\[\textstyle \mu_Y = \sum_y y\cdot p_Y(y) = 0p_0 + 4(p_{-2} + p_2) = (-2)^2p_{-2} + 0^2p_{0} + 2^2p_{2} = \sum_x h(x)\cdot p_X(x) = E[h(X)].\]</span></span></p>
+</div>
+</section>
+<section id="esperança-e-variância-de-vads-5" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Assim, se <span class="math inline">\(X\)</span> for vad com fmp <span class="math inline">\(p_X(x)\)</span> e <span class="math inline">\(Y = h(X)\)</span>, então a esperança de <span class="math inline">\(Y\)</span> é <span class="math display">\[\mu_Y = E[h(X)] = \sum_x h(x)\cdot p_X(x).\]</span> Isto é, substituímos os <span class="math inline">\(x\)</span> pelos <span class="math inline">\(h(x)\)</span> no cálculo.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade</strong></p>
+</div>
+<div class="callout-content">
+<p>Seja <span class="math inline">\(X\)</span> vad com esperança <span class="math inline">\(\mu_X\)</span> e <span class="math inline">\(Y = aX+b\)</span>, com <span class="math inline">\(a, b\)</span> constantes, então <span class="math display">\[\mu_{Y} = \mu_{aX+b} = E(aX + b) = a E(X) + b = a\mu_X + b.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="esperança-e-variância-de-vads-6" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>É verdade que <span class="math inline">\(E(aX + b) = a E(X) + b\)</span>. Mas, não necessariamente vale que <span class="math inline">\(E[h(X)] = h[E(X)]\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 6 (cont.):</strong> Sejam <span class="math inline">\(p_{-2} = p_2 = \frac{1}{4}\)</span> e <span class="math inline">\(p_0 = \frac{1}{2}\)</span>. <span class="fragment">Então, temos <span class="math display">\[\textstyle E(X) = -2\frac{1}{4} + 0\frac{1}{2} + 2\frac{1}{4} = 0\]</span></span> <span class="fragment">e <span class="math display">\[\textstyle E(X^2) = (-2)^2\frac{1}{4} + 0^2\frac{1}{2} + 2^2\frac{1}{4} = 2.\]</span></span></p>
+<div class="fragment">
+<p>Assim, <span class="math inline">\(E(X^2) = 2 \neq [E(X)]^2 = 0\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="esperança-e-variância-de-vads-7" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Seja <span class="math inline">\(X\)</span> vad com fmp <span class="math inline">\(p_X(x)\)</span> e esperança <span class="math inline">\(\mu\)</span>. A variância de <span class="math inline">\(X\)</span>, denotada por <span class="math inline">\(V(X)\)</span>, é definida por <span class="math display">\[\textstyle V(X) = \sum_{x}(x - \mu)^2\cdot p_X(x) = E[(X - \mu)^2].\]</span> O desvio padrão (DP) de <span class="math inline">\(X\)</span> é definido por <span class="math inline">\(DP(X) = \sqrt{V(X)}.\)</span> A variância pode ser denotada por <span class="math inline">\(\sigma^2_X\)</span>, ou apenas <span class="math inline">\(\sigma^2\)</span>, e o DP por <span class="math inline">\(\sigma_X\)</span>, ou apenas <span class="math inline">\(\sigma\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Note que a variância é definida como a esperança de <span class="math inline">\(h(X) = (X-\mu)^2\)</span>. Isto é, quanto <strong>esperamos</strong> que a variável <span class="math inline">\(X\)</span> se desvie de sua esperança <span class="math inline">\(\mu\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="esperança-e-variância-de-vads-8" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 6 (cont.):</strong> Suponha agora que <span class="math inline">\(p_2 = \frac{\alpha}{4}\)</span>, <span class="math inline">\(p_{-2} = \frac{1-\alpha}{4}\)</span> e <span class="math inline">\(p_0 = \frac{1}{2}\)</span>, com <span class="math inline">\(0 &lt; \alpha &lt; 1\)</span>. <span class="fragment">Então, <span class="math display">\[\textstyle E(X) = \mu = -2\frac{1-\alpha}{4} + 2\frac{\alpha}{4} = \alpha - \frac{1}{2}.\]</span></span> <span class="fragment">Então, a variância é dada por <span class="math display">\[\textstyle V(X) = \sigma^2 = \sum_{x}(x - \mu)^2\cdot p_X(x) = \sum_{x}[x-(\alpha - \frac{1}{2})]^2 p_X(x).\]</span></span> <span class="fragment">Depois de algumas álgebras obtemos <span class="math inline">\(\sigma^2_X = 1-(\alpha-\frac{1}{2})^2\)</span>.</span></p>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>O cálculo dos desvios quadráticos <span class="math inline">\((x-\mu)^2\)</span> para obter <span class="math inline">\(\sigma^2\)</span> pode ser tedioso. Felizmente, temos uma fórmula que pode simplificar a sua determinação.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="esperança-e-variância-de-vads-9" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div class="fragment">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedades</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Seja <span class="math inline">\(X\)</span> vad com fmp <span class="math inline">\(p_X(x)\)</span> e esperança <span class="math inline">\(\mu\)</span>. Então <span class="math display">\[\begin{align*}
+\sigma^2 &amp;= \textstyle \sum_{x}(x - \mu)^2\cdot p_X(x) = \sum_{x}(x^2 - 2\mu x + \mu^2)\cdot p_X(x)\\
+&amp;= \textstyle \sum_{x}x^2p_X(x) - 2\mu \sum_{x}x p_X(x) + \mu^2 \sum_{x}p_X(x) = E(X^2) - 2\mu\mu + \mu^2 = E(X^2) - \mu^2.
+\end{align*}\]</span></li>
+<li class="fragment">Seja <span class="math inline">\(X\)</span> vad com esperança <span class="math inline">\(\mu_X\)</span> e <span class="math inline">\(Y = aX+b\)</span>, com <span class="math inline">\(a, b\)</span> constantes, então <span class="math display">\[\sigma_{Y}^2 = \sigma_{aX+b}^2 = a^2 \sigma_X^2.\]</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ul>
+<li class="fragment">A Propriedade 1 pode ser utilizada para facilmente se chegar a variância do exemplo anterior;</li>
+<li class="fragment">A Propriedade 2 mostra que a variância só é afetada por mudanças em <span class="math inline">\(a\)</span> (escala), e não em <span class="math inline">\(b\)</span> (locação).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="esperança-e-variância-de-vads-10" class="slide level2 unnumbered unlisted">
+<h2>2.1 Esperança e variância de vad’s</h2>
+<div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 7:</strong> Seja <span class="math inline">\(X\)</span> o número obtido no arremesso de um dado honesto. Um jogo consiste de você pagar <span class="math inline">\(Y = \frac{1}{X}\)</span> e receber um prêmio de <span class="math inline">\(\frac{1}{\mu_X}\)</span> independente do resultado do dado. <span class="fragment" data-fragment-index="1">Será que o jogo é vantajoso para o jogador?</span></p>
+<p><span class="fragment" data-fragment-index="2">Note que <span class="math inline">\(\mu_X = (1+2+\cdots+6)\frac{1}{6} = 3.5\)</span>, de onde vem que o prêmio é sempre <span class="math inline">\(\frac{1}{3.5} \approx 0.2857\)</span>.</span></p>
+<p><span class="fragment" data-fragment-index="3">Por outro lado, temos <span class="math display">\[\textstyle \mu_Y = E(\frac{1}{Y}) = (1+\frac{1}{2}+\cdots+\frac{1}{6})\frac{1}{6} = \frac{1}{6}\frac{(60+30+20+15+12+10)}{60} = \frac{147}{360} = 0.4083.\]</span></span></p>
+<p><span class="fragment" data-fragment-index="4">Assim, isso significa, em média, pagar <span class="math inline">\(0.4083\)</span> para jogar um jogo que oferece prêmio fixo de <span class="math inline">\(0.2857\)</span>.</span></p>
+</div>
+<div class="fragment">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercícios</strong></p>
+</div>
+<div class="callout-content">
+<p>Qual seria a variância do valor pago?</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-17" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-8">Exemplo 8</h3>
+<p>Uma loja de computadores comprou 3 computadores de certo tipo a R$ <span class="math inline">\(1000\)</span> cada. Eles serão vendidos a R$ <span class="math inline">\(1500\)</span> cada. Após um período, o fabricante aceita os não vendidos por R$ 400 cada. Seja <span class="math inline">\(X\)</span> o número de computadores vendidos e suponha que <span class="math inline">\(p_X(0) = 0.1\)</span>, <span class="math inline">\(p_X(1) = 0.2\)</span>, <span class="math inline">\(p_X(2)=0.3\)</span> e <span class="math inline">\(p_X(3) = 0.4\)</span>. <span class="fragment">Note que <span class="math display">\[\mu_X = 0\cdot0.1 + 1\cdot0.2 + 2\cdot0.3 + 3\cdot0.4 = 2\]</span> e <span class="math display">\[\sigma^2_X = 0^2\cdot0.1 + 1^2\cdot0.2 + 2^2\cdot0.3 + 3^2\cdot0.4 - 2^2 = 0.2 + 4\cdot0.3 + 9\cdot0.4 - 4 = 5 - 4 = 1.\]</span></span></p>
+<p><span class="fragment">Por sua vez, o lucro no período seria de <span class="math display">\[L = h(X) = 1500X - 3000 + 400(3-X) = 1100X - 1800.\]</span></span></p>
+<p><span class="fragment">Logo, o lucro esperado será <span class="math inline">\(\mu_L = 1100\mu_x-1800 = 1100\cdot 2 - 1800 = 400\)</span> e a variância do lucro será de <span class="math inline">\(\sigma_L = 1100^2\sigma^2_X = 1100^2\cdot 1 = 1100^2\)</span>. O desvio-padrão do lucro é de <span class="math inline">\(\sigma_L = \sqrt{1100^2} = 1100\)</span>.</span></p>
+</section>
 <section id="modelos-probabilísticos-discretos" class="slide level2" data-number="2.2">
 <h2><span class="header-section-number">2.2</span> Modelos probabilísticos discretos</h2>
 </section></section>

@@ -1247,6 +1247,293 @@ Se $\alpha = \frac{1-\beta}{2}$, vemos que a fmp é simétrica em torno de $1$ e
 
 :::
 
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. Quando está claro a que va $X$ a esperança se refere, usaremos $\mu$ em vez de $\mu_X$;
+2. No Exemplo 4, se hipotetizarmos uma população em que a vad $X$ com valores $0, 1$ e $2$ associados as frequências relativas $\alpha$, $\beta$, $1-\alpha-\beta$, respectivamente, então $\mu = 2-2\alpha - \beta$ será a média populacional. Por isso podemos nos referir a $\mu$ por média populacional ou teórica;
+3. No Exemplo 4, tomando $\theta = (\frac{1}{2}, \frac{1}{3})$, obtemos $\mu = 2-2\frac{1}{2} - \frac{1}{3} = \frac{2}{3} \approx 0.67$, que não é um valor possível de $X$. A palavra esperado deve ser interpretada com cautela porque uma pessoa não espera ver um valor de $X = 0.67$ quando um único estoque é selecionado.
+
+:::
+
+:::
+
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 5:** Seja $X$ o número de entrevistas que um estudante faz para conseguir um emprego e suponha que a sua seja $p_X(x) = \frac{k}{x^2}$, $x = 1, 2, 3, \ldots$, e $p_X(x) = 0$ caso contrário. A constante $k$ deve ser tal que $k^{-1} = \sum_{x=1}^\infty\frac{1}{x^2}$. É possível mostrar que $\sum_{x=1}^\infty\frac{1}{x^2} < +\infty$, portanto $p_X(x)$ é de fato uma fmp.
+
+::: {.fragment fragment-index=1}
+
+Agora, o seu valor esperado é
+$$
+\textstyle \mu = \sum_{x=1}^\infty x \cdot p_X(x) = \sum_{x=1}^\infty x\cdot\frac{k}{x^2} = k\sum_{x=1}^\infty \frac{1}{x}.
+$$
+O último termo é a soma harmônica, que diverge, isto é, $\mu = +\infty$.
+
+:::
+
+:::
+
+::: {.fragment fragment-index=2}
+
+::: {.callout-caution}
+## Observação
+
+Dizemos que $p_X(x)$ tem **caudas longas** (as probabilidades da cauda decrescem muito lentamente). Ao selecionar uma amostra dessa variável, a média amostras tenderá a crescer indefinidamente com o tamanho da amostra.
+
+:::
+
+:::
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Frequentemente, temos interesse na esperança de $Y = h(X)$, em vez de $X$. Pela definição poderíamos obter $\mu_Y = \sum_y y \cdot p_Y(y)$, necessitando da fmp de $Y$. No entanto, existe uma maneira mais direta.
+:::
+
+::: {.fragment fragment-index=1 style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 6:** Seja $X$ vad e $Y = X^2$. [Por exemplo: ]{.fragment fragment-index=2}
+
+::: columns
+
+::: {.column #vcenter width=50%}
+
+::: {.fragment fragment-index=2}
+<div style="text-align: center;">
+Se a fmp de $X$ for:
+<table>
+  <tr style="border-top:solid;">
+    <td style="border-right:solid 1pt;">$x$</td>
+    <td style="text-align: center;">$-2$</td>
+    <td style="text-align: center;">$0$</td>
+    <td style="text-align: center;">$2$</td>
+    <td style="text-align: center;border-left:solid 1pt;">Total</td>
+  </tr>
+  <tr style="border-top:solid 1pt;border-bottom:solid;">
+    <td style="border-right:solid 1pt;">$p_X(x)$ </td>
+    <td style="text-align: center;">$p_{-2}$</td>
+    <td style="text-align: center;">$p_{0}$</td>
+    <td style="text-align: center;">$p_{2}$</td>
+    <td style="text-align: center;border-left:solid 1pt;">$1$</td>
+  </tr>
+</table>
+</div>
+
+:::
+
+:::
+
+::: {.column #vcenter width=50%}
+
+::: {.fragment fragment-index=3}
+
+<div style="text-align: center;">
+A fmp de $Y$ será:
+<table>
+  <tr style="border-top:solid;">
+    <td style="border-right:solid 1pt;">$x$</td>
+    <td style="text-align: center;">$0$</td>
+    <td style="text-align: center;">$4$</td>
+    <td style="text-align: center;border-left:solid 1pt;">Total</td>
+  </tr>
+  <tr style="border-top:solid 1pt;border-bottom:solid;">
+    <td style="border-right:solid 1pt;">$p_Y(y)$ </td>
+    <td style="text-align: center;">$p_{0}$</td>
+    <td style="text-align: center;">$p_{-2}+p_{2}$</td>
+    <td style="text-align: center;border-left:solid 1pt;">$1$</td>
+  </tr>
+</table>
+</div>
+
+:::
+
+:::
+
+:::
+
+[Logo,
+$$\textstyle \mu_Y = \sum_y y\cdot p_Y(y) = 0p_0 + 4(p_{-2} + p_2) = (-2)^2p_{-2} + 0^2p_{0} + 2^2p_{2} = \sum_x h(x)\cdot p_X(x) = E[h(X)].$$
+]{.fragment fragment-index=4}
+
+:::
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Assim, se $X$ for vad com fmp $p_X(x)$ e $Y = h(X)$, então a esperança de $Y$ é
+$$\mu_Y = E[h(X)] = \sum_x h(x)\cdot p_X(x).$$
+Isto é, substituímos os $x$ pelos $h(x)$ no cálculo.
+
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedade
+
+Seja $X$ vad com esperança $\mu_X$ e $Y = aX+b$, com $a, b$ constantes, então
+$$\mu_{Y} = \mu_{aX+b} = E(aX + b) = a E(X) + b = a\mu_X + b.$$
+:::
+
+:::
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+É verdade que $E(aX + b) = a E(X) + b$. Mas, não necessariamente vale que  $E[h(X)] = h[E(X)]$.
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 6 (cont.):** Sejam $p_{-2} = p_2 = \frac{1}{4}$ e $p_0 = \frac{1}{2}$. [Então, temos
+$$\textstyle E(X) = -2\frac{1}{4} + 0\frac{1}{2} + 2\frac{1}{4} = 0$$]{.fragment}
+[e
+$$\textstyle E(X^2) = (-2)^2\frac{1}{4} + 0^2\frac{1}{2} + 2^2\frac{1}{4} = 2.$$]{.fragment}
+
+::: fragment
+
+Assim, $E(X^2) = 2 \neq [E(X)]^2 = 0$.
+
+:::
+
+:::
+
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Seja $X$ vad com fmp $p_X(x)$ e esperança $\mu$. A variância de $X$, denotada por $V(X)$, é definida por
+$$\textstyle V(X) = \sum_{x}(x - \mu)^2\cdot p_X(x) = E[(X - \mu)^2].$$
+O desvio padrão (DP) de $X$ é definido por $DP(X) = \sqrt{V(X)}.$ A variância pode ser denotada por $\sigma^2_X$, ou apenas $\sigma^2$, e o DP por $\sigma_X$, ou apenas $\sigma$.
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Note que a variância é definida como a esperança de $h(X) = (X-\mu)^2$. Isto é, quanto **esperamos** que a variável $X$ se desvie de sua esperança $\mu$.
+:::
+
+:::
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 6 (cont.):** Suponha agora que $p_2 = \frac{\alpha}{4}$, $p_{-2} = \frac{1-\alpha}{4}$ e $p_0 = \frac{1}{2}$, com $0 < \alpha < 1$. [Então,
+$$\textstyle E(X) = \mu = -2\frac{1-\alpha}{4} + 2\frac{\alpha}{4} = \alpha - \frac{1}{2}.$$]{.fragment}
+[Então, a variância é dada por
+$$\textstyle V(X) = \sigma^2 = \sum_{x}(x - \mu)^2\cdot p_X(x) = \sum_{x}[x-(\alpha - \frac{1}{2})]^2 p_X(x).$$]{.fragment}
+[Depois de algumas álgebras obtemos $\sigma^2_X = 1-(\alpha-\frac{1}{2})^2$.]{.fragment}
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+O cálculo dos desvios quadráticos $(x-\mu)^2$ para obter $\sigma^2$ pode ser tedioso. Felizmente, temos uma fórmula que pode simplificar a sua determinação.
+
+:::
+
+:::
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedades
+
+::: incremental
+
+1. Seja $X$ vad com fmp $p_X(x)$ e esperança $\mu$. Então
+$$\begin{align*}
+\sigma^2 &= \textstyle \sum_{x}(x - \mu)^2\cdot p_X(x) = \sum_{x}(x^2 - 2\mu x + \mu^2)\cdot p_X(x)\\
+&= \textstyle \sum_{x}x^2p_X(x) - 2\mu \sum_{x}x p_X(x) + \mu^2 \sum_{x}p_X(x) = E(X^2) - 2\mu\mu + \mu^2 = E(X^2) - \mu^2.
+\end{align*}$$
+2. Seja $X$ vad com esperança $\mu_X$ e $Y = aX+b$, com $a, b$ constantes, então
+$$\sigma_{Y}^2 = \sigma_{aX+b}^2 = a^2 \sigma_X^2.$$
+:::
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+- A Propriedade 1 pode ser utilizada para facilmente se chegar a variância do exemplo anterior;
+- A Propriedade 2 mostra que a variância só é afetada por mudanças em $a$ (escala), e não em $b$ (locação).
+:::
+
+:::
+
+:::
+
+## 2.1 Esperança e variância de vad's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 7:** Seja $X$ o número obtido no arremesso de um dado honesto. Um jogo consiste de você pagar $Y = \frac{1}{X}$ e receber um prêmio de $\frac{1}{\mu_X}$ independente do resultado do dado. [Será que o jogo é vantajoso para o jogador?]{.fragment fragment-index=1}
+
+[Note que $\mu_X = (1+2+\cdots+6)\frac{1}{6} = 3.5$, de onde vem que o prêmio é sempre $\frac{1}{3.5} \approx 0.2857$.]{.fragment fragment-index=2}
+
+[Por outro lado, temos
+$$\textstyle \mu_Y = E(\frac{1}{Y}) = (1+\frac{1}{2}+\cdots+\frac{1}{6})\frac{1}{6} = \frac{1}{6}\frac{(60+30+20+15+12+10)}{60} = \frac{147}{360} = 0.4083.$$]{.fragment fragment-index=3}
+
+[Assim, isso significa, em média, pagar $0.4083$ para jogar um jogo que oferece prêmio fixo de $0.2857$.]{.fragment fragment-index=4}
+
+:::
+
+::: fragment
+
+::: {.callout-tip}
+## Exercícios
+
+Qual seria a variância do valor pago?
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 8 {.unnumbered .unlisted}
+
+Uma loja de computadores comprou 3 computadores de certo tipo a R\$ $1000$ cada. Eles serão vendidos a R\$
+$1500$ cada. Após um período, o fabricante aceita os não vendidos por R\$ 400 cada. Seja $X$ o número de computadores vendidos e suponha que $p_X(0) = 0.1$, $p_X(1) = 0.2$, $p_X(2)=0.3$ e $p_X(3) = 0.4$. [Note que
+$$\mu_X = 0\cdot0.1 + 1\cdot0.2 + 2\cdot0.3 + 3\cdot0.4 = 2$$
+e
+$$\sigma^2_X = 0^2\cdot0.1 + 1^2\cdot0.2 + 2^2\cdot0.3 + 3^2\cdot0.4 - 2^2 = 0.2 + 4\cdot0.3 + 9\cdot0.4 - 4 = 5 - 4 = 1.$$]{.fragment}
+
+[Por sua vez, o lucro no período seria de
+$$L = h(X) = 1500X - 3000 + 400(3-X) = 1100X - 1800.$$]{.fragment}
+
+[Logo, o lucro esperado será $\mu_L = 1100\mu_x-1800 = 1100\cdot 2 - 1800 = 400$ e a variância do lucro será de $\sigma_L = 1100^2\sigma^2_X = 1100^2\cdot 1 = 1100^2$. O desvio-padrão do lucro é de $\sigma_L = \sqrt{1100^2} = 1100$.]{.fragment}
+
 ## Modelos probabilísticos discretos
 
 # Variáveis aleatórias contínuas
