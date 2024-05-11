@@ -1889,7 +1889,7 @@ Se $X \sim \text{Hip}(N,M,n)$ e $p = \frac{M}{N}$ é a proporção de itens do T
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
 **Exemplo 10 (cont.):** Se a seleção fosse realizada [**sem reposição**]{style="color:red;"}, então $X \sim \text{Hip}(N=10, M=3, n=4)$, logo a probabilidade do lote ser conforme é
-$$P(X \leq 1) = P(X=0) + P(X=1) = \frac{{3 \choose 0}{7 \choose 4}}{{10 \choose 4}} + \frac{{3 \choose 1}{7 \choose 3}}{{10 \choose 4}} = 0.1667 + 0.5 = 0.6667.$$
+$$P(X \leq 1) = P(X=0) + P(X=1) = \frac{ {3 \choose 0} {7 \choose 4} }{ {10 \choose 4} } + \frac{ {3 \choose 1} {7 \choose 3} }{ {10 \choose 4} } = 0.1667 + 0.5 = 0.6667.$$
 
 :::
 
