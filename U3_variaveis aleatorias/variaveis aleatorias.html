@@ -8,7 +8,7 @@
 <link href="variaveis aleatorias_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="variaveis aleatorias_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="variaveis aleatorias_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.3.353">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia">
   <title>Probabilidade e Estatística</title>
@@ -158,8 +158,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -1179,6 +1178,7 @@ P(X=0) + P(X=1) + P(X=2) + P(X=3) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} + \f
 <div class="columns">
 <div id="vcenter" class="column" style="width:45%;">
 <div style="text-align: center;">
+
 <table>
 <tbody><tr style="border-top:solid;">
 <td style="border-right:solid 1pt;">
@@ -1214,6 +1214,7 @@ Total
 <span class="math inline">\(1\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div><div id="vcenter" class="column" style="width:10%;">
@@ -1222,6 +1223,7 @@ ou ainda
 </p>
 </div><div id="vcenter" class="column" style="width:45%;">
 <div style="text-align: center;">
+
 <table>
 <tbody><tr style="border-top:solid;">
 <td style="border-right:solid 1pt;">
@@ -1257,6 +1259,7 @@ Total
 <span class="math inline">\(1\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div>
@@ -1268,6 +1271,7 @@ Total
 <div class="fragment" data-fragment-index="3">
 <p>Nesse caso, se ainda assumirmos que os lotes tem no máximo 2 itens defeituosos, podemos especificar uma fmp arbitrária para a vad <span class="math inline">\(X\)</span>, como, por exemplo</p>
 <div style="text-align: center;">
+
 <table>
 <tbody><tr style="border-top:solid;">
 <td style="border-right:solid 1pt;">
@@ -1303,6 +1307,7 @@ Total
 <span class="math inline">\(1\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div>
@@ -1328,6 +1333,7 @@ Total
 <div class="columns">
 <div id="vcenter" class="column" style="width:30%;">
 <div style="text-align: center;">
+
 <table>
 <tbody><tr style="border-top:solid;">
 <td style="border-right:solid 1pt;">
@@ -1363,6 +1369,7 @@ Total
 <span class="math inline">\(1\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div><div id="vcenter" class="column" style="width:70%;">
@@ -1575,6 +1582,7 @@ p_X(x;\theta) = \begin{cases}
 <div class="fragment" data-fragment-index="2">
 <div style="text-align: center;">
 Se a fmp de <span class="math inline">\(X\)</span> for:
+
 <table>
 <tbody><tr style="border-top:solid;">
 <td style="border-right:solid 1pt;">
@@ -1610,6 +1618,7 @@ Total
 <span class="math inline">\(1\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div>
@@ -1617,6 +1626,7 @@ Total
 <div class="fragment" data-fragment-index="3">
 <div style="text-align: center;">
 A fmp de <span class="math inline">\(Y\)</span> será:
+
 <table>
 <tbody><tr style="border-top:solid;">
 <td style="border-right:solid 1pt;">
@@ -1646,6 +1656,7 @@ Total
 <span class="math inline">\(1\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div>
@@ -1726,7 +1737,7 @@ Total
 <section id="esperança-e-variância-de-vads-8" class="slide level2 unnumbered unlisted">
 <h2>2.1 Esperança e variância de vad’s</h2>
 <div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
-<p><strong>Exemplo 6 (cont.):</strong> Suponha agora que <span class="math inline">\(p_2 = \frac{\alpha}{4}\)</span>, <span class="math inline">\(p_{-2} = \frac{1-\alpha}{4}\)</span> e <span class="math inline">\(p_0 = \frac{1}{2}\)</span>, com <span class="math inline">\(0 &lt; \alpha &lt; 1\)</span>. <span class="fragment">Então, <span class="math display">\[\textstyle E(X) = \mu = -2\frac{1-\alpha}{4} + 2\frac{\alpha}{4} = \alpha - \frac{1}{2}.\]</span></span> <span class="fragment">Então, a variância é dada por <span class="math display">\[\textstyle V(X) = \sigma^2 = \sum_{x}(x - \mu)^2\cdot p_X(x) = \sum_{x}[x-(\alpha - \frac{1}{2})]^2 p_X(x).\]</span></span> <span class="fragment">Depois de algumas álgebras obtemos <span class="math inline">\(\sigma^2_X = 1-(\alpha-\frac{1}{2})^2\)</span>.</span></p>
+<p><strong>Exemplo 6 (cont.):</strong> Suponha agora que <span class="math inline">\(p_2 = \frac{\alpha}{2}\)</span>, <span class="math inline">\(p_{-2} = \frac{1-\alpha}{2}\)</span> e <span class="math inline">\(p_0 = \frac{1}{2}\)</span>, com <span class="math inline">\(0 &lt; \alpha &lt; 1\)</span>. <span class="fragment">Então, <span class="math display">\[\textstyle E(X) = \mu = -2\frac{1-\alpha}{2} + 2\frac{\alpha}{2} = 2\alpha - 1.\]</span></span> <span class="fragment">Então, a variância é dada por <span class="math display">\[\textstyle V(X) = \sigma^2 = \sum_{x}(x - \mu)^2\cdot p_X(x) = \sum_{x}[x-(2\alpha - 1)]^2 p_X(x).\]</span></span> <span class="fragment">Depois de algumas álgebras obtemos <span class="math inline">\(\sigma^2_X = 1+4\alpha(1-\alpha)\)</span>.</span></p>
 </div>
 <div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
@@ -1786,7 +1797,7 @@ Total
 <div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <p><strong>Exemplo 7:</strong> Seja <span class="math inline">\(X\)</span> o número obtido no arremesso de um dado honesto. Um jogo consiste de você pagar <span class="math inline">\(Y = \frac{1}{X}\)</span> e receber um prêmio de <span class="math inline">\(\frac{1}{\mu_X}\)</span> independente do resultado do dado. <span class="fragment" data-fragment-index="1">Será que o jogo é vantajoso para o jogador?</span></p>
 <p><span class="fragment" data-fragment-index="2">Note que <span class="math inline">\(\mu_X = (1+2+\cdots+6)\frac{1}{6} = 3.5\)</span>, de onde vem que o prêmio é sempre <span class="math inline">\(\frac{1}{3.5} \approx 0.2857\)</span>.</span></p>
-<p><span class="fragment" data-fragment-index="3">Por outro lado, temos <span class="math display">\[\textstyle \mu_Y = E(\frac{1}{Y}) = (1+\frac{1}{2}+\cdots+\frac{1}{6})\frac{1}{6} = \frac{1}{6}\frac{(60+30+20+15+12+10)}{60} = \frac{147}{360} = 0.4083.\]</span></span></p>
+<p><span class="fragment" data-fragment-index="3">Por outro lado, temos <span class="math display">\[\textstyle \mu_Y = E(Y) = E(\frac{1}{X}) = (1+\frac{1}{2}+\cdots+\frac{1}{6})\frac{1}{6} = \frac{1}{6}\frac{(60+30+20+15+12+10)}{60} = \frac{147}{360} = 0.4083.\]</span></span></p>
 <p><span class="fragment" data-fragment-index="4">Assim, isso significa, em média, pagar <span class="math inline">\(0.4083\)</span> para jogar um jogo que oferece prêmio fixo de <span class="math inline">\(0.2857\)</span>.</span></p>
 </div>
 <div class="fragment">
@@ -1811,6 +1822,600 @@ Total
 </section>
 <section id="modelos-probabilísticos-discretos" class="slide level2" data-number="2.2">
 <h2><span class="header-section-number">2.2</span> Modelos probabilísticos discretos</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Em muitas situações, lidamos com experimentos cujo resultado é dicotômico (possui apenas dois resultados) ou pode ser dicotomizado.</p>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 9:</strong> Um exercício possui 5 alternativas de resposta. Um estudante decide responder o exercício aleatoriamente. Duas possíveis formas de escrever o espaço amostral são:</p>
+
+<table>
+<tbody><tr class="fragment">
+<td>
+<span class="math inline">\(\Omega = \{a, b, c, d, e\}\)</span>
+</td>
+<td>
+(do ponto de vista de todas alternativas possíveis)
+</td>
+</tr>
+<tr class="fragment" style="border-bottom:none;">
+<td>
+<span class="math inline">\(\Omega = \{s,f\}\)</span>
+</td>
+<td>
+(do ponto de vista de se a alternativa está correta (<span class="math inline">\(s\)</span>) ou errada <span class="math inline">\(f\)</span>)
+</td>
+</tr>
+
+</tbody></table>
+<p><span class="fragment">Note que o segundo espaço amostral é escrita de maneira dicotomizada.</span></p>
+</div>
+</section>
+<section id="modelos-probabilísticos-discretos-1" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Dizemos que um experimento aleatório é um experimento de Bernoulli se seu espaço amostral é dicotômico e pode ser escrito como <span class="math inline">\(\Omega = \{s,f\}\)</span>, em que costumamos denominar <span class="math inline">\(s =\)</span> sucesso e <span class="math inline">\(f =\)</span> fracasso. Normalmente, denotamos a probabilidade de sucesso por <span class="math inline">\(P(\{s\}) = p\)</span>, <span class="math inline">\(0\leq p\leq 1\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Num experimento de Bernoulli com <span class="math inline">\(P(\{s\}) = p\)</span>, podemos definir a vad <span class="math display">\[X = \begin{cases}
+1, &amp; \text{ se } \ \ s;\\
+0, &amp; \text{ se } \ \ f.
+\end{cases}\]</span> Nesse caso, dizemos que <span class="math inline">\(X\)</span> tem distribuição <strong>Bernoulli</strong> com probabilidade de sucesso <span class="math inline">\(p\)</span> e usamos a notação <span class="math inline">\(X \sim \text{Ber}(p)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-discretos-2" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade</strong></p>
+</div>
+<div class="callout-content">
+<p>Se <span class="math inline">\(X \sim \text{Ber}(p)\)</span>, então</p>
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\mu = E(X) = p\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(\sigma^2 = V(X) = p(1-p).\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 9 (cont.):</strong> Defina a vad <span class="math inline">\(X\)</span> como <span class="math inline">\(X = 1\)</span>, se a alternativa está correta, e <span class="math inline">\(X = 0\)</span>, se a alternativa está errada. Então <span class="math inline">\(X \sim \text{Ber}(p)\)</span>, com <span class="math inline">\(p = \frac{1}{5}\)</span>.</p>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">No Exemplo 9, definimos como sucesso o aluno acertar a questão, mas esse não precisa ser o caso. A classificação do que será entendido como <strong>sucesso</strong> dependerá do problema em questão.</li>
+<li class="fragment">O experimento de Bernoulli pode ser utilizado para construção de vad’s mais complexas.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-18" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-9-cont.">Exemplo 9 (cont.)</h3>
+<p>Se o estudante responde aleatoriamente uma prova com 4 exercícios de 5 alternativas cada, tratam-se de 4 realizações <strong>independentes</strong> de um experimento de Bernoulli com <span class="math inline">\(P(\{s\}) = p = \frac{1}{5}\)</span>.</p>
+<div class="fragment" data-fragment-index="1">
+<p>Defina <span class="math inline">\(X =\)</span> “número de exercícios respondidos corretamente”. Note que <span class="math inline">\(\text{Im}(X) = \{0,1,2,3,4\}\)</span>. A fmp de <span class="math inline">\(X\)</span> é dada por</p>
+
+<table>
+<tbody><tr>
+<td style="border-top:solid;border-bottom:solid;">
+<span class="math inline">\(\omega\)</span>
+</td>
+<td style="text-align:center;border-top:solid;border-bottom:solid">
+<span class="math inline">\(X(\omega)\)</span>
+</td>
+<td style="text-align:center;border-top:solid;border-bottom:solid">
+<span class="math inline">\(P(\{\omega\})\)</span>
+</td>
+<td style="text-align:center;border-top:none;border-bottom:none;visibility:hidden;">
+<span class="math inline">\(P(X = x)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="fragment" data-fragment-index="2"><span class="math inline">\((ffff)\)</span></span>
+</td>
+<td style="text-align:center;">
+<span class="fragment" data-fragment-index="2"><span class="math inline">\(0\)</span></span>
+</td>
+<td style="text-align:center;">
+<span class="fragment" data-fragment-index="2"><span class="math inline">\(p^0(1-p)^4\)</span></span>
+</td>
+<td style="text-align:center;visibility:hidden;">
+<span class="math inline">\(p^0(1-p)^4\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="fragment" data-fragment-index="3"><span class="math inline">\((sfff)\)</span>, <span class="math inline">\((fsff)\)</span>, <span class="math inline">\((ffsf)\)</span>, <span class="math inline">\((fffs)\)</span></span>
+</td>
+<td style="text-align:center;">
+<span class="fragment" data-fragment-index="3"><span class="math inline">\(1\)</span></span>
+</td>
+<td style="text-align:center;">
+<span class="fragment" data-fragment-index="3"><span class="math inline">\(p^1(1-p)^3\)</span></span>
+</td>
+<td style="text-align:center;visibility:hidden;">
+<span class="math inline">\(4p^1(1-p)^3\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="fragment" data-fragment-index="4"><span class="math inline">\((ssff)\)</span>, <span class="math inline">\((sfsf)\)</span>, <span class="math inline">\((sffs)\)</span>, <span class="math inline">\((fssf)\)</span>, <span class="math inline">\((fsfs)\)</span>, <span class="math inline">\((ffss)\)</span></span>
+</td>
+<td style="text-align:center;">
+<span class="fragment" data-fragment-index="4"><span class="math inline">\(2\)</span></span>
+</td>
+<td style="text-align:center;">
+<span class="fragment" data-fragment-index="4"><span class="math inline">\(p^2(1-p)^2\)</span></span>
+</td>
+<td style="text-align:center;visibility:hidden;">
+<span class="math inline">\(6p^2(1-p)^2\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="fragment" data-fragment-index="5"><span class="math inline">\((sssf)\)</span>, <span class="math inline">\((ssfs)\)</span>, <span class="math inline">\((sfss)\)</span>, <span class="math inline">\((fsss)\)</span></span>
+</td>
+<td style="text-align:center;">
+<span class="fragment" data-fragment-index="5"><span class="math inline">\(3\)</span></span>
+</td>
+<td style="text-align:center;">
+<span class="fragment" data-fragment-index="5"><span class="math inline">\(p^3(1-p)^1\)</span></span>
+</td>
+<td style="text-align:center;visibility:hidden;">
+<span class="math inline">\(4p^3(1-p)^1\)</span>
+</td>
+</tr>
+<tr style="border-bottom:none">
+<td style="border-bottom:solid">
+<span class="fragment" data-fragment-index="6"><span class="math inline">\((ssss)\)</span></span>
+</td>
+<td style="text-align:center;border-bottom:solid">
+<span class="fragment" data-fragment-index="6"><span class="math inline">\(4\)</span></span>
+</td>
+<td style="text-align:center;border-bottom:solid">
+<span class="fragment" data-fragment-index="6"><span class="math inline">\(p^4(1-p)^0\)</span></span>
+</td>
+<td style="text-align:center;border-bottom:none;visibility:hidden;">
+<span class="math inline">\(p^4(1-p)^0\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+<p><span style="visibility:hidden">Nesse caso, dizemos que <span class="math inline">\(X\)</span> tem distribuição <strong>Binomial</strong> com <span class="math inline">\(4\)</span> repetições e probabilidade de sucesso <span class="math inline">\(\frac{1}{5}\)</span>.</span></p>
+</section>
+<section id="section-19" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-9-cont.-1">Exemplo 9 (cont.)</h3>
+<p>Se o estudante responde aleatoriamente uma prova com 4 exercícios de 5 alternativas cada, tratam-se de 4 realizações <strong>independentes</strong> de um experimento de Bernoulli com <span class="math inline">\(P(\{s\}) = p = \frac{1}{5}\)</span>.</p>
+<p>Defina <span class="math inline">\(X =\)</span> “número de exercícios respondidos corretamente”. Note que <span class="math inline">\(\text{Im}(X) = \{0,1,2,3,4\}\)</span>. A fmp de <span class="math inline">\(X\)</span> é dada por</p>
+
+<table>
+<tbody><tr>
+<td style="border-top:solid;border-bottom:solid;">
+<span class="math inline">\(\omega\)</span>
+</td>
+<td style="text-align:center;border-top:solid;border-bottom:solid">
+<span class="math inline">\(X(\omega)\)</span>
+</td>
+<td style="text-align:center;border-top:solid;border-bottom:solid">
+<span class="math inline">\(P(\{\omega\})\)</span>
+</td>
+<td style="text-align:center;border-top:solid;border-bottom:solid;background-color:lightgray;">
+<span class="math inline">\(P(X = x)\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\((ffff)\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(0\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(p^0(1-p)^4\)</span>
+</td>
+<td style="text-align:center;background-color:lightgray;">
+<span class="math inline">\(p^0(1-p)^4\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\((sfff)\)</span>, <span class="math inline">\((fsff)\)</span>, <span class="math inline">\((ffsf)\)</span>, <span class="math inline">\((fffs)\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(1\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(p^1(1-p)^3\)</span>
+</td>
+<td style="text-align:center;background-color:lightgray;">
+<span class="math inline">\(4p^1(1-p)^3\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\((ssff)\)</span>, <span class="math inline">\((sfsf)\)</span>, <span class="math inline">\((sffs)\)</span>, <span class="math inline">\((fssf)\)</span>, <span class="math inline">\((fsfs)\)</span>, <span class="math inline">\((ffss)\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(2\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(p^2(1-p)^2\)</span>
+</td>
+<td style="text-align:center;background-color:lightgray;">
+<span class="math inline">\(6p^2(1-p)^2\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="math inline">\((sssf)\)</span>, <span class="math inline">\((ssfs)\)</span>, <span class="math inline">\((sfss)\)</span>, <span class="math inline">\((fsss)\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(3\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(p^3(1-p)^1\)</span>
+</td>
+<td style="text-align:center;background-color:lightgray;">
+<span class="math inline">\(4p^3(1-p)^1\)</span>
+</td>
+</tr>
+<tr style="border-bottom:none">
+<td style="border-bottom:solid">
+<span class="math inline">\((ssss)\)</span>
+</td>
+<td style="text-align:center;border-bottom:solid">
+<span class="math inline">\(4\)</span>
+</td>
+<td style="text-align:center;border-bottom:solid">
+<span class="math inline">\(p^4(1-p)^0\)</span>
+</td>
+<td style="text-align:center;border-bottom:solid;background-color:lightgray;">
+<span class="math inline">\(p^4(1-p)^0\)</span>
+</td>
+</tr>
+
+</tbody></table>
+<div class="fragment">
+<p>Nesse caso, dizemos que <span class="math inline">\(X\)</span> tem distribuição <strong>Binomial</strong> com <span class="math inline">\(4\)</span> repetições e probabilidade de sucesso <span class="math inline">\(\frac{1}{5}\)</span>.</p>
+</div>
+</section>
+<section id="modelos-probabilísticos-discretos-3" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Considere <span class="math inline">\(n\)</span> repetições independentes de um experimento de Bernoulli com probabilidade de sucesso <span class="math inline">\(p\)</span> e seja <span class="math inline">\(X =\)</span> “número de sucessos nas <span class="math inline">\(n\)</span> repetições”. Dizemos que <span class="math inline">\(X\)</span> tem distribuição <strong>Binomial</strong> com <span class="math inline">\(n\)</span> repetições e probabilidade de sucesso <span class="math inline">\(p\)</span>, denotada por <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>. A fmp de <span class="math inline">\(X\)</span> é <span class="math display">\[p_X(x) = P(X = x) = {n \choose x} p^x (1-p)^{n-x}, \ \ x=0,1,2,\ldots,n.\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Note que, se <span class="math inline">\(X_i \sim \text{Ber}(p)\)</span> é a va Bernoulli associada à <span class="math inline">\(i\)</span>-ésima repetição, então podemos escrever <span class="math inline">\(X = \sum_{i=1}^nX_i\)</span>. Isto é, a va Binomial pode ser vista como soma de <span class="math inline">\(n\)</span> va’s Bernoulli indendentes com a mesma probabilidade de sucesso.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-discretos-4" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade</strong></p>
+</div>
+<div class="callout-content">
+<p>Se <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>, então</p>
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\mu = E(X) = np\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(\sigma^2 = V(X) = np(1-p).\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 9 (cont.):</strong> Como a prova tem <span class="math inline">\(n=4\)</span> questões, cada uma com <span class="math inline">\(5\)</span> alternativas (<span class="math inline">\(p=\frac{1}{5}\)</span>), temos que <span class="math inline">\(\mu = E(X) = np = 4 \cdot \frac{1}{5} = 0.8\)</span> e <span class="math inline">\(\sigma^2 = V(X) = np(1-p) = 4 \cdot \frac{1}{5} \cdot \frac{4}{5} = 0.64\)</span>. Logo, <span class="math inline">\(\sigma = 0.8\)</span>. Portanto, em média, o estudante acerta menos do que 1 das 4 questões.</p>
+<div class="fragment">
+<p>A probabilidade de ele acertar mais da metade da prova é <span class="math display">\[\textstyle P(X &gt; 2) = P(X = 3) + P(X = 4) = {4 \choose 3} (\frac{1}{5})^3 (\frac{4}{5})^{1} + {4 \choose 4} (\frac{1}{5})^4 (\frac{4}{5})^{0} = 0.0256 + 0.0016 = 0.0272.\]</span></p>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-discretos-5" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="modelos-probabilísticos-discretos-6" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="modelos-probabilísticos-discretos-7" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch quarto-figure-center"></section>
+<section id="modelos-probabilísticos-discretos-8" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 10:</strong> Um lote contém 10 peças, sendo 3 defeituosas. Serão sorteadas para inspeção 4 peças do lote. Seja <span class="math inline">\(X =\)</span> “número de peças defeituosas na amostra”. Se a amostra resulta em no máximo 1 peça defeituosa, o lote é classificado como conforme.</p>
+<p>Se a seleção é feita <span style="color:red;"><strong>com reposição</strong></span>, então estamos contando o número de sucessos (peças defeituosas) em 4 repetições independentes de um experimento de Bernoulli. Assim, <span class="math inline">\(X \sim \text{Bin}(n=4, p=\frac{3}{10})\)</span>. Logo, a probabilidade do lote ser conforme é <span class="math display">\[\textstyle P(X \leq 1) = P(X = 0) + P(X = 1) = {4 \choose 0}(\frac{7}{10})^4 + {4 \choose 1}(\frac{3}{10})(\frac{7}{10})^3 = 0.2401 + 0.4116 = 0.6517.\]</span></p>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>No Exemplo 10, a distribuição Binomial só foi apropriada para a variável <span class="math inline">\(X\)</span> pelo fato da seleção ser <strong>com reposição</strong>. Como veremos a seguir, <span class="math inline">\(X\)</span> terá outra distribuição quando a seleção é <strong>sem reposição</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-20" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-11">Exemplo 11</h3>
+<p>Uma urna contém <span class="math inline">\(M\)</span> objetos do Tipo 1 e <span class="math inline">\(N-M\)</span> do Tipo 2. Desses, serão selecionados <span class="math inline">\(n\)</span> <span style="color:red;"><strong>sem reposição</strong></span>. Seja <span class="math inline">\(X =\)</span> “objetos do Tipo 1 nos <span class="math inline">\(n\)</span> selecionados”. <span class="fragment" data-fragment-index="1">Vamos determinar <span class="math inline">\(p_X(x) = P(X=x)\)</span>.</span> <span class="fragment" data-fragment-index="2">Abaixo são apresentadas a quantidade de maneiras que observamos <span class="math inline">\(x\)</span> objetos do Tipo 1 e <span class="math inline">\(n-x\)</span> do Tipo 2:</span></p>
+<div class="fragment" data-fragment-index="2">
+
+<table>
+<tbody><tr style="border-top:solid;border-bottom:solid">
+<td style="border-right:solid 1pt">
+Objeto
+</td>
+<td style="border-right:solid 1pt;text-align:center" colspan="4">
+Tipo 1
+</td>
+<td style="text-align:center" colspan="4">
+Tipo 2
+</td>
+</tr>
+<tr>
+<td style="border-right:solid 1pt">
+Retirada
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(1\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(2\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(\cdots\)</span>
+</td>
+<td style="border-right:solid 1pt;text-align:center">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(x+1\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(x+2\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(\cdots\)</span>
+</td>
+<td style="text-align:center">
+<span class="math inline">\(n\)</span>
+</td>
+</tr>
+<tr style="border-top:solid 1pt;border-bottom:solid">
+<td style="border-right:solid 1pt">
+Maneiras
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(M\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(M-1\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(\cdots\)</span>
+</td>
+<td style="border-right:solid 1pt;text-align:center">
+<span class="math inline">\(M-x+1\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(N-M\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(N-M-1\)</span>
+</td>
+<td style="border-right:dotted 1pt;text-align:center">
+<span class="math inline">\(\cdots\)</span>
+</td>
+<td style="text-align:center">
+<span class="math inline">\(N-M-n+x+1\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+<p><span class="fragment" data-fragment-index="3">Pela regra do produto, obtemos <span class="math inline">\(\frac{M!}{(M-x)!}\frac{(N-M)!}{(N-M-(n-x))!}\)</span>.</span> <span class="fragment" data-fragment-index="4">Como a ordem em que os objetos são selecionados não importa, precisamos dividir essa quantidade pelas <span class="math inline">\(x!\)</span> permutações dos objetos do Tipo 1 e pelas <span class="math inline">\((n-x)!\)</span> do Tipo 2, o que resulta em <span class="math inline">\({M \choose x}{N-M \choose n-x}\)</span> maneiras favoráveis a <span class="math inline">\(\{X = x\}\)</span>.</span> <span class="fragment" data-fragment-index="5">Sem nenhuma restrição, obtemos <span class="math inline">\(N(N-1)\cdots(N-n+1) = \frac{N!}{(N-n)!}\)</span>.</span> <span class="fragment" data-fragment-index="6">Descontando as <span class="math inline">\(n!\)</span> permutações, temos <span class="math inline">\({N \choose n}\)</span> elementos em <span class="math inline">\(\Omega\)</span>.</span> <span class="fragment" data-fragment-index="7">Assim, <span class="math display">\[p_X(x) = P(X = x) = \frac{{M \choose x}{N-M \choose n-x}}{{N \choose n}}, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.\]</span></span></p>
+</section>
+<section id="modelos-probabilísticos-discretos-9" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Sejam <span class="math inline">\(N\)</span> itens, <span class="math inline">\(M\)</span> do Tipo 1 e <span class="math inline">\(N-M\)</span> do Tipo 2, dos quais <span class="math inline">\(n\)</span> são selecionados <strong>sem reposição</strong>. Seja <span class="math inline">\(X =\)</span> “itens do Tipo 1 na amostra”. Dizemos que <span class="math inline">\(X\)</span> tem distribuição hipergeométrica com parâmetros <span class="math inline">\(N\)</span> (total), <span class="math inline">\(M\)</span> (itens do Tipo 1) e <span class="math inline">\(n\)</span> (tamanho da amostra) e denotamos por <span class="math inline">\(X \sim \text{Hip}(N,M,n)\)</span>. A fmp de <span class="math inline">\(X\)</span> é <span class="math display">\[p_X(x) = \frac{{M \choose x}{N-M \choose n-x}}{{N \choose n}}, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade</strong></p>
+</div>
+<div class="callout-content">
+<p>Se <span class="math inline">\(X \sim \text{Hip}(N,M,n)\)</span> e <span class="math inline">\(p = \frac{M}{N}\)</span> é a proporção de itens do Tipo 1, então</p>
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\mu = E(X) = np\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(\sigma^2 = V(X) = np(1-p)(\frac{N-n}{N-1}).\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-discretos-10" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 10 (cont.):</strong> Se a seleção fosse realizada <span style="color:red;"><strong>sem reposição</strong></span>, então <span class="math inline">\(X \sim \text{Hip}(N=10, M=3, n=4)\)</span>, logo a probabilidade do lote ser conforme é <span class="math display">\[P(X \leq 1) = P(X=0) + P(X=1) = \frac{{3 \choose 0}{7 \choose 4}}{{10 \choose 4}} + \frac{{3 \choose 1}{7 \choose 3}}{{10 \choose 4}} = 0.1667 + 0.5 = 0.6667.\]</span></p>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Note o efeito do tipo de seleção em algumas características da vad <span class="math inline">\(X\)</span>:</p>
+
+<table style="margin-bottom: 12pt !important;">
+<tbody><tr style="border-top:solid;border-bottom:solid">
+<td style="border-right:solid 1pt;">
+Seleção
+</td>
+<td>
+<span class="math inline">\(P(X \leq 1)\)</span>
+</td>
+<td>
+<span class="math inline">\(E(X)\)</span>
+</td>
+<td>
+<span class="math inline">\(V(X)\)</span>
+</td>
+</tr>
+<tr>
+<td style="border-right:solid 1pt;">
+Com reposição
+</td>
+<td>
+<span class="math inline">\(0.6517\)</span>
+</td>
+<td>
+<span class="math inline">\(1.2\ \ [np]\)</span>
+</td>
+<td>
+<span class="math inline">\(0.84\ \ [np(1-p)]\)</span>
+</td>
+</tr>
+<tr style="border-bottom:solid;">
+<td style="border-right:solid 1pt;">
+Sem reposição
+</td>
+<td>
+<span class="math inline">\(0.6667\)</span>
+</td>
+<td>
+<span class="math inline">\(1.2 \ \ [np]\)</span>
+</td>
+<td>
+<span class="math inline">\(0.56 \ \ [np(1-p)(\frac{N-n}{N-1})]\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-discretos-11" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div class="cell quarto-layout-panel" data-fig.ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-4-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-4-2.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="variáveis-aleatórias-contínuas" class="title-slide slide level1 center" data-number="3">
@@ -1917,10 +2522,8 @@ Total
 
 <section id="fim-1" class="title-slide slide level1 unnumbered unlisted center">
 <h1>FIM</h1>
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><a href="../index.html">Voltar 🔙</a></p>
-</div>
 </div>
 </section>
     </div>
@@ -1949,6 +2552,7 @@ Total
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -2136,6 +2740,44 @@ Total
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -2212,27 +2854,10 @@ Total
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -2242,17 +2867,8 @@ Total
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -2266,11 +2882,7 @@ Total
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {

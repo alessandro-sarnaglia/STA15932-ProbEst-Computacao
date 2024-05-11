@@ -1439,11 +1439,11 @@ Note que a variância é definida como a esperança de $h(X) = (X-\mu)^2$. Isto 
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo 6 (cont.):** Suponha agora que $p_2 = \frac{\alpha}{4}$, $p_{-2} = \frac{1-\alpha}{4}$ e $p_0 = \frac{1}{2}$, com $0 < \alpha < 1$. [Então,
-$$\textstyle E(X) = \mu = -2\frac{1-\alpha}{4} + 2\frac{\alpha}{4} = \alpha - \frac{1}{2}.$$]{.fragment}
+**Exemplo 6 (cont.):** Suponha agora que $p_2 = \frac{\alpha}{2}$, $p_{-2} = \frac{1-\alpha}{2}$ e $p_0 = \frac{1}{2}$, com $0 < \alpha < 1$. [Então,
+$$\textstyle E(X) = \mu = -2\frac{1-\alpha}{2} + 2\frac{\alpha}{2} = 2\alpha - 1.$$]{.fragment}
 [Então, a variância é dada por
-$$\textstyle V(X) = \sigma^2 = \sum_{x}(x - \mu)^2\cdot p_X(x) = \sum_{x}[x-(\alpha - \frac{1}{2})]^2 p_X(x).$$]{.fragment}
-[Depois de algumas álgebras obtemos $\sigma^2_X = 1-(\alpha-\frac{1}{2})^2$.]{.fragment}
+$$\textstyle V(X) = \sigma^2 = \sum_{x}(x - \mu)^2\cdot p_X(x) = \sum_{x}[x-(2\alpha - 1)]^2 p_X(x).$$]{.fragment}
+[Depois de algumas álgebras obtemos $\sigma^2_X = 1+4\alpha(1-\alpha)$.]{.fragment}
 
 :::
 
@@ -1503,7 +1503,7 @@ $$\sigma_{Y}^2 = \sigma_{aX+b}^2 = a^2 \sigma_X^2.$$
 [Note que $\mu_X = (1+2+\cdots+6)\frac{1}{6} = 3.5$, de onde vem que o prêmio é sempre $\frac{1}{3.5} \approx 0.2857$.]{.fragment fragment-index=2}
 
 [Por outro lado, temos
-$$\textstyle \mu_Y = E(\frac{1}{Y}) = (1+\frac{1}{2}+\cdots+\frac{1}{6})\frac{1}{6} = \frac{1}{6}\frac{(60+30+20+15+12+10)}{60} = \frac{147}{360} = 0.4083.$$]{.fragment fragment-index=3}
+$$\textstyle \mu_Y = E(Y) = E(\frac{1}{X}) = (1+\frac{1}{2}+\cdots+\frac{1}{6})\frac{1}{6} = \frac{1}{6}\frac{(60+30+20+15+12+10)}{60} = \frac{147}{360} = 0.4083.$$]{.fragment fragment-index=3}
 
 [Assim, isso significa, em média, pagar $0.4083$ para jogar um jogo que oferece prêmio fixo de $0.2857$.]{.fragment fragment-index=4}
 
@@ -1535,6 +1535,413 @@ $$L = h(X) = 1500X - 3000 + 400(3-X) = 1100X - 1800.$$]{.fragment}
 [Logo, o lucro esperado será $\mu_L = 1100\mu_x-1800 = 1100\cdot 2 - 1800 = 400$ e a variância do lucro será de $\sigma_L = 1100^2\sigma^2_X = 1100^2\cdot 1 = 1100^2$. O desvio-padrão do lucro é de $\sigma_L = \sqrt{1100^2} = 1100$.]{.fragment}
 
 ## Modelos probabilísticos discretos
+
+::: {.callout-caution}
+## Observação
+
+Em muitas situações, lidamos com experimentos cujo resultado é dicotômico (possui apenas dois resultados) ou pode ser dicotomizado.
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 9:** Um exercício possui 5 alternativas de resposta. Um estudante decide responder o exercício aleatoriamente. Duas possíveis formas de escrever o espaço amostral são:
+
+<table>
+<tr class=fragment><td>$\Omega = \{a, b, c, d, e\}$</td> <td>(do ponto de vista de todas alternativas possíveis)</td></tr>
+<tr class=fragment style="border-bottom:none;"><td>$\Omega = \{s,f\}$</td> <td>(do ponto de vista de se a alternativa está correta ($s$) ou errada $f$)</td></tr>
+</table>
+
+[Note que o segundo espaço amostral é escrita de maneira dicotomizada.]{.fragment}
+:::
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Dizemos que um experimento aleatório é um experimento de Bernoulli se seu espaço amostral é dicotômico e pode ser escrito como $\Omega = \{s,f\}$, em que costumamos denominar $s =$ sucesso e $f =$ fracasso. Normalmente, denotamos a probabilidade de sucesso por $P(\{s\}) = p$, $0\leq p\leq 1$.
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definição
+
+Num experimento de Bernoulli com $P(\{s\}) = p$, podemos definir a vad
+$$X = \begin{cases}
+1, & \text{ se } \ \ s;\\
+0, & \text{ se } \ \ f.
+\end{cases}$$
+Nesse caso, dizemos que $X$ tem distribuição **Bernoulli** com probabilidade de sucesso $p$ e usamos a notação $X \sim \text{Ber}(p)$.
+:::
+
+:::
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade
+
+Se $X \sim \text{Ber}(p)$, então
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\mu = E(X) = p$</td> <td>e</td> <td>$\sigma^2 = V(X) = p(1-p).$</td>
+  </tr>
+</table>
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 9 (cont.):** Defina a vad $X$ como $X = 1$, se a alternativa está correta, e $X = 0$, se a alternativa está errada. Então $X \sim \text{Ber}(p)$, com $p = \frac{1}{5}$.
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. No Exemplo 9, definimos como sucesso o aluno acertar a questão, mas esse não precisa ser o caso. A classificação do que será entendido como **sucesso** dependerá do problema em questão.
+2. O experimento de Bernoulli pode ser utilizado para construção de vad's mais complexas.
+
+:::
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 9 (cont.) {.unnumbered .unlisted}
+
+Se o estudante responde aleatoriamente uma prova com 4 exercícios de 5 alternativas cada, tratam-se de 4 realizações **independentes** de um experimento de Bernoulli com $P(\{s\}) = p = \frac{1}{5}$. 
+
+::: {.fragment fragment-index=1}
+
+Defina $X =$ "número de exercícios respondidos corretamente". Note que $\text{Im}(X) = \{0,1,2,3,4\}$. A fmp de $X$ é dada por
+
+<table>
+  <tr>
+    <td style="border-top:solid;border-bottom:solid;">$\omega$</td>
+    <td style="text-align:center;border-top:solid;border-bottom:solid">$X(\omega)$</td>
+    <td style="text-align:center;border-top:solid;border-bottom:solid">$P(\{\omega\})$</td>
+    <td style="text-align:center;border-top:none;border-bottom:none;visibility:hidden;">$P(X = x)$</td>
+  </tr>
+  <tr>
+    <td>[$(ffff)$]{.fragment fragment-index=2}</td>
+    <td style="text-align:center;">[$0$]{.fragment fragment-index=2}</td>
+    <td style="text-align:center;">[$p^0(1-p)^4$]{.fragment fragment-index=2}</td>
+    <td style="text-align:center;visibility:hidden;">$p^0(1-p)^4$</td>
+  </tr>
+  <tr>
+    <td>[$(sfff)$, $(fsff)$, $(ffsf)$, $(fffs)$]{.fragment fragment-index=3}</td>
+    <td style="text-align:center;">[$1$]{.fragment fragment-index=3}</td>
+    <td style="text-align:center;">[$p^1(1-p)^3$]{.fragment fragment-index=3}</td>
+    <td style="text-align:center;visibility:hidden;">$4p^1(1-p)^3$</td>
+  </tr>
+  <tr>
+    <td>[$(ssff)$, $(sfsf)$, $(sffs)$, $(fssf)$, $(fsfs)$, $(ffss)$]{.fragment fragment-index=4}</td>
+    <td style="text-align:center;">[$2$]{.fragment fragment-index=4}</td>
+    <td style="text-align:center;">[$p^2(1-p)^2$]{.fragment fragment-index=4}</td>
+    <td style="text-align:center;visibility:hidden;">$6p^2(1-p)^2$</td>
+  </tr>
+  <tr>
+    <td>[$(sssf)$, $(ssfs)$, $(sfss)$, $(fsss)$]{.fragment fragment-index=5}</td>
+    <td style="text-align:center;">[$3$]{.fragment fragment-index=5}</td>
+    <td style="text-align:center;">[$p^3(1-p)^1$]{.fragment fragment-index=5}</td>
+    <td style="text-align:center;visibility:hidden;">$4p^3(1-p)^1$</td>
+  </tr>
+  <tr style="border-bottom:none">
+    <td style="border-bottom:solid">[$(ssss)$]{.fragment fragment-index=6}</td>
+    <td style="text-align:center;border-bottom:solid">[$4$]{.fragment fragment-index=6}</td>
+    <td style="text-align:center;border-bottom:solid">[$p^4(1-p)^0$]{.fragment fragment-index=6}</td>
+    <td style="text-align:center;border-bottom:none;visibility:hidden;">$p^4(1-p)^0$</td>
+  </tr>
+</table>
+
+:::
+
+[Nesse caso, dizemos que $X$ tem distribuição **Binomial** com $4$ repetições e probabilidade de sucesso $\frac{1}{5}$.]{style="visibility:hidden"}
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 9 (cont.) {.unnumbered .unlisted}
+
+Se o estudante responde aleatoriamente uma prova com 4 exercícios de 5 alternativas cada, tratam-se de 4 realizações **independentes** de um experimento de Bernoulli com $P(\{s\}) = p = \frac{1}{5}$. 
+
+Defina $X =$ "número de exercícios respondidos corretamente". Note que $\text{Im}(X) = \{0,1,2,3,4\}$. A fmp de $X$ é dada por
+
+<table>
+  <tr>
+    <td style="border-top:solid;border-bottom:solid;">$\omega$</td>
+    <td style="text-align:center;border-top:solid;border-bottom:solid">$X(\omega)$</td>
+    <td style="text-align:center;border-top:solid;border-bottom:solid">$P(\{\omega\})$</td>
+    <td style="text-align:center;border-top:solid;border-bottom:solid;background-color:lightgray;">$P(X = x)$</td>
+  </tr>
+  <tr>
+    <td>$(ffff)$</td>
+    <td style="text-align:center;">$0$</td>
+    <td style="text-align:center;">$p^0(1-p)^4$</td>
+    <td style="text-align:center;background-color:lightgray;">$p^0(1-p)^4$</td>
+  </tr>
+  <tr>
+    <td>$(sfff)$, $(fsff)$, $(ffsf)$, $(fffs)$</td>
+    <td style="text-align:center;">$1$</td>
+    <td style="text-align:center;">$p^1(1-p)^3$</td>
+    <td style="text-align:center;background-color:lightgray;">$4p^1(1-p)^3$</td>
+  </tr>
+  <tr>
+    <td>$(ssff)$, $(sfsf)$, $(sffs)$, $(fssf)$, $(fsfs)$, $(ffss)$</td>
+    <td style="text-align:center;">$2$</td>
+    <td style="text-align:center;">$p^2(1-p)^2$</td>
+    <td style="text-align:center;background-color:lightgray;">$6p^2(1-p)^2$</td>
+  </tr>
+  <tr>
+    <td>$(sssf)$, $(ssfs)$, $(sfss)$, $(fsss)$</td>
+    <td style="text-align:center;">$3$</td>
+    <td style="text-align:center;">$p^3(1-p)^1$</td>
+    <td style="text-align:center;background-color:lightgray;">$4p^3(1-p)^1$</td>
+  </tr>
+  <tr style="border-bottom:none">
+    <td style="border-bottom:solid">$(ssss)$</td>
+    <td style="text-align:center;border-bottom:solid">$4$</td>
+    <td style="text-align:center;border-bottom:solid">$p^4(1-p)^0$</td>
+    <td style="text-align:center;border-bottom:solid;background-color:lightgray;">$p^4(1-p)^0$</td>
+  </tr>
+</table>
+
+::: fragment
+
+Nesse caso, dizemos que $X$ tem distribuição **Binomial** com $4$ repetições e probabilidade de sucesso $\frac{1}{5}$.
+
+:::
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Considere $n$ repetições independentes de um experimento de Bernoulli com probabilidade de sucesso $p$ e seja $X =$ "número de sucessos nas $n$ repetições". Dizemos que $X$ tem distribuição **Binomial** com $n$ repetições e probabilidade de sucesso $p$, denotada por $X \sim \text{Bin}(n,p)$. A fmp de $X$ é
+$$p_X(x) = P(X = x) = {n \choose x} p^x (1-p)^{n-x}, \ \ x=0,1,2,\ldots,n.$$
+:::
+
+::: {.callout-caution}
+## Observação
+
+Note que, se $X_i \sim \text{Ber}(p)$ é a va Bernoulli associada à $i$-ésima repetição, então podemos escrever $X = \sum_{i=1}^nX_i$. Isto é, a va Binomial pode ser vista como soma de $n$ va's Bernoulli indendentes com a mesma probabilidade de sucesso.
+:::
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade
+
+Se $X \sim \text{Bin}(n,p)$, então
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\mu = E(X) = np$</td> <td>e</td> <td>$\sigma^2 = V(X) = np(1-p).$</td>
+  </tr>
+</table>
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 9 (cont.):** Como a prova tem $n=4$ questões, cada uma com $5$ alternativas ($p=\frac{1}{5}$), temos que $\mu = E(X) = np = 4 \cdot \frac{1}{5} = 0.8$ e $\sigma^2 = V(X) = np(1-p) = 4 \cdot \frac{1}{5} \cdot \frac{4}{5} = 0.64$. Logo, $\sigma = 0.8$. Portanto, em média, o estudante acerta menos do que 1 das 4 questões.
+
+::: fragment
+
+A probabilidade de ele acertar mais da metade da prova é
+$$\textstyle P(X > 2) = P(X = 3) + P(X = 4) = {4 \choose 3} (\frac{1}{5})^3 (\frac{4}{5})^{1} + {4 \choose 4} (\frac{1}{5})^4 (\frac{4}{5})^{0} = 0.0256 + 0.0016 = 0.0272.$$
+
+:::
+
+:::
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+```{r fig.width=10, fig.align='center'}
+n <- 20; x <- 0:n; p <- 0.2
+par(family = "Times New Roman")
+plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(p),")")), side = 3, line = 1.3, cex = 2)
+```
+
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+```{r fig.width=10, fig.align='center'}
+n <- 20; x <- 0:n; p <- 0.5
+par(family = "Times New Roman")
+plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(p),")")), side = 3, line = 1.3, cex = 2)
+```
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+```{r fig.width=10, fig.align='center'}
+n <- 20; x <- 0:n; p <- 0.8
+par(family = "Times New Roman")
+plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(p),")")), side = 3, line = 1.3, cex = 2)
+```
+
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 10:** Um lote contém 10 peças, sendo 3 defeituosas. Serão sorteadas para inspeção 4 peças do lote. Seja $X =$ "número de peças defeituosas na amostra". Se a amostra resulta em no máximo 1 peça defeituosa, o lote é classificado como conforme.
+
+Se a seleção é feita [**com reposição**]{style='color:red;'}, então estamos contando o número de sucessos (peças defeituosas) em 4 repetições independentes de um experimento de Bernoulli. Assim, $X \sim \text{Bin}(n=4, p=\frac{3}{10})$. Logo, a probabilidade do lote ser conforme é
+$$\textstyle P(X \leq 1) = P(X = 0) + P(X = 1) = {4 \choose 0}(\frac{7}{10})^4 + {4 \choose 1}(\frac{3}{10})(\frac{7}{10})^3 = 0.2401 + 0.4116 = 0.6517.$$
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+No Exemplo 10, a distribuição Binomial só foi apropriada para a variável $X$ pelo fato da seleção ser **com reposição**. Como veremos a seguir, $X$ terá outra distribuição quando a seleção é **sem reposição**.
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 11 {.unnumbered .unlisted}
+
+Uma urna contém $M$ objetos do Tipo 1 e $N-M$ do Tipo 2. Desses, serão selecionados $n$ [**sem reposição**]{style="color:red;"}. Seja $X =$ "objetos do Tipo 1 nos $n$ selecionados". [Vamos determinar $p_X(x) = P(X=x)$.]{.fragment fragment-index=1} [Abaixo são apresentadas a quantidade de maneiras que observamos $x$ objetos do Tipo 1 e $n-x$ do Tipo 2:]{.fragment fragment-index=2}
+
+::: {.fragment fragment-index=2}
+
+<table>
+  <tr style='border-top:solid;border-bottom:solid'>
+    <td style='border-right:solid 1pt'>Objeto</td>
+    <td style='border-right:solid 1pt;text-align:center' colspan=4>Tipo 1</td>
+    <td style='text-align:center' colspan=4>Tipo 2</td>
+  </tr>
+  <tr>
+    <td style='border-right:solid 1pt'>Retirada</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$1$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$2$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$\cdots$</td>
+    <td style='border-right:solid 1pt;text-align:center'>$x$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$x+1$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$x+2$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$\cdots$</td>
+    <td style='text-align:center'>$n$</td>
+  </tr>
+  <tr style='border-top:solid 1pt;border-bottom:solid'>
+    <td style='border-right:solid 1pt'>Maneiras</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$M$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$M-1$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$\cdots$</td>
+    <td style='border-right:solid 1pt;text-align:center'>$M-x+1$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$N-M$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$N-M-1$</td>
+    <td style='border-right:dotted 1pt;text-align:center'>$\cdots$</td>
+    <td style='text-align:center'>$N-M-n+x+1$</td>
+  </tr>
+</table>
+
+:::
+
+[Pela regra do produto, obtemos $\frac{M!}{(M-x)!}\frac{(N-M)!}{(N-M-(n-x))!}$.]{.fragment fragment-index=3} [Como a ordem em que os objetos são selecionados não importa, precisamos dividir essa quantidade pelas $x!$ permutações dos objetos do Tipo 1 e pelas $(n-x)!$ do Tipo 2, o que resulta em ${M \choose x}{N-M \choose n-x}$ maneiras favoráveis a $\{X = x\}$.]{.fragment fragment-index=4} [Sem nenhuma restrição, obtemos $N(N-1)\cdots(N-n+1) = \frac{N!}{(N-n)!}$.]{.fragment fragment-index=5} [Descontando as $n!$ permutações, temos ${N \choose n}$ elementos em $\Omega$.]{.fragment fragment-index=6} [Assim,
+$$p_X(x) = P(X = x) = \frac{{M \choose x}{N-M \choose n-x}}{{N \choose n}}, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.$$]{.fragment fragment-index=7}
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Sejam $N$ itens, $M$ do Tipo 1 e $N-M$ do Tipo 2, dos quais $n$ são selecionados **sem reposição**. Seja $X =$ "itens do Tipo 1 na amostra". Dizemos que $X$ tem distribuição hipergeométrica com parâmetros $N$ (total), $M$ (itens do Tipo 1) e $n$ (tamanho da amostra) e denotamos por $X \sim \text{Hip}(N,M,n)$. A fmp de $X$ é
+$$p_X(x) = \frac{{M \choose x}{N-M \choose n-x}}{{N \choose n}}, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.$$
+:::
+
+::: {.callout-warning}
+## Propriedade
+
+Se $X \sim \text{Hip}(N,M,n)$ e $p = \frac{M}{N}$ é a proporção de itens do Tipo 1, então
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\mu = E(X) = np$</td> <td>e</td> <td>$\sigma^2 = V(X) = np(1-p)(\frac{N-n}{N-1}).$</td>
+  </tr>
+</table>
+
+:::
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 10 (cont.):** Se a seleção fosse realizada [**sem reposição**]{style="color:red;"}, então $X \sim \text{Hip}(N=10, M=3, n=4)$, logo a probabilidade do lote ser conforme é
+$$P(X \leq 1) = P(X=0) + P(X=1) = \frac{{3 \choose 0}{7 \choose 4}}{{10 \choose 4}} + \frac{{3 \choose 1}{7 \choose 3}}{{10 \choose 4}} = 0.1667 + 0.5 = 0.6667.$$
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+Note o efeito do tipo de seleção em algumas características da vad $X$:
+
+<table style="margin-bottom: 12pt !important;">
+  <tr style='border-top:solid;border-bottom:solid'>
+    <td style='border-right:solid 1pt;'>Seleção</td>
+    <td>$P(X \leq 1)$</td>
+    <td>$E(X)$</td>
+    <td>$V(X)$</td>
+  </tr>
+  <tr>
+    <td style='border-right:solid 1pt;'>Com reposição</td>
+    <td>$0.6517$</td>
+    <td>$1.2\ \ [np]$</td>
+    <td>$0.84\ \ [np(1-p)]$</td>
+  </tr>
+  <tr style='border-bottom:solid;'>
+    <td style='border-right:solid 1pt;'>Sem reposição</td>
+    <td>$0.6667$</td>
+    <td>$1.2 \ \ [np]$</td>
+    <td>$0.56 \ \ [np(1-p)(\frac{N-n}{N-1})]$</td>
+  </tr>
+</table>
+
+:::
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+
+```{r fig.width=6, fig.height=4.5, fig.align='center', fig.ncol=2}
+M <- 3; N <- 10; n <- 4; x <- 0:n
+y1 <- dbinom(x, n, M/N)
+y2 <- dhyper(x, M, N-M, n)
+MM <- max(y1,y2)
+par(family = "Times New Roman")
+plot(x, y1, type='h', xlab='', ylab='', main='', lwd=3, ylim=c(0,MM))
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(M/N),")")), side = 3, line = 1.3, cex = 2)
+plot(x, y2, type='h', xlab='', ylab='', main='', lwd=3, ylim=c(0,MM))
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = bquote(paste("Hip(",italic(N)==.(N),', ',italic(M)==.(M),', ',italic(n)==.(n),")")), side = 3, line = 1.3, cex = 2)
+```
+
+
+
 
 # Variáveis aleatórias contínuas
 
