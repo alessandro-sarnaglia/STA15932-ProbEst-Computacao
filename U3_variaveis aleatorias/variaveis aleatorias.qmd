@@ -1859,8 +1859,8 @@ Uma urna contém $M$ objetos do Tipo 1 e $N-M$ do Tipo 2. Desses, serão selecio
 
 :::
 
-[Pela regra do produto, obtemos $\frac{M!}{(M-x)!}\frac{(N-M)!}{(N-M-(n-x))!}$.]{.fragment fragment-index=3} [Como a ordem em que os objetos são selecionados não importa, precisamos dividir essa quantidade pelas $x!$ permutações dos objetos do Tipo 1 e pelas $(n-x)!$ do Tipo 2, o que resulta em ${M \choose x}{N-M \choose n-x}$ maneiras favoráveis a $\{X = x\}$.]{.fragment fragment-index=4} [Sem nenhuma restrição, obtemos $N(N-1)\cdots(N-n+1) = \frac{N!}{(N-n)!}$.]{.fragment fragment-index=5} [Descontando as $n!$ permutações, temos ${N \choose n}$ elementos em $\Omega$.]{.fragment fragment-index=6} [Assim,
-$$p_X(x) = P(X = x) = \frac{{M \choose x}{N-M \choose n-x}}{{N \choose n}}, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.$$]{.fragment fragment-index=7}
+[Pela regra do produto, obtemos $\frac{M!}{(M-x)!}\frac{(N-M)!}{(N-M-(n-x))!}$.]{.fragment fragment-index=3} [Como a ordem em que os objetos são selecionados não importa, precisamos dividir essa quantidade pelas $x!$ permutações dos objetos do Tipo 1 e pelas $(n-x)!$ do Tipo 2, o que resulta em ${M \choose x} {N-M \choose n-x}$ maneiras favoráveis a $\{X = x\}$.]{.fragment fragment-index=4} [Sem nenhuma restrição, obtemos $N(N-1)\cdots(N-n+1) = \frac{N!}{(N-n)!}$.]{.fragment fragment-index=5} [Descontando as $n!$ permutações, temos ${N \choose n}$ elementos em $\Omega$.]{.fragment fragment-index=6} [Assim,
+$$p_X(x) = P(X = x) = \frac{ {M \choose x} {M-M \choose n-x} }{ {N \choose n} }, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.$$]{.fragment fragment-index=7}
 
 ## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
 
@@ -1868,7 +1868,7 @@ $$p_X(x) = P(X = x) = \frac{{M \choose x}{N-M \choose n-x}}{{N \choose n}}, \ \ 
 ## Definição
 
 Sejam $N$ itens, $M$ do Tipo 1 e $N-M$ do Tipo 2, dos quais $n$ são selecionados **sem reposição**. Seja $X =$ "itens do Tipo 1 na amostra". Dizemos que $X$ tem distribuição hipergeométrica com parâmetros $N$ (total), $M$ (itens do Tipo 1) e $n$ (tamanho da amostra) e denotamos por $X \sim \text{Hip}(N,M,n)$. A fmp de $X$ é
-$$p_X(x) = \frac{{M \choose x}{N-M \choose n-x}}{{N \choose n}}, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.$$
+$$p_X(x) = \frac{ {M \choose x} {N-M \choose n-x} }{ {N \choose n} }, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.$$
 :::
 
 ::: {.callout-warning}
