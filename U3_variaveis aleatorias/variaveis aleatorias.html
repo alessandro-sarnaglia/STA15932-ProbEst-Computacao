@@ -2308,6 +2308,7 @@ Maneiras
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -2333,12 +2334,14 @@ e
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="modelos-probabilísticos-discretos-10" class="slide level2 unnumbered unlisted">
 <h2>2.2 Modelos probabilísticos discretos</h2>
 <div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <p><strong>Exemplo 10 (cont.):</strong> Se a seleção fosse realizada <span style="color:red;"><strong>sem reposição</strong></span>, então <span class="math inline">\(X \sim \text{Hip}(N=10, M=3, n=4)\)</span>, logo a probabilidade do lote ser conforme é <span class="math display">\[P(X \leq 1) = P(X=0) + P(X=1) = \frac{ {3 \choose 0} {7 \choose 4} }{ {10 \choose 4} } + \frac{ {3 \choose 1} {7 \choose 3} }{ {10 \choose 4} } = 0.1667 + 0.5 = 0.6667.\]</span></p>
 </div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -2395,6 +2398,7 @@ Sem reposição
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="modelos-probabilísticos-discretos-11" class="slide level2 unnumbered unlisted">
 <h2>2.2 Modelos probabilísticos discretos</h2>
@@ -2416,11 +2420,188 @@ Sem reposição
 </div>
 </div>
 </div>
+</section>
+<section id="section-21" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-12">Exemplo 12</h3>
+<p>Um sistema de transações <strong>independentes</strong> possui 3 computadores que operam de modo redundante:</p>
+<ul>
+<li>se o 1º apresenta falha de transação (com probabilidade <span class="math inline">\(p\)</span>), o 2º entra em operação;</li>
+<li>se o 2º apresenta falha de transação (com probabilidade <span class="math inline">\(p\)</span>), o 3º entra em operação;</li>
+<li>se o 3º apresenta falha de transação (com probabilidade <span class="math inline">\(p\)</span>), o sistema é interrompido;</li>
+</ul>
+<p><span class="fragment" data-fragment-index="1">Tratam-se de repetições independentes de um experimento de Bernoulli com <span class="math inline">\(P(\{s\}) = p\)</span> até obter o 3º sucesso.</span> <span class="fragment" data-fragment-index="2">Seja <span class="math inline">\(X =\)</span> “número de transações realizadas”. Note que <span class="math inline">\(\text{Im}(X) = \{3,4,\ldots\}\)</span>.</span> <span class="fragment" data-fragment-index="3">Veja a seguinte tabela:</span></p>
+<div class="fragment" data-fragment-index="3">
+
+<table>
+<tbody><tr style="border-top:solid;border-bottom:solid">
+<td style="text-align:left;border-right:solid 1pt;">
+<span class="math inline">\(\omega\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\(P(\{\omega\})\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(P(X=x)\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:solid 1pt;">
+<span class="math inline">\((sss)\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\(3\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\(p^3\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(p^3\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:solid 1pt;">
+<span class="math inline">\((ssfs)\)</span>, <span class="math inline">\((sfss)\)</span>, <span class="math inline">\((fsss)\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\(4\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\((1-p)p^3\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(3(1-p)p^3\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;border-right:solid 1pt;">
+<span class="math inline">\((ssffs)\)</span>, <span class="math inline">\((sfsfs)\)</span>, <span class="math inline">\((fssfs)\)</span>, <span class="math inline">\((sffss)\)</span>, <span class="math inline">\((fsfss)\)</span>, <span class="math inline">\((ffsss)\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\(5\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\((1-p)^2p^3\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(6(1-p)^2p^3\)</span>
+</td>
+</tr>
+<tr style="border-bottom:solid">
+<td style="text-align:left;border-right:solid 1pt;">
+<span class="math inline">\(\vdots\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\(\vdots\)</span>
+</td>
+<td style="text-align:center;border-right:solid 1pt;">
+<span class="math inline">\(\vdots\)</span>
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(\vdots\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</section>
+<section id="section-22" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-12-cont.">Exemplo 12 (cont.)</h3>
+<p>Assim, notando que a última repetição tem que ser <span class="math inline">\(s\)</span>, um exemplo de <span class="math inline">\(\omega\)</span> favorável a <span class="math inline">\([X = x]\)</span> é <span class="math display">\[\omega = (\underbrace{ssff\ldots f}_{x-1}s),\]</span> cuja probabilidade é <span class="math inline">\(P(\{\omega\}) = (1-p)^{x-3}p^3\)</span>. <span class="fragment" data-fragment-index="1">Os outros resultados favoráveis a <span class="math inline">\([X=x]\)</span> têm a mesma probabilidade e são contados verificando de quantas formas podemos posicionar os dois sucessos dentre as primeiras <span class="math inline">\(x-1\)</span> repetições.</span> <span class="fragment" data-fragment-index="2">Para o 1º <span class="math inline">\(s\)</span>, temos <span class="math inline">\(x-1\)</span> posições e, para o 2º <span class="math inline">\(s\)</span>, temos <span class="math inline">\(x-2\)</span> posições.</span></p>
+<p><span class="fragment" data-fragment-index="3">Pela regra da multiplicação teríamos <span class="math inline">\((x-1)(x-2) = \frac{(x-1)!}{(x-3)!}\)</span> maneiras possíveis.</span> <span class="fragment" data-fragment-index="4">Como a ordem que escolhemos a posição não importa (escolher 1 e 2 é o mesmo que 2 e 1, por exemplo), precisamos descontar as <span class="math inline">\(2!\)</span> permutações possíveis entre as duas, o que resulta em <span class="math inline">\(\frac{(x-1)!}{2!(x-3)!} = { x-1 \choose 2 }\)</span> maneiras possíveis.</span> <span class="fragment" data-fragment-index="5">Assim <span class="math display">\[P(X = x) = { x-1 \choose 2 } (1-p)^{x-3} p^x, \ \ \ x = 3, 4, 5, \ldots.\]</span></span></p>
+</section>
+<section id="modelos-probabilísticos-discretos-12" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Um experimento de Bernoulli com <span class="math inline">\(P(\{s\}) = p\)</span> é repetido <strong>independentemente</strong> até a ocorrência do <span class="math inline">\(k\)</span>-ésimo sucesso. Seja <span class="math inline">\(X =\)</span> “número de repetições realizadas”. Dizemos que <span class="math inline">\(X\)</span> tem distribuição Binomial Negativa com <span class="math inline">\(k\)</span> sucessos e probabilidade de sucesso <span class="math inline">\(p\)</span>, denotada por <span class="math inline">\(X \sim \text{BN}(k,p)\)</span>. A fmp de <span class="math inline">\(X\)</span> é <span class="math display">\[p_X(x) = P(X = x) = { x-1 \choose k-1 } (1-p)^{x-k} p^k, \ \ \ x = k, k+1, k+2, \ldots.\]</span></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedades</strong></p>
+</div>
+<div class="callout-content">
+<p>Se <span class="math inline">\(X \sim \text{BN}(k,p)\)</span>, então</p>
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\mu = E(X) = \frac{k}{p}\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(\sigma^2 = V(X) = k\frac{(1-p)}{p^2}.\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-discretos-13" class="slide level2 unnumbered unlisted">
+<h2>2.2 Modelos probabilísticos discretos</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">No Exemplo 12, temos que <span class="math inline">\(X \sim \text{BN}(k=3, p)\)</span>. Se <span class="math inline">\(p = 0.01\)</span>, por exemplo, teríamos <span class="math inline">\(\mu = E(X) = \frac{3}{0.01} = 300\)</span>, <span class="math inline">\(\sigma^2 = V(X) = 3\frac{0.99}{0.01^2} = 29700\)</span> e <span class="math inline">\(\sigma \approx 172.34\)</span>. Isto é, em média, seriam realizadas <span class="math inline">\(300\)</span> transações até a terceira falha com DP de <span class="math inline">\(172.34\)</span>;</li>
+<li class="fragment">A distribuição BN também pode ser definida como a distribuição do número de fracassos (em vez de repetições) até o <span class="math inline">\(k\)</span>-ésimo sucesso. Nesse caso, sua fmp é <span class="math display">\[\textstyle p_X(x) = { x + k -1 \choose k-1 } (1-p)^{x} p^k, \ \ \ x = 0, 1, 2, \ldots,\]</span> e sua esperança e variância são, respectivamente, <span class="math inline">\(\mu = k\frac{(1-p)}{p}\)</span> e <span class="math inline">\(\sigma^2 = k\frac{(1-p)}{p^2}\)</span>;</li>
+<li class="fragment">Se <span class="math inline">\(X \sim \text{BN}(k = 1, p)\)</span>, dizemos que <span class="math inline">\(X\)</span> tem distribuição geométrica, cuja notação é <span class="math inline">\(X \sim \text{Geo}(p)\)</span>;</li>
+<li class="fragment">Se <span class="math inline">\(X \sim \text{BN}(k, p)\)</span>, então <span class="math inline">\(X = \sum_{j=1}^k X_j\)</span>, em que <span class="math inline">\(X_1,\ldots,X_k \sim \text{Geo}(p)\)</span> independentes.</li>
+<li class="fragment">Bin: repetições fixas e sucessos aleatórios; BN: sucessos fixos e repetições aleatórias.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="variáveis-aleatórias-contínuas" class="title-slide slide level1 center" data-number="3">
 <h1><span class="header-section-number">3</span> Variáveis aleatórias contínuas</h1>
 
+</section>
+<section id="variáveis-aleatórias-contínuas-1" class="slide level2 unnumbered unlisted">
+<h2>3 Variáveis aleatórias contínuas</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Anteriormente, definimos uma vac <span class="math inline">\(X\)</span> pelas características de seu conjunto imagem <span class="math inline">\(\text{Im}(X)\)</span>. Abaixo, iremos nos restringir àquelas em que a fda é absolutamente contínua.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Seja <span class="math inline">\(X\)</span> vac com fda <span class="math inline">\(F_X(x) = P(X \leq x)\)</span> absolutamente contínua. Então, <span class="math display">\[F_X(x) = \int_{-\infty}^x f_X(t)dt,\]</span> em que <span class="math inline">\(f_X(\cdot)\)</span> é denominada função densidade de probabilidade (fdp).</p>
+</div>
+</div>
+</div>
 </section>
 <section id="esperança-e-variância-de-vacs" class="slide level2" data-number="3.1">
 <h2><span class="header-section-number">3.1</span> Esperança e variância de vac’s</h2>

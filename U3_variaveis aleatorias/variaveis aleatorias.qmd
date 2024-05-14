@@ -1871,6 +1871,8 @@ Sejam $N$ itens, $M$ do Tipo 1 e $N-M$ do Tipo 2, dos quais $n$ são selecionado
 $$p_X(x) = \frac{ {M \choose x} {N-M \choose n-x} }{ {N \choose n} }, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.$$
 :::
 
+::: fragment
+
 ::: {.callout-warning}
 ## Propriedade
 
@@ -1884,6 +1886,8 @@ Se $X \sim \text{Hip}(N,M,n)$ e $p = \frac{M}{N}$ é a proporção de itens do T
 
 :::
 
+:::
+
 ## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
@@ -1892,6 +1896,8 @@ Se $X \sim \text{Hip}(N,M,n)$ e $p = \frac{M}{N}$ é a proporção de itens do T
 $$P(X \leq 1) = P(X=0) + P(X=1) = \frac{ {3 \choose 0} {7 \choose 4} }{ {10 \choose 4} } + \frac{ {3 \choose 1} {7 \choose 3} }{ {10 \choose 4} } = 0.1667 + 0.5 = 0.6667.$$
 
 :::
+
+::: fragment
 
 ::: {.callout-caution}
 ## Observação
@@ -1921,6 +1927,8 @@ Note o efeito do tipo de seleção em algumas características da vad $X$:
 
 :::
 
+:::
+
 ## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
 
 
@@ -1940,10 +1948,128 @@ mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line 
 mtext(text = bquote(paste("Hip(",italic(N)==.(N),', ',italic(M)==.(M),', ',italic(n)==.(n),")")), side = 3, line = 1.3, cex = 2)
 ```
 
+## {.unnumbered .unlisted .smaller}
 
+### Exemplo 12 {.unnumbered .unlisted}
+
+Um sistema de transações **independentes** possui 3 computadores que operam de modo redundante:
+
+- se o 1º apresenta falha de transação (com probabilidade $p$), o 2º entra em operação;
+- se o 2º apresenta falha de transação (com probabilidade $p$), o 3º entra em operação;
+- se o 3º apresenta falha de transação (com probabilidade $p$), o sistema é interrompido;
+
+[Tratam-se de repetições independentes de um experimento de Bernoulli com $P(\{s\}) = p$ até obter o 3º sucesso.]{.fragment fragment-index=1} [Seja $X =$ "número de transações realizadas". Note que $\text{Im}(X) = \{3,4,\ldots\}$.]{.fragment fragment-index=2} [Veja a seguinte tabela:]{.fragment fragment-index=3}
+
+::: {.fragment fragment-index=3}
+
+<table>
+  <tr style="border-top:solid;border-bottom:solid">
+    <td style="text-align:left;border-right:solid 1pt;">$\omega$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$x$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$P(\{\omega\})$</td>
+    <td style="text-align:center;">$P(X=x)$</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;border-right:solid 1pt;">$(sss)$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$3$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$p^3$</td>
+    <td style="text-align:center;">$p^3$</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;border-right:solid 1pt;">$(ssfs)$, $(sfss)$, $(fsss)$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$4$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$(1-p)p^3$</td>
+    <td style="text-align:center;">$3(1-p)p^3$</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;border-right:solid 1pt;">$(ssffs)$, $(sfsfs)$, $(fssfs)$, $(sffss)$, $(fsfss)$, $(ffsss)$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$5$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$(1-p)^2p^3$</td>
+    <td style="text-align:center;">$6(1-p)^2p^3$</td>
+  </tr>
+  <tr style="border-bottom:solid">
+    <td style="text-align:left;border-right:solid 1pt;">$\vdots$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$\vdots$</td>
+    <td style="text-align:center;border-right:solid 1pt;">$\vdots$</td>
+    <td style="text-align:center;">$\vdots$</td>
+  </tr>
+</table>
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 12 (cont.) {.unnumbered .unlisted}
+
+Assim, notando que a última repetição tem que ser $s$, um exemplo de $\omega$ favorável a $[X = x]$ é
+$$\omega = (\underbrace{ssff\ldots f}_{x-1}s),$$
+cuja probabilidade é $P(\{\omega\}) = (1-p)^{x-3}p^3$. [Os outros resultados favoráveis a $[X=x]$ têm a mesma probabilidade e são contados verificando de quantas formas podemos posicionar os dois sucessos dentre as primeiras $x-1$ repetições.]{.fragment fragment-index=1} [Para o 1º $s$, temos $x-1$ posições e, para o 2º $s$, temos $x-2$ posições.]{.fragment fragment-index=2}
+
+[Pela regra da multiplicação teríamos $(x-1)(x-2) = \frac{(x-1)!}{(x-3)!}$ maneiras possíveis.]{.fragment fragment-index=3} [Como a ordem que escolhemos a posição não importa (escolher 1 e 2 é o mesmo que 2 e 1, por exemplo), precisamos descontar as $2!$ permutações possíveis entre as duas, o que resulta em $\frac{(x-1)!}{2!(x-3)!} = { x-1 \choose 2 }$ maneiras possíveis.]{.fragment fragment-index=4} [Assim
+$$P(X = x) = { x-1 \choose 2 } (1-p)^{x-3} p^x, \ \ \ x = 3, 4, 5, \ldots.$$]{.fragment fragment-index=5}
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Um experimento de Bernoulli com $P(\{s\}) = p$ é repetido **independentemente** até a ocorrência do $k$-ésimo sucesso. Seja $X =$ "número de repetições realizadas". Dizemos que $X$ tem distribuição Binomial Negativa com $k$ sucessos e probabilidade de sucesso $p$, denotada por $X \sim \text{BN}(k,p)$. A fmp de $X$ é
+$$p_X(x) = P(X = x) = { x-1 \choose k-1 } (1-p)^{x-k} p^k, \ \ \ x = k, k+1, k+2, \ldots.$$
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedades
+
+Se $X \sim \text{BN}(k,p)$, então
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\mu = E(X) = \frac{k}{p}$</td> <td>e</td> <td>$\sigma^2 = V(X) = k\frac{(1-p)}{p^2}.$</td>
+  </tr>
+</table>
+:::
+
+:::
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. No Exemplo 12, temos que $X \sim \text{BN}(k=3, p)$. Se $p = 0.01$, por exemplo, teríamos $\mu = E(X) = \frac{3}{0.01} = 300$, $\sigma^2 = V(X) = 3\frac{0.99}{0.01^2} = 29700$ e $\sigma \approx 172.34$. Isto é, em média, seriam realizadas $300$ transações até a terceira falha com DP de $172.34$;
+2. A distribuição BN também pode ser definida como a distribuição do número de fracassos (em vez de repetições) até o $k$-ésimo sucesso. Nesse caso, sua fmp é
+$$\textstyle p_X(x) = { x + k -1 \choose k-1 } (1-p)^{x} p^k, \ \ \ x = 0, 1, 2, \ldots,$$
+e sua esperança e variância são, respectivamente, $\mu = k\frac{(1-p)}{p}$ e $\sigma^2 = k\frac{(1-p)}{p^2}$;
+3. Se $X \sim \text{BN}(k = 1, p)$, dizemos que $X$ tem distribuição geométrica, cuja notação é $X \sim \text{Geo}(p)$;
+4. Se $X \sim \text{BN}(k, p)$, então $X = \sum_{j=1}^k X_j$, em que $X_1,\ldots,X_k \sim \text{Geo}(p)$ independentes.
+5. Bin: repetições fixas e sucessos aleatórios; BN: sucessos fixos e repetições aleatórias.
+
+:::
+
+:::
 
 
 # Variáveis aleatórias contínuas
+
+## 3 Variáveis aleatórias contínuas {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Anteriormente, definimos uma vac $X$ pelas características de seu conjunto imagem $\text{Im}(X)$. Abaixo, iremos nos restringir àquelas em que a fda é absolutamente contínua.
+:::
+
+::: {.callout-note}
+## Definição
+
+Seja $X$ vac com fda $F_X(x) = P(X \leq x)$ absolutamente contínua. Então,
+$$F_X(x) = \int_{-\infty}^x f_X(t)dt,$$
+em que $f_X(\cdot)$ é denominada função densidade de probabilidade (fdp).
+:::
 
 ## Esperança e variância de vac's
 
