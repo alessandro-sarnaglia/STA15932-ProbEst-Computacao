@@ -26,6 +26,11 @@ filters:
   - parse-latex
 ---
 
+$$
+\newcommand{\invisible}[1]{\color{white}{#1}}
+$$
+
+
 # Definição
 
 ## 1 Definição {.unnumbered .unlisted}
@@ -2040,7 +2045,7 @@ Se $X \sim \text{BN}(k,p)$, então
 
 ::: incremental
 
-1. No Exemplo 12, temos que $X \sim \text{BN}(k=3, p)$. Se $p = 0.01$, por exemplo, teríamos $\mu = E(X) = \frac{3}{0.01} = 300$, $\sigma^2 = V(X) = 3\frac{0.99}{0.01^2} = 29700$ e $\sigma \approx 172.34$. Isto é, em média, seriam realizadas $300$ transações até a terceira falha com DP de $172.34$;
+1. No Exemplo 12, temos que $X \sim \text{BN}(k=3, p)$. Se $p = 0.01$, por exemplo, teríamos $\mu = E(X) = \frac{3}{0.01} = 300$, $\sigma^2 = V(X) = 3\frac{0.99}{0.01^2} = 29700$ e $\sigma \approx 172.34$. Em média, são realizadas $300$ transações até a terceira falha com DP de $172.34$. Além disso, $P(X > \mu) = P(X > 300) \approx 0.4221$;
 2. A distribuição BN também pode ser definida como a distribuição do número de fracassos (em vez de repetições) até o $k$-ésimo sucesso. Nesse caso, sua fmp é
 $$\textstyle p_X(x) = { x + k -1 \choose k-1 } (1-p)^{x} p^k, \ \ \ x = 0, 1, 2, \ldots,$$
 e sua esperança e variância são, respectivamente, $\mu = k\frac{(1-p)}{p}$ e $\sigma^2 = k\frac{(1-p)}{p^2}$;
@@ -2052,7 +2057,6 @@ e sua esperança e variância são, respectivamente, $\mu = k\frac{(1-p)}{p}$ e 
 
 :::
 
-
 # Variáveis aleatórias contínuas
 
 ## 3 Variáveis aleatórias contínuas {.unnumbered .unlisted}
@@ -2060,18 +2064,512 @@ e sua esperança e variância são, respectivamente, $\mu = k\frac{(1-p)}{p}$ e 
 ::: {.callout-caution}
 ## Observação
 
-Anteriormente, definimos uma vac $X$ pelas características de seu conjunto imagem $\text{Im}(X)$. Abaixo, iremos nos restringir àquelas em que a fda é absolutamente contínua.
+Anteriormente, definimos uma vac $X$ como sendo aquelas cuja imagem $\text{Im}(X)$ é não enumerável. De agora em diante, as vac's serão restringidas àquelas em que a fda é [**absolutamente contínua**]{style="color:red"}.
 :::
 
 ::: {.callout-note}
 ## Definição
 
-Seja $X$ vac com fda $F_X(x) = P(X \leq x)$ absolutamente contínua. Então,
+Diremos que $X$ é va **contínua** (vac) se sua imagem $\text{Im}(X)$ é não enumerável e se sua fda $F_X(x) = P(X \leq x)$ é **absolutamente contínua**. Neste caso, podemos escrever
 $$F_X(x) = \int_{-\infty}^x f_X(t)dt,$$
-em que $f_X(\cdot)$ é denominada função densidade de probabilidade (fdp).
+em que $f_X(\cdot)$ é denominada **função densidade de probabilidade** (fdp).
+:::
+
+## 3 Variáveis aleatórias contínuas {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedades
+Seja $X$ vac com fda $F_X(\cdot)$ e fdp $f_X(\cdot)$, então:
+
+::: incremental
+
+1. sua fdp satisfaz:
+    + $f_X(\cdot) \geq 0$;
+    + $\int_{-\infty}^\infty f_X(x)dx$.
+2. a probabilidade do intervalo $(a,b]$, $a<b$, é dada por
+$$\textstyle P(a < X \leq b) = F_X(b) - F_X(a) = \int_a^b f_X(x) dx;$$
+3. a probabilidade de um ponto $x$ é $P(X=x) = 0$;
+4. valem as igualdades $P(a < X \leq b) = P(a \leq X \leq b) = P(a \leq X < b) = P(a < X < b)$, sendo que o mesmo não é válido no caso discreto.
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 13 {.unnumbered .unlisted}
+
+Tempo de avanço é a diferença entre o instante em que um carro termina de passar por um ponto e o instante em que o próximo carro começa a passar por esse ponto. Seja $X =$ "tempo de avanço para dois carros escolhidos ao acaso". O artigo "*The Statistical Properties of Freeway Traffic*" sugeriu a fdp
+$$f_X(x) = 0.15e^{-0.15(x-0.5)} \mathbb{I}(x \geq 0.5) = \begin{cases}
+0.15e^{-0.15(x-0.5)}, & x \geq 0.5;\\
+0, & x < 0.5,
+\end{cases}$$
+em que $\mathbb{I}(A) = 1$, se a condição $A$ é válida, e $\mathbb{I}(A) = 0$, caso contrário.
+
+::: fragment
+
+Note que $f_X(x) \geq 0$ e que $\int_{-\infty}^\infty f_X(x)dx = 1$. Vamos encontrar $P(X > 5)$. Note que
+$$P(X > 5) = \int_{5}^\infty f_X(x) dx = \int_{5}^\infty 0.15e^{-0.15(x-0.5)} dx = \left[\left.-e^{-0.15(x-0.5)}\right|_5^\infty\right] = e^{-0.675} \approx 0.5092.$$
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 13 (cont.) {.unnumbered .unlisted}
+
+Veja abaixo a representação da fdp e a da probabilidade $P(X > 5)$:
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+MM <- 25
+x <- seq(-1,MM,0.01)
+y <- as.numeric(x >= 0.5)*0.15*exp(-0.15*(x-0.5))
+par(family = "Times New Roman", mar=c(5,4,1,2))
+plot(x[x<0.5], y[x<0.5], type='n', xlab='', ylab='', main='', lwd=3,
+     ylim=range(y)+c(-.1*diff(range(y)),.13*diff(range(y))),
+     xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
+polygon(x=c(5, 5, x[x > 5], MM),
+        y=c(0, 0.15*exp(-0.675), y[x > 5], 0), col='lightblue', border=NA)
+arrows(y0 = min(y)-.1*diff(range(y)), y1 = max(y)+.13*diff(range(y)), x0=0, x1=0, length = .1)
+arrows(x0 = min(x)-.02*diff(range(x)), x1 = max(x)+.08*diff(range(x)), y0=0, y1=0, length = .1)
+arrows(x0 = 10, x1 = 15, y0=0.02, y1=0.075, length = .1)
+text(x=15, y=.075, labels=expression(italic(P)(italic(X) > 5)%~~%0.5092), pos = 4, cex=1.5)
+lines(x[x >= 0.5], y[x >= 0.5], lwd=3)
+lines(x[x < 0.5], y[x < 0.5], lwd=3)
+lines(c(5, 5), c(0, 0.15*exp(-0.675)), lty=3, lwd=1.5)
+lines(c(.5, .5), c(0, 0.15), lty=3, lwd=1.5)
+lines(c(.5, .5), c(0, -0.005), lwd=1.5)
+text(x=0.5, y=-0.007, labels = '0.5', adj=c(0.3,1), cex=.8)
+lines(c(5, 5), c(0, -0.005), lwd=1.5)
+text(x=5, y=-0.007, labels = '5', adj=c(0.5,1), cex=.8)
+points(x=c(0.5, 0.5), y=c(0, 0.15), pch=c(21,21), bg=c('white','black'))
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+```
+
+## 3 Variáveis aleatórias contínuas {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+É importante reforçar que podemos obter a fdp $f_X(\cdot)$ da fda $F_X(\cdot)$ e vice-versa, por meio de
+$$\textstyle f_X(x) = \frac{d}{dx}F_X(x)\ \ \ \ \text{e} \ \ \ \ F_X(x) = \int_{-\infty}^x f_X(t)dt.$$
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):** No caso, dada a fdp, podemos obter a fda como a antiderivada de $f_X(x)$
+[$$\textstyle F_X(x) = \int_{-\infty}^{0.5}0dt + \int_{0.5}^x 0.15e^{-0.15(t-0.5)}dt = 0 + \left[\left.-e^{-0.15(t-0.5)}\right|_{0.5}^x\right] = 1-e^{-0.15(x-0.5)}.$$]{.fragment}
+[Agora, a fda pode ser utilizada para obter a probabilidade anterior:
+$$\textstyle P(X > 5) = 1- P(X \leq 5) = 1- F_X(5) = 1-[1-e^{-0.15(5-0.5)}] = e^{-0.675} \approx 0.5092.$$]{.fragment}
+:::
+
+## 3 Variáveis aleatórias contínuas {.unnumbered .unlisted}
+
+
+::: {.callout-caution}
+## Observação
+
+A inversa de $F_X(x)$ pode ser utilizada para encontrar os quantis.
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):** Vimos que $F_X(x) = 1-e^{-0.15(x-0.5)}$. Vamos determinar a mediana de $X$, denotada por $\tilde{\mu}_X$. Para $\tilde{\mu}_X$ ser a mediana, devemos ter $F_X(\tilde{\mu}_X) = 0.5$. [Logo
+$$1-e^{-0.15(\tilde{\mu}_X-0.5)} = 0.5 \Rightarrow e^{-0.15(\tilde{\mu}_X-0.5)} = 0.5 \Rightarrow \tilde{\mu}_X = 0.5 -\frac{20}{3}\log(0.5) \approx 5.121.$$]{.fragment}
+:::
+
+::: fragment
+
+::: {.callout-tip}
+## Exercício
+
+Encontre o quantil de ordem $p$, denotado por $Q_p$, isto é, o valor tal que $F_X(Q_p) = p$.
+:::
+
 :::
 
 ## Esperança e variância de vac's
+
+::: {.callout-caution}
+## Observação
+
+Em Estatística Descritiva, ao tratar de distribuições intervalares, uma aproximação para a média era
+$$\textstyle \bar{x} \approx \sum_{i}x_i^{(m)} f_i = \sum_{i}x_i^{(m)} d_i h_i,$$
+em que $x_i^{(m)}$, $f_i$, $d_i$ e $h_i$ são, respectivamente, o ponto médio, a frequência relativa, a [**densidade**]{style="color:red"} e o [**comprimento**]{style="color:red"} do intervalo $i$. Como a fdp $f_X(x)$ é um modelo teórico para as densidades $d_i$ no intervalo de comprimento infinitesimal $dx$ em torno de $x$, isso motiva a seguinte definição de esperança.
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definição
+
+Seja $X$ vac com fdp $f_X(x)$, então a sua esperança é definida por
+$$\textstyle \mu = \mu_X = E(X) = \int_{-\infty}^\infty xf_X(x)dx.$$
+:::
+
+:::
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade
+
+Da mesma forma que no caso discreto, se $X$ é vac e $Y = h(X)$, então
+$$\textstyle \mu_Y = E(Y) = E[h(X)] = \int_{-\infty}^\infty h(x) f_X(x) dx.$$
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+A propriedade acima contorna a necessidade de obter $f_Y(y)$ para calcular $\mu_Y = E(Y) = \int_{-\infty}^\infty y f_X(y)dy$.
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definição
+
+Seja $X$ vac com fdp $f_X(x)$, então a sua variância é definida por
+$$\textstyle \sigma^2 = \sigma^2_X = V(X) = E[(X-\mu)^2] = \int_{-\infty}^\infty (x-\mu)^2f_X(x)dx.$$
+:::
+
+:::
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade
+
+Da mesma forma que no caso discreto, se $X$ é vac, temos a seguinte forma alternativa para a variância:
+$$\textstyle \sigma^2 = E(X^2) - \mu^2, \ \ \ \ \  E(X^2) = \int_{-\infty}^\infty x^2 f_X(x) dx.$$
+:::
+
+:::fragment
+
+::: {.callout-warning}
+## Propriedades
+
+Da mesma forma que no caso discreto, se $X$ é vac e $a$ e $b$ são constantes, então:
+
+::: incremental
+
+1. $\mu_{aX+b} = E(aX + b) = aE(X) + b = a\mu_X + b$;
+2. $\sigma_{aX+b}^2 = V(aX + b) = a^2V(X) = a^2\sigma_X^2$;
+3. $\sigma_{aX+b} = DP(aX + b) = aDP(X) = a\sigma_X$.
+
+:::
+
+:::
+
+:::
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. [Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$.]{style="color:white"} [Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}} \\
+{}&{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
+\end{align*}$$]{style="color:white"}
+
+[Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}$$]{style="color:white"}
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. [Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}} \\
+{}&{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
+\end{align*}$$]{style="color:white"}
+
+[Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}$$]{style="color:white"}
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}}\\
+{}&{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
+\end{align*}$$
+
+[Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}$$]{style="color:white"}
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
+{}&{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
+\end{align*}$$
+
+[Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}$$]{style="color:white"}
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
+&=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
+\end{align*}$$
+
+[Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}$$]{style="color:white"}
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
+&=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.\\
+\end{align*}$$
+
+[Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}$$]{style="color:white"}
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
+&=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.\\
+\end{align*}$$
+
+Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$. [Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}$$]{style="color:white"}
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
+&=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.\\
+\end{align*}$$
+
+Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$. Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}$$
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
+&=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.\\
+\end{align*}$$
+
+Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$. Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6} \invisible{ = \frac{43}{6} \approx 7.1667.}$$
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{style="color:white"}
+
+:::
+
+::: {style="visibility:hidden"}
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+
+
+
+## 3.1 Esperança e variância de vac's {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 13 (cont.):**
+
+Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
+$$\begin{align*}
+\mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
+&=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.\\
+\end{align*}$$
+
+Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$. Logo
+$$\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6} = \frac{43}{6} \approx 7.1667.$$
+
+[Note que obtivemos $\mu = 7.1667 > \tilde\mu = 5.121$, o que reflete a assimetria à direita da fdp.]{.fragment}
+
+:::
+
+::: fragment
+
+::: {.callout-tip}
+## Exercícios
+
+Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
+:::
+
+:::
+
+
 
 ## Modelos probabilísticos contínuos
 
