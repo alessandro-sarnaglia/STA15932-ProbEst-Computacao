@@ -2765,7 +2765,7 @@ e
 <p><strong>Exemplo 13 (cont.):</strong></p>
 <p>Vamos calcular <span class="math inline">\(\mu\)</span>. <span style="color:white">Tomando <span class="math inline">\(s = 0.15(x - 0.5)\)</span>, então <span class="math inline">\(0.15x = s+0.15\cdot0.5\)</span>, <span class="math inline">\(ds = 0.15dx\)</span>.</span> <span style="color:white">Portanto, <span class="math display">\[\begin{align*}
 \mu &amp;=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}} \\
-{}&amp;{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
+&amp;\textstyle\invisible{= \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
 \end{align*}\]</span></span></p>
 <p><span style="color:white">Na integral após a última igualdade, fazendo <span class="math inline">\(u = s\)</span> e <span class="math inline">\(dv = e^{-s}ds\)</span>, vem que <span class="math inline">\(du=ds\)</span> e <span class="math inline">\(v = -e^{-s}\)</span>.</span> <span style="color:white">Logo <span class="math display">\[\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}\]</span></span></p>
 <p><span style="color:white">Note que obtivemos <span class="math inline">\(\mu = 7.1667 &gt; \tilde\mu = 5.121\)</span>, o que reflete a assimetria à direita da fdp.</span></p>
@@ -2789,7 +2789,7 @@ e
 <p><strong>Exemplo 13 (cont.):</strong></p>
 <p>Vamos calcular <span class="math inline">\(\mu\)</span>. Tomando <span class="math inline">\(s = 0.15(x - 0.5)\)</span>, então <span class="math inline">\(0.15x = s+0.15\cdot0.5\)</span>, <span class="math inline">\(ds = 0.15dx\)</span>. <span style="color:white">Portanto, <span class="math display">\[\begin{align*}
 \mu &amp;=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}} \\
-{}&amp;{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
+&amp;\textstyle\invisible{= \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
 \end{align*}\]</span></span></p>
 <p><span style="color:white">Na integral após a última igualdade, fazendo <span class="math inline">\(u = s\)</span> e <span class="math inline">\(dv = e^{-s}ds\)</span>, vem que <span class="math inline">\(du=ds\)</span> e <span class="math inline">\(v = -e^{-s}\)</span>.</span> <span style="color:white">Logo <span class="math display">\[\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}\]</span></span></p>
 <p><span style="color:white">Note que obtivemos <span class="math inline">\(\mu = 7.1667 &gt; \tilde\mu = 5.121\)</span>, o que reflete a assimetria à direita da fdp.</span></p>
@@ -2813,7 +2813,7 @@ e
 <p><strong>Exemplo 13 (cont.):</strong></p>
 <p>Vamos calcular <span class="math inline">\(\mu\)</span>. Tomando <span class="math inline">\(s = 0.15(x - 0.5)\)</span>, então <span class="math inline">\(0.15x = s+0.15\cdot0.5\)</span>, <span class="math inline">\(ds = 0.15dx\)</span>. Portanto, <span class="math display">\[\begin{align*}
 \mu &amp;=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}}\\
-{}&amp;{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
+&amp;\textstyle \invisible{= \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
 \end{align*}\]</span></p>
 <p><span style="color:white">Na integral após a última igualdade, fazendo <span class="math inline">\(u = s\)</span> e <span class="math inline">\(dv = e^{-s}ds\)</span>, vem que <span class="math inline">\(du=ds\)</span> e <span class="math inline">\(v = -e^{-s}\)</span>.</span> <span style="color:white">Logo <span class="math display">\[\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}\]</span></span></p>
 <p><span style="color:white">Note que obtivemos <span class="math inline">\(\mu = 7.1667 &gt; \tilde\mu = 5.121\)</span>, o que reflete a assimetria à direita da fdp.</span></p>
@@ -2837,7 +2837,7 @@ e
 <p><strong>Exemplo 13 (cont.):</strong></p>
 <p>Vamos calcular <span class="math inline">\(\mu\)</span>. Tomando <span class="math inline">\(s = 0.15(x - 0.5)\)</span>, então <span class="math inline">\(0.15x = s+0.15\cdot0.5\)</span>, <span class="math inline">\(ds = 0.15dx\)</span>. Portanto, <span class="math display">\[\begin{align*}
 \mu &amp;=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
-{}&amp;{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
+&amp;\textstyle\invisible{=\frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
 \end{align*}\]</span></p>
 <p><span style="color:white">Na integral após a última igualdade, fazendo <span class="math inline">\(u = s\)</span> e <span class="math inline">\(dv = e^{-s}ds\)</span>, vem que <span class="math inline">\(du=ds\)</span> e <span class="math inline">\(v = -e^{-s}\)</span>.</span> <span style="color:white">Logo <span class="math display">\[\textstyle \mu = 0.5 + \frac{1}{0.15}\{[-\frac{s}{e^s}|_0^\infty] + \int_0^{\infty}e^{-s}ds\} \invisible{ = 0.5 + \frac{20}{3}[0 + 1] = \frac{3 + 40}{6}} \invisible{ = \frac{43}{6} \approx 7.1667.}\]</span></span></p>
 <p><span style="color:white">Note que obtivemos <span class="math inline">\(\mu = 7.1667 &gt; \tilde\mu = 5.121\)</span>, o que reflete a assimetria à direita da fdp.</span></p>

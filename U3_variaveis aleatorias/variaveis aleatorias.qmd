@@ -2276,7 +2276,7 @@ Da mesma forma que no caso discreto, se $X$ é vac e $a$ e $b$ são constantes, 
 Vamos calcular $\mu$. [Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$.]{style="color:white"} [Portanto, 
 $$\begin{align*}
 \mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}} \\
-{}&{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
+&\textstyle\invisible{= \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
 \end{align*}$$]{style="color:white"}
 
 [Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
@@ -2307,7 +2307,7 @@ Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
 Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. [Portanto, 
 $$\begin{align*}
 \mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}} \\
-{}&{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
+&\textstyle\invisible{= \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.} \\
 \end{align*}$$]{style="color:white"}
 
 [Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
@@ -2337,7 +2337,7 @@ Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
 Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
 $$\begin{align*}
 \mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx \invisible{ = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}}\\
-{}&{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
+&\textstyle \invisible{= \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
 \end{align*}$$
 
 [Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
@@ -2368,7 +2368,7 @@ Calcule $\sigma^2$ para a vac $X$ do Exemplo 13.
 Vamos calcular $\mu$. Tomando $s = 0.15(x - 0.5)$, então $0.15x = s+0.15\cdot0.5$, $ds = 0.15dx$. Portanto, 
 $$\begin{align*}
 \mu &=\textstyle \int_{-\infty}^{0.5} x\cdot 0 dx + \int_{-0.5}^{\infty} x0.15e^{-0.15(x-0.5)} dx = \int_{0}^\infty (s+0.15\cdot0.5)e^{-s}\frac{ds}{0.15}\\
-{}&{}\invisible{=\textstyle \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
+&\textstyle\invisible{=\frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5\int_{0}^\infty e^{-s}ds} \invisible{ = \frac{1}{0.15}\int_{0}^\infty se^{-s}ds + 0.5.}\\
 \end{align*}$$
 
 [Na integral após a última igualdade, fazendo $u = s$ e $dv = e^{-s}ds$, vem que $du=ds$ e $v = -e^{-s}$.]{style="color:white"} [Logo
