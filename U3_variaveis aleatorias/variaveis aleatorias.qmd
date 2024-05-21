@@ -107,8 +107,8 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 **Exemplo 1 (cont.):**
 
-<figure style="width:90%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria0.png">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria0.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 </figure>
 
 :::
@@ -131,8 +131,8 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 **Exemplo 1 (cont.):**
 
-<figure style="width:90%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria1.png">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria1.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 </figure>
 
 :::
@@ -155,8 +155,8 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 **Exemplo 1 (cont.):**
 
-<figure style="width:90%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria2.png">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria2.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 </figure>
 
 :::
@@ -179,8 +179,8 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 **Exemplo 1 (cont.):**
 
-<figure style="width:90%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria3.png">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria3.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 </figure>
 
 :::
@@ -203,8 +203,8 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 **Exemplo 1 (cont.):**
 
-<figure style="width:90%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria4.png">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria4.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 </figure>
 
 :::
@@ -227,8 +227,8 @@ Da definição de va, podemos fazer os seguintes apontamentos:
 
 **Exemplo 1 (cont.):**
 
-<figure style="width:90%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria5.png">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria5.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 </figure>
 
 :::
@@ -323,8 +323,8 @@ $$
 
 ::: {.column #vcenter width=40%}
 
-<figure style="width:90%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria_discreta.png">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria_discreta.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
 </figure>
 
 :::
@@ -358,8 +358,8 @@ Embora $\text{Im}(X)$ seja infinito, ele é um conjunto enumerável, de modo que
 
 ::: {.column #vcenter width=40%}
 
-<figure style="width:95%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria_continua0.svg">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria_continua0.svg" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
 </figure>
 
 :::
@@ -397,8 +397,8 @@ Nesse espaço amostral, um evento $A$, é uma [**região**]{style="color:red;"} 
 
 ::: {.column #vcenter width=40%}
 
-<figure style="width:95%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria_continua1.svg">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria_continua1.svg" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
 </figure>
 
 :::
@@ -436,8 +436,8 @@ A este experimento, poderíamos associar a variável aleatória $X =$ "Distânci
 
 ::: {.column #vcenter width=40%}
 
-<figure style="width:95%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_variavel_aleatoria_continua2.svg">
+<figure>
+  <img src="figs/ilustracao_variavel_aleatoria_continua2.svg" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
 </figure>
 
 :::
@@ -499,8 +499,40 @@ $$
 
 ### Exemplo 1 (cont.) {.unnumbered .unlisted}
 
-<figure style="width:50%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_fda0.png">
+<figure>
+  <img src="figs/ilustracao_fda0.png" style="display: block;margin-left: auto;margin-right: auto;width: 65%;">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/ilustracao_fda1.png" style="display: block;margin-left: auto;margin-right: auto;width: 65%;">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/ilustracao_fda2.png" style="display: block;margin-left: auto;margin-right: auto;width: 65%;">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/ilustracao_fda3.png" style="display: block;margin-left: auto;margin-right: auto;width: 65%;">
+</figure>
+
+## {.unnumbered .unlisted}
+
+### Exemplo 1 (cont.) {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/ilustracao_fda4.png" style="display: block;margin-left: auto;margin-right: auto;width: 65%;">
 </figure>
 
 
@@ -508,41 +540,8 @@ $$
 
 ### Exemplo 1 (cont.) {.unnumbered .unlisted}
 
-<figure style="width:50%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_fda1.png">
-</figure>
-
-## {.unnumbered .unlisted}
-
-### Exemplo 1 (cont.) {.unnumbered .unlisted}
-
-<figure style="width:50%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_fda2.png">
-</figure>
-
-## {.unnumbered .unlisted}
-
-### Exemplo 1 (cont.) {.unnumbered .unlisted}
-
-<figure style="width:50%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_fda3.png">
-</figure>
-
-## {.unnumbered .unlisted}
-
-### Exemplo 1 (cont.) {.unnumbered .unlisted}
-
-<figure style="width:50%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_fda4.png">
-</figure>
-
-
-## {.unnumbered .unlisted}
-
-### Exemplo 1 (cont.) {.unnumbered .unlisted}
-
-<figure style="width:50%; margin-left:auto; margin-right:auto;">
-  <img src="figs/ilustracao_fda5.png">
+<figure>
+  <img src="figs/ilustracao_fda5.png" style="display: block;margin-left: auto;margin-right: auto;width: 65%;">
 </figure>
 
 ::: {.callout-caution}
@@ -597,9 +596,11 @@ A fmp é um modelo teórico para as **frequências relativas** vistas em estatí
 
 ::: fragment
 
-<figure style="width:70%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_frequencia_fmp.png">
+
+<figure>
+  <img src="figs/ilustracao_frequencia_fmp.png" style="display: block;margin-left: auto;margin-right: auto;width: 75%;">
 </figure>
+
 
 :::
 
@@ -631,8 +632,8 @@ $$
 
 ::: {.column #vcenter width=35%}
 
-<figure style="width:60%; margin-left:auto; margin-right:auto;visibility:hidden;">
-  <img src="figs/ilustracao_fda_vac0.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac0.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
 </figure>
 
 :::
@@ -667,9 +668,10 @@ $$
 
 ::: {.column #vcenter width=35%}
 
-<figure style="width:60%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_fda_vac0.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac0.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
 </figure>
+
 
 :::
 
@@ -705,9 +707,10 @@ $$
 
 ::: {.column #vcenter width=35%}
 
-<figure style="width:60%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_fda_vac1.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac1.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
 </figure>
+
 
 :::
 
@@ -742,9 +745,10 @@ $$
 
 ::: {.column #vcenter width=35%}
 
-<figure style="width:60%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_fda_vac2.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac2.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
 </figure>
+
 
 :::
 
@@ -778,9 +782,10 @@ $$
 
 ::: {.column #vcenter width=35%}
 
-<figure style="width:60%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_fda_vac3.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac3.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
 </figure>
+
 
 :::
 
@@ -813,9 +818,10 @@ $$
 
 ::: {.column #vcenter width=35%}
 
-<figure style="width:60%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_fda_vac3.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac3.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
 </figure>
+
 
 :::
 
@@ -825,25 +831,28 @@ $$
 
 ### Exemplo 3 (cont.) {.unnumbered .unlisted}
 
-<figure style="width:40%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_fda_vac_grafico0.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac_grafico0.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
 </figure>
+
 
 ## {.unnumbered .unlisted}
 
 ### Exemplo 3 (cont.) {.unnumbered .unlisted}
 
-<figure style="width:40%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_fda_vac_grafico1.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac_grafico1.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
 </figure>
+
 
 ## {.unnumbered .unlisted}
 
 ### Exemplo 3 (cont.) {.unnumbered .unlisted}
 
-<figure style="width:40%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_fda_vac_grafico2.png">
+<figure>
+  <img src="figs/ilustracao_fda_vac_grafico2.png" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
 </figure>
+
 
 
 ::: {.callout-caution}
@@ -898,8 +907,8 @@ A fdp é um modelo teórico para as **densidades** de faixas vistas em estatíst
 
 ::: fragment
 
-<figure style="width:70%; margin-left:auto; margin-right:auto">
-  <img src="figs/ilustracao_densidade_fdp.png">
+<figure>
+  <img src="figs/ilustracao_densidade_fdp.png" style="display: block;margin-left: auto;margin-right: auto;width: 75%;">
 </figure>
 
 :::
@@ -1177,8 +1186,8 @@ $$
 
 ::: {.column #vcenter width=50%}
 
-<figure style="width:90%; display:block; margin-left: auto; margin-right: auto;">
-  <img src="figs/ilustracao_fda_exemplo4.png">
+<figure>
+  <img src="figs/ilustracao_fda_exemplo4.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
 </figure>
 
 :::
@@ -1769,7 +1778,7 @@ $$\textstyle P(X > 2) = P(X = 3) + P(X = 4) = {4 \choose 3} (\frac{1}{5})^3 (\fr
 
 ```{r fig.width=10, fig.align='center'}
 n <- 20; x <- 0:n; p <- 0.2
-par(family = "Times New Roman")
+par(family = "serif")
 plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
 mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
 mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
@@ -1781,7 +1790,7 @@ mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(p),")")), sid
 
 ```{r fig.width=10, fig.align='center'}
 n <- 20; x <- 0:n; p <- 0.5
-par(family = "Times New Roman")
+par(family = "serif")
 plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
 mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
 mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
@@ -1792,7 +1801,7 @@ mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(p),")")), sid
 
 ```{r fig.width=10, fig.align='center'}
 n <- 20; x <- 0:n; p <- 0.8
-par(family = "Times New Roman")
+par(family = "serif")
 plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
 mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
 mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
@@ -1861,7 +1870,7 @@ Uma urna contém $M$ objetos do Tipo 1 e $N-M$ do Tipo 2. Desses, serão selecio
 
 :::
 
-[Pela regra do produto, obtemos $\frac{M!}{(M-x)!}\frac{(N-M)!}{(N-M-(n-x))!}$.]{.fragment fragment-index=3} [Como a ordem em que os objetos são selecionados não importa, precisamos dividir essa quantidade pelas $x!$ permutações dos objetos do Tipo 1 e pelas $(n-x)!$ do Tipo 2, o que resulta em ${M \choose x} {N-M \choose n-x}$ maneiras favoráveis a $\{X = x\}$.]{.fragment fragment-index=4} [Sem nenhuma restrição, obtemos $N(N-1)\cdots(N-n+1) = \frac{N!}{(N-n)!}$.]{.fragment fragment-index=5} [Descontando as $n!$ permutações, temos ${N \choose n}$ elementos em $\Omega$.]{.fragment fragment-index=6} [Assim,
+[Da regra do produto, temos $\frac{M!}{(M-x)!}\frac{(N-M)!}{(N-M-(n-x))!}$.]{.fragment fragment-index=3} [Como a ordem em que os objetos são selecionados não importa, precisamos dividir esse valor pelas $x!$ permutações dos objetos do Tipo 1 e pelas $(n-x)!$ do Tipo 2, resultando em ${M \choose x} {N-M \choose n-x}$ maneiras favoráveis a $\{X = x\}$.]{.fragment fragment-index=4} [Sem nenhuma restrição, obtemos $N(N-1)\cdots(N-n+1) = \frac{N!}{(N-n)!}$.]{.fragment fragment-index=5} [Descontando as $n!$ permutações, há ${N \choose n}$ elementos em $\Omega$.]{.fragment fragment-index=6} [Assim,
 $$p_X(x) = P(X = x) = \frac{ {M \choose x} {M-M \choose n-x} }{ {N \choose n} }, \ \ \max\{0, n-(N-M)\} \leq x \leq \min\{n,M\}.$$]{.fragment fragment-index=7}
 
 ## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
@@ -1939,7 +1948,7 @@ M <- 3; N <- 10; n <- 4; x <- 0:n
 y1 <- dbinom(x, n, M/N)
 y2 <- dhyper(x, M, N-M, n)
 MM <- max(y1,y2)
-par(family = "Times New Roman")
+par(family = "serif")
 plot(x, y1, type='h', xlab='', ylab='', main='', lwd=3, ylim=c(0,MM))
 mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
 mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
@@ -2120,7 +2129,7 @@ Veja abaixo a representação da fdp e a da probabilidade $P(X > 5)$:
 MM <- 25
 x <- seq(-1,MM,0.01)
 y <- as.numeric(x >= 0.5)*0.15*exp(-0.15*(x-0.5))
-par(family = "Times New Roman", mar=c(5,4,1,2))
+par(family = "serif", mar=c(5,4,1,2))
 plot(x[x<0.5], y[x<0.5], type='n', xlab='', ylab='', main='', lwd=3,
      ylim=range(y)+c(-.1*diff(range(y)),.13*diff(range(y))),
      xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
@@ -2638,7 +2647,7 @@ Sem dúvidas, em termos práticos, o modelo probabilístico mais importante para
 ## Definição
 
 Seja $X$ vac. Dizemos que $X$ tem distribuição normal com média $\mu$ e variância $\sigma^2$ e escrevemos $X \sim \text{N}(\mu,\sigma^2)$ se sua fdp for dada por
-$$f_X(x) = f_X(x; \mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \ \ \ \ \ \ -\infty <x < \infty.$$
+$$f_X(x) = f_X(x; \mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \ \ \ \ \ \ -\infty <x < \infty, \ \ -\infty < \mu < \infty, \ \ \sigma^2 > 0.$$
 :::
 
 
@@ -2656,7 +2665,7 @@ y2 <- dnorm(x = x, mean = mu2, sd = sqrt(s2_1))
 y3 <- dnorm(x = x, mean = mu1, sd = sqrt(s2_2))
 M_y <- max(y1, y2, y3)
 
-par(family = "Times New Roman", mar=c(5,4,1,2))
+par(family = "serif", mar=c(5,4,1,2))
 plot(x, y1, type='n', xlab='', ylab='', main='', lwd=3,
      ylim=c(0, M_y))
 lines(x, y1, lwd=2)
@@ -2708,6 +2717,485 @@ Se $X \sim \text{N}(\mu, \sigma^2)$, então:
 
 :::
 
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+Se $X \sim \text{N}(\mu, \sigma^2)$, então:
+
+::: incremental
+
+1. a probabilidade intervalar $P(a < X \leq b)$ deveria ser obtida por
+$${\textstyle P(a < X \leq b) = \int_a^b \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} dx},$$
+que não possui solução analítica, exceto se $a = -\infty$ e $b = \infty$;
+2. poderíamos, a princípio, utilizar métodos numéricos para obtê-la, mas para cada $\mu$ e $\sigma^2$ diferentes precisaríamos executar o código novamente;
+3. podemos utilizar a **padronização** para constatar que
+$${\textstyle P(a < X \leq b) = P(\frac{a-\mu}{\sigma} < \frac{X-\mu}{\sigma} \leq \frac{b-\mu}{\sigma}) = P(\frac{a-\mu}{\sigma} < Z \leq \frac{b-\mu}{\sigma})}.$$
+
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 14:** Seja $X =$ "tempo de reação de um motorista às luzes de freio do carro a frente". Um artigo na *Ergonomics* (1993, p. 391-395) sugere que $X \sim \text{N}(1.25, 0.46^2)$. [Determinemos $P(1 \leq X \leq 1.75)$:
+$$
+\begin{align*}
+P(1 \leq X \leq 1.75) &= {\textstyle P(\frac{1-\mu}{\sigma} \leq \frac{X-\mu}{\sigma} \leq \frac{1.75-\mu}{\sigma}) = P(\frac{1-1.25}{0.46} \leq Z \leq \frac{1.75-1.25}{0.46})}\\
+&= {\textstyle P(\frac{1-1.25}{0.46} \leq Z \leq \frac{1.75-1.25}{0.46}) = P(-0.54 \leq Z \leq 1.09)}\\
+&= {\textstyle P(Z \leq 1.09) - P(Z \leq -0.54) = \Phi(1.09) - \Phi(-0.54),}
+\end{align*}
+$$
+em que $\Phi(z) = P(Z \leq z)$ é uma notação especial para representar a fda da normal padrão $Z$.]{.fragment}
+::: 
+
+::: fragment
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. Note que passamos de um problema de calcular as probabilidades com respeito a $X \sim \text{N}(\mu, \sigma^2)$, com $\mu$ e $\sigma^2$ quaisquer, para as probabilidades de uma **normal padrão** $Z \sim \text{N}(0,1)$;
+2. As probabilidades para $Z \sim \text{N}(0,1)$ também não tem solução analítica, mas métodos numéricos foram utilizados para computar e tabelar $\Phi(z)$ para diversos valores de $z$.
+
+:::
+
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(-5,5,0.01)
+mu <- 0;s2 <- 1
+z <- -1.5
+y <- dnorm(x = x, mean = mu1, sd = sqrt(s2_1))
+M_y <- max(y); M_x <- max(x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+polygon(x=c(x[1], x[x < z], z, z),
+        y=c(0, y[x < z], dnorm(z, mu, sqrt(s2)), 0), col='lightblue', border=NA)
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x, y, lwd=3)
+lines(x=c(z, z), y=c(0, dnorm(z, mu, sqrt(s2))), lwd=2)
+lines(x=c(z, z), y=c(0, -.025*M_y), lwd=2)
+text(x = z, y=-.02*M_y, labels=bquote(italic(z)==.(z)), pos=1)
+arrows(x0 = -2, x1 = -3, y0 = dnorm(-2)/2, y1=.2, length=.07)
+text(x=-3, y=.2, labels=bquote(Phi*"("*italic(z)*")"%~~%.(round(pnorm(z), 4))), pos=3)
+mtext(text = expression(italic(z)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(Z)]*"("*italic(z)*")"), side = 2, line = 2, cex=1.5)
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/fig_normal_padrao1.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
+</figure>
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/fig_normal_padrao2.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
+</figure>
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/fig_normal_padrao3.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
+</figure>
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(-5,5,0.01)
+mu <- 0;s2 <- 1
+z <- 1.5
+y <- dnorm(x = x, mean = mu1, sd = sqrt(s2_1))
+M_y <- max(y); M_x <- max(x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+polygon(x=c(x[1], x[x < z], z, z),
+        y=c(0, y[x < z], dnorm(z, mu, sqrt(s2)), 0), col='lightblue', border=NA)
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x, y, lwd=3)
+lines(x=c(z, z), y=c(0, dnorm(z, mu, sqrt(s2))), lwd=2)
+lines(x=c(z, z), y=c(0, -.025*M_y), lwd=2)
+text(x = z, y=-.02*M_y, labels=bquote(italic(z)==.(z)), pos=1)
+arrows(x0 = -2, x1 = -3, y0 = dnorm(-2)/2, y1=.2, length=.07)
+text(x=-3, y=.2, labels=bquote(Phi*"("*italic(z)*")"%~~%.(round(pnorm(z), 4))), pos=3)
+mtext(text = expression(italic(z)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(Z)]*"("*italic(z)*")"), side = 2, line = 2, cex=1.5)
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/fig_normal_padrao2_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
+</figure>
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/fig_normal_padrao2_2.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
+</figure>
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/fig_normal_padrao2_3.png" style="display: block;margin-left: auto;margin-right: auto;width: 70%;">
+</figure>
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 14 (cont.) {.unnumbered .unlisted}
+
+Vimos que $P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi(-0.54)$. [Consultando a tabela da normal padrão, temos]{.fragment fragment-intex=1}
+
+::: columns
+
+::: {.column #vcenter width=50%}
+
+::: {.fragment fragment-intex=2}
+
+<figure>
+  <img src="figs/figura_normal_padrao_ex14_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
+  <figcaption style='text-align:center'>$\Phi(-0.54) = 0.2946$</figcaption>
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=50%}
+
+::: {.fragment fragment-intex=3}
+
+<figure>
+  <img src="figs/figura_normal_padrao_ex14_2.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
+  <figcaption style='text-align:center'>$\Phi(1.09) = 0.8621$</figcaption>
+</figure>
+
+:::
+
+:::
+
+:::
+
+[Assim,
+$$P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi(-0.54) = 0.8621 - 0.2946 = 0.5675.$$]{.fragment fragment-intex=4}
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 14 (cont.) {.unnumbered .unlisted}
+
+Suponha que desejamos $P(X > 1.75)$. [Utilizando a padronização, temos
+$${\textstyle P(X > 1.75) = P(\frac{X-\mu}{\sigma} > \frac{1.75-1.25}{0.46}) = P(Z > 1.09) = 1 - P(Z \leq 1.09) = 1 - \Phi(1.09).}$$]{.fragment fragment-intex=1}
+
+::: columns
+
+::: {.column #vcenter width=60%}
+
+::: {.fragment fragment-intex=2}
+
+Consultando a tabela da normal padrão, temos
+
+<figure>
+  <img src="figs/figura_normal_padrao_ex14_2.png" style="display: block;margin-left: auto;margin-right: auto;width: 99%;">
+  <figcaption style='text-align:center'>$\Phi(1.09) = 0.8621$</figcaption>
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=40%}
+
+::: {.fragment fragment-intex=3}
+
+Logo,
+$$\begin{align*}
+P(X > 1.75) &= 1 - \Phi(1.09)\\
+&= 1 - 0.8621\\
+&= 0.1379.
+\end{align*}$$
+
+:::
+
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denotado por $Q_{X,p}$, cuja definição é $P(X \leq Q_{X,p}) = p$. Vejas as Figuras abaixo.
+:::
+
+::: {style='visibility:hidden'}
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(-.5,3,0.01)
+a <- 2;b <- 3
+p <- 0.5
+q_p <- qgamma(p=p, shape = a,rate = b)
+y <- dgamma(x = x, shape = a,rate = b)
+M_y <- max(y); M_x <- max(x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+polygon(x=c(x[1], x[x < q_p], q_p, q_p),
+        y=c(0, y[x < q_p], dgamma(x = q_p, shape = a,rate = b), 0), col='lightblue', border=NA)
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x, y, lwd=3)
+lines(x=c(q_p, q_p), y=c(0, dgamma(x = q_p, shape = a,rate = b)), lwd=2)
+lines(x=c(q_p, q_p), y=c(0, -.025*M_y), lwd=2)
+text(x = q_p, y=-.02*M_y, labels=bquote(italic(Q[X*","*p])==.(round(q_p, 4))), pos=1)
+arrows(x0 = q_p/2, x1 = 1.5, y0 = dgamma(x = q_p, shape = a,rate = b)/2, y1=.6, length=.07)
+text(x=1.5, y=.6, labels=bquote(italic(P)*"("*italic(X)<=italic(Q[X*","*p])*") = "*italic(F[X])*"("*italic(Q[X*","*p])*") = "*.(round(p, 4))), pos=4)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+legend('topright', legend=bquote(italic(p) == .(p)), fill = 'lightblue')
+```
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denotado por $Q_{X,p}$, cuja definição é $P(X \leq Q_{X,p}) = p$. Vejas as Figuras abaixo.
+:::
+
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(-.5,3,0.01)
+a <- 2;b <- 3
+p <- 0.5
+q_p <- qgamma(p=p, shape = a,rate = b)
+y <- dgamma(x = x, shape = a,rate = b)
+M_y <- max(y); M_x <- max(x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+polygon(x=c(x[1], x[x < q_p], q_p, q_p),
+        y=c(0, y[x < q_p], dgamma(x = q_p, shape = a,rate = b), 0), col='lightblue', border=NA)
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x, y, lwd=3)
+lines(x=c(q_p, q_p), y=c(0, dgamma(x = q_p, shape = a,rate = b)), lwd=2)
+lines(x=c(q_p, q_p), y=c(0, -.025*M_y), lwd=2)
+text(x = q_p, y=-.02*M_y, labels=bquote(italic(Q[X*","*p])==.(round(q_p, 4))), pos=1)
+arrows(x0 = q_p/2, x1 = 1.5, y0 = dgamma(x = q_p, shape = a,rate = b)/2, y1=.6, length=.07)
+text(x=1.5, y=.6, labels=bquote(italic(P)*"("*italic(X)<=italic(Q[X*","*p])*") = "*italic(F[X])*"("*italic(Q[X*","*p])*") = "*.(round(p, 4))), pos=4)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+legend('topright', legend=bquote(italic(p) == .(p)), fill = 'lightblue')
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denotado por $Q_{X,p}$, cuja definição é $P(X \leq Q_{X,p}) = p$. Vejas as Figuras abaixo.
+:::
+
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(-.5,3,0.01)
+a <- 2;b <- 3
+p <- 0.7
+q_p <- qgamma(p=p, shape = a,rate = b)
+y <- dgamma(x = x, shape = a,rate = b)
+M_y <- max(y); M_x <- max(x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+polygon(x=c(x[1], x[x < q_p], q_p, q_p),
+        y=c(0, y[x < q_p], dgamma(x = q_p, shape = a,rate = b), 0), col='lightblue', border=NA)
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x, y, lwd=3)
+lines(x=c(q_p, q_p), y=c(0, dgamma(x = q_p, shape = a,rate = b)), lwd=2)
+lines(x=c(q_p, q_p), y=c(0, -.025*M_y), lwd=2)
+text(x = q_p, y=-.02*M_y, labels=bquote(italic(Q[X*","*p])==.(round(q_p, 4))), pos=1)
+arrows(x0 = q_p/2, x1 = 1.5, y0 = dgamma(x = q_p, shape = a,rate = b)/2, y1=.6, length=.07)
+text(x=1.5, y=.6, labels=bquote(italic(P)*"("*italic(X)<=italic(Q[X*","*p])*") = "*italic(F[X])*"("*italic(Q[X*","*p])*") = "*.(round(p, 4))), pos=4)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+legend('topright', legend=bquote(italic(p) == .(p)), fill = 'lightblue')
+```
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denotado por $Q_{X,p}$, cuja definição é $P(X \leq Q_{X,p}) = p$. Vejas as Figuras abaixo.
+:::
+
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(-.5,3,0.01)
+a <- 2;b <- 3
+p <- 0.9
+q_p <- qgamma(p=p, shape = a,rate = b)
+y <- dgamma(x = x, shape = a,rate = b)
+M_y <- max(y); M_x <- max(x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+polygon(x=c(x[1], x[x < q_p], q_p, q_p),
+        y=c(0, y[x < q_p], dgamma(x = q_p, shape = a,rate = b), 0), col='lightblue', border=NA)
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x, y, lwd=3)
+lines(x=c(q_p, q_p), y=c(0, dgamma(x = q_p, shape = a,rate = b)), lwd=2)
+lines(x=c(q_p, q_p), y=c(0, -.025*M_y), lwd=2)
+text(x = q_p, y=-.02*M_y, labels=bquote(italic(Q[X*","*p])==.(round(q_p, 4))), pos=1)
+arrows(x0 = q_p/2, x1 = 1.5, y0 = dgamma(x = q_p, shape = a,rate = b)/2, y1=.6, length=.07)
+text(x=1.5, y=.6, labels=bquote(italic(P)*"("*italic(X)<=italic(Q[X*","*p])*") = "*italic(F[X])*"("*italic(Q[X*","*p])*") = "*.(round(p, 4))), pos=4)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+legend('topright', legend=bquote(italic(p) == .(p)), fill = 'lightblue')
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 14 (cont.):** Suponha que desejamos encontrar o valor que corresponde ao tempo de reação dos $70\%$ motoristas que reagem mais rapidamente. Na verdade, estamos interessados no quantil de ordem $p=0.7$, isto é, $Q_{X,0.7}$. Para encontrarmos, note que
+$${\textstyle 0.7 = P(X \leq Q_{X,0.7}) = P(\frac{X - \mu}{\sigma} \leq \frac{Q_{X,0.7} - \mu}{\sigma})} = P(Z \leq Q_{Z,0.7}),$$
+em que $Q_{Z,0.7} = \frac{Q_{X,0.7} - \mu}{\sigma} = \frac{Q_{X,0.7} - 1.25}{0.46}$, ou ainda, $Q_{X,0.7} = 1.25 + 0.46 Q_{Z,0.7}$.
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+Note que, novamente, o problema passa do quantil de uma normal qualquer para o quantil de uma normal padrão. Para encontrar $Q_{Z,0.7}$, necessitamos consultar a tabela normal padrão de maneira inversa.
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 14 (cont.) {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/figura_normal_padrao_ex14_2_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 14 (cont.) {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/figura_normal_padrao_ex14_2_2.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 14 (cont.) {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/figura_normal_padrao_ex14_2_3.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
+
+[Assim, concluímos que $0.52 < Q_{Z,0.7} < 0.53$. Podemos usar interpolação para aproximar $Q_{Z, 0.7}$.]{.fragment fragment-index=1} [Note que $Q_{Z,0.6985} = 0.52$ e $Q_{Z,0.7019} = 0.53$]{.fragment fragment-index=2}. [Agora, admitindo que $Q_{Z,p}$ tem uma relação aproximadamente linear para $0.6985 \leq p \leq 0.7019$, temos que $Q_{Z,p} = a+bp$, com as restrições]{.fragment fragment-index=3}
+
+:::{.fragment fragment-index=3}
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$0.52 = a+0.6985b$</td> <td>([**Eq. 1**]{style='color:red;'})</td> <td></td> <td></td> <td>e</td> <td></td> <td></td> <td>$0.53 = a+0.7019b$.</td> <td>([**Eq. 2**]{style='color:red;'})</td>
+  </tr>
+</table>
+
+:::
+
+[Pela 1ª equação, $a = 0.52 - 0.6985b$.]{.fragment fragment-index=4} [Substituindo na 2ª equação, vem $b = \frac{0.53 - 0.52}{0.7019 - 0.6985} \approx 2.9412$.]{.fragment fragment-index=5} [Retornando na 1ª equação, temos $a = 0.52 - 0.6985\cdot 2.9412 \approx -1.5344$.]{.fragment fragment-index=6} [Finalmente, temos
+$$Q_{Z,0.7} = a+0.7b = -1.5344 + 0.7 \cdot 2.9412 \approx 0.5244 \color{white}{\Rightarrow Q_{X,0.7} = 1.25 + 0.46 Q_{Z,0.7} = 1.4912.}$$]{.fragment fragment-index=7}
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 14 (cont.) {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/figura_normal_padrao_ex14_2_3.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
+
+Assim, concluímos que $0.52 < Q_{Z,0.7} < 0.53$. Podemos usar interpolação para aproximar $Q_{Z, 0.7}$. Note que $Q_{Z,0.6985} = 0.52$ e $Q_{Z,0.7019} = 0.53$. Agora, admitindo que $Q_{Z,p}$ tem uma relação aproximadamente linear para $0.6985 \leq p \leq 0.7019$, temos que $Q_{Z,p} = a+bp$, com as restrições
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$0.52 = a+0.6985b$</td> <td>([**Eq. 1**]{style='color:red;'})</td> <td></td> <td></td> <td>e</td> <td></td> <td></td> <td>$0.53 = a+0.7019b$.</td> <td>([**Eq. 2**]{style='color:red;'})</td>
+  </tr>
+</table>
+
+Pela 1ª equação, $a = 0.52 - 0.6985b$. Substituindo na 2ª equação, vem $b = \frac{0.53 - 0.52}{0.7019 - 0.6985} \approx 2.9412$. Retornando na 1ª equação, temos $a = 0.52 - 0.6985\cdot 2.9412 \approx -1.5344$. Finalmente, temos
+$$Q_{Z,0.7} = a+0.7b = -1.5344 + 0.7 \cdot 2.9412 \approx 0.5244 \color{red}{\Rightarrow Q_{X,0.7} = 1.25 + 0.46 Q_{Z,0.7} = 1.4912.}$$ 
+**Conclusão:** 70% dos motoristas apresentam tempo de reação inferior a 1,4912 seg.
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedades
+
+De modo geral, podemos encontrar o quantil $Q_{Z,p}$ de uma normal padrão por interpolação da seguinte forma. Sejam $p_L$ e $p_U$, respectivamente, a maior e a menor probabilidades tabeladas tais que $p_L < p < p_U$ e $Q_{Z,p_L}$ e $Q_{Z,p_U}$ os respectivos quantis, então
+$$Q_{Z,p} \approx a + bp,$$
+em que
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$b = \frac{p_U - p_L}{Q_{Z,p_U} - Q_{Z,p_L}}$</td> <td>e</td> <td>$a = p_L - bQ_{Z,p_L}$.</td>
+  </tr>
+</table>
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+No Exemplo 14, obtivemos $P_L = 0.52$, $P_U = 0.7019$, $Q_{Z,p_L} = 0.6985$ e $Q_{Z,p_U} = 0.7019$.
+:::
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+1. Em inferência, veremos um dos teoremas mais importantes para utilização em aplicações, o **Teorema Central do Limite** (TCL). Basicamente, o TCL afirma que, em grandes amostras, a média amostral tem distribuição aproximadamente normal.
+2. Como a média amostral é soma de va's dividida pelo tamanho da amostra, é natural, imaginar que, se uma va $X$ pode ser enxergada como soma de várias va's, então a sua distribuição também será bem aproximada por uma normal. Esse é o caso da distribuição Binomial (soma de Bernoulli's), por exemplo.
+:::
+
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 15:** Suponha que 25% dos motoristas habilitados em um estado não tenham seguro. Seja $X =$ "número de motoristas sem seguro em uma amostra com reposição de tamanho 100". Se representarmos $s$ o motorista não ter seguro, então $X \sim \text{Bin}(100, 0.25)$. Para determinar $P(X \leq 20)$ teríamos que fazer
+$$\textstyle P(X \leq 20) = \sum_{x=0}^{20} p_X(x) = p_X(0) + p_X(1) + \cdots p_X(20) = \sum_{x=0}^{20} {100 \choose x} 0.25^x0.75^{100-x} \approx 0.1488.$$
+
+:::
+
 # Vetores Aleatórios Bidimensionais
 
 ## Covariância e Correlação
@@ -2744,7 +3232,7 @@ Se $X \sim \text{N}(\mu, \sigma^2)$, então:
 :::
 
 
-::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
 **Exemplo:** 
 
