@@ -3172,28 +3172,369 @@ em que
 
 :::
 
+::: fragment
+
 ::: {.callout-caution}
 ## Observação
 
 No Exemplo 14, obtivemos $P_L = 0.52$, $P_U = 0.7019$, $Q_{Z,p_L} = 0.6985$ e $Q_{Z,p_U} = 0.7019$.
 :::
 
+:::
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
 ::: {.callout-caution}
-## Observação
+## Observações
+
+::: incremental
 
 1. Em inferência, veremos um dos teoremas mais importantes para utilização em aplicações, o **Teorema Central do Limite** (TCL). Basicamente, o TCL afirma que, em grandes amostras, a média amostral tem distribuição aproximadamente normal.
 2. Como a média amostral é soma de va's dividida pelo tamanho da amostra, é natural, imaginar que, se uma va $X$ pode ser enxergada como soma de várias va's, então a sua distribuição também será bem aproximada por uma normal. Esse é o caso da distribuição Binomial (soma de Bernoulli's), por exemplo.
+
 :::
 
+:::
+
+::: fragment
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo 15:** Suponha que 25% dos motoristas habilitados em um estado não tenham seguro. Seja $X =$ "número de motoristas sem seguro em uma amostra com reposição de tamanho 100". Se representarmos $s$ o motorista não ter seguro, então $X \sim \text{Bin}(100, 0.25)$. Para determinar $P(X \leq 20)$ teríamos que fazer
-$$\textstyle P(X \leq 20) = \sum_{x=0}^{20} p_X(x) = p_X(0) + p_X(1) + \cdots p_X(20) = \sum_{x=0}^{20} {100 \choose x} 0.25^x0.75^{100-x} \approx 0.1488.$$
+**Exemplo 15:** Dos motoristas de um estado, 25% não têm seguro. Seja $X =$ "quantidade sem seguro numa amostra de tamanho 50". [Se $s =$ "motorista não ter seguro", então $X \sim \text{Bin}(n = 50, p = 0.25)$.]{.fragment} [Vamos determinar a probabilidade de 20% ou menos da amostra não ter seguro:]{.fragment} [
+$$\textstyle P(\frac{X}{n} \leq 0.2) = P(X \leq 10) = \sum_{x=0}^{10} p_X(x) = \sum_{x=0}^{10} {50 \choose x} 0.25^x0.75^{50-x} \approx 0.2622.$$]{.fragment}
 
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. Note que, no Exemplo 15, o cálculo do valor exato de $P(X \leq 10)$ envolveu o cálculo de 11 probabilidades da distribuição binomial, o que pode ser exaustivo se realizado sem auxílio computacional;
+2. A alternativa que surge é utilizar $Y \sim \text{N}(\mu, \sigma^2)$ como aproximação para $X \sim \text{Bin}(n,p)$;
+3. Os parâmetros $\mu$ e $\sigma^2$ da distribuição de $Y$ utilizada para a aproximação são $\mu = \mu_X = np$ e $\sigma^2 = np(1-p)$, que são a média e a variância da $X \sim \text{Bin}(n,p)$;
+4. Tendo em vista que $X$ pode ser representada como soma de $n$ va's $\text{Ber}(p)$, o TCL garante que a aproximação do Item 2 fica melhor a medida que $n$ aumenta;
+5. Para ilustração, os gráficos a seguir mostram a fmp de $X \sim \text{Bin}(n,p)$ com a fdp de $Y \sim \text{N}(\mu = np, \sigma^2 = np(1-p))$, para $p=0.05$ e $0.25$, e $n = 5, 10, 50$ e $100$.
+
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+
+```{r out.width="100%", fig.height=5}
+#| layout-ncol: 2
+
+n <- 5
+p1 <- 0.05; p2 <- 0.25
+mu1 <- n*p1;mu2 <- n*p2
+s1 <- sqrt(n*p1*(1-p1)); s2 <- sqrt(n*p2*(1-p2))
+qq <- 0:n; qq1 <- seq(-.5, n+.5, by = 0.01)
+x1 <- dbinom(qq, n, p1); x2 <- dbinom(qq, n, p2)
+y1 <- dnorm(qq1, mu1, s1); y2 <- dnorm(qq1, mu2, s2)
+M1 <- max(y1, x1); M2 <- max(y2, x2)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(qq, x1, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M1))
+lines(qq1, y1, col='red', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p1)), side = 3, line = .5, cex=2)
+legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+
+plot(qq, x2, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M2))
+lines(qq1, y2, col='red', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p2)), side = 3, line = .5, cex=2)
+legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r out.width="100%", fig.height=5}
+#| layout-ncol: 2
+
+n <- 10
+p1 <- 0.05; p2 <- 0.25
+mu1 <- n*p1;mu2 <- n*p2
+s1 <- sqrt(n*p1*(1-p1)); s2 <- sqrt(n*p2*(1-p2))
+qq <- 0:n; qq1 <- seq(-.5, n+.5, by = 0.01)
+x1 <- dbinom(qq, n, p1); x2 <- dbinom(qq, n, p2)
+y1 <- dnorm(qq1, mu1, s1); y2 <- dnorm(qq1, mu2, s2)
+M1 <- max(y1, x1); M2 <- max(y2, x2)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(qq, x1, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M1))
+lines(qq1, y1, col='red', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p1)), side = 3, line = .5, cex=2)
+legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+
+plot(qq, x2, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M2))
+lines(qq1, y2, col='red', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p2)), side = 3, line = .5, cex=2)
+legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+```
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r out.width="100%", fig.height=5}
+#| layout-ncol: 2
+
+n <- 50
+p1 <- 0.05; p2 <- 0.25
+mu1 <- n*p1;mu2 <- n*p2
+s1 <- sqrt(n*p1*(1-p1)); s2 <- sqrt(n*p2*(1-p2))
+qq <- 0:n; qq1 <- seq(-.5, n+.5, by = 0.01)
+x1 <- dbinom(qq, n, p1); x2 <- dbinom(qq, n, p2)
+y1 <- dnorm(qq1, mu1, s1); y2 <- dnorm(qq1, mu2, s2)
+M1 <- max(y1, x1); M2 <- max(y2, x2)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(qq, x1, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M1))
+lines(qq1, y1, col='red', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p1)), side = 3, line = .5, cex=2)
+legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+
+plot(qq, x2, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M2))
+lines(qq1, y2, col='red', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p2)), side = 3, line = .5, cex=2)
+legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r out.width="100%", fig.height=5}
+#| layout-ncol: 2
+
+n <- 100
+p1 <- 0.05; p2 <- 0.25
+mu1 <- n*p1;mu2 <- n*p2
+s1 <- sqrt(n*p1*(1-p1)); s2 <- sqrt(n*p2*(1-p2))
+qq <- 0:n; qq1 <- seq(-.5, n+.5, by = 0.01)
+x1 <- dbinom(qq, n, p1); x2 <- dbinom(qq, n, p2)
+y1 <- dnorm(qq1, mu1, s1); y2 <- dnorm(qq1, mu2, s2)
+M1 <- max(y1, x1); M2 <- max(y2, x2)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(qq, x1, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M1))
+lines(qq1, y1, col='red', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p1)), side = 3, line = .5, cex=2)
+legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+
+plot(qq, x2, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M2))
+lines(qq1, y2, col='red', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p2)), side = 3, line = .5, cex=2)
+legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+```
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 15 (cont.) {.unnumbered .unlisted}
+
+Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 15 (cont.) {.unnumbered .unlisted}
+
+Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
+
+```{r fig.width=11, fig.height=5, fig.align='center'}
+
+n <- 50; p <- 0.25; x <- floor(0.2*n); mu <- n*p; s <- sqrt(n*p*(1-p))
+qq_bin <- 0:n; qq_nor <- seq(-.5, n+.5, by = 0.01)
+dbin <- dbinom(qq_bin, n, p); dnor <- dnorm(qq_nor, mu, s)
+My <- max(dbin, dnor)
+
+par(family = "serif", mar=c(5,4,1,2))
+plot(qq, x1, type='n', xlab='', ylab='', main='', xlim=range(qq_nor), ylim=c(0, My))
+# rect(xleft=(0:x-.5), ybottom=rep(0, x+1), xright=(0:x+.5), ytop=dbin[qq_bin <= x],
+# col=rgb(0, 0, 0, .3, maxColorValue = 1), lty=3, lwd=1.2)
+# polygon(x=c(qq_nor[1],qq_nor[qq_nor < x+.5], x+.5, x+.5),
+#         y=c(0, dnor[qq_nor < x+.5], dnorm(x+.5, mu, s), 0),
+# col=rgb(1, 0, 0, .3, maxColorValue = 1), border='red')
+for(i in 1:length(qq_bin)) lines(x=c(qq[i],qq[i]), y=c(0, dbin[i]), lwd=1.1)
+lines(qq_nor, dnor, col='red', lwd=1.1)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+# legend('topright',
+#        legend=as.expression(list(
+#               bquote(italic(P)*"("*italic(X)<=10*")"~"="~.(round(pbinom(x, n, p),4))),
+#               bquote(italic(P)*"("*italic(Y)<=10.5*")"~"="~.(round(pnorm(x+.5, mu, s) - pnorm(-.5, mu, s),4)))
+#               )),
+#        fill=c(col=rgb(0, 0, 0, .3, maxColorValue = 1),
+#               col=rgb(1, 0, 0, .3, maxColorValue = 1))
+# )
+
+
+```
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 15 (cont.) {.unnumbered .unlisted}
+
+Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
+
+```{r fig.width=11, fig.height=5, fig.align='center'}
+
+n <- 50; p <- 0.25; x <- floor(0.2*n); mu <- n*p; s <- sqrt(n*p*(1-p))
+qq_bin <- 0:n; qq_nor <- seq(-.5, n+.5, by = 0.01)
+dbin <- dbinom(qq_bin, n, p); dnor <- dnorm(qq_nor, mu, s)
+My <- max(dbin, dnor)
+
+par(family = "serif", mar=c(5,4,1,2))
+plot(qq, x1, type='n', xlab='', ylab='', main='', xlim=range(qq_nor), ylim=c(0, My))
+rect(xleft=(0:x-.5), ybottom=rep(0, x+1), xright=(0:x+.5), ytop=dbin[qq_bin <= x],
+col=rgb(0, 0, 0, .3, maxColorValue = 1), lty=3, lwd=1.2)
+# polygon(x=c(qq_nor[1],qq_nor[qq_nor < x+.5], x+.5, x+.5),
+#         y=c(0, dnor[qq_nor < x+.5], dnorm(x+.5, mu, s), 0),
+# col=rgb(1, 0, 0, .3, maxColorValue = 1), border='red')
+for(i in 1:length(qq_bin)) lines(x=c(qq[i],qq[i]), y=c(0, dbin[i]), lwd=1.1)
+lines(qq_nor, dnor, col='red', lwd=1.1)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+legend('topright',
+       legend=as.expression(list(
+              bquote(italic(P)*"("*italic(X)<=10*")"~"="~.(round(pbinom(x, n, p),4)))#,
+              # bquote(italic(P)*"("*italic(Y)<=10.5*")"~"="~.(round(pnorm(x+.5, mu, s) - pnorm(-.5, mu, s),4)))
+              )),
+       fill=c(col=rgb(0, 0, 0, .3, maxColorValue = 1)#,
+              # col=rgb(1, 0, 0, .3, maxColorValue = 1)
+)
+)
+
+
+```
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 15 (cont.) {.unnumbered .unlisted}
+
+Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
+
+```{r fig.width=11, fig.height=5, fig.align='center'}
+
+n <- 50; p <- 0.25; x <- floor(0.2*n); mu <- n*p; s <- sqrt(n*p*(1-p))
+qq_bin <- 0:n; qq_nor <- seq(-.5, n+.5, by = 0.01)
+dbin <- dbinom(qq_bin, n, p); dnor <- dnorm(qq_nor, mu, s)
+My <- max(dbin, dnor)
+
+par(family = "serif", mar=c(5,4,1,2))
+plot(qq, x1, type='n', xlab='', ylab='', main='', xlim=range(qq_nor), ylim=c(0, My))
+rect(xleft=(0:x-.5), ybottom=rep(0, x+1), xright=(0:x+.5), ytop=dbin[qq_bin <= x],
+col=rgb(0, 0, 0, .3, maxColorValue = 1), lty=3, lwd=1.2)
+polygon(x=c(qq_nor[1],qq_nor[qq_nor < x+.5], x+.5, x+.5),
+        y=c(0, dnor[qq_nor < x+.5], dnorm(x+.5, mu, s), 0),
+col=rgb(1, 0, 0, .3, maxColorValue = 1), border='red')
+for(i in 1:length(qq_bin)) lines(x=c(qq[i],qq[i]), y=c(0, dbin[i]), lwd=1.1)
+lines(qq_nor, dnor, col='red', lwd=1.1)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+legend('topright',
+       legend=as.expression(list(
+              bquote(italic(P)*"("*italic(X)<=10*")"~"="~.(round(pbinom(x, n, p),4))),
+              bquote(italic(P)*"("*italic(Y)<=10.5*")"~"="~"?")
+              )),
+       fill=c(col=rgb(0, 0, 0, .3, maxColorValue = 1),
+              col=rgb(1, 0, 0, .3, maxColorValue = 1))
+)
+
+
+```
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 15 (cont.) {.unnumbered .unlisted}
+
+Assim, a ideia é realizar a aproximação
+$$\textstyle P(X \leq 10) \approx P(Y \leq 10.5) = P(Z \leq \frac{10.5 - 12.5}{\sqrt{9.375}}) = P(Z \leq -0.65) = 0.2578.$$
+
+<figure>
+  <img src="figs/figura_normal_padrao_ex15_3.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 15 (cont.) {.unnumbered .unlisted}
+
+Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
+
+```{r fig.width=11, fig.height=5, fig.align='center'}
+
+n <- 50; p <- 0.25; x <- floor(0.2*n); mu <- n*p; s <- sqrt(n*p*(1-p))
+qq_bin <- 0:n; qq_nor <- seq(-.5, n+.5, by = 0.01)
+dbin <- dbinom(qq_bin, n, p); dnor <- dnorm(qq_nor, mu, s)
+My <- max(dbin, dnor)
+
+par(family = "serif", mar=c(5,4,1,2))
+plot(qq, x1, type='n', xlab='', ylab='', main='', xlim=range(qq_nor), ylim=c(0, My))
+rect(xleft=(0:x-.5), ybottom=rep(0, x+1), xright=(0:x+.5), ytop=dbin[qq_bin <= x],
+col=rgb(0, 0, 0, .3, maxColorValue = 1), lty=3, lwd=1.2)
+polygon(x=c(qq_nor[1],qq_nor[qq_nor < x+.5], x+.5, x+.5),
+        y=c(0, dnor[qq_nor < x+.5], dnorm(x+.5, mu, s), 0),
+col=rgb(1, 0, 0, .3, maxColorValue = 1), border='red')
+for(i in 1:length(qq_bin)) lines(x=c(qq[i],qq[i]), y=c(0, dbin[i]), lwd=1.1)
+lines(qq_nor, dnor, col='red', lwd=1.1)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
+legend('topright',
+       legend=as.expression(list(
+              bquote(italic(P)*"("*italic(X)<=10*")"~"="~.(round(pbinom(x, n, p),4))),
+              bquote(italic(P)*"("*italic(Y)<=10.5*")"~"="~.(round(pnorm(x+.5, mu, s) - pnorm(-.5, mu, s),4)))
+       )),
+       fill=c(col=rgb(0, 0, 0, .3, maxColorValue = 1),
+              col=rgb(1, 0, 0, .3, maxColorValue = 1))
+)
+
+
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-tip}
+## Exercícios
+
+Considerando as condições do Exemplo 15 e utilizando $Y \sim \text{N}(12.5, 9.375)$, aproxime as seguintes probabilidades:
+
+1. $P(X < 10)$;
+2. $P(X = 10)$;
+3. $P(X > 10)$;
+4. $P(X \geq 10)$.
 :::
 
 # Vetores Aleatórios Bidimensionais

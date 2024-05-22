@@ -2376,7 +2376,7 @@ Sem reposição
 </section>
 <section id="modelos-probabilísticos-discretos-11" class="slide level2 unnumbered unlisted">
 <h2>2.2 Modelos probabilísticos discretos</h2>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -3452,6 +3452,7 @@ e
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -3462,24 +3463,158 @@ e
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="modelos-probabilísticos-contínuos-19" class="slide level2 unnumbered unlisted">
 <h2>3.2 Modelos probabilísticos contínuos</h2>
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Observação</strong></p>
+<p><strong>Observações</strong></p>
 </div>
 <div class="callout-content">
+<div>
 <ol type="1">
-<li>Em inferência, veremos um dos teoremas mais importantes para utilização em aplicações, o <strong>Teorema Central do Limite</strong> (TCL). Basicamente, o TCL afirma que, em grandes amostras, a média amostral tem distribuição aproximadamente normal.</li>
-<li>Como a média amostral é soma de va’s dividida pelo tamanho da amostra, é natural, imaginar que, se uma va <span class="math inline">\(X\)</span> pode ser enxergada como soma de várias va’s, então a sua distribuição também será bem aproximada por uma normal. Esse é o caso da distribuição Binomial (soma de Bernoulli’s), por exemplo.</li>
+<li class="fragment">Em inferência, veremos um dos teoremas mais importantes para utilização em aplicações, o <strong>Teorema Central do Limite</strong> (TCL). Basicamente, o TCL afirma que, em grandes amostras, a média amostral tem distribuição aproximadamente normal.</li>
+<li class="fragment">Como a média amostral é soma de va’s dividida pelo tamanho da amostra, é natural, imaginar que, se uma va <span class="math inline">\(X\)</span> pode ser enxergada como soma de várias va’s, então a sua distribuição também será bem aproximada por uma normal. Esse é o caso da distribuição Binomial (soma de Bernoulli’s), por exemplo.</li>
 </ol>
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
-<p><strong>Exemplo 15:</strong> Suponha que 25% dos motoristas habilitados em um estado não tenham seguro. Seja <span class="math inline">\(X =\)</span> “número de motoristas sem seguro em uma amostra com reposição de tamanho 100”. Se representarmos <span class="math inline">\(s\)</span> o motorista não ter seguro, então <span class="math inline">\(X \sim \text{Bin}(100, 0.25)\)</span>. Para determinar <span class="math inline">\(P(X \leq 20)\)</span> teríamos que fazer <span class="math display">\[\textstyle P(X \leq 20) = \sum_{x=0}^{20} p_X(x) = p_X(0) + p_X(1) + \cdots p_X(20) = \sum_{x=0}^{20} {100 \choose x} 0.25^x0.75^{100-x} \approx 0.1488.\]</span></p>
+<p><strong>Exemplo 15:</strong> Dos motoristas de um estado, 25% não têm seguro. Seja <span class="math inline">\(X =\)</span> “quantidade sem seguro numa amostra de tamanho 50”. <span class="fragment">Se <span class="math inline">\(s =\)</span> “motorista não ter seguro”, então <span class="math inline">\(X \sim \text{Bin}(n = 50, p = 0.25)\)</span>.</span> <span class="fragment">Vamos determinar a probabilidade de 20% ou menos da amostra não ter seguro:</span> <span class="fragment"><span class="math display">\[\textstyle P(\frac{X}{n} \leq 0.2) = P(X \leq 10) = \sum_{x=0}^{10} p_X(x) = \sum_{x=0}^{10} {50 \choose x} 0.25^x0.75^{50-x} \approx 0.2622.\]</span></span></p>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-20" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Note que, no Exemplo 15, o cálculo do valor exato de <span class="math inline">\(P(X \leq 10)\)</span> envolveu o cálculo de 11 probabilidades da distribuição binomial, o que pode ser exaustivo se realizado sem auxílio computacional;</li>
+<li class="fragment">A alternativa que surge é utilizar <span class="math inline">\(Y \sim \text{N}(\mu, \sigma^2)\)</span> como aproximação para <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>;</li>
+<li class="fragment">Os parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span> da distribuição de <span class="math inline">\(Y\)</span> utilizada para a aproximação são <span class="math inline">\(\mu = \mu_X = np\)</span> e <span class="math inline">\(\sigma^2 = np(1-p)\)</span>, que são a média e a variância da <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>;</li>
+<li class="fragment">Tendo em vista que <span class="math inline">\(X\)</span> pode ser representada como soma de <span class="math inline">\(n\)</span> va’s <span class="math inline">\(\text{Ber}(p)\)</span>, o TCL garante que a aproximação do Item 2 fica melhor a medida que <span class="math inline">\(n\)</span> aumenta;</li>
+<li class="fragment">Para ilustração, os gráficos a seguir mostram a fmp de <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span> com a fdp de <span class="math inline">\(Y \sim \text{N}(\mu = np, \sigma^2 = np(1-p))\)</span>, para <span class="math inline">\(p=0.05\)</span> e <span class="math inline">\(0.25\)</span>, e <span class="math inline">\(n = 5, 10, 50\)</span> e <span class="math inline">\(100\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-21" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:100.0%"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-13-2.png" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-22" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-14-1.png" style="width:100.0%"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-14-2.png" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-23" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-15-1.png" style="width:100.0%"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-15-2.png" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-24" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-16-1.png" style="width:100.0%"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-16-2.png" style="width:100.0%"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-31" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-15-cont.">Exemplo 15 (cont.)</h3>
+<p>Nesse caso, temos <span class="math inline">\(\mu_X = np = 50 \cdot 0.25 = 12.5\)</span> e <span class="math inline">\(\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375\)</span>. Vamos ilustrar a aproximação de <span class="math inline">\(P(X \leq 10)\)</span> por meio de <span class="math inline">\(Y \sim \text{N}(12.5, 9.375)\)</span>. Veja a figura abaixo.</p>
+</section>
+<section id="section-32" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-15-cont.-1">Exemplo 15 (cont.)</h3>
+<p>Nesse caso, temos <span class="math inline">\(\mu_X = np = 50 \cdot 0.25 = 12.5\)</span> e <span class="math inline">\(\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375\)</span>. Vamos ilustrar a aproximação de <span class="math inline">\(P(X \leq 10)\)</span> por meio de <span class="math inline">\(Y \sim \text{N}(12.5, 9.375)\)</span>. Veja a figura abaixo.</p>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1056"></section>
+<section id="section-33" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-15-cont.-2">Exemplo 15 (cont.)</h3>
+<p>Nesse caso, temos <span class="math inline">\(\mu_X = np = 50 \cdot 0.25 = 12.5\)</span> e <span class="math inline">\(\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375\)</span>. Vamos ilustrar a aproximação de <span class="math inline">\(P(X \leq 10)\)</span> por meio de <span class="math inline">\(Y \sim \text{N}(12.5, 9.375)\)</span>. Veja a figura abaixo.</p>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1056"></section>
+<section id="section-34" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-15-cont.-3">Exemplo 15 (cont.)</h3>
+<p>Nesse caso, temos <span class="math inline">\(\mu_X = np = 50 \cdot 0.25 = 12.5\)</span> e <span class="math inline">\(\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375\)</span>. Vamos ilustrar a aproximação de <span class="math inline">\(P(X \leq 10)\)</span> por meio de <span class="math inline">\(Y \sim \text{N}(12.5, 9.375)\)</span>. Veja a figura abaixo.</p>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1056"></section>
+<section id="section-35" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-15-cont.-4">Exemplo 15 (cont.)</h3>
+<p>Assim, a ideia é realizar a aproximação <span class="math display">\[\textstyle P(X \leq 10) \approx P(Y \leq 10.5) = P(Z \leq \frac{10.5 - 12.5}{\sqrt{9.375}}) = P(Z \leq -0.65) = 0.2578.\]</span></p>
+<figure>
+<img src="figs/figura_normal_padrao_ex15_3.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
+</section>
+<section id="section-36" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-15-cont.-5">Exemplo 15 (cont.)</h3>
+<p>Nesse caso, temos <span class="math inline">\(\mu_X = np = 50 \cdot 0.25 = 12.5\)</span> e <span class="math inline">\(\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375\)</span>. Vamos ilustrar a aproximação de <span class="math inline">\(P(X \leq 10)\)</span> por meio de <span class="math inline">\(Y \sim \text{N}(12.5, 9.375)\)</span>. Veja a figura abaixo.</p>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1056"></section>
+<section id="modelos-probabilísticos-contínuos-25" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercícios</strong></p>
+</div>
+<div class="callout-content">
+<p>Considerando as condições do Exemplo 15 e utilizando <span class="math inline">\(Y \sim \text{N}(12.5, 9.375)\)</span>, aproxime as seguintes probabilidades:</p>
+<ol type="1">
+<li><span class="math inline">\(P(X &lt; 10)\)</span>;</li>
+<li><span class="math inline">\(P(X = 10)\)</span>;</li>
+<li><span class="math inline">\(P(X &gt; 10)\)</span>;</li>
+<li><span class="math inline">\(P(X \geq 10)\)</span>.</li>
+</ol>
+</div>
+</div>
 </div>
 </section></section>
 <section>
