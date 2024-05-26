@@ -27,6 +27,7 @@ filters:
 ---
 
 
+
 # Definição
 
 ## 1 Definição {.unnumbered .unlisted}
@@ -1776,37 +1777,34 @@ $$\textstyle P(X > 2) = P(X = 3) + P(X = 4) = {4 \choose 3} (\frac{1}{5})^3 (\fr
 
 ## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
 
-```{r fig.width=10, fig.align='center'}
-n <- 20; x <- 0:n; p <- 0.2
-par(family = "serif")
-plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(p),")")), side = 3, line = 1.3, cex = 2)
-```
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-1-1.png){fig-align='center' width=960}
+:::
+:::
+
+
+
+## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-2-1.png){fig-align='center' width=960}
+:::
+:::
 
 
 ## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
 
-```{r fig.width=10, fig.align='center'}
-n <- 20; x <- 0:n; p <- 0.5
-par(family = "serif")
-plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(p),")")), side = 3, line = 1.3, cex = 2)
-```
 
-## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-3-1.png){fig-align='center' width=960}
+:::
+:::
 
-```{r fig.width=10, fig.align='center'}
-n <- 20; x <- 0:n; p <- 0.8
-par(family = "serif")
-plot(x, dbinom(x = x, size = n, prob = p), type='h', xlab='', ylab='', main='', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(p),")")), side = 3, line = 1.3, cex = 2)
-```
 
 
 ## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
@@ -1943,21 +1941,17 @@ Note o efeito do tipo de seleção em algumas características da vad $X$:
 ## 2.2 Modelos probabilísticos discretos {.unnumbered .unlisted}
 
 
-```{r fig.width=6, fig.height=4.5, fig.align='center', fig.ncol=2}
-M <- 3; N <- 10; n <- 4; x <- 0:n
-y1 <- dbinom(x, n, M/N)
-y2 <- dhyper(x, M, N-M, n)
-MM <- max(y1,y2)
-par(family = "serif")
-plot(x, y1, type='h', xlab='', ylab='', main='', lwd=3, ylim=c(0,MM))
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = bquote(paste("Bin(",italic(n)==.(n),', ',italic(p)==.(M/N),")")), side = 3, line = 1.3, cex = 2)
-plot(x, y2, type='h', xlab='', ylab='', main='', lwd=3, ylim=c(0,MM))
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = bquote(paste("Hip(",italic(N)==.(N),', ',italic(M)==.(M),', ',italic(n)==.(n),")")), side = 3, line = 1.3, cex = 2)
-```
+
+::: {.cell layout-ncol="2" layout-align="center" fig.ncol='2'}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-4-1.png){fig-align='center' width=576}
+:::
+
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-4-2.png){fig-align='center' width=576}
+:::
+:::
+
 
 ## {.unnumbered .unlisted .smaller}
 
@@ -2125,32 +2119,13 @@ $$P(X > 5) = \int_{5}^\infty f_X(x) dx = \int_{5}^\infty 0.15e^{-0.15(x-0.5)} dx
 
 Veja abaixo a representação da fdp e a da probabilidade $P(X > 5)$:
 
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-MM <- 25
-x <- seq(-1,MM,0.01)
-y <- as.numeric(x >= 0.5)*0.15*exp(-0.15*(x-0.5))
-par(family = "serif", mar=c(5,4,1,2))
-plot(x[x<0.5], y[x<0.5], type='n', xlab='', ylab='', main='', lwd=3,
-     ylim=range(y)+c(-.1*diff(range(y)),.13*diff(range(y))),
-     xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
-polygon(x=c(5, 5, x[x > 5], MM),
-        y=c(0, 0.15*exp(-0.675), y[x > 5], 0), col='lightblue', border=NA)
-arrows(y0 = min(y)-.1*diff(range(y)), y1 = max(y)+.13*diff(range(y)), x0=0, x1=0, length = .1)
-arrows(x0 = min(x)-.02*diff(range(x)), x1 = max(x)+.08*diff(range(x)), y0=0, y1=0, length = .1)
-arrows(x0 = 10, x1 = 15, y0=0.02, y1=0.075, length = .1)
-text(x=15, y=.075, labels=expression(italic(P)(italic(X) > 5)%~~%0.5092), pos = 4, cex=1.5)
-lines(x[x >= 0.5], y[x >= 0.5], lwd=3)
-lines(x[x < 0.5], y[x < 0.5], lwd=3)
-lines(c(5, 5), c(0, 0.15*exp(-0.675)), lty=3, lwd=1.5)
-lines(c(.5, .5), c(0, 0.15), lty=3, lwd=1.5)
-lines(c(.5, .5), c(0, -0.005), lwd=1.5)
-text(x=0.5, y=-0.007, labels = '0.5', adj=c(0.3,1), cex=.8)
-lines(c(5, 5), c(0, -0.005), lwd=1.5)
-text(x=5, y=-0.007, labels = '5', adj=c(0.5,1), cex=.8)
-points(x=c(0.5, 0.5), y=c(0, 0.15), pch=c(21,21), bg=c('white','black'))
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-```
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-5-1.png){fig-align='center' width=768}
+:::
+:::
+
 
 ## 3 Variáveis aleatórias contínuas {.unnumbered .unlisted}
 
@@ -2653,38 +2628,13 @@ $$f_X(x) = f_X(x; \mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-MM <- 25
-x <- seq(-5,5,0.01)
-mu1 <- 0
-mu2 <- 1
-s2_1 <- 1
-s2_2 <- 3
-y1 <- dnorm(x = x, mean = mu1, sd = sqrt(s2_1))
-y2 <- dnorm(x = x, mean = mu2, sd = sqrt(s2_1))
-y3 <- dnorm(x = x, mean = mu1, sd = sqrt(s2_2))
-M_y <- max(y1, y2, y3)
 
-par(family = "serif", mar=c(5,4,1,2))
-plot(x, y1, type='n', xlab='', ylab='', main='', lwd=3,
-     ylim=c(0, M_y))
-lines(x, y1, lwd=2)
-lines(x, y2, lwd=2, col='blue')
-lines(x, y3, lwd=2, col='red')
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-legend('topleft',
-       legend = as.expression(list(
-         bquote(paste("N(",italic(mu)==.(mu1),', ',italic(sigma)^2==.(s2_1),")")),
-         bquote(paste("N(",italic(mu)==.(mu2),', ',italic(sigma)^2==.(s2_1),")")),
-         bquote(paste("N(",italic(mu)==.(mu1),', ',italic(sigma)^2==.(s2_2),")")))),
-       col = c('black','blue','red'), lty=1, lwd=2
-       )
-lines(x=c(mu1,mu1), y=c(.07*M_y, M_y), lty=3, lwd=1.5)
-text(x = mu1, y=.06*M_y, labels=bquote(italic(mu)==.(mu1)), pos=1)
-lines(x=c(mu2,mu2), y=c(.07*M_y, M_y), lty=3, lwd=1.5, col='blue')
-text(x = mu2, y=.06*M_y, labels=bquote(italic(mu)==.(mu2)), pos=1, col='blue')
-```
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-6-1.png){fig-align='center' width=768}
+:::
+:::
+
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
@@ -2771,28 +2721,13 @@ em que $\Phi(z) = P(Z \leq z)$ é uma notação especial para representar a fda 
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-x <- seq(-5,5,0.01)
-mu <- 0;s2 <- 1
-z <- -1.5
-y <- dnorm(x = x, mean = mu1, sd = sqrt(s2_1))
-M_y <- max(y); M_x <- max(x)
-par(family = "serif", mar=c(5,4,1,2))
-plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
-     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
-polygon(x=c(x[1], x[x < z], z, z),
-        y=c(0, y[x < z], dnorm(z, mu, sqrt(s2)), 0), col='lightblue', border=NA)
-arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
-arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
-lines(x, y, lwd=3)
-lines(x=c(z, z), y=c(0, dnorm(z, mu, sqrt(s2))), lwd=2)
-lines(x=c(z, z), y=c(0, -.025*M_y), lwd=2)
-text(x = z, y=-.02*M_y, labels=bquote(italic(z)==.(z)), pos=1)
-arrows(x0 = -2, x1 = -3, y0 = dnorm(-2)/2, y1=.2, length=.07)
-text(x=-3, y=.2, labels=bquote(Phi*"("*italic(z)*")"%~~%.(round(pnorm(z), 4))), pos=3)
-mtext(text = expression(italic(z)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(Z)]*"("*italic(z)*")"), side = 2, line = 2, cex=1.5)
-```
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-7-1.png){fig-align='center' width=768}
+:::
+:::
+
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
@@ -2815,28 +2750,13 @@ mtext(text = expression(italic(f)[italic(Z)]*"("*italic(z)*")"), side = 2, line 
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-x <- seq(-5,5,0.01)
-mu <- 0;s2 <- 1
-z <- 1.5
-y <- dnorm(x = x, mean = mu1, sd = sqrt(s2_1))
-M_y <- max(y); M_x <- max(x)
-par(family = "serif", mar=c(5,4,1,2))
-plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
-     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
-polygon(x=c(x[1], x[x < z], z, z),
-        y=c(0, y[x < z], dnorm(z, mu, sqrt(s2)), 0), col='lightblue', border=NA)
-arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
-arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
-lines(x, y, lwd=3)
-lines(x=c(z, z), y=c(0, dnorm(z, mu, sqrt(s2))), lwd=2)
-lines(x=c(z, z), y=c(0, -.025*M_y), lwd=2)
-text(x = z, y=-.02*M_y, labels=bquote(italic(z)==.(z)), pos=1)
-arrows(x0 = -2, x1 = -3, y0 = dnorm(-2)/2, y1=.2, length=.07)
-text(x=-3, y=.2, labels=bquote(Phi*"("*italic(z)*")"%~~%.(round(pnorm(z), 4))), pos=3)
-mtext(text = expression(italic(z)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(Z)]*"("*italic(z)*")"), side = 2, line = 2, cex=1.5)
-```
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-8-1.png){fig-align='center' width=768}
+:::
+:::
+
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
@@ -2948,30 +2868,13 @@ Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denota
 
 ::: {style='visibility:hidden'}
 
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-x <- seq(-.5,3,0.01)
-a <- 2;b <- 3
-p <- 0.5
-q_p <- qgamma(p=p, shape = a,rate = b)
-y <- dgamma(x = x, shape = a,rate = b)
-M_y <- max(y); M_x <- max(x)
-par(family = "serif", mar=c(5,4,1,2))
-plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
-     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
-polygon(x=c(x[1], x[x < q_p], q_p, q_p),
-        y=c(0, y[x < q_p], dgamma(x = q_p, shape = a,rate = b), 0), col='lightblue', border=NA)
-arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
-arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
-lines(x, y, lwd=3)
-lines(x=c(q_p, q_p), y=c(0, dgamma(x = q_p, shape = a,rate = b)), lwd=2)
-lines(x=c(q_p, q_p), y=c(0, -.025*M_y), lwd=2)
-text(x = q_p, y=-.02*M_y, labels=bquote(italic(Q[X*","*p])==.(round(q_p, 4))), pos=1)
-arrows(x0 = q_p/2, x1 = 1.5, y0 = dgamma(x = q_p, shape = a,rate = b)/2, y1=.6, length=.07)
-text(x=1.5, y=.6, labels=bquote(italic(P)*"("*italic(X)<=italic(Q[X*","*p])*") = "*italic(F[X])*"("*italic(Q[X*","*p])*") = "*.(round(p, 4))), pos=4)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-legend('topright', legend=bquote(italic(p) == .(p)), fill = 'lightblue')
-```
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-9-1.png){fig-align='center' width=768}
+:::
+:::
+
 
 :::
 
@@ -2984,64 +2887,12 @@ Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denota
 :::
 
 
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-x <- seq(-.5,3,0.01)
-a <- 2;b <- 3
-p <- 0.5
-q_p <- qgamma(p=p, shape = a,rate = b)
-y <- dgamma(x = x, shape = a,rate = b)
-M_y <- max(y); M_x <- max(x)
-par(family = "serif", mar=c(5,4,1,2))
-plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
-     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
-polygon(x=c(x[1], x[x < q_p], q_p, q_p),
-        y=c(0, y[x < q_p], dgamma(x = q_p, shape = a,rate = b), 0), col='lightblue', border=NA)
-arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
-arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
-lines(x, y, lwd=3)
-lines(x=c(q_p, q_p), y=c(0, dgamma(x = q_p, shape = a,rate = b)), lwd=2)
-lines(x=c(q_p, q_p), y=c(0, -.025*M_y), lwd=2)
-text(x = q_p, y=-.02*M_y, labels=bquote(italic(Q[X*","*p])==.(round(q_p, 4))), pos=1)
-arrows(x0 = q_p/2, x1 = 1.5, y0 = dgamma(x = q_p, shape = a,rate = b)/2, y1=.6, length=.07)
-text(x=1.5, y=.6, labels=bquote(italic(P)*"("*italic(X)<=italic(Q[X*","*p])*") = "*italic(F[X])*"("*italic(Q[X*","*p])*") = "*.(round(p, 4))), pos=4)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-legend('topright', legend=bquote(italic(p) == .(p)), fill = 'lightblue')
-```
 
-## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
-
-::: {.callout-caution}
-## Observação
-
-Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denotado por $Q_{X,p}$, cuja definição é $P(X \leq Q_{X,p}) = p$. Vejas as Figuras abaixo.
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-10-1.png){fig-align='center' width=768}
 :::
-
-
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-x <- seq(-.5,3,0.01)
-a <- 2;b <- 3
-p <- 0.7
-q_p <- qgamma(p=p, shape = a,rate = b)
-y <- dgamma(x = x, shape = a,rate = b)
-M_y <- max(y); M_x <- max(x)
-par(family = "serif", mar=c(5,4,1,2))
-plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
-     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
-polygon(x=c(x[1], x[x < q_p], q_p, q_p),
-        y=c(0, y[x < q_p], dgamma(x = q_p, shape = a,rate = b), 0), col='lightblue', border=NA)
-arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
-arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
-lines(x, y, lwd=3)
-lines(x=c(q_p, q_p), y=c(0, dgamma(x = q_p, shape = a,rate = b)), lwd=2)
-lines(x=c(q_p, q_p), y=c(0, -.025*M_y), lwd=2)
-text(x = q_p, y=-.02*M_y, labels=bquote(italic(Q[X*","*p])==.(round(q_p, 4))), pos=1)
-arrows(x0 = q_p/2, x1 = 1.5, y0 = dgamma(x = q_p, shape = a,rate = b)/2, y1=.6, length=.07)
-text(x=1.5, y=.6, labels=bquote(italic(P)*"("*italic(X)<=italic(Q[X*","*p])*") = "*italic(F[X])*"("*italic(Q[X*","*p])*") = "*.(round(p, 4))), pos=4)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-legend('topright', legend=bquote(italic(p) == .(p)), fill = 'lightblue')
-```
+:::
 
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
@@ -3053,30 +2904,31 @@ Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denota
 :::
 
 
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-x <- seq(-.5,3,0.01)
-a <- 2;b <- 3
-p <- 0.9
-q_p <- qgamma(p=p, shape = a,rate = b)
-y <- dgamma(x = x, shape = a,rate = b)
-M_y <- max(y); M_x <- max(x)
-par(family = "serif", mar=c(5,4,1,2))
-plot(x, y, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
-     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
-polygon(x=c(x[1], x[x < q_p], q_p, q_p),
-        y=c(0, y[x < q_p], dgamma(x = q_p, shape = a,rate = b), 0), col='lightblue', border=NA)
-arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
-arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
-lines(x, y, lwd=3)
-lines(x=c(q_p, q_p), y=c(0, dgamma(x = q_p, shape = a,rate = b)), lwd=2)
-lines(x=c(q_p, q_p), y=c(0, -.025*M_y), lwd=2)
-text(x = q_p, y=-.02*M_y, labels=bquote(italic(Q[X*","*p])==.(round(q_p, 4))), pos=1)
-arrows(x0 = q_p/2, x1 = 1.5, y0 = dgamma(x = q_p, shape = a,rate = b)/2, y1=.6, length=.07)
-text(x=1.5, y=.6, labels=bquote(italic(P)*"("*italic(X)<=italic(Q[X*","*p])*") = "*italic(F[X])*"("*italic(Q[X*","*p])*") = "*.(round(p, 4))), pos=4)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-legend('topright', legend=bquote(italic(p) == .(p)), fill = 'lightblue')
-```
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-11-1.png){fig-align='center' width=768}
+:::
+:::
+
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Muitas vezes, é necessário determinar o quantil de ordem $p$ da va $X$, denotado por $Q_{X,p}$, cuja definição é $P(X \leq Q_{X,p}) = p$. Vejas as Figuras abaixo.
+:::
+
+
+
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-12-1.png){fig-align='center' width=768}
+:::
+:::
+
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
@@ -3227,132 +3079,60 @@ $$\textstyle P(\frac{X}{n} \leq 0.2) = P(X \leq 10) = \sum_{x=0}^{10} p_X(x) = \
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
 
-```{r out.width="100%", fig.height=5}
-#| layout-ncol: 2
 
-n <- 5
-p1 <- 0.05; p2 <- 0.25
-mu1 <- n*p1;mu2 <- n*p2
-s1 <- sqrt(n*p1*(1-p1)); s2 <- sqrt(n*p2*(1-p2))
-qq <- 0:n; qq1 <- seq(-.5, n+.5, by = 0.01)
-x1 <- dbinom(qq, n, p1); x2 <- dbinom(qq, n, p2)
-y1 <- dnorm(qq1, mu1, s1); y2 <- dnorm(qq1, mu2, s2)
-M1 <- max(y1, x1); M2 <- max(y2, x2)
+::: {.cell layout-ncol="2"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-13-1.png){width=100%}
+:::
 
-par(family = "serif", mar=c(5,4,2.5,2))
-plot(qq, x1, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M1))
-lines(qq1, y1, col='red', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p1)), side = 3, line = .5, cex=2)
-legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
-
-plot(qq, x2, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M2))
-lines(qq1, y2, col='red', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p2)), side = 3, line = .5, cex=2)
-legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
-```
-
-## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
-
-```{r out.width="100%", fig.height=5}
-#| layout-ncol: 2
-
-n <- 10
-p1 <- 0.05; p2 <- 0.25
-mu1 <- n*p1;mu2 <- n*p2
-s1 <- sqrt(n*p1*(1-p1)); s2 <- sqrt(n*p2*(1-p2))
-qq <- 0:n; qq1 <- seq(-.5, n+.5, by = 0.01)
-x1 <- dbinom(qq, n, p1); x2 <- dbinom(qq, n, p2)
-y1 <- dnorm(qq1, mu1, s1); y2 <- dnorm(qq1, mu2, s2)
-M1 <- max(y1, x1); M2 <- max(y2, x2)
-
-par(family = "serif", mar=c(5,4,2.5,2))
-plot(qq, x1, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M1))
-lines(qq1, y1, col='red', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p1)), side = 3, line = .5, cex=2)
-legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
-
-plot(qq, x2, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M2))
-lines(qq1, y2, col='red', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p2)), side = 3, line = .5, cex=2)
-legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
-```
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-13-2.png){width=100%}
+:::
+:::
 
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-```{r out.width="100%", fig.height=5}
-#| layout-ncol: 2
 
-n <- 50
-p1 <- 0.05; p2 <- 0.25
-mu1 <- n*p1;mu2 <- n*p2
-s1 <- sqrt(n*p1*(1-p1)); s2 <- sqrt(n*p2*(1-p2))
-qq <- 0:n; qq1 <- seq(-.5, n+.5, by = 0.01)
-x1 <- dbinom(qq, n, p1); x2 <- dbinom(qq, n, p2)
-y1 <- dnorm(qq1, mu1, s1); y2 <- dnorm(qq1, mu2, s2)
-M1 <- max(y1, x1); M2 <- max(y2, x2)
+::: {.cell layout-ncol="2"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-14-1.png){width=100%}
+:::
 
-par(family = "serif", mar=c(5,4,2.5,2))
-plot(qq, x1, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M1))
-lines(qq1, y1, col='red', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p1)), side = 3, line = .5, cex=2)
-legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-14-2.png){width=100%}
+:::
+:::
 
-plot(qq, x2, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M2))
-lines(qq1, y2, col='red', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p2)), side = 3, line = .5, cex=2)
-legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
-```
+
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-```{r out.width="100%", fig.height=5}
-#| layout-ncol: 2
 
-n <- 100
-p1 <- 0.05; p2 <- 0.25
-mu1 <- n*p1;mu2 <- n*p2
-s1 <- sqrt(n*p1*(1-p1)); s2 <- sqrt(n*p2*(1-p2))
-qq <- 0:n; qq1 <- seq(-.5, n+.5, by = 0.01)
-x1 <- dbinom(qq, n, p1); x2 <- dbinom(qq, n, p2)
-y1 <- dnorm(qq1, mu1, s1); y2 <- dnorm(qq1, mu2, s2)
-M1 <- max(y1, x1); M2 <- max(y2, x2)
+::: {.cell layout-ncol="2"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-15-1.png){width=100%}
+:::
 
-par(family = "serif", mar=c(5,4,2.5,2))
-plot(qq, x1, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M1))
-lines(qq1, y1, col='red', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p1)), side = 3, line = .5, cex=2)
-legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-15-2.png){width=100%}
+:::
+:::
 
-plot(qq, x2, type='h', xlab='', ylab='', main='', lwd=3, xlim=c(-.5, n+.5), ylim=c(0, M2))
-lines(qq1, y2, col='red', lwd=3)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-mtext(text = bquote(italic(n)==.(n)*","~italic(p)==.(p2)), side = 3, line = .5, cex=2)
-legend('topright', legend=c(expression(Bin*"("*italic(n)*","*italic(p)*")"), expression(N*"("*italic(np)*","~italic(np)*"("*italic(1-p)*")"*")")), col=c('black', 'red'), lwd=3)
-```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+
+::: {.cell layout-ncol="2"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-16-1.png){width=100%}
+:::
+
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-16-2.png){width=100%}
+:::
+:::
+
 
 
 
@@ -3369,36 +3149,13 @@ Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 
 
 Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
 
-```{r fig.width=11, fig.height=5, fig.align='center'}
 
-n <- 50; p <- 0.25; x <- floor(0.2*n); mu <- n*p; s <- sqrt(n*p*(1-p))
-qq_bin <- 0:n; qq_nor <- seq(-.5, n+.5, by = 0.01)
-dbin <- dbinom(qq_bin, n, p); dnor <- dnorm(qq_nor, mu, s)
-My <- max(dbin, dnor)
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-17-1.png){fig-align='center' width=1056}
+:::
+:::
 
-par(family = "serif", mar=c(5,4,1,2))
-plot(qq, x1, type='n', xlab='', ylab='', main='', xlim=range(qq_nor), ylim=c(0, My))
-# rect(xleft=(0:x-.5), ybottom=rep(0, x+1), xright=(0:x+.5), ytop=dbin[qq_bin <= x],
-# col=rgb(0, 0, 0, .3, maxColorValue = 1), lty=3, lwd=1.2)
-# polygon(x=c(qq_nor[1],qq_nor[qq_nor < x+.5], x+.5, x+.5),
-#         y=c(0, dnor[qq_nor < x+.5], dnorm(x+.5, mu, s), 0),
-# col=rgb(1, 0, 0, .3, maxColorValue = 1), border='red')
-for(i in 1:length(qq_bin)) lines(x=c(qq[i],qq[i]), y=c(0, dbin[i]), lwd=1.1)
-lines(qq_nor, dnor, col='red', lwd=1.1)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-# legend('topright',
-#        legend=as.expression(list(
-#               bquote(italic(P)*"("*italic(X)<=10*")"~"="~.(round(pbinom(x, n, p),4))),
-#               bquote(italic(P)*"("*italic(Y)<=10.5*")"~"="~.(round(pnorm(x+.5, mu, s) - pnorm(-.5, mu, s),4)))
-#               )),
-#        fill=c(col=rgb(0, 0, 0, .3, maxColorValue = 1),
-#               col=rgb(1, 0, 0, .3, maxColorValue = 1))
-# )
-
-
-```
 
 
 ## {.unnumbered .unlisted .smaller}
@@ -3407,37 +3164,13 @@ mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line 
 
 Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
 
-```{r fig.width=11, fig.height=5, fig.align='center'}
 
-n <- 50; p <- 0.25; x <- floor(0.2*n); mu <- n*p; s <- sqrt(n*p*(1-p))
-qq_bin <- 0:n; qq_nor <- seq(-.5, n+.5, by = 0.01)
-dbin <- dbinom(qq_bin, n, p); dnor <- dnorm(qq_nor, mu, s)
-My <- max(dbin, dnor)
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-18-1.png){fig-align='center' width=1056}
+:::
+:::
 
-par(family = "serif", mar=c(5,4,1,2))
-plot(qq, x1, type='n', xlab='', ylab='', main='', xlim=range(qq_nor), ylim=c(0, My))
-rect(xleft=(0:x-.5), ybottom=rep(0, x+1), xright=(0:x+.5), ytop=dbin[qq_bin <= x],
-col=rgb(0, 0, 0, .3, maxColorValue = 1), lty=3, lwd=1.2)
-# polygon(x=c(qq_nor[1],qq_nor[qq_nor < x+.5], x+.5, x+.5),
-#         y=c(0, dnor[qq_nor < x+.5], dnorm(x+.5, mu, s), 0),
-# col=rgb(1, 0, 0, .3, maxColorValue = 1), border='red')
-for(i in 1:length(qq_bin)) lines(x=c(qq[i],qq[i]), y=c(0, dbin[i]), lwd=1.1)
-lines(qq_nor, dnor, col='red', lwd=1.1)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-legend('topright',
-       legend=as.expression(list(
-              bquote(italic(P)*"("*italic(X)<=10*")"~"="~.(round(pbinom(x, n, p),4)))#,
-              # bquote(italic(P)*"("*italic(Y)<=10.5*")"~"="~.(round(pnorm(x+.5, mu, s) - pnorm(-.5, mu, s),4)))
-              )),
-       fill=c(col=rgb(0, 0, 0, .3, maxColorValue = 1)#,
-              # col=rgb(1, 0, 0, .3, maxColorValue = 1)
-)
-)
-
-
-```
 
 ## {.unnumbered .unlisted .smaller}
 
@@ -3445,36 +3178,13 @@ legend('topright',
 
 Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
 
-```{r fig.width=11, fig.height=5, fig.align='center'}
 
-n <- 50; p <- 0.25; x <- floor(0.2*n); mu <- n*p; s <- sqrt(n*p*(1-p))
-qq_bin <- 0:n; qq_nor <- seq(-.5, n+.5, by = 0.01)
-dbin <- dbinom(qq_bin, n, p); dnor <- dnorm(qq_nor, mu, s)
-My <- max(dbin, dnor)
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-19-1.png){fig-align='center' width=1056}
+:::
+:::
 
-par(family = "serif", mar=c(5,4,1,2))
-plot(qq, x1, type='n', xlab='', ylab='', main='', xlim=range(qq_nor), ylim=c(0, My))
-rect(xleft=(0:x-.5), ybottom=rep(0, x+1), xright=(0:x+.5), ytop=dbin[qq_bin <= x],
-col=rgb(0, 0, 0, .3, maxColorValue = 1), lty=3, lwd=1.2)
-polygon(x=c(qq_nor[1],qq_nor[qq_nor < x+.5], x+.5, x+.5),
-        y=c(0, dnor[qq_nor < x+.5], dnorm(x+.5, mu, s), 0),
-col=rgb(1, 0, 0, .3, maxColorValue = 1), border='red')
-for(i in 1:length(qq_bin)) lines(x=c(qq[i],qq[i]), y=c(0, dbin[i]), lwd=1.1)
-lines(qq_nor, dnor, col='red', lwd=1.1)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-legend('topright',
-       legend=as.expression(list(
-              bquote(italic(P)*"("*italic(X)<=10*")"~"="~.(round(pbinom(x, n, p),4))),
-              bquote(italic(P)*"("*italic(Y)<=10.5*")"~"="~"?")
-              )),
-       fill=c(col=rgb(0, 0, 0, .3, maxColorValue = 1),
-              col=rgb(1, 0, 0, .3, maxColorValue = 1))
-)
-
-
-```
 
 ## {.unnumbered .unlisted .smaller}
 
@@ -3493,36 +3203,13 @@ $$\textstyle P(X \leq 10) \approx P(Y \leq 10.5) = P(Z \leq \frac{10.5 - 12.5}{\
 
 Nesse caso, temos $\mu_X = np = 50 \cdot 0.25 = 12.5$ e $\sigma_X^2 = np(1-p) = 50 \cdot 0.25 \cdot 0.75 = 9.375$. Vamos ilustrar a aproximação de $P(X \leq 10)$ por meio de $Y \sim \text{N}(12.5, 9.375)$. Veja a figura abaixo.
 
-```{r fig.width=11, fig.height=5, fig.align='center'}
 
-n <- 50; p <- 0.25; x <- floor(0.2*n); mu <- n*p; s <- sqrt(n*p*(1-p))
-qq_bin <- 0:n; qq_nor <- seq(-.5, n+.5, by = 0.01)
-dbin <- dbinom(qq_bin, n, p); dnor <- dnorm(qq_nor, mu, s)
-My <- max(dbin, dnor)
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-20-1.png){fig-align='center' width=1056}
+:::
+:::
 
-par(family = "serif", mar=c(5,4,1,2))
-plot(qq, x1, type='n', xlab='', ylab='', main='', xlim=range(qq_nor), ylim=c(0, My))
-rect(xleft=(0:x-.5), ybottom=rep(0, x+1), xright=(0:x+.5), ytop=dbin[qq_bin <= x],
-col=rgb(0, 0, 0, .3, maxColorValue = 1), lty=3, lwd=1.2)
-polygon(x=c(qq_nor[1],qq_nor[qq_nor < x+.5], x+.5, x+.5),
-        y=c(0, dnor[qq_nor < x+.5], dnorm(x+.5, mu, s), 0),
-col=rgb(1, 0, 0, .3, maxColorValue = 1), border='red')
-for(i in 1:length(qq_bin)) lines(x=c(qq[i],qq[i]), y=c(0, dbin[i]), lwd=1.1)
-lines(qq_nor, dnor, col='red', lwd=1.1)
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(p)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 4, line = 1, cex=1.5, col='red')
-legend('topright',
-       legend=as.expression(list(
-              bquote(italic(P)*"("*italic(X)<=10*")"~"="~.(round(pbinom(x, n, p),4))),
-              bquote(italic(P)*"("*italic(Y)<=10.5*")"~"="~.(round(pnorm(x+.5, mu, s) - pnorm(-.5, mu, s),4)))
-       )),
-       fill=c(col=rgb(0, 0, 0, .3, maxColorValue = 1),
-              col=rgb(1, 0, 0, .3, maxColorValue = 1))
-)
-
-
-```
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
@@ -3575,39 +3262,13 @@ A função gama possui as seguintes propriedades:
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-```{r fig.width=8, fig.height=4.5, fig.align='center'}
-x <- seq(0.001,4,length.out=1000)
-a1 <- 1.4; b1 <- 1.2
-a2 <- 1; b2 <- 1
-a3 <- 4; b3 <- 1/4
-a4 <- 3/4; b4 <- 4
 
-y1 <- dgamma(x = x, shape = a1,scale = b1)
-y2 <- dgamma(x = x, shape = a2,scale = b2)
-y3 <- dgamma(x = x, shape = a3,scale = b3)
-y4 <- dgamma(x = x, shape = a4,scale = b4)
+::: {.cell layout-align="center"}
+::: {.cell-output-display}
+![](variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-21-1.png){fig-align='center' width=768}
+:::
+:::
 
-M_y <- max(y1, y2, y3, y4)
-par(family = "serif", mar=c(5,4,1,2))
-plot(x, y1, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
-     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
-
-arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
-arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
-lines(x, y1, lwd=2)
-lines(x, y2, lwd=2, col='green')
-lines(x, y3, lwd=2, col='red')
-lines(x, y4, lwd=2, col='blue')
-
-mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
-mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
-legend('topright',
-       legend=as.expression(list(bquote(alpha == .(a1)*','~beta == .(b1)),
-                                 bquote(alpha == .(a2)*','~beta == .(b2)),
-                                 bquote(alpha == .(a3)*','~beta == .(b3)),
-                                 bquote(alpha == .(a4)*','~beta == .(b4)))),
-       col=c('black', 'green', 'red', 'blue'), lty=1, lwd=2)
-```
 
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
@@ -3686,6 +3347,7 @@ Se $X \sim \text{Gama}(\alpha, \beta)$, então
 
 
 
+
 ```{=latex}
 \begin{align*}
 \Omega &= \{(1,1), (1,2), \ldots, (4,4)\}\\
@@ -3694,4 +3356,6 @@ Se $X \sim \text{Gama}(\alpha, \beta)$, então
 ```
 
 
+
 # FIM {.unnumbered .unlisted}
+
