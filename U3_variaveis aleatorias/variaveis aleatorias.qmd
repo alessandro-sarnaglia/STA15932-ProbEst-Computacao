@@ -2746,8 +2746,8 @@ $${\textstyle P(a < X \leq b) = P(\frac{a-\mu}{\sigma} < \frac{X-\mu}{\sigma} \l
 $$
 \begin{align*}
 P(1 \leq X \leq 1.75) &= {\textstyle P(\frac{1-\mu}{\sigma} \leq \frac{X-\mu}{\sigma} \leq \frac{1.75-\mu}{\sigma}) = P(\frac{1-1.25}{0.46} \leq Z \leq \frac{1.75-1.25}{0.46})}\\
-&= {\textstyle P(\frac{1-1.25}{0.46} \leq Z \leq \frac{1.75-1.25}{0.46}) = P(-0.54 \leq Z \leq 1.09)}\\
-&= {\textstyle P(Z \leq 1.09) - P(Z \leq -0.54) = \Phi(1.09) - \Phi(-0.54),}
+&= {\textstyle P(-0.54 \leq Z \leq 1.09) = P(Z \leq 1.09) - P(Z \leq -0.54)}\\
+&= {\textstyle \Phi(1.09) - \Phi(-0.54),}
 \end{align*}
 $$
 em que $\Phi(z) = P(Z \leq z)$ é uma notação especial para representar a fda da normal padrão $Z$.]{.fragment}
@@ -3119,7 +3119,7 @@ Note que, novamente, o problema passa do quantil de uma normal qualquer para o q
   <img src="figs/figura_normal_padrao_ex14_2_3.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
 </figure>
 
-[Assim, concluímos que $0.52 < Q_{Z,0.7} < 0.53$. Podemos usar interpolação para aproximar $Q_{Z, 0.7}$.]{.fragment fragment-index=1} [Note que $Q_{Z,0.6985} = 0.52$ e $Q_{Z,0.7019} = 0.53$]{.fragment fragment-index=2}. [Agora, admitindo que $Q_{Z,p}$ tem uma relação aproximadamente linear para $0.6985 \leq p \leq 0.7019$, temos que $Q_{Z,p} = a+bp$, com as restrições]{.fragment fragment-index=3}
+[Assim, concluímos que $0.52 < Q_{Z,0.7} < 0.53$. Podemos usar interpolação para aproximar $Q_{Z, 0.7}$.]{.fragment fragment-index=1} [Note que $Q_{Z,0.6985} = 0.52$ e $Q_{Z,0.7019} = 0.53$.]{.fragment fragment-index=2} [Agora, admitindo que $Q_{Z,p}$ tem uma relação aproximadamente linear para $0.6985 \leq p \leq 0.7019$, temos que $Q_{Z,p} = a+bp$, com as restrições]{.fragment fragment-index=3}
 
 :::{.fragment fragment-index=3}
 
@@ -3177,7 +3177,7 @@ em que
 ::: {.callout-caution}
 ## Observação
 
-No Exemplo 14, obtivemos $P_L = 0.52$, $P_U = 0.7019$, $Q_{Z,p_L} = 0.6985$ e $Q_{Z,p_U} = 0.7019$.
+No Exemplo 14, obtivemos $p_L = 0.6985$, $p_U = 0.7019$, $Q_{Z,p_L} = 0.52$ e $Q_{Z,p_U} = 0.53$.
 :::
 
 :::
@@ -3762,17 +3762,60 @@ $$\textstyle P(60 < X < 120) = P(\frac{60}{13} < \frac{X}{13} < \frac{120}{13}) 
 ::: {.callout-caution}
 ## Observação
 
-Embora, em geral, as probabilidades da distribuição Gama não poderem ser obtidas analiticamente, o caso especial em que $\alpha = 1$ permite a sua obtenção. Esse caso particular da distribuição gama é chamada de distribuição [**exponencial**]{style='color:red;'}.
+Existe um caso especial da distribuição Gama que é muito útil em inferência, que é a distribuição [**qui-quadrado**]{style='color:red;'}.
+
 :::
 
 :::
+
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
 ::: {.callout-note}
 ## Definição
 
-Dizemos que $X$ tem distribuição exponencial com taxa $\lambda$, denotada por $X \sim \text{Exp}(\lambda)$, se sua fdp é dada por
+Dizemos que $X$ tem distribuição qui-quadrado com $\nu$ graus de liberdade (gl), denotada por $X \sim \chi^2_\nu$, se
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$f_X(x) = \frac{(1/2)^{\nu/2}}{\Gamma(\frac{\nu}{2})}x^{\frac{\nu}{2}-1}e^{-\frac{x}{2}}, \ \ \ \ x > 0, \ \ \ \ \nu = 1, 2, \ldots.$</td>
+  </tr>
+</table>
+:::
+
+::: {.fragment fragment-intex=2}
+
+::: {.callout-warning}
+## Propriedade
+
+A distribuição $\chi^2_\nu$ é um caso especial da $\text{Gama}(\alpha, \beta)$, com $\alpha = \frac{\nu}{2}$ e $\beta = 2$. Assim, pela esperança e variancia da distribuição gama, se $X \sim \chi^2_\nu$, temos que
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$E(X) = \alpha\beta = \nu$</td> <td>e</td> <td>$V(X) = \alpha\beta^2 = 2\nu.$</td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+::: {.fragment fragment-intex=3}
+
+::: {.callout-caution}
+## Observação
+
+Embora, em geral, as probabilidades da distribuição Gama não possam ser obtidas analiticamente, quando $\alpha = 1$ isso é possível. Esse caso particular da distribuição Gama, é chamada de distribuição [**exponencial**]{style='color:red;'}.
+:::
+
+:::
+
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Dizemos que $X$ tem distribuição exponencial com taxa $\lambda$, denotada por $X \sim \text{Exp}(\lambda)$, se sua fdp é
 <table>
   <tr style="border-bottom:none;text-align:center;">
     <td>$f_X(x) = \lambda e^{-\lambda x}, \ \ \ \ x > 0, \ \ \ \ \lambda > 0.$</td>
@@ -3868,6 +3911,37 @@ $$P(X > 10) = 1- P(X \leq 10) = 1 - F_X(10) = 1 - (1-e^{-0.2\cdot 10}) = e^{-2} 
 
 ::: 
 
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+1. A distribuição exponencial é muito utilizada para modelar o tempo de vida de componentes em geral;
+2. Uma propriedade importante da distribuição exponencial nessas aplicações é a **falta de memória**.
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedade - Fala de memória da distribuição exponencial
+
+Se $X \sim \text{Exp}(\lambda)$, então $P(X > t + s⏐ X > s) = P(X > t) = e^{-\lambda t}$, ou seja, se sabemos que $X$ já ultrapassou $s$, a probabilidade de $X$ ultrapassar $t+s$ é a mesma de $X$ ultrapassar $t$. Em outras palavras, após $s$ instantes, o componente não apresenta sinais de desgaste/melhora.
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Embora a falta de memória possa ser admitida em algumas aplicações, em outras os componentes se deterioram ou ocasionalmente melhoram com o passar do tempo (ao menos até certo ponto). Modelos mais gerais de tempo de vida são fornecidos pelas distribuições Gama, Weibull e Lognormal.
+:::
+
+:::
+
+
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
 ::: {.callout-caution}
@@ -3875,6 +3949,93 @@ $$P(X > 10) = 1- P(X \leq 10) = 1 - F_X(10) = 1 - (1-e^{-0.2\cdot 10}) = e^{-2} 
 
 Além das diversas aplicações práticas, a distribuição exponencial é utilizada na construção de uma nova distribuição **discreta**, a distribuição [**Poisson**]{style="color:red;"}.
 :::
+
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 18:** Um processo é monitorado continuamente em busca de falhas. Para qualquer instante $t \geq 0$, seja $X_t =$ "quantidade de falhas até o instante $t$". Suponha que $X_t$ satisfaz os seguintes requisitos:
+
+::: incremental
+
+- o tempo entre falhas tem distribuição exponencial com taxa $\lambda$;
+- as falhas acontecem independentemente;
+- no instante inicial, temos $X_0 = 0$.
+
+:::
+
+[Dizemos $\{X_t, t \geq 0\}$ é um processo de **Poisson** com taxa $\lambda$.]{.fragment} [Para cada $t$, $X_t$ é uma vad.]{.fragment} [A fmp $X$ é]{.fragment}
+<table class=fragment>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$p_X(x) = P(X = x) = \frac{e^{-\lambda t}(\lambda t)^k}{k!}, \ \ \ k=0,1,2,\ldots.$</td>
+  </tr>
+</table>
+
+
+[O número de falhas até $t=1$ define a distribuição **Poisson**.]{.fragment}
+
+::: 
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Dizemos que $X$ tem distribuição Poisson com taxa $\lambda$, denotada por $X \sim \text{Pois}(\lambda)$ se sua fmp é
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$p_X(x) = P(X = x) = \frac{e^{-\lambda}\lambda^k}{k!}, \ \ \ k=0,1,2,\ldots.$</td>
+  </tr>
+</table>
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedade
+
+Se $X \sim \text{Pois}(\lambda)$, temos que
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\mu = E(X) = \lambda$</td> <td>e</td> <td>$\sigma^2 = V(X) = \lambda.$</td>
+  </tr>
+</table>
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+A distribuição Poisson é muito utilizada para modelar o número de ocorrências de eventos, não somente no tempo, mas também por unidades de medida, como áreas, por exemplo.
+
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 19:** Em determinada cidade, o número de casos de dengue tem distribuição de Poisson com $100$ ocorrências por $\text{km}^2$ **em média**, ou seja, $\mu = \lambda = 100$. Qual a probabilidade de se observar menos que 3 ocorrências em uma região de $10000\text{m}^2$?
+
+[Primeiramente, temos que $10000\text{m}^2 = 100\text{m} \cdot 100\text{m} = 0.1\text{km} \cdot 0.1\text{km} = 0.01\text{km}^2$.]{.fragment} [Logo, o número de ocorrências $X$ na região especificada deve satisfazer $X \sim \text{Pois}(\lambda t)$, com $\lambda = 100$
+e $t = 0.01$, ou seja $\lambda t = 1$.]{.fragment} [Assim,
+$$\textstyle P(X < 3) = p_X(0) + p_X(1) + p_X(2) = \frac{e^{-1}1^0}{0!} + \frac{e^{-1}1^1}{1!} + \frac{e^{-1}1^2}{2!} = e^{-1}[1+1+\frac{1}{2}] \approx 0.9197.$$]{.fragment}
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+A seguir, veremos as distribuições Weibull e Lognormal mencionadas anteriormente.
+:::
+
+:::
+
 
 # Vetores Aleatórios Bidimensionais
 
