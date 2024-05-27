@@ -3540,7 +3540,7 @@ Considerando as condições do Exemplo 15 e utilizando $Y \sim \text{N}(12.5, 9.
 ::: {.callout-caution}
 ## Observações
 
-1. É possível notar que a va normal tem fdp simétrica em torno de $mu$ com formato de sino (a fdp $f_X(x)$ decresce conforme $x$ se afasta de $\mu$).
+1. É possível notar que a va normal tem fdp simétrica em torno de $\mu$ com formato de sino (a fdp $f_X(x)$ decresce conforme $x$ se afasta de $\mu$).
 2. Em muitas situações práticas, a vac é positiva e possui assimetria. Uma família de fdp com essas características é a família **gama**.
 :::
 
@@ -3575,19 +3575,81 @@ A função gama possui as seguintes propriedades:
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
+::: {.callout-caution}
+## Observação
+
+Se $X \sim \text{Gama}(\alpha, 1)$, isto é, com parâmetro $\beta=1$, dizemos que $X$ tem distribuição [**gama padrão**]{style="color:red;"} de parâmetro de forma $\alpha$.
+
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedades
+
+::: incremental
+
+1. Se $X \sim \text{Gama}(\alpha, \beta)$, então
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$E(X) = \alpha\beta$</td> <td>e</td> <td>$V(X) = \alpha\beta^2.$</td>
+  </tr>
+</table>
+2. Se $X \sim \text{Gama}(\alpha, \beta)$, então $\frac{X}{\beta} \sim \text{Gama}(\alpha, 1)$, isto é, $\frac{X}{\beta}$ tem distribuição gama padrão com parâmetro de forma $\alpha$.
+3. Assim, os problemas de cálculos de probabilidades de uma $\text{Gama}(\alpha, \beta)$ podem ser transformados nos de uma $\text{Gama}(\alpha, 1)$ por meio da operação $\frac{X}{\beta}$. A probabilidades de uma gama padrão para diferentes valores de $\alpha$ podem ser obtidas por métodos numéricos e seus valores tabelados.
+
+:::
+
+:::
+
+:::
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
 ```{r fig.width=8, fig.height=4.5, fig.align='center'}
-x <- seq(0.001,4,length.out=1000)
-a1 <- 1.4; b1 <- 1.2
+x <- seq(0.00001,4,length.out=1000)
+a1 <- 0.7; b1 <- 1
 a2 <- 1; b2 <- 1
-a3 <- 4; b3 <- 1/4
-a4 <- 3/4; b4 <- 4
+a3 <- 1.5; b3 <- 1
 
 y1 <- dgamma(x = x, shape = a1,scale = b1)
 y2 <- dgamma(x = x, shape = a2,scale = b2)
 y3 <- dgamma(x = x, shape = a3,scale = b3)
-y4 <- dgamma(x = x, shape = a4,scale = b4)
 
-M_y <- max(y1, y2, y3, y4)
+M_y <- max(2, y2, y3)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y1, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x[y1 <= M_y], y1[y1 <= M_y], lwd=2)
+lines(x, y2, lwd=2, col='blue')
+lines(x, y3, lwd=2, col='red')
+
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+legend('topright',
+       legend=as.expression(list(bquote(alpha == .(a1)*','~beta == .(b1)),
+                                 bquote(alpha == .(a2)*','~beta == .(b2)),
+                                 bquote(alpha == .(a3)*','~beta == .(b3)))),
+       col=c('black', 'blue', 'red'), lty=1, lwd=2)
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(0.001,4,length.out=1000)
+a1 <- 2; b1 <- 0.5
+a2 <- 2; b2 <- 1
+a3 <- 2; b3 <- 1.5
+
+y1 <- dgamma(x = x, shape = a1,scale = b1)
+y2 <- dgamma(x = x, shape = a2,scale = b2)
+y3 <- dgamma(x = x, shape = a3,scale = b3)
+
+M_y <- max(y1, y2, y3)
 par(family = "serif", mar=c(5,4,1,2))
 plot(x, y1, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
      xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
@@ -3595,32 +3657,113 @@ plot(x, y1, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
 arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
 arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
 lines(x, y1, lwd=2)
-lines(x, y2, lwd=2, col='green')
+lines(x, y2, lwd=2, col='blue')
 lines(x, y3, lwd=2, col='red')
-lines(x, y4, lwd=2, col='blue')
 
 mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
 mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
 legend('topright',
        legend=as.expression(list(bquote(alpha == .(a1)*','~beta == .(b1)),
                                  bquote(alpha == .(a2)*','~beta == .(b2)),
-                                 bquote(alpha == .(a3)*','~beta == .(b3)),
-                                 bquote(alpha == .(a4)*','~beta == .(b4)))),
-       col=c('black', 'green', 'red', 'blue'), lty=1, lwd=2)
+                                 bquote(alpha == .(a3)*','~beta == .(b3)))),
+       col=c('black', 'blue', 'red'), lty=1, lwd=2)
 ```
 
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-::: {.callout-warning}
-## Propriedades
+<figure>
+  <img src="figs/fig_gama_padrao1.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
 
-Se $X \sim \text{Gama}(\alpha, \beta)$, então
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/fig_gama_padrao2.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+<figure>
+  <img src="figs/fig_gama_padrao3.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;">
+</figure>
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 16 {.unnumbered .unlisted}
+
+O tempo de vida $X$ (semanas) de um camundongo exposto a radiação satisfaz $X \sim \text{Gama}(8, 13)$. Valores originais em *Survival Distributions: Reliability Applications in the Biomedical Services* são $\alpha = 8.5$ e $\beta = 13.3$.
+
+[Temos $E(X) = \alpha\beta = 8\cdot 13 = 104$, $V(X) = 8\cdot 13^2 = 1352$ e $DP(X) = \sqrt{1352} \approx 36.77$. Se $Y = \frac{X}{13}$, então $Y \sim \text{Gama}(8, 1)$.]{.fragment fragment-index=1} [Daí, por exemplo, a probabilidade de um camundongo sobreviver de 60 a 120 semanas é
+$$\textstyle P(60 < X < 120) = P(\frac{60}{13} < \frac{X}{13} < \frac{120}{13}) \approx P(4.62 < Y < 9.23) = F_Y(9.23) - F_Y(4.62).$$]{.fragment fragment-index=2}
+
+::: columns
+
+::: {.column #vcenter width=50%}
+
+::: {.fragment fragment-intex=3}
+
+<figure>
+  <img src="figs/fig_gama_padrao_Ex16_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
+  <figcaption style='text-align:center'>$0.051 = F_Y(4) < F_Y(4.62) < F_Y(5) = 0.133$</figcaption>
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=50%}
+
+::: {.fragment fragment-intex=4}
+
+<figure>
+  <img src="figs/fig_gama_padrao_Ex16_2.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
+  <figcaption style='text-align:center'>$0.676 = F_Y(9) < F_Y(9.23) < F_Y(10) = 0.780$</figcaption>
+</figure>
+
+:::
+
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 16 (cont.):** Podemos aproximar o valor de $F_Y(4.62)$ utilizando interpolação linear. [Assumindo que $F_Y(y) \approx a+by$, $y \in [4,5]$, e notando que $F_Y(4) = 0.051 = a+4b$ e que $F_Y(5) = 0.133 = a + 5b$, obtemos]{.fragment fragment-intex=1}
+
+::: {.fragment fragment-intex=1}
+
 <table>
   <tr style="border-bottom:none;text-align:center;">
-    <td>$E(X) = \alpha\beta$</td> <td>e</td> <td>$V(X) = \alpha\beta^2.$</td>
+    <td>$5b-4b = b = 0.133 - 0.051 = 0.082$</td> <td>e</td> <td>$a = 0.051 - 4b = 0.051 - 4 \cdot 0.082 = -0.277.$</td>
   </tr>
 </table>
+
+:::
+
+[Logo, $F_Y(4.62) \approx -0.277 + 0.082 \cdot 4.62 = 0.1018$ (valor verdadeiro [`r round(pgamma(q = 4.62, shape = 8, rate = 1), 4)`]{style='color:blue;'}).]{.fragment fragment-intex=3} [Analogamente, obtemos $F_Y(9.23) \approx -0.26 + 0.104 \cdot 9.23 = 0.6999$ (valor verdadeiro [`r round(pgamma(q = 9.23, shape = 8, rate = 1), 4)`]{style='color:blue;'}).]{.fragment fragment-intex=4} [Assim,]{.fragment fragment-intex=5}
+
+::: {.fragment fragment-intex=5}
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$P(60 < X < 120) \approx 0.6999 - 0.1018 = 0.5981$</td> <td>(Valor verdadeiro [`r round(diff(pgamma(q = c(4.62, 9.23), shape = 8, rate = 1)), 4)`]{style='color:blue;'}).</td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+::: {.fragment fragment-intex=6}
+
+::: {.callout-caution}
+## Observação
+
+Embora, em geral, as probabilidades da distribuição Gama não poderem ser obtidas analiticamente, o caso especial em que $\alpha = 1$ permite a sua obtenção. Esse caso particular da distribuição gama é chamada de distribuição [**exponencial**]{style='color:red;'}.
+:::
 
 :::
 
