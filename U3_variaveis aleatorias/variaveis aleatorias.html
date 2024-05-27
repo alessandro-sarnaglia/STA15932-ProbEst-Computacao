@@ -2531,7 +2531,7 @@ Sem reposição
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Propriedades</strong></p>
+<p><strong>Propriedade</strong></p>
 </div>
 <div class="callout-content">
 <p>Se <span class="math inline">\(X \sim \text{BN}(k,p)\)</span>, então</p>
@@ -3102,7 +3102,7 @@ e
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Propriedades</strong></p>
+<p><strong>Propriedade</strong></p>
 </div>
 <div class="callout-content">
 Se <span class="math inline">\(X \sim \text{N}(\mu, \sigma^2)\)</span>, então
@@ -3469,7 +3469,7 @@ e
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Propriedades</strong></p>
+<p><strong>Propriedade</strong></p>
 </div>
 <div class="callout-content">
 De modo geral, podemos encontrar o quantil <span class="math inline">\(Q_{Z,p}\)</span> de uma normal padrão por interpolação da seguinte forma. Sejam <span class="math inline">\(p_L\)</span> e <span class="math inline">\(p_U\)</span>, respectivamente, a maior e a menor probabilidades tabeladas tais que <span class="math inline">\(p_L &lt; p &lt; p_U\)</span> e <span class="math inline">\(Q_{Z,p_L}\)</span> e <span class="math inline">\(Q_{Z,p_U}\)</span> os respectivos quantis, então <span class="math display">\[Q_{Z,p} \approx a + bp,\]</span> em que
@@ -3849,6 +3849,116 @@ e
 </div>
 </div>
 </div>
+</section>
+<section id="modelos-probabilísticos-contínuos-34" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+Dizemos que <span class="math inline">\(X\)</span> tem distribuição exponencial com taxa <span class="math inline">\(\lambda\)</span>, denotada por <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>, se sua fdp é dada por
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(f_X(x) = \lambda e^{-\lambda x}, \ \ \ \ x &gt; 0, \ \ \ \ \lambda &gt; 0.\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedades</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">A distribuição <span class="math inline">\(\text{Exp}(\lambda)\)</span> é um caso especial da <span class="math inline">\(\text{Gama}(\alpha, \beta)\)</span>, com <span class="math inline">\(\alpha = 1\)</span> e <span class="math inline">\(\beta = \frac{1}{\lambda}\)</span>;</li>
+<li class="fragment">Assim, pela esperança e variancia da distribuição gama, se <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>, temos que
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\mu = E(X) = \alpha\beta = \frac{1}{\lambda}\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(\sigma^2 = V(X) = \alpha\beta^2 = \frac{1}{\lambda^2}.\)</span>
+</td>
+</tr>
+
+</tbody></table></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Note que, se <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>, então <span class="math inline">\(\mu = \sigma\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-35" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-23-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="modelos-probabilísticos-contínuos-36" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade</strong></p>
+</div>
+<div class="callout-content">
+Se <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>, então sua fda é dada por
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(F_X(x) = 1 - e^{-\lambda x}.\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 17:</strong> O tempo de resposta <span class="math inline">\(X\)</span> em um terminal de computador on-line satisfaz <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Suponha que o tempo de resposta esperado é de 5 segundos. <span class="fragment">Então <span class="math inline">\(E(X) = 5 = 1/\lambda\)</span>, com <span class="math inline">\(\lambda = 0.2\)</span>.</span></p>
+<p><span class="fragment">A probabilidade de o tempo de resposta ser maior que 10 segundos é <span class="math display">\[P(X &gt; 10) = 1- P(X \leq 10) = 1 - F_X(10) = 1 - (1-e^{-0.2\cdot 10}) = e^{-2} \approx 0.1353.\]</span></span></p>
+<p><span class="fragment">Seja <span class="math inline">\(\tilde{\mu}\)</span> o tempo de resposta mediano. Como <span class="math inline">\(F_X(\tilde{\mu}) = 1-e^{-0.2\cdot \tilde{\mu}} = 0.5\)</span>,</span> <span class="fragment">temos que a mediana é <span class="math inline">\(\tilde{\mu} = -5\log(0.5) \approx 8.0472\)</span>.</span> <span class="fragment">Note que <span class="math inline">\(\tilde{\mu} \approx 8.0472 &gt; 5 = \mu\)</span>, o que reflete a assimetria à direita da distribuição exponencial.</span></p>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-37" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Além das diversas aplicações práticas, a distribuição exponencial é utilizada na construção de uma nova distribuição <strong>discreta</strong>, a distribuição <span style="color:red;"><strong>Poisson</strong></span>.</p>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="vetores-aleatórios-bidimensionais" class="title-slide slide level1 center" data-number="4">
@@ -3893,7 +4003,7 @@ e
 <div class="callout callout-warning no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Propriedades</strong></p>
+<p><strong>Propriedade</strong></p>
 </div>
 <div class="callout-content">
 

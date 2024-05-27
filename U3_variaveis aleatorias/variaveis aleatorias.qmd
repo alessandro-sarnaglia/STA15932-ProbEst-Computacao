@@ -2031,7 +2031,7 @@ $$p_X(x) = P(X = x) = { x-1 \choose k-1 } (1-p)^{x-k} p^k, \ \ \ x = k, k+1, k+2
 ::: fragment
 
 ::: {.callout-warning}
-## Propriedades
+## Propriedade
 
 Se $X \sim \text{BN}(k,p)$, então
 
@@ -2689,7 +2689,7 @@ text(x = mu2, y=.06*M_y, labels=bquote(italic(mu)==.(mu2)), pos=1, col='blue')
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
 ::: {.callout-warning}
-## Propriedades
+## Propriedade
 
 Se $X \sim \text{N}(\mu, \sigma^2)$, então
 <table>
@@ -3159,7 +3159,7 @@ $$Q_{Z,0.7} = a+0.7b = -1.5344 + 0.7 \cdot 2.9412 \approx 0.5244 \color{red}{\Ri
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
 ::: {.callout-warning}
-## Propriedades
+## Propriedade
 
 De modo geral, podemos encontrar o quantil $Q_{Z,p}$ de uma normal padrão por interpolação da seguinte forma. Sejam $p_L$ e $p_U$, respectivamente, a maior e a menor probabilidades tabeladas tais que $p_L < p < p_U$ e $Q_{Z,p_L}$ e $Q_{Z,p_U}$ os respectivos quantis, então
 $$Q_{Z,p} \approx a + bp,$$
@@ -3767,6 +3767,115 @@ Embora, em geral, as probabilidades da distribuição Gama não poderem ser obti
 
 :::
 
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Dizemos que $X$ tem distribuição exponencial com taxa $\lambda$, denotada por $X \sim \text{Exp}(\lambda)$, se sua fdp é dada por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$f_X(x) = \lambda e^{-\lambda x}, \ \ \ \ x > 0, \ \ \ \ \lambda > 0.$</td>
+  </tr>
+</table>
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedades
+
+::: incremental
+
+1. A distribuição $\text{Exp}(\lambda)$ é um caso especial da $\text{Gama}(\alpha, \beta)$, com $\alpha = 1$ e $\beta = \frac{1}{\lambda}$;
+2. Assim, pela esperança e variancia da distribuição gama, se $X \sim \text{Exp}(\lambda)$, temos que
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\mu = E(X) = \alpha\beta = \frac{1}{\lambda}$</td> <td>e</td> <td>$\sigma^2 = V(X) = \alpha\beta^2 = \frac{1}{\lambda^2}.$</td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Note que, se $X \sim \text{Exp}(\lambda)$, então $\mu = \sigma$.
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(0.001,4,length.out=1000)
+a1 <- 1; b1 <- 0.5
+a2 <- 1; b2 <- 1
+a3 <- 1; b3 <- 2
+
+y1 <- dgamma(x = x, shape = a1,scale = b1)
+y2 <- dgamma(x = x, shape = a2,scale = b2)
+y3 <- dgamma(x = x, shape = a3,scale = b3)
+
+M_y <- max(y1, y2, y3)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y1, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x, y1, lwd=2)
+lines(x, y2, lwd=2, col='blue')
+lines(x, y3, lwd=2, col='red')
+
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+legend('topright',
+       legend=as.expression(list(bquote(lambda == .(1/b1)),
+                                 bquote(lambda == .(1/b2)),
+                                 bquote(lambda == .(1/b3)))),
+       col=c('black', 'blue', 'red'), lty=1, lwd=2)
+```
+
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedade
+
+Se $X \sim \text{Exp}(\lambda)$, então sua fda é dada por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$F_X(x) = 1 - e^{-\lambda x}.$</td>
+  </tr>
+</table>
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 17:** O tempo de resposta $X$ em um terminal de computador on-line satisfaz $X \sim \text{Exp}(\lambda)$. Suponha que o tempo de resposta esperado é de 5 segundos. [Então $E(X) = 5 = 1/\lambda$, com $\lambda = 0.2$.]{.fragment}
+
+[A probabilidade de o tempo de resposta ser maior que 10 segundos é
+$$P(X > 10) = 1- P(X \leq 10) = 1 - F_X(10) = 1 - (1-e^{-0.2\cdot 10}) = e^{-2} \approx 0.1353.$$]{.fragment}
+
+[Seja $\tilde{\mu}$ o tempo de resposta mediano. Como $F_X(\tilde{\mu}) = 1-e^{-0.2\cdot \tilde{\mu}} = 0.5$,]{.fragment} [temos que a mediana é $\tilde{\mu} = -5\log(0.5) \approx 8.0472$.]{.fragment} [Note que $\tilde{\mu} \approx 8.0472 > 5 = \mu$, o que reflete a assimetria à direita da distribuição exponencial.]{.fragment}
+
+::: 
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Além das diversas aplicações práticas, a distribuição exponencial é utilizada na construção de uma nova distribuição **discreta**, a distribuição [**Poisson**]{style="color:red;"}.
+:::
+
 # Vetores Aleatórios Bidimensionais
 
 ## Covariância e Correlação
@@ -3788,7 +3897,7 @@ Embora, em geral, as probabilidades da distribuição Gama não poderem ser obti
 :::
 
 ::: {.callout-warning}
-## Propriedades
+## Propriedade
 
 :::
 
