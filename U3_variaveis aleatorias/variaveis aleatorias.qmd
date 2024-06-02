@@ -3907,7 +3907,7 @@ Se $X \sim \text{Exp}(\lambda)$, então sua fda é dada por
 [A probabilidade de o tempo de resposta ser maior que 10 segundos é
 $$P(X > 10) = 1- P(X \leq 10) = 1 - F_X(10) = 1 - (1-e^{-0.2\cdot 10}) = e^{-2} \approx 0.1353.$$]{.fragment}
 
-[Seja $\tilde{\mu}$ o tempo de resposta mediano. Como $F_X(\tilde{\mu}) = 1-e^{-0.2\cdot \tilde{\mu}} = 0.5$,]{.fragment} [temos que a mediana é $\tilde{\mu} = -5\log(0.5) \approx 8.0472$.]{.fragment} [Note que $\tilde{\mu} \approx 8.0472 > 5 = \mu$, o que reflete a assimetria à direita da distribuição exponencial.]{.fragment}
+[Seja $\tilde{\mu}$ o tempo de resposta mediano. Como $F_X(\tilde{\mu}) = 1-e^{-0.2\cdot \tilde{\mu}} = 0.5$,]{.fragment} [temos que a mediana é $\tilde{\mu} = -5\log(0.5) \approx 3.4657$.]{.fragment} [Note que $\tilde{\mu} \approx 3.4657 > 5 = \mu$, o que reflete a assimetria à direita da distribuição exponencial.]{.fragment}
 
 ::: 
 
@@ -3966,7 +3966,7 @@ Além das diversas aplicações práticas, a distribuição exponencial é utili
 [Dizemos $\{X_t, t \geq 0\}$ é um processo de **Poisson** com taxa $\lambda$.]{.fragment} [Para cada $t$, $X_t$ é uma vad.]{.fragment} [A fmp $X$ é]{.fragment}
 <table class=fragment>
   <tr style="border-bottom:none;text-align:center;">
-    <td>$p_X(x) = P(X = x) = \frac{e^{-\lambda t}(\lambda t)^k}{k!}, \ \ \ k=0,1,2,\ldots.$</td>
+    <td>$p_{X_t}(x) = P(X_t = x) = \frac{e^{-\lambda t}(\lambda t)^x}{x!}, \ \ \ x=0,1,2,\ldots.$</td>
   </tr>
 </table>
 
@@ -3983,7 +3983,7 @@ Além das diversas aplicações práticas, a distribuição exponencial é utili
 Dizemos que $X$ tem distribuição Poisson com taxa $\lambda$, denotada por $X \sim \text{Pois}(\lambda)$ se sua fmp é
 <table>
   <tr style="border-bottom:none;text-align:center;">
-    <td>$p_X(x) = P(X = x) = \frac{e^{-\lambda}\lambda^k}{k!}, \ \ \ k=0,1,2,\ldots.$</td>
+    <td>$p_X(x) = P(X = x) = \frac{e^{-\lambda}\lambda^x}{x!}, \ \ \ x=0,1,2,\ldots.$</td>
   </tr>
 </table>
 :::
@@ -4016,7 +4016,7 @@ A distribuição Poisson é muito utilizada para modelar o número de ocorrênci
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
 **Exemplo 19:** Em determinada cidade, o número de casos de dengue tem distribuição de Poisson com $100$ ocorrências por $\text{km}^2$ **em média**, ou seja, $\mu = \lambda = 100$. Qual a probabilidade de se observar menos que 3 ocorrências em uma região de $10000\text{m}^2$?
 
@@ -4031,11 +4031,49 @@ $$\textstyle P(X < 3) = p_X(0) + p_X(1) + p_X(2) = \frac{e^{-1}1^0}{0!} + \frac{
 ::: {.callout-caution}
 ## Observação
 
-A seguir, veremos as distribuições Weibull e Lognormal mencionadas anteriormente.
+Vimos que $X \sim \text{Exp}(\lambda)$ possui a característica de perda de memória. [Em algumas aplicações, essa propriedade não é razoável.]{.fragment} [A distribuição gama em geral não possui essa propriedade.]{.fragment} [Outros exemplos que também não têm essa restrição são as distribuições Weibull e Lognormal.]{.fragment}
 :::
 
 :::
 
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+
+::: {.callout-note}
+## Definição
+
+A vac $X$ tem distribuição Weibull com parâmetros $\alpha$ e $\beta$, denotada por $X \sim \text{Weibull}(\alpha, \beta)$ se sua fdp é
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$f_X(x) = \frac{\alpha}{\beta^\alpha} x^{\alpha-1}e^{-(\frac{x}{\beta})^\alpha}, \ \ \ x > 0, \ \ \ \alpha,\beta > 0.$</td>
+  </tr>
+</table>
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedade
+
+Se $X \sim \text{Weibull}(\alpha, \beta)$, temos que
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\mu = E(X) = \beta\Gamma(1+\frac{1}{\alpha})$</td> <td>e</td> <td>$\sigma^2 = V(X) = \beta^2\{\Gamma(1+\frac{2}{\alpha})-[\Gamma(1+\frac{1}{\alpha})]^2\}.$</td>
+  </tr>
+</table>
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Note que $E(X)$ e $V(X)$ dependem da função gama, $\Gamma(\cdot)$, e frequentemente são obtidas por métodos numéricos.
+:::
+
+:::
 
 # Vetores Aleatórios Bidimensionais
 
