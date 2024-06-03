@@ -4322,17 +4322,173 @@ legend('topright',
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo 21:** 
+**Exemplo 21:** O artigo *Reliability of Wood Joist Floor Systems with Creep* sugere que a vac $X =$ "módulo da elasticidade de sistemas de vigas de madeira" satisfaz $X \sim \text{LogN}(0.375, 0.25^2)$. [Assim,]{.fragment fragment-index=1}
+<table class="fragment" data-fragment-index="1">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$E(X) = e^{0.375 + \frac{0.25^2}{2}} \approx 1.5012$</td> <td>e</td>  <td>$V(X) = e^{2\cdot0.375 + 0.25^2}(e^{0.25^2} - 1) \approx 0.1453.$</td>
+  </tr>
+</table>
+[Para obter a probabilidade do módulo da elasticidade estar entre 1 e 2, por exemplo, podemos recorrer à transformação logarítmica ($\ln(X) \sim \text{N}(\mu, \sigma^2)$) e transformar o problema no cálculo de probabilidades de uma normal padrão:]{.fragment fragment-index=2}
+[$$\begin{align*}
+P(1 \leq X \leq 2) &= \textstyle P(\ln(1) \leq \ln(X) \leq \ln(2)) = P(\frac{0-0.375}{0.25} \leq \frac{\ln(X)-0.375}{0.25} \leq \frac{0.6932-0.375}{0.25})\\
+&= \textstyle P(-1.5 \leq Z \leq 1.27) = \Phi(1.27) - \Phi(-1.5) = 0.8980 - 0.0668 = 0.8312.
+\end{align*}$$]{.fragment fragment-index=3}
 
 :::
 
+::: fragment
 
 ::: {.callout-caution}
 ## Observação
 
-Introduzir a beta!!
+Todos modelos contínuos que vimos atribuem densidade em intervalos ilimitados (nos reais ou nos reais não negativos). A distribuição [**Beta**]{style="color:red;"} permite modelar vac's com suporte limitado a um intervalo $(A,B)$.
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+A vac $X$ possui distribuição Beta com parâmetros $\alpha, \beta > 0$ no intervalo $(A,B)$, denotada por $X \sim \text{Beta}(\alpha, \beta)$, se sua fdp é
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$f_X(x) = \frac{1}{B-A}\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}(\frac{x-A}{B-A})^{\alpha-1}(\frac{B-x}{B-A})^{\beta-1}.$</td>
+  </tr>
+</table>
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedade
+
+Se $X \sim \text{LogN}(\mu, \sigma^2)$, então
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$E(X) = \mu = A + (B-A)\frac{\alpha}{\alpha+\beta}$</td> <td>e</td> <td>$V(X) = \sigma^2 = \frac{(B-A)^2\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.$</td>
+  </tr>
+</table>
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+O caso $A = 0$ e $B=1$ fornece a **Beta padrão**, isto é, o suporte é o intervalo $(0,1)$. Veja a figura a seguir.
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r out.width="100%", fig.height=5}
+#| layout-ncol: 2
+
+x <- seq(0.0001, 0.9999, length.out=1000)
+a1 <- 0.5; b1 <- 0.5
+a2 <- 0.5; b2 <- 3
+a3 <- 1; b3 <- 1
+a4 <- 2; b4 <- 2
+a5 <- 2; b5 <- 3
+
+y1 <- dbeta(x, a1, b1)
+y2 <- dbeta(x, a2, b2)
+y3 <- dbeta(x, a3, b3)
+y4 <- dbeta(x, a4, b4)
+y5 <- dbeta(x, a5, b5)
+
+Max <- min(max(y1, y2, y3, y4, y5), 4)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(x[y1 < 4], y1[y1 < 4], type='n', xlab='', ylab='', main='', lwd=3, ylim=c(-.07*Max, 1.07*Max), xlim=c(min(x)-.04*diff(range(x)), max(x)+.07*diff(range(x))))
+arrows(y0 = -.07*Max, y1 = 1.07*Max, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.04*diff(range(x)), x1=max(x)+.07*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(c(1, 1), c(0, 1.05*Max), lty=3, lwd=1.5)
+lines(x[y1 < 4], y1[y1 < 4], col='black', lwd=3)
+lines(x[y2 < 4], y2[y2 < 4], col='blue', lwd=3)
+lines(x[y3 < 4], y3[y3 < 4], col='red', lwd=3)
+lines(x[y4 < 4], y4[y4 < 4], col='purple', lwd=3)
+lines(x[y5 < 4], y5[y5 < 4], col='darkgreen', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+# mtext(text = expression(Exp(lambda)), side = 3, line = .5, cex=2)
+legend('top',
+       legend=as.expression(list(bquote(alpha*" = "*.(a1)*"; "*beta*" = "*.(b1)),
+                                 bquote(alpha*" = "*.(a2)*"; "*beta*" = "*.(b2)),
+                                 bquote(alpha*" = "*.(a3)*"; "*beta*" = "*.(b3)),
+                                 bquote(alpha*" = "*.(a4)*"; "*beta*" = "*.(b4)),
+                                 bquote(alpha*" = "*.(a5)*"; "*beta*" = "*.(b5)))),
+       col=c('black', 'blue', 'red', 'purple', 'darkgreen'), lwd=3)
+
+a1 <- 0.5; b1 <- 0.5
+a2 <- 3; b2 <- 0.5
+a3 <- 1; b3 <- 1
+a4 <- 2; b4 <- 2
+a5 <- 3; b5 <- 2
+
+y1 <- dbeta(x, a1, b1)
+y2 <- dbeta(x, a2, b2)
+y3 <- dbeta(x, a3, b3)
+y4 <- dbeta(x, a4, b4)
+y5 <- dbeta(x, a5, b5)
+
+Max <- min(max(y1, y2, y3, y4, y5), 4)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(x[y1 < 4], y1[y1 < 4], type='n', xlab='', ylab='', main='', lwd=3, ylim=c(-.07*Max, 1.07*Max), xlim=c(min(x)-.04*diff(range(x)), max(x)+.07*diff(range(x))))
+arrows(y0 = -.07*Max, y1 = 1.07*Max, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.04*diff(range(x)), x1=max(x)+.07*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(c(1, 1), c(0, 1.05*Max), lty=3, lwd=1.5)
+lines(x[y1 < 4], y1[y1 < 4], col='black', lwd=3)
+lines(x[y2 < 4], y2[y2 < 4], col='blue', lwd=3)
+lines(x[y3 < 4], y3[y3 < 4], col='red', lwd=3)
+lines(x[y4 < 4], y4[y4 < 4], col='purple', lwd=3)
+lines(x[y5 < 4], y5[y5 < 4], col='darkgreen', lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+# mtext(text = expression(Exp(lambda)), side = 3, line = .5, cex=2)
+legend('top',
+       legend=as.expression(list(bquote(alpha*" = "*.(a1)*"; "*beta*" = "*.(b1)),
+                                 bquote(alpha*" = "*.(a2)*"; "*beta*" = "*.(b2)),
+                                 bquote(alpha*" = "*.(a3)*"; "*beta*" = "*.(b3)),
+                                 bquote(alpha*" = "*.(a4)*"; "*beta*" = "*.(b4)),
+                                 bquote(alpha*" = "*.(a5)*"; "*beta*" = "*.(b5)))),
+       col=c('black', 'blue', 'red', 'purple', 'darkgreen'), lwd=3)
+
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+::: incremental 
+
+1. Note que $\alpha=\beta$ fornece fdp's simétricas;
+2. Se $\alpha=\beta=1$, dizemos que $X$ tem distribuição uniforme em $(A,B)$, denotada por $X \sim \text{U}(A,B)$;
+3. Ao trocar o valor de $\alpha$ pelo de $\beta$ e o de $\beta$ pelo de $\alpha$, a fdp é refletida em torno de $\frac{A+B}{2}$;
+4. O cálculo de probabilidades da distribuição Beta, em geral, requer o uso de métodos numéricos. Mas, para uma Beta padrão com $\alpha, \beta \in \mathbb{N}$, é possível a sua obtenção analítica ($\Gamma(n) = (n-1)!$, $n \in \mathbb{N}$).
+
+:::
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 22:** Suponha que o tempo $X \in (2,5)$ (em dias) para a construção da fundação de uma casa satisfaz $X \sim \text{Beta}(2, 3)$. [Nesse caso, temos $A=2$ (tempo mínimo) e $B=5$ (tempo máximo).]{.fragment} [Assim,]{.fragment}
+<table class="fragment">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$P(X < 3) = \int_2^3\frac{1}{5-2}\frac{\Gamma(2 + 3)}{\Gamma(2)\Gamma(3)}(\frac{x-2}{5-2})^{2-1}(\frac{5-x}{5-2})^{3-1}dx = 12\int_{0}^{\frac{1}{3}}u(1-u)^2du = \frac{4}{3}(\frac{1}{2} - \frac{2}{9} + \frac{1}{36}) \approx 0.407,$</td>
+  </tr>
+</table>
+[em que fizemos a transformação $u = \frac{x-2}{3}$ na igualdade entre o 2º e o 3º termos.]{.fragment}
 :::
 
 # Vetores Aleatórios Bidimensionais
