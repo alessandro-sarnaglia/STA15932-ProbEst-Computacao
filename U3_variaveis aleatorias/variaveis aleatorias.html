@@ -4222,6 +4222,198 @@ e
 </div>
 </div>
 </div>
+</section>
+<section id="modelos-probabilísticos-contínuos-43" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-24-1.png"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-24-2.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-44" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedades</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">Se <span class="math inline">\(X \sim \text{Weibull}(\alpha, \beta)\)</span> é possível mostrar que <span class="math inline">\(Y = (\frac{X}{\beta})^\alpha\)</span> satisfaz <span class="math inline">\(Y \sim \text{Exp}(1)\)</span>. De modo análogo, se <span class="math inline">\(Y \sim \text{Exp}(1)\)</span>, então <span class="math inline">\(X = \beta Y^{1/\alpha}\)</span> satisfaz <span class="math inline">\(X \sim \text{Weibull}(\alpha, \beta)\)</span>;</li>
+<li class="fragment">Se <span class="math inline">\(X \sim \text{Weibull}(\alpha, \beta)\)</span>, a fda de <span class="math inline">\(X\)</span> é
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(F_X(x) = 1- e^{-(\frac{x}{\beta})^{\alpha}}\)</span>;
+</td>
+</tr>
+
+</tbody></table></li>
+<li class="fragment">Se <span class="math inline">\(X \sim \text{Weibull}(1, \frac{1}{\lambda})\)</span>, isto é, <span class="math inline">\(\alpha = 1\)</span> e <span class="math inline">\(\beta = \frac{1}{\lambda}\)</span>, então <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+A função <span class="math inline">\(S(t) = P(X &gt; t) = 1-F_X(t)\)</span> é denominada de função <strong>sobrevivência</strong>. As funções sobrevivência de uma <span class="math inline">\(\text{Exp}(\lambda)\)</span> e de uma <span class="math inline">\(\text{Weibull}(\alpha, \beta)\)</span> são, respectivamente:
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(S_E(t) = e^{-\lambda t}\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(S_W(t) = e^{-(\frac{t}{\beta})^{\alpha}}.\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-45" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="cell quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-25-1.png"></p>
+</div>
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-25-2.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-46" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Note que, para <span class="math inline">\(X \sim \text{Weibull}(\alpha, \beta)\)</span>, a função sobrevivência <span class="math inline">\(S(t)\)</span> possui uma forma mais flexível, o que permite modelar fenômenos mais complexos.</p>
+</div>
+</div>
+</div>
+<div class="fragment" style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 20:</strong> Um mesmo produto é montado por três fábricas diferentes. Sejam <span class="math inline">\(T_1, T_2\)</span> e <span class="math inline">\(T_3\)</span> os tempos de vida (em anos) do referido produto quando montado nas Fábricas 1, 2 e 3, respectivamente, e suponha que <span class="math inline">\(T_i \sim \text{Weibull}(\alpha_i, 1)\)</span>, com <span class="math inline">\(\alpha_1 = 0.5\)</span>, <span class="math inline">\(\alpha_2 = 1\)</span> e <span class="math inline">\(\alpha_3 = 2\)</span>.</p>
+<p><span class="fragment">Determinemos <span class="math inline">\(S_i(0.5) = P(T_i &gt; 0.5)\)</span> e <span class="math inline">\(S_i(2) = P(T_i &gt; 2)\)</span>, para <span class="math inline">\(i=1, 2, 3\)</span>.</span> <span class="fragment">Temos que <span class="math display">\[S_i(0.5) = e^{-0.5^{\alpha_i}} = \begin{cases}
+e^{-0.5^{0.5}} = 0.4931, &amp; i=1;\\
+e^{-0.5^{1}} = 0.6065, &amp; i=2;\\
+e^{-0.5^{2}} = 0.7788, &amp; i=3.\\
+\end{cases}\ \ \ \ \text{e}\ \ \ \ S_i(2) = e^{-2^{\alpha_i}} = \begin{cases}
+e^{-2^{0.5}} = 0.2431, &amp; i=1;\\
+e^{-2^{1}} = 0.1353, &amp; i=2;\\
+e^{-2^{2}} = 0.0183, &amp; i=3.\\
+\end{cases}\]</span></span></p>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-47" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+A vac <span class="math inline">\(X\)</span> tem distribuição lognormal com parâmetros <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span>, denotada por <span class="math inline">\(X \sim \text{LogN}(\mu, \sigma^2)\)</span> se sua fdp é
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(f_X(x) = \frac{1}{x\sqrt{2\pi\sigma^2}}e^{-\frac{[\ln(x) - \mu]^2}{2\sigma^2}}, \ \ \ x \geq 0.\)</span>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedades</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<ol type="1">
+<li class="fragment">É possível mostrar que, se <span class="math inline">\(X \sim \text{LogN}(\mu, \sigma^2)\)</span>, então <span class="math inline">\(Y = \ln(X)\)</span> satisfaz <span class="math inline">\(Y \sim \text{N}(\mu, \sigma^2)\)</span>;</li>
+<li class="fragment">Se <span class="math inline">\(X \sim \text{LogN}(\mu, \sigma^2)\)</span>, então
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(E(X) = e^{\mu + \frac{\sigma^2}{2}}\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(V(X) = e^{2\mu + \sigma^2}(e^{\sigma^2} - 1).\)</span>
+</td>
+</tr>
+
+</tbody></table></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Note que, se <span class="math inline">\(X \sim \text{LogN}(\mu, \sigma^2)\)</span>, então <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma^2\)</span> não são a esperança e variância de <span class="math inline">\(X\)</span>, mas sim de <span class="math inline">\(\ln(X)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelos-probabilísticos-contínuos-48" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+
+<img data-src="variaveis-aleatorias_files/figure-revealjs/unnamed-chunk-26-1.png" width="768" class="r-stretch quarto-figure-center"></section>
+<section id="modelos-probabilísticos-contínuos-49" class="slide level2 unnumbered unlisted">
+<h2>3.2 Modelos probabilísticos contínuos</h2>
+<div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 21:</strong></p>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Introduzir a beta!!</p>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="vetores-aleatórios-bidimensionais" class="title-slide slide level1 center" data-number="4">

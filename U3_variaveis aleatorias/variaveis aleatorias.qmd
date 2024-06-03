@@ -4038,7 +4038,6 @@ Vimos que $X \sim \text{Exp}(\lambda)$ possui a característica de perda de mem�
 
 ## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
 
-
 ::: {.callout-note}
 ## Definição
 
@@ -4073,6 +4072,267 @@ Se $X \sim \text{Weibull}(\alpha, \beta)$, temos que
 Note que $E(X)$ e $V(X)$ dependem da função gama, $\Gamma(\cdot)$, e frequentemente são obtidas por métodos numéricos.
 :::
 
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r out.width="100%", fig.height=5}
+#| layout-ncol: 2
+
+x <- seq(0.00001, 5, length.out=1000)
+
+a1 <- 1; b1 <- 1
+a2 <- 2; b2 <- 1
+a3 <- 0.5; b3 <- 1
+y1 <- dweibull(x, a1, b1)
+y2 <- dweibull(x, a2, b2)
+y3 <- dweibull(x, a3, b3)
+Max <- max(y1, y2, min(max(y3), 1.5))
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(x, y1, type='n', xlab='', ylab='', main='', lwd=3, ylim=c(-.03*Max, 1.07*Max),
+     xlim=c(min(x)-.03*diff(range(x)), max(x)+.07*diff(range(x))))
+
+arrows(y0 = -.03*Max, y1 = 1.07*Max, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.03*diff(range(x)), x1=max(x)+.07*diff(range(x)), length = .1, lwd=2, col='darkgray')
+
+lines(x, y1, col='blue', lwd=3)
+lines(x, y2, col='red', lwd=3)
+lines(x[y3<1.5], y3[y3<1.5], col='black', lwd=3)
+mtext(text = expression(italic(t)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(Weibull(alpha, beta)), side = 3, line = .5, cex=2)
+legend('topright',
+       legend=as.expression(list(bquote(alpha*" = "*.(a3)*"; "*beta*" = "*.(b3)),
+                                 bquote(alpha*" = "*.(a1)*"; "*beta*" = "*.(b1)),
+                                 bquote(alpha*" = "*.(a2)*"; "*beta*" = "*.(b2)))),
+       col=c('black', 'blue', 'red'), lwd=3)
+
+
+x <- seq(0, 2.5, length.out=1000)
+a1 <- 10; b1 <- 0.5
+a2 <- 10; b2 <- 1
+a3 <- 10; b3 <- 2
+y1 <- dweibull(x, a1, b1)
+y2 <- dweibull(x, a2, b2)
+y3 <- dweibull(x, a3, b3)
+Max <- max(y1, y2, y3)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(x, y1, type='n', xlab='', ylab='', main='', lwd=3, ylim=c(-.03*Max, 1.07*Max),
+     xlim=c(min(x)-.03*diff(range(x)), max(x)+.07*diff(range(x))))
+
+arrows(y0 = -.03*Max, y1 = 1.07*Max, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.03*diff(range(x)), x1=max(x)+.07*diff(range(x)), length = .1, lwd=2, col='darkgray')
+
+lines(x, y1, col='black', lwd=3)
+lines(x, y2, col='blue', lwd=3)
+lines(x, y3, col='red', lwd=3)
+mtext(text = expression(italic(t)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(Weibull(alpha, beta)), side = 3, line = .5, cex=2)
+legend('topright',
+       legend=as.expression(list(bquote(alpha*" = "*.(a1)*"; "*beta*" = "*.(b1)),
+                                 bquote(alpha*" = "*.(a2)*"; "*beta*" = "*.(b2)),
+                                 bquote(alpha*" = "*.(a3)*"; "*beta*" = "*.(b3)))),
+       col=c('black', 'blue', 'red'), lwd=3)
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedades
+
+::: incremental
+
+1. Se $X \sim \text{Weibull}(\alpha, \beta)$ é possível mostrar que $Y = (\frac{X}{\beta})^\alpha$ satisfaz $Y \sim \text{Exp}(1)$. De modo análogo, se $Y \sim \text{Exp}(1)$, então $X = \beta Y^{1/\alpha}$ satisfaz $X \sim \text{Weibull}(\alpha, \beta)$;
+2. Se $X \sim \text{Weibull}(\alpha, \beta)$, a fda de $X$ é
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$F_X(x) = 1- e^{-(\frac{x}{\beta})^{\alpha}}$;</td>
+  </tr>
+</table>
+3. Se $X \sim \text{Weibull}(1, \frac{1}{\lambda})$, isto é, $\alpha = 1$ e $\beta = \frac{1}{\lambda}$, então $X \sim \text{Exp}(\lambda)$.
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+A função $S(t) = P(X > t) = 1-F_X(t)$ é denominada de função **sobrevivência**. As funções sobrevivência de uma $\text{Exp}(\lambda)$ e de uma $\text{Weibull}(\alpha, \beta)$ são, respectivamente:
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$S_E(t) = e^{-\lambda t}$</td> <td>e</td> <td>$S_W(t) = e^{-(\frac{t}{\beta})^{\alpha}}.$</td>
+  </tr>
+</table>
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r out.width="100%", fig.height=5}
+#| layout-ncol: 2
+
+x <- seq(0.0001, 3, length.out=1000)
+lam1 <- 1
+lam2 <- 3
+ye1 <- 1-pexp(x, lam1)
+ye2 <- 1-pexp(x, lam2)
+a1 <- .5; b1 <- 1
+a2 <- 3; b2 <- 1.5
+yw1 <- 1-pweibull(x, a1, b1)
+yw2 <- 1-pweibull(x, a2, b2)
+Max <- max(ye1, ye2, yw1, yw2)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(x, ye1, type='n', xlab='', ylab='', main='', lwd=3, xlim=c(0, 3), ylim=c(0, Max))
+lines(x, ye1, col='black', lwd=3)
+lines(x, ye2, col='blue', lwd=3)
+mtext(text = expression(italic(t)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(S)[italic(E)]*"("*italic(t)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(Exp(lambda)), side = 3, line = .5, cex=2)
+legend('topright',
+       legend=as.expression(list(bquote(lambda == .(lam1)),
+                                 bquote(lambda == .(lam2)))),
+       col=c('black', 'blue'), lwd=3)
+
+par(family = "serif", mar=c(5,4,2.5,2))
+plot(x, ye1, type='n', xlab='', ylab='', main='', lwd=3, xlim=c(0, 3), ylim=c(0, Max))
+lines(x, yw1, col='black', lwd=3)
+lines(x, yw2, col='blue', lwd=3)
+mtext(text = expression(italic(t)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(S)[italic(W)]*"("*italic(t)*")"), side = 2, line = 2, cex=1.5)
+mtext(text = expression(Weibull(alpha, beta)), side = 3, line = .5, cex=2)
+legend('topright',
+       legend=as.expression(list(bquote(alpha*" = "*.(a1)*"; "*beta*" = "*.(b1)),
+                                 bquote(alpha*" = "*.(a2)*"; "*beta*" = "*.(b2)))),
+       col=c('black', 'blue'), lwd=3)
+
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Note que, para $X \sim \text{Weibull}(\alpha, \beta)$, a função sobrevivência $S(t)$ possui uma forma mais flexível, o que permite modelar fenômenos mais complexos.
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 20:** Um mesmo produto é montado por três fábricas diferentes. Sejam $T_1, T_2$ e $T_3$ os tempos de vida (em anos) do referido produto quando montado nas Fábricas 1, 2 e 3, respectivamente, e suponha que $T_i \sim \text{Weibull}(\alpha_i, 1)$, com $\alpha_1 = 0.5$, $\alpha_2 = 1$ e $\alpha_3 = 2$.
+
+[Determinemos $S_i(0.5) = P(T_i > 0.5)$ e $S_i(2) = P(T_i > 2)$, para $i=1, 2, 3$.]{.fragment} [Temos que
+$$S_i(0.5) = e^{-0.5^{\alpha_i}} = \begin{cases}
+e^{-0.5^{0.5}} = 0.4931, & i=1;\\
+e^{-0.5^{1}} = 0.6065, & i=2;\\
+e^{-0.5^{2}} = 0.7788, & i=3.\\
+\end{cases}\ \ \ \ \text{e}\ \ \ \ S_i(2) = e^{-2^{\alpha_i}} = \begin{cases}
+e^{-2^{0.5}} = 0.2431, & i=1;\\
+e^{-2^{1}} = 0.1353, & i=2;\\
+e^{-2^{2}} = 0.0183, & i=3.\\
+\end{cases}$$]{.fragment}
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+A vac $X$ tem distribuição lognormal com parâmetros $\mu$ e $\sigma^2$, denotada por $X \sim \text{LogN}(\mu, \sigma^2)$ se sua fdp é
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$f_X(x) = \frac{1}{x\sqrt{2\pi\sigma^2}}e^{-\frac{[\ln(x) - \mu]^2}{2\sigma^2}}, \ \ \ x \geq 0.$</td>
+  </tr>
+</table>
+:::
+
+::: fragment
+
+::: {.callout-warning}
+## Propriedades
+
+::: incremental
+
+1. É possível mostrar que, se $X \sim \text{LogN}(\mu, \sigma^2)$, então $Y = \ln(X)$ satisfaz $Y \sim \text{N}(\mu, \sigma^2)$;
+2. Se $X \sim \text{LogN}(\mu, \sigma^2)$, então
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$E(X) = e^{\mu + \frac{\sigma^2}{2}}$</td> <td>e</td> <td>$V(X) = e^{2\mu + \sigma^2}(e^{\sigma^2} - 1).$</td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Note que, se $X \sim \text{LogN}(\mu, \sigma^2)$, então $\mu$ e $\sigma^2$ não são a esperança e variância de $X$, mas sim de $\ln(X)$.
+:::
+
+:::
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+```{r fig.width=8, fig.height=4.5, fig.align='center'}
+x <- seq(0, 10,length.out=1000)
+mu1 <- -0.5; s1 <- 1
+mu2 <- 1; s2 <- 1
+mu3 <- 1; s3 <- 2
+mu4 <- 1; s4 <- 0.3
+
+y1 <- dlnorm(x = x, meanlog = mu1, sdlog = s1)
+y2 <- dlnorm(x = x, meanlog = mu2, sdlog = s2)
+y3 <- dlnorm(x = x, meanlog = mu3, sdlog = s3)
+y4 <- dlnorm(x = x, meanlog = mu4, sdlog = s4)
+
+M_y <- max(y1, y2, y3, y4)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, y1, type='n', xlab='', ylab='', main='', ylim=c(-.09*M_y, 1.07*M_y),
+     xlim=c(min(x)-.02*diff(range(x)), max(x)+.04*diff(range(x))))
+
+arrows(y0 = -.09*M_y, y1 = 1.07*M_y, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(y0 = 0, y1 = 0, x0=min(x)-.02*diff(range(x)), x1=max(x)+.04*diff(range(x)), length = .1, lwd=2, col='darkgray')
+lines(x, y1, lwd=2)
+lines(x, y2, lwd=2, col='blue')
+lines(x, y3, lwd=2, col='red')
+lines(x, y4, lwd=2, col='purple')
+
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f)[italic(X)]*"("*italic(x)*")"), side = 2, line = 2, cex=1.5)
+legend('topright',
+       legend=as.expression(list(bquote(mu*" = "*.(mu1)*";"~sigma^2*" = "*.(s1^2)),
+                                 bquote(mu*" = "*.(mu2)*";"~sigma^2*" = "*.(s2^2)),
+                                 bquote(mu*" = "*.(mu3)*";"~sigma^2*" = "*.(s3^2)),
+                                 bquote(mu*" = "*.(mu4)*";"~sigma^2*" = "*.(s4^2)))),
+       col=c('black', 'blue', 'red', 'purple'), lty=1, lwd=2)
+```
+
+## 3.2 Modelos probabilísticos contínuos {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 21:** 
+
+:::
+
+
+::: {.callout-caution}
+## Observação
+
+Introduzir a beta!!
 :::
 
 # Vetores Aleatórios Bidimensionais
