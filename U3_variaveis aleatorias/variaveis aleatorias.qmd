@@ -4356,7 +4356,7 @@ Todos modelos contínuos que vimos atribuem densidade em intervalos ilimitados (
 A vac $X$ possui distribuição Beta com parâmetros $\alpha, \beta > 0$ no intervalo $(A,B)$, denotada por $X \sim \text{Beta}(\alpha, \beta)$, se sua fdp é
 <table>
   <tr style="border-bottom:none;text-align:center;">
-    <td>$f_X(x) = \frac{1}{B-A}\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}(\frac{x-A}{B-A})^{\alpha-1}(\frac{B-x}{B-A})^{\beta-1}.$</td>
+    <td>$f_X(x) = \frac{1}{B-A}\frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}(\frac{x-A}{B-A})^{\alpha-1}(\frac{B-x}{B-A})^{\beta-1},\ \ \ \ A < X < B$.</td>
   </tr>
 </table>
 :::
@@ -4366,7 +4366,7 @@ A vac $X$ possui distribuição Beta com parâmetros $\alpha, \beta > 0$ no inte
 ::: {.callout-warning}
 ## Propriedade
 
-Se $X \sim \text{LogN}(\mu, \sigma^2)$, então
+Se $X \sim \text{Beta}(\alpha, \beta)$ em $(A,B)$, então
 <table>
   <tr style="border-bottom:none;text-align:center;">
     <td>$E(X) = \mu = A + (B-A)\frac{\alpha}{\alpha+\beta}$</td> <td>e</td> <td>$V(X) = \sigma^2 = \frac{(B-A)^2\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)}.$</td>
@@ -4492,6 +4492,844 @@ legend('top',
 :::
 
 # Vetores Aleatórios Bidimensionais
+
+## 4 Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Até agora, tratamos uma va isoladamente, por meio de sua fmp (se discreta), de sua fdp (se contínua), ou ainda de sua fda. Em vários casos, é de interesse estudar o comportamento conjunto de duas va's.
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definição
+
+Em um experimento aleatório com espaço amostral $\Omega$, considere duas va's $X = X(\omega)$ e $Y = Y(\omega)$, $\omega \in \Omega$. Dizemos que $(X,Y)$ é um **vetor aleatório (bidimensional)**. Sejam $A_x = \{\omega \in \Omega : X(\omega) \leq x\}$ e $B_y = \{\omega \in \Omega : Y(\omega) \leq y\}$, então a fda conjunta (fdac) de $(X,Y)$ é definida por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$F_{X,Y}(x,y) = P(A_x \cap B_y) = P(X \leq x, Y \leq y), \ \ \ \ x,y \in \mathbb{R}.$</td>
+  </tr>
+</table>
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Se estiver claro a qual vetor aleatório nos referimos, podemos escrever $F(x,y)$ em vez de $F_{X,Y}(x,y)$.
+:::
+
+:::
+
+## 4 Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Um vetor aleatório pode ser:
+
+::: incremental
+
+- discreto, quando ambas coordenadas são discretas;
+- contínuo, quando ambas coordenadas são contínuas;
+- misto, quando uma coordenada é discreta e a outra contínua.
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definição
+
+Para um vetor aleatório $(X, Y)$ discreto, a fmp conjunta (fmpc) é definida por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$p_{X,Y}(x,y) = p(x,y) = P(X = x, Y = y), \ \ \ \ x \in \text{Im}(X), \ \ \ \ y \in \text{Im}(Y).$</td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. [Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$.]{.fragment fragment-index="1"} [Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.]{style="visibility:hidden"}
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+::: {.fragment fragment-index="1"}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. [Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.]{.fragment}
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX1.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX2.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX3.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX4.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX5.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX6.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX7.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:hidden;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX7.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY0.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX7.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY1.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX7.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY2.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX7.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY3.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{style="visibility:hidden"}
+
+
+
+
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 23 {.unnumbered .unlisted}
+
+Dois dados honestos de 4 faces são arremessados. Note que $\Omega = \{\omega = (z_1,z_2) : z_1, z_2 = 1,2,3,4\}$. Seja $X(\omega) = z_1 + z_2$ e $Y(\omega) = |z_1 - z_2|$. Identifiquemos $\text{Im}(X)$ e $\text{Im}(Y)$.
+
+::: columns
+
+::: {.column #vcenter width=33.4%}
+
+<figure>
+  <img src="figs/exemplo23_omega.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaX7.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=33.3%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vaY4.png" style="display: block;margin-left: auto;margin-right: auto;width: 90%;visibility:show;">
+</figure>
+
+:::
+
+:::
+
+[Assim, notamos que $\text{Im}(X) = \{2, 3, \ldots, 8\}$ e $\text{Im}(Y) = \{0,1, 2, 3\}$.]{.fragment}
+
+
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+::: columns
+
+::: {.column #vcenter width=30%}
+
+<figure>
+  <img src="figs/exemplo23_omega_vasXY.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;visibility:show;">
+</figure>
+
+:::
+
+::: {.column #vcenter width=70%}
+
+::: fragment
+
+**Exemplo: 23 (cont.)** A fmpc $p(x,y)$ pode ser representada pela tabela:
+
+<table class="tblcenter" style="margin-left: auto; margin-right: auto;">
+  <tr style="border-top:solid 3pt; border-bottom:solid 1pt; text-align:center;">
+    <td style="border-right:solid 1pt">$y\backslash x$</td> <td> $2$ </td> <td> $3$ </td> <td> $4$ </td> <td> $5$ </td> <td> $6$ </td> <td> $7$ </td> <td> $8$ </td>
+  </tr>
+  <tr class='fragment' style="text-align:center;">
+    <td style="border-right:solid 1pt">$0$</td> <td> $\frac{1}{16}$ </td> <td> $0$ </td> <td> $\frac{1}{16}$ </td> <td> $0$ </td> <td> $\frac{1}{16}$ </td> <td> $0$ </td> <td> $\frac{1}{16}$ </td>
+  </tr>
+  <tr class='fragment' style="text-align:center;">
+    <td style="border-right:solid 1pt">$1$</td> <td> $0$ </td> <td> $\frac{2}{16}$ </td> <td> $0$ </td> <td> $\frac{2}{16}$ </td> <td> $0$ </td> <td> $\frac{2}{16}$ </td> <td> $0$ </td>
+  </tr>
+  <tr class='fragment' style="text-align:center;">
+    <td style="border-right:solid 1pt">$2$</td> <td> $0$ </td> <td> $0$ </td> <td> $\frac{2}{16}$ </td> <td> $0$ </td> <td> $\frac{2}{16}$ </td> <td> $0$ </td> <td> $0$ </td>
+  </tr>
+  <tr class='fragment' style="border-bottom:solid 3pt; text-align:center;">
+    <td style="border-right:solid 1pt">$3$</td> <td> $0$ </td> <td> $0$ </td> <td> $0$ </td> <td> $\frac{2}{16}$ </td> <td> $0$ </td> <td> $0$ </td> <td> $0$ </td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Pela fmpc, fica evidente que os valores de $X$ alteram o comportamento probabilístico de $Y$ e vice-versa. Isto é, que essas variáveis são **dependentes**!
+:::
+
+:::
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+1. Pela fmpc, podemos obter probabilidades conjuntas para eventos de interesse;
+2. A fmp de apenas uma va é obtida da fmpc somando $p(x,y)$ em todos os valores da outra variável;
+3. Nesse contexto, essa fmp univariada é chamada de fmp **marginal**.
+
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 23 (cont.):** A probabilidade $P(X \geq 7, Y \leq 1)$ pode ser obtida como
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td>$P(X \geq 7, Y \leq 1) = \sum_{x\geq 7}\sum_{y\leq 1} p(x,y) = p(7, 0) + p(7, 1) + p(8, 0) + p(8, 1) = 0 + \frac{1}{16} + \frac{2}{16} + 0 = \frac{3}{16}.$</td>
+  </tr>
+</table>
+As fmp's marginais de $X$ e $Y$ são
+
+::: columns
+
+::: {.column #vcenter width=57%}
+
+<table class="tblcenter" style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:solid 1pt; border-top:solid 3pt">
+    <td style="border-right:solid 1pt">$x$</td> <td>$2$</td> <td>$3$</td> <td>$4$</td> <td>$5$</td> <td>$6$</td> <td>$7$</td> <td>$8$</td>
+  </tr>
+  <tr style="border-bottom:solid 3pt">
+    <td style="border-right:solid 1pt">$p_X(x)$</td> <td>$\frac{1}{16}$</td> <td>$\frac{2}{16}$</td> <td>$\frac{3}{16}$</td> <td>$\frac{4}{16}$</td> <td>$\frac{3}{16}$</td> <td>$\frac{2}{16}$</td> <td>$\frac{1}{16}$</td>
+  </tr>
+</table>
+
+:::
+
+::: {.column #vcenter width=5%}
+
+e
+
+:::
+
+::: {.column #vcenter width=38%}
+
+<table class="tblcenter" style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:solid 1pt; border-top:solid 3pt">
+    <td style="border-right:solid 1pt">$y$</td> <td>$0$</td> <td>$1$</td> <td>$2$</td> <td>$3$</td>
+  </tr>
+  <tr style="border-bottom:solid 3pt">
+    <td style="border-right:solid 1pt">$p_Y(y)$</td> <td>$\frac{4}{16}$</td> <td>$\frac{6}{16}$</td> <td>$\frac{4}{16}$</td> <td>$\frac{2}{16}$</td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+:::
+
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-warning}
+## Propriedades
+
+Seja $(X,Y)$ vetor aleatório discreto com fmpc $p(x,y)$, então:
+
+1. $p(x,y) \geq 0$, $\forall\ x,y$;
+2. $\sum_{x \in \text{Im}(X)}\sum_{y \in \text{Im}(Y)} p(x,y) = 1$.
+:::
+
+::: {.callout-caution}
+## Observação
+
+Toda função que satisfaça as propriedades acima será denominada fmpc. Assim, podemos especificar diretamente a fmpc, contornando a necessidade de criar um modelo probabilístico em $\Omega$.
+:::
+
 
 ## Covariância e Correlação
 
