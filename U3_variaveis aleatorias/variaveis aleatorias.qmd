@@ -5269,9 +5269,15 @@ Pela fmpc, fica evidente que os valores de $X$ alteram o comportamento probabil�
 **Exemplo 23 (cont.):** A probabilidade $P(X \geq 7, Y \leq 1)$ pode ser obtida como
 <table style="margin-left: auto; margin-right: auto;">
   <tr style="border-bottom:none">
-    <td>$P(X \geq 7, Y \leq 1) = \sum_{x\geq 7}\sum_{y\leq 1} p(x,y) = p(7, 0) + p(7, 1) + p(8, 0) + p(8, 1) = 0 + \frac{1}{16} + \frac{2}{16} + 0 = \frac{3}{16}.$</td>
+    <td>$P(X \geq 7, Y \leq 1)$ </td> <td> $=$ </td> <td> $\sum_{x\geq 7}\sum_{y\leq 1} p(x,y) = p(7, 0) + p(7, 1) + p(8, 0) + p(8, 1)$</td>
+  </tr>
+  <tr style="border-bottom:none">
+    <td> </td> <td> $=$ </td> <td> $0 + \frac{1}{16} + \frac{2}{16} + 0 = \frac{3}{16}.$</td>
   </tr>
 </table>
+
+::: fragment
+
 As fmp's marginais de $X$ e $Y$ são
 
 ::: columns
@@ -5312,6 +5318,8 @@ e
 
 :::
 
+:::
+
 
 ## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
 
@@ -5324,10 +5332,169 @@ Seja $(X,Y)$ vetor aleatório discreto com fmpc $p(x,y)$, então:
 2. $\sum_{x \in \text{Im}(X)}\sum_{y \in \text{Im}(Y)} p(x,y) = 1$.
 :::
 
-::: {.callout-caution}
-## Observação
+::: fragment
 
-Toda função que satisfaça as propriedades acima será denominada fmpc. Assim, podemos especificar diretamente a fmpc, contornando a necessidade de criar um modelo probabilístico em $\Omega$.
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. A fmpc pode ser obtida da fdac e vice-versa. A fmpc $p(x,y) = F(x,y) - F(x^-, y^-)$, que é a altura do salto de $F(\cdot,\cdot)$ em $(x,y)$ e a fdac $F(x,y)$ é obtida por $\sum_{s \leq x}\sum_{t \leq y}p(s,t)$;
+2. Toda função que satisfaça as propriedades acima será denominada fmpc. Assim, podemos especificar diretamente a fmpc, contornando a necessidade de criar um modelo probabilístico em $\Omega$.
+
+:::
+
+:::
+
+:::
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Se a fdac $F(x,y)$ do vetor aleatório $(X,Y)$ é absolutamente contínua em ambas coordenadas, isto é, se existir $f(x,y)$ tal que
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td>$F(x,y) = \int_{-\infty}^x\int_{-\infty}^y f(s,t) dt ds,$</td>
+  </tr>
+</table>
+dizemos que $(x,y)$ é **vetor aleatório contínuo** e que $f(x,y)$ é a sua **fdp conjunta** (fdpc).
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observações
+
+::: incremental
+
+1. A probabilidade de $(X,Y)$ pertencer a uma região de $\mathbb{R}^2$ é a integral dupla de $f(x,y)$ nessa região. Por exemplo, $P(a < X \leq b, c < X \leq d) = \int_a^b\int_c^d f(x,y) dy dx$;
+2. A fdpc pode ser obtida da fdac por derivação $f(x,y) = \frac{\partial^2}{\partial x \partial y} F(x,y)$;
+3. As fdp's marginais são obtidas por integração da coordenada correspondente a outra variável:
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td>$f_X(x) = \int_{-\infty}^\infty f(x,y) dy$</td> <td>e</td> <td>$f_Y(y) = \int_{-\infty}^\infty f(x,y) dx$.</td>
+  </tr>
+</table>
+:::
+
+:::
+
+:::
+
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 24 {.unnumbered .unlisted}
+
+Sejam $X$ e $Y$ os pesos (em kg), respectivamente, de amêndoas e castanhas de caju em uma embalagem de luxo de 1 kg que ainda pode conter amendoins. O peso dos amendoins é dado por $1-X-Y$. Assim, $(X,Y)$ pertence a $D = \{(x,y) : 0 \leq x,y \leq 1, 0 \leq y \leq 1-x\}$. Suponha $f(x,y) = 24xy$, $(x,y) \in D$.
+
+```{r out.width="80%", fig.height=5.5}
+#| layout-ncol: 2
+
+par(family = "serif", mar=c(5,4,.3,.3))
+plot(0, 0, type='n', xlim = c(-.04,1+.07), ylim=c(-.04,1+.07), xlab='', ylab='')
+polygon(x=c(0,0,1), y=c(0,1,0), border=NA, col="lightblue")
+arrows(y0 = -.04, y1 = 1+0.07, x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(x0 = -.04, x1 = 1+0.07, y0=0, y1=0, length = .1, lwd=2, col='darkgray')
+lines(x=c(1,0), y=c(0,1), lty=3, lwd=2)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(y)), side = 2, line = 2, cex=1.5)
+text(x=1, y=1, labels = expression(italic(D)), adj=1)
+
+x <- y <- seq(0,1,length.out=100)
+z <- matrix(0, ncol=length(y), nrow=length(x))
+for (i in 1:length(x)) {
+  for (j in 1:length(y)) z[i,j] <- ifelse(y[j] <= 1-x[i], 24*x[i]*y[j], 0)
+}
+persp(x,y,z, xlab="x", ylab="y", zlab="f(x,y)", col = rgb(.8,0,0,alpha=.6), theta=20, phi=10, ticktype='detailed')
+
+```
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 24 (cont.) {.unnumbered .unlisted}
+
+A probabilidade $P(X \leq 0.75, Y \leq 0.75)$ pode ser obtida por
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td>$P(X \leq 0.75, Y \leq 0.75)$ </td> <td> $=$ </td> <td> $\int_0^{0.75}\int_0^{0.75} f(x,y) dy dx$ </td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none">
+    <td> </td> <td> $=$ </td> <td> $\int_0^{0.25}\int_0^{0.75} [24xy] dy dx + \int_{0.25}^{0.75}\int_0^{1-x} [24xy] dy dx$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none">
+    <td> </td> <td> $=$ </td> <td> $\int_0^{0.25}24x [\frac{y^2}{2}|_0^{0.75}] dx + \int_{0.25}^{0.75}24x [\frac{y^2}{2}|_0^{1-x}] dx$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none">
+    <td> </td> <td> $=$ </td> <td> $\frac{27}{4}\int_0^{0.25}x dx + 12\int_{0.25}^{0.75}x(1-x)^2 dx$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none">
+    <td> </td> <td> $=$ </td> <td> $\frac{27}{4}[\frac{x^2}{2}|_0^{0.25}] + 12[\frac{x^2}{2} - \frac{2x^3}{3} + \frac{x^4}{4}|_{0.25}^{0.75}]$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none">
+    <td> </td> <td> $\approx$ </td> <td> $0.2109 + 0.6875 = 0.8984$.</td>
+  </tr>
+</table>
+
+::: fragment
+
+A marginal de $X$ é
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td>$f_X(x)$ </td> <td> $=$ </td> <td> $\int_{-\infty}^{\infty} f(x,y) dy = \int_{0}^{1-x} [24xy] dy = 24x[\frac{y^2}{2}|_{0}^{1-x}] = 12x(1-x)^2, \ \ \ 0 \leq x \leq 1.$ </td>
+  </tr>
+</table>
+
+:::
+
+::: fragment
+
+A marginal de $Y$ é
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td>$f_Y(y)$ </td> <td> $=$ </td> <td> $\int_{-\infty}^{\infty} f(x,y) dx = \int_{0}^{1-y} [24xy] dx = 24y[\frac{x^2}{2}|_{0}^{1-y}] = 12y(1-y)^2, \ \ \ 0 \leq y \leq 1.$ </td>
+  </tr>
+</table>
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 24 {.unnumbered .unlisted}
+
+```{r out.width="75%", fig.height=5}
+#| layout-ncol: 2
+
+x <- seq(0,1, length.out=1000)
+fx <- 12*x*(1-x)^2
+
+par(family = "serif", mar=c(3.5,3.5,.3,.3))
+plot(0, 0, type='n', xlim = c(-.04,1+.07), ylim=c(-.04,1.07*max(fx)), xlab='', ylab='')
+arrows(y0 = -.04, y1 = 1.07*max(fx), x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(x0 = -.04, x1 = 1+0.07, y0=0, y1=0, length = .1, lwd=2, col='darkgray')
+lines(x=x, y=fx, lwd=3)
+mtext(text = expression(italic(x)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f[X](x))), side = 2, line = 2, cex=1.5)
+
+x <- seq(0,1, length.out=1000)
+fx <- 12*x*(1-x)^2
+
+par(family = "serif", mar=c(3.5,3.5,.3,.3))
+plot(0, 0, type='n', xlim = c(-.04,1+.07), ylim=c(-.04,1.07*max(fx)), xlab='', ylab='')
+arrows(y0 = -.04, y1 = 1.07*max(fx), x0=0, x1=0, length = .1, lwd=2, col='darkgray')
+arrows(x0 = -.04, x1 = 1+0.07, y0=0, y1=0, length = .1, lwd=2, col='darkgray')
+lines(x=x, y=fx, lwd=3)
+mtext(text = expression(italic(y)), side = 1, line = 2, cex=1.5)
+mtext(text = expression(italic(f[Y](y))), side = 2, line = 2, cex=1.5)
+
+```
+
+::: {.callout-tip}
+## Exercícios
+
+Qual seria a distribuição de $Z = 1-X-Y$, o peso dos amendoins?
 :::
 
 
