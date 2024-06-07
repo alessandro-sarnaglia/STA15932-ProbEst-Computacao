@@ -5498,6 +5498,41 @@ Qual seria a distribuição de $Z = 1-X-Y$, o peso dos amendoins?
 :::
 
 
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Da mesma forma que vimos em probabilidade de eventos, a distribuição conjunta de um vetor aleatório $(X,Y)$ nos permite estudar o efeito de uma coordenada na distribuição da outra.
+:::
+
+::: {.callout-note}
+## Definição
+
+Seja $(X,Y)$ vetor aleatório discreto com fmpc $p(x,y)$, então a fmp condicional de $Y$ dado que $X = x$ é dada por
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td>$p_{Y|X}(y|x) = \frac{p(x,y)}{p_X(x)}$,</td>
+  </tr>
+</table>
+isto é, a fmpc de $(X,Y)$ dividida pela fmp marginal de $X$.
+:::
+
+::: {.callout-note}
+## Definição
+
+Seja $(X,Y)$ vetor aleatório contínuo com fdpc $f(x,y)$, então a fdp condicional de $Y$ dado que $X = x$ é dada por
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td>$f_{Y|X}(y|x) = \frac{f(x,y)}{f_X(x)}$,</td>
+  </tr>
+</table>
+isto é, a fdpc de $(X,Y)$ dividida pela fdp marginal de $X$.
+:::
+
+
+
 ## Covariância e Correlação
 
 # Funções de Variáveis Aleatórias
