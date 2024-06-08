@@ -5390,7 +5390,7 @@ dizemos que $(x,y)$ é **vetor aleatório contínuo** e que $f(x,y)$ é a sua **
 
 Sejam $X$ e $Y$ os pesos (em kg), respectivamente, de amêndoas e castanhas de caju em uma embalagem de luxo de 1 kg que ainda pode conter amendoins. O peso dos amendoins é dado por $1-X-Y$. Assim, $(X,Y)$ pertence a $D = \{(x,y) : 0 \leq x,y \leq 1, 0 \leq y \leq 1-x\}$. Suponha $f(x,y) = 24xy$, $(x,y) \in D$.
 
-```{r out.width="80%", fig.height=5.5}
+```{r out.width="80%", fig.height=4}
 #| layout-ncol: 2
 
 par(family = "serif", mar=c(5,4,.3,.3))
@@ -5464,7 +5464,7 @@ A marginal de $Y$ é
 
 ### Exemplo 24 {.unnumbered .unlisted}
 
-```{r out.width="75%", fig.height=5}
+```{r out.width="75%", fig.height=4}
 #| layout-ncol: 2
 
 x <- seq(0,1, length.out=1000)
@@ -5508,29 +5508,47 @@ Da mesma forma que vimos em probabilidade de eventos, a distribuição conjunta 
 :::
 
 ::: {.callout-note}
-## Definição
+## Definições
 
-Seja $(X,Y)$ vetor aleatório discreto com fmpc $p(x,y)$, então a fmp condicional de $Y$ dado que $X = x$ é dada por
+1. Seja $(X,Y)$ vetor aleatório discreto com fmpc $p(x,y)$, então a fmp condicional de $Y$ dado que $X = x$ é dada  pela fmpc de $(X,Y)$ dividida pela fmp marginal de $X$:
 <table style="margin-left: auto; margin-right: auto;">
   <tr style="border-bottom:none">
-    <td>$p_{Y|X}(y|x) = \frac{p(x,y)}{p_X(x)}$,</td>
+    <td>$p_{Y|X}(y|x) = \frac{p(x,y)}{p_X(x)}$.</td>
   </tr>
 </table>
-isto é, a fmpc de $(X,Y)$ dividida pela fmp marginal de $X$.
-:::
-
-::: {.callout-note}
-## Definição
-
-Seja $(X,Y)$ vetor aleatório contínuo com fdpc $f(x,y)$, então a fdp condicional de $Y$ dado que $X = x$ é dada por
+2. Seja $(X,Y)$ vetor aleatório contínuo com fdpc $f(x,y)$, então a fdp condicional de $Y$ dado que $X = x$ é dada pela fdpc de $(X,Y)$ dividida pela fdp marginal de $X$:
 <table style="margin-left: auto; margin-right: auto;">
   <tr style="border-bottom:none">
-    <td>$f_{Y|X}(y|x) = \frac{f(x,y)}{f_X(x)}$,</td>
+    <td>$f_{Y|X}(y|x) = \frac{f(x,y)}{f_X(x)}$.</td>
   </tr>
 </table>
-isto é, a fdpc de $(X,Y)$ dividida pela fdp marginal de $X$.
 :::
 
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 23 (cont.):**
+
+Considerando a fmpc de $(X,Y)$ e a fmp marginal de $X$, temos que $p_{Y|X}(y|x)$ é
+<table class="tblcenter" style="margin-left: auto; margin-right: auto;">
+  <tr style="border-top:solid 3pt; border-bottom:solid 1pt; text-align:center;">
+    <td style="border-right:solid 1pt">$y\backslash x$</td> <td> $2$ </td> <td> $3$ </td> <td> $4$ </td> <td> $5$ </td> <td> $6$ </td> <td> $7$ </td> <td> $8$ </td>
+  </tr>
+  <tr class='fragment' style="text-align:center;">
+    <td style="border-right:solid 1pt">$0$</td> <td> $1$ </td> <td> $0$ </td> <td> $\frac{1}{2}$ </td> <td> $0$ </td> <td> $\frac{1}{2}$ </td> <td> $0$ </td> <td> $1$ </td>
+  </tr>
+  <tr class='fragment' style="text-align:center;">
+    <td style="border-right:solid 1pt">$1$</td> <td> $0$ </td> <td> $1$ </td> <td> $0$ </td> <td> $\frac{1}{2}$ </td> <td> $0$ </td> <td> $1$ </td> <td> $0$ </td>
+  </tr>
+  <tr class='fragment' style="text-align:center;">
+    <td style="border-right:solid 1pt">$2$</td> <td> $0$ </td> <td> $0$ </td> <td> $\frac{1}{2}$ </td> <td> $0$ </td> <td> $\frac{1}{2}$ </td> <td> $0$ </td> <td> $0$ </td>
+  </tr>
+  <tr class='fragment' style="border-bottom:solid 3pt; text-align:center;">
+    <td style="border-right:solid 1pt">$3$</td> <td> $0$ </td> <td> $0$ </td> <td> $0$ </td> <td> $\frac{1}{2}$ </td> <td> $0$ </td> <td> $0$ </td> <td> $0$ </td>
+  </tr>
+</table>
+:::
 
 
 ## Covariância e Correlação
