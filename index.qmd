@@ -18,3 +18,5 @@ editor: source
 2.    [Probabilidade de Eventos](U2_probabilidade/probabilidade.html)
 
 3.    [Variáveis Aleatórias](U3_variaveis aleatorias/variaveis aleatorias.html)
+
+4.    [Inferência](U4_inferencia/inferencia.html)

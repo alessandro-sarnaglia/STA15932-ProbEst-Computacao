@@ -1,0 +1,106 @@
+---
+title: "Probabilidade e Estatística"
+subtitle: "Inferência"
+author: "Prof. Dr. Alessandro JQ Sarnaglia"
+lang: "pt"
+format:
+  revealjs:
+    width: 1280
+    height: 720
+    min-scale: 0.05
+    fig-width: 5.5
+    fig-height: 5.5
+    theme: [custom.scss]
+    css: [fonts.css, style.css]
+    callout-icon: false
+    toc: true
+    toc-depth: 3
+    toc-expand: 3
+    number-sections: true
+    number-depth: 3
+    footer: "[Tópicos 🔙](../index.html) | [Sumário 📋](/inferencia.html#/TOC)"
+    menu:
+      useTextContentForMissingTitles: false
+editor: source
+filters:
+  - parse-latex
+---
+
+
+# Distribuições Amostrais
+
+## Funções de Variáveis Aleatórias
+
+## Distribuição Amostral da Média Amostral
+
+# Estimação Pontual
+
+# Estimação Intervalar
+
+# Testes de Hipóteses
+
+# FIM {.unnumbered .unlisted}
+
+# APAGAR DPS 1 {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+:::
+
+::: {.callout-note}
+## Definição
+
+:::
+
+::: {.callout-warning}
+## Propriedade
+
+:::
+
+::: {.callout-tip}
+## Exercícios
+
+:::
+
+::: {.callout-important}
+## Problema
+
+:::
+
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo:** 
+
+::: 
+
+# APAGAR DPS 2 {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=45%}
+1
+:::
+
+::: {.column #vcenter width=55%}
+2
+
+3
+
+4
+:::
+
+:::
+
+
+
+```{=latex}
+\begin{align*}
+\Omega &= \{(1,1), (1,2), \ldots, (4,4)\}\\
+       &= \{(x,y) : x,y = 1,\ldots,4\}.
+\end{align*}
+```
+
+
+# FIM {.unnumbered .unlisted}

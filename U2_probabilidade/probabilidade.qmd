@@ -18,7 +18,7 @@ format:
     toc-expand: 3
     number-sections: true
     number-depth: 3
-    footer: "[Voltar 🔙](../index.html)"
+    footer: "[Tópicos 🔙](../index.html) | [Sumário 📋](/probabilidade.html#/TOC)"
     menu:
       useTextContentForMissingTitles: false
 editor: source

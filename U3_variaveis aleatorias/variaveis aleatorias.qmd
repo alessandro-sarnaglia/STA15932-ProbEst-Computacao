@@ -18,7 +18,7 @@ format:
     toc-expand: 3
     number-sections: true
     number-depth: 3
-    footer: "[Voltar 🔙](../index.html)"
+    footer: "[Tópicos 🔙](../index.html) | [Sumário 📋](/variaveis%20aleatorias.html#/TOC)"
     menu:
       useTextContentForMissingTitles: false
 editor: source
@@ -5721,6 +5721,106 @@ Sejam $X$ e $Y$ os tempos de vida de duas lâmpadas. Suponha que $X$ e $Y$ sejam
 </table>
 [Logo, $S \sim \text{Gama}(2, \frac{1}{\lambda})$.]{.fragment}
 
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Os conceitos vistos até o momento podem ser extendidos para casos com dimensão maior que dois.
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definições
+
+Se $X_1, X_2,\ldots , X_n$ são vad's, a sua fmpc é a função $n$-variada definida por
+$$p(x_1, x_2, \ldots, x_n) = P(X_1 = x_1, X_2 = x_2, \ldots , X_n = x_n)$$
+Se $X_1, X_2,\ldots , X_n$ são vac's com fdac $F(x_1, \ldots, x_n) = P(X_1 \leq x_1, \ldots, X_n \leq x_n)$ a sua fdpc é a função $n$-variada $f(t_1, \ldots, t_n)$ tal que
+$$F(x_1, \ldots, x_n) = \int_{-\infty}^{x_1} \cdots \int_{-\infty}^{x_n} f(t_1, \ldots, t_n) dt_n \cdots dt_1.$$
+:::
+
+:::
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definições
+
+1. Um experimento **Multinomial** consiste de $n$ repetições independentes de um experimento com $r$ resultados possíveis, que denominamos de categorias.
+2. Em um experimento Multinomial, seja $X_j$ a quantidade das $n$ repetições que resultaram na categoria $j$, $j=1, \ldots, r$. Dizemos que o vetor aleatório $(X_1, \ldots, X_r)$ tem distribuição **Multinomial** e sua fmpc é
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td> $p(x_1, \ldots, x_r) = \frac{n!}{x_1!\cdots x_r!}p_1^{x_1} \cdots p_r^{x_r}, \ \ \ x_j = 0,1,\ldots,n, \ \ \ x_1+\cdots+x_r = n,$ </td>
+  </tr>
+</table>
+em que $p_j$ é a probabilidade de uma repetição resultar na categoria $j$, $j=1, \ldots, r$. Notação $(X_1, \ldots, X_r) \sim \text{MultiNom}(n, p_1, \ldots, p_r)$.
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+A distribuição Binomial é um caso especial da Multinomial, onde $r=2$, $p_1 = p$ e $p_2 = 1-p$.
+:::
+
+:::
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 26:** Uma loja de venda de automóveis vende um veículo em três categorias: (1) básico; (2) intermediário; e (3) premium. De experiências anteriores, sabe-se que as categorias 1, 2 e 3 correspondem, respectivamente, a 50%, 40% e 10% das vendas desse veículo.
+
+[Dos próximos 15 compradores, qual a probabilidade de exatamente 5 compras de cada categoria?]{.fragment} [Seja $X_j$ a quantidade de compras da categoria $j = 1, 2, 3$.]{.fragment} [Então $(X_1, X_2, X_3) \sim \text{MultiNom}(15, 0.5, 0.4, 0.1)$.]{.fragment} [Logo]{.fragment}
+<table class="fragment" style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td> $p(5, 5, 5) = \frac{15!}{5!5!5!}0.5^{5}0.4^{5}0.1^{5} = 0.0024.$ </td>
+  </tr>
+</table>
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+O conceito de independência também pode ser extendido para $n$ variáveis.
+:::
+
+:::
+
+## 4. Vetores Aleatórios Bidimensionais {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+As va's $X_1, \ldots, X_n$ são independentes se, para cada subconjunto $X_{i_1}, \ldots, X_{i_k}$ (cada par, cada trio e assim por diante), a fmpc ou fdpc conjuntas do subconjunto for igual ao produto das fmp's ou fdp's marginais.
+:::
+
+::: {.fragment style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 27:** Sejam $X_1, \ldots, X_n$ as vidas úteis de $n$ componentes independentes, tais que $X_i \sim \text{Exp}(\lambda)$. [Assim, a fdpc é]{.fragment}
+<table class="fragment" style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none">
+    <td> $f(x_1, \ldots, x_n) = f_{X_1}(x_1) \cdots f_{X_n}(x_n) = \lambda e^{-\lambda x_1} \cdots \lambda e^{-\lambda x_n} = \lambda^n e^{-\lambda \sum_ix_i}.$ </td>
+  </tr>
+</table>
+[Suponha que um sistema montado com esses componentes deixa de operar assim que o primeiro falha.]{.fragment} [Se $T$ é o tempo de vida do sistema, vamos determinar $P(T > t)$.]{.fragment} [De fato,]{.fragment}
+<table style="margin-left: auto; margin-right: auto;">
+  <tr class="fragment" style="border-bottom:none">
+    <td> $P(T>t)$ </td> <td> $=$ </td> <td> $P(X_1 > t, \ldots, X_n > t) = \int_t^\infty \cdots \int_t^\infty f(x_1, \ldots, x_n) d x_n \cdots d x_1$ </td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none">
+    <td> </td> <td> $=$ </td> <td> $\int_t^\infty\lambda e^{-\lambda x_1}dx_1 \cdots \int_t^\infty\lambda e^{-\lambda x_n}dx_n = [-e^{-\lambda x_1}|_t^\infty]\cdots [-e^{-\lambda x_n}|_t^\infty] = (e^{-\lambda t})^n = e^{-n \lambda t}.$ </td>
+  </tr>
+</table>
+[Logo, $F_T(t) = P(T\leq t) = 1-e^{-n \lambda t}$ e $f_T(t) = n\lambda e^{-n \lambda t}$.]{.fragment} [Assim, $T \sim \text{Exp}(n\lambda)$.]{.fragment}
+:::
+
 ## Covariância e Correlação
 
 ::: {.callout-note}
@@ -5730,10 +5830,14 @@ Seja $(X,Y)$ vetor aleatório. Para qualquer $h(\cdot,\cdot)$, se $(X,Y)$ é dis
 $$E[h(X,Y)] = \sum_x\sum_y h(x,y)p(x,y) \ \ \ \text{ou} \ \ \ E[h(X,Y)] = \int_{-\infty}^\infty\int_{-\infty}^\infty h(x,y)f(x,y) dy dx.$$
 :::
 
+::: fragment
+
 ::: {.callout-caution}
 ## Observação
 
 A **covariância** é uma medida importante que surge do conceito acima, considerando $h(x,y) = (x-\mu_X)(y-\mu_Y)$.
+:::
+
 :::
 
 
@@ -5746,13 +5850,22 @@ Seja $(X,Y)$ vetor aleatório. A **covariância** entre $X$ e $Y$ é definida po
 $$\text{Cov}(X,Y) = E[(X-\mu_X)(Y-\mu_Y)].$$
 :::
 
+::: fragment
+
 ::: {.callout-caution}
 ## Observações
+
+::: incremental
 
 1. A covariância é o coeficiente angular esperado da reta que passa pelos pontos $(\mu_X,\mu_Y)$ e $(X,Y)$;
 2. $\text{Cov}(X,Y) \gg 0$ indica relação **linear** positiva forte;
 3. $\text{Cov}(X,Y) \ll 0$ indica relação **linear** negativa forte;
 4. $\text{Cov}(X,Y) \approx 0$ indica ausência de relação **linear**.
+
+:::
+
+:::
+
 :::
 
 ## 4.1 Covariância e Correlação {.unnumbered .unlisted}
@@ -5888,7 +6001,7 @@ Se $(X,Y)$ é vetor aleatório, então
 ::: {.callout-note}
 ## Definição
 
-Sejam $X$ e $Y$ va's com variâncias $\sigma_X^2$ e $\sigma_Y^2$, respectivamente, e seja $\text{Cov}(X,Y)$ a covariância entre $X$ e $Y$. O **coeficiente de correlação** entre $X$ e $Y$, representado por $\text{Cor}(X,Y)$, $\rho_{X,Y}$, ou simplesmente $\rho$, é definido por
+Sejam $X$ e $Y$ va's com variâncias $\sigma_X^2$ e $\sigma_Y^2$, respectivamente, e seja $\text{Cov}(X,Y)$ a covariância entre $X$ e $Y$. O **coeficiente de correlação** entre $X$ e $Y$, representado por $\text{Cor}(X,Y)$, $\rho_{X,Y}$, ou apenas $\rho$, é definido por
 <table style="margin-left: auto; margin-right: auto;">
   <tr style="border-bottom:none">
     <td> $\rho = \rho_{X,Y} = \text{Cor}(X,Y) = \frac{\text{Cov}(X,Y)}{\sigma_X\sigma_Y}.$ </td>
@@ -5910,17 +6023,20 @@ Para quaisquer duas va's $X$ e $Y$, o coeficiente de correlação satisfaz $-1 \
 
 **Exemplo 24 (cont.):** Temos que
 <table style="margin-left: auto; margin-right: auto;">
-  <tr style="border-bottom:none">
-    <td> $E(XY) = \int_0^1\int_0^{1-x}xy\cdot 24xy\ dy dx = 8\int_0^1 x^2(1-x)^3 dx = \frac{2}{15}$. </td>
+  <tr class="fragment" style="border-bottom:none">
+    <td> $E(XY)$ </td> <td> $=$ </td> <td> $\int_0^1\int_0^{1-x}xy\cdot 24xy\ dy dx = 8\int_0^1 x^2(1-x)^3 dx = 8 \frac{\Gamma(3)\Gamma(4)}{\Gamma(7)}\int_0^1 \frac{\Gamma(7)}{\Gamma(3)\Gamma(4)} x^{3-1}(1-x)^{4-1} dx$ </td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none">
+    <td> </td> <td> $=$ </td> <td> $8\cdot \frac{2!3!}{6!} = \frac{8}{5\cdot 4\cdot 3} = \frac{2}{15}$. </td>
   </tr>
 </table>
-Notando que as marginais de $X$ e $Y$ mostram que $X\sim\text{Beta}(2,3)$ e $Y\sim\text{Beta}(2,3)$, temos que $\mu_X = \mu_Y =\frac{2}{5}$ e $\sigma_X = \sigma_Y = \frac{1}{5}$. Logo,
+[Notando que as marginais de $X$ e $Y$ mostraram que $X\sim\text{Beta}(2,3)$ e $Y\sim\text{Beta}(2,3)$, temos que $\mu_X = \mu_Y =\frac{2}{5}$ e $\sigma_X = \sigma_Y = \frac{1}{5}$.]{.fragment} [Logo,]{.fragment}
 <table style="margin-left: auto; margin-right: auto;">
-  <tr style="border-bottom:none">
-    <td> $\text{Cov}(XY) = \frac{2}{15} - \frac{2}{5}\cdot \frac{2}{5} = \frac{2}{15} - \frac{4}{25} = \frac{10 - 12}{75} = -\frac{2}{75}$. </td>
+  <tr class="fragment" style="border-bottom:none">
+    <td> $\text{Cov}(X, Y) = \frac{2}{15} - \frac{2}{5}\cdot \frac{2}{5} = \frac{2}{15} - \frac{4}{25} = \frac{10 - 12}{75} = -\frac{2}{75}$. </td>
   </tr>
 </table>
-Assim, $\text{Cor}(XY) = \frac{-2/75}{1/25} = -\frac{50}{75} = -\frac{2}{3} \approx -0.6667$.
+[Assim, $\text{Cor}(X,Y) = \frac{-2/75}{1/25} = -\frac{50}{75} = -\frac{2}{3} \approx -0.6667$.]{.fragment}
 
 :::
 
@@ -5941,74 +6057,35 @@ Para fins descritivos, a relação será descrita como:
 
 ::: {.fragment style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 6; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo 24 (cont.):** Assim, embora $\text{Cov}(XY) = -\frac{2}{75} \approx 0.0267$ possa parecer um valor pequeno, obtemos $\text{Cor}(XY) \approx -0.6667$, o que é relativamente próximo de $-1$, indicando uma relação linear negativa **moderada** entre $X$ e $Y$.
+**Exemplo 24 (cont.):** Assim, embora $\text{Cov}(X,Y) = -\frac{2}{75} \approx 0.0267$ possa parecer um valor pequeno, obtemos $\text{Cor}(X,Y) \approx -0.6667$, indicando uma relação linear negativa **moderada** entre $X$ e $Y$.
 
 :::
 
-# Funções de Variáveis Aleatórias
-
-# FIM {.unnumbered .unlisted}
-
-# APAGAR DPS 1 {.unnumbered .unlisted}
-
-::: {.callout-caution}
-## Observação
-
-:::
-
-::: {.callout-note}
-## Definição
-
-:::
+## 4.1 Covariância e Correlação {.unnumbered .unlisted}
 
 ::: {.callout-warning}
-## Propriedade
+## Propriedades
+
+::: incremental
+
+1. Se $X$ e $Y$ são independentes, então $\text{Cov}(X, Y) = 0$ (e também $\rho = 0$). Entretanto, como visto anteriormente, $\text{Cov}(X, Y) = 0$ não implica independência entre $X$ e $Y$;
+2. $\text{Cov}(X, X) = E[(X-\mu_X)(X-\mu_X)] = E[(X-\mu_X)^2] = V(X) = \sigma^2_X$;
+3. $\text{Cov}(X, Y) = \text{Cov}(Y, X)$;
+4. $\text{Cov}(\sum_{i=1}^n X_i, \sum_{j=1}^m Y_j) = \sum_{i=1}^n\sum_{j=1}^m\text{Cov}(X_i, Y_j)$;
+5. $V(\sum_{i=1}^n X_i) = \sum_{i=1}^n \sum_{j=1}^n \text{Cov}(X_i, X_j)$.
+:::
 
 :::
+
+::: fragment
 
 ::: {.callout-tip}
-## Exercícios
+## Exercício
 
-:::
-
-::: {.callout-important}
-## Problema
-
-:::
-
-
-::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
-
-**Exemplo:** 
-
-::: 
-
-# APAGAR DPS 2 {.unnumbered .unlisted}
-
-::: columns
-
-::: {.column #vcenter width=45%}
-1
-:::
-
-::: {.column #vcenter width=55%}
-2
-
-3
-
-4
+Mostre que, se $X_1, \ldots, X_n$ são va's independentes com $V(X_i) = \sigma^2$, para todo $i$, então $V(\bar{X}) = \frac{\sigma^2}{n}$.
 :::
 
 :::
-
-
-
-```{=latex}
-\begin{align*}
-\Omega &= \{(1,1), (1,2), \ldots, (4,4)\}\\
-       &= \{(x,y) : x,y = 1,\ldots,4\}.
-\end{align*}
-```
-
 
 # FIM {.unnumbered .unlisted}
+
