@@ -17,7 +17,7 @@ format:
     toc-expand: 2
     number-sections: true
     number-depth: 2
-    footer: "[Tópicos 🔙](../index.html) | [Sumário 📋](/intro.html#/TOC)"
+    footer: "[Tópicos 🔙](../index.html) | [Sumário 📋](intro.html#/TOC)"
     menu:
       useTextContentForMissingTitles: false
 editor: source
