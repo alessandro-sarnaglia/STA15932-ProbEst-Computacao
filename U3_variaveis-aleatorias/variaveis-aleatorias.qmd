@@ -3565,7 +3565,7 @@ A função gama possui as seguintes propriedades:
 
 1. Para qualquer $\alpha > 1$, $\Gamma(\alpha) = (\alpha - 1)\Gamma(\alpha - 1)$;
 2. Se $n \in \mathbb{N}$, então $\Gamma(n) = (n-1)!$;
-3. $\Gamma(\frac{1}{2}) = \pi$.
+3. $\Gamma(\frac{1}{2}) = \sqrt{\pi}$.
 
 :::
 
