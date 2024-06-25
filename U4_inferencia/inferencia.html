@@ -8,7 +8,7 @@
 <link href="inferencia_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="inferencia_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="inferencia_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.4.551">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia">
   <title>Probabilidade e Estatística</title>
@@ -158,7 +158,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -342,6 +343,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <nav role="doc-toc"> 
 <h2 id="toc-title">Índice</h2>
 <ul>
+<li></li>
 <li><a href="#/distribuições-amostrais" id="/toc-distribuições-amostrais"><span class="header-section-number">1</span> Distribuições Amostrais</a>
 <ul>
 <li><a href="#/funções-de-variáveis-aleatórias" id="/toc-funções-de-variáveis-aleatórias"><span class="header-section-number">1.1</span> Funções de Variáveis Aleatórias</a></li>
@@ -353,6 +355,10 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </ul>
 </nav>
 </section>
+<section class="slide level2">
+
+<p><span class="math display">\[\usepackage{mathtools}\]</span></p>
+</section>
 <section>
 <section id="distribuições-amostrais" class="title-slide slide level1 center" data-number="1">
 <h1><span class="header-section-number">1</span> Distribuições Amostrais</h1>
@@ -360,6 +366,66 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </section>
 <section id="funções-de-variáveis-aleatórias" class="slide level2" data-number="1.1">
 <h2><span class="header-section-number">1.1</span> Funções de Variáveis Aleatórias</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Muitas vezes é de interesse determinar a distribuição de uma função de va’s <span class="math inline">\(X_1, \ldots, X_n\)</span>.</p>
+</div>
+</div>
+</div>
+<div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 1:</strong> Um sistema de transações é composto por dois componentes idênticos independentes. Quando o primeiro falha (com probabilidade <span class="math inline">\(p\)</span>), é imediatamente substituido pelo outro. Seja <span class="math inline">\(X_i\)</span> o número de transações até a falha do componente <span class="math inline">\(i\)</span>. Então <span class="math inline">\(X_i\sim\text{Geo}(p)\)</span>. Qual a distribuição de <span class="math inline">\(Y = X_1 + X_2\)</span>?</p>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Caso discreto</strong></p>
+</div>
+<div class="callout-content">
+Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conjunta <span class="math inline">\(p(x_1, \ldots, x_n)\)</span> e <span class="math inline">\(Y = h(X_1, \ldots, X_n)\)</span> uma função dessas variáveis. A fmp de <span class="math inline">\(Y\)</span> é dada por
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\displaystyle p_Y(y) = \underset{x_i\ :\ h(x_1,\ldots, x_n)\ =\ y}{\sum \cdots \sum} p(x_1, \ldots, x_n)\)</span>.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</section>
+<section id="funções-de-variáveis-aleatórias-1" class="slide level2 unnumbered unlisted">
+<h2>1.1 Funções de Variáveis Aleatórias</h2>
+<div style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<strong>Exemplo 1 (cont):</strong> Note que <span class="math inline">\(Y\)</span> representa a quantidade de total de transações. Pela independência de <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>, temos que <span class="math inline">\(p(x_1,x_2) = (1-p)^{x_1}p(1-p)^{x_2}p = (1-p)^{x_1+x_2}p^2\)</span>. Logo,
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(p_Y(y)\)</span>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\({\displaystyle\underset{x_1,\ x_2\ :\ x_1\ +\ x_2\ =\ y}{\sum \sum} p(x_1, x_2) = \sum_{x_1 = 1}^{y-1} \sum_{x_2 = y-x_1}^{y-x_1} (1-p)^{x_1+x_2}p^2 = \sum_{x_1 = 1}^{y-1} (1-p)^{y}p^2}\)</span>
+</td>
+</tr>
+<tr style="border-bottom:none;text-align:center;">
+<td>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\({\displaystyle (y-1)(1-p)^{x_1+x_2}p^2 = {y-1 \choose 1} (1-p)^{x_1+x_2}p^2}\)</span>.
+</td>
+</tr>
+</tbody></table>
+<p>Portanto, <span class="math inline">\(Y \sim \text{BN}(2,p)\)</span>.</p>
+</div>
 </section>
 <section id="distribuição-amostral-da-média-amostral" class="slide level2" data-number="1.2">
 <h2><span class="header-section-number">1.2</span> Distribuição Amostral da Média Amostral</h2>
@@ -460,8 +526,10 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 
 <section id="fim-1" class="title-slide slide level1 unnumbered unlisted center">
 <h1>FIM</h1>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><a href="../index.html">Tópicos 🔙</a> | <a href="inferencia.html#/TOC">Sumário 📋</a></p>
+</div>
 </div>
 </section>
     </div>
@@ -490,7 +558,6 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -754,10 +821,27 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -767,8 +851,17 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -782,7 +875,11 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
