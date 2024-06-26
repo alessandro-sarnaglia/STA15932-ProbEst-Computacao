@@ -8,7 +8,7 @@
 <link href="inferencia_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="inferencia_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="inferencia_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.3.353">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia">
   <title>Probabilidade e Estatística</title>
@@ -158,8 +158,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -343,21 +342,17 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <nav role="doc-toc"> 
 <h2 id="toc-title">Índice</h2>
 <ul>
-<li></li>
 <li><a href="#/distribuições-amostrais" id="/toc-distribuições-amostrais"><span class="header-section-number">1</span> Distribuições Amostrais</a>
 <ul>
 <li><a href="#/funções-de-variáveis-aleatórias" id="/toc-funções-de-variáveis-aleatórias"><span class="header-section-number">1.1</span> Funções de Variáveis Aleatórias</a></li>
-<li><a href="#/distribuição-amostral-da-média-amostral" id="/toc-distribuição-amostral-da-média-amostral"><span class="header-section-number">1.2</span> Distribuição Amostral da Média Amostral</a></li>
+<li><a href="#/distribuição-amostral" id="/toc-distribuição-amostral"><span class="header-section-number">1.2</span> Distribuição Amostral</a></li>
+<li><a href="#/distribuição-amostral-da-média-amostral" id="/toc-distribuição-amostral-da-média-amostral"><span class="header-section-number">1.3</span> Distribuição Amostral da Média Amostral</a></li>
 </ul></li>
 <li><a href="#/estimação-pontual" id="/toc-estimação-pontual"><span class="header-section-number">2</span> Estimação Pontual</a></li>
 <li><a href="#/estimação-intervalar" id="/toc-estimação-intervalar"><span class="header-section-number">3</span> Estimação Intervalar</a></li>
 <li><a href="#/testes-de-hipóteses" id="/toc-testes-de-hipóteses"><span class="header-section-number">4</span> Testes de Hipóteses</a></li>
 </ul>
 </nav>
-</section>
-<section class="slide level2">
-
-<p><span class="math display">\[\usepackage{mathtools}\]</span></p>
 </section>
 <section>
 <section id="distribuições-amostrais" class="title-slide slide level1 center" data-number="1">
@@ -386,12 +381,14 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 <div class="callout-content">
 Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conjunta <span class="math inline">\(p(x_1, \ldots, x_n)\)</span> e <span class="math inline">\(Y = h(X_1, \ldots, X_n)\)</span> uma função dessas variáveis. A fmp de <span class="math inline">\(Y\)</span> é dada por
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\(\displaystyle p_Y(y) = \underset{x_i\ :\ h(x_1,\ldots, x_n)\ =\ y}{\sum \cdots \sum} p(x_1, \ldots, x_n)\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div>
@@ -401,6 +398,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 <h2>1.1 Funções de Variáveis Aleatórias</h2>
 <div style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <strong>Exemplo 1 (cont):</strong> Note que <span class="math inline">\(Y\)</span> representa a quantidade de total de transações. Pela independência de <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>, temos que <span class="math inline">\(p(x_1,x_2) = (1-p)^{x_1}p(1-p)^{x_2}p = (1-p)^{x_1+x_2}p^2\)</span>. Logo,
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
@@ -423,12 +421,216 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 <span class="math inline">\({\displaystyle (y-1)(1-p)^{x_1+x_2}p^2 = {y-1 \choose 1} (1-p)^{x_1+x_2}p^2}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 <p>Portanto, <span class="math inline">\(Y \sim \text{BN}(2,p)\)</span>.</p>
 </div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>O Exemplo 1 pode ser generalizado. Mais precisamente, se <span class="math inline">\(X_1, \ldots, X_k\)</span> são vad’s independentes com <span class="math inline">\(X_i \sim \text{Geo}(p)\)</span> e <span class="math inline">\(Y = \sum_{i=1}^k X_i\)</span>, então é possível mostrar que <span class="math inline">\(Y \sim \text{BN}(k, p)\)</span>. Isto é, soma de va’s geométricas independentes tem distribuição binomial negativa.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="distribuição-amostral-da-média-amostral" class="slide level2" data-number="1.2">
-<h2><span class="header-section-number">1.2</span> Distribuição Amostral da Média Amostral</h2>
+<section id="funções-de-variáveis-aleatórias-2" class="slide level2 unnumbered unlisted">
+<h2>1.1 Funções de Variáveis Aleatórias</h2>
+<div style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 2:</strong> Após a abertura de uma loja, uma pessoa chega no caixa em um tempo <span class="math inline">\(X_1\)</span> e uma segunda <span class="math inline">\(X_2\)</span> instantes após a primeira. Se <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span> são independentes e satisfazem <span class="math inline">\(X_i \sim \text{Exp}(\lambda)\)</span>, qual é distribuição de <span class="math inline">\(Y = X_1 + X_2\)</span>?</p>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Caso contínuo</strong></p>
+</div>
+<div class="callout-content">
+Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vac’s com fdp conjunta <span class="math inline">\(f(x_1, \ldots, x_n)\)</span> e <span class="math inline">\(Y = h(X_1, \ldots, X_n)\)</span> uma função dessas variáveis. A fmp de <span class="math inline">\(Y\)</span> é dada por <span class="math inline">\(f_Y(y) = \frac{d}{dy}F_Y(y)\)</span> em que <span class="math inline">\(F_Y(y)\)</span> é a fda de <span class="math inline">\(Y\)</span> definida por
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\displaystyle F_Y(y) = P(Y \leq y) = P(h(X_1, \ldots, X_n) \leq y) = \underset{x_i\ :\ h(x_1,\ldots, x_n)\ \leq\ y}{\int \cdots \int} f(x_1, \ldots, x_n) dx_1 \cdots dx_n\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Pela definição, não obtemos diretamente <span class="math inline">\(f_Y(y)\)</span>. Devemos obter <span class="math inline">\(F_Y(y)\)</span> e então calcular <span class="math inline">\(f_Y(y) = \frac{d}{dy}F_Y(y)\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="funções-de-variáveis-aleatórias-3" class="slide level2 unnumbered unlisted">
+<h2>1.1 Funções de Variáveis Aleatórias</h2>
+<div style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<strong>Exemplo 2 (cont.):</strong> Note que <span class="math inline">\(Y\)</span> o momento em que o segundo cliente chega à loja. Pela independência de <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>, temos que <span class="math inline">\(f(x_1,x_2) = \lambda e^{-\lambda x_1} \lambda e^{-\lambda x_2} = \lambda^2 e^{-\lambda (x_1 + x_2)}\)</span>. Logo,
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(F_Y(y)\)</span>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\({\underset{x_1\ +\ x_2\ \leq\ y}{\int \int} f(x_1, x_2) dx_1 dx_2 = \int_{0}^{y} \int_{0}^{y-x_2} \lambda^2 e^{-\lambda (x_1 + x_2)} dx_1 dx_2 = \int_{0}^{y} \lambda e^{-\lambda x_2} [-e^{-\lambda x_1}|_{0}^{y-x_2}] dx_2}\)</span>
+</td>
+</tr>
+<tr style="border-bottom:none;text-align:center;">
+<td>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\({ \int_{0}^{y} \lambda e^{-\lambda x_2} [1-e^{-\lambda (y-x_2)}] dx_2 = \int_{0}^{y} \lambda e^{-\lambda x_2} - \lambda e^{-\lambda y} dx_2 = [-e^{-\lambda x_2} - \lambda x_2 e^{-\lambda y}|_{0}^{y}]}\)</span>
+</td>
+</tr>
+<tr style="border-bottom:none;text-align:center;">
+<td>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\({-e^{-\lambda y} - \lambda ye^{-\lambda y} + 1 - 0}\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(f_Y(y) = \frac{d}{dy}F_Y(y) = \frac{d}{dy}[-e^{-\lambda y} - \lambda ye^{-\lambda y} + 1] = \lambda e^{-\lambda y} - \lambda e^{-\lambda y} + \lambda^2 y e^{-\lambda y} = \frac{1}{(\frac{1}{\lambda})^2\Gamma(2)}y^{2-1}e^{-\frac{y}{\lambda^{-1}}}\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+<p>Portanto, <span class="math inline">\(Y \sim \text{Gama}(2, \lambda^{-1})\)</span>.</p>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>O Exemplo 2 pode ser generalizado. Se <span class="math inline">\(X_1, \ldots, X_n\)</span> são vac’s independentes com <span class="math inline">\(X_i \sim \text{Exp}(\lambda)\)</span> e <span class="math inline">\(Y = \sum_{i=1}^n X_i\)</span>, então <span class="math inline">\(Y \sim \text{Gama}(n, \lambda^{-1})\)</span>. Isto é, soma de exponenciais independentes tem distribuição gama.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="distribuição-amostral" class="slide level2" data-number="1.2">
+<h2><span class="header-section-number">1.2</span> Distribuição Amostral</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>As definições anteriores nos permitem obter a distribuição de funções de va’s de maneira genérica. Existem diversas ferramentas que podem facilitar essa tarefa: convolução, funções geradora de momentos e característica, método do jacobiano, entre outras. Elas não serão vistas aqui;</li>
+<li>No contexto de inferência, dois conceitos importantes são o de amostra aleatória e de estatística.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Amostra Aleatória</strong></p>
+</div>
+<div class="callout-content">
+<p>Seja <span class="math inline">\(X\)</span> va e <span class="math inline">\(X_1, \ldots, X_n\)</span> va’s independentes com a mesma distribuição que <span class="math inline">\(X\)</span>. Dizemos que <span class="math inline">\(X_1, \ldots, X_n\)</span> é uma <strong>amostra aleatória</strong> (aa) de <span class="math inline">\(X\)</span>. Nesse caso, podemos dizer que <span class="math inline">\(X\)</span> descreve a variável na <strong>população</strong>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Estatística</strong></p>
+</div>
+<div class="callout-content">
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="math inline">\(X\)</span>. Uma estatística <span class="math inline">\(T\)</span> é qualquer função <span class="math inline">\(T = T(X_1, \ldots, X_n)\)</span> da referida amostra.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="distribuição-amostral-1" class="slide level2 unnumbered unlisted">
+<h2>1.2 Distribuição Amostral</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição - Distribuição Amostral</strong></p>
+</div>
+<div class="callout-content">
+<p>Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="math inline">\(X\)</span> e <span class="math inline">\(T = T(X_1, \ldots, X_n)\)</span> uma estatística. Dizemos que a fda <span class="math inline">\(F_T(t) = P(T \leq t) = P(T(X_1,\ldots, X_n) \leq t)\)</span> é a <strong>distribuição amostral</strong> de <span class="math inline">\(T\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>O termo distribuição amostral também poderá ser utilizado para nos referirmos a fmp <span class="math inline">\(p_T(t)\)</span> ou a fdp <span class="math inline">\(f_T(t)\)</span> da estatística <span class="math inline">\(T\)</span> se ela for discreta ou contínua, respectivamente;</li>
+<li>As generalizações dos Exemplos 1 e 2 se tratavam de aa’s das populações <span class="math inline">\(X \sim \text{Geo}(p)\)</span> e <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>, respectivamente. A estatística considerada nos dois exemplos era o <strong>total amostral</strong> <span class="math inline">\(Y = \sum_i X_i\)</span>;</li>
+<li>Por esses exemplos, fica claro que a distribuição amostral de uma estatística depende da distribuição da população <span class="math inline">\(X\)</span>: binomial negativa no Exemplo 1; e gama no Exemplo 2.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="distribuição-amostral-2" class="slide level2 unnumbered unlisted">
+<h2>1.2 Distribuição Amostral</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<p>Se a distribuição populacional e/ou se a estatística for muito complicada, a obtenção analítica da distribuição populacional pode ser muito difícil. Nesses casos, podemos utilizar métodos de <strong>Monte Carlo</strong> (técnica computacional) para obter uma aproximação da distribuição amostral da estatística de interesse.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="distribuição-amostral-da-média-amostral" class="slide level2" data-number="1.3">
+<h2><span class="header-section-number">1.3</span> Distribuição Amostral da Média Amostral</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Embora a distribuição amostral dependa da distribuição da população, no caso da estatística <strong>média amostral</strong>, <span class="math inline">\(\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i\)</span>, o Teorema Central do Limite nos fornece a sua <span style="color:red;"><strong>distribuição amostral limite</strong></span>, independente da distribuição populacional.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-warning no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Propriedade - Teorema Central do Limite</strong></p>
+</div>
+<div class="callout-content">
+<p>BLABLABLA</p>
+</div>
+</div>
+</div>
 </section></section>
 <section id="estimação-pontual" class="title-slide slide level1 center" data-number="2">
 <h1><span class="header-section-number">2</span> Estimação Pontual</h1>
@@ -526,10 +728,8 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 
 <section id="fim-1" class="title-slide slide level1 unnumbered unlisted center">
 <h1>FIM</h1>
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><a href="../index.html">Tópicos 🔙</a> | <a href="inferencia.html#/TOC">Sumário 📋</a></p>
-</div>
 </div>
 </section>
     </div>
@@ -558,6 +758,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -821,27 +1022,10 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -851,17 +1035,8 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -875,11 +1050,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {

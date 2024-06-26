@@ -26,7 +26,6 @@ filters:
   - parse-latex
 ---
 
-$$\usepackage{mathtools}$$
 
 # Distribuições Amostrais
 
@@ -71,7 +70,127 @@ Sejam $X_1, \ldots, X_n$ vad's com fmp conjunta $p(x_1, \ldots, x_n)$ e $Y = h(X
 Portanto, $Y \sim \text{BN}(2,p)$.
 :::
 
+::: {.callout-caution}
+## Observação
+
+O Exemplo 1 pode ser generalizado. Mais precisamente, se $X_1, \ldots, X_k$ são vad's independentes com $X_i \sim \text{Geo}(p)$ e $Y = \sum_{i=1}^k X_i$, então é possível mostrar que $Y \sim \text{BN}(k, p)$. Isto é, soma de va's geométricas independentes tem distribuição binomial negativa.
+:::
+
+## 1.1 Funções de Variáveis Aleatórias {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 2:** Após a abertura de uma loja, uma pessoa chega no caixa em um tempo $X_1$ e uma segunda $X_2$ instantes após a primeira. Se $X_1$ e $X_2$ são independentes e satisfazem $X_i \sim \text{Exp}(\lambda)$, qual é distribuição de $Y = X_1 + X_2$?
+
+:::
+
+::: {.callout-note}
+## Definição - Caso contínuo
+
+Sejam $X_1, \ldots, X_n$ vac's com fdp conjunta $f(x_1, \ldots, x_n)$ e $Y = h(X_1, \ldots, X_n)$ uma função dessas variáveis. A fmp de $Y$ é dada por $f_Y(y) = \frac{d}{dy}F_Y(y)$ em que $F_Y(y)$ é a fda de $Y$ definida por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\displaystyle F_Y(y) = P(Y \leq y) = P(h(X_1, \ldots, X_n) \leq y) = \underset{x_i\ :\ h(x_1,\ldots, x_n)\ \leq\ y}{\int \cdots \int} f(x_1, \ldots, x_n) dx_1 \cdots dx_n$.</td>
+  </tr>
+</table>
+:::
+
+::: {.callout-caution}
+## Observação
+
+Pela definição, não obtemos diretamente $f_Y(y)$. Devemos obter $F_Y(y)$ e então calcular $f_Y(y) = \frac{d}{dy}F_Y(y)$.
+:::
+
+## 1.1 Funções de Variáveis Aleatórias {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 2 (cont.):** Note que $Y$ o momento em que o segundo cliente chega à loja. Pela independência de $X_1$ e $X_2$, temos que $f(x_1,x_2) = \lambda e^{-\lambda x_1} \lambda e^{-\lambda x_2} = \lambda^2 e^{-\lambda (x_1 + x_2)}$. Logo,
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$F_Y(y)$ </td> <td> $=$ </td> <td> ${\underset{x_1\ +\ x_2\ \leq\ y}{\int \int} f(x_1, x_2) dx_1 dx_2 = \int_{0}^{y} \int_{0}^{y-x_2} \lambda^2 e^{-\lambda (x_1 + x_2)} dx_1 dx_2 = \int_{0}^{y} \lambda e^{-\lambda x_2} [-e^{-\lambda x_1}|_{0}^{y-x_2}] dx_2}$</td>
+  </tr>
+  <tr style="border-bottom:none;text-align:center;">
+    <td> </td> <td> $=$ </td> <td> ${ \int_{0}^{y} \lambda e^{-\lambda x_2} [1-e^{-\lambda (y-x_2)}] dx_2 = \int_{0}^{y} \lambda e^{-\lambda x_2} - \lambda e^{-\lambda y} dx_2 = [-e^{-\lambda x_2} - \lambda x_2 e^{-\lambda y}|_{0}^{y}]}$</td>
+  </tr>
+  <tr style="border-bottom:none;text-align:center;">
+    <td> </td> <td> $=$ </td> <td> ${-e^{-\lambda y} - \lambda ye^{-\lambda y} + 1 - 0}$.</td>
+  </tr>
+</table>
+Agora, derivando $F_Y(y)$, obtemos
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$f_Y(y) = \frac{d}{dy}F_Y(y) = \frac{d}{dy}[-e^{-\lambda y} - \lambda ye^{-\lambda y} + 1] = \lambda e^{-\lambda y} - \lambda e^{-\lambda y} + \lambda^2 y e^{-\lambda y} = \frac{1}{(\frac{1}{\lambda})^2\Gamma(2)}y^{2-1}e^{-\frac{y}{\lambda^{-1}}}$. </td>
+  </tr>
+</table>
+Portanto, $Y \sim \text{Gama}(2, \lambda^{-1})$.
+:::
+
+::: {.callout-caution}
+## Observação
+
+O Exemplo 2 pode ser generalizado. Se $X_1, \ldots, X_n$ são vac's independentes com $X_i \sim \text{Exp}(\lambda)$ e $Y = \sum_{i=1}^n X_i$, então $Y \sim \text{Gama}(n, \lambda^{-1})$. Isto é, soma de exponenciais independentes tem distribuição gama.
+:::
+
+## Distribuição Amostral
+
+::: {.callout-caution}
+## Observações
+
+1. As definições anteriores nos permitem obter a distribuição de funções de va's de maneira genérica. Existem diversas ferramentas que podem facilitar essa tarefa: convolução, funções geradora de momentos e característica, método do jacobiano, entre outras. Elas não serão vistas aqui;
+2. No contexto de inferência, dois conceitos importantes são o de amostra aleatória e de estatística.
+:::
+
+::: {.callout-note}
+## Definição - Amostra Aleatória
+
+Seja $X$ va e $X_1, \ldots, X_n$ va's independentes com a mesma distribuição que $X$. Dizemos que $X_1, \ldots, X_n$ é uma **amostra aleatória** (aa) de $X$. Nesse caso, podemos dizer que $X$ descreve a variável na **população**.
+:::
+
+::: {.callout-note}
+## Definição - Estatística
+
+Seja $X_1, \ldots, X_n$ aa de $X$. Uma estatística $T$ é qualquer função $T = T(X_1, \ldots, X_n)$ da referida amostra.
+:::
+
+## 1.2 Distribuição Amostral {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição - Distribuição Amostral
+
+Seja $X_1, \ldots, X_n$ aa de $X$ e $T = T(X_1, \ldots, X_n)$ uma estatística. Dizemos que a fda $F_T(t) = P(T \leq t) = P(T(X_1,\ldots, X_n) \leq t)$ é a **distribuição amostral** de $T$.
+:::
+
+::: {.callout-caution}
+## Observações
+
+1. O termo distribuição amostral também poderá ser utilizado para nos referirmos a fmp $p_T(t)$ ou a fdp $f_T(t)$ da estatística $T$ se ela for discreta ou contínua, respectivamente;
+2. As generalizações dos Exemplos 1 e 2 se tratavam de aa's das populações $X \sim \text{Geo}(p)$ e $X \sim \text{Exp}(\lambda)$, respectivamente. A estatística considerada nos dois exemplos era o **total amostral** $Y = \sum_i X_i$;
+3. Por esses exemplos, fica claro que a distribuição amostral de uma estatística depende da distribuição da população $X$: binomial negativa no Exemplo 1; e gama no Exemplo 2.
+:::
+
+## 1.2 Distribuição Amostral {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+Se a distribuição populacional e/ou se a estatística for muito complicada, a obtenção analítica da distribuição populacional pode ser muito difícil. Nesses casos, podemos utilizar métodos de **Monte Carlo** (técnica computacional) para obter uma aproximação da distribuição amostral da estatística de interesse.
+:::
+
 ## Distribuição Amostral da Média Amostral
+
+::: {.callout-caution}
+## Observação
+
+Embora a distribuição amostral dependa da distribuição da população, no caso da estatística **média amostral**, $\bar{X} = \frac{1}{n}\sum_{i=1}^n X_i$, o Teorema Central do Limite nos fornece a sua [**distribuição amostral limite**]{style='color:red;'}, independente da distribuição populacional.
+:::
+
+::: {.callout-warning}
+## Propriedade - Teorema Central do Limite
+
+BLABLABLA
+:::
+
 
 # Estimação Pontual
 
