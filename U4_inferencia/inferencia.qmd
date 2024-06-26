@@ -80,7 +80,7 @@ O Exemplo 1 pode ser generalizado. Mais precisamente, se $X_1, \ldots, X_k$ são
 
 ::: {style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo 2:** Após a abertura de uma loja, uma pessoa chega no caixa em um tempo $X_1$ e uma segunda $X_2$ instantes após a primeira. Se $X_1$ e $X_2$ são independentes e satisfazem $X_i \sim \text{Exp}(\lambda)$, qual é distribuição de $Y = X_1 + X_2$?
+**Exemplo 2:** Uma pessoa chega no caixa em um tempo $X_1$ após o instante 0 e uma segunda $X_2$ instantes após a primeira. Se $X_1$ e $X_2$ são independentes e $X_i \sim \text{Exp}(\lambda)$, qual é distribuição de $Y = X_1 + X_2$?
 
 :::
 
@@ -129,7 +129,7 @@ Portanto, $Y \sim \text{Gama}(2, \lambda^{-1})$.
 ::: {.callout-caution}
 ## Observação
 
-O Exemplo 2 pode ser generalizado. Se $X_1, \ldots, X_n$ são vac's independentes com $X_i \sim \text{Exp}(\lambda)$ e $Y = \sum_{i=1}^n X_i$, então $Y \sim \text{Gama}(n, \lambda^{-1})$. Isto é, soma de exponenciais independentes tem distribuição gama.
+O Ex. 2 pode ser extendido. Se $X_1, \ldots, X_n$ são vac's independentes com $X_i \sim \text{Exp}(\lambda)$ e $Y = \sum_{i=1}^n X_i$, então $Y \sim \text{Gama}(n, \lambda^{-1})$. Isto é, soma de exponenciais independentes tem distribuição gama.
 :::
 
 ## Distribuição Amostral
@@ -172,9 +172,158 @@ Seja $X_1, \ldots, X_n$ aa de $X$ e $T = T(X_1, \ldots, X_n)$ uma estatística. 
 ## 1.2 Distribuição Amostral {.unnumbered .unlisted}
 
 ::: {.callout-caution}
-## Observações
+## Observação
 
 Se a distribuição populacional e/ou se a estatística for muito complicada, a obtenção analítica da distribuição populacional pode ser muito difícil. Nesses casos, podemos utilizar métodos de **Monte Carlo** (técnica computacional) para obter uma aproximação da distribuição amostral da estatística de interesse.
+:::
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 3:** Seja $X_1, \ldots, X_n$ aa de $X \sim \text{Weibull}(10, 2)$, isto é $\alpha=10$ e $\beta=2$. Considere a estatística
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\tilde{X} = T(X_1, \ldots, X_n) = \begin{cases} \frac{X_{(n/2)} + X_{(n/2+1)}}{2}, & n \text{ par}; \\ X_{(n+1)/2}, & n \text{ par}. \end{cases}$. </td>
+  </tr>
+</table>
+Isto é, $\tilde{X}$ é a mediana amostral. Qual a distribuição amostral de $\tilde{X}$ se $n=20$ e $n=40$? A estatística e a distribuição populacional são complexas para uma análise analítica. Podemos usar métodos de Monte Carlo.
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=65%}
+
+```{.r code-line-numbers="|1-8|9-15|11-12|13-14|16-17|18-21|18-19|20-21|22-23"}
+# parâmetros da Weibull(a,b)
+a <- 10; b<- 2
+# Quantidade de réplicas
+R <- 1000
+# Tamanho da aa
+n <- 20
+# Vetor vazio para armazenar as medianas amostrais de cada réplica
+med <- NULL
+# Inicia as réplicas de Monte Carlo
+for(r in 1:R){
+  # Gera uma aa de tamanho n da Weibull(a, b)
+  x <- rweibull(n=n, shape = a, scale = b)
+  # Calcula a mediana amostral da amostra x
+  med[r] <- median(x)                      
+}
+# Mediana populacional
+med_pop <- b*(log(2))^(1/a)
+# Histograma da distribuição amostral da mediana amostral
+hist(med)
+# Traça a mediana da população e intervalo +0.1 ou -0.1 desse valor
+abline(v = med_pop + c(-.1,0,.1), col = 'red', lty = c(2,1,2), lwd = 2)
+# Prop. das medianas amostrais entre med_pop - 0.1 e med_pop + 0.1
+mean(med > med_pop-.1 & med < med_pop+.1)
+```
+
+:::
+
+::: {.column #vcenter width=35%}
+
+::: fragment
+
+```{r}
+
+a <- 10; b<- 2 # parâmetros da Weibull(a,b)
+R <- 1000      # Quantidade de réplicas
+n <- 20        # Tamanho da aa
+med <- NULL    # Vetor vazio para armazenar as medianas
+               # amostrais de cada réplica
+for(r in 1:R){ # Inicia as réplicas de Monte Carlo
+  x <- rweibull(n=n, shape = a, scale = b) # Gera uma aa de tamanho n
+                                           # da Weibull(a, b)
+  med[r] <- median(x)                      # Calcula a mediana amostral
+}
+med_pop <- b*(log(2))^(1/a) # Mediana populacional
+hist(med)                   # Histograma da distribuição
+                            # amostral da mediana amostral
+abline(v = med_pop + c(-.1,0,.1),
+       col = 'red', lty = c(2,1,2),
+       lwd = 2) # Traça a mediana da população e intervalo
+                # +0.1 ou -0.1 desse valor
+prp <- mean(med > med_pop-.1 & med < med_pop+.1)
+cat("P[Med. Amost. \u2208 (Med. Pop. \u00b1 0.1)] \u2248 ", prp, sep='') 
+```
+
+:::
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 3 (cont.) {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=65%}
+
+```{.r code-line-numbers="|5-6"}
+# parâmetros da Weibull(a,b)
+a <- 10; b<- 2
+# Quantidade de réplicas
+R <- 1000
+# Tamanho da aa
+n <- 40
+# Vetor vazio para armazenar as medianas amostrais de cada réplica
+med <- NULL
+# Inicia as réplicas de Monte Carlo
+for(r in 1:R){
+  # Gera uma aa de tamanho n da Weibull(a, b)
+  x <- rweibull(n=n, shape = a, scale = b)
+  # Calcula a mediana amostral da amostra x
+  med[r] <- median(x)                      
+}
+# Mediana populacional
+med_pop <- b*(log(2))^(1/a)
+# Histograma da distribuição amostral da mediana amostral
+hist(med)
+# Traça a mediana da população e intervalo +0.1 ou -0.1 desse valor
+abline(v = med_pop + c(-.1,0,.1), col = 'red', lty = c(2,1,2), lwd = 2)
+# Prop. das medianas amostrais entre med_pop - 0.1 e med_pop + 0.1
+mean(med > med_pop-.1 & med < med_pop+.1)
+```
+
+:::
+
+::: {.column #vcenter width=35%}
+
+::: fragment
+
+```{r}
+
+a <- 10; b<- 2 # parâmetros da Weibull(a,b)
+R <- 1000      # Quantidade de réplicas
+n <- 40        # Tamanho da aa
+med <- NULL    # Vetor vazio para armazenar as medianas
+               # amostrais de cada réplica
+for(r in 1:R){ # Inicia as réplicas de Monte Carlo
+  x <- rweibull(n=n, shape = a, scale = b) # Gera uma aa de tamanho n
+                                           # da Weibull(a, b)
+  med[r] <- median(x)                      # Calcula a mediana amostral
+}
+med_pop <- b*(log(2))^(1/a) # Mediana populacional
+hist(med)                   # Histograma da distribuição
+                            # amostral da mediana amostral
+abline(v = med_pop + c(-.1,0,.1),
+       col = 'red', lty = c(2,1,2),
+       lwd = 2) # Traça a mediana da população e intervalo
+                # +0.1 ou -0.1 desse valor
+prp <- mean(med > med_pop-.1 & med < med_pop+.1)
+cat("P[Med. Amost. \u2208 (Med. Pop. \u00b1 0.1)] \u2248 ", prp, sep='') 
+```
+
+:::
+
+:::
+
 :::
 
 ## Distribuição Amostral da Média Amostral
@@ -186,11 +335,66 @@ Embora a distribuição amostral dependa da distribuição da população, no ca
 :::
 
 ::: {.callout-warning}
-## Propriedade - Teorema Central do Limite
+## Propriedade - Teorema Central do Limite (TCL)
 
-BLABLABLA
+Seja $X_1, \ldots, X_n$ aa de $X$, onde $E(X) = \mu$ e $V(X) = \sigma^2 < \infty$. Então a estatística
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle Z_n = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}}$ </td>
+  </tr>
+</table>
+tem distribuição aproximadamente normal padrão. A aproximação fica melhor com o aumento de $n$.
 :::
 
+## 1.3 Distribuição Amostral da Média Amostral {.unnumbered .unlisted}
+
+
+::: {.callout-caution}
+## Observações
+
+1. A média amostral tem distribuição aproximadamente $\text{N}(\mu, \frac{\sigma^2}{n})$, em que $\mu$ e $\sigma^2$ são a média e a variância da população $X$ da qual a amostra será observada;
+2. A aproximação se torna melhor com o aumento do tamanho amostral $n$;
+3. O valor de $n$ necessário para que a aproximação seja ''boa'' depende da distribuição da população;
+4. Por exemplo, dados provenientes de populações assimétricas exigem o valor de $n$ maior.
+:::
+
+::: {.callout-warning}
+## Propriedades - Corolário do TCL
+
+Seja $X_1, \ldots, X_n$ aa de $X$, onde $E(X) = \mu$ e $V(X) = \sigma^2 < \infty$ e $S_n = \sum_{i=1}^n X_i$ o total amostral. Então
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle Z_n = \frac{S_n - n\mu}{\sigma\sqrt{n}}}$ </td>
+  </tr>
+</table>
+tem distribuição aproximadamente normal padrão.
+:::
+
+## 1.3 Distribuição Amostral da Média Amostral {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 2 (cont.):** Tinhamos uma aa de uma população $X \sim \text{Exp}(\lambda)$. Note que $\mu = E(X) = \frac{1}{\lambda}$ e $\mu = V(X) = \frac{1}{\lambda^2}$. Vimos que a distribuição exata do total amostral era uma $\text{Gama}(n, \frac{1}{\lambda})$.
+
+Suponha que temos $\lambda = 0.5$ e desejamos encontrar $P(\bar{X} \leq \mu - 0.5) = P(S_n \leq n\mu - 0.5n)$, cujo valor exato pela gama é `r round(pgamma(20*(2-0.5), shape = 20, scale=2), 4)`, se $n=20$ e `r round(pgamma(40*(2-0.5), shape = 40, scale=2), 4)`, se $n=40$, por exemplo.
+
+Agora, temos que
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$P(S_n \leq n\mu - 0.5n)$ </td> <td>$=$ </td> <td> $P(\frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \leq \frac{\mu - 0.5 - \mu}{\sigma/\sqrt{n}}) = P(Z_n \leq -\frac{\lambda\sqrt{n}}{2})$ </td>
+  </tr>
+  <tr style="border-bottom:none;text-align:center;">
+    <td> </td> <td>$\approx$ </td> <td> ${\displaystyle \begin{cases} P(Z \leq -1.12) = 0.1314, & n=20;\\ P(Z \leq -1.58) = 0.0571, & n=40. \end{cases}}$ </td>
+  </tr>
+</table>
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+Note que, considerando a assimetria da população ($X\sim\text{Exp}(0.5)$), as probabilidades exatas e a aproximadas são relativamente próximas, mesmo para valores de $n$ moderados.
+:::
 
 # Estimação Pontual
 
