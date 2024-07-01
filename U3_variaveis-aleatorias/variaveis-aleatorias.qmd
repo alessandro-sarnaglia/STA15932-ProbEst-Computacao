@@ -2861,13 +2861,13 @@ mtext(text = expression(italic(f)[italic(Z)]*"("*italic(z)*")"), side = 2, line 
 
 ### Exemplo 14 (cont.) {.unnumbered .unlisted}
 
-Vimos que $P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi(-0.54)$. [Consultando a tabela da normal padrão, temos]{.fragment fragment-intex=1}
+Vimos que $P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi(-0.54)$. [Consultando a tabela da normal padrão, temos]{.fragment fragment-index=1}
 
 ::: columns
 
 ::: {.column #vcenter width=50%}
 
-::: {.fragment fragment-intex=2}
+::: {.fragment fragment-index=2}
 
 <figure>
   <img src="figs/figura_normal_padrao_ex14_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
@@ -2880,7 +2880,7 @@ Vimos que $P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi
 
 ::: {.column #vcenter width=50%}
 
-::: {.fragment fragment-intex=3}
+::: {.fragment fragment-index=3}
 
 <figure>
   <img src="figs/figura_normal_padrao_ex14_2.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
@@ -2894,7 +2894,7 @@ Vimos que $P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi
 :::
 
 [Assim,
-$$P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi(-0.54) = 0.8621 - 0.2946 = 0.5675.$$]{.fragment fragment-intex=4}
+$$P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi(-0.54) = 0.8621 - 0.2946 = 0.5675.$$]{.fragment fragment-index=4}
 
 
 ## {.unnumbered .unlisted .smaller}
@@ -2902,13 +2902,13 @@ $$P(1 \leq X \leq 1.75) = P(-0.54 \leq Z \leq 1.09) = \Phi(1.09) - \Phi(-0.54) =
 ### Exemplo 14 (cont.) {.unnumbered .unlisted}
 
 Suponha que desejamos $P(X > 1.75)$. [Utilizando a padronização, temos
-$${\textstyle P(X > 1.75) = P(\frac{X-\mu}{\sigma} > \frac{1.75-1.25}{0.46}) = P(Z > 1.09) = 1 - P(Z \leq 1.09) = 1 - \Phi(1.09).}$$]{.fragment fragment-intex=1}
+$${\textstyle P(X > 1.75) = P(\frac{X-\mu}{\sigma} > \frac{1.75-1.25}{0.46}) = P(Z > 1.09) = 1 - P(Z \leq 1.09) = 1 - \Phi(1.09).}$$]{.fragment fragment-index=1}
 
 ::: columns
 
 ::: {.column #vcenter width=60%}
 
-::: {.fragment fragment-intex=2}
+::: {.fragment fragment-index=2}
 
 Consultando a tabela da normal padrão, temos
 
@@ -2923,7 +2923,7 @@ Consultando a tabela da normal padrão, temos
 
 ::: {.column #vcenter width=40%}
 
-::: {.fragment fragment-intex=3}
+::: {.fragment fragment-index=3}
 
 Logo,
 $$\begin{align*}
@@ -3701,7 +3701,7 @@ $$\textstyle P(60 < X < 120) = P(\frac{60}{13} < \frac{X}{13} < \frac{120}{13}) 
 
 ::: {.column #vcenter width=50%}
 
-::: {.fragment fragment-intex=3}
+::: {.fragment fragment-index=3}
 
 <figure>
   <img src="figs/fig_gama_padrao_Ex16_1.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
@@ -3714,7 +3714,7 @@ $$\textstyle P(60 < X < 120) = P(\frac{60}{13} < \frac{X}{13} < \frac{120}{13}) 
 
 ::: {.column #vcenter width=50%}
 
-::: {.fragment fragment-intex=4}
+::: {.fragment fragment-index=4}
 
 <figure>
   <img src="figs/fig_gama_padrao_Ex16_2.png" style="display: block;margin-left: auto;margin-right: auto;width: 95%;">
@@ -3731,9 +3731,9 @@ $$\textstyle P(60 < X < 120) = P(\frac{60}{13} < \frac{X}{13} < \frac{120}{13}) 
 
 ::: {style="border-style: solid; border-width: 3px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo 16 (cont.):** Podemos aproximar o valor de $F_Y(4.62)$ utilizando interpolação linear. [Assumindo que $F_Y(y) \approx a+by$, $y \in [4,5]$, e notando que $F_Y(4) = 0.051 = a+4b$ e que $F_Y(5) = 0.133 = a + 5b$, obtemos]{.fragment fragment-intex=1}
+**Exemplo 16 (cont.):** Podemos aproximar o valor de $F_Y(4.62)$ utilizando interpolação linear. [Assumindo que $F_Y(y) \approx a+by$, $y \in [4,5]$, e notando que $F_Y(4) = 0.051 = a+4b$ e que $F_Y(5) = 0.133 = a + 5b$, obtemos]{.fragment fragment-index=1}
 
-::: {.fragment fragment-intex=1}
+::: {.fragment fragment-index=1}
 
 <table>
   <tr style="border-bottom:none;text-align:center;">
@@ -3743,9 +3743,9 @@ $$\textstyle P(60 < X < 120) = P(\frac{60}{13} < \frac{X}{13} < \frac{120}{13}) 
 
 :::
 
-[Logo, $F_Y(4.62) \approx -0.277 + 0.082 \cdot 4.62 = 0.1018$ (valor verdadeiro [`r round(pgamma(q = 4.62, shape = 8, rate = 1), 4)`]{style='color:blue;'}).]{.fragment fragment-intex=3} [Analogamente, obtemos $F_Y(9.23) \approx -0.26 + 0.104 \cdot 9.23 = 0.6999$ (valor verdadeiro [`r round(pgamma(q = 9.23, shape = 8, rate = 1), 4)`]{style='color:blue;'}).]{.fragment fragment-intex=4} [Assim,]{.fragment fragment-intex=5}
+[Logo, $F_Y(4.62) \approx -0.277 + 0.082 \cdot 4.62 = 0.1018$ (valor verdadeiro [`r round(pgamma(q = 4.62, shape = 8, rate = 1), 4)`]{style='color:blue;'}).]{.fragment fragment-index=3} [Analogamente, obtemos $F_Y(9.23) \approx -0.26 + 0.104 \cdot 9.23 = 0.6999$ (valor verdadeiro [`r round(pgamma(q = 9.23, shape = 8, rate = 1), 4)`]{style='color:blue;'}).]{.fragment fragment-index=4} [Assim,]{.fragment fragment-index=5}
 
-::: {.fragment fragment-intex=5}
+::: {.fragment fragment-index=5}
 
 <table>
   <tr style="border-bottom:none;text-align:center;">
@@ -3757,7 +3757,7 @@ $$\textstyle P(60 < X < 120) = P(\frac{60}{13} < \frac{X}{13} < \frac{120}{13}) 
 
 :::
 
-::: {.fragment fragment-intex=6}
+::: {.fragment fragment-index=6}
 
 ::: {.callout-caution}
 ## Observação
@@ -3782,7 +3782,7 @@ Dizemos que $X$ tem distribuição qui-quadrado com $\nu$ graus de liberdade (gl
 </table>
 :::
 
-::: {.fragment fragment-intex=2}
+::: {.fragment fragment-index=2}
 
 ::: {.callout-warning}
 ## Propriedade
@@ -3798,7 +3798,7 @@ A distribuição $\chi^2_\nu$ é um caso especial da $\text{Gama}(\alpha, \beta)
 
 :::
 
-::: {.fragment fragment-intex=3}
+::: {.fragment fragment-index=3}
 
 ::: {.callout-caution}
 ## Observação

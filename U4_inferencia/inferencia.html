@@ -464,7 +464,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 <section id="funções-de-variáveis-aleatórias-1" class="slide level2 unnumbered unlisted">
 <h2>1.1 Funções de Variáveis Aleatórias</h2>
 <div style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
-<strong>Exemplo 1 (cont):</strong> Note que <span class="math inline">\(Y\)</span> representa a quantidade de total de transações. Pela independência de <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>, temos que <span class="math inline">\(p(x_1,x_2) = (1-p)^{x_1}p(1-p)^{x_2}p = (1-p)^{x_1+x_2}p^2\)</span>. Logo,
+<strong>Exemplo 1 (cont):</strong> Note que <span class="math inline">\(Y\)</span> representa a quantidade de total de transações. Pela independência de <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>, temos que <span class="math inline">\(p(x_1,x_2) = (1-p)^{x_1-1}p(1-p)^{x_2-1}p = (1-p)^{x_1+x_2-2}p^2\)</span>. Logo,
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
@@ -474,7 +474,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 <span class="math inline">\(=\)</span>
 </td>
 <td>
-<span class="math inline">\({\displaystyle\underset{x_1,\ x_2\ :\ x_1\ +\ x_2\ =\ y}{\sum \sum} p(x_1, x_2) = \sum_{x_1 = 1}^{y-1} \sum_{x_2 = y-x_1}^{y-x_1} (1-p)^{x_1+x_2}p^2 = \sum_{x_1 = 1}^{y-1} (1-p)^{y}p^2}\)</span>
+<span class="math inline">\({\displaystyle\underset{x_1,\ x_2\ :\ x_1\ +\ x_2\ =\ y}{\sum \sum} p(x_1, x_2) = \sum_{x_1 = 1}^{y-1} \sum_{x_2 = y-x_1}^{y-x_1} (1-p)^{x_1+x_2-2}p^2 = \sum_{x_1 = 1}^{y-1} (1-p)^{y-2}p^2}\)</span>
 </td>
 </tr>
 <tr style="border-bottom:none;text-align:center;">
@@ -484,7 +484,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 <span class="math inline">\(=\)</span>
 </td>
 <td>
-<span class="math inline">\({\displaystyle (y-1)(1-p)^{x_1+x_2}p^2 = {y-1 \choose 1} (1-p)^{x_1+x_2}p^2}\)</span>.
+<span class="math inline">\({\displaystyle (y-1)(1-p)^{y-2}p^2 = {y-1 \choose 1} (1-p)^{y-2}p^2}\)</span>.
 </td>
 </tr>
 </tbody></table>
@@ -512,7 +512,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 <p><strong>Definição - Caso contínuo</strong></p>
 </div>
 <div class="callout-content">
-Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vac’s com fdp conjunta <span class="math inline">\(f(x_1, \ldots, x_n)\)</span> e <span class="math inline">\(Y = h(X_1, \ldots, X_n)\)</span> uma função dessas variáveis. A fmp de <span class="math inline">\(Y\)</span> é dada por <span class="math inline">\(f_Y(y) = \frac{d}{dy}F_Y(y)\)</span> em que <span class="math inline">\(F_Y(y)\)</span> é a fda de <span class="math inline">\(Y\)</span> definida por
+Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vac’s com fdp conjunta <span class="math inline">\(f(x_1, \ldots, x_n)\)</span> e <span class="math inline">\(Y = h(X_1, \ldots, X_n)\)</span> uma função dessas variáveis. A fdp de <span class="math inline">\(Y\)</span> é dada por <span class="math inline">\(f_Y(y) = \frac{d}{dy}F_Y(y)\)</span> em que <span class="math inline">\(F_Y(y)\)</span> é a fda de <span class="math inline">\(Y\)</span> definida por
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
@@ -718,7 +718,7 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 </div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.896</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.9</code></pre>
 </div>
 </div>
 </div>
@@ -764,7 +764,7 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 </div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.97</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.976</code></pre>
 </div>
 </div>
 </div>
@@ -945,7 +945,7 @@ Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="ma
 <section id="distribuição-amostral-da-média-amostral-6" class="slide level2 unnumbered unlisted">
 <h2>1.3 Distribuição Amostral da Média Amostral</h2>
 <div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;">
-<p><strong>Exemplo 2 (cont.):</strong> Tinhamos uma aa de uma população <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Note que <span class="math inline">\(\mu = E(X) = \frac{1}{\lambda}\)</span> e <span class="math inline">\(\mu = V(X) = \frac{1}{\lambda^2}\)</span>. Vimos que a distribuição exata do total amostral era uma <span class="math inline">\(\text{Gama}(n, \frac{1}{\lambda})\)</span>.</p>
+<p><strong>Exemplo 2 (cont.):</strong> Tinhamos uma aa de uma população <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Note que <span class="math inline">\(\mu = E(X) = \frac{1}{\lambda}\)</span> e <span class="math inline">\(\sigma^2 = V(X) = \frac{1}{\lambda^2}\)</span>. Vimos que a distribuição exata do total amostral era uma <span class="math inline">\(\text{Gama}(n, \frac{1}{\lambda})\)</span>.</p>
 <p>Suponha que temos <span class="math inline">\(\lambda = 0.5\)</span> e desejamos encontrar <span class="math inline">\(P(\bar{X} \leq \mu - 0.5) = P(S_n \leq n\mu - 0.5n)\)</span>, cujo valor exato pela gama é 0.1248, se <span class="math inline">\(n=20\)</span> e 0.0463, se <span class="math inline">\(n=40\)</span>, por exemplo.</p>
 Agora, temos que
 <table>
@@ -1187,8 +1187,230 @@ Seja <span class="math inline">\(\theta\)</span> um parâmetro e <span class="ma
 </div>
 </div>
 </section>
+<section id="section-2" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-4">Exemplo 4</h3>
+<p>Suponha que serão observadas <span class="math inline">\(n − 1 \geq 1\)</span> observações <span class="math inline">\(X_1, \ldots, X_{n-1}\)</span> de <span class="math inline">\(X\)</span>, com <span class="math inline">\(E(X) = \mu\)</span>. Defina a média dessas <span class="math inline">\(n-1\)</span> observações por <span class="math inline">\(\bar{X}_{n-1} = \frac{1}{n-1}\sum_{i=1}^{n-1}\)</span>.</p>
+<div class="fragment">
+Suponha que uma nova observação <span class="math inline">\(X_n\)</span> ficará disponível. Considere os seguintes estimadores de <span class="math inline">\(\mu\)</span>:
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\hat{\mu}_1 = \frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(\hat{\mu}_2 = \frac{\bar{X}_{n-1} + X_n}{2}\)</span>.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="fragment">
+<p>Qual é o vício de <span class="math inline">\(\hat{\mu}_1\)</span> e <span class="math inline">\(\hat{\mu}_2\)</span>?</p>
+</div>
+<div class="fragment">
+Temos que
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(E(\hat{\mu}_1) = E[\frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n] = \frac{n-1}{n}E(\bar{X}_{n-1}) + \frac{1}{n}E(X_n) = \frac{n-1}{n}\mu + \frac{1}{n}\mu = \mu.\)</span>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="fragment">
+<p>e que</p>
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(E(\hat{\mu}_2) = E[\frac{\bar{X}_{n-1} + X_n}{2}] = \frac{E(\bar{X}_{n-1}) + E(X_n)}{2} = \frac{\mu + \mu}{2} = \mu.\)</span>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="fragment">
+<p>Assim, <span class="math inline">\(B(\hat{\mu}_1) = B(\hat{\mu}_2) = \mu-\mu = 0\)</span>. Portanto, ambos são <strong>não viesados</strong>.</p>
+</div>
+</section>
 <section id="estimação-pontual-vício-2" class="slide level2 unnumbered unlisted">
 <h2>2.1 Estimação Pontual (Vício)</h2>
+<div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 5:</strong> Verifiquemos que <span class="math inline">\(\hat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^n(X_i - \bar{X})^2\)</span> é um estimador viesado de <span class="math inline">\(\sigma^2\)</span>. De fato,</p>
+<table>
+<tbody><tr class="fragment" style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(E(\hat{\sigma}^2)\)</span>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{1}{n}\sum_{i=1}^nE[(X_i-\bar{X})^2]=\frac{1}{n}\sum_{i=1}^n
+E[(X_i-\mu-(\bar{X}-\mu))^2]\)</span>
+</td>
+</tr>
+<tr class="fragment" style="border-bottom:none;text-align:center;">
+<td>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{1}{n} \sum_{i=1}^n E[(X_i-\mu)^2-2(X_i-\mu)(\bar{X}-\mu)+(\bar{X}-\mu)^2]\)</span>
+</td>
+</tr>
+<tr class="fragment" style="border-bottom:none;text-align:center;">
+<td>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-2E\left[(X_i-\mu)\left(\frac{1}{n}\sum_j(X_j-\mu)\right)\right] + E[(\bar{X}-\mu)^2]\right\}\)</span>
+</td>
+</tr>
+<tr class="fragment" style="border-bottom:none;text-align:center;">
+<td>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-\frac{2}{n}\sum_jE[(X_i-\mu)(X_j-\mu)] + \frac{\sigma^2}{n}\right\}\)</span>
+</td>
+</tr>
+<tr class="fragment" style="border-bottom:none;text-align:center;">
+<td>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-\frac{2}{n}\sum_j\text{Cov}(X_i, X_j) + \frac{\sigma^2}{n}\right\}\)</span>
+</td>
+</tr>
+<tr class="fragment" style="border-bottom:none;text-align:center;">
+<td>
+</td>
+<td>
+<span class="math inline">\(=\)</span>
+</td>
+<td>
+<span class="math inline">\(\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-\frac{2\sigma^2}{n}+\frac{\sigma^2}{n}\right\}=\sigma^2 \color{red}{-\frac{\sigma^2}{n}}\)</span>.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="fragment">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercício</strong></p>
+</div>
+<div class="callout-content">
+<p>Tendo em vista o Exemplo 5, mostre que <span class="math inline">\(S^2 = \frac{1}{n-1}\sum_{i=1}^n(X_i - \bar{X})^2\)</span> é um estimador <strong>não</strong> viesado de <span class="math inline">\(\sigma^2\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="estimação-pontual-erro-padrão" class="slide level2 unnumbered unlisted">
+<h2>2.1 Estimação Pontual (Erro-Padrão)</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Estimadores são va;</li>
+<li>Além do vício, é importante saber a sua variabilidade;</li>
+<li>Podemos comparar dois estimadores não viesados pelo seu <strong>erro-padrão</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Seja <span class="math inline">\(\hat{\theta}\)</span> estimador de <span class="math inline">\(\theta\)</span>. O erro-padrão (<span class="math inline">\(EP(\hat{\theta})\)</span>) de <span class="math inline">\(\hat{\theta}\)</span> é o desvio-padrão de <span class="math inline">\(\hat{\theta}\)</span>, isto é, <span class="math inline">\(EP(\hat{\theta})=\sqrt{V(\hat{\theta})}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Sejam <span class="math inline">\(\hat{\theta}_1\)</span> e <span class="math inline">\(\hat{\theta}_2\)</span> estimadores não viesados de <span class="math inline">\(\theta\)</span>. Dizemos que <span class="math inline">\(\hat{\theta}_1\)</span> é mais eficiente que <span class="math inline">\(\hat{\theta}_2\)</span> se <span class="math inline">\(EP(\hat{\theta}_1) &lt; EP(\hat{\theta}_2)\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estimação-pontual-erro-padrão-1" class="slide level2 unnumbered unlisted">
+<h2>2.1 Estimação Pontual (Erro-Padrão)</h2>
+<div class="columns">
+<div id="vcenter" class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-8-1.png" width="528"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div id="vcenter" class="column" style="width:50%;">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Ilustração de estimativas fornecidas por dois estimadores <span style="color:blue;"><span class="math inline">\(\hat\theta_1\)</span></span> e <span style="color:red;"><span class="math inline">\(\hat\theta_2\)</span></span> de um parâmetro <span class="math inline">\(\theta\)</span>, em que <span style="color:blue;"><span class="math inline">\(\hat\theta_1\)</span></span> é mais eficiente que <span style="color:red;"><span class="math inline">\(\hat\theta_2\)</span></span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-3" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-4-cont.">Exemplo 4 (cont.)</h3>
+Verifiquemos os Erros-Padrão de <span class="math inline">\(\hat{\mu}_1\)</span> e de <span class="math inline">\(\hat{\mu}_2\)</span>. <span class="fragment" data-fragment-index="1">Temos que</span>
+<table class="fragment" data-fragment-index="1">
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\({\displaystyle V(\hat{\mu}_1) = V\left(\frac{n-1}{n}\bar{X}_{n-1}+\frac{1}{n}X_n\right) = \left(\frac{n-1}{n}\right)^2\frac{\sigma^2}{n-1}+\frac{1}{n^2}\sigma^2 = \frac{n-1+1}{n^2}\sigma^2=\frac{1}{n}\sigma^2}\)</span>
+</td>
+</tr>
+</tbody></table>
+<span class="fragment" data-fragment-index="2">e</span>
+<table class="fragment" data-fragment-index="2">
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\({\displaystyle V(\hat{\mu}_2) = V\left(\frac{\bar{X}_{n-1}+x_n}{2}\right) = \frac{1}{4}(V(\bar{X}_{n-1})+V(X_n)) = \frac{1}{4} \left(\frac{\sigma^2}{n-1} + \sigma^2\right)=\frac{n}{4(n-1)}\sigma^2}\)</span>.
+</td>
+</tr>
+</tbody></table>
+<span class="fragment" data-fragment-index="3">Vejamos quando <span class="math inline">\(\hat{\mu}_1\)</span> é mais eficiente do que <span class="math inline">\(\hat{\mu}_2\)</span>.</span> <span class="fragment" data-fragment-index="4">De fato,</span>
+<table class="fragment" data-fragment-index="4">
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\({\displaystyle V(\hat{\mu}_1) &lt; V(\hat{\mu}_2) \Rightarrow \frac{\sigma^2}{n} &lt; \frac{n\sigma^2}{4(n-1)} \Rightarrow n^2-4n+4&gt;0 \Rightarrow (n-2)^2&gt;0}\)</span>.
+</td>
+</tr>
+</tbody></table>
+<p><span class="fragment" data-fragment-index="5">Assim, <span class="math inline">\(\hat{\mu}_1\)</span> é mais eficiente do que <span class="math inline">\(\hat{\mu}_2\)</span> se <span class="math inline">\((n-2)^2&gt;0 \Rightarrow n &gt; 2\)</span>.</span> <span class="fragment" data-fragment-index="6">Se <span class="math inline">\(n = 2\)</span> ambos estimadores são igualmente eficientes.</span></p>
+</section>
+<section id="estimação-pontual-erro-quadrático-médio" class="slide level2 unnumbered unlisted">
+<h2>2.1 Estimação Pontual (Erro Quadrático Médio)</h2>
 </section>
 <section id="estimação-intervalar" class="slide level2" data-number="2.2">
 <h2><span class="header-section-number">2.2</span> Estimação Intervalar</h2>

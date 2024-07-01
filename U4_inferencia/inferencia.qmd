@@ -58,13 +58,13 @@ Sejam $X_1, \ldots, X_n$ vad's com fmp conjunta $p(x_1, \ldots, x_n)$ e $Y = h(X
 
 ::: {style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo 1 (cont):** Note que $Y$ representa a quantidade de total de transações. Pela independência de $X_1$ e $X_2$, temos que $p(x_1,x_2) = (1-p)^{x_1}p(1-p)^{x_2}p = (1-p)^{x_1+x_2}p^2$. Logo,
+**Exemplo 1 (cont):** Note que $Y$ representa a quantidade de total de transações. Pela independência de $X_1$ e $X_2$, temos que $p(x_1,x_2) = (1-p)^{x_1-1}p(1-p)^{x_2-1}p = (1-p)^{x_1+x_2-2}p^2$. Logo,
 <table>
   <tr style="border-bottom:none;text-align:center;">
-    <td>$p_Y(y)$ </td> <td> $=$ </td> <td> ${\displaystyle\underset{x_1,\ x_2\ :\ x_1\ +\ x_2\ =\ y}{\sum \sum} p(x_1, x_2) = \sum_{x_1 = 1}^{y-1} \sum_{x_2 = y-x_1}^{y-x_1} (1-p)^{x_1+x_2}p^2 = \sum_{x_1 = 1}^{y-1} (1-p)^{y}p^2}$</td>
+    <td>$p_Y(y)$ </td> <td> $=$ </td> <td> ${\displaystyle\underset{x_1,\ x_2\ :\ x_1\ +\ x_2\ =\ y}{\sum \sum} p(x_1, x_2) = \sum_{x_1 = 1}^{y-1} \sum_{x_2 = y-x_1}^{y-x_1} (1-p)^{x_1+x_2-2}p^2 = \sum_{x_1 = 1}^{y-1} (1-p)^{y-2}p^2}$</td>
   </tr>
   <tr style="border-bottom:none;text-align:center;">
-    <td> </td> <td> $=$ </td> <td> ${\displaystyle (y-1)(1-p)^{x_1+x_2}p^2 = {y-1 \choose 1} (1-p)^{x_1+x_2}p^2}$.</td>
+    <td> </td> <td> $=$ </td> <td> ${\displaystyle (y-1)(1-p)^{y-2}p^2 = {y-1 \choose 1} (1-p)^{y-2}p^2}$.</td>
   </tr>
 </table>
 Portanto, $Y \sim \text{BN}(2,p)$.
@@ -87,7 +87,7 @@ O Exemplo 1 pode ser generalizado. Mais precisamente, se $X_1, \ldots, X_k$ são
 ::: {.callout-note}
 ## Definição - Caso contínuo
 
-Sejam $X_1, \ldots, X_n$ vac's com fdp conjunta $f(x_1, \ldots, x_n)$ e $Y = h(X_1, \ldots, X_n)$ uma função dessas variáveis. A fmp de $Y$ é dada por $f_Y(y) = \frac{d}{dy}F_Y(y)$ em que $F_Y(y)$ é a fda de $Y$ definida por
+Sejam $X_1, \ldots, X_n$ vac's com fdp conjunta $f(x_1, \ldots, x_n)$ e $Y = h(X_1, \ldots, X_n)$ uma função dessas variáveis. A fdp de $Y$ é dada por $f_Y(y) = \frac{d}{dy}F_Y(y)$ em que $F_Y(y)$ é a fda de $Y$ definida por
 <table>
   <tr style="border-bottom:none;text-align:center;">
     <td>$\displaystyle F_Y(y) = P(Y \leq y) = P(h(X_1, \ldots, X_n) \leq y) = \underset{x_i\ :\ h(x_1,\ldots, x_n)\ \leq\ y}{\int \cdots \int} f(x_1, \ldots, x_n) dx_1 \cdots dx_n$.</td>
@@ -530,7 +530,7 @@ for(i in 1:length(nn)){
 
 ::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
-**Exemplo 2 (cont.):** Tinhamos uma aa de uma população $X \sim \text{Exp}(\lambda)$. Note que $\mu = E(X) = \frac{1}{\lambda}$ e $\mu = V(X) = \frac{1}{\lambda^2}$. Vimos que a distribuição exata do total amostral era uma $\text{Gama}(n, \frac{1}{\lambda})$.
+**Exemplo 2 (cont.):** Tinhamos uma aa de uma população $X \sim \text{Exp}(\lambda)$. Note que $\mu = E(X) = \frac{1}{\lambda}$ e $\sigma^2 = V(X) = \frac{1}{\lambda^2}$. Vimos que a distribuição exata do total amostral era uma $\text{Gama}(n, \frac{1}{\lambda})$.
 
 Suponha que temos $\lambda = 0.5$ e desejamos encontrar $P(\bar{X} \leq \mu - 0.5) = P(S_n \leq n\mu - 0.5n)$, cujo valor exato pela gama é `r round(pgamma(20*(2-0.5), shape = 20, scale=2), 4)`, se $n=20$ e `r round(pgamma(40*(2-0.5), shape = 40, scale=2), 4)`, se $n=40$, por exemplo.
 
@@ -730,7 +730,195 @@ Ilustração de estimativas fornecidas por um estimador [**não viesado**]{style
 
 :::
 
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 4 {.unnumbered .unlisted}
+
+Suponha que serão observadas $n − 1 \geq 1$ observações $X_1, \ldots, X_{n-1}$ de $X$, com $E(X) = \mu$. Defina a média dessas $n-1$ observações por $\bar{X}_{n-1} = \frac{1}{n-1}\sum_{i=1}^{n-1}$.
+
+::: fragment
+
+Suponha que uma nova observação $X_n$ ficará disponível. Considere os seguintes estimadores de $\mu$:
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\hat{\mu}_1 = \frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n$ </td> <td> e </td> <td>$\hat{\mu}_2 = \frac{\bar{X}_{n-1} + X_n}{2}$. </td>
+  </tr>
+</table>
+
+:::
+
+::: fragment
+
+Qual é o vício de $\hat{\mu}_1$ e $\hat{\mu}_2$?
+
+:::
+
+::: fragment
+
+Temos que
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$E(\hat{\mu}_1) = E[\frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n] = \frac{n-1}{n}E(\bar{X}_{n-1}) + \frac{1}{n}E(X_n) = \frac{n-1}{n}\mu + \frac{1}{n}\mu = \mu.$</td>
+  </tr>
+</table>
+
+:::
+
+::: fragment
+
+e que
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$E(\hat{\mu}_2) = E[\frac{\bar{X}_{n-1} + X_n}{2}] = \frac{E(\bar{X}_{n-1}) + E(X_n)}{2} = \frac{\mu + \mu}{2} = \mu.$</td>
+  </tr>
+</table>
+
+:::
+
+::: fragment
+
+Assim, $B(\hat{\mu}_1) = B(\hat{\mu}_2) = \mu-\mu = 0$. Portanto, ambos são **não viesados**.
+
+:::
+
 ## 2.1 Estimação Pontual (Vício) {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 5:** Verifiquemos que $\hat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^n(X_i - \bar{X})^2$ é um estimador viesado de $\sigma^2$. De fato,
+
+<table>
+  <tr class="fragment" style="border-bottom:none;text-align:center;">
+    <td>$E(\hat{\sigma}^2)$ </td> <td> $=$ </td> <td> $\frac{1}{n}\sum_{i=1}^nE[(X_i-\bar{X})^2]=\frac{1}{n}\sum_{i=1}^n
+E[(X_i-\mu-(\bar{X}-\mu))^2]$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none;text-align:center;">
+    <td> </td> <td> $=$ </td> <td> $\frac{1}{n} \sum_{i=1}^n E[(X_i-\mu)^2-2(X_i-\mu)(\bar{X}-\mu)+(\bar{X}-\mu)^2]$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none;text-align:center;">
+    <td> </td> <td> $=$ </td> <td> $\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-2E\left[(X_i-\mu)\left(\frac{1}{n}\sum_j(X_j-\mu)\right)\right] + E[(\bar{X}-\mu)^2]\right\}$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none;text-align:center;">
+    <td> </td> <td> $=$ </td> <td> $\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-\frac{2}{n}\sum_jE[(X_i-\mu)(X_j-\mu)] + \frac{\sigma^2}{n}\right\}$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none;text-align:center;">
+    <td> </td> <td> $=$ </td> <td> $\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-\frac{2}{n}\sum_j\text{Cov}(X_i, X_j) + \frac{\sigma^2}{n}\right\}$</td>
+  </tr>
+  <tr class="fragment" style="border-bottom:none;text-align:center;">
+    <td> </td> <td> $=$ </td> <td> $\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-\frac{2\sigma^2}{n}+\frac{\sigma^2}{n}\right\}=\sigma^2 \color{red}{-\frac{\sigma^2}{n}}$.</td>
+  </tr>
+</table>
+
+:::
+
+::: fragment
+
+::: {.callout-tip}
+## Exercício
+
+Tendo em vista o Exemplo 5, mostre que $S^2 = \frac{1}{n-1}\sum_{i=1}^n(X_i - \bar{X})^2$ é um estimador **não** viesado de $\sigma^2$.
+:::
+
+:::
+
+## 2.1 Estimação Pontual (Erro-Padrão) {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+- Estimadores são va;
+- Além do vício, é importante saber a sua variabilidade;
+- Podemos comparar dois estimadores não viesados pelo seu **erro-padrão**.
+
+:::
+
+
+::: {.callout-note}
+## Definição
+
+Seja $\hat{\theta}$ estimador de $\theta$. O erro-padrão ($EP(\hat{\theta})$) de $\hat{\theta}$ é o desvio-padrão de $\hat{\theta}$, isto é, $EP(\hat{\theta})=\sqrt{V(\hat{\theta})}$.
+
+:::
+
+::: {.callout-note}
+## Definição
+
+Sejam $\hat{\theta}_1$ e $\hat{\theta}_2$ estimadores não viesados de $\theta$. Dizemos que $\hat{\theta}_1$ é mais eficiente que $\hat{\theta}_2$ se $EP(\hat{\theta}_1) < EP(\hat{\theta}_2)$.
+
+:::
+
+
+## 2.1 Estimação Pontual (Erro-Padrão) {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=50%}
+
+```{r}
+n <- 30; i <- 0
+th0 <- th1 <- NULL
+while(i < n){
+  x0 <- runif(1,-1,1); y0 <- runif(1,-1,1)
+  x1 <- runif(1,-2,2); y1 <- runif(1,-2,2)
+  if(x0^2 + y0^2 < 1 & x1^2 + y1^2 < 2^2){
+    th0 <- rbind(th0, c(x0, y0))
+    th1 <- rbind(th1, c(x1, y1))
+    i <- i+1
+  }
+}
+rngX <- range(th0[,1], th1[,1])
+rngY <- range(th0[,2], th1[,2])
+par(family = "serif", mar=c(5,4,1,2))
+plot(0, type='n', xlab='', ylab='', main ='', frame.plot=FALSE,
+     axes = FALSE, xlim=rngX, ylim=rngY)
+points(x = th1[,1], y = th1[,2], pch=21, bg='red', cex=1.5)
+points(x = th0[,1], y = th0[,2], pch=21, bg='blue', cex=1.5)
+points(x = 0, y = 0, pch=21, bg='black', cex=2)
+text(x = 0, y = 0, labels=expression(theta), adj=c(2,2), cex=2)
+```
+
+:::
+
+::: {.column #vcenter width=50%}
+
+::: {.callout-caution}
+## Observação
+Ilustração de estimativas fornecidas por dois estimadores [$\hat\theta_1$]{style="color:blue;"} e [$\hat\theta_2$]{style="color:red;"} de um parâmetro $\theta$, em que [$\hat\theta_1$]{style="color:blue;"} é mais eficiente que [$\hat\theta_2$]{style="color:red;"}.
+:::
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 4 (cont.) {.unnumbered .unlisted}
+
+Verifiquemos os Erros-Padrão de $\hat{\mu}_1$ e de $\hat{\mu}_2$. [Temos que]{.fragment fragment-index=1}
+<table class="fragment" data-fragment-index="1">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle V(\hat{\mu}_1) = V\left(\frac{n-1}{n}\bar{X}_{n-1}+\frac{1}{n}X_n\right) = \left(\frac{n-1}{n}\right)^2\frac{\sigma^2}{n-1}+\frac{1}{n^2}\sigma^2 = \frac{n-1+1}{n^2}\sigma^2=\frac{1}{n}\sigma^2}$</td>
+  </tr>
+</table>
+[e]{.fragment fragment-index=2}
+<table class="fragment" data-fragment-index="2">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle V(\hat{\mu}_2) = V\left(\frac{\bar{X}_{n-1}+x_n}{2}\right) = \frac{1}{4}(V(\bar{X}_{n-1})+V(X_n)) = \frac{1}{4} \left(\frac{\sigma^2}{n-1} + \sigma^2\right)=\frac{n}{4(n-1)}\sigma^2}$.</td>
+  </tr>
+</table>
+
+[Vejamos quando $\hat{\mu}_1$ é mais eficiente do que $\hat{\mu}_2$.]{.fragment fragment-index=3} [De fato,]{.fragment fragment-index=4}
+<table class="fragment" data-fragment-index="4">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle V(\hat{\mu}_1) < V(\hat{\mu}_2) \Rightarrow \frac{\sigma^2}{n} < \frac{n\sigma^2}{4(n-1)} \Rightarrow n^2-4n+4>0 \Rightarrow (n-2)^2>0}$.</td>
+  </tr>
+</table>
+
+[Assim, $\hat{\mu}_1$ é mais eficiente do que $\hat{\mu}_2$ se $(n-2)^2>0 \Rightarrow n > 2$.]{.fragment fragment-index=5} [Se $n = 2$ ambos estimadores são igualmente eficientes.]{.fragment fragment-index=6}
+
+## 2.1 Estimação Pontual (Erro Quadrático Médio) {.unnumbered .unlisted}
+
 
 ## Estimação Intervalar
 
