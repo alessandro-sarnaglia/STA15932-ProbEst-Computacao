@@ -372,7 +372,163 @@ tem distribuição aproximadamente normal padrão.
 
 ## 1.3 Distribuição Amostral da Média Amostral {.unnumbered .unlisted}
 
-::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+::: columns
+
+::: {.column #vcenter width=65%}
+
+```{.r code-line-numbers="|1|2-3|4|5-11|12|13-19"}
+R <- 1000; nn <- c(15, 30, 100)
+a <- 0; b <- 10
+mu <- (a+b)/2; sig2 <- (b-a)^2/12
+medias <- matrix(NA, ncol=length(nn), nrow=R)
+for(i in 1:length(nn)){
+  n <- nn[i]
+  for(r in 1:R){
+    x <- runif(n = n, min = 0, max = 10)
+    medias[r, i] <- mean(x)
+  }
+}
+rng <- range(medias); xx <- seq(rng[1], rng[2], length.out=1000)
+for(i in 1:length(nn)){
+  par(family = "serif", mar=c(5,4,1,2))
+  hist(medias[, i], probability=TRUE, xlim = rng, xlab = '', main='', ylab='')
+  mtext(text = paste('n = ',nn[i],sep=''), side = 1, line = 2)
+  mtext(text = 'Densidade', side = 2, line = 2)
+  lines(xx, dnorm(xx, mu, sqrt(sig2/nn[i])), col='red', lwd=2)
+}
+```
+
+:::
+
+::: {.column #vcenter width=35%}
+
+```{r}
+a <- 0; b <- 10
+x <- seq(a-0.05*(b-a), b+0.05*(b-a), length.out=1000)
+fx <- dunif(x, a, b)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, fx, type='n', xlab='', ylab='', main='', lwd=3,
+     ylim=range(fx)+c(-.1*diff(range(fx)),.13*diff(range(fx))),
+     xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
+arrows(y0 = min(fx)-.1*diff(range(fx)), y1 = max(fx)+.13*diff(range(fx)), x0=0, x1=0, length = .1)
+arrows(x0 = min(x)-.02*diff(range(x)), x1 = max(x)+.08*diff(range(x)), y0=0, y1=0, length = .1)
+lines(x[x > b], fx[x > b], lwd=3)
+lines(x[x < a], fx[x < a], lwd=3)
+lines(c(a,a), c(0, 1/(b-a)), lwd=3, lty=2)
+lines(c(b,b), c(0, 1/(b-a)), lwd=3, lty=2)
+lines(x[x >= a & x <= b], fx[x >= a & x <= b], lwd=3)
+points(c(a,a,b,b), c(0, 1/(b-a), 0, 1/(b-a)), cex=1.5, pch=21, bg=c('white','black', 'white','black'))
+```
+
+:::
+
+:::
+
+## 1.3 Distribuição Amostral da Média Amostral {.unnumbered .unlisted}
+
+```{r fig.ncol=3}
+R <- 1000; nn <- c(15, 30, 100)
+a <- 0; b <- 10
+mu <- (a+b)/2; sig2 <- (b-a)^2/12
+medias <- matrix(NA, ncol=length(nn), nrow=R)
+for(i in 1:length(nn)){
+  n <- nn[i]
+  for(r in 1:R){
+    x <- runif(n = n, min = 0, max = 10)
+    medias[r, i] <- mean(x)
+  }
+}
+rng <- range(medias); xx <- seq(rng[1], rng[2], length.out=1000)
+for(i in 1:length(nn)){
+  par(family = "serif", mar=c(5,4,1,2))
+  hist(medias[, i], probability=TRUE, xlim = rng, xlab = '', main='', ylab='')
+  mtext(text = paste('n = ',nn[i],sep=''), side = 1, line = 2)
+  mtext(text = 'Densidade', side = 2, line = 2)
+  lines(xx, dnorm(xx, mu, sqrt(sig2/nn[i])), col='red', lwd=2)
+}
+```
+
+
+## 1.3 Distribuição Amostral da Média Amostral {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=65%}
+
+```{.r code-line-numbers="|1|2-3|4|5-11|12|13-19"}
+R <- 1000; nn <- c(15, 30, 100)
+lambda <- 0.5
+mu <- 1/lambda; sig2 <- 1/(lambda^2)
+medias <- matrix(NA, ncol=length(nn), nrow=R)
+for(i in 1:length(nn)){
+  n <- nn[i]
+  for(r in 1:R){
+    x <- rexp(n = n, rate = lambda)
+    medias[r, i] <- mean(x)
+  }
+}
+rng <- range(medias); xx <- seq(rng[1], rng[2], length.out=1000)
+for(i in 1:length(nn)){
+  par(family = "serif", mar=c(5,4,1,2))
+  hist(medias[, i], probability=TRUE, xlim = rng, xlab = '', main='', ylab='')
+  mtext(text = paste('n = ',nn[i],sep=''), side = 1, line = 2)
+  mtext(text = 'Densidade', side = 2, line = 2)
+  lines(xx, dnorm(xx, mu, sqrt(sig2/nn[i])), col='red', lwd=2)
+}
+```
+
+:::
+
+::: {.column #vcenter width=35%}
+
+```{r}
+lambda = 0.5; M <- 10
+x <- seq(0-0.05*(M), M+0.05*(M), length.out=1000)
+fx <- dexp(x = x, rate = lambda)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, fx, type='n', xlab='', ylab='', main='', lwd=3,
+     ylim=range(fx)+c(-.1*diff(range(fx)),.13*diff(range(fx))),
+     xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
+arrows(y0 = min(fx)-.1*diff(range(fx)), y1 = max(fx)+.13*diff(range(fx)), x0=0, x1=0, length = .1)
+arrows(x0 = min(x)-.02*diff(range(x)), x1 = max(x)+.08*diff(range(x)), y0=0, y1=0, length = .1)
+lines(x[x < 0], fx[x < 0], lwd=3)
+lines(c(0,0), c(0, lambda), lwd=3, lty=2)
+lines(x[x >= 0], fx[x >= 0], lwd=3)
+points(c(0,0), c(0, lambda), cex=1.5, pch=21, bg=c('white','black'))
+```
+
+:::
+
+:::
+
+## 1.3 Distribuição Amostral da Média Amostral {.unnumbered .unlisted}
+
+```{r fig.ncol=3}
+R <- 1000; nn <- c(15, 30, 100)
+lambda <- 0.5
+mu <- 1/lambda; sig2 <- 1/(lambda^2)
+medias <- matrix(NA, ncol=length(nn), nrow=R)
+for(i in 1:length(nn)){
+  n <- nn[i]
+  for(r in 1:R){
+    x <- rexp(n = n, rate = lambda)
+    medias[r, i] <- mean(x)
+  }
+}
+rng <- range(medias); xx <- seq(rng[1], rng[2], length.out=1000)
+for(i in 1:length(nn)){
+  par(family = "serif", mar=c(5,4,1,2))
+  hist(medias[, i], probability=TRUE, xlim = rng, xlab = '', main='', ylab='')
+  mtext(text = paste('n = ',nn[i],sep=''), side = 1, line = 2)
+  mtext(text = 'Densidade', side = 2, line = 2)
+  lines(xx, dnorm(xx, mu, sqrt(sig2/nn[i])), col='red', lwd=2)
+}
+```
+
+
+## 1.3 Distribuição Amostral da Média Amostral {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
 **Exemplo 2 (cont.):** Tinhamos uma aa de uma população $X \sim \text{Exp}(\lambda)$. Note que $\mu = E(X) = \frac{1}{\lambda}$ e $\mu = V(X) = \frac{1}{\lambda^2}$. Vimos que a distribuição exata do total amostral era uma $\text{Gama}(n, \frac{1}{\lambda})$.
 
@@ -396,9 +552,187 @@ Agora, temos que
 Note que, considerando a assimetria da população ($X\sim\text{Exp}(0.5)$), as probabilidades exatas e a aproximadas são relativamente próximas, mesmo para valores de $n$ moderados.
 :::
 
-# Estimação Pontual
+## 1.3 Distribuição Amostral da Média Amostral {.unnumbered .unlisted}
 
-# Estimação Intervalar
+::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 3:** A resistência à ruptura de um rebite possui valor médio de 10000 psi e desvio padrão de 500 psi. Qual é a probabilidade de a resistência à ruptura média de uma amostra aleatória de 40 rebites estar entre 9900 e 10200?
+
+::: fragment
+
+Note que o enunciado nos fornece que $\mu = E(X) = 10000$, $\sigma = 500$ e $n = 40$. Desejamos obter $P(9900 < \bar{X} < 10200)$.
+
+:::
+
+::: fragment
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$P(9900 < \bar{X} < 10200)$ </td> <td>$=$ </td> <td> $P(\frac{9900 - 10000}{500/\sqrt{40}} < \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} < \frac{10200 - 10000}{500/\sqrt{40}}) \approx P(-1.27 < Z < 2.53)$ </td>
+  </tr>
+  <tr style="border-bottom:none;text-align:center;">
+    <td> </td> <td>$=$ </td> <td> $\Phi(2.53) - \Phi(-1.27) = 0.9943 - 0.1020 = 0.8923$. </td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Note que sequer foi necessário o conhecimento da distribuição da população. Apenas especificamos sua média $\mu$ e desvio-padrão $\sigma$. Claro que estamos supondo que $n = 40$ é suficientemente grande para o TCL fornecer boa aproximação.
+:::
+
+:::
+
+# Estimação
+
+## 2 Estimação {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Normalmente, usamos estatísticas para aproximar o valor de algum parâmetro populacional. Nesse caso, elas recebem um nome especial.
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definição
+
+Um **estimador** é uma estatística utilizada para aproximar o valor de um parâmetro populacional.
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Podemos dividir a tarefa de estimação de parâmetros em:
+
+- Estimação pontual: lida com a avaliação do desempenho de um estimador;
+- Estimação intervalar: lida com a construção de intervalos que englobam a variabilidade do
+estimador no processo de estimação.
+:::
+
+:::
+
+
+## Estimação Pontual
+
+::: {.callout-note}
+## Definição
+
+Sejam $X_1, \ldots, X_n$ uma aa de uma população $X$ e $\theta$ um parâmetro. Um estimador $\hat\theta$ de $\theta$ é qualquer função da aa $\hat\theta = \hat\theta(X_1, \ldots, X_n)$ utilizada para aproximar o valor de $\theta$. Uma **Estimativa** é o valor observado de um estimador para uma amostra $x_1, \ldots, x_n$ específica.
+:::
+
+::: fragment
+
+::: {.callout-important}
+## Problema
+
+Sendo possível definir diversos estimadores para $\theta$, como avaliar a qualidade de diferentes estimadores?
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observação
+
+Existem diferentes medidas. Veremos: Vício; Erro-padrão; e Erro Quadrático Médio (EQM).
+:::
+
+:::
+
+## 2.1 Estimação Pontual (Vício) {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Deve ser **esperado** de um bom estimador que ele forneça o verdadeiro valor do parâmetro.
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definição
+
+Seja $\theta$ um parâmetro e $\hat\theta$ um estimador de $\theta$. O vício (ou viés) de $\hat\theta$ é definido por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$B(\hat\theta) = E(\hat\theta) - \theta = \mu_{\hat\theta} - \theta;$ </td>
+  </tr>
+</table>
+onde $\mu_{\hat\theta} = E(\hat\theta)$ é o valor esperado de $\hat\theta$.
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-caution}
+## Observações
+
+1. O vício de um estimador mede, em média, quanto o estimador se distância do parâmetro;
+2. Dizemos que $\hat\theta$ é **não viciado** (ou não viesado) se seu vício $B(\hat\theta) = 0$.
+
+:::
+
+:::
+
+## 2.1 Estimação Pontual (Vício) {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=50%}
+
+```{r}
+n <- 25; i <- 0
+th0 <- th1 <- NULL
+while(i < n){
+  x0 <- runif(1,-1,1); y0 <- runif(1,-1,1)
+  x1 <- runif(1,-1,1); y1 <- runif(1,-1,1)
+  if(x0^2 + y0^2 < 1 & x1^2 + y1^2 < 1){
+    th0 <- rbind(th0, c(x0, y0))
+    th1 <- rbind(th1, c(x1+1, y1+1))
+    i <- i+1
+  }
+}
+rngX <- range(th0[,1], th1[,1])
+rngY <- range(th0[,2], th1[,2])
+par(family = "serif", mar=c(5,4,1,2))
+plot(0, type='n', xlab='', ylab='', main ='', frame.plot=FALSE,
+     axes = FALSE, xlim=rngX, ylim=rngY)
+points(x = th0[,1], y = th0[,2], pch=21, bg='blue', cex=1.5)
+points(x = th1[,1], y = th1[,2], pch=21, bg='red', cex=1.5)
+points(x = 0, y = 0, pch=21, bg='black', cex=2)
+text(x = 0, y = 0, labels=expression(theta), adj=c(2,2), cex=2)
+```
+
+:::
+
+::: {.column #vcenter width=50%}
+
+::: {.callout-caution}
+## Observação
+Ilustração de estimativas fornecidas por um estimador [**não viesado**]{style="color:blue;"} e um [**viesado**]{style="color:red;"} de um parâmetro $\theta$.
+:::
+
+:::
+
+:::
+
+## 2.1 Estimação Pontual (Vício) {.unnumbered .unlisted}
+
+## Estimação Intervalar
 
 # Testes de Hipóteses
 
