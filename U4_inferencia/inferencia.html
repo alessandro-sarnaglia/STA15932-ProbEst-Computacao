@@ -726,7 +726,7 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-1-1.png" width="528"></p>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.894</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.908</code></pre>
 </div>
 </div>
 </div>
@@ -768,7 +768,7 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-2-1.png" width="528"></p>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.983</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.979</code></pre>
 </div>
 </div>
 </div>
@@ -1220,7 +1220,7 @@ Temos que
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
-<span class="math inline">\(E(\hat{\mu}_1) = E[\frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n] = \frac{n-1}{n}E(\bar{X}_{n-1}) + \frac{1}{n}E(X_n) = \frac{n-1}{n}\mu + \frac{1}{n}\mu = \mu.\)</span>
+<span class="math inline">\(E(\hat{\mu}_1) = E\left[\frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n\right] = \frac{n-1}{n}E(\bar{X}_{n-1}) + \frac{1}{n}E(X_n) = \frac{n-1}{n}\mu + \frac{1}{n}\mu = \mu.\)</span>
 </td>
 </tr>
 
@@ -1232,7 +1232,7 @@ Temos que
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
-<span class="math inline">\(E(\hat{\mu}_2) = E[\frac{\bar{X}_{n-1} + X_n}{2}] = \frac{E(\bar{X}_{n-1}) + E(X_n)}{2} = \frac{\mu + \mu}{2} = \mu.\)</span>
+<span class="math inline">\(E(\hat{\mu}_2) = E\left[\frac{\bar{X}_{n-1} + X_n}{2}\right] = \frac{E(\bar{X}_{n-1}) + E(X_n)}{2} = \frac{\mu + \mu}{2} = \mu.\)</span>
 </td>
 </tr>
 
@@ -1330,7 +1330,7 @@ Temos que
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Observação</strong></p>
+<p><strong>Observações</strong></p>
 </div>
 <div class="callout-content">
 <ul>
@@ -1341,6 +1341,7 @@ Temos que
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1351,6 +1352,8 @@ Temos que
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1358,6 +1361,7 @@ Temos que
 </div>
 <div class="callout-content">
 <p>Sejam <span class="math inline">\(\hat{\theta}_1\)</span> e <span class="math inline">\(\hat{\theta}_2\)</span> estimadores não viesados de <span class="math inline">\(\theta\)</span>. Dizemos que <span class="math inline">\(\hat{\theta}_1\)</span> é mais eficiente que <span class="math inline">\(\hat{\theta}_2\)</span> se <span class="math inline">\(EP(\hat{\theta}_1) &lt; EP(\hat{\theta}_2)\)</span>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1537,21 +1541,27 @@ Seja <span class="math inline">\(\hat{\theta}\)</span> um estimador do parâmetr
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observação</strong></p>
 </div>
 <div class="callout-content">
+<div>
 <ol type="1">
-<li>A definição acima implica que <span class="math inline">\(\hat{\theta}\)</span> é consistente se seu vício e sua variância tendem a 0;</li>
-<li>Em poucas palavras, quando um estimador é consistente suas estimativas tendem a ser próximas do verdadeiro valor do parâmetro</li>
+<li class="fragment">A definição acima implica que <span class="math inline">\(\hat{\theta}\)</span> é consistente se seu vício e sua variância tendem a 0;</li>
+<li class="fragment">Em poucas palavras, quando um estimador é consistente suas estimativas tendem a ser próximas do verdadeiro valor do parâmetro</li>
 </ol>
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="fragment">
 <div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <p><strong>Exemplo 5 (cont.):</strong> Como <span class="math inline">\({\displaystyle \lim_{n\to\infty} EQM(S^2) = \lim_{n\to\infty} EQM(\hat\sigma^2) = 0}\)</span>, ambos são consistentes para <span class="math inline">\(\sigma^2\)</span>.</p>
+</div>
 </div>
 </section>
 <section id="estimação-pontual-consistência-1" class="slide level2 unnumbered unlisted">
@@ -1595,17 +1605,22 @@ Ilustração da distribuição amostral de um estimador consistente com
 </div>
 <div class="callout-content">
 <p>Em alguns casos, o estimador é escolhido por seu apelo intuitivo. Por exemplo, é natural usar</p>
+<div>
 <ul>
-<li><span class="math inline">\(\bar{X}\)</span> (média amostral) para estimar <span class="math inline">\(\mu\)</span> (média populacional);</li>
-<li><span class="math inline">\(\hat{p}\)</span> (proporção amostral) para estimar <span class="math inline">\(p\)</span> (proporção populacional);</li>
-<li><span class="math inline">\(S^2\)</span> (variância amostral) para estimar <span class="math inline">\(\sigma^2\)</span> (variância populacional).</li>
+<li class="fragment"><span class="math inline">\(\bar{X}\)</span> (média amostral) para estimar <span class="math inline">\(\mu\)</span> (média populacional);</li>
+<li class="fragment"><span class="math inline">\(\hat{p}\)</span> (proporção amostral) para estimar <span class="math inline">\(p\)</span> (proporção populacional);</li>
+<li class="fragment"><span class="math inline">\(S^2\)</span> (variância amostral) para estimar <span class="math inline">\(\sigma^2\)</span> (variância populacional).</li>
 </ul>
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <p><strong>Exemplo 6:</strong> Qual o estimador mais apropriado para a taxa <span class="math inline">\(\lambda\)</span> de uma população <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>?</p>
 </div>
+</div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1613,6 +1628,7 @@ Ilustração da distribuição amostral de um estimador consistente com
 </div>
 <div class="callout-content">
 <p>No Exemplo 6, não há um candidato natural para <span class="math inline">\(\hat\lambda\)</span>. Veremos dois métodos de obtenção de estimadores: o <strong>método dos momentos</strong>; e o <strong>método da máxima verossimilhança</strong>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1629,6 +1645,7 @@ Ilustração da distribuição amostral de um estimador consistente com
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-note no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1642,6 +1659,8 @@ Ilustração da distribuição amostral de um estimador consistente com
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1649,6 +1668,7 @@ Ilustração da distribuição amostral de um estimador consistente com
 </div>
 <div class="callout-content">
 <p>Note que <span class="math inline">\(\mu^{(k)}=\mu^{(k)}(\theta)\)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -1671,6 +1691,7 @@ Ilustração da distribuição amostral de um estimador consistente com
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1681,12 +1702,14 @@ Ilustração da distribuição amostral de um estimador consistente com
 </div>
 </div>
 </div>
+</div>
 </section>
 <section id="métodos-de-obtenção-de-estimadores-3" class="slide level2 unnumbered unlisted">
 <h2>2.2 Métodos de Obtenção de Estimadores</h2>
 <div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%; margin-bottom:24px;">
 <p><strong>Exemplo 6 (cont.):</strong> Temos que, para a população <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>, o momento populacional de ordem 1 é <span class="math inline">\(\mu^{(1)} = E(X) = \frac{1}{\lambda}\)</span>. Como o momento amostral de ordem 1 é <span class="math inline">\(\hat\mu^{(1)} = \bar{X}\)</span>, o EMM de <span class="math inline">\(\lambda\)</span> é o valor <span class="math inline">\(\hat\lambda_{\text{MM}}\)</span> tal que <span class="math inline">\(\frac{1}{\hat\lambda_{\text{MM}}} = \bar{X}\)</span>. Logo, <span class="math inline">\(\hat\lambda_{\text{MM}} = \frac{1}{\bar{X}}\)</span>.</p>
 </div>
+<div class="fragment">
 <div style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <strong>Exemplo 7:</strong> Se a população for <span class="math inline">\(X\sim \text{N}(\mu,\sigma^2)\)</span>, então <span class="math inline">\(\mu^{(1)} = E(X) = \mu\)</span> e <span class="math inline">\(\mu^{(2)} = E(X^2) = \sigma^2 + \mu^2\)</span>. Como <span class="math inline">\(\hat\mu^{(1)} = \bar{X}\)</span> e <span class="math inline">\(\hat\mu^{(2)} = \frac{1}{n}\sum_i X_i^2\)</span>, os EMM’s de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> são dados, respectivamente, por
 
@@ -1705,6 +1728,8 @@ e
 
 </tbody></table>
 </div>
+</div>
+<div class="fragment">
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1712,6 +1737,7 @@ e
 </div>
 <div class="callout-content">
 <p>Encontre o EMM do parâmetro <span class="math inline">\(\theta\)</span> se a população <span class="math inline">\(X\)</span> tem fdp <span class="math inline">\(f(x)=\frac{\theta}{x^{\theta+1}}\)</span>, <span class="math inline">\(x&gt;1\)</span>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1747,6 +1773,7 @@ Seja <span class="math inline">\(X_1,\ldots,X_n\)</span> aa de uma vac <span cla
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1757,6 +1784,7 @@ Seja <span class="math inline">\(X_1,\ldots,X_n\)</span> aa de uma vac <span cla
 <li>A função de verossimilhança tem a mesma definição de fmp conjunta (se a população <span class="math inline">\(X\)</span> é discreta) ou fdp conjunta (se a população <span class="math inline">\(X\)</span> é contínua), mas é função de <span class="math inline">\(\theta\)</span> e não de <span class="math inline">\(x_1, \ldots, x_n\)</span>;</li>
 <li><span class="math inline">\(L(\theta; x_1, \ldots, x_n)\)</span> mede a <strong>plausabilidade</strong> de <span class="math inline">\(\theta\)</span> com respeito a amostra observada <span class="math inline">\(x_1, \ldots, x_n\)</span>.</li>
 </ol>
+</div>
 </div>
 </div>
 </div>
@@ -1782,15 +1810,17 @@ O Estimador de Máxima Verossimilhança (EMV) de <span class="math inline">\(\th
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observações</strong></p>
 </div>
 <div class="callout-content">
+<div>
 <ol type="1">
-<li>No caso discreto, pela independência, temos <span class="math inline">\(L(\theta;x_1,\ldots,x_n)= P(X_1=x_1,\ldots,X_n=x_n|\theta),\)</span> de modo que <span class="math inline">\(\hat{\theta}_{\text{MV}}\)</span> maximiza essa probabilidade, tornando a amostra <span class="math inline">\(x_1,\ldots,x_n\)</span> mais <strong>plausível</strong> ou <strong>verossímil</strong>;</li>
-<li>Se <span class="math inline">\(L\)</span> é diferenciável em <span class="math inline">\(\theta\)</span>, o EMV é o valor <span class="math inline">\(\hat{\theta}_{\text{MV}}\)</span> que satisfaz:
+<li class="fragment">No caso discreto, pela independência, temos <span class="math inline">\(L(\theta;x_1,\ldots,x_n)= P(X_1=x_1,\ldots,X_n=x_n|\theta),\)</span> de modo que <span class="math inline">\(\hat{\theta}_{\text{MV}}\)</span> maximiza essa probabilidade, tornando a amostra <span class="math inline">\(x_1,\ldots,x_n\)</span> mais <strong>plausível</strong> ou <strong>verossímil</strong>;</li>
+<li class="fragment">Se <span class="math inline">\(L\)</span> é diferenciável em <span class="math inline">\(\theta\)</span>, o EMV é o valor <span class="math inline">\(\hat{\theta}_{\text{MV}}\)</span> que satisfaz:
 
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
@@ -1801,8 +1831,10 @@ O Estimador de Máxima Verossimilhança (EMV) de <span class="math inline">\(\th
 
 </tbody></table>
 em que <span class="math inline">\(\ell(\theta) = \log\left[L(\theta;x_1,\ldots,x_n) \right]\)</span> é a <span style="color:red;"><strong>log-verossimilhança</strong></span>, desde que <span class="math inline">\(\hat{\theta}_{\text{MV}}\)</span> seja ponto de máximo;</li>
-<li>Sob algumas suposições de regularidade, é possível mostrar que o EMV é consistente.</li>
+<li class="fragment">Sob algumas suposições de regularidade, é possível mostrar que o EMV é consistente.</li>
 </ol>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1810,7 +1842,7 @@ em que <span class="math inline">\(\ell(\theta) = \log\left[L(\theta;x_1,\ldots,
 <section id="métodos-de-obtenção-de-estimadores-6" class="slide level2 unnumbered unlisted">
 <h2>2.2 Métodos de Obtenção de Estimadores</h2>
 <div style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%; margin-bottom:24px;">
-<strong>Exemplo 6 (cont.):</strong> A função de verossimilhança se a população <span class="math inline">\(X\sim \text{Exp}(\lambda)\)</span> é
+<strong>Exemplo 6 (cont.):</strong> Se a população <span class="math inline">\(X\sim \text{Exp}(\lambda)\)</span>, a função de verossimilhança é
 
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
@@ -1820,8 +1852,11 @@ em que <span class="math inline">\(\ell(\theta) = \log\left[L(\theta;x_1,\ldots,
 </tr>
 
 </tbody></table>
-<p>Assim, <span class="math inline">\(\ell(\lambda) = n\log(\lambda)-\lambda n \bar{x}\)</span> e <span class="math inline">\(\frac{\partial\ell(\lambda)}{\partial\lambda} = \frac{n}{\lambda} - n\bar{x}\)</span>. Como <span class="math inline">\(\hat\lambda_{\text{MV}}\)</span> satisfaz <span class="math inline">\(\frac{n}{\hat\lambda_{\text{MV}}} - n\bar{x} = 0\)</span>, temos <span class="math inline">\(\hat\lambda_{\text{MV}} = \frac{1}{\bar{X}}\)</span>.</p>
+<div class="fragment">
+<p>Assim, <span class="math inline">\(\ell(\lambda) = n\log(\lambda)-\lambda n \bar{x}\)</span> e <span class="math inline">\(\frac{\partial\ell(\lambda)}{\partial\lambda} = \frac{n}{\lambda} - n\bar{x}\)</span>. <span class="fragment">Como <span class="math inline">\(\hat\lambda_{\text{MV}}\)</span> satisfaz <span class="math inline">\(\frac{n}{\hat\lambda_{\text{MV}}} - n\bar{x} = 0\)</span>, temos <span class="math inline">\(\hat\lambda_{\text{MV}} = \frac{1}{\bar{X}}\)</span>.</span></p>
 </div>
+</div>
+<div class="fragment">
 <div style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <strong>Exemplo 7 (cont.):</strong> Vamos determinar o EMV de <span class="math inline">\((\mu, \sigma)\)</span>. Podemos mostrar que a log-verossimilhança é
 
@@ -1833,6 +1868,7 @@ em que <span class="math inline">\(\ell(\theta) = \log\left[L(\theta;x_1,\ldots,
 </tr>
 
 </tbody></table>
+<div class="fragment">
 Assim,
 
 <table>
@@ -1849,6 +1885,8 @@ e
 </tr>
 
 </tbody></table>
+</div>
+<div class="fragment">
 Logo, os EMV’s <span class="math inline">\(\hat\mu_{\text{MV}}\)</span> e <span class="math inline">\(\hat\sigma_{\text{MV}}\)</span> devem satisfazer
 
 <table>
@@ -1865,7 +1903,9 @@ e
 </tr>
 
 </tbody></table>
-<p>o que fornece <span class="math inline">\(\hat\mu_{\text{MV}} = \bar{X}\)</span> e <span class="math inline">\(\hat\sigma_{\text{MV}} = \left[\frac{1}{n}\sum_i(X_i - \hat\mu_{\text{MV}})^2\right]^{1/2}\)</span>.</p>
+<p><span class="fragment">o que fornece <span class="math inline">\(\hat\mu_{\text{MV}} = \bar{X}\)</span> e <span class="math inline">\(\hat\sigma_{\text{MV}} = \left[\frac{1}{n}\sum_i(X_i - \hat\mu_{\text{MV}})^2\right]^{1/2}\)</span>.</span></p>
+</div>
+</div>
 </div>
 </section>
 <section id="métodos-de-obtenção-de-estimadores-7" class="slide level2 unnumbered unlisted">
@@ -1880,15 +1920,17 @@ e
 </div>
 </div>
 </div>
+<div class="fragment">
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <p><strong>Observações</strong></p>
 </div>
 <div class="callout-content">
+<div>
 <ol type="1">
-<li>Em alguns casos, não podemos realizar analiticamente a maximização de <span class="math inline">\(L(\theta; x_1, \ldots, x_n)\)</span>, ou equivalentemente de <span class="math inline">\(\ell(\theta)\)</span>;</li>
-<li>Nesses casos, podemos recorrer é métodos numéricos. Por exemplo, podemos utilizar o algoritmo de Newton-Raphson para encontrar as raízes
+<li class="fragment">Em alguns casos, não podemos realizar analiticamente a maximização de <span class="math inline">\(L(\theta; x_1, \ldots, x_n)\)</span>, ou equivalentemente de <span class="math inline">\(\ell(\theta)\)</span>;</li>
+<li class="fragment">Nesses casos, podemos recorrer é métodos numéricos. Por exemplo, podemos utilizar o algoritmo de Newton-Raphson para encontrar as raízes
 
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
@@ -1899,6 +1941,8 @@ e
 
 </tbody></table></li>
 </ol>
+</div>
+</div>
 </div>
 </div>
 </div>

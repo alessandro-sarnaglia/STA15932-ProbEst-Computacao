@@ -758,7 +758,7 @@ Qual é o vício de $\hat{\mu}_1$ e $\hat{\mu}_2$?
 Temos que
 <table>
   <tr style="border-bottom:none;text-align:center;">
-    <td>$E(\hat{\mu}_1) = E[\frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n] = \frac{n-1}{n}E(\bar{X}_{n-1}) + \frac{1}{n}E(X_n) = \frac{n-1}{n}\mu + \frac{1}{n}\mu = \mu.$</td>
+    <td>$E(\hat{\mu}_1) = E\left[\frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n\right] = \frac{n-1}{n}E(\bar{X}_{n-1}) + \frac{1}{n}E(X_n) = \frac{n-1}{n}\mu + \frac{1}{n}\mu = \mu.$</td>
   </tr>
 </table>
 
@@ -770,7 +770,7 @@ e que
 
 <table>
   <tr style="border-bottom:none;text-align:center;">
-    <td>$E(\hat{\mu}_2) = E[\frac{\bar{X}_{n-1} + X_n}{2}] = \frac{E(\bar{X}_{n-1}) + E(X_n)}{2} = \frac{\mu + \mu}{2} = \mu.$</td>
+    <td>$E(\hat{\mu}_2) = E\left[\frac{\bar{X}_{n-1} + X_n}{2}\right] = \frac{E(\bar{X}_{n-1}) + E(X_n)}{2} = \frac{\mu + \mu}{2} = \mu.$</td>
   </tr>
 </table>
 
@@ -825,7 +825,7 @@ Tendo em vista o Exemplo 5, mostre que $S^2 = \frac{1}{n-1}\sum_{i=1}^n(X_i - \b
 ## 2.1 Estimação Pontual (Erro-Padrão) {.unnumbered .unlisted}
 
 ::: {.callout-caution}
-## Observação
+## Observações
 
 - Estimadores são va;
 - Além do vício, é importante saber a sua variabilidade;
@@ -833,6 +833,7 @@ Tendo em vista o Exemplo 5, mostre que $S^2 = \frac{1}{n-1}\sum_{i=1}^n(X_i - \b
 
 :::
 
+::: fragment
 
 ::: {.callout-note}
 ## Definição
@@ -841,6 +842,10 @@ Seja $\hat{\theta}$ estimador de $\theta$. O erro-padrão ($EP(\hat{\theta})$) d
 
 :::
 
+:::
+
+::: fragment
+
 ::: {.callout-note}
 ## Definição
 
@@ -848,6 +853,7 @@ Sejam $\hat{\theta}_1$ e $\hat{\theta}_2$ estimadores não viesados de $\theta$.
 
 :::
 
+:::
 
 ## 2.1 Estimação Pontual (Erro-Padrão) {.unnumbered .unlisted}
 
@@ -1003,17 +1009,29 @@ Seja $\hat{\theta}$ um estimador do parâmetro $\theta$. Dizemos que $\hat{\thet
 
 :::
 
+::: fragment
+
 ::: {.callout-caution}
 ## Observação
+
+::: incremental
 
 1. A definição acima implica que $\hat{\theta}$ é consistente se seu vício e sua variância tendem a 0;
 2. Em poucas palavras, quando um estimador é consistente suas estimativas tendem a ser próximas do verdadeiro valor do parâmetro
 
 :::
 
+:::
+
+:::
+
+::: fragment
+
 ::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
 **Exemplo 5 (cont.):** Como ${\displaystyle \lim_{n\to\infty} EQM(S^2) = \lim_{n\to\infty} EQM(\hat\sigma^2) = 0}$, ambos são consistentes para $\sigma^2$.
+:::
+
 :::
 
 ## 2.1 Estimação Pontual (Consistência) {.unnumbered .unlisted}
@@ -1069,11 +1087,17 @@ Ilustração da distribuição amostral de um estimador consistente com
 
 Em alguns casos, o estimador é escolhido por seu apelo intuitivo. Por exemplo, é natural usar
 
+::: incremental
+
 - $\bar{X}$ (média amostral) para estimar $\mu$ (média populacional);
 - $\hat{p}$ (proporção amostral) para estimar $p$ (proporção populacional);
 - $S^2$ (variância amostral) para estimar $\sigma^2$ (variância populacional).
 
 :::
+
+:::
+
+::: fragment
 
 ::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -1081,10 +1105,16 @@ Em alguns casos, o estimador é escolhido por seu apelo intuitivo. Por exemplo, 
 
 :::
 
+:::
+
+::: fragment
+
 ::: {.callout-caution}
 ## Observação
 
 No Exemplo 6, não há um candidato natural para $\hat\lambda$. Veremos dois métodos de obtenção de estimadores: o **método dos momentos**; e o **método da máxima verossimilhança**.
+
+:::
 
 :::
 
@@ -1097,6 +1127,8 @@ Nosso objetivo é encontrar um estimador $\hat\theta$ do vetor de parâmetros $\
 
 :::
 
+::: fragment
+
 ::: {.callout-note}
 ## Definições
 
@@ -1105,10 +1137,16 @@ Nosso objetivo é encontrar um estimador $\hat\theta$ do vetor de parâmetros $\
 
 :::
 
+:::
+
+::: fragment
+
 ::: {.callout-caution}
 ## Observação
 
 Note que $\mu^{(k)}=\mu^{(k)}(\theta)$
+
+:::
 
 :::
 
@@ -1127,10 +1165,14 @@ $$
 $$
 :::
 
+::: fragment
+
 ::: {.callout-caution}
 ## Observação
 
 Caso o sistema acima não seja bijetivo (por exemplo, se $\theta = (\theta_1, \theta_2)'$, mas $\mu^{(1)}=\mu^{(2)}=\theta_1$), podemos utilizar momentos populacionais de ordens superiores.
+
+:::
 
 :::
 
@@ -1141,6 +1183,8 @@ Caso o sistema acima não seja bijetivo (por exemplo, se $\theta = (\theta_1, \t
 **Exemplo 6 (cont.):** Temos que, para a população $X \sim \text{Exp}(\lambda)$, o momento populacional de ordem 1 é $\mu^{(1)} = E(X) = \frac{1}{\lambda}$. Como o momento amostral de ordem 1 é $\hat\mu^{(1)} = \bar{X}$, o EMM de $\lambda$ é o valor $\hat\lambda_{\text{MM}}$ tal que $\frac{1}{\hat\lambda_{\text{MM}}} = \bar{X}$. Logo, $\hat\lambda_{\text{MM}} = \frac{1}{\bar{X}}$.
 
 :::
+
+::: fragment
 
 ::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -1153,10 +1197,16 @@ Caso o sistema acima não seja bijetivo (por exemplo, se $\theta = (\theta_1, \t
 
 :::
 
+:::
+
+::: fragment
+
 ::: {.callout-tip}
 ## Exercício
 
 Encontre o EMM do parâmetro $\theta$ se a população $X$ tem fdp $f(x)=\frac{\theta}{x^{\theta+1}}$, $x>1$.
+:::
+
 :::
 
 ## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted}
@@ -1180,11 +1230,15 @@ Seja $X_1,\ldots,X_n$ aa de uma vac $X$ com fdp $f(x;\theta)$. A função de ver
 
 :::
 
+::: fragment
+
 ::: {.callout-caution}
 ## Observações
 
 1. A função de verossimilhança tem a mesma definição de fmp conjunta (se a população $X$ é discreta) ou fdp conjunta (se a população $X$ é contínua), mas é função de $\theta$ e não de $x_1, \ldots, x_n$;
 2. $L(\theta; x_1, \ldots, x_n)$ mede a **plausabilidade** de $\theta$ com respeito a amostra observada $x_1, \ldots, x_n$.
+:::
+
 :::
 
 ## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted} 
@@ -1200,8 +1254,12 @@ O Estimador de Máxima Verossimilhança (EMV) de $\theta$ é definido por
 </table>
 :::
 
+::: fragment
+
 ::: {.callout-caution}
 ## Observações
+
+::: incremental
 
 1. No caso discreto, pela independência, temos $L(\theta;x_1,\ldots,x_n)= P(X_1=x_1,\ldots,X_n=x_n|\theta),$ de modo que $\hat{\theta}_{\text{MV}}$ maximiza essa probabilidade, tornando a amostra $x_1,\ldots,x_n$ mais **plausível** ou **verossímil**;
 2. Se $L$ é diferenciável em $\theta$, o EMV é o valor $\hat{\theta}_{\text{MV}}$ que satisfaz:
@@ -1215,19 +1273,30 @@ em que $\ell(\theta) = \log\left[L(\theta;x_1,\ldots,x_n) \right]$ é a [**log-v
 
 :::
 
+:::
+
+:::
+
 ## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted} 
 
 ::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%; margin-bottom:24px;"}
 
-**Exemplo 6 (cont.):** A função de verossimilhança se a população $X\sim \text{Exp}(\lambda)$ é
+**Exemplo 6 (cont.):** Se a população $X\sim \text{Exp}(\lambda)$, a função de verossimilhança é
 <table>
   <tr style="border-bottom:none;text-align:center;">
     <td>$L(\lambda; x_1, \ldots, x_n) = \prod_{i=1}^n[\lambda e^{-\lambda x_i}] = \lambda^n e^{-\lambda \sum_ix_i} = \lambda^n e^{-\lambda n\bar{x}}$.</td>
   </tr>
 </table>
-Assim, $\ell(\lambda) = n\log(\lambda)-\lambda n \bar{x}$ e $\frac{\partial\ell(\lambda)}{\partial\lambda} = \frac{n}{\lambda} - n\bar{x}$. Como $\hat\lambda_{\text{MV}}$ satisfaz $\frac{n}{\hat\lambda_{\text{MV}}} - n\bar{x} = 0$, temos $\hat\lambda_{\text{MV}} = \frac{1}{\bar{X}}$.
+
+::: fragment
+
+Assim, $\ell(\lambda) = n\log(\lambda)-\lambda n \bar{x}$ e $\frac{\partial\ell(\lambda)}{\partial\lambda} = \frac{n}{\lambda} - n\bar{x}$. [Como $\hat\lambda_{\text{MV}}$ satisfaz $\frac{n}{\hat\lambda_{\text{MV}}} - n\bar{x} = 0$, temos $\hat\lambda_{\text{MV}} = \frac{1}{\bar{X}}$.]{.fragment}
 
 :::
+
+:::
+
+::: fragment
 
 ::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
 
@@ -1237,19 +1306,32 @@ Assim, $\ell(\lambda) = n\log(\lambda)-\lambda n \bar{x}$ e $\frac{\partial\ell(
     <td>$\ell(\mu,\sigma) = -\frac{n}{2}\log(2\pi) - n\log(\sigma) -\frac{1}{2}\sum_i\left(\frac{x_i-\mu}{\sigma}\right)^2$.</td>
   </tr>
 </table>
+
+::: fragment
+
 Assim,
 <table>
   <tr style="border-bottom:none;text-align:center;">
     <td> $\frac{\partial\ell}{\partial\mu} = \sum_i\left(\frac{x_i-\mu}{\sigma^2}\right) = \frac{n\bar{x} - n\mu}{\sigma^2}$ </td> <td> e </td> <td> $\frac{\partial\ell}{\partial\sigma} = -\frac{n}{\sigma} + \frac{1}{\sigma^3}\sum_i(x_i-\mu)^2$. </td>
   </tr>
 </table>
+
+:::
+
+::: fragment
+
 Logo, os EMV's $\hat\mu_{\text{MV}}$ e $\hat\sigma_{\text{MV}}$ devem satisfazer
 <table>
   <tr style="border-bottom:none;text-align:center;">
     <td> $\frac{n\bar{x} - n\hat\mu_{\text{MV}}}{\hat\sigma^2_{\text{MV}}} = 0$ </td> <td> e </td> <td> $-\frac{n}{\hat\sigma_{\text{MV}}} + \frac{1}{\hat\sigma^3_{\text{MV}}}\sum_i(x_i-\hat\mu_{\text{MV}})^2 = 0$, </td>
   </tr>
 </table>
-o que fornece $\hat\mu_{\text{MV}} = \bar{X}$ e $\hat\sigma_{\text{MV}} = \left[\frac{1}{n}\sum_i(X_i - \hat\mu_{\text{MV}})^2\right]^{1/2}$.
+[o que fornece $\hat\mu_{\text{MV}} = \bar{X}$ e $\hat\sigma_{\text{MV}} = \left[\frac{1}{n}\sum_i(X_i - \hat\mu_{\text{MV}})^2\right]^{1/2}$.]{.fragment}
+
+:::
+
+:::
+
 :::
 
 ## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted} 
@@ -1261,8 +1343,12 @@ o que fornece $\hat\mu_{\text{MV}} = \bar{X}$ e $\hat\sigma_{\text{MV}} = \left[
 Determine EMV do parâmetro $\theta$ se a população $X$ tem fdp $f(x)=\frac{\theta}{x^{\theta+1}}$, $x>1$.
 :::
 
+::: fragment
+
 ::: {.callout-caution}
 ## Observações
+
+::: incremental
 
 1. Em alguns casos, não podemos realizar analiticamente a maximização de $L(\theta; x_1, \ldots, x_n)$, ou equivalentemente de $\ell(\theta)$;
 2. Nesses casos, podemos recorrer é métodos numéricos. Por exemplo, podemos utilizar o algoritmo de Newton-Raphson para encontrar as raízes
@@ -1271,8 +1357,12 @@ Determine EMV do parâmetro $\theta$ se a população $X$ tem fdp $f(x)=\frac{\t
     <td> $\left[\left.\frac{\partial \ell(\theta)}{\partial \theta}\right|_{\theta = \hat\theta_{\text{MV}}}\right] = 0$. </td>
   </tr>
 </table>
+
 :::
 
+:::
+
+:::
 
 ## Estimação Intervalar
 
