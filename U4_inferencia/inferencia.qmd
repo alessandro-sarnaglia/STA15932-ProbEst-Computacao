@@ -904,7 +904,7 @@ Verifiquemos os Erros-Padrão de $\hat{\mu}_1$ e de $\hat{\mu}_2$. [Temos que]{.
 [e]{.fragment fragment-index=2}
 <table class="fragment" data-fragment-index="2">
   <tr style="border-bottom:none;text-align:center;">
-    <td>${\displaystyle V(\hat{\mu}_2) = V\left(\frac{\bar{X}_{n-1}+x_n}{2}\right) = \frac{1}{4}(V(\bar{X}_{n-1})+V(X_n)) = \frac{1}{4} \left(\frac{\sigma^2}{n-1} + \sigma^2\right)=\frac{n}{4(n-1)}\sigma^2}$.</td>
+    <td>${\displaystyle V(\hat{\mu}_2) = V\left(\frac{\bar{X}_{n-1}+X_n}{2}\right) = \frac{1}{4}(V(\bar{X}_{n-1})+V(X_n)) = \frac{1}{4} \left(\frac{\sigma^2}{n-1} + \sigma^2\right)=\frac{n}{4(n-1)}\sigma^2}$.</td>
   </tr>
 </table>
 
@@ -919,6 +919,150 @@ Verifiquemos os Erros-Padrão de $\hat{\mu}_1$ e de $\hat{\mu}_2$. [Temos que]{.
 
 ## 2.1 Estimação Pontual (Erro Quadrático Médio) {.unnumbered .unlisted}
 
+::: {.callout-caution}
+## Observação
+
+Vimos que o Erro-Padrão nos permite comparar a eficiência de estimadores não viesados. Para comparar estimadores com vícios diferentes, podemos usar o [**Erro Quadrático Médio**]{style='color:red;'}.
+:::
+
+::: fragment
+
+::: {.callout-note}
+## Definição
+
+Seja $\hat{\theta}$ estimador de $\theta$. Definimos o **Erro Quadrático Médio** (EQM) de
+$\hat{\theta}$ por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$EQM(\hat{\theta})=E[(\hat{\theta}-\theta)^2]$.</td>
+  </tr>
+</table>
+:::
+
+:::
+
+::: fragment
+
+::: {.callout-tip}
+## Exercícios
+
+Mostre que o EQM de $\hat\theta$ pode ser escrito como a soma do quadrado do vício e da variância
+de $\hat\theta$, isto é,
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$EQM(\hat{\theta})=[B(\hat{\theta})]^2+V(\hat{\theta})$.</td>
+  </tr>
+</table>
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller}
+
+### Exemplo 5 (cont.) {.unnumbered .unlisted}
+
+No Exemplo 5, mostramos que $B(\hat{\sigma}^2)=-\frac{\sigma^2}{n}$. É possível mostrar
+que $B(S^2)=0$ e que, se $X\sim N(\mu,\sigma^2)$, então
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle V(S^2)=\frac{2\sigma^4}{n-1}}$</td> <td> e </td> <td> ${\displaystyle V(\hat{\sigma}^2) = \left( \frac{n-1}{n} \right)^2 \frac{2\sigma^4}{n-1}}$. </td>
+  </tr>
+</table>
+
+::: fragment
+
+Logo, os EQM's de $S^2$ e de $\hat{\sigma}^2$ são, respectivamente,
+
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle EQM(S^2)=\frac{2\sigma^4}{n-1}}$</td> <td> e </td> <td> ${\displaystyle EQM(\hat{\sigma}^2)=\left(\frac{\sigma^2}{n}\right)^2 + \frac{(n-1)2\sigma^4}{n^2} = \frac{2\sigma^4}{n}-\frac{\sigma^4}{n^2}}$. </td>
+  </tr>
+</table>
+
+:::
+
+::: fragment
+
+Assim, em termos de EQM, vemos que $\hat{\sigma}^2$ é melhor do que $S^2$.
+
+:::
+
+## 2.1 Estimação Pontual (Consistência) {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Seja $\hat{\theta}$ um estimador do parâmetro $\theta$. Dizemos que $\hat{\theta}$ é **consistente** se seu EQM tende a zero quando o tamanho da amostra tende a infinito. Isto é, se
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle \lim_{n\to\infty}EQM(\hat{\theta})=0}$. </td>
+  </tr>
+</table>
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+1. A definição acima implica que $\hat{\theta}$ é consistente se seu vício e sua variância tendem a 0;
+2. Em poucas palavras, quando um estimador é consistente suas estimativas tendem a ser próximas do verdadeiro valor do parâmetro
+
+:::
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 5 (cont.):** Como ${\displaystyle \lim_{n\to\infty} EQM(S^2) = \lim_{n\to\infty} EQM(\hat\sigma^2) = 0}$, ambos são consistentes para $\sigma^2$.
+:::
+
+## 2.1 Estimação Pontual (Consistência) {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=50%}
+
+```{r out.width="95%"}
+x <- seq(0, 10, length.out=1000)
+f1 <- dgamma(x, shape=2, scale = 2)
+f2 <- dgamma(x, shape=4, scale = 1)
+f3 <- dgamma(x, shape=8, scale = 0.5)
+par(family = "serif", mar=c(5,4,1,2))
+rngY <- range(f1, f2, f3)
+rngX <- range(x)
+plot(x, f1, type='n', xlab='', ylab='', main='', lwd=3,
+     ylim=rngY+c(-.1*diff(rngY),.13*diff(rngY)),
+     xlim=rngX+c(-.02*diff(rngX),.08*diff(rngX)))
+arrows(y0 = rngY[1]-.1*diff(rngY), y1 = rngY[2]+.13*diff(rngY), x0=0, x1=0, length = .1)
+arrows(x0 = rngX[1]-.02*diff(rngX), x1 = rngX[2]+.08*diff(rngX), y0=0, y1=0, length = .1)
+lines(x, f1, lwd=3, col='red')
+lines(x, f2, lwd=3, col='blue')
+lines(x, f3, lwd=3, col='darkgreen')
+lines(c(4.2,4.2), rngY+c(0,.13*diff(rngY)), lwd=2.5, lty=3)
+lines(c(4.2,4.2), rngY[1]+c(-0.03*diff(rngY),0), lwd=1.5)
+text(x=4.2, y=rngY[1]-0.05*diff(rngY), labels=expression(theta), adj=c(.5, 1.2))
+```
+
+:::
+
+::: {.column #vcenter width=50%}
+
+::: {.callout-caution}
+## Observação
+
+Ilustração da distribuição amostral de um estimador consistente com
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle \color{red}{n}< \color{blue}{n} < \color{darkgreen}{n}}$. </td>
+  </tr>
+</table>
+:::
+
+:::
+
+:::
+
+## Métodos de obtenção de estimadores
 
 ## Estimação Intervalar
 

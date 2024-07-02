@@ -8,7 +8,7 @@
 <link href="inferencia_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="inferencia_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="inferencia_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.551">
+  <meta name="generator" content="quarto-1.3.353">
 
   <meta name="author" content="Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia">
   <title>Probabilidade e Estatística</title>
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -223,8 +223,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -417,7 +416,8 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <li><a href="#/estimação" id="/toc-estimação"><span class="header-section-number">2</span> Estimação</a>
 <ul>
 <li><a href="#/estimação-pontual" id="/toc-estimação-pontual"><span class="header-section-number">2.1</span> Estimação Pontual</a></li>
-<li><a href="#/estimação-intervalar" id="/toc-estimação-intervalar"><span class="header-section-number">2.2</span> Estimação Intervalar</a></li>
+<li><a href="#/métodos-de-obtenção-de-estimadores" id="/toc-métodos-de-obtenção-de-estimadores"><span class="header-section-number">2.2</span> Métodos de obtenção de estimadores</a></li>
+<li><a href="#/estimação-intervalar" id="/toc-estimação-intervalar"><span class="header-section-number">2.3</span> Estimação Intervalar</a></li>
 </ul></li>
 <li><a href="#/testes-de-hipóteses" id="/toc-testes-de-hipóteses"><span class="header-section-number">3</span> Testes de Hipóteses</a></li>
 </ul>
@@ -450,12 +450,14 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 </div>
 <div class="callout-content">
 Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conjunta <span class="math inline">\(p(x_1, \ldots, x_n)\)</span> e <span class="math inline">\(Y = h(X_1, \ldots, X_n)\)</span> uma função dessas variáveis. A fmp de <span class="math inline">\(Y\)</span> é dada por
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\(\displaystyle p_Y(y) = \underset{x_i\ :\ h(x_1,\ldots, x_n)\ =\ y}{\sum \cdots \sum} p(x_1, \ldots, x_n)\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div>
@@ -465,6 +467,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 <h2>1.1 Funções de Variáveis Aleatórias</h2>
 <div style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <strong>Exemplo 1 (cont):</strong> Note que <span class="math inline">\(Y\)</span> representa a quantidade de total de transações. Pela independência de <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>, temos que <span class="math inline">\(p(x_1,x_2) = (1-p)^{x_1-1}p(1-p)^{x_2-1}p = (1-p)^{x_1+x_2-2}p^2\)</span>. Logo,
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
@@ -487,6 +490,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 <span class="math inline">\({\displaystyle (y-1)(1-p)^{y-2}p^2 = {y-1 \choose 1} (1-p)^{y-2}p^2}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 <p>Portanto, <span class="math inline">\(Y \sim \text{BN}(2,p)\)</span>.</p>
 </div>
@@ -513,12 +517,14 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vad’s com fmp conj
 </div>
 <div class="callout-content">
 Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vac’s com fdp conjunta <span class="math inline">\(f(x_1, \ldots, x_n)\)</span> e <span class="math inline">\(Y = h(X_1, \ldots, X_n)\)</span> uma função dessas variáveis. A fdp de <span class="math inline">\(Y\)</span> é dada por <span class="math inline">\(f_Y(y) = \frac{d}{dy}F_Y(y)\)</span> em que <span class="math inline">\(F_Y(y)\)</span> é a fda de <span class="math inline">\(Y\)</span> definida por
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\(\displaystyle F_Y(y) = P(Y \leq y) = P(h(X_1, \ldots, X_n) \leq y) = \underset{x_i\ :\ h(x_1,\ldots, x_n)\ \leq\ y}{\int \cdots \int} f(x_1, \ldots, x_n) dx_1 \cdots dx_n\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div>
@@ -538,6 +544,7 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vac’s com fdp conj
 <h2>1.1 Funções de Variáveis Aleatórias</h2>
 <div style="border-style: solid; border-width: 3px; padding-top: 6px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <strong>Exemplo 2 (cont.):</strong> Note que <span class="math inline">\(Y\)</span> o momento em que o segundo cliente chega à loja. Pela independência de <span class="math inline">\(X_1\)</span> e <span class="math inline">\(X_2\)</span>, temos que <span class="math inline">\(f(x_1,x_2) = \lambda e^{-\lambda x_1} \lambda e^{-\lambda x_2} = \lambda^2 e^{-\lambda (x_1 + x_2)}\)</span>. Logo,
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
@@ -570,14 +577,17 @@ Sejam <span class="math inline">\(X_1, \ldots, X_n\)</span> vac’s com fdp conj
 <span class="math inline">\({-e^{-\lambda y} - \lambda ye^{-\lambda y} + 1 - 0}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\(f_Y(y) = \frac{d}{dy}F_Y(y) = \frac{d}{dy}[-e^{-\lambda y} - \lambda ye^{-\lambda y} + 1] = \lambda e^{-\lambda y} - \lambda e^{-\lambda y} + \lambda^2 y e^{-\lambda y} = \frac{1}{(\frac{1}{\lambda})^2\Gamma(2)}y^{2-1}e^{-\frac{y}{\lambda^{-1}}}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 <p>Portanto, <span class="math inline">\(Y \sim \text{Gama}(2, \lambda^{-1})\)</span>.</p>
 </div>
@@ -669,12 +679,14 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 </div>
 <div style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <strong>Exemplo 3:</strong> Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="math inline">\(X \sim \text{Weibull}(10, 2)\)</span>, isto é <span class="math inline">\(\alpha=10\)</span> e <span class="math inline">\(\beta=2\)</span>. Considere a estatística
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\(\tilde{X} = T(X_1, \ldots, X_n) = \begin{cases} \frac{X_{(n/2)} + X_{(n/2+1)}}{2}, &amp; n \text{ par}; \\ X_{(n+1)/2}, &amp; n \text{ par}. \end{cases}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 <p>Isto é, <span class="math inline">\(\tilde{X}\)</span> é a mediana amostral. Qual a distribuição amostral de <span class="math inline">\(\tilde{X}\)</span> se <span class="math inline">\(n=20\)</span> e <span class="math inline">\(n=40\)</span>? A estatística e a distribuição populacional são complexas para uma análise analítica. Podemos usar métodos de Monte Carlo.</p>
 </div>
@@ -684,41 +696,37 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 <h3 class="unnumbered unlisted" id="exemplo-3-cont.">Exemplo 3 (cont.)</h3>
 <div class="columns">
 <div id="vcenter" class="column" style="width:65%;">
-<div class="sourceCode" id="cb1" data-code-line-numbers="|1-8|9-15|11-12|13-14|16-17|18-21|18-19|20-21|22-23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="co"># parâmetros da Weibull(a,b)</span></span>
-<span id="cb1-2"><a href=""></a>a <span class="ot">&lt;-</span> <span class="dv">10</span>; b<span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb1-3"><a href=""></a><span class="co"># Quantidade de réplicas</span></span>
-<span id="cb1-4"><a href=""></a>R <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb1-5"><a href=""></a><span class="co"># Tamanho da aa</span></span>
-<span id="cb1-6"><a href=""></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb1-7"><a href=""></a><span class="co"># Vetor vazio para armazenar as medianas amostrais de cada réplica</span></span>
-<span id="cb1-8"><a href=""></a>med <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb1-9"><a href=""></a><span class="co"># Inicia as réplicas de Monte Carlo</span></span>
-<span id="cb1-10"><a href=""></a><span class="cf">for</span>(r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R){</span>
-<span id="cb1-11"><a href=""></a>  <span class="co"># Gera uma aa de tamanho n da Weibull(a, b)</span></span>
-<span id="cb1-12"><a href=""></a>  x <span class="ot">&lt;-</span> <span class="fu">rweibull</span>(<span class="at">n=</span>n, <span class="at">shape =</span> a, <span class="at">scale =</span> b)</span>
-<span id="cb1-13"><a href=""></a>  <span class="co"># Calcula a mediana amostral da amostra x</span></span>
-<span id="cb1-14"><a href=""></a>  med[r] <span class="ot">&lt;-</span> <span class="fu">median</span>(x)                      </span>
-<span id="cb1-15"><a href=""></a>}</span>
-<span id="cb1-16"><a href=""></a><span class="co"># Mediana populacional</span></span>
-<span id="cb1-17"><a href=""></a>med_pop <span class="ot">&lt;-</span> b<span class="sc">*</span>(<span class="fu">log</span>(<span class="dv">2</span>))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>a)</span>
-<span id="cb1-18"><a href=""></a><span class="co"># Histograma da distribuição amostral da mediana amostral</span></span>
-<span id="cb1-19"><a href=""></a><span class="fu">hist</span>(med)</span>
-<span id="cb1-20"><a href=""></a><span class="co"># Traça a mediana da população e intervalo +0.1 ou -0.1 desse valor</span></span>
-<span id="cb1-21"><a href=""></a><span class="fu">abline</span>(<span class="at">v =</span> med_pop <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">1</span>,<span class="dv">0</span>,.<span class="dv">1</span>), <span class="at">col =</span> <span class="st">'red'</span>, <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb1-22"><a href=""></a><span class="co"># Prop. das medianas amostrais entre med_pop - 0.1 e med_pop + 0.1</span></span>
-<span id="cb1-23"><a href=""></a><span class="fu">mean</span>(med <span class="sc">&gt;</span> med_pop<span class="fl">-.1</span> <span class="sc">&amp;</span> med <span class="sc">&lt;</span> med_pop<span class="fl">+.1</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-code-line-numbers="|1-8|9-15|11-12|13-14|16-17|18-21|18-19|20-21|22-23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># parâmetros da Weibull(a,b)</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span>; b<span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Quantidade de réplicas</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>R <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Tamanho da aa</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co"># Vetor vazio para armazenar as medianas amostrais de cada réplica</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>med <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># Inicia as réplicas de Monte Carlo</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="cf">for</span>(r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R){</span>
+<span id="cb1-11"><a href="#cb1-11"></a>  <span class="co"># Gera uma aa de tamanho n da Weibull(a, b)</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>  x <span class="ot">&lt;-</span> <span class="fu">rweibull</span>(<span class="at">n=</span>n, <span class="at">shape =</span> a, <span class="at">scale =</span> b)</span>
+<span id="cb1-13"><a href="#cb1-13"></a>  <span class="co"># Calcula a mediana amostral da amostra x</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>  med[r] <span class="ot">&lt;-</span> <span class="fu">median</span>(x)                      </span>
+<span id="cb1-15"><a href="#cb1-15"></a>}</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co"># Mediana populacional</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>med_pop <span class="ot">&lt;-</span> b<span class="sc">*</span>(<span class="fu">log</span>(<span class="dv">2</span>))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>a)</span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># Histograma da distribuição amostral da mediana amostral</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="fu">hist</span>(med)</span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co"># Traça a mediana da população e intervalo +0.1 ou -0.1 desse valor</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="fu">abline</span>(<span class="at">v =</span> med_pop <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">1</span>,<span class="dv">0</span>,.<span class="dv">1</span>), <span class="at">col =</span> <span class="st">'red'</span>, <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="co"># Prop. das medianas amostrais entre med_pop - 0.1 e med_pop + 0.1</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="fu">mean</span>(med <span class="sc">&gt;</span> med_pop<span class="fl">-.1</span> <span class="sc">&amp;</span> med <span class="sc">&lt;</span> med_pop<span class="fl">+.1</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div id="vcenter" class="column" style="width:35%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-1-1.png" width="528"></p>
-</figure>
-</div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.9</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.905</code></pre>
 </div>
 </div>
 </div>
@@ -730,41 +738,37 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 <h3 class="unnumbered unlisted" id="exemplo-3-cont.-1">Exemplo 3 (cont.)</h3>
 <div class="columns">
 <div id="vcenter" class="column" style="width:65%;">
-<div class="sourceCode" id="cb3" data-code-line-numbers="|5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="co"># parâmetros da Weibull(a,b)</span></span>
-<span id="cb3-2"><a href=""></a>a <span class="ot">&lt;-</span> <span class="dv">10</span>; b<span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb3-3"><a href=""></a><span class="co"># Quantidade de réplicas</span></span>
-<span id="cb3-4"><a href=""></a>R <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb3-5"><a href=""></a><span class="co"># Tamanho da aa</span></span>
-<span id="cb3-6"><a href=""></a>n <span class="ot">&lt;-</span> <span class="dv">40</span></span>
-<span id="cb3-7"><a href=""></a><span class="co"># Vetor vazio para armazenar as medianas amostrais de cada réplica</span></span>
-<span id="cb3-8"><a href=""></a>med <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb3-9"><a href=""></a><span class="co"># Inicia as réplicas de Monte Carlo</span></span>
-<span id="cb3-10"><a href=""></a><span class="cf">for</span>(r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R){</span>
-<span id="cb3-11"><a href=""></a>  <span class="co"># Gera uma aa de tamanho n da Weibull(a, b)</span></span>
-<span id="cb3-12"><a href=""></a>  x <span class="ot">&lt;-</span> <span class="fu">rweibull</span>(<span class="at">n=</span>n, <span class="at">shape =</span> a, <span class="at">scale =</span> b)</span>
-<span id="cb3-13"><a href=""></a>  <span class="co"># Calcula a mediana amostral da amostra x</span></span>
-<span id="cb3-14"><a href=""></a>  med[r] <span class="ot">&lt;-</span> <span class="fu">median</span>(x)                      </span>
-<span id="cb3-15"><a href=""></a>}</span>
-<span id="cb3-16"><a href=""></a><span class="co"># Mediana populacional</span></span>
-<span id="cb3-17"><a href=""></a>med_pop <span class="ot">&lt;-</span> b<span class="sc">*</span>(<span class="fu">log</span>(<span class="dv">2</span>))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>a)</span>
-<span id="cb3-18"><a href=""></a><span class="co"># Histograma da distribuição amostral da mediana amostral</span></span>
-<span id="cb3-19"><a href=""></a><span class="fu">hist</span>(med)</span>
-<span id="cb3-20"><a href=""></a><span class="co"># Traça a mediana da população e intervalo +0.1 ou -0.1 desse valor</span></span>
-<span id="cb3-21"><a href=""></a><span class="fu">abline</span>(<span class="at">v =</span> med_pop <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">1</span>,<span class="dv">0</span>,.<span class="dv">1</span>), <span class="at">col =</span> <span class="st">'red'</span>, <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb3-22"><a href=""></a><span class="co"># Prop. das medianas amostrais entre med_pop - 0.1 e med_pop + 0.1</span></span>
-<span id="cb3-23"><a href=""></a><span class="fu">mean</span>(med <span class="sc">&gt;</span> med_pop<span class="fl">-.1</span> <span class="sc">&amp;</span> med <span class="sc">&lt;</span> med_pop<span class="fl">+.1</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-code-line-numbers="|5-6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># parâmetros da Weibull(a,b)</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span>; b<span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># Quantidade de réplicas</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>R <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># Tamanho da aa</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>n <span class="ot">&lt;-</span> <span class="dv">40</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># Vetor vazio para armazenar as medianas amostrais de cada réplica</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>med <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co"># Inicia as réplicas de Monte Carlo</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="cf">for</span>(r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R){</span>
+<span id="cb3-11"><a href="#cb3-11"></a>  <span class="co"># Gera uma aa de tamanho n da Weibull(a, b)</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>  x <span class="ot">&lt;-</span> <span class="fu">rweibull</span>(<span class="at">n=</span>n, <span class="at">shape =</span> a, <span class="at">scale =</span> b)</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  <span class="co"># Calcula a mediana amostral da amostra x</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>  med[r] <span class="ot">&lt;-</span> <span class="fu">median</span>(x)                      </span>
+<span id="cb3-15"><a href="#cb3-15"></a>}</span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co"># Mediana populacional</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a>med_pop <span class="ot">&lt;-</span> b<span class="sc">*</span>(<span class="fu">log</span>(<span class="dv">2</span>))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>a)</span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co"># Histograma da distribuição amostral da mediana amostral</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="fu">hist</span>(med)</span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co"># Traça a mediana da população e intervalo +0.1 ou -0.1 desse valor</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="fu">abline</span>(<span class="at">v =</span> med_pop <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">1</span>,<span class="dv">0</span>,.<span class="dv">1</span>), <span class="at">col =</span> <span class="st">'red'</span>, <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co"># Prop. das medianas amostrais entre med_pop - 0.1 e med_pop + 0.1</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="fu">mean</span>(med <span class="sc">&gt;</span> med_pop<span class="fl">-.1</span> <span class="sc">&amp;</span> med <span class="sc">&lt;</span> med_pop<span class="fl">+.1</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div id="vcenter" class="column" style="width:35%;">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-2-1.png" width="528"></p>
-</figure>
-</div>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.976</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.973</code></pre>
 </div>
 </div>
 </div>
@@ -790,12 +794,14 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 </div>
 <div class="callout-content">
 Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="math inline">\(X\)</span>, onde <span class="math inline">\(E(X) = \mu\)</span> e <span class="math inline">\(V(X) = \sigma^2 &lt; \infty\)</span>. Então a estatística
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\({\displaystyle Z_n = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}}\)</span>
 </td>
 </tr>
+
 </tbody></table>
 <p>tem distribuição aproximadamente normal padrão. A aproximação fica melhor com o aumento de <span class="math inline">\(n\)</span>.</p>
 </div>
@@ -826,12 +832,14 @@ Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="ma
 </div>
 <div class="callout-content">
 Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="math inline">\(X\)</span>, onde <span class="math inline">\(E(X) = \mu\)</span> e <span class="math inline">\(V(X) = \sigma^2 &lt; \infty\)</span> e <span class="math inline">\(S_n = \sum_{i=1}^n X_i\)</span> o total amostral. Então
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\({\displaystyle Z_n = \frac{S_n - n\mu}{\sigma\sqrt{n}}}\)</span>
 </td>
 </tr>
+
 </tbody></table>
 <p>tem distribuição aproximadamente normal padrão.</p>
 </div>
@@ -842,33 +850,29 @@ Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="ma
 <h2>1.3 Distribuição Amostral da Média Amostral</h2>
 <div class="columns">
 <div id="vcenter" class="column" style="width:65%;">
-<div class="sourceCode" id="cb5" data-code-line-numbers="|1|2-3|4|5-11|12|13-19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>R <span class="ot">&lt;-</span> <span class="dv">1000</span>; nn <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">100</span>)</span>
-<span id="cb5-2"><a href=""></a>a <span class="ot">&lt;-</span> <span class="dv">0</span>; b <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb5-3"><a href=""></a>mu <span class="ot">&lt;-</span> (a<span class="sc">+</span>b)<span class="sc">/</span><span class="dv">2</span>; sig2 <span class="ot">&lt;-</span> (b<span class="sc">-</span>a)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">12</span></span>
-<span id="cb5-4"><a href=""></a>medias <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">ncol=</span><span class="fu">length</span>(nn), <span class="at">nrow=</span>R)</span>
-<span id="cb5-5"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(nn)){</span>
-<span id="cb5-6"><a href=""></a>  n <span class="ot">&lt;-</span> nn[i]</span>
-<span id="cb5-7"><a href=""></a>  <span class="cf">for</span>(r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R){</span>
-<span id="cb5-8"><a href=""></a>    x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
-<span id="cb5-9"><a href=""></a>    medias[r, i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb5-10"><a href=""></a>  }</span>
-<span id="cb5-11"><a href=""></a>}</span>
-<span id="cb5-12"><a href=""></a>rng <span class="ot">&lt;-</span> <span class="fu">range</span>(medias); xx <span class="ot">&lt;-</span> <span class="fu">seq</span>(rng[<span class="dv">1</span>], rng[<span class="dv">2</span>], <span class="at">length.out=</span><span class="dv">1000</span>)</span>
-<span id="cb5-13"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(nn)){</span>
-<span id="cb5-14"><a href=""></a>  <span class="fu">par</span>(<span class="at">family =</span> <span class="st">"serif"</span>, <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb5-15"><a href=""></a>  <span class="fu">hist</span>(medias[, i], <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">xlim =</span> rng, <span class="at">xlab =</span> <span class="st">''</span>, <span class="at">main=</span><span class="st">''</span>, <span class="at">ylab=</span><span class="st">''</span>)</span>
-<span id="cb5-16"><a href=""></a>  <span class="fu">mtext</span>(<span class="at">text =</span> <span class="fu">paste</span>(<span class="st">'n = '</span>,nn[i],<span class="at">sep=</span><span class="st">''</span>), <span class="at">side =</span> <span class="dv">1</span>, <span class="at">line =</span> <span class="dv">2</span>)</span>
-<span id="cb5-17"><a href=""></a>  <span class="fu">mtext</span>(<span class="at">text =</span> <span class="st">'Densidade'</span>, <span class="at">side =</span> <span class="dv">2</span>, <span class="at">line =</span> <span class="dv">2</span>)</span>
-<span id="cb5-18"><a href=""></a>  <span class="fu">lines</span>(xx, <span class="fu">dnorm</span>(xx, mu, <span class="fu">sqrt</span>(sig2<span class="sc">/</span>nn[i])), <span class="at">col=</span><span class="st">'red'</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb5-19"><a href=""></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-code-line-numbers="|1|2-3|4|5-11|12|13-19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>R <span class="ot">&lt;-</span> <span class="dv">1000</span>; nn <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">100</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>a <span class="ot">&lt;-</span> <span class="dv">0</span>; b <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>mu <span class="ot">&lt;-</span> (a<span class="sc">+</span>b)<span class="sc">/</span><span class="dv">2</span>; sig2 <span class="ot">&lt;-</span> (b<span class="sc">-</span>a)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">12</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>medias <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">ncol=</span><span class="fu">length</span>(nn), <span class="at">nrow=</span>R)</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(nn)){</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  n <span class="ot">&lt;-</span> nn[i]</span>
+<span id="cb5-7"><a href="#cb5-7"></a>  <span class="cf">for</span>(r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R){</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> n, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">10</span>)</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    medias[r, i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb5-10"><a href="#cb5-10"></a>  }</span>
+<span id="cb5-11"><a href="#cb5-11"></a>}</span>
+<span id="cb5-12"><a href="#cb5-12"></a>rng <span class="ot">&lt;-</span> <span class="fu">range</span>(medias); xx <span class="ot">&lt;-</span> <span class="fu">seq</span>(rng[<span class="dv">1</span>], rng[<span class="dv">2</span>], <span class="at">length.out=</span><span class="dv">1000</span>)</span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(nn)){</span>
+<span id="cb5-14"><a href="#cb5-14"></a>  <span class="fu">par</span>(<span class="at">family =</span> <span class="st">"serif"</span>, <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="fu">hist</span>(medias[, i], <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">xlim =</span> rng, <span class="at">xlab =</span> <span class="st">''</span>, <span class="at">main=</span><span class="st">''</span>, <span class="at">ylab=</span><span class="st">''</span>)</span>
+<span id="cb5-16"><a href="#cb5-16"></a>  <span class="fu">mtext</span>(<span class="at">text =</span> <span class="fu">paste</span>(<span class="st">'n = '</span>,nn[i],<span class="at">sep=</span><span class="st">''</span>), <span class="at">side =</span> <span class="dv">1</span>, <span class="at">line =</span> <span class="dv">2</span>)</span>
+<span id="cb5-17"><a href="#cb5-17"></a>  <span class="fu">mtext</span>(<span class="at">text =</span> <span class="st">'Densidade'</span>, <span class="at">side =</span> <span class="dv">2</span>, <span class="at">line =</span> <span class="dv">2</span>)</span>
+<span id="cb5-18"><a href="#cb5-18"></a>  <span class="fu">lines</span>(xx, <span class="fu">dnorm</span>(xx, mu, <span class="fu">sqrt</span>(sig2<span class="sc">/</span>nn[i])), <span class="at">col=</span><span class="st">'red'</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb5-19"><a href="#cb5-19"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div id="vcenter" class="column" style="width:35%;">
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-3-1.png" width="528"></p>
-</figure>
-</div>
 </div>
 </div>
 </div>
@@ -876,15 +880,15 @@ Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="ma
 </section>
 <section id="distribuição-amostral-da-média-amostral-3" class="slide level2 unnumbered unlisted">
 <h2>1.3 Distribuição Amostral da Média Amostral</h2>
-<div class="cell quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="cell quarto-layout-panel" data-fig.ncol="3">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-4-1.png" width="528"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-4-2.png" width="528"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-4-3.png" width="528"></p>
 </div>
 </div>
@@ -894,33 +898,29 @@ Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="ma
 <h2>1.3 Distribuição Amostral da Média Amostral</h2>
 <div class="columns">
 <div id="vcenter" class="column" style="width:65%;">
-<div class="sourceCode" id="cb6" data-code-line-numbers="|1|2-3|4|5-11|12|13-19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>R <span class="ot">&lt;-</span> <span class="dv">1000</span>; nn <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">100</span>)</span>
-<span id="cb6-2"><a href=""></a>lambda <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb6-3"><a href=""></a>mu <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>lambda; sig2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(lambda<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb6-4"><a href=""></a>medias <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">ncol=</span><span class="fu">length</span>(nn), <span class="at">nrow=</span>R)</span>
-<span id="cb6-5"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(nn)){</span>
-<span id="cb6-6"><a href=""></a>  n <span class="ot">&lt;-</span> nn[i]</span>
-<span id="cb6-7"><a href=""></a>  <span class="cf">for</span>(r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R){</span>
-<span id="cb6-8"><a href=""></a>    x <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="at">n =</span> n, <span class="at">rate =</span> lambda)</span>
-<span id="cb6-9"><a href=""></a>    medias[r, i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb6-10"><a href=""></a>  }</span>
-<span id="cb6-11"><a href=""></a>}</span>
-<span id="cb6-12"><a href=""></a>rng <span class="ot">&lt;-</span> <span class="fu">range</span>(medias); xx <span class="ot">&lt;-</span> <span class="fu">seq</span>(rng[<span class="dv">1</span>], rng[<span class="dv">2</span>], <span class="at">length.out=</span><span class="dv">1000</span>)</span>
-<span id="cb6-13"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(nn)){</span>
-<span id="cb6-14"><a href=""></a>  <span class="fu">par</span>(<span class="at">family =</span> <span class="st">"serif"</span>, <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb6-15"><a href=""></a>  <span class="fu">hist</span>(medias[, i], <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">xlim =</span> rng, <span class="at">xlab =</span> <span class="st">''</span>, <span class="at">main=</span><span class="st">''</span>, <span class="at">ylab=</span><span class="st">''</span>)</span>
-<span id="cb6-16"><a href=""></a>  <span class="fu">mtext</span>(<span class="at">text =</span> <span class="fu">paste</span>(<span class="st">'n = '</span>,nn[i],<span class="at">sep=</span><span class="st">''</span>), <span class="at">side =</span> <span class="dv">1</span>, <span class="at">line =</span> <span class="dv">2</span>)</span>
-<span id="cb6-17"><a href=""></a>  <span class="fu">mtext</span>(<span class="at">text =</span> <span class="st">'Densidade'</span>, <span class="at">side =</span> <span class="dv">2</span>, <span class="at">line =</span> <span class="dv">2</span>)</span>
-<span id="cb6-18"><a href=""></a>  <span class="fu">lines</span>(xx, <span class="fu">dnorm</span>(xx, mu, <span class="fu">sqrt</span>(sig2<span class="sc">/</span>nn[i])), <span class="at">col=</span><span class="st">'red'</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb6-19"><a href=""></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-code-line-numbers="|1|2-3|4|5-11|12|13-19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>R <span class="ot">&lt;-</span> <span class="dv">1000</span>; nn <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">100</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>lambda <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>mu <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>lambda; sig2 <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">/</span>(lambda<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>medias <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">ncol=</span><span class="fu">length</span>(nn), <span class="at">nrow=</span>R)</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(nn)){</span>
+<span id="cb6-6"><a href="#cb6-6"></a>  n <span class="ot">&lt;-</span> nn[i]</span>
+<span id="cb6-7"><a href="#cb6-7"></a>  <span class="cf">for</span>(r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R){</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    x <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="at">n =</span> n, <span class="at">rate =</span> lambda)</span>
+<span id="cb6-9"><a href="#cb6-9"></a>    medias[r, i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb6-10"><a href="#cb6-10"></a>  }</span>
+<span id="cb6-11"><a href="#cb6-11"></a>}</span>
+<span id="cb6-12"><a href="#cb6-12"></a>rng <span class="ot">&lt;-</span> <span class="fu">range</span>(medias); xx <span class="ot">&lt;-</span> <span class="fu">seq</span>(rng[<span class="dv">1</span>], rng[<span class="dv">2</span>], <span class="at">length.out=</span><span class="dv">1000</span>)</span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(nn)){</span>
+<span id="cb6-14"><a href="#cb6-14"></a>  <span class="fu">par</span>(<span class="at">family =</span> <span class="st">"serif"</span>, <span class="at">mar=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb6-15"><a href="#cb6-15"></a>  <span class="fu">hist</span>(medias[, i], <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">xlim =</span> rng, <span class="at">xlab =</span> <span class="st">''</span>, <span class="at">main=</span><span class="st">''</span>, <span class="at">ylab=</span><span class="st">''</span>)</span>
+<span id="cb6-16"><a href="#cb6-16"></a>  <span class="fu">mtext</span>(<span class="at">text =</span> <span class="fu">paste</span>(<span class="st">'n = '</span>,nn[i],<span class="at">sep=</span><span class="st">''</span>), <span class="at">side =</span> <span class="dv">1</span>, <span class="at">line =</span> <span class="dv">2</span>)</span>
+<span id="cb6-17"><a href="#cb6-17"></a>  <span class="fu">mtext</span>(<span class="at">text =</span> <span class="st">'Densidade'</span>, <span class="at">side =</span> <span class="dv">2</span>, <span class="at">line =</span> <span class="dv">2</span>)</span>
+<span id="cb6-18"><a href="#cb6-18"></a>  <span class="fu">lines</span>(xx, <span class="fu">dnorm</span>(xx, mu, <span class="fu">sqrt</span>(sig2<span class="sc">/</span>nn[i])), <span class="at">col=</span><span class="st">'red'</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb6-19"><a href="#cb6-19"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div id="vcenter" class="column" style="width:35%;">
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-5-1.png" width="528"></p>
-</figure>
-</div>
 </div>
 </div>
 </div>
@@ -928,15 +928,15 @@ Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="ma
 </section>
 <section id="distribuição-amostral-da-média-amostral-5" class="slide level2 unnumbered unlisted">
 <h2>1.3 Distribuição Amostral da Média Amostral</h2>
-<div class="cell quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="cell quarto-layout-panel" data-fig.ncol="3">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-6-1.png" width="528"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-6-2.png" width="528"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="cell-output-display quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-6-3.png" width="528"></p>
 </div>
 </div>
@@ -948,6 +948,7 @@ Seja <span class="math inline">\(X_1, \ldots, X_n\)</span> aa de <span class="ma
 <p><strong>Exemplo 2 (cont.):</strong> Tinhamos uma aa de uma população <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Note que <span class="math inline">\(\mu = E(X) = \frac{1}{\lambda}\)</span> e <span class="math inline">\(\sigma^2 = V(X) = \frac{1}{\lambda^2}\)</span>. Vimos que a distribuição exata do total amostral era uma <span class="math inline">\(\text{Gama}(n, \frac{1}{\lambda})\)</span>.</p>
 <p>Suponha que temos <span class="math inline">\(\lambda = 0.5\)</span> e desejamos encontrar <span class="math inline">\(P(\bar{X} \leq \mu - 0.5) = P(S_n \leq n\mu - 0.5n)\)</span>, cujo valor exato pela gama é 0.1248, se <span class="math inline">\(n=20\)</span> e 0.0463, se <span class="math inline">\(n=40\)</span>, por exemplo.</p>
 Agora, temos que
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
@@ -970,6 +971,7 @@ Agora, temos que
 <span class="math inline">\({\displaystyle \begin{cases} P(Z \leq -1.12) = 0.1314, &amp; n=20;\\ P(Z \leq -1.58) = 0.0571, &amp; n=40. \end{cases}}\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 <div class="callout callout-caution no-icon callout-titled callout-style-default">
@@ -991,6 +993,7 @@ Agora, temos que
 <p>Note que o enunciado nos fornece que <span class="math inline">\(\mu = E(X) = 10000\)</span>, <span class="math inline">\(\sigma = 500\)</span> e <span class="math inline">\(n = 40\)</span>. Desejamos obter <span class="math inline">\(P(9900 &lt; \bar{X} &lt; 10200)\)</span>.</p>
 </div>
 <div class="fragment">
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
@@ -1013,6 +1016,7 @@ Agora, temos que
 <span class="math inline">\(\Phi(2.53) - \Phi(-1.27) = 0.9943 - 0.1020 = 0.8923\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 </div>
 </div>
@@ -1132,12 +1136,14 @@ Agora, temos que
 </div>
 <div class="callout-content">
 Seja <span class="math inline">\(\theta\)</span> um parâmetro e <span class="math inline">\(\hat\theta\)</span> um estimador de <span class="math inline">\(\theta\)</span>. O vício (ou viés) de <span class="math inline">\(\hat\theta\)</span> é definido por
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\(B(\hat\theta) = E(\hat\theta) - \theta = \mu_{\hat\theta} - \theta;\)</span>
 </td>
 </tr>
+
 </tbody></table>
 <p>onde <span class="math inline">\(\mu_{\hat\theta} = E(\hat\theta)\)</span> é o valor esperado de <span class="math inline">\(\hat\theta\)</span>.</p>
 </div>
@@ -1166,11 +1172,7 @@ Seja <span class="math inline">\(\theta\)</span> um parâmetro e <span class="ma
 <div id="vcenter" class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-7-1.png" width="528"></p>
-</figure>
-</div>
 </div>
 </div>
 </div><div id="vcenter" class="column" style="width:50%;">
@@ -1193,6 +1195,7 @@ Seja <span class="math inline">\(\theta\)</span> um parâmetro e <span class="ma
 <p>Suponha que serão observadas <span class="math inline">\(n − 1 \geq 1\)</span> observações <span class="math inline">\(X_1, \ldots, X_{n-1}\)</span> de <span class="math inline">\(X\)</span>, com <span class="math inline">\(E(X) = \mu\)</span>. Defina a média dessas <span class="math inline">\(n-1\)</span> observações por <span class="math inline">\(\bar{X}_{n-1} = \frac{1}{n-1}\sum_{i=1}^{n-1}\)</span>.</p>
 <div class="fragment">
 Suponha que uma nova observação <span class="math inline">\(X_n\)</span> ficará disponível. Considere os seguintes estimadores de <span class="math inline">\(\mu\)</span>:
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
@@ -1205,6 +1208,7 @@ e
 <span class="math inline">\(\hat{\mu}_2 = \frac{\bar{X}_{n-1} + X_n}{2}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 </div>
 <div class="fragment">
@@ -1212,22 +1216,26 @@ e
 </div>
 <div class="fragment">
 Temos que
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\(E(\hat{\mu}_1) = E[\frac{n-1}{n}\bar{X}_{n-1} + \frac{1}{n}X_n] = \frac{n-1}{n}E(\bar{X}_{n-1}) + \frac{1}{n}E(X_n) = \frac{n-1}{n}\mu + \frac{1}{n}\mu = \mu.\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 <div class="fragment">
 <p>e que</p>
+
 <table>
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\(E(\hat{\mu}_2) = E[\frac{\bar{X}_{n-1} + X_n}{2}] = \frac{E(\bar{X}_{n-1}) + E(X_n)}{2} = \frac{\mu + \mu}{2} = \mu.\)</span>
 </td>
 </tr>
+
 </tbody></table>
 </div>
 <div class="fragment">
@@ -1238,6 +1246,7 @@ Temos que
 <h2>2.1 Estimação Pontual (Vício)</h2>
 <div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;">
 <p><strong>Exemplo 5:</strong> Verifiquemos que <span class="math inline">\(\hat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^n(X_i - \bar{X})^2\)</span> é um estimador viesado de <span class="math inline">\(\sigma^2\)</span>. De fato,</p>
+
 <table>
 <tbody><tr class="fragment" style="border-bottom:none;text-align:center;">
 <td>
@@ -1247,8 +1256,7 @@ Temos que
 <span class="math inline">\(=\)</span>
 </td>
 <td>
-<span class="math inline">\(\frac{1}{n}\sum_{i=1}^nE[(X_i-\bar{X})^2]=\frac{1}{n}\sum_{i=1}^n
-E[(X_i-\mu-(\bar{X}-\mu))^2]\)</span>
+<span class="math inline">\(\frac{1}{n}\sum_{i=1}^nE[(X_i-\bar{X})^2]=\frac{1}{n}\sum_{i=1}^n E[(X_i-\mu-(\bar{X}-\mu))^2]\)</span>
 </td>
 </tr>
 <tr class="fragment" style="border-bottom:none;text-align:center;">
@@ -1301,6 +1309,7 @@ E[(X_i-\mu-(\bar{X}-\mu))^2]\)</span>
 <span class="math inline">\(\frac{1}{n}\sum_{i=1}^n\left\{\sigma^2-\frac{2\sigma^2}{n}+\frac{\sigma^2}{n}\right\}=\sigma^2 \color{red}{-\frac{\sigma^2}{n}}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 </div>
 <div class="fragment">
@@ -1359,11 +1368,7 @@ E[(X_i-\mu-(\bar{X}-\mu))^2]\)</span>
 <div id="vcenter" class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<figure>
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-8-1.png" width="528"></p>
-</figure>
-</div>
 </div>
 </div>
 </div><div id="vcenter" class="column" style="width:50%;">
@@ -1384,36 +1389,208 @@ E[(X_i-\mu-(\bar{X}-\mu))^2]\)</span>
 <h2></h2>
 <h3 class="unnumbered unlisted" id="exemplo-4-cont.">Exemplo 4 (cont.)</h3>
 Verifiquemos os Erros-Padrão de <span class="math inline">\(\hat{\mu}_1\)</span> e de <span class="math inline">\(\hat{\mu}_2\)</span>. <span class="fragment" data-fragment-index="1">Temos que</span>
+
 <table class="fragment" data-fragment-index="1">
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\({\displaystyle V(\hat{\mu}_1) = V\left(\frac{n-1}{n}\bar{X}_{n-1}+\frac{1}{n}X_n\right) = \left(\frac{n-1}{n}\right)^2\frac{\sigma^2}{n-1}+\frac{1}{n^2}\sigma^2 = \frac{n-1+1}{n^2}\sigma^2=\frac{1}{n}\sigma^2}\)</span>
 </td>
 </tr>
+
 </tbody></table>
 <span class="fragment" data-fragment-index="2">e</span>
+
 <table class="fragment" data-fragment-index="2">
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
-<span class="math inline">\({\displaystyle V(\hat{\mu}_2) = V\left(\frac{\bar{X}_{n-1}+x_n}{2}\right) = \frac{1}{4}(V(\bar{X}_{n-1})+V(X_n)) = \frac{1}{4} \left(\frac{\sigma^2}{n-1} + \sigma^2\right)=\frac{n}{4(n-1)}\sigma^2}\)</span>.
+<span class="math inline">\({\displaystyle V(\hat{\mu}_2) = V\left(\frac{\bar{X}_{n-1}+X_n}{2}\right) = \frac{1}{4}(V(\bar{X}_{n-1})+V(X_n)) = \frac{1}{4} \left(\frac{\sigma^2}{n-1} + \sigma^2\right)=\frac{n}{4(n-1)}\sigma^2}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 <span class="fragment" data-fragment-index="3">Vejamos quando <span class="math inline">\(\hat{\mu}_1\)</span> é mais eficiente do que <span class="math inline">\(\hat{\mu}_2\)</span>.</span> <span class="fragment" data-fragment-index="4">De fato,</span>
+
 <table class="fragment" data-fragment-index="4">
 <tbody><tr style="border-bottom:none;text-align:center;">
 <td>
 <span class="math inline">\({\displaystyle V(\hat{\mu}_1) &lt; V(\hat{\mu}_2) \Rightarrow \frac{\sigma^2}{n} &lt; \frac{n\sigma^2}{4(n-1)} \Rightarrow n^2-4n+4&gt;0 \Rightarrow (n-2)^2&gt;0}\)</span>.
 </td>
 </tr>
+
 </tbody></table>
 <p><span class="fragment" data-fragment-index="5">Assim, <span class="math inline">\(\hat{\mu}_1\)</span> é mais eficiente do que <span class="math inline">\(\hat{\mu}_2\)</span> se <span class="math inline">\((n-2)^2&gt;0 \Rightarrow n &gt; 2\)</span>.</span> <span class="fragment" data-fragment-index="6">Se <span class="math inline">\(n = 2\)</span> ambos estimadores são igualmente eficientes.</span></p>
 </section>
 <section id="estimação-pontual-erro-quadrático-médio" class="slide level2 unnumbered unlisted">
 <h2>2.1 Estimação Pontual (Erro Quadrático Médio)</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Vimos que o Erro-Padrão nos permite comparar a eficiência de estimadores não viesados. Para comparar estimadores com vícios diferentes, podemos usar o <span style="color:red;"><strong>Erro Quadrático Médio</strong></span>.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+Seja <span class="math inline">\(\hat{\theta}\)</span> estimador de <span class="math inline">\(\theta\)</span>. Definimos o <strong>Erro Quadrático Médio</strong> (EQM) de <span class="math inline">\(\hat{\theta}\)</span> por
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(EQM(\hat{\theta})=E[(\hat{\theta}-\theta)^2]\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercícios</strong></p>
+</div>
+<div class="callout-content">
+Mostre que o EQM de <span class="math inline">\(\hat\theta\)</span> pode ser escrito como a soma do quadrado do vício e da variância de <span class="math inline">\(\hat\theta\)</span>, isto é,
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(EQM(\hat{\theta})=[B(\hat{\theta})]^2+V(\hat{\theta})\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="estimação-intervalar" class="slide level2" data-number="2.2">
-<h2><span class="header-section-number">2.2</span> Estimação Intervalar</h2>
+<section id="section-4" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-5-cont.">Exemplo 5 (cont.)</h3>
+<p>No Exemplo 5, mostramos que <span class="math inline">\(B(\hat{\sigma}^2)=-\frac{\sigma^2}{n}\)</span>. É possível mostrar que <span class="math inline">\(B(S^2)=0\)</span> e que, se <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>, então</p>
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\({\displaystyle V(S^2)=\frac{2\sigma^4}{n-1}}\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\({\displaystyle V(\hat{\sigma}^2) = \left( \frac{n-1}{n} \right)^2 \frac{2\sigma^4}{n-1}}\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+<div class="fragment">
+<p>Logo, os EQM’s de <span class="math inline">\(S^2\)</span> e de <span class="math inline">\(\hat{\sigma}^2\)</span> são, respectivamente,</p>
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\({\displaystyle EQM(S^2)=\frac{2\sigma^4}{n-1}}\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\({\displaystyle EQM(\hat{\sigma}^2)=\left(\frac{\sigma^2}{n}\right)^2 + \frac{(n-1)2\sigma^4}{n^2} = \frac{2\sigma^4}{n}-\frac{\sigma^4}{n^2}}\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+<div class="fragment">
+<p>Assim, em termos de EQM, vemos que <span class="math inline">\(\hat{\sigma}^2\)</span> é melhor do que <span class="math inline">\(S^2\)</span>.</p>
+</div>
+</section>
+<section id="estimação-pontual-consistência" class="slide level2 unnumbered unlisted">
+<h2>2.1 Estimação Pontual (Consistência)</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+Seja <span class="math inline">\(\hat{\theta}\)</span> um estimador do parâmetro <span class="math inline">\(\theta\)</span>. Dizemos que <span class="math inline">\(\hat{\theta}\)</span> é <strong>consistente</strong> se seu EQM tende a zero quando o tamanho da amostra tende a infinito. Isto é, se
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\({\displaystyle \lim_{n\to\infty}EQM(\hat{\theta})=0}\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>A definição acima implica que <span class="math inline">\(\hat{\theta}\)</span> é consistente se seu vício e sua variância tendem a 0;</li>
+<li>Em poucas palavras, quando um estimador é consistente suas estimativas tendem a ser próximas do verdadeiro valor do parâmetro</li>
+</ol>
+</div>
+</div>
+</div>
+<div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 5 (cont.):</strong> Como <span class="math inline">\({\displaystyle \lim_{n\to\infty} EQM(S^2) = \lim_{n\to\infty} EQM(\hat\sigma^2) = 0}\)</span>, ambos são consistentes para <span class="math inline">\(\sigma^2\)</span>.</p>
+</div>
+</section>
+<section id="estimação-pontual-consistência-1" class="slide level2 unnumbered unlisted">
+<h2>2.1 Estimação Pontual (Consistência)</h2>
+<div class="columns">
+<div id="vcenter" class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-9-1.png" style="width:95.0%"></p>
+</div>
+</div>
+</div><div id="vcenter" class="column" style="width:50%;">
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+Ilustração da distribuição amostral de um estimador consistente com
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\({\displaystyle \color{red}{n}&lt; \color{blue}{n} &lt; \color{darkgreen}{n}}\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="métodos-de-obtenção-de-estimadores" class="slide level2" data-number="2.2">
+<h2><span class="header-section-number">2.2</span> Métodos de obtenção de estimadores</h2>
+</section>
+<section id="estimação-intervalar" class="slide level2" data-number="2.3">
+<h2><span class="header-section-number">2.3</span> Estimação Intervalar</h2>
 </section></section>
 <section id="testes-de-hipóteses" class="title-slide slide level1 center" data-number="3">
 <h1><span class="header-section-number">3</span> Testes de Hipóteses</h1>
@@ -1501,10 +1678,8 @@ Verifiquemos os Erros-Padrão de <span class="math inline">\(\hat{\mu}_1\)</span
 
 <section id="fim-1" class="title-slide slide level1 unnumbered unlisted center">
 <h1>FIM</h1>
-<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><a href="../index.html">Tópicos 🔙</a> | <a href="inferencia.html#/TOC">Sumário 📋</a></p>
-</div>
 </div>
 </section>
     </div>
@@ -1533,6 +1708,7 @@ Verifiquemos os Erros-Padrão de <span class="math inline">\(\hat{\mu}_1\)</span
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1721,80 +1897,42 @@ Verifiquemos os Erros-Padrão de <span class="math inline">\(\hat{\mu}_1\)</span
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -1872,27 +2010,10 @@ Verifiquemos os Erros-Padrão de <span class="math inline">\(\hat{\mu}_1\)</span
         // clear code selection
         e.clearSelection();
       });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1902,17 +2023,8 @@ Verifiquemos os Erros-Padrão de <span class="math inline">\(\hat{\mu}_1\)</span
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1926,11 +2038,7 @@ Verifiquemos os Erros-Padrão de <span class="math inline">\(\hat{\mu}_1\)</span
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {
