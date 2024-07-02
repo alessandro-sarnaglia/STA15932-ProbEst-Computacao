@@ -1062,7 +1062,217 @@ Ilustração da distribuição amostral de um estimador consistente com
 
 :::
 
-## Métodos de obtenção de estimadores
+## Métodos de Obtenção de Estimadores
+
+::: {.callout-caution}
+## Observações
+
+Em alguns casos, o estimador é escolhido por seu apelo intuitivo. Por exemplo, é natural usar
+
+- $\bar{X}$ (média amostral) para estimar $\mu$ (média populacional);
+- $\hat{p}$ (proporção amostral) para estimar $p$ (proporção populacional);
+- $S^2$ (variância amostral) para estimar $\sigma^2$ (variância populacional).
+
+:::
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 6:** Qual o estimador mais apropriado para a taxa $\lambda$ de uma população $X \sim \text{Exp}(\lambda)$?
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+No Exemplo 6, não há um candidato natural para $\hat\lambda$. Veremos dois métodos de obtenção de estimadores: o **método dos momentos**; e o **método da máxima verossimilhança**.
+
+:::
+
+## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observação
+
+Nosso objetivo é encontrar um estimador $\hat\theta$ do vetor de parâmetros $\theta = (\theta_1,\ldots, \theta_\kappa)'$ por meio de uma aa $X_1,\ldots,X_n$ de uma população $X$.
+
+:::
+
+::: {.callout-note}
+## Definições
+
+1. Fixado $k\in\{1,2,\ldots\}$, o **momento populacional** de ordem $k$ de uma população $X$ é definido por $\mu^{(k)}=E(X^k)$;
+2. Dada uma aa $X_1,\ldots,X_n$ de uma população $X$ e fixado $k\in\{1,2, \ldots\}$, o **momento amostral** de ordem $k$ é definido por $\hat{\mu}^{(k)}=\frac{1}{n}\sum_{i=1}^{n}X^k_i$.
+
+:::
+
+::: {.callout-caution}
+## Observação
+
+Note que $\mu^{(k)}=\mu^{(k)}(\theta)$
+
+:::
+
+## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Se o vetor paramétrico $\theta = (\theta_1,\ldots, \theta_\kappa)'$ tem dimensão $\kappa$ e os momentos populacionais até a ordem $\kappa$ são $\mu^{(1)} = \mu^{(1)}(\theta), \ldots, \mu^{(\kappa)} = \mu^{(\kappa)}(\theta)$. O Estimador de Método dos Momentos (EMM), $\hat\theta_{\text{MM}}$, é o vetor $\theta$ que soluciona o sistema de equações
+$$
+\begin{cases}
+  \mu^{(1)}(\theta) &=& \hat{\mu}^{(1)}\\
+	&\vdots&\\
+	\mu^{(\kappa)}(\theta) &=& \hat{\mu}^{(\kappa)}
+\end{cases}
+$$
+:::
+
+::: {.callout-caution}
+## Observação
+
+Caso o sistema acima não seja bijetivo (por exemplo, se $\theta = (\theta_1, \theta_2)'$, mas $\mu^{(1)}=\mu^{(2)}=\theta_1$), podemos utilizar momentos populacionais de ordens superiores.
+
+:::
+
+## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted}
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%; margin-bottom:24px;"}
+
+**Exemplo 6 (cont.):** Temos que, para a população $X \sim \text{Exp}(\lambda)$, o momento populacional de ordem 1 é $\mu^{(1)} = E(X) = \frac{1}{\lambda}$. Como o momento amostral de ordem 1 é $\hat\mu^{(1)} = \bar{X}$, o EMM de $\lambda$ é o valor $\hat\lambda_{\text{MM}}$ tal que $\frac{1}{\hat\lambda_{\text{MM}}} = \bar{X}$. Logo, $\hat\lambda_{\text{MM}} = \frac{1}{\bar{X}}$.
+
+:::
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 7:** Se a população for $X\sim \text{N}(\mu,\sigma^2)$, então $\mu^{(1)} = E(X) = \mu$ e $\mu^{(2)} = E(X^2) = \sigma^2 + \mu^2$. Como $\hat\mu^{(1)} = \bar{X}$ e $\hat\mu^{(2)} = \frac{1}{n}\sum_i X_i^2$, os EMM's de $\mu$ e $\sigma$ são dados, respectivamente, por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>${\displaystyle \hat\mu_{\text{MM}} = \bar{X}}$ </td> <td> e </td> <td>${\displaystyle \hat\sigma_{\text{MM}} = \left(\frac{1}{n}\sum_i X_i^2 - \hat\mu_{\text{MM}}^2\right)^{1/2}}$. </td>
+  </tr>
+</table>
+
+:::
+
+::: {.callout-tip}
+## Exercício
+
+Encontre o EMM do parâmetro $\theta$ se a população $X$ tem fdp $f(x)=\frac{\theta}{x^{\theta+1}}$, $x>1$.
+:::
+
+## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted}
+
+::: {.callout-note}
+## Definição
+
+Seja $X_1,\ldots,X_n$ aa de uma vad $X$ com fmp $p(x;\theta)$. A função de verossimilhança é definida por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\displaystyle L(\theta;x_1,\ldots,x_n) = p(x_1, \ldots, x_n; \theta) = p(x_1;\theta)\cdots p(x_n;\theta) = \prod_{i=1}^n p(x_i;\theta)$. </td>
+  </tr>
+</table>
+
+Seja $X_1,\ldots,X_n$ aa de uma vac $X$ com fdp $f(x;\theta)$. A função de verossimilhança é definida por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\displaystyle  L(\theta;x_1,\ldots,x_n) = f(x_1, \ldots, x_n; \theta) = f(x_1;\theta)\cdots f(x_n;\theta) = \prod_{i=1}^n f(x_i;\theta)$. </td>
+  </tr>
+</table>
+
+:::
+
+::: {.callout-caution}
+## Observações
+
+1. A função de verossimilhança tem a mesma definição de fmp conjunta (se a população $X$ é discreta) ou fdp conjunta (se a população $X$ é contínua), mas é função de $\theta$ e não de $x_1, \ldots, x_n$;
+2. $L(\theta; x_1, \ldots, x_n)$ mede a **plausabilidade** de $\theta$ com respeito a amostra observada $x_1, \ldots, x_n$.
+:::
+
+## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted} 
+
+::: {.callout-note}
+## Definição
+
+O Estimador de Máxima Verossimilhança (EMV) de $\theta$ é definido por
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\DeclareMathOperator*{\aM}{argmax}\hat\theta_{\text{MV}}=\aM_{\theta}[L(\theta;x_1,\ldots,x_n)]$.</td>
+  </tr>
+</table>
+:::
+
+::: {.callout-caution}
+## Observações
+
+1. No caso discreto, pela independência, temos $L(\theta;x_1,\ldots,x_n)= P(X_1=x_1,\ldots,X_n=x_n|\theta),$ de modo que $\hat{\theta}_{\text{MV}}$ maximiza essa probabilidade, tornando a amostra $x_1,\ldots,x_n$ mais **plausível** ou **verossímil**;
+2. Se $L$ é diferenciável em $\theta$, o EMV é o valor $\hat{\theta}_{\text{MV}}$ que satisfaz:
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\left[\left.\frac{\partial}{\partial\theta} \ell(\theta) \right|_{\theta=\hat{\theta}_{\text{MV}}} \right] = \left[\left.\frac{\partial}{\partial\theta}\log\left[L(\theta;x_1,\ldots,x_n) \right]\right|_{\theta=\hat{\theta}_{\text{MV}}} \right] = \sum_{i=1}^{n} \left[ \left.\frac{\partial}{\partial\theta}\log f(x_i;\theta)\right|_{\theta=\hat{\theta}_{\text{MV}}} \right]=0$,</td>
+  </tr>
+</table>
+em que $\ell(\theta) = \log\left[L(\theta;x_1,\ldots,x_n) \right]$ é a [**log-verossimilhança**]{style='color:red;'}, desde que $\hat{\theta}_{\text{MV}}$ seja ponto de máximo;
+3. Sob algumas suposições de regularidade, é possível mostrar que o EMV é consistente.
+
+:::
+
+## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted} 
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%; margin-bottom:24px;"}
+
+**Exemplo 6 (cont.):** A função de verossimilhança se a população $X\sim \text{Exp}(\lambda)$ é
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$L(\lambda; x_1, \ldots, x_n) = \prod_{i=1}^n[\lambda e^{-\lambda x_i}] = \lambda^n e^{-\lambda \sum_ix_i} = \lambda^n e^{-\lambda n\bar{x}}$.</td>
+  </tr>
+</table>
+Assim, $\ell(\lambda) = n\log(\lambda)-\lambda n \bar{x}$ e $\frac{\partial\ell(\lambda)}{\partial\lambda} = \frac{n}{\lambda} - n\bar{x}$. Como $\hat\lambda_{\text{MV}}$ satisfaz $\frac{n}{\hat\lambda_{\text{MV}}} - n\bar{x} = 0$, temos $\hat\lambda_{\text{MV}} = \frac{1}{\bar{X}}$.
+
+:::
+
+::: {style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 7 (cont.):** Vamos determinar o EMV de $(\mu, \sigma)$. Podemos mostrar que a log-verossimilhança é
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\ell(\mu,\sigma) = -\frac{n}{2}\log(2\pi) - n\log(\sigma) -\frac{1}{2}\sum_i\left(\frac{x_i-\mu}{\sigma}\right)^2$.</td>
+  </tr>
+</table>
+Assim,
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td> $\frac{\partial\ell}{\partial\mu} = \sum_i\left(\frac{x_i-\mu}{\sigma^2}\right) = \frac{n\bar{x} - n\mu}{\sigma^2}$ </td> <td> e </td> <td> $\frac{\partial\ell}{\partial\sigma} = -\frac{n}{\sigma} + \frac{1}{\sigma^3}\sum_i(x_i-\mu)^2$. </td>
+  </tr>
+</table>
+Logo, os EMV's $\hat\mu_{\text{MV}}$ e $\hat\sigma_{\text{MV}}$ devem satisfazer
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td> $\frac{n\bar{x} - n\hat\mu_{\text{MV}}}{\hat\sigma^2_{\text{MV}}} = 0$ </td> <td> e </td> <td> $-\frac{n}{\hat\sigma_{\text{MV}}} + \frac{1}{\hat\sigma^3_{\text{MV}}}\sum_i(x_i-\hat\mu_{\text{MV}})^2 = 0$, </td>
+  </tr>
+</table>
+o que fornece $\hat\mu_{\text{MV}} = \bar{X}$ e $\hat\sigma_{\text{MV}} = \left[\frac{1}{n}\sum_i(X_i - \hat\mu_{\text{MV}})^2\right]^{1/2}$.
+:::
+
+## 2.2 Métodos de Obtenção de Estimadores {.unnumbered .unlisted} 
+
+
+::: {.callout-tip}
+## Exercício
+
+Determine EMV do parâmetro $\theta$ se a população $X$ tem fdp $f(x)=\frac{\theta}{x^{\theta+1}}$, $x>1$.
+:::
+
+::: {.callout-caution}
+## Observações
+
+1. Em alguns casos, não podemos realizar analiticamente a maximização de $L(\theta; x_1, \ldots, x_n)$, ou equivalentemente de $\ell(\theta)$;
+2. Nesses casos, podemos recorrer é métodos numéricos. Por exemplo, podemos utilizar o algoritmo de Newton-Raphson para encontrar as raízes
+<table>
+  <tr style="border-bottom:none;text-align:center;">
+    <td> $\left[\left.\frac{\partial \ell(\theta)}{\partial \theta}\right|_{\theta = \hat\theta_{\text{MV}}}\right] = 0$. </td>
+  </tr>
+</table>
+:::
+
 
 ## Estimação Intervalar
 
@@ -1088,7 +1298,7 @@ Ilustração da distribuição amostral de um estimador consistente com
 :::
 
 ::: {.callout-tip}
-## Exercícios
+## Exercício
 
 :::
 

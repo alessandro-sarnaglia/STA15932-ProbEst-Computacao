@@ -416,7 +416,7 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <li><a href="#/estimação" id="/toc-estimação"><span class="header-section-number">2</span> Estimação</a>
 <ul>
 <li><a href="#/estimação-pontual" id="/toc-estimação-pontual"><span class="header-section-number">2.1</span> Estimação Pontual</a></li>
-<li><a href="#/métodos-de-obtenção-de-estimadores" id="/toc-métodos-de-obtenção-de-estimadores"><span class="header-section-number">2.2</span> Métodos de obtenção de estimadores</a></li>
+<li><a href="#/métodos-de-obtenção-de-estimadores" id="/toc-métodos-de-obtenção-de-estimadores"><span class="header-section-number">2.2</span> Métodos de Obtenção de Estimadores</a></li>
 <li><a href="#/estimação-intervalar" id="/toc-estimação-intervalar"><span class="header-section-number">2.3</span> Estimação Intervalar</a></li>
 </ul></li>
 <li><a href="#/testes-de-hipóteses" id="/toc-testes-de-hipóteses"><span class="header-section-number">3</span> Testes de Hipóteses</a></li>
@@ -726,7 +726,7 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-1-1.png" width="528"></p>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.905</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.894</code></pre>
 </div>
 </div>
 </div>
@@ -768,7 +768,7 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-2-1.png" width="528"></p>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.973</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.983</code></pre>
 </div>
 </div>
 </div>
@@ -1587,7 +1587,321 @@ Ilustração da distribuição amostral de um estimador consistente com
 </div>
 </section>
 <section id="métodos-de-obtenção-de-estimadores" class="slide level2" data-number="2.2">
-<h2><span class="header-section-number">2.2</span> Métodos de obtenção de estimadores</h2>
+<h2><span class="header-section-number">2.2</span> Métodos de Obtenção de Estimadores</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<p>Em alguns casos, o estimador é escolhido por seu apelo intuitivo. Por exemplo, é natural usar</p>
+<ul>
+<li><span class="math inline">\(\bar{X}\)</span> (média amostral) para estimar <span class="math inline">\(\mu\)</span> (média populacional);</li>
+<li><span class="math inline">\(\hat{p}\)</span> (proporção amostral) para estimar <span class="math inline">\(p\)</span> (proporção populacional);</li>
+<li><span class="math inline">\(S^2\)</span> (variância amostral) para estimar <span class="math inline">\(\sigma^2\)</span> (variância populacional).</li>
+</ul>
+</div>
+</div>
+</div>
+<div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 6:</strong> Qual o estimador mais apropriado para a taxa <span class="math inline">\(\lambda\)</span> de uma população <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>?</p>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>No Exemplo 6, não há um candidato natural para <span class="math inline">\(\hat\lambda\)</span>. Veremos dois métodos de obtenção de estimadores: o <strong>método dos momentos</strong>; e o <strong>método da máxima verossimilhança</strong>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="métodos-de-obtenção-de-estimadores-1" class="slide level2 unnumbered unlisted">
+<h2>2.2 Métodos de Obtenção de Estimadores</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Nosso objetivo é encontrar um estimador <span class="math inline">\(\hat\theta\)</span> do vetor de parâmetros <span class="math inline">\(\theta = (\theta_1,\ldots, \theta_\kappa)'\)</span> por meio de uma aa <span class="math inline">\(X_1,\ldots,X_n\)</span> de uma população <span class="math inline">\(X\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definições</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>Fixado <span class="math inline">\(k\in\{1,2,\ldots\}\)</span>, o <strong>momento populacional</strong> de ordem <span class="math inline">\(k\)</span> de uma população <span class="math inline">\(X\)</span> é definido por <span class="math inline">\(\mu^{(k)}=E(X^k)\)</span>;</li>
+<li>Dada uma aa <span class="math inline">\(X_1,\ldots,X_n\)</span> de uma população <span class="math inline">\(X\)</span> e fixado <span class="math inline">\(k\in\{1,2, \ldots\}\)</span>, o <strong>momento amostral</strong> de ordem <span class="math inline">\(k\)</span> é definido por <span class="math inline">\(\hat{\mu}^{(k)}=\frac{1}{n}\sum_{i=1}^{n}X^k_i\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Note que <span class="math inline">\(\mu^{(k)}=\mu^{(k)}(\theta)\)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="métodos-de-obtenção-de-estimadores-2" class="slide level2 unnumbered unlisted">
+<h2>2.2 Métodos de Obtenção de Estimadores</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>Se o vetor paramétrico <span class="math inline">\(\theta = (\theta_1,\ldots, \theta_\kappa)'\)</span> tem dimensão <span class="math inline">\(\kappa\)</span> e os momentos populacionais até a ordem <span class="math inline">\(\kappa\)</span> são <span class="math inline">\(\mu^{(1)} = \mu^{(1)}(\theta), \ldots, \mu^{(\kappa)} = \mu^{(\kappa)}(\theta)\)</span>. O Estimador de Método dos Momentos (EMM), <span class="math inline">\(\hat\theta_{\text{MM}}\)</span>, é o vetor <span class="math inline">\(\theta\)</span> que soluciona o sistema de equações <span class="math display">\[
+\begin{cases}
+  \mu^{(1)}(\theta) &amp;=&amp; \hat{\mu}^{(1)}\\
+    &amp;\vdots&amp;\\
+    \mu^{(\kappa)}(\theta) &amp;=&amp; \hat{\mu}^{(\kappa)}
+\end{cases}
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Caso o sistema acima não seja bijetivo (por exemplo, se <span class="math inline">\(\theta = (\theta_1, \theta_2)'\)</span>, mas <span class="math inline">\(\mu^{(1)}=\mu^{(2)}=\theta_1\)</span>), podemos utilizar momentos populacionais de ordens superiores.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="métodos-de-obtenção-de-estimadores-3" class="slide level2 unnumbered unlisted">
+<h2>2.2 Métodos de Obtenção de Estimadores</h2>
+<div style="border-style: solid; border-width: 3px; padding-top: 0px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%; margin-bottom:24px;">
+<p><strong>Exemplo 6 (cont.):</strong> Temos que, para a população <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>, o momento populacional de ordem 1 é <span class="math inline">\(\mu^{(1)} = E(X) = \frac{1}{\lambda}\)</span>. Como o momento amostral de ordem 1 é <span class="math inline">\(\hat\mu^{(1)} = \bar{X}\)</span>, o EMM de <span class="math inline">\(\lambda\)</span> é o valor <span class="math inline">\(\hat\lambda_{\text{MM}}\)</span> tal que <span class="math inline">\(\frac{1}{\hat\lambda_{\text{MM}}} = \bar{X}\)</span>. Logo, <span class="math inline">\(\hat\lambda_{\text{MM}} = \frac{1}{\bar{X}}\)</span>.</p>
+</div>
+<div style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 12px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<strong>Exemplo 7:</strong> Se a população for <span class="math inline">\(X\sim \text{N}(\mu,\sigma^2)\)</span>, então <span class="math inline">\(\mu^{(1)} = E(X) = \mu\)</span> e <span class="math inline">\(\mu^{(2)} = E(X^2) = \sigma^2 + \mu^2\)</span>. Como <span class="math inline">\(\hat\mu^{(1)} = \bar{X}\)</span> e <span class="math inline">\(\hat\mu^{(2)} = \frac{1}{n}\sum_i X_i^2\)</span>, os EMM’s de <span class="math inline">\(\mu\)</span> e <span class="math inline">\(\sigma\)</span> são dados, respectivamente, por
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\({\displaystyle \hat\mu_{\text{MM}} = \bar{X}}\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\({\displaystyle \hat\sigma_{\text{MM}} = \left(\frac{1}{n}\sum_i X_i^2 - \hat\mu_{\text{MM}}^2\right)^{1/2}}\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercício</strong></p>
+</div>
+<div class="callout-content">
+<p>Encontre o EMM do parâmetro <span class="math inline">\(\theta\)</span> se a população <span class="math inline">\(X\)</span> tem fdp <span class="math inline">\(f(x)=\frac{\theta}{x^{\theta+1}}\)</span>, <span class="math inline">\(x&gt;1\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="métodos-de-obtenção-de-estimadores-4" class="slide level2 unnumbered unlisted">
+<h2>2.2 Métodos de Obtenção de Estimadores</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+Seja <span class="math inline">\(X_1,\ldots,X_n\)</span> aa de uma vad <span class="math inline">\(X\)</span> com fmp <span class="math inline">\(p(x;\theta)\)</span>. A função de verossimilhança é definida por
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\displaystyle L(\theta;x_1,\ldots,x_n) = p(x_1, \ldots, x_n; \theta) = p(x_1;\theta)\cdots p(x_n;\theta) = \prod_{i=1}^n p(x_i;\theta)\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+Seja <span class="math inline">\(X_1,\ldots,X_n\)</span> aa de uma vac <span class="math inline">\(X\)</span> com fdp <span class="math inline">\(f(x;\theta)\)</span>. A função de verossimilhança é definida por
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\displaystyle L(\theta;x_1,\ldots,x_n) = f(x_1, \ldots, x_n; \theta) = f(x_1;\theta)\cdots f(x_n;\theta) = \prod_{i=1}^n f(x_i;\theta)\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>A função de verossimilhança tem a mesma definição de fmp conjunta (se a população <span class="math inline">\(X\)</span> é discreta) ou fdp conjunta (se a população <span class="math inline">\(X\)</span> é contínua), mas é função de <span class="math inline">\(\theta\)</span> e não de <span class="math inline">\(x_1, \ldots, x_n\)</span>;</li>
+<li><span class="math inline">\(L(\theta; x_1, \ldots, x_n)\)</span> mede a <strong>plausabilidade</strong> de <span class="math inline">\(\theta\)</span> com respeito a amostra observada <span class="math inline">\(x_1, \ldots, x_n\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="métodos-de-obtenção-de-estimadores-5" class="slide level2 unnumbered unlisted">
+<h2>2.2 Métodos de Obtenção de Estimadores</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+O Estimador de Máxima Verossimilhança (EMV) de <span class="math inline">\(\theta\)</span> é definido por
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\DeclareMathOperator*{\aM}{argmax}\hat\theta_{\text{MV}}=\aM_{\theta}[L(\theta;x_1,\ldots,x_n)]\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>No caso discreto, pela independência, temos <span class="math inline">\(L(\theta;x_1,\ldots,x_n)= P(X_1=x_1,\ldots,X_n=x_n|\theta),\)</span> de modo que <span class="math inline">\(\hat{\theta}_{\text{MV}}\)</span> maximiza essa probabilidade, tornando a amostra <span class="math inline">\(x_1,\ldots,x_n\)</span> mais <strong>plausível</strong> ou <strong>verossímil</strong>;</li>
+<li>Se <span class="math inline">\(L\)</span> é diferenciável em <span class="math inline">\(\theta\)</span>, o EMV é o valor <span class="math inline">\(\hat{\theta}_{\text{MV}}\)</span> que satisfaz:
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\left[\left.\frac{\partial}{\partial\theta} \ell(\theta) \right|_{\theta=\hat{\theta}_{\text{MV}}} \right] = \left[\left.\frac{\partial}{\partial\theta}\log\left[L(\theta;x_1,\ldots,x_n) \right]\right|_{\theta=\hat{\theta}_{\text{MV}}} \right] = \sum_{i=1}^{n} \left[ \left.\frac{\partial}{\partial\theta}\log f(x_i;\theta)\right|_{\theta=\hat{\theta}_{\text{MV}}} \right]=0\)</span>,
+</td>
+</tr>
+
+</tbody></table>
+em que <span class="math inline">\(\ell(\theta) = \log\left[L(\theta;x_1,\ldots,x_n) \right]\)</span> é a <span style="color:red;"><strong>log-verossimilhança</strong></span>, desde que <span class="math inline">\(\hat{\theta}_{\text{MV}}\)</span> seja ponto de máximo;</li>
+<li>Sob algumas suposições de regularidade, é possível mostrar que o EMV é consistente.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="métodos-de-obtenção-de-estimadores-6" class="slide level2 unnumbered unlisted">
+<h2>2.2 Métodos de Obtenção de Estimadores</h2>
+<div style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%; margin-bottom:24px;">
+<strong>Exemplo 6 (cont.):</strong> A função de verossimilhança se a população <span class="math inline">\(X\sim \text{Exp}(\lambda)\)</span> é
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(L(\lambda; x_1, \ldots, x_n) = \prod_{i=1}^n[\lambda e^{-\lambda x_i}] = \lambda^n e^{-\lambda \sum_ix_i} = \lambda^n e^{-\lambda n\bar{x}}\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+<p>Assim, <span class="math inline">\(\ell(\lambda) = n\log(\lambda)-\lambda n \bar{x}\)</span> e <span class="math inline">\(\frac{\partial\ell(\lambda)}{\partial\lambda} = \frac{n}{\lambda} - n\bar{x}\)</span>. Como <span class="math inline">\(\hat\lambda_{\text{MV}}\)</span> satisfaz <span class="math inline">\(\frac{n}{\hat\lambda_{\text{MV}}} - n\bar{x} = 0\)</span>, temos <span class="math inline">\(\hat\lambda_{\text{MV}} = \frac{1}{\bar{X}}\)</span>.</p>
+</div>
+<div style="border-style: solid; border-width: 3px; padding-top: 12px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<strong>Exemplo 7 (cont.):</strong> Vamos determinar o EMV de <span class="math inline">\((\mu, \sigma)\)</span>. Podemos mostrar que a log-verossimilhança é
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\ell(\mu,\sigma) = -\frac{n}{2}\log(2\pi) - n\log(\sigma) -\frac{1}{2}\sum_i\left(\frac{x_i-\mu}{\sigma}\right)^2\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+Assim,
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\frac{\partial\ell}{\partial\mu} = \sum_i\left(\frac{x_i-\mu}{\sigma^2}\right) = \frac{n\bar{x} - n\mu}{\sigma^2}\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(\frac{\partial\ell}{\partial\sigma} = -\frac{n}{\sigma} + \frac{1}{\sigma^3}\sum_i(x_i-\mu)^2\)</span>.
+</td>
+</tr>
+
+</tbody></table>
+Logo, os EMV’s <span class="math inline">\(\hat\mu_{\text{MV}}\)</span> e <span class="math inline">\(\hat\sigma_{\text{MV}}\)</span> devem satisfazer
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\frac{n\bar{x} - n\hat\mu_{\text{MV}}}{\hat\sigma^2_{\text{MV}}} = 0\)</span>
+</td>
+<td>
+e
+</td>
+<td>
+<span class="math inline">\(-\frac{n}{\hat\sigma_{\text{MV}}} + \frac{1}{\hat\sigma^3_{\text{MV}}}\sum_i(x_i-\hat\mu_{\text{MV}})^2 = 0\)</span>,
+</td>
+</tr>
+
+</tbody></table>
+<p>o que fornece <span class="math inline">\(\hat\mu_{\text{MV}} = \bar{X}\)</span> e <span class="math inline">\(\hat\sigma_{\text{MV}} = \left[\frac{1}{n}\sum_i(X_i - \hat\mu_{\text{MV}})^2\right]^{1/2}\)</span>.</p>
+</div>
+</section>
+<section id="métodos-de-obtenção-de-estimadores-7" class="slide level2 unnumbered unlisted">
+<h2>2.2 Métodos de Obtenção de Estimadores</h2>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Exercício</strong></p>
+</div>
+<div class="callout-content">
+<p>Determine EMV do parâmetro <span class="math inline">\(\theta\)</span> se a população <span class="math inline">\(X\)</span> tem fdp <span class="math inline">\(f(x)=\frac{\theta}{x^{\theta+1}}\)</span>, <span class="math inline">\(x&gt;1\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>Em alguns casos, não podemos realizar analiticamente a maximização de <span class="math inline">\(L(\theta; x_1, \ldots, x_n)\)</span>, ou equivalentemente de <span class="math inline">\(\ell(\theta)\)</span>;</li>
+<li>Nesses casos, podemos recorrer é métodos numéricos. Por exemplo, podemos utilizar o algoritmo de Newton-Raphson para encontrar as raízes
+
+<table>
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\left[\left.\frac{\partial \ell(\theta)}{\partial \theta}\right|_{\theta = \hat\theta_{\text{MV}}}\right] = 0\)</span>.
+</td>
+</tr>
+
+</tbody></table></li>
+</ol>
+</div>
+</div>
+</div>
 </section>
 <section id="estimação-intervalar" class="slide level2" data-number="2.3">
 <h2><span class="header-section-number">2.3</span> Estimação Intervalar</h2>
@@ -1637,7 +1951,7 @@ Ilustração da distribuição amostral de um estimador consistente com
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong>Exercícios</strong></p>
+<p><strong>Exercício</strong></p>
 </div>
 <div class="callout-content">
 
