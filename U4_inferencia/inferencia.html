@@ -419,7 +419,11 @@ Prof.&nbsp;Dr.&nbsp;Alessandro JQ Sarnaglia
 <li><a href="#/métodos-de-obtenção-de-estimadores" id="/toc-métodos-de-obtenção-de-estimadores"><span class="header-section-number">2.2</span> Métodos de Obtenção de Estimadores</a></li>
 <li><a href="#/estimação-intervalar" id="/toc-estimação-intervalar"><span class="header-section-number">2.3</span> Estimação Intervalar</a></li>
 </ul></li>
-<li><a href="#/testes-de-hipóteses" id="/toc-testes-de-hipóteses"><span class="header-section-number">3</span> Testes de Hipóteses</a></li>
+<li><a href="#/testes-de-hipóteses" id="/toc-testes-de-hipóteses"><span class="header-section-number">3</span> Testes de Hipóteses</a>
+<ul>
+<li><a href="#/teste-para-mu" id="/toc-teste-para-mu"><span class="header-section-number">3.1</span> Teste para <span class="math inline">\(\mu\)</span></a></li>
+<li><a href="#/p-valor" id="/toc-p-valor"><span class="header-section-number">3.2</span> <span class="math inline">\(p\)</span>-valor</a></li>
+</ul></li>
 </ul>
 </nav>
 </section>
@@ -726,7 +730,7 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-1-1.png" width="528"></p>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.908</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.891</code></pre>
 </div>
 </div>
 </div>
@@ -768,7 +772,7 @@ Agora, derivando <span class="math inline">\(F_Y(y)\)</span>, obtemos
 <p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-2-1.png" width="528"></p>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.979</code></pre>
+<pre><code>P[Med. Amost. ∈ (Med. Pop. ± 0.1)] ≈ 0.973</code></pre>
 </div>
 </div>
 </div>
@@ -1950,11 +1954,191 @@ e
 <section id="estimação-intervalar" class="slide level2" data-number="2.3">
 <h2><span class="header-section-number">2.3</span> Estimação Intervalar</h2>
 </section></section>
+<section>
 <section id="testes-de-hipóteses" class="title-slide slide level1 center" data-number="3">
 <h1><span class="header-section-number">3</span> Testes de Hipóteses</h1>
 
 </section>
+<section id="teste-para-mu" class="slide level2" data-number="3.1">
+<h2><span class="header-section-number">3.1</span> Teste para <span class="math inline">\(\mu\)</span></h2>
+</section>
+<section id="p-valor" class="slide level2" data-number="3.2">
+<h2><span class="header-section-number">3.2</span> <span class="math inline">\(p\)</span>-valor</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observaçãos</strong></p>
+</div>
+<div class="callout-content">
+<p>Relatar o resultado de um teste de hipóteses simplesmente dizendo se a hipótese nula foi rejeitada ao nível de significância especificado pode ser inadequado, pois não mensura a quantidade de evidência obtida da amostra e impõe o mesmo nível de significância a todos os tomadores de decisão.</p>
+</div>
+</div>
+</div>
+<div style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;">
+<p><strong>Exemplo 8:</strong> O tempo médio de alivio das dores do medicamento mais vendido no mercado é de 10 min. Uma empresa desenvolveu um medicamento e colocou a venda afirmando que um teste estatístico rejeitou <span class="math inline">\(H_0 : \mu \geq 10\)</span> em favor de <span class="math inline">\(H_1 : \mu &lt; 10\)</span> ao nível de 0.1.</p>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Uma pessoa que costuma comprar o medicamento mais vendido pode optar por nível de significância menor de 0.01, por exemplo. Isso tornaria a rejeição de <span class="math inline">\(H_0\)</span> “mais difícil”. O resultado como divulgado não permite aos compradores tomarem sua própria decisão.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="section-5" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-8-cont.">Exemplo 8 (cont.)</h3>
+<div class="columns">
+<div id="vcenter" class="column" style="width:55%;">
+<p>Suponha que a empresa tenha feito o teste com <span class="math inline">\(n=49\)</span> e obteve <span class="math inline">\(\bar{x} = 9\)</span> e <span class="math inline">\(s^2 = 10.89\)</span>. A região crítica é da forma <span class="math inline">\(\text{RC} = \{\bar{X} &lt; x_c\}\)</span>, por meio da padronização podemos reescrevê-la como</p>
 
+<table style="margin-left: auto; margin-right: auto;">
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\text{RC} = \left\{\frac{\bar{X}-\mu_0}{S/\sqrt{n}} &lt; \frac{x_c-\mu_0}{S/\sqrt{n}}\right\} \approx \{Z &lt; -z_\alpha\}\)</span>,
+</td>
+</tr>
+
+</tbody></table>
+<p>em que <span class="math inline">\(Z = \frac{\bar{X}-\mu_0}{S/\sqrt{n}}\)</span> e <span class="math inline">\(z_\alpha\)</span> é o valor tal que <span class="math inline">\(P(Z &gt; z_\alpha) = \alpha\)</span>. Assim, a amostra resulta em um <span class="math inline">\(Z\)</span> observado de <span class="math inline">\(Z_{\text{obs}} = \frac{9-10}{3.3/\sqrt{49}} \approx -2.12\)</span>.</p>
+<p>As figuras ao lado mostram as regiões críticas do teste para diferentes níveis de significância <span class="math inline">\(\alpha\)</span>.</p>
+</div><div id="vcenter" class="column" style="width:45%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-10-1.png" width="528"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-6" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-8-cont.-1">Exemplo 8 (cont.)</h3>
+<div class="columns">
+<div id="vcenter" class="column" style="width:55%;">
+<p>Suponha que a empresa tenha feito o teste com <span class="math inline">\(n=49\)</span> e obteve <span class="math inline">\(\bar{x} = 9\)</span> e <span class="math inline">\(s^2 = 10.89\)</span>. A região crítica é da forma <span class="math inline">\(\text{RC} = \{\bar{X} &lt; x_c\}\)</span>, por meio da padronização podemos reescrevê-la como</p>
+
+<table style="margin-left: auto; margin-right: auto;">
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\text{RC} = \left\{\frac{\bar{X}-\mu_0}{S/\sqrt{n}} &lt; \frac{x_c-\mu_0}{S/\sqrt{n}}\right\} \approx \{Z &lt; -z_\alpha\}\)</span>,
+</td>
+</tr>
+
+</tbody></table>
+<p>em que <span class="math inline">\(Z = \frac{\bar{X}-\mu_0}{S/\sqrt{n}}\)</span> e <span class="math inline">\(z_\alpha\)</span> é o valor tal que <span class="math inline">\(P(Z &gt; z_\alpha) = \alpha\)</span>. Assim, a amostra resulta em um <span class="math inline">\(Z\)</span> observado de <span class="math inline">\(Z_{\text{obs}} = \frac{9-10}{3.3/\sqrt{49}} \approx -2.12\)</span>.</p>
+<p>As figuras ao lado mostram as regiões críticas do teste para diferentes níveis de significância <span class="math inline">\(\alpha\)</span>.</p>
+</div><div id="vcenter" class="column" style="width:45%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-11-1.png" width="528"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section-7" class="slide level2 unnumbered unlisted smaller">
+<h2></h2>
+<h3 class="unnumbered unlisted" id="exemplo-8-cont.-2">Exemplo 8 (cont.)</h3>
+<div class="columns">
+<div id="vcenter" class="column" style="width:55%;">
+<p>Suponha que a empresa tenha feito o teste com <span class="math inline">\(n=49\)</span> e obteve <span class="math inline">\(\bar{x} = 9\)</span> e <span class="math inline">\(s^2 = 10.89\)</span>. A região crítica é da forma <span class="math inline">\(\text{RC} = \{\bar{X} &lt; x_c\}\)</span>, por meio da padronização podemos reescrevê-la como</p>
+
+<table style="margin-left: auto; margin-right: auto;">
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(\text{RC} = \left\{\frac{\bar{X}-\mu_0}{S/\sqrt{n}} &lt; \frac{x_c-\mu_0}{S/\sqrt{n}}\right\} \approx \{Z &lt; -z_\alpha\}\)</span>,
+</td>
+</tr>
+
+</tbody></table>
+<p>em que <span class="math inline">\(Z = \frac{\bar{X}-\mu_0}{S/\sqrt{n}}\)</span> e <span class="math inline">\(z_\alpha\)</span> é o valor tal que <span class="math inline">\(P(Z &gt; z_\alpha) = \alpha\)</span>. Assim, a amostra resulta em um <span class="math inline">\(Z\)</span> observado de <span class="math inline">\(Z_{\text{obs}} = \frac{9-10}{3.3/\sqrt{49}} \approx -2.12\)</span>.</p>
+<p>As figuras ao lado mostram as regiões críticas do teste para diferentes níveis de significância <span class="math inline">\(\alpha\)</span>.</p>
+</div><div id="vcenter" class="column" style="width:45%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-12-1.png" width="528"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="p-valor-1" class="slide level2 unnumbered unlisted">
+<h2>3.2 <span class="math inline">\(p\)</span>-valor</h2>
+<div class="columns">
+<div id="vcenter" class="column" style="width:55%;">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Definição</strong></p>
+</div>
+<div class="callout-content">
+<p>O <span class="math inline">\(p\)</span>-valor é o menor nível de significância em que <span class="math inline">\(H_0\)</span> é rejeitada, quando um teste é usado em um determinado conjunto de dados.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observação</strong></p>
+</div>
+<div class="callout-content">
+<p>Uma vez que o <span class="math inline">\(p\)</span>-valor foi determinado, a conclusão no nível <span class="math inline">\(\alpha\)</span>, resulta da seguinte comparação: se <span class="math inline">\(p\)</span>-valor <span class="math inline">\(\leq \alpha\)</span> implica rejeição de <span class="math inline">\(H_0\)</span> no nível <span class="math inline">\(\alpha\)</span>; se <span class="math inline">\(p\)</span>-valor <span class="math inline">\(&gt; \alpha\)</span> implica não-rejeição de <span class="math inline">\(H_0\)</span> no nível <span class="math inline">\(\alpha\)</span>.</p>
+</div>
+</div>
+</div>
+</div><div id="vcenter" class="column" style="width:45%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="inferencia_files/figure-revealjs/unnamed-chunk-13-1.png" width="528"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="p-valor-2" class="slide level2 unnumbered unlisted">
+<h2>3.2 <span class="math inline">\(p\)</span>-valor</h2>
+<div class="callout callout-caution no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Observações</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>Nos testes para <span class="math inline">\(\mu\)</span> em que usamos as estatísticas <span class="math inline">\(Z = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}\)</span> (ou <span class="math inline">\(S\)</span> no lugar de <span class="math inline">\(\sigma\)</span> se <span class="math inline">\(n\)</span> grande) e <span class="math inline">\(T = \frac{\bar{X}-\mu_0}{S/\sqrt{n}}\)</span> (se <span class="math inline">\(n\)</span> pequeno numa população normal), o cálculo do <span class="math inline">\(p\)</span>-valor depende da forma de <span class="math inline">\(H_1\)</span>;</li>
+<li>No teste <span class="math inline">\(Z\)</span>, temos
+
+<table style="margin-left: auto; margin-right: auto;">
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(p\)</span>-valor <span class="math inline">\(= \begin{cases}1-\Phi(z_{\text{obs}}), &amp; H_1 : \mu &gt; \mu_0\\ \Phi(z_{\text{obs}}), &amp; H_1 : \mu &lt; \mu_0\\ 2[1-\Phi(|z_{\text{obs}}|)], &amp; H_1 : \mu \neq \mu_0\end{cases}\)</span>;
+</td>
+</tr>
+
+</tbody></table></li>
+<li>No teste <span class="math inline">\(T\)</span>, temos
+
+<table style="margin-left: auto; margin-right: auto;">
+<tbody><tr style="border-bottom:none;text-align:center;">
+<td>
+<span class="math inline">\(p\)</span>-valor <span class="math inline">\(= \begin{cases}1-F_T(t_{\text{obs}}), &amp; H_1 : \mu &gt; \mu_0\\ F_T(t_{\text{obs}}), &amp; H_1 : \mu &lt; \mu_0\\ 2[1-F_T(|t_{\text{obs}}|)], &amp; H_1 : \mu \neq \mu_0\end{cases}\)</span>,
+</td>
+</tr>
+
+</tbody></table>
+em que <span class="math inline">\(F_T(\cdot)\)</span> é a fda da distribuição <span class="math inline">\(t\)</span>-student com <span class="math inline">\(n-1\)</span> graus de liberdade e <span class="math inline">\(t_{\text{obs}} = \frac{\bar{x}_{\text{obs}}-\mu_0}{s_{\text{obs}}/\sqrt{n}}\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+</section></section>
 <section id="fim" class="title-slide slide level1 unnumbered unlisted center">
 <h1>FIM</h1>
 

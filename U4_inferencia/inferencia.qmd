@@ -1368,6 +1368,249 @@ Determine EMV do parâmetro $\theta$ se a população $X$ tem fdp $f(x)=\frac{\t
 
 # Testes de Hipóteses
 
+## Teste para $\mu$
+
+## $p$-valor 
+
+::: {.callout-caution}
+## Observaçãos
+
+Relatar o resultado de um teste de hipóteses simplesmente dizendo se a hipótese nula foi rejeitada ao nível de significância especificado pode ser inadequado, pois não mensura a quantidade de evidência obtida da amostra e impõe o mesmo nível de significância a todos os tomadores de decisão.
+:::
+
+::: {style="border-style: solid; border-width: 3px; padding-bottom: 0px; padding-right: 12px; padding-left: 12px; font-size:70%;"}
+
+**Exemplo 8:** O tempo médio de alivio das dores do medicamento mais vendido no mercado é de 10 min. Uma empresa desenvolveu um medicamento e colocou a venda afirmando que um teste estatístico rejeitou $H_0 : \mu \geq 10$ em favor de $H_1 : \mu < 10$ ao nível de 0.1.
+
+::: 
+
+::: {.callout-caution}
+## Observação
+
+Uma pessoa que costuma comprar o medicamento mais vendido pode optar por nível de significância menor de 0.01, por exemplo. Isso tornaria a rejeição de $H_0$ "mais difícil". O resultado como divulgado não permite aos compradores tomarem sua própria decisão.
+:::
+
+## {.unnumbered .unlisted .smaller} 
+
+###  Exemplo 8 (cont.) {.unnumbered .unlisted} 
+
+::: columns
+
+::: {.column #vcenter width=55%}
+
+Suponha que a empresa tenha feito o teste com $n=49$ e obteve $\bar{x} = 9$ e $s^2 = 10.89$. A região crítica é da forma $\text{RC} = \{\bar{X} < x_c\}$, por meio da padronização podemos reescrevê-la como
+
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\text{RC} = \left\{\frac{\bar{X}-\mu_0}{S/\sqrt{n}} < \frac{x_c-\mu_0}{S/\sqrt{n}}\right\} \approx \{Z < -z_\alpha\}$,</td>
+  </tr>
+</table>
+
+em que $Z = \frac{\bar{X}-\mu_0}{S/\sqrt{n}}$ e $z_\alpha$ é o valor tal que $P(Z > z_\alpha) = \alpha$. Assim, a amostra resulta em um $Z$ observado de $Z_{\text{obs}} = \frac{9-10}{3.3/\sqrt{49}} \approx -2.12$.
+
+As figuras ao lado mostram as regiões críticas do teste para diferentes níveis de significância $\alpha$.
+
+:::
+
+::: {.column #vcenter width=45%}
+
+::: fragment
+
+```{r}
+xb <- 9; s <- 3.3; n <-49; mu0 <- 10; zo <- (xb-mu0)/(s/sqrt(n))
+alp <- .1; zc <- qnorm(alp)
+x <- seq(-4.5, 4.5, length.out=1000)
+fx <- dnorm(x = x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, fx, type='n', xlab='', ylab='', main='', lwd=3,
+     ylim=range(fx)+c(-.1*diff(range(fx)),.13*diff(range(fx))),
+     xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
+polygon(c(x[1], x[x < zc], max(x[x < zc])), c(0, fx[x<zc], 0), col = 'lightblue')
+arrows(y0 = min(fx)-.1*diff(range(fx)), y1 = max(fx)+.13*diff(range(fx)), x0=0, x1=0, length = .1)
+arrows(x0 = min(x)-.02*diff(range(x)), x1 = max(x)+.08*diff(range(x)), y0=0, y1=0, length = .1)
+lines(x, fx, lwd=3)
+arrows(x0 = 1, y0 = 0.4, x1 = zc, y1 = 0, length = .1)
+points(x = zc, y = 0, pch=19, cex=.8)
+text(x = 1, y=0.4, labels = bquote(-z[alpha]~"="~-z[.(alp)]~"="~-.(-round(zc, 2))), pos = 4)
+points(x = zo, y = 0, pch=19, cex=.8, col='red')
+text(x = zo, y=0, labels = bquote(z[obs]==.(round(zo, 2))), pos = 1, col='red')
+text(x = -4.5, y=0.4, labels = bquote(Não~rejeitar~italic(H)[0]), pos = 4)
+```
+:::
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller} 
+
+###  Exemplo 8 (cont.) {.unnumbered .unlisted} 
+
+::: columns
+
+::: {.column #vcenter width=55%}
+
+Suponha que a empresa tenha feito o teste com $n=49$ e obteve $\bar{x} = 9$ e $s^2 = 10.89$. A região crítica é da forma $\text{RC} = \{\bar{X} < x_c\}$, por meio da padronização podemos reescrevê-la como
+
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\text{RC} = \left\{\frac{\bar{X}-\mu_0}{S/\sqrt{n}} < \frac{x_c-\mu_0}{S/\sqrt{n}}\right\} \approx \{Z < -z_\alpha\}$,</td>
+  </tr>
+</table>
+
+em que $Z = \frac{\bar{X}-\mu_0}{S/\sqrt{n}}$ e $z_\alpha$ é o valor tal que $P(Z > z_\alpha) = \alpha$. Assim, a amostra resulta em um $Z$ observado de $Z_{\text{obs}} = \frac{9-10}{3.3/\sqrt{49}} \approx -2.12$.
+
+As figuras ao lado mostram as regiões críticas do teste para diferentes níveis de significância $\alpha$.
+
+:::
+
+::: {.column #vcenter width=45%}
+
+```{r}
+xb <- 9; s <- 3.3; n <-49; mu0 <- 10; zo <- (xb-mu0)/(s/sqrt(n))
+alp <- .05; zc <- qnorm(alp)
+x <- seq(-4.5, 4.5, length.out=1000)
+fx <- dnorm(x = x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, fx, type='n', xlab='', ylab='', main='', lwd=3,
+     ylim=range(fx)+c(-.1*diff(range(fx)),.13*diff(range(fx))),
+     xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
+polygon(c(x[1], x[x < zc], max(x[x < zc])), c(0, fx[x<zc], 0), col = 'lightblue')
+arrows(y0 = min(fx)-.1*diff(range(fx)), y1 = max(fx)+.13*diff(range(fx)), x0=0, x1=0, length = .1)
+arrows(x0 = min(x)-.02*diff(range(x)), x1 = max(x)+.08*diff(range(x)), y0=0, y1=0, length = .1)
+lines(x, fx, lwd=3)
+arrows(x0 = 1, y0 = 0.4, x1 = zc, y1 = 0, length = .1)
+points(x = zc, y = 0, pch=19, cex=.8)
+text(x = 1, y=0.4, labels = bquote(-z[alpha]~"="~-z[.(alp)]~"="~-.(-round(zc, 2))), pos = 4)
+points(x = zo, y = 0, pch=19, cex=.8, col='red')
+text(x = zo, y=0, labels = bquote(z[obs]==.(round(zo, 2))), pos = 1, col='red')
+text(x = -4.5, y=0.4, labels = bquote(Não~rejeitar~italic(H)[0]), pos = 4)
+```
+
+:::
+
+:::
+
+## {.unnumbered .unlisted .smaller} 
+
+###  Exemplo 8 (cont.) {.unnumbered .unlisted} 
+
+::: columns
+
+::: {.column #vcenter width=55%}
+
+Suponha que a empresa tenha feito o teste com $n=49$ e obteve $\bar{x} = 9$ e $s^2 = 10.89$. A região crítica é da forma $\text{RC} = \{\bar{X} < x_c\}$, por meio da padronização podemos reescrevê-la como
+
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$\text{RC} = \left\{\frac{\bar{X}-\mu_0}{S/\sqrt{n}} < \frac{x_c-\mu_0}{S/\sqrt{n}}\right\} \approx \{Z < -z_\alpha\}$,</td>
+  </tr>
+</table>
+
+em que $Z = \frac{\bar{X}-\mu_0}{S/\sqrt{n}}$ e $z_\alpha$ é o valor tal que $P(Z > z_\alpha) = \alpha$. Assim, a amostra resulta em um $Z$ observado de $Z_{\text{obs}} = \frac{9-10}{3.3/\sqrt{49}} \approx -2.12$.
+
+As figuras ao lado mostram as regiões críticas do teste para diferentes níveis de significância $\alpha$.
+
+:::
+
+::: {.column #vcenter width=45%}
+
+```{r}
+xb <- 9; s <- 3.3; n <-49; mu0 <- 10; zo <- (xb-mu0)/(s/sqrt(n))
+alp <- .01; zc <- qnorm(alp)
+x <- seq(-4.5, 4.5, length.out=1000)
+fx <- dnorm(x = x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, fx, type='n', xlab='', ylab='', main='', lwd=3,
+     ylim=range(fx)+c(-.1*diff(range(fx)),.13*diff(range(fx))),
+     xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
+polygon(c(x[1], x[x < zc], max(x[x < zc])), c(0, fx[x<zc], 0), col = 'lightblue')
+arrows(y0 = min(fx)-.1*diff(range(fx)), y1 = max(fx)+.13*diff(range(fx)), x0=0, x1=0, length = .1)
+arrows(x0 = min(x)-.02*diff(range(x)), x1 = max(x)+.08*diff(range(x)), y0=0, y1=0, length = .1)
+lines(x, fx, lwd=3)
+arrows(x0 = 1, y0 = 0.4, x1 = zc, y1 = 0, length = .1)
+points(x = zc, y = 0, pch=19, cex=.8)
+text(x = 1, y=0.4, labels = bquote(-z[alpha]~"="~-z[.(alp)]~"="~-.(-round(zc, 2))), pos = 4)
+points(x = zo, y = 0, pch=19, cex=.8, col='red')
+text(x = zo, y=0, labels = bquote(z[obs]==.(round(zo, 2))), pos = 1, col='red')
+text(x = -4.5, y=0.4, labels = bquote(Rejeitar~italic(H)[0]), pos = 4)
+```
+
+:::
+
+:::
+
+## 3.2 $p$-valor {.unnumbered .unlisted}
+
+::: columns
+
+::: {.column #vcenter width=55%}
+
+::: {.callout-note}
+## Definição
+
+O $p$-valor é o menor nível de significância em que $H_0$ é rejeitada, quando um teste é usado em um determinado conjunto de dados.
+:::
+
+::: {.callout-caution}
+## Observação
+
+Uma vez que o $p$-valor foi determinado, a conclusão no nível $\alpha$, resulta da seguinte comparação: se $p$-valor $\leq \alpha$ implica rejeição de $H_0$ no nível $\alpha$; se $p$-valor $> \alpha$ implica não-rejeição de $H_0$ no nível $\alpha$.
+:::
+
+:::
+
+::: {.column #vcenter width=45%}
+
+::: fragment
+
+```{r}
+xb <- 9; s <- 3.3; n <-49; mu0 <- 10; zo <- (xb-mu0)/(s/sqrt(n))
+alp <- .01; zc <- qnorm(alp)
+x <- seq(-4.5, 4.5, length.out=1000)
+pv <- pnorm(q = zo)
+fx <- dnorm(x = x)
+par(family = "serif", mar=c(5,4,1,2))
+plot(x, fx, type='n', xlab='', ylab='', main='', lwd=3,
+     ylim=range(fx)+c(-.1*diff(range(fx)),.13*diff(range(fx))),
+     xlim=range(x)+c(-.02*diff(range(x)),.08*diff(range(x))))
+polygon(c(x[1], x[x < zo], max(x[x < zo])), c(0, fx[x<zo], 0), col = rgb(red=1,green = 0, blue = 0, alpha = .3))
+arrows(y0 = min(fx)-.1*diff(range(fx)), y1 = max(fx)+.13*diff(range(fx)), x0=0, x1=0, length = .1)
+arrows(x0 = min(x)-.02*diff(range(x)), x1 = max(x)+.08*diff(range(x)), y0=0, y1=0, length = .1)
+lines(x, fx, lwd=3)
+arrows(x0 = 1.5, y0 = 0.25, x1 = -2.35, y1 = 0.012, length = .05)
+text(x = 1.5, y=0.25, labels = bquote(italic(p)-valor==.(round(pv, 4))), pos = 4)
+points(x = zo, y = 0, pch=19, cex=.8, col='red')
+text(x = zo, y=0, labels = bquote(z[obs]==.(round(zo, 2))), pos = 1, col='red')
+```
+
+:::
+
+:::
+
+:::
+
+## 3.2 $p$-valor {.unnumbered .unlisted}
+
+::: {.callout-caution}
+## Observações
+
+1. Nos testes para $\mu$ em que usamos as estatísticas $Z = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$ (ou $S$ no lugar de $\sigma$ se $n$ grande) e $T = \frac{\bar{X}-\mu_0}{S/\sqrt{n}}$ (se $n$ pequeno numa população normal), o cálculo do $p$-valor depende da forma de $H_1$;
+2. No teste $Z$, temos
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$p$-valor $= \begin{cases}1-\Phi(z_{\text{obs}}), & H_1 : \mu > \mu_0\\ \Phi(z_{\text{obs}}), & H_1 : \mu < \mu_0\\ 2[1-\Phi(|z_{\text{obs}}|)], & H_1 : \mu \neq \mu_0\end{cases}$;</td>
+  </tr>
+</table>
+3. No teste $T$, temos
+<table style="margin-left: auto; margin-right: auto;">
+  <tr style="border-bottom:none;text-align:center;">
+    <td>$p$-valor $= \begin{cases}1-F_T(t_{\text{obs}}), & H_1 : \mu > \mu_0\\ F_T(t_{\text{obs}}), & H_1 : \mu < \mu_0\\ 2[1-F_T(|t_{\text{obs}}|)], & H_1 : \mu \neq \mu_0\end{cases}$,</td>
+  </tr>
+</table>
+em que $F_T(\cdot)$ é a fda da distribuição $t$-student com $n-1$ graus de liberdade e $t_{\text{obs}} = \frac{\bar{x}_{\text{obs}}-\mu_0}{s_{\text{obs}}/\sqrt{n}}$.
+:::
+
 # FIM {.unnumbered .unlisted}
 
 # APAGAR DPS 1 {.unnumbered .unlisted}
