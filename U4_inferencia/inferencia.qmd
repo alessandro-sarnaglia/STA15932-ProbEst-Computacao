@@ -1434,7 +1434,7 @@ points(x = zc, y = 0, pch=19, cex=.8)
 text(x = 1, y=0.4, labels = bquote(-z[alpha]~"="~-z[.(alp)]~"="~-.(-round(zc, 2))), pos = 4)
 points(x = zo, y = 0, pch=19, cex=.8, col='red')
 text(x = zo, y=0, labels = bquote(z[obs]==.(round(zo, 2))), pos = 1, col='red')
-text(x = -4.5, y=0.4, labels = bquote(Não~rejeitar~italic(H)[0]), pos = 4)
+text(x = -4.5, y=0.4, labels = bquote(Rejeitar~italic(H)[0]), pos = 4)
 ```
 :::
 
@@ -1484,7 +1484,7 @@ points(x = zc, y = 0, pch=19, cex=.8)
 text(x = 1, y=0.4, labels = bquote(-z[alpha]~"="~-z[.(alp)]~"="~-.(-round(zc, 2))), pos = 4)
 points(x = zo, y = 0, pch=19, cex=.8, col='red')
 text(x = zo, y=0, labels = bquote(z[obs]==.(round(zo, 2))), pos = 1, col='red')
-text(x = -4.5, y=0.4, labels = bquote(Não~rejeitar~italic(H)[0]), pos = 4)
+text(x = -4.5, y=0.4, labels = bquote(Rejeitar~italic(H)[0]), pos = 4)
 ```
 
 :::
@@ -1533,7 +1533,7 @@ points(x = zc, y = 0, pch=19, cex=.8)
 text(x = 1, y=0.4, labels = bquote(-z[alpha]~"="~-z[.(alp)]~"="~-.(-round(zc, 2))), pos = 4)
 points(x = zo, y = 0, pch=19, cex=.8, col='red')
 text(x = zo, y=0, labels = bquote(z[obs]==.(round(zo, 2))), pos = 1, col='red')
-text(x = -4.5, y=0.4, labels = bquote(Rejeitar~italic(H)[0]), pos = 4)
+text(x = -4.5, y=0.4, labels = bquote(Não~rejeitar~italic(H)[0]), pos = 4)
 ```
 
 :::
